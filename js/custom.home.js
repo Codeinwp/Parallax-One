@@ -1,3 +1,11 @@
+/* PRE LOADER */
+jQuery(window).load(function () {
+	"use strict";
+	jQuery(".status").fadeOut();
+	jQuery(".preloader").delay(1000).fadeOut("slow");
+})
+		
+		
 jQuery(window).load(function() {
 
     "use strict";
@@ -32,12 +40,14 @@ jQuery(window).resize(function() {
     /*---------------------------------------*/
     /*  SCROLL PANE
     /*---------------------------------------*/
-    jQuery('.scroll-pane').jScrollPane({showArrows: true});
+	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
+		jQuery('.scroll-pane').jScrollPane({showArrows: true});
+	}	
 
 });
 
 
-(function($) {
+jQuery(document).ready(function() {
 
     "use strict";
 
@@ -82,8 +92,9 @@ jQuery(window).resize(function() {
     /*---------------------------------------*/
     /*  SCROLL PANE
     /*---------------------------------------*/
-    jQuery('.scroll-pane').jScrollPane({showArrows: true});
-
+	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
+		jQuery('.scroll-pane').jScrollPane({showArrows: true});
+	}
 
 });
 

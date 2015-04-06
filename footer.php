@@ -17,7 +17,6 @@
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'parallax-one' ), 'parallax-one', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

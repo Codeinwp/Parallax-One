@@ -96,6 +96,20 @@ function parallax_one_widgets_init() {
 }
 add_action( 'widgets_init', 'parallax_one_widgets_init' );
 
+
+/**
+ * Fallback Menu
+ *
+ * If the menu doesn't exist, the fallback function to use.
+ */
+function parallax_one_wp_page_menu()
+{
+    echo '<ul class="nav navbar-nav navbar-right main-navigation small-text">';
+    wp_list_pages(array('title_li' => '', 'depth' => 1));
+    echo '</ul>';
+}
+
+
 /**
  * Enqueue scripts and styles.
  */

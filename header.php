@@ -23,12 +23,24 @@
 	<!-- =========================
      PRE LOADER       
     ============================== -->
-    <div class="preloader">
-        <div class="status">
-            &nbsp;
-        </div>
-    </div>
-	
+	<?php
+		
+	 global $wp_customize;
+
+	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
+	 
+		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		
+		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+			 
+			echo '<div class="preloader">';
+				echo '<div class="status">&nbsp;</div>';
+			echo '</div>';
+			
+		endif;	
+
+	endif; ?>
+
 
 	<!-- =========================
      SECTION: HOME / HEADER  
@@ -52,10 +64,23 @@
                         </button>
                         
                         <!-- LOGO -->
-                        <a class="navbar-brand" href="#">
-                            <img src="<?php echo get_template_directory_uri();?>/images/logo-nav.png" alt="">
-                        </a>
-                        
+						
+						<?php
+
+							$parallax_one = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
+
+							if(!empty($parallax_one)):
+
+								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
+
+									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
+
+								echo '</a>';
+
+							endif;
+
+						?>
+
                     </div>
                     
                     <!-- MENU -->			

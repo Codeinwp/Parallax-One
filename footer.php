@@ -71,11 +71,22 @@
 
 
         <div class="footer-bottom-wrap">
-            ©2014 Stamp LLC. All Rights Reserved
-
-			<!-- OPTIONAL FOOTER LINKS -->			
+			<!-- COPYRIGHT -->
+			<?php
+			
+				$paralax_one_copyright = get_theme_mod('zerif_copyright','&copy;Themeisle');
+				if(!empty($paralax_one_copyright)){
+					echo $paralax_one_copyright;
+				}	
+			?>
+           
+			
+			<!-- OPTIONAL FOOTER LINKS -->		
 			<?php 
-				wp_nav_menu( array( 'theme_location' => 'footer',	'container_class' => false, 'menu_class' => 'footer-links small-text' ) ); 
+			$var = get_theme_mod( 'menu_dropdown_setting' );			
+			if(!empty($var)){
+				wp_nav_menu( array( 'menu' => $var ,'container_class' => false, 'menu_class' => 'footer-links small-text' ) ); 
+			}
 			?>
 			
 			

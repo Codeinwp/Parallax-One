@@ -91,17 +91,19 @@
 			
 			
             <!-- SOCIAL ICONS -->
-            <ul class="social-icons">
-                <li><a href=""><span class="icon-social-facebook transparent-text-dark"></span></a>
-                </li>
-                <li><a href=""><span class="icon-social-twitter transparent-text-dark"></span></a>
-                </li>
-                <li><a href=""><span class="icon-social-pinterest transparent-text-dark"></span></a>
-                </li>
-                <li><a href=""><span class="icon-social-googleplus transparent-text-dark"></span></a>
-                </li>
-                <li><a href=""><span class="icon-social-dribbble transparent-text-dark"></span></a>
-                </li>
+			<ul class="social-icons">
+			<?php
+			$social_icons_array = get_theme_mod( 'parallax_one_social_icons' );
+
+				if ( !empty( $social_icons_array ) ){
+					$repeater_array = json_decode($social_icons_array);
+					foreach($repeater_array as $icon_item)
+					{
+						echo '<li><a href="'.$icon_item->icon_link.'"><span class="'.$icon_item->icon_value.' transparent-text-dark"></span></a></li>';
+
+					}
+				}
+			?>
             </ul>
         </div>
 

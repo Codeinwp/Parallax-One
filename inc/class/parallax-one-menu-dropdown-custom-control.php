@@ -18,10 +18,6 @@ class Parallax_One_Menu_Dropdown_Custom_Control extends WP_Customize_Control
         $this->menus = wp_get_nav_menus($options);
         parent::__construct( $manager, $id, $args );
     }
-
-	public function enqueue() {
-			wp_enqueue_script('jquery');
-	}
    
    /**
      * Render the content on the theme customizer page

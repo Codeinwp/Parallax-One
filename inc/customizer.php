@@ -95,6 +95,19 @@ function parallax_one_customize_register( $wp_customize ) {
 		'settings' => 'parallax_one_copyright',
 		'priority'    => 2,
 	));
+	
+	
+	/*SOCIALS REPEATER*/
+	require_once ( 'class/parallax-one-socials-dropdown-custom-control.php');
+	$wp_customize->add_setting( 'parallax_one_social_icons', array(
+	) );
+	$wp_customize->add_control( new Parallax_One_Social_Icons_Repeater( $wp_customize, 'parallax_one_social_icons', array(
+		'label'   => __('Add new social icon','parallax-one'),
+		'section' => 'parallax_one_footer_section',
+		'settings' => 'parallax_one_social_icons',
+		'priority' => 3
+		
+	) ) );
 
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );

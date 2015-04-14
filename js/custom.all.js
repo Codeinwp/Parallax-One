@@ -33,7 +33,7 @@ var callback_menu_button_align = function () {
         var menuWidth = jQuery("#stamp-navigation").width();
         var containerWidth = jQuery('.container').width();
 
-        if ( menuWidth + logoWidth > containerWidth )
+        if ( menuWidth + logoWidth + 10 > containerWidth )
         {
             jQuery('#stamp-navigation').addClass('menu-align-center');
             jQuery('.navbar-header').addClass('centered-logo');

@@ -1995,13 +1995,10 @@ a:hover {
 		max-width: 80px;
 	}
 
-	.sticky-navigation .main-navigation li.has_children a {
+	.sticky-navigation .main-navigation > li.has_children > a {
 		line-height: 34px;
-		padding: 8px 15px 8px 8px;
-	}
-	.sticky-navigation .main-navigation li.has_children > .dropdownmenu {
-		position: absolute;
-		top: 15px;
+		line-height: 18px;
+		padding: 26px 18px;
 	}
 
 	.sticky-navigation .login-register {
@@ -2198,6 +2195,10 @@ a:hover {
 	.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
 		max-height: 2000px;
 	}	
+	
+	#stamp-navigation {
+		float: none;
+	}
 
 }
 

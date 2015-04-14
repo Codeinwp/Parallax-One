@@ -60,10 +60,17 @@
                         
                     </div>
                     
-                    <!-- MENU -->			
-					<?php 
-						wp_nav_menu( array( 'theme_location' => 'primary',	'container_class' => 'navbar-collapse collapse', 'container_id'    => 'stamp-navigation', 'menu_class' => 'nav navbar-nav navbar-right main-navigation small-text', 'fallback_cb' => 'parallax_one_wp_page_menu' ) ); 
-					?>
+                    <!-- MENU -->	
+                    <div class="navbar-collapse collapse" id="stamp-navigation">		
+    					<?php 
+    						wp_nav_menu( 
+                                array( 
+                                    'theme_location'    => 'primary',
+                                    'container'         => false,
+                                    'menu_class'        => 'nav navbar-nav navbar-right main-navigation small-text', 
+                                    'fallback_cb'       => 'parallax_one_wp_page_menu' ) );
+    					?>
+                    </div>
 					<!-- /END MENU -->
                 </div>
                 <!-- /END CONTAINER -->

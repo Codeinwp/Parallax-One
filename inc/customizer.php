@@ -10,20 +10,14 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
- 
-
- 
 
 function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
-	
-	
-	
 	/********************************************************/
-	/************** GENERAL OPTIONS  ***************/
+	/************** GENERAL OPTIONS  ************************/
 	/********************************************************/
 	
 	$wp_customize->add_section( 'parallax_one_general_section' , array(
@@ -32,13 +26,12 @@ function parallax_one_customize_register( $wp_customize ) {
       	'description' => __('Paralax One theme general options','parallax-one'),
 	));
 	
-	
 	/* LOGO	*/
 	$wp_customize->add_setting( 'paralax_one_logo', array(
-	'default' => get_template_directory_uri().'/images/logo-nav.png',
-		'sanitize_callback' => 'esc_url_raw'
+		'default' => get_stylesheet_directory_uri().'/images/logo-nav.png',
+		'sanitize_callback' => 'esc_url'
 	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_logo', array(
 	      	'label'    => __( 'Logo', 'parallax-one' ),
 	      	'section'  => 'parallax_one_general_section',
 	      	'settings' => 'paralax_one_logo',
@@ -54,6 +47,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'type' => 'checkbox',
 				'label' => __('Disable preloader?','parallax-one'),
+				'description' => __('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
 				'section' => 'parallax_one_general_section',
 				'settings' => 'paralax_one_disable_preloader',
 				'priority'    => 2,

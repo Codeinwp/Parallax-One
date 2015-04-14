@@ -69,11 +69,11 @@
 						
 						<?php
 
-							$parallax_one = get_theme_mod('zerif_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
+							$parallax_one = get_theme_mod('paralax_one_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
 
 							if(!empty($parallax_one)):
 
-								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
+								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
 									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
 

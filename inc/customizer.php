@@ -26,7 +26,7 @@ function parallax_one_customize_register( $wp_customize ) {
       	'description' => __('Paralax One theme general options','parallax-one'),
 	));
 	
-	/* LOGO	*/
+	/* Logo	*/
 	$wp_customize->add_setting( 'paralax_one_logo', array(
 		'default' => get_stylesheet_directory_uri().'/images/logo-nav.png',
 		'sanitize_callback' => 'esc_url'
@@ -56,7 +56,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	
 	/********************************************************/
-	/************** FOOTER OPTIONS  ***************/
+	/************** FOOTER OPTIONS  *************************/
 	/********************************************************/	
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
@@ -65,20 +65,22 @@ function parallax_one_customize_register( $wp_customize ) {
       	'description' => __('Paralax One theme footer options','parallax-one'),
 	));	
 	
-	
 	/* Footer Menu */
+	
 	require_once ( 'class/parallax-one-menu-dropdown-custom-control.php');
-	$wp_customize->add_setting( 'menu_dropdown_setting', array(
+	
+	$wp_customize->add_setting( 'parallax_one_menu_dropdown_setting', array(
 		'default'        => '',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-	$wp_customize->add_control( new Parallax_One_Menu_Dropdown_Custom_Control( $wp_customize, 'menu_dropdown_setting', array(
+	$wp_customize->add_control( new Parallax_One_Menu_Dropdown_Custom_Control( $wp_customize, 'parallax_one_menu_dropdown_setting', array(
 		'label'   => __('Footer menu','parallax-one'),
 		'section' => 'parallax_one_footer_section',
-		'settings'   => 'menu_dropdown_setting',
+		'settings'   => 'parallax_one_menu_dropdown_setting',
 		'priority' => 1
 	) ) );
 	
-	/* COPYRIGHT */
+	/* Copyright */
 	$wp_customize->add_setting( 'parallax_one_copyright', array(
 		'default' => '&copy;Themeisle',
 		'sanitize_callback' => 'parallax_one_sanitize_text'
@@ -91,16 +93,18 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	
 	
-	/*SOCIALS REPEATER*/
+	/* Socials icons */
+	
 	require_once ( 'class/parallax-one-socials-dropdown-custom-control.php');
+	
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(
-	) );
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
 	$wp_customize->add_control( new Parallax_One_Social_Icons_Repeater( $wp_customize, 'parallax_one_social_icons', array(
 		'label'   => __('Add new social icon','parallax-one'),
 		'section' => 'parallax_one_footer_section',
 		'settings' => 'parallax_one_social_icons',
 		'priority' => 3
-		
 	) ) );
 
 }
@@ -124,8 +128,3 @@ function parallax_one_customizer_script() {
 	wp_enqueue_script( 'parallax_one_customizer_script', get_template_directory_uri() . '/js/parallax_one_customizer.js', array("jquery"),'', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
-
-
-
-
-

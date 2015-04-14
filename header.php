@@ -48,9 +48,11 @@
                         <!-- LOGO ON STICKY NAV BAR -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
                             <span class="sr-only"><?php _e('Toggle navigation','parallax-one'); ?></span>
-                            <span class="icon-grid-2x2"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
-                        
+                     
                         <!-- LOGO -->
                         <a class="navbar-brand" href="#">
                             <img src="<?php echo get_template_directory_uri();?>/images/logo-nav.png" alt="">

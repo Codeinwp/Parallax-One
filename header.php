@@ -78,8 +78,14 @@
 									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
-
-							endif;
+								
+							else:
+							
+								echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								
+								echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+							
+							endif;	
 
 						?>
 

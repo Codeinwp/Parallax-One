@@ -1595,6 +1595,10 @@ strong,
 	padding: 10px;
 }
 
+.footer-links li a {
+	color:#454545;
+}
+
 .footer-links li a:hover {
 	text-decoration: none;
 }

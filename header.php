@@ -23,12 +23,24 @@
 	<!-- =========================
      PRE LOADER       
     ============================== -->
-    <div class="preloader">
-        <div class="status">
-            &nbsp;
-        </div>
-    </div>
-	
+	<?php
+		
+	 global $wp_customize;
+
+	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
+	 
+		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		
+		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+			 
+			echo '<div class="preloader">';
+				echo '<div class="status">&nbsp;</div>';
+			echo '</div>';
+			
+		endif;	
+
+	endif; ?>
+
 
 	<!-- =========================
      SECTION: HOME / HEADER  
@@ -48,20 +60,48 @@
                         <!-- LOGO ON STICKY NAV BAR -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
                             <span class="sr-only"><?php _e('Toggle navigation','parallax-one'); ?></span>
-                            <span class="icon-grid-2x2"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                         </button>
-                        
+                     
                         <!-- LOGO -->
-                        <a class="navbar-brand" href="#">
-                            <img src="<?php echo get_template_directory_uri();?>/images/logo-nav.png" alt="">
-                        </a>
-                        
+						
+						<?php
+
+							$parallax_one = get_theme_mod('paralax_one_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
+
+							if(!empty($parallax_one)):
+
+								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
+
+									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
+
+								echo '</a>';
+								
+							else:
+							
+								echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								
+								echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+							
+							endif;	
+
+						?>
+
                     </div>
                     
-                    <!-- MENU -->			
-					<?php 
-						wp_nav_menu( array( 'theme_location' => 'primary',	'container_class' => 'navbar-collapse collapse', 'container_id'    => 'stamp-navigation', 'menu_class' => 'nav navbar-nav navbar-right main-navigation small-text', 'fallback_cb' => 'parallax_one_wp_page_menu' ) ); 
-					?>
+                    <!-- MENU -->	
+                    <div class="navbar-collapse collapse" id="stamp-navigation">		
+    					<?php 
+    						wp_nav_menu( 
+                                array( 
+                                    'theme_location'    => 'primary',
+                                    'container'         => false,
+                                    'menu_class'        => 'nav navbar-nav navbar-right main-navigation small-text', 
+                                    'fallback_cb'       => 'parallax_one_wp_page_menu' ) );
+    					?>
+                    </div>
 					<!-- /END MENU -->
                 </div>
                 <!-- /END CONTAINER -->

@@ -831,7 +831,6 @@ strong,
    3.2 SECTION: CLIENTS LIST    
 -----------------------------------------*/
 .client-logos {
-	border-bottom: 1px solid #dadfe3;
 	margin-bottom: 0;
 	z-index: 1;
 }
@@ -845,15 +844,19 @@ strong,
 .client-logos li img {
 	max-height: 40px;
 	opacity: 0.6;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
 }
 
 .client-logos li img:hover {
 	opacity: 1;
-	cursor: pointer;
+	-webkit-filter: initial;
+	filter: initial;
 }
 
 .clients {
 	background: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid #dadfe3
 }
 
 /*---------------------------------------
@@ -1444,14 +1447,22 @@ strong,
 }
 
 .feedback .pic-container {
+	top: -40px;
+	width: 100%;
+	position: absolute;
+}
+
+.feedback .pic-container-inner {
 	border-radius: 50%;
 	display: inline-block;
 	overflow: hidden;
-	width: 60px;
-	height: 60px;
+	width: 80px;
+	height: 80px;
 	border: 3px solid #ffffff;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
+	-webkit-box-shadow: 0px 0px 0px 1px #008ed6;
+  	box-shadow: 0px 0px 0px 1px #008ed6;
 }
 
 .feedback .pic-container img {
@@ -1460,12 +1471,16 @@ strong,
 
 .feedback p {
 	font-style: italic;
-	margin-top: 10px;
-	margin-bottom: 25px;
+	margin-top: 20px;
+	margin-bottom: 0;
 }
 
 .feedback h5 {
 	margin-bottom: 0;
+}
+
+.feedback-text-wrap {
+	padding: 0 35px;
 }
 
 .testimonials-wrap .testimonials-box {
@@ -1476,33 +1491,21 @@ strong,
 }
 
 .testimonials-wrap .testimonials-box .feedback {
-	padding: 40px 35px 40px 35px;
-	margin: 0 0 100px 0;
-	background: #ffffff;
-	border-top: 1px solid #eaeaea;
-	border-left: 1px solid #eaeaea;
-  	border-right: 1px solid #eaeaea;
-  	border-bottom: 4px solid #eaeaea;
-	border-radius: 3px;
-	-webkit-transition: all ease 0.55s;
-	transition: all ease 0.55s;
-	position: relative;
+  padding: 40px 0 40px 0;
+  margin: 0 0 100px 0;
+  background: #ffffff;
+  border-top: 1px solid #eaeaea;
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 4px solid #eaeaea;
+  border-radius: 3px;
+  -webkit-transition: all ease 0.55s;
+  transition: all ease 0.55s;
+  position: relative;
 }
 
 .testimonials-wrap .testimonials-box .feedback:hover {
-	border-bottom-color: #008ed6;
-}
-
-.testimonials-wrap .testimonials-box .feedback {
-	border-right: 1px solid #eaeaea;
-}
-
-.testimonials-wrap .testimonials-box:nth-child(3) .feedback {
-	border-right: none;
-}
-
-.testimonials-wrap .testimonials-box:last-child .feedback {
-	border-right: none;
+  border-bottom-color: #008ed6;
 }
 
 /*---------------------------------------
@@ -1718,12 +1721,6 @@ a:hover {
 .input-box:focus,
 .textarea-box:focus {
 	border-color: #008ed6;
-}
-
-/* CLIENT PHOTO */
-.feedback .pic-container {
-	-webkit-box-shadow: 0px 0px 0px 1px #008ed6;
-	box-shadow: 0px 0px 0px 1px #008ed6;
 }
 
 /* BUTTONS*/

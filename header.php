@@ -45,7 +45,7 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/background-images/2.jpg);">
+	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
 
         <!-- COLOR OVER IMAGE -->
         <div class="overlay-layer">	

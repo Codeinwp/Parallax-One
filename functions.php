@@ -165,3 +165,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function parallax_admin_styles() {
+    wp_register_style( 'parallax_admin_stylesheet', get_template_directory_uri() . '/css/admin-style.css' );
+    wp_enqueue_style( 'parallax_admin_stylesheet' );
+}
+add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
+

@@ -80,11 +80,13 @@
 								echo '</a>';
 								
 							else:
-							
-								echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								echo '<div class="header-logo-wrap">';
+
+									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
 								
-								echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
-							
+									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+
+								echo '</div>';							
 							endif;	
 
 						?>

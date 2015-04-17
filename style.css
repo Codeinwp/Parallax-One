@@ -550,6 +550,30 @@ strong,
     height: auto;
 }
 
+h1.site-title {
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+	margin-bottom: 5px;
+	margin-top: 12px;
+}
+
+h2.site-description {
+	font-size: 1rem;
+	line-height: 1rem;
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.navbar-brand {
+	height: auto;
+}
+
+.header-logo-wrap {
+	float: left;
+	text-align: center;
+	padding: 4px 10px;
+}
+
 /* STICKY NAVIGATION AND LOGO */
 #stamp-navigation {
 	float: right;
@@ -575,7 +599,6 @@ strong,
 }
 
 .sticky-navigation .navbar-brand img {
-    max-width: 80px;
     -webkit-backface-visibility: hidden;
 }
 

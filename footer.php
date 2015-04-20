@@ -13,58 +13,46 @@
 
         <div class="container">
             <div class="footer-widget-wrap">
-
-                <div class="col-sm-3 widget-box">
-                    <div class="widget widget_recent_entries">        
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <ul>
-                            <li><a href="#">Solace of a lonely&nbsp;highway</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/25/hello-world-2/">Write with purpose</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/24/day-at-the-beach/">Tree on a&nbsp;lake</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/23/dont-stop-questioning/">Don’t stop questioning</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/15/overheard-this-morning/">Overheard this morning</a></li>
-                        </ul>
-                    </div><!-- .widget -->
-                </div>
-
-                <div class="col-sm-3 widget-box">
-                    <div class="widget widget_recent_entries">        
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <ul>
-                            <li><a href="#">Solace of a lonely&nbsp;highway</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/25/hello-world-2/">Write with purpose</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/24/day-at-the-beach/">Tree on a&nbsp;lake</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/23/dont-stop-questioning/">Don’t stop questioning</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/15/overheard-this-morning/">Overheard this morning</a></li>
-                        </ul>
-                    </div><!-- .widget -->
-                </div>
-
-                <div class="col-sm-3 widget-box">
-                    <div class="widget widget_recent_entries">        
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <ul>
-                            <li><a href="#">Solace of a lonely&nbsp;highway</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/25/hello-world-2/">Write with purpose</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/24/day-at-the-beach/">Tree on a&nbsp;lake</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/23/dont-stop-questioning/">Don’t stop questioning</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/15/overheard-this-morning/">Overheard this morning</a></li>
-                        </ul>
-                    </div><!-- .widget -->
-                </div>
-
-                <div class="col-sm-3 widget-box">
-                    <div class="widget widget_recent_entries">        
-                        <h3 class="widget-title">Recent Posts</h3>
-                        <ul>
-                            <li><a href="#">Solace of a lonely&nbsp;highway</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/25/hello-world-2/">Write with purpose</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/24/day-at-the-beach/">Tree on a&nbsp;lake</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/23/dont-stop-questioning/">Don’t stop questioning</a></li>
-                            <li><a href="https://twentytwelvedemo.wordpress.com/2012/03/15/overheard-this-morning/">Overheard this morning</a></li>
-                        </ul>
-                    </div><!-- .widget -->
-                </div>
+			
+				<?php
+					if( is_active_sidebar( 'footer-area' ) ){
+				?>
+						<div class="col-sm-3 widget-box">
+							<?php
+								dynamic_sidebar( 'footer-area' );
+							?>
+						</div>
+				
+				<?php
+					}
+					if( is_active_sidebar( 'footer-area-2' ) ){
+				?>
+						<div class="col-sm-3 widget-box">
+							<?php
+								dynamic_sidebar( 'footer-area-2' );
+							?>
+						</div>
+				<?php
+					}
+					if( is_active_sidebar( 'footer-area-3' ) ){
+				?>
+						<div class="col-sm-3 widget-box">
+						   <?php
+								dynamic_sidebar( 'footer-area-3' );
+							?>
+						</div>
+				<?php
+					}
+					if( is_active_sidebar( 'footer-area-4' ) ){
+				?>
+						<div class="col-sm-3 widget-box">
+							<?php
+								dynamic_sidebar( 'footer-area-4' );
+							?>
+						</div>
+				<?php
+					}
+				?>
 
             </div><!-- .footer-widget-wrap -->
         </div><!-- .footer-widget-wrap -->

@@ -93,6 +93,15 @@ function parallax_one_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	
+	register_sidebars(4, array(
+		'name' => __('Footer area %d','parallax-one'),
+		'id' => 'footer-area',
+		'before_widget' => '<div class="widget widget_recent_entries">',
+		'after_widget'  => '</div>',
+		'before_title'=>'<h3 class="widget-title">',
+		'after_title'=>'</h3>'
+	) );
 }
 add_action( 'widgets_init', 'parallax_one_widgets_init' );
 

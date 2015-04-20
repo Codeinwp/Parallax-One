@@ -37,6 +37,9 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'settings' => 'paralax_one_logo',
 			'priority'    => 1,
 	)));
+	$wp_customize->get_setting( 'paralax_one_logo' )->transport = 'postMessage';
+	
+	
 	
 	/* Disable preloader */
 	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
@@ -62,11 +65,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => __( 'Footer options', 'parallax-one' ),
       	'priority'    => 31,
-      	'description' => __('Paralax One theme footer options','parallax-one'),
+      	'description' => __('The main content of this section is customizable in: <br/>Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	
 	/* Footer Menu */
-	
 	require_once ( 'class/parallax-one-menu-dropdown-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_menu_dropdown_setting', array(
@@ -80,6 +82,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'priority' => 1
 	) ) );
 	
+	
 	/* Copyright */
 	$wp_customize->add_setting( 'parallax_one_copyright', array(
 		'default' => '&copy;Themeisle',
@@ -91,10 +94,10 @@ function parallax_one_customize_register( $wp_customize ) {
 		'settings' => 'parallax_one_copyright',
 		'priority'    => 2,
 	));
+	$wp_customize->get_setting( 'parallax_one_copyright' )->transport = 'postMessage';
 	
 	
 	/* Socials icons */
-	
 	require_once ( 'class/parallax-one-socials-dropdown-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(

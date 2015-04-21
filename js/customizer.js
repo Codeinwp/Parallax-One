@@ -33,4 +33,28 @@
 			}
 		} );
 	} );
+	//Logo
+	wp.customize("paralax_one_logo", function(value) {
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '.navbar-brand  img' ).removeClass( 'paralax_one_only_customizer' );
+				$( '.header-logo-wrap' ).addClass( 'paralax_one_only_customizer' );
+			}
+			else {
+				$( '.navbar-brand  img' ).addClass( 'paralax_one_only_customizer' );
+				$( '.header-logo-wrap' ).removeClass( 'paralax_one_only_customizer' );
+			}
+				
+            $(".navbar-brand img").attr( "src", to );
+			
+        } );
+    });
+	//Copyright
+	wp.customize("parallax_one_copyright", function(value) {
+        value.bind(function( to ) {
+			$( '.parallax_one_copyright_content' ).text( to );
+	    } );
+    });
+	
+	
 } )( jQuery );

@@ -14,7 +14,11 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<style>
+	.paralax_one_only_customizer{
+		display:none !important;
+	}
+</style>
 <?php wp_head(); ?>
 </head>
 
@@ -45,7 +49,7 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/background-images/2.jpg);">
+	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
 
         <!-- COLOR OVER IMAGE -->
         <div class="overlay-layer">	
@@ -68,9 +72,12 @@
                         <!-- LOGO -->
 						
 						<?php
-
+							global $wp_customize;
+							
 							$parallax_one = get_theme_mod('paralax_one_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
 
+							
+							
 							if(!empty($parallax_one)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
@@ -78,13 +85,26 @@
 									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
-								
+							
 							else:
 							
-								echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								if( isset( $wp_customize ) ):
 								
-								echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
+
+										echo '<img src="" alt="'.get_bloginfo('title').'" class="paralax_one_only_customizer">';
+
+									echo '</a>';
+								
+								endif;
 							
+								echo '<div class="header-logo-wrap">';
+
+									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								
+									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+
+								echo '</div>';							
 							endif;	
 
 						?>

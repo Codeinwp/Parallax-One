@@ -1,5 +1,22 @@
 
 
+### 1.0.0 - 21/04/2015
+
+ Changes: 
+
+
+ * Added css
+ * Update testimonials css
+ * Fixed #11 Site title and Tagline
+ * Fixed #9 Social icons repreater in customizer need some design
+ * added 4 sidebar sections in footer
+ * added transport postMessage
+ * added logos section
+ * Merge pull request #15 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 14/04/2015
 
  Changes: 

@@ -128,6 +128,6 @@ function parallax_one_sanitize_text( $input ) {
 
 
 function parallax_one_customizer_script() {
-	wp_enqueue_script( 'parallax_one_customizer_script', get_template_directory_uri() . '/js/parallax_one_customizer.js', array("jquery"),'', true  );
+	wp_enqueue_script( 'parallax_one_customizer_script', get_template_directory_uri() . '/js/parallax_one_customizer.js', array("jquery","jquery-ui-draggable"),'', true  );
 }
 add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );

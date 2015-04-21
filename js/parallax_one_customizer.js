@@ -71,5 +71,12 @@ jQuery(document).ready(function(){
 	jQuery("#parallax_one_icons_repeater").on('keyup', '.parallax_one_icon_link',function(){	 
 		 parallax_one_refresh_icon_values();
 	});
+	
+	/*Drag and drop to change icons order*/
+	jQuery(".parallax_one_droppable").sortable({
+		update: function( event, ui ) {
+			parallax_one_refresh_icon_values();
+		}
+	});	
 
 });

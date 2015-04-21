@@ -31,4 +31,7 @@ button.parallax_one_remove_field {
 #parallax_one_new_field {
 	width: 100%;
 }
+.customize-control-widget_form .widget-control-save {
+	display:block !important;
+}
 

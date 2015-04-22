@@ -6,6 +6,7 @@
 	width: 100%;
 	float: left;
 	padding: 5px 0;
+	cursor:move;
 }
 .parallax_one_repeater_container label {
 	float: left;
@@ -34,4 +35,6 @@ button.parallax_one_remove_field {
 .customize-control-widget_form .widget-control-save {
 	display:block !important;
 }
-
+.parallax_one_icons_repeater{
+	float:left;
+}

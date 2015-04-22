@@ -104,12 +104,17 @@ function parallax_one_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Logos section', 'zerif' ),
+		'name'          => __( 'Logos section', 'parallax-one' ),
 		'id'            => 'parallax-one-logos',
 		'before_widget' => '<li>',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'after_widget'  => '</li>'
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Customers section', 'parallax-one' ),
+		'id'            => 'parallax-one-customers',
+		'before_widget' => '',
+		'after_widget'  => ''
 	) );
 	
 }
@@ -211,6 +216,9 @@ add_action('widgets_init', 'parallax_one_register_widgets');
 function parallax_one_register_widgets() {
 	require_once ( 'inc/class/parallax-one-logos-widget.php');
 	register_widget( 'parallax_one_logos_widget' );
+	
+	require_once ( 'inc/class/parallax-one-customers-widget.php');
+	register_widget( 'parallax_one_customer_widget' );
 }
 
 
@@ -230,4 +238,19 @@ function parallax_one_logos_widget_scripts() {
 
 }
 
+
+
+/*********************************
+*******Customers Widget******
+**********************************/
+
+add_action('admin_enqueue_scripts', 'parallax_one_customers_widget_scripts');
+
+function parallax_one_customers_widget_scripts() {
+
+    wp_enqueue_media();
+
+    wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
+
+}
 

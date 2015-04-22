@@ -49,9 +49,11 @@ if( is_active_sidebar( 'parallax-one-logos' ) ){
 
 			<div class="row no-gutters testimonials-wrap">
 				<?php
-					if( is_active_sidebar( 'parallax-one-customers' ) ){
-						dynamic_sidebar( 'parallax-one-customers' );
+				
+					if( is_active_sidebar( 'parallax-one-customers-sidebar' ) ){
+						dynamic_sidebar( 'parallax-one-customers-sidebar' );
 					}
+					
 				?>
 			</div>
 			

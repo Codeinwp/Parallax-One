@@ -17,6 +17,31 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	/********************************************************/
+	/************** SECTIONS ORDER  ************************/
+	/********************************************************/
+
+	require_once ( 'class/parallax-one-sections-order-custom-control.php');
+	$wp_customize->add_section( 'parallax_one_sections_order' , array(
+			'title'       => __( 'Sections order', 'parallax-one' ),
+			'priority'    => 29,
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_sections_control', array(
+		'default'        => '',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Parallax_One_Sections_Order( $wp_customize, 'parallax_one_sections_control',
+		array(
+			'label'   => __('Sections order','parallax-one'),
+			'settings'   => 'parallax_one_sections_control',
+			'section' => 'parallax_one_sections_order',
+			'priority' => 1
+	   )
+	));	
+	
+
+	/********************************************************/
 	/************** GENERAL OPTIONS  ************************/
 	/********************************************************/
 	

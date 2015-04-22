@@ -23,6 +23,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	require_once ( 'class/parallax-one-sections-order-custom-control.php');
 	$wp_customize->add_section( 'parallax_one_sections_order' , array(
 			'title'       => __( 'Sections order', 'parallax-one' ),
+			'description' => __('To change the sections order please drag the name of the section and drop it where you want the section to be.','parallax-one'),
 			'priority'    => 29,
 	));
 	

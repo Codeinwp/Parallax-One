@@ -1,6 +1,7 @@
 <?php
-if( class_exists( 'WP_Customize_Control' ) ):
- 
+if ( ! class_exists( 'WP_Customize_Control' ) )
+	return NULL;
+
 class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 	
 		public function __construct( $manager, $id, $args = array() ) {
@@ -137,4 +138,3 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 			<?php
 		}
 }
-endif;

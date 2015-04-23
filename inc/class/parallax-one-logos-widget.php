@@ -1,4 +1,8 @@
 <?php
+
+if ( ! class_exists( 'WP_Widget' ) )
+	return NULL;
+
 class parallax_one_logos_widget extends WP_Widget {
 
 

@@ -1,4 +1,8 @@
 <?php
+
+if ( ! class_exists( 'WP_Customize_Control' ) )
+	return NULL;
+
 	class Parallax_One_Logos_Widgets extends WP_Customize_Control
 	{
 		public function render_content()

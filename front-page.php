@@ -15,7 +15,7 @@ get_header();
 	
 	$sections = json_decode($json_order);
 	
-	$sections_array = array('parallax_one_logos_section','parallax_one_happy_customers_section');
+	$sections_array = array('parallax_one_happy_customers_section');
 	
 	if(!empty($sections)){
 		$files = array();

@@ -1,4 +1,8 @@
 <?php
+
+if ( ! class_exists( 'WP_Widget' ) )
+	return NULL;
+
 class parallax_one_logos_widget extends WP_Widget {
 
 
@@ -7,7 +11,7 @@ class parallax_one_logos_widget extends WP_Widget {
 
         $widget_ops = array('classname' => 'parallax_one_logos');
 
-        $this->WP_Widget('parallax_one_logos-widget', 'Parallax One - Logos', $widget_ops);
+        $this->WP_Widget('parallax_one_logos-widget', 'Parallax One - Logos widget', $widget_ops);
 
     }
 

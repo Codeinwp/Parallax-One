@@ -60,13 +60,16 @@
 
         <div class="footer-bottom-wrap">
 			<?php
+				global $wp_customize;
 			
 				/* COPYRIGHT */
 				$paralax_one_copyright = get_theme_mod('parallax_one_copyright','&copy;Themeisle');
 				
 				if( !empty($paralax_one_copyright) ){
 					echo '<span class="parallax_one_copyright_content">'.$paralax_one_copyright.'</span>';
-				}	
+				} elseif ( isset( $wp_customize )   ) {
+					echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
+				}
 			
 				/* OPTIONAL FOOTER LINKS */
 			

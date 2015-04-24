@@ -103,13 +103,6 @@ function parallax_one_widgets_init() {
 		'after_title'=>'</h3>'
 	) );
 	
-	register_sidebar( array(
-		'name'          => __( 'Logos section', 'parallax-one' ),
-		'id'            => 'parallax-one-logos',
-		'before_widget' => '<li>',
-		'after_widget'  => '</li>'
-	) );
-	
 }
 add_action( 'widgets_init', 'parallax_one_widgets_init' );
 
@@ -204,19 +197,11 @@ add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
 
 
-add_action('widgets_init', 'parallax_one_register_widgets');
-
-function parallax_one_register_widgets() {
-	require_once ( 'inc/class/parallax-one-logos-widget.php');
-	register_widget( 'parallax_one_logos_widget' );
-}
-
-
-
 
 /****************************
 *******Logos Widget******
 ****************************/
+require_once ( 'inc/class/parallax-one-logos-widget.php');
 
 add_action('admin_enqueue_scripts', 'parallax_one_logos_widget_scripts');
 
@@ -228,7 +213,62 @@ function parallax_one_logos_widget_scripts() {
 
 }
 
+/* Default widgets on Logos sidebar */
 
+add_action( 'widgets_init', 'parallax_one_default_widgets_logos' );
+ 
+function parallax_one_default_widgets_logos()
+{
+	register_widget( 'parallax_one_logos_widget' );
+	
+	$active_widgets = get_option( 'sidebars_widgets' );
+	
+	$parallax_one_sidebars = array ( 'parallax-one-logos' => 'parallax-one-logos' );
+	
+	/*Register sidebar*/
+	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
+
+		if( $parallax_one_sidebar == 'parallax-one-logos' ):
+		
+			$parallax_one_name = __( 'Logos section', 'parallax-one' );
+		
+		else:
+		
+			$parallax_one_name = $parallax_one_sidebar;
+			
+		endif;
+		
+		register_sidebar( array(
+			'name'          => $parallax_one_name,
+			'id'            => $parallax_one_sidebar,
+			'before_widget' => '<li>',
+			'after_widget'  => '</li>'
+		) );
+		
+	endforeach;
+	
+    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-logos'] ] )):
+		/* There is already some content. */
+        return;
+    endif;
+	
+	/* Default Logos widgets */
+		
+	for ($parallax_one_counter = 1; $parallax_one_counter <= 6; $parallax_one_counter++) {
+	
+		$active_widgets[ $parallax_one_sidebars['parallax-one-logos'] ][] = 'parallax_one_logos-widget-' . $parallax_one_counter;
+		
+		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#','image_uri' => get_stylesheet_directory_uri().'/images/companies/'.$parallax_one_counter.'.png','new_tab' => '' );
+		
+		update_option( 'widget_parallax_one_logos-widget', $logos_content );
+	 
+	}	
+		update_option( 'sidebars_widgets', $active_widgets );
+	
+
+	
+
+}
 
 /********************************************/
 /********* Happy customer Widget ************/

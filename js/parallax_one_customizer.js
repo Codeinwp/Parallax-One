@@ -71,5 +71,52 @@ jQuery(document).ready(function(){
 	jQuery("#parallax_one_icons_repeater").on('keyup', '.parallax_one_icon_link',function(){	 
 		 parallax_one_refresh_icon_values();
 	});
+	
+	/*Drag and drop to change icons order*/
+	jQuery(".parallax_one_droppable").sortable({
+		update: function( event, ui ) {
+			parallax_one_refresh_icon_values();
+		}
+	});	
 
+});
+
+
+
+/********************************************
+*** Customizer order ***
+*********************************************/
+
+
+function parallax_one_order_refresh_values(){
+
+	var values = [];
+	jQuery("#parallax_order_droppable").find('li').each( function(){ 
+		var section_id = jQuery(this).attr('id');
+		var section_content = jQuery(this).html();
+		
+		if(section_id!='' && section_content!=''){
+			values.push({
+				'section_id' : section_id,
+				'section_content' : section_content
+			}); 
+		}
+	
+	
+	} );
+	jQuery("#order_collector").val(JSON.stringify(values));
+	jQuery("#order_collector").trigger('change');
+	
+}
+
+
+jQuery( document ).ready(function() {
+	
+	jQuery("#parallax_order_droppable").sortable({
+		update: function( event, ui ) {
+			parallax_one_order_refresh_values();
+		}
+	});
+	
+	
 });

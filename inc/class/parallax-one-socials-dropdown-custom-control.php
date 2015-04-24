@@ -1,6 +1,7 @@
 <?php
-if( class_exists( 'WP_Customize_Control' ) ):
- 
+if ( ! class_exists( 'WP_Customize_Control' ) )
+	return NULL;
+
 class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 	
 		public function __construct( $manager, $id, $args = array() ) {
@@ -83,7 +84,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 			if(!is_array($json)) $json = array($values);
 			$it = 0;
  ?>
-			<div id="parallax_one_icons_repeater">
+			<div id="parallax_one_icons_repeater" class="parallax_one_droppable">
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php 
 					if(empty($json[0]->icon_value)) {
@@ -106,7 +107,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 					} else {
 						foreach($json as $icon){
 				?>
-							<div class="parallax_one_repeater_container">
+							<div class="parallax_one_repeater_container parallax_one_draggable">
 								<label>
 									<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
 										<?php
@@ -137,4 +138,3 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 			<?php
 		}
 }
-endif;

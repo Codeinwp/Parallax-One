@@ -1,5 +1,26 @@
 
 
+### 1.0.0 - 24/04/2015
+
+ Changes: 
+
+
+ * Fixed #19, made apply button visible in logos widgets
+ * added drag and drop for repeater icons
+ * added customers widget
+ * Fixed conflict
+ * Merge branch 'cristian-ungureanu-development' into development
+ * Default widgets in customizer for Happy Customers sidebar
+ * added drag and drop to change sections order in customizer->sections order
+ * added description for sections order
+ * added logos section in customizer
+ * added happy customers section in customizer
+ * added default widgets for logos section
+ * Merge pull request #21 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 21/04/2015
 
  Changes: 

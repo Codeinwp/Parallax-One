@@ -9,6 +9,7 @@ get_header();
 </header>
 <!-- /END HOME / HEADER  -->
 
+<div class="content-wrap">
 
 <?php
 	$json_order = get_theme_mod('parallax_one_sections_control');
@@ -31,6 +32,7 @@ get_header();
 	}
 ?>
 
+</div><!-- .content-wrap -->
 
 <?php 
 

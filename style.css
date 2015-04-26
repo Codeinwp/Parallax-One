@@ -583,6 +583,17 @@ h2.site-description {
     opacity: 0;
 }
 
+.navbar-brand {
+	padding: 7px;
+	height: 70px;
+	line-height: 52px;
+}
+
+.navbar-brand > img {
+	max-height: 56px;
+	display: inline-block;
+}
+
 .sticky-navigation {
     background: #ffffff;
     min-height: 70px;
@@ -714,27 +725,6 @@ h2.site-description {
 .menu-align-center #stamp-navigation > ul > li.has_children > .dropdownmenu {
 	top: 4px;
 }
-
-/*
-.menu-align-center {
-	width: 100%;
-}
-
-.menu-align-center .main-navigation {
-	text-align: center;
-	width: 100%;
-	margin-bottom: 10px;
-}
-
-.menu-align-center .main-navigation > li {
-	display: inline-block;
-	float: none;
-}
-
-.menu-align-center .main-navigation > li a {
-	padding: 5px 8px;
-}
-*/
 
 .navbar-inverse .navbar-toggle .icon-bar {
 	background-color: #008ed6;
@@ -2133,8 +2123,8 @@ a:hover {
 		margin-right: 0;
 	}
 
-	.sticky-navigation .navbar-brand {
-		line-height: inherit;
+	.menu-align-center .navbar-header > a {
+		float: left;
 	}
 
 	.single-service {

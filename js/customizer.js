@@ -58,23 +58,6 @@
         } );
     });
 	
-	/***************************************
-	******** LOGOS SECTION ***********
-	****************************************/
-	//Show Logos
-	wp.customize( 'parallax_one_logos_show', function( value ) {
-		value.bind( function( to ) {
-			if ( '1' != to ) {
-				$( '#clients' ).css( {
-					'display': 'block'
-				} );
-			} else {
-				$( '#clients' ).css( {
-					'display': 'none'
-				} );
-			}
-		} );
-	} );
 	
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********

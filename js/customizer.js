@@ -58,23 +58,6 @@
         } );
     });
 	
-	/***************************************
-	******** LOGOS SECTION ***********
-	****************************************/
-	//Show Logos
-	wp.customize( 'parallax_one_logos_show', function( value ) {
-		value.bind( function( to ) {
-			if ( '1' != to ) {
-				$( '#clients' ).css( {
-					'display': 'block'
-				} );
-			} else {
-				$( '#clients' ).css( {
-					'display': 'none'
-				} );
-			}
-		} );
-	} );
 	
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********
@@ -126,6 +109,40 @@
 		} );
 		
     });
+	
+	
+	/******************************************************
+	************ LATEST NEWS SECTION ***************
+	*******************************************************/
+	//Show Latest News
+	wp.customize( 'parallax_one_latest_news_show', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '#section8' ).css( {
+					'display': 'block'
+				} );
+			} else {
+				$( '#section8' ).css( {
+					'display': 'none'
+				} );
+			}
+		} );
+	} );
+	
+	
+	//Title
+	wp.customize("parallax_one_latest_news_title", function(value) {
+		
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '.timeline .timeline-text' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '.timeline .timeline-text' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section8 .timeline-text h2' ).text( to );
+		} );
+		
+    });	
 	
 	/***************************************
 	******** FOOTER SECTION *********

@@ -20,7 +20,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/************** SECTIONS ORDER  ************************/
 	/********************************************************/
 
-	require_once ( 'class/parallax-one-sections-order-custom-control-in-pro.php');
+	require_once ( 'class/parallax-one-display-message-custom-control.php');
 	$wp_customize->add_section( 'parallax_one_sections_order_in_pro' , array(
 			'title'       => __( 'Sections order', 'parallax-one' ),
 			'priority'    => 29,
@@ -30,12 +30,12 @@ function parallax_one_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
 
-	$wp_customize->add_control( new Parallax_One_Sections_Order_In_Pro( $wp_customize, 'parallax_one_sections_order_in_pro',
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_sections_order_in_pro',
 		array(
 			'section' => 'parallax_one_sections_order_in_pro'
-	   )
+	   ), __('Check out the PRO version for full control over homepage sections order !','parallax-one')
 	));	
-	
+
 
 	/********************************************************/
 	/************** GENERAL OPTIONS  ************************/
@@ -77,6 +77,27 @@ function parallax_one_customize_register( $wp_customize ) {
 				'priority'    => 2,
 			)
 	);
+	
+
+	/********************************************************/
+	/************* LOGOS OPTIONS  ***********************/
+	/********************************************************/	
+	
+	
+	$wp_customize->add_section( 'parallax_one_logos_sections_in_pro' , array(
+			'title'       => __( 'Logos section', 'parallax-one' ),
+			'priority'    => 30,
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_logos_sections_in_pro', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_logos_sections_in_pro',
+		array(
+			'section' => 'parallax_one_logos_sections_in_pro'
+	   ), __('Check out the PRO version to add logos section !','parallax-one')
+	));	
 	
 
 	/********************************************************/
@@ -155,18 +176,16 @@ function parallax_one_customize_register( $wp_customize ) {
 			'panel' => 'panel_2'
 	));
 	
-	require_once ( 'class/parallax-one-happy-customers-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_happy_customers_content' );
 
-	$wp_customize->add_control( new Parallax_One_Happy_Customers_Widgets( $wp_customize, 'parallax_one_happy_customers_content',
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_happy_customers_content',
 		array(
 			'section' => 'parallax_one_happy_customers_content',
-	   )
+	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Happy Customers section.<br> There you must add the "Parallax One - Happy Customer widget"','parallax-one')
 	));
 	
 	/* HAPPY CUSTOMERS COLORS */
-	require_once ( 'class/parallax-one-colors-custom-control.php');
 	$wp_customize->add_section( 'parallax_one_happy_customers_colors_section' , array(
 			'title'       => __( 'Colors', 'parallax-one' ),
 			'priority'    => 3,
@@ -175,12 +194,50 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'parallax_one_happy_customers_colors_section' );
 
-	$wp_customize->add_control( new Parallax_One_Colors( $wp_customize, 'parallax_one_happy_customers_colors_section',
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_happy_customers_colors_section',
 		array(
 			'section' => 'parallax_one_happy_customers_colors_section',
-	   )
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));
 
+	/********************************************************/
+	/************ LATEST NEWS OPTIONS  **************/
+	/********************************************************/
+	
+	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
+			'title'       => __( 'Latest news section', 'parallax-one' ),
+			'priority'    => 33
+	));
+	
+	
+	$wp_customize->add_setting( 'parallax_one_latest_news_show');
+
+	$wp_customize->add_control(
+		'parallax_one_latest_news_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Latest news section?','parallax-one'),
+			'description' => __('If you check this box, the Latest news section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_latest_news_section',
+			'priority'    => 1
+		)
+	);
+	$wp_customize->get_setting( 'parallax_one_latest_news_show' )->transport = 'postMessage';
+	
+	
+	
+	$wp_customize->add_setting( 'parallax_one_latest_news_title', array(
+		'default' => __('Latest news','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_latest_news_title', array(
+		'label'    => __( 'Main title', 'parallax-one' ),
+		'section'  => 'parallax_one_latest_news_section',
+		'settings' => 'parallax_one_latest_news_title',
+		'priority'    => 2
+	));
+	$wp_customize->get_setting( 'parallax_one_latest_news_title' )->transport = 'postMessage';
+	
 	/********************************************************/
 	/************** FOOTER OPTIONS  *************************/
 	/********************************************************/	

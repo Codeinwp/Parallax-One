@@ -2,22 +2,26 @@
  SECTION: LATEST NEWS   
 ============================== -->
 <?php
+	global $wp_customize;
+
 	$parallax_one_latest_news_show = get_theme_mod('parallax_one_latest_news_show');
+	
 	if( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ){
+		echo '<section class="brief timeline grey-bg" id="section8">';
+	} elseif ( isset( $wp_customize )   ) {
+		echo '<section class="brief timeline grey-bg paralax_one_only_customizer" id="section8">';
+	}	
 		
-		$parallax_one_total_posts = get_option('posts_per_page');
-		
-		if( $parallax_one_total_posts > 0 ) {
+	if( ( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ) || isset( $wp_customize ) ) {	
+
 ?>
 
-			<section class="brief timeline grey-bg" id="section8">
 				<div class="container">
 					
 					<div class="row">
 						
 						<!-- TIMELINE HEADING / TEXT  -->
 						<?php
-							global $wp_customize;
 								
 							$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title','Latest news');
 							if(!empty($parallax_one_latest_news_title)){
@@ -40,7 +44,7 @@
 
 								<?php
 									
-									$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_one_total_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+									$args = array( 'post_type' => 'post', 'order' => 'DESC','ignore_sticky_posts' => true );
 									$loop = new WP_Query( $args );
 									
 									while ( $loop->have_posts() ) : $loop->the_post();
@@ -106,6 +110,4 @@
 				</div>
 			</section>
 <?php
-		}
-	}
-?>
+	} 

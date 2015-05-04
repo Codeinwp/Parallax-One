@@ -2,16 +2,23 @@
  SECTION: CUSTOMERS   
 ============================== -->
 <?php
+	global $wp_customize;
+	
 	$parallax_one_happy_customers_show = get_theme_mod('parallax_one_happy_customers_show');
 	if( isset($parallax_one_happy_customers_show) && $parallax_one_happy_customers_show != 1 ){
+		echo '<section class="testimonials white-bg" id="section10">';
+	} elseif ( isset( $wp_customize )   ) {
+		echo '<section class="testimonials white-bg paralax_one_only_customizer" id="section10">';
+	}
+	
+	if( ( isset($parallax_one_happy_customers_show) && $parallax_one_happy_customers_show != 1 ) || isset( $wp_customize ) ){
 ?>
-		<section class="testimonials white-bg" id="section10">
 			<div class="container">
 
 				<!-- SECTION HEADER -->
 				<div class="section-header">
 					<?php
-						global $wp_customize;
+						
 						
 						$parallax_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title','Happy Customers');
 						

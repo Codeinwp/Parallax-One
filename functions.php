@@ -195,6 +195,22 @@ add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 /***********WIDGETS***********/
 /*********************************/
 
+/********************************************/
+/************* Project Team ***************/
+/********************************************/
+
+require_once ( 'inc/class/parallax-one-project-team-widget.php');
+
+add_action('admin_enqueue_scripts', 'parallax_one_project_team_widget_scripts');
+
+function parallax_one_project_team_widget_scripts() {
+	
+	wp_enqueue_media();
+
+    wp_enqueue_script('paralax_one_team_widget_script', get_template_directory_uri() . '/js/widget-team.js', false, '1.0', true);
+
+}
+
 
 /********************************************/
 /********* Happy customer Widget ************/
@@ -212,22 +228,33 @@ function parallax_one_customers_widget_scripts() {
 
 }
 
+
+
+
+
 /* Default widgets on Happy customers sidebar */
  
-add_action( 'widgets_init', 'parallax_one_default_widgets_happy_customers' );
- 
-function parallax_one_default_widgets_happy_customers()
+add_action( 'widgets_init', 'parallax_one_default_widgets_project_team' );
+
+function parallax_one_default_widgets_project_team()
 {
+	register_widget( 'parallax_one_project_team_widget' );
+	
 	register_widget( 'parallax_one_happy_customer_widget' );
+	
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
 	
-	$parallax_one_sidebars = array ( 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' );
+	$parallax_one_sidebars = array ( 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar', 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' );
 	
 	/* Register sidebar */
 	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
 	
-		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
+		if( $parallax_one_sidebar == 'parallax-one-team-sidebar' ):
+		
+			$parallax_one_name = __( 'Project Team section', 'parallax-one' );
+			
+		elseif( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
 		
 			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
 		
@@ -247,15 +274,53 @@ function parallax_one_default_widgets_happy_customers()
         );
 		
     endforeach;
-	
-    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )):
+
+
+    if ( ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] )) || ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )) ):
 		/* There is already some content. */
         return;
     endif;
 	
     $parallax_one_counter = 1;
 	
+	$colector = array(array('icon_value'=>'icon-social-facebook','icon_link' => '#'),array('icon_value'=>'icon-social-twitter','icon_link' => '#'),array('icon_value'=>'icon-social-pinterest','icon_link' => '#'));
+	
+	$json_colector = json_encode($colector);
+	
+	/* Default Project Team widgets */
+	
+    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][0] = 'parallax_one_project_team-widget-' . $parallax_one_counter;
+
+	$project_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/1.jpg' );
+	
+    update_option( 'widget_parallax_one_project_team-widget', $project_team_content );
+ 
+    $parallax_one_counter++;
+
+
+
+    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_project_team-widget-' . $parallax_one_counter;
+
+	$project_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/2.jpg' );
+	
+    update_option( 'widget_parallax_one_project_team-widget', $project_team_content );
+ 
+    $parallax_one_counter++;
+
+
+
+    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_project_team-widget-' . $parallax_one_counter;
+
+	$project_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/3.jpg' );
+	
+    update_option( 'widget_parallax_one_project_team-widget', $project_team_content );
+ 
+    $parallax_one_counter++;	
+
+	
 	/* Default Happy Customer widgets */
+	
+	 $parallax_one_counter = 1;
 	
     $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][0] = 'parallax_one_happy_customer-widget-' . $parallax_one_counter;
 	
@@ -283,6 +348,7 @@ function parallax_one_default_widgets_happy_customers()
  
     $parallax_one_counter++;
 	
-    update_option( 'sidebars_widgets', $active_widgets );
-}
+	
+	update_option( 'sidebars_widgets', $active_widgets );
 
+}

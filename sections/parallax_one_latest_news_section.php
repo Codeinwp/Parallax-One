@@ -2,51 +2,68 @@
  SECTION: LATEST NEWS   
 ============================== -->
 <?php
-	$parallax_one_latest_news_show = get_theme_mod('parallax_one_latest_news_show');
-	if( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ){
+	global $wp_customize;
+	$parallax_number_of_posts = get_option('posts_per_page');
+	if( $parallax_number_of_posts > 0 ) {
+	
+		$parallax_one_latest_news_show = get_theme_mod('parallax_one_latest_news_show');
 		
-		$parallax_one_total_posts = get_option('posts_per_page');
+		if( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ){
+			echo '<section class="brief timeline grey-bg" id="section8">';
+		} elseif ( isset( $wp_customize )   ) {
+			echo '<section class="brief timeline grey-bg paralax_one_only_customizer" id="section8">';
+		}	
 		
-		if( $parallax_one_total_posts > 0 ) {
-?>
+		if( ( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ) || isset( $wp_customize ) ) {	
 
-			<section class="brief timeline grey-bg" id="section8">
-				<div class="container">
-					
-					<div class="row">
+	?>
+
+					<div class="container">
 						
-						<!-- TIMELINE HEADING / TEXT  -->
-						<?php
-							global $wp_customize;
-								
-							$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title','Latest news');
-							if(!empty($parallax_one_latest_news_title)){
-								echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.$parallax_one_latest_news_title.'</h2><div class="colored-line-left"></div></div>';
-							} elseif ( isset( $wp_customize )   ) {
-								echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
-							}
-						?>
-						
-
-						<div class="parallax-slider-whole-wrap">
-							<div class="controls-wrap">
-								<a class="control_next"><div class="icon icon-arrow-carrot-down"></div></a>
-								<a class="control_prev fade-btn"><div class="icon icon-arrow-carrot-up"></div></a>
-							</div>
-
-							<!-- TIMLEINE SCROLLER -->
-							<div id="parallax_slider" class="col-md-12 timeline-section">
-								<ul class="vertical-timeline" id="timeline-scroll">
-
-								<?php
+						<div class="row">
+							
+							<!-- TIMELINE HEADING / TEXT  -->
+							<?php
 									
-									$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_one_total_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
-									$loop = new WP_Query( $args );
-									
-									while ( $loop->have_posts() ) : $loop->the_post();
-								
-								?>
-										<li>
+								$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title','Latest news');
+								if(!empty($parallax_one_latest_news_title)){
+									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.$parallax_one_latest_news_title.'</h2><div class="colored-line-left"></div></div>';
+								} elseif ( isset( $wp_customize )   ) {
+									echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
+								}
+							?>
+							
+
+							<div class="parallax-slider-whole-wrap">
+								<div class="controls-wrap">
+									<a class="control_next"><div class="icon icon-arrow-carrot-down"></div></a>
+									<a class="control_prev fade-btn"><div class="icon icon-arrow-carrot-up"></div></a>
+								</div>
+
+								<!-- TIMLEINE SCROLLER -->
+								<div id="parallax_slider" class="col-md-12 timeline-section">
+									<ul class="vertical-timeline" id="timeline-scroll">
+
+										<?php
+											
+											$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+											query_posts( $args );
+											$i_latest_posts= 0;
+											
+											while ( have_posts() ) : the_post();
+										
+											$i_latest_posts++;
+											
+											
+											if ( !wp_is_mobile() ){
+												if($i_latest_posts % 2 == 1){
+													echo '<li>';
+												}
+											} else  {
+												echo '<li>';
+											}
+										?>
+										
 
 											<div class="timeline-box-wrap">
 												<div class="date small-text strong">
@@ -90,22 +107,28 @@
 													</div>
 												</div>
 											</div>
+											
+										<?php
+										if ( !wp_is_mobile() ){
+											if($i_latest_posts % 4 == 0){
+												echo '</li>';
+											}
+										} else {
+											echo '</li>';
+										}
+										
+										endwhile;
+										
+										 wp_reset_postdata(); 
+										?>
+									</ul>
+								</div>
 
-										</li>
-									<?php
-									endwhile;
-									
-									 wp_reset_postdata(); 
-									?>
-								</ul>
-							</div>
+							</div><!-- .parallax-slider-whole-wrap -->
 
-						</div><!-- .parallax-slider-whole-wrap -->
-
+						</div>
 					</div>
-				</div>
-			</section>
-<?php
-		}
+				</section>
+	<?php
+		} 
 	}
-?>

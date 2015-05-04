@@ -6,6 +6,10 @@
  */
 
 get_header(); ?>
+	</div>
+	<!-- /END COLOR OVER IMAGE -->
+</header>
+<!-- /END HOME / HEADER  -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

@@ -1,27 +1,57 @@
     <!-- =========================
      SECTION: TEAM   
     ============================== -->
-    <section class="team white-bg" id="section9">
-		<div class="container">
-			
-			<!-- SECTION HEADER -->
-            <div class="section-header">
-                <h2 class="dark-text"><strong>Project</strong> Team</h2>
-                <div class="colored-line">
-                </div>
-                <div class="sub-heading">
-                    Cloud computing subscription model out of the box proactive solution.
-                </div>
-            </div>
-			
-			 <!-- MEMBERS -->
-            <div class="row team-member-wrap">
+	<?php
+		global $wp_customize;
+		
+		$parallax_one_project_team_show = get_theme_mod('parallax_one_project_team_show');
+		if( isset($parallax_one_project_team_show) && $parallax_one_project_team_show != 1 ){
+			echo '<section class="team white-bg" id="section9">';
+		} elseif ( isset( $wp_customize )   ) {
+			echo '<section class="team white-bg paralax_one_only_customizer" id="section9">';
+		}
+		
+		if( ( isset($parallax_one_project_team_show) && $parallax_one_project_team_show != 1 ) || isset( $wp_customize ) ){
+	?>
+    
+			<div class="container">
+				
+				<!-- SECTION HEADER -->
+				<div class="section-header">
 				<?php
-					if( is_active_sidebar( 'parallax-one-team-sidebar' ) ){
-						dynamic_sidebar( 'parallax-one-team-sidebar' );
+					$parallax_one_project_team_title = get_theme_mod('parallax_one_project_team_title','Happy Customers');
+					
+					if( !empty($parallax_one_project_team_title) ){
+						echo '<h2 class="dark-text">'.$parallax_one_project_team_title.'</h2><div class="colored-line"></div>';
+					} elseif ( isset( $wp_customize )   ) {
+						echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
+					}
+				
+				?>
+
+				<?php
+					$parallax_one_project_team_subtitle = get_theme_mod('parallax_one_project_team_subtitle','Cloud computing subscription model out of the box proactive solution.');
+
+					if( !empty($parallax_one_project_team_subtitle) ){
+						echo '<div class="sub-heading">'.$parallax_one_project_team_subtitle.'</div>';
+					} elseif ( isset( $wp_customize )   ) {
+						echo '<div class="sub-heading paralax_one_only_customizer"></div>';
 					}
 				?>
-			</div><!-- .row.wow -->
+				</div>
+				
+				 <!-- MEMBERS -->
+				<div class="row team-member-wrap">
+					<?php
+						if( is_active_sidebar( 'parallax-one-team-sidebar' ) ){
+							dynamic_sidebar( 'parallax-one-team-sidebar' );
+						}
+					?>
+				</div><!-- .row.wow -->
+			
+			</div><!-- container  -->
+		</section><!-- #section9 -->
 		
-		</div><!-- container  -->
-    </section><!-- #section9 -->
+	<?php
+		}
+	?>

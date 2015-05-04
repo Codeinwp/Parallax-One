@@ -55,6 +55,67 @@
 			
         } );
     });
+
+
+
+
+	
+	/******************************************************
+	*********** PROJECT TEAM SECTION **************
+	*******************************************************/
+	//Show Happy Customers
+	wp.customize( 'parallax_one_project_team_show', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '#section9' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section9' ).addClass( 'paralax_one_only_customizer' );
+			}
+		} );
+	} );
+	
+	
+	//Title
+	wp.customize("parallax_one_project_team_title", function(value) {
+		
+        value.bind(function( to ) {
+			
+			if( to != '' ) {
+				$( '#section9 .section-header h2' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#section9 .colored-line').removeClass(  'paralax_one_only_customizer' );
+			}
+			else {
+				$( '#section9 .section-header h2' ).addClass( 'paralax_one_only_customizer' );
+				$( '#section9 .section-header .colored-line').addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section9 .section-header h2' ).text( to );
+	    } );
+		
+    });
+	
+	//Subtitle
+	wp.customize("parallax_one_project_team_subtitle", function(value) {
+		
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '#section9 .section-header .sub-heading' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section9 .section-header .sub-heading' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section9 .section-header .sub-heading' ).text( to );
+		} );
+		
+    });
+	
+	
+	
+
+
+
+
+
+
+
 	
 	
 	/******************************************************

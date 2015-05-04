@@ -5,15 +5,14 @@ if ( ! class_exists( 'WP_Widget' ) )
 class parallax_one_project_team_widget extends WP_Widget {
     function parallax_one_project_team_widget() {
         $widget_ops = array('classname' => 'parallax_one_project_team_widget');
-        $this->WP_Widget('parallax_one_project_team_widget-widget', 'Parallax One - Project Team widget', $widget_ops);
+        $this->WP_Widget('parallax_one_project_team-widget', 'Parallax One - Project Team widget', $widget_ops);
     }
     function widget($args, $instance) {
         extract($args);
-        echo $before_widget;
 ?>
 	
                 <!-- MEMBER -->
-                <div class="col-md-3 col-sm-6 team-member-box">
+                <div class="col-md-3 team-member-box">
                     <div class="team-member border-bottom-hover">
                         <div class="member-pic">
 							<?php
@@ -64,7 +63,7 @@ class parallax_one_project_team_widget extends WP_Widget {
 
 				
 <?php
-        echo $after_widget;
+
     }
     function update($new_instance, $old_instance) {
 		$instance = array();
@@ -160,7 +159,7 @@ class parallax_one_project_team_widget extends WP_Widget {
 	<p>
         <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
         <input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
-        <input type="button" class="button button-primary custom_media_button_team" id="custom_media_button_clients" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+        <input type="button" class="button button-primary custom_media_button_team" id="<?php echo $this->get_field_id('image_uri'); ?>_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
     </p>
 	
 	<p>
@@ -173,74 +172,75 @@ class parallax_one_project_team_widget extends WP_Widget {
         <input type="text" name="<?php echo $this->get_field_name('position'); ?>" id="<?php echo $this->get_field_id('position'); ?>" value="<?php if( !empty($instance['position']) ): echo $instance['position']; endif; ?>" class="widefat" />
     </p>
 	
-	<div class="parallax_one_widget_repeater">
-	<?php
-		if(empty($json)) {
-?>
-				<div class="parallax_one_widget_repeater_container">
-					<p>
-						<label><?php _e('Social icon','parallax-one'); ?></label><br />
-						<select class="parallax_one_icons_widget">
-							<?php
-								foreach($icons_array as $key => $value) {
-									printf('<option value="%s">%s</option>', $value, $key);
-								}
-							?>
-						</select>
-					</p>
-					
-					<p>
-						<label><?php _e('Social icon link','parallax-one'); ?></label><br />
-						<input type="text" class="parallax_one_icon_link_widget" >
-					</p>
-					
-					<p>
-						<button type="button" class="parallax_one_remove_field_widget button" style="display:none;"><?php _e('Delete field','parallax-one'); ?></button>
-					</p>
-					
-				</div>
-<?php
-		} else {
-			foreach($json as $icon){
+	<div class="parallax_one_full_repeater_control">
+		<div class="parallax_one_widget_repeater">
+		<?php
+			if(empty($json)) {
 	?>
-				<div class="parallax_one_widget_repeater_container">
-					<p>
-						<label><?php _e('Social icon','parallax-one'); ?></label><br />
-						<select class="parallax_one_icons_widget">
-							<?php
-								foreach($icons_array as $key => $value) {
-									if($icon->icon_value == $value){
-										printf('<option value="%s" selected="selected">%s</option>', $value, $key);
-									} else {
+					<div class="parallax_one_widget_repeater_container">
+						<p>
+							<label><?php _e('Social icon','parallax-one'); ?></label><br />
+							<select class="parallax_one_icons_widget">
+								<?php
+									foreach($icons_array as $key => $value) {
 										printf('<option value="%s">%s</option>', $value, $key);
 									}
-								}
-							?>
-						</select>
-					</p>
-					
-					<p>
-						<label><?php _e('Social icon link','parallax-one'); ?></label><br />
-						<input type="text" class="parallax_one_icon_link_widget" value="<?php if(!empty($icon->icon_link)) echo $icon->icon_link; ?>" >
-					</p>
-					
-					<p>
-						<button type="button" class="parallax_one_remove_field_widget button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
-					</p>
-					
-				</div>
-				
+								?>
+							</select>
+						</p>
+						
+						<p>
+							<label><?php _e('Social icon link','parallax-one'); ?></label><br />
+							<input type="text" class="parallax_one_icon_link_widget" >
+						</p>
+						
+						<p>
+							<button type="button" class="parallax_one_remove_field_widget " style="display:none;"><?php _e('Delete field','parallax-one'); ?></button>
+						</p>
+						
+					</div>
 	<?php
-				$it++;
+			} else {
+				foreach($json as $icon){
+		?>
+					<div class="parallax_one_widget_repeater_container">
+						<p>
+							<label><?php _e('Social icon','parallax-one'); ?></label><br />
+							<select class="parallax_one_icons_widget">
+								<?php
+									foreach($icons_array as $key => $value) {
+										if($icon->icon_value == $value){
+											printf('<option value="%s" selected="selected">%s</option>', $value, $key);
+										} else {
+											printf('<option value="%s">%s</option>', $value, $key);
+										}
+									}
+								?>
+							</select>
+						</p>
+						
+						<p>
+							<label><?php _e('Social icon link','parallax-one'); ?></label><br />
+							<input type="text" class="parallax_one_icon_link_widget" value="<?php if(!empty($icon->icon_link)) echo $icon->icon_link; ?>" >
+						</p>
+						
+						<p>
+							<button type="button" class="parallax_one_remove_field_widget" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
+						</p>
+						
+					</div>
+					
+		<?php
+					$it++;
+				}
 			}
-		}
-	?>	
+		?>	
+		</div>
+
+		
+		<input type="hidden"  name="<?php echo $this->get_field_name('colector'); ?>" id="<?php echo $this->get_field_id( 'colector' ); ?>" class="parallax_one_widget_repeater_colector"  value='<?php if(!empty($instance[ "colector" ])) echo $instance[ "colector" ]; ?>' >
+		<button type="button" class="add_field_widget parallax_one_widget_new_field"><?php _e('Add new field','parallax-one'); ?></button>
 	</div>
-
-	
-	<input type="hidden"  name="<?php echo $this->get_field_name('colector'); ?>" id="<?php echo $this->get_field_id( 'colector' ); ?>" class="parallax_one_widget_repeater_colector"  value='<?php if(!empty($instance[ "colector" ])) echo $instance[ "colector" ]; ?>' >
-	<button type="button"   id="parallax_one_widget_new_field" class="button add_field"><?php _e('Add new field','parallax-one'); ?></button>
-
 <?php
     }
 }

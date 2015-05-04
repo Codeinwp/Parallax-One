@@ -1510,7 +1510,7 @@ a.control_next.fade-btn {
 }
 
 .team-member {
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 	position: relative;
 	overflow: hidden;
 	border: 5px solid #ffffff;
@@ -1558,14 +1558,6 @@ a.control_next.fade-btn {
 	width: 100%;
 }
 
-.member-pic img:hover {
-	filter: sepia(10%) hue-rotate(50deg);
-	-webkit-filter: sepia(10%) hue-rotate(50deg);
-	-moz-filter: sepia(10%) hue-rotate(50deg);
-	-o-filter: sepia(10%) hue-rotate(50deg);
-	-ms-filter: sepia(10%) hue-rotate(50deg);
-}
-
 .member-details {
 	left: 0;
 	position: absolute;
@@ -1573,6 +1565,7 @@ a.control_next.fade-btn {
 	display: table;
 	overflow: hidden;
 	height: 266px;
+	width: 100%;
 	bottom: 100%;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -2313,9 +2306,8 @@ a:hover {
 	}
 
 	.team-member {
-		margin-bottom: 50px;
+		margin-bottom: 25px;
 		max-width: 270px;
-		margin: auto;
 	}
 
 	.contact-info .contact-links a {

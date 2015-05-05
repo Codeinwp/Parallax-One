@@ -191,12 +191,12 @@ add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
 
 
-/*********************************/
-/***********WIDGETS***********/
-/*********************************/
+/*******************************************/
+/*********** WIDGETS ***********************/
+/*******************************************/
 
 /********************************************/
-/************* Our Team ***************/
+/************* Our Team *********************/
 /********************************************/
 
 require_once ( 'inc/class/parallax-one-our-team-widget.php');
@@ -211,28 +211,7 @@ function parallax_one_our_team_widget_scripts() {
 
 }
 
-
-/********************************************/
-/********* Happy customer Widget ************/
-/********************************************/
-
-require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
-
-add_action('admin_enqueue_scripts', 'parallax_one_customers_widget_scripts');
-
-function parallax_one_customers_widget_scripts() {
-
-    wp_enqueue_media();
-
-    wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
-
-}
-
-
-
-
-
-/* Default widgets on Happy customers sidebar */
+/* Default widgets on Our team sidebar */
  
 add_action( 'widgets_init', 'parallax_one_default_widgets_our_team' );
 
@@ -240,12 +219,9 @@ function parallax_one_default_widgets_our_team()
 {
 	register_widget( 'parallax_one_our_team_widget' );
 	
-	register_widget( 'parallax_one_happy_customer_widget' );
-	
-	
 	$active_widgets = get_option( 'sidebars_widgets' );
 	
-	$parallax_one_sidebars = array ( 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar', 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' );
+	$parallax_one_sidebars = array ( 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' );
 	
 	/* Register sidebar */
 	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
@@ -254,10 +230,6 @@ function parallax_one_default_widgets_our_team()
 		
 			$parallax_one_name = __( 'Our Team section', 'parallax-one' );
 			
-		elseif( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
-		
-			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
-		
 		else:
 		
 			$parallax_one_name = $parallax_one_sidebar;
@@ -276,7 +248,7 @@ function parallax_one_default_widgets_our_team()
     endforeach;
 
 
-    if ( ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] )) || ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )) ):
+    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] ) ):
 		/* There is already some content. */
         return;
     endif;
@@ -315,9 +287,72 @@ function parallax_one_default_widgets_our_team()
 	
     update_option( 'widget_parallax_one_our_team-widget', $our_team_content );
  
-    $parallax_one_counter++;	
-
+    $parallax_one_counter++;
 	
+	update_option( 'sidebars_widgets', $active_widgets );
+
+}
+
+
+/********************************************/
+/********* Happy customer Widget ************/
+/********************************************/
+
+require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
+
+add_action('admin_enqueue_scripts', 'parallax_one_customers_widget_scripts');
+
+function parallax_one_customers_widget_scripts() {
+
+    wp_enqueue_media();
+
+    wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
+
+}
+
+/* Default widgets on Happy customers sidebar */
+ 
+add_action( 'widgets_init', 'parallax_one_default_widgets_happy_customers' );
+
+function parallax_one_default_widgets_happy_customers()
+{
+	register_widget( 'parallax_one_happy_customer_widget' );
+	
+	$active_widgets = get_option( 'sidebars_widgets' );
+	
+	$parallax_one_sidebars = array ( 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' );
+	
+	/* Register sidebar */
+	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
+	
+		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
+		
+			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
+		
+		else:
+		
+			$parallax_one_name = $parallax_one_sidebar;
+			
+		endif;
+		
+        register_sidebar(
+            array (
+                'name'          => $parallax_one_name,
+                'id'            => $parallax_one_sidebar,
+                'before_widget' => '',
+                'after_widget'  => ''
+            )
+        );
+		
+    endforeach;
+
+
+    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )):
+		/* There is already some content. */
+        return;
+    endif;
+	
+    
 	/* Default Happy Customer widgets */
 	
 	 $parallax_one_counter = 1;

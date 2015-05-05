@@ -2,10 +2,10 @@
 if ( ! class_exists( 'WP_Widget' ) )
 	return NULL;
 
-class parallax_one_project_team_widget extends WP_Widget {
-    function parallax_one_project_team_widget() {
-        $widget_ops = array('classname' => 'parallax_one_project_team_widget');
-        $this->WP_Widget('parallax_one_project_team-widget', 'Parallax One - Project Team widget', $widget_ops);
+class parallax_one_our_team_widget extends WP_Widget {
+    function parallax_one_our_team_widget() {
+        $widget_ops = array('classname' => 'parallax_one_our_team_widget');
+        $this->WP_Widget('parallax_one_our_team-widget', 'Parallax One - Our Team widget', $widget_ops);
     }
     function widget($args, $instance) {
         extract($args);

@@ -202,102 +202,102 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 
 	/********************************************************/
-	/******* PROJECT TEAM OPTIONS  *******************/
+	/******* OUR TEAM OPTIONS  *******************/
 	/********************************************************/
 	
 	$wp_customize->add_panel( 'panel_3', array(
 		'priority' => 32,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
-		'title' => __( 'Project Team section', 'parallax-one' )
+		'title' => __( 'Our Team section', 'parallax-one' )
 	) );
 	
-	/* PROJECT TEAM SETTINGS */
+	/* OUR TEAM SETTINGS */
 	
-	$wp_customize->add_section( 'parallax_one_project_team_show' , array(
+	$wp_customize->add_section( 'parallax_one_our_team_show' , array(
 			'title'       => __( 'Settings', 'parallax-one' ),
 			'priority'    => 1,
 			'panel' => 'panel_3'
 	));
 	
-	$wp_customize->add_setting( 'parallax_one_project_team_show');
+	$wp_customize->add_setting( 'parallax_one_our_team_show');
 
 	$wp_customize->add_control(
-		'parallax_one_project_team_show',
+		'parallax_one_our_team_show',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Project Team section?','parallax-one'),
-			'description' => __('If you check this box, the Project Team section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_project_team_show',
+			'label' => __('Hide Our Team section?','parallax-one'),
+			'description' => __('If you check this box, the Our Team section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_our_team_show',
 			'priority'    => 1,
 		)
 	);
 	
-	$wp_customize->get_setting( 'parallax_one_project_team_show' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'parallax_one_our_team_show' )->transport = 'postMessage';
 	
-	/* PROJECT TEAM HEADER */
+	/* OUR TEAM HEADER */
 	
-	$wp_customize->add_section( 'parallax_one_project_team_header' , array(
+	$wp_customize->add_section( 'parallax_one_our_team_header' , array(
 			'title'       => __( 'Header', 'parallax-one' ),
 			'priority'    => 2,
 			'panel' => 'panel_3'
 	));
 	
-	/* Project Team title */
-	$wp_customize->add_setting( 'parallax_one_project_team_title', array(
-		'default' => __('Project Team','parallax-one'),
+	/* Our Team title */
+	$wp_customize->add_setting( 'parallax_one_our_team_title', array(
+		'default' => __('Our Team','parallax-one'),
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-	$wp_customize->add_control( 'parallax_one_project_team_title', array(
+	$wp_customize->add_control( 'parallax_one_our_team_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_project_team_header',
-		'settings' => 'parallax_one_project_team_title',
+		'section'  => 'parallax_one_our_team_header',
+		'settings' => 'parallax_one_our_team_title',
 		'priority'    => 1,
 	));
-	$wp_customize->get_setting( 'parallax_one_project_team_title' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'parallax_one_our_team_title' )->transport = 'postMessage';
 	
-	/* Project Team subtitle */
-	$wp_customize->add_setting( 'parallax_one_project_team_subtitle', array(
-		'default' => __('Cloud computing subscription model out of the box proactive solution.','parallax-one'),
+	/* Our Team subtitle */
+	$wp_customize->add_setting( 'parallax_one_our_team_subtitle', array(
+		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-	$wp_customize->add_control( 'parallax_one_project_team_subtitle', array(
+	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
 		'label'    => __( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_project_team_header',
-		'settings' => 'parallax_one_project_team_subtitle',
+		'section'  => 'parallax_one_our_team_header',
+		'settings' => 'parallax_one_our_team_subtitle',
 		'priority'    => 1,
 	));
-	$wp_customize->get_setting( 'parallax_one_project_team_subtitle' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'parallax_one_our_team_subtitle' )->transport = 'postMessage';
 
-	/* PROJECT TEAM CONTENT */
+	/* OUR TEAM CONTENT */
 	
-	$wp_customize->add_section( 'parallax_one_project_team_content' , array(
+	$wp_customize->add_section( 'parallax_one_our_team_content' , array(
 			'title'       => __( 'Content', 'parallax-one' ),
 			'priority'    => 3,
 			'panel' => 'panel_3'
 	));
 	
 	
-	$wp_customize->add_setting( 'parallax_one_project_team_content' );
+	$wp_customize->add_setting( 'parallax_one_our_team_content' );
 
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_project_team_content',
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_content',
 		array(
-			'section' => 'parallax_one_project_team_content',
-	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Project Team section.<br> There you must add the "Parallax One - Project Team widget"','parallax-one')
+			'section' => 'parallax_one_our_team_content',
+	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Our Team section.<br> There you must add the "Parallax One - Our Team widget"','parallax-one')
 	));
 	
-	/* PROJECT TEAM COLORS */
-	$wp_customize->add_section( 'parallax_one_project_team_colors_section' , array(
+	/* OUR TEAM COLORS */
+	$wp_customize->add_section( 'parallax_one_our_team_colors_section' , array(
 			'title'       => __( 'Colors', 'parallax-one' ),
 			'priority'    => 3,
 			'panel' => 'panel_3'
 	));
 	
-	$wp_customize->add_setting( 'parallax_one_project_team_colors_section' );
+	$wp_customize->add_setting( 'parallax_one_our_team_colors_section' );
 
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_project_team_colors_section',
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_colors_section',
 		array(
-			'section' => 'parallax_one_project_team_colors_section',
+			'section' => 'parallax_one_our_team_colors_section',
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));
 	

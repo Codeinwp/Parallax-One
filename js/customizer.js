@@ -64,7 +64,7 @@
 	*********** PROJECT TEAM SECTION **************
 	*******************************************************/
 	//Show Happy Customers
-	wp.customize( 'parallax_one_project_team_show', function( value ) {
+	wp.customize( 'parallax_one_our_team_show', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '#section9' ).removeClass( 'paralax_one_only_customizer' );
@@ -76,7 +76,7 @@
 	
 	
 	//Title
-	wp.customize("parallax_one_project_team_title", function(value) {
+	wp.customize("parallax_one_our_team_title", function(value) {
 		
         value.bind(function( to ) {
 			
@@ -94,7 +94,7 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_project_team_subtitle", function(value) {
+	wp.customize("parallax_one_our_team_subtitle", function(value) {
 		
         value.bind(function( to ) {
 			if( to != '' ) {

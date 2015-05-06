@@ -97,8 +97,209 @@ function parallax_one_customize_register( $wp_customize ) {
 		array(
 			'section' => 'parallax_one_logos_sections_in_pro'
 	   ), __('Check out the PRO version to add logos section !','parallax-one')
-	));	
+	));
+
+
+	/********************************************************/
+	/******* OUR SERVICES OPTIONS  *******************/
+	/********************************************************/
 	
+	$wp_customize->add_panel( 'panel_4', array(
+		'priority' => 31,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Our Services section', 'parallax-one' )
+	) );
+	
+	/* OUR SERVICES SETTINGS */
+	
+	$wp_customize->add_section( 'parallax_one_our_services_show' , array(
+			'title'       => __( 'Settings', 'parallax-one' ),
+			'priority'    => 1,
+			'panel' => 'panel_4'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_services_show');
+
+	$wp_customize->add_control(
+		'parallax_one_our_services_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Our Services section?','parallax-one'),
+			'description' => __('If you check this box, the Our Services section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_our_services_show',
+			'priority'    => 1,
+		)
+	);
+	
+	$wp_customize->get_setting( 'parallax_one_our_services_show' )->transport = 'postMessage';
+	
+	/* OUR SERVICES HEADER */
+	
+	$wp_customize->add_section( 'parallax_one_our_services_header' , array(
+			'title'       => __( 'Header', 'parallax-one' ),
+			'priority'    => 2,
+			'panel' => 'panel_4'
+	));
+	
+	/* Our Services title */
+	$wp_customize->add_setting( 'parallax_one_our_services_title', array(
+		'default' => __('Our Services','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_our_services_title', array(
+		'label'    => __( 'Main title', 'parallax-one' ),
+		'section'  => 'parallax_one_our_services_header',
+		'settings' => 'parallax_one_our_services_title',
+		'priority'    => 1,
+	));
+	$wp_customize->get_setting( 'parallax_one_our_services_title' )->transport = 'postMessage';
+	
+	/* Our Services subtitle */
+	$wp_customize->add_setting( 'parallax_one_our_services_subtitle', array(
+		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_our_services_subtitle', array(
+		'label'    => __( 'Subtitle', 'parallax-one' ),
+		'section'  => 'parallax_one_our_services_header',
+		'settings' => 'parallax_one_our_services_subtitle',
+		'priority'    => 1,
+	));
+	$wp_customize->get_setting( 'parallax_one_our_services_subtitle' )->transport = 'postMessage';
+
+	/* OUR SERVICES CONTENT */
+	
+	$wp_customize->add_section( 'parallax_one_our_services_content' , array(
+			'title'       => __( 'Content', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_4'
+	));
+	
+	
+	$wp_customize->add_setting( 'parallax_one_our_services_content' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_services_content',
+		array(
+			'section' => 'parallax_one_our_services_content',
+	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Our Services section.<br> There you must add the "Parallax One - Our Services widget"','parallax-one')
+	));
+	
+	/* OUR SERVICES COLORS */
+	$wp_customize->add_section( 'parallax_one_our_services_colors_section' , array(
+			'title'       => __( 'Colors', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_4'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_services_colors_section' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_services_colors_section',
+		array(
+			'section' => 'parallax_one_our_services_colors_section',
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
+	));	
+
+
+	/********************************************************/
+	/******* OUR TEAM OPTIONS  *******************/
+	/********************************************************/
+	
+	$wp_customize->add_panel( 'panel_3', array(
+		'priority' => 32,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Our Team section', 'parallax-one' )
+	) );
+	
+	/* OUR TEAM SETTINGS */
+	
+	$wp_customize->add_section( 'parallax_one_our_team_show' , array(
+			'title'       => __( 'Settings', 'parallax-one' ),
+			'priority'    => 1,
+			'panel' => 'panel_3'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_team_show');
+
+	$wp_customize->add_control(
+		'parallax_one_our_team_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Our Team section?','parallax-one'),
+			'description' => __('If you check this box, the Our Team section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_our_team_show',
+			'priority'    => 1,
+		)
+	);
+	
+	$wp_customize->get_setting( 'parallax_one_our_team_show' )->transport = 'postMessage';
+	
+	/* OUR TEAM HEADER */
+	
+	$wp_customize->add_section( 'parallax_one_our_team_header' , array(
+			'title'       => __( 'Header', 'parallax-one' ),
+			'priority'    => 2,
+			'panel' => 'panel_3'
+	));
+	
+	/* Our Team title */
+	$wp_customize->add_setting( 'parallax_one_our_team_title', array(
+		'default' => __('Our Team','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_our_team_title', array(
+		'label'    => __( 'Main title', 'parallax-one' ),
+		'section'  => 'parallax_one_our_team_header',
+		'settings' => 'parallax_one_our_team_title',
+		'priority'    => 1,
+	));
+	$wp_customize->get_setting( 'parallax_one_our_team_title' )->transport = 'postMessage';
+	
+	/* Our Team subtitle */
+	$wp_customize->add_setting( 'parallax_one_our_team_subtitle', array(
+		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
+		'label'    => __( 'Subtitle', 'parallax-one' ),
+		'section'  => 'parallax_one_our_team_header',
+		'settings' => 'parallax_one_our_team_subtitle',
+		'priority'    => 1,
+	));
+	$wp_customize->get_setting( 'parallax_one_our_team_subtitle' )->transport = 'postMessage';
+
+	/* OUR TEAM CONTENT */
+	
+	$wp_customize->add_section( 'parallax_one_our_team_content' , array(
+			'title'       => __( 'Content', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_3'
+	));
+	
+	
+	$wp_customize->add_setting( 'parallax_one_our_team_content' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_content',
+		array(
+			'section' => 'parallax_one_our_team_content',
+	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Our Team section.<br> There you must add the "Parallax One - Our Team widget"','parallax-one')
+	));
+	
+	/* OUR TEAM COLORS */
+	$wp_customize->add_section( 'parallax_one_our_team_colors_section' , array(
+			'title'       => __( 'Colors', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_3'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_team_colors_section' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_colors_section',
+		array(
+			'section' => 'parallax_one_our_team_colors_section',
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
+	));	
 
 	/********************************************************/
 	/******* HAPPY CUSTOMERS OPTIONS  ***********************/
@@ -201,105 +402,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	
 
-	/********************************************************/
-	/******* OUR TEAM OPTIONS  *******************/
-	/********************************************************/
-	
-	$wp_customize->add_panel( 'panel_3', array(
-		'priority' => 32,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => __( 'Our Team section', 'parallax-one' )
-	) );
-	
-	/* OUR TEAM SETTINGS */
-	
-	$wp_customize->add_section( 'parallax_one_our_team_show' , array(
-			'title'       => __( 'Settings', 'parallax-one' ),
-			'priority'    => 1,
-			'panel' => 'panel_3'
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_our_team_show');
 
-	$wp_customize->add_control(
-		'parallax_one_our_team_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Our Team section?','parallax-one'),
-			'description' => __('If you check this box, the Our Team section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_our_team_show',
-			'priority'    => 1,
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_our_team_show' )->transport = 'postMessage';
-	
-	/* OUR TEAM HEADER */
-	
-	$wp_customize->add_section( 'parallax_one_our_team_header' , array(
-			'title'       => __( 'Header', 'parallax-one' ),
-			'priority'    => 2,
-			'panel' => 'panel_3'
-	));
-	
-	/* Our Team title */
-	$wp_customize->add_setting( 'parallax_one_our_team_title', array(
-		'default' => __('Our Team','parallax-one'),
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-	$wp_customize->add_control( 'parallax_one_our_team_title', array(
-		'label'    => __( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_our_team_header',
-		'settings' => 'parallax_one_our_team_title',
-		'priority'    => 1,
-	));
-	$wp_customize->get_setting( 'parallax_one_our_team_title' )->transport = 'postMessage';
-	
-	/* Our Team subtitle */
-	$wp_customize->add_setting( 'parallax_one_our_team_subtitle', array(
-		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
-		'label'    => __( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_our_team_header',
-		'settings' => 'parallax_one_our_team_subtitle',
-		'priority'    => 1,
-	));
-	$wp_customize->get_setting( 'parallax_one_our_team_subtitle' )->transport = 'postMessage';
-
-	/* OUR TEAM CONTENT */
-	
-	$wp_customize->add_section( 'parallax_one_our_team_content' , array(
-			'title'       => __( 'Content', 'parallax-one' ),
-			'priority'    => 3,
-			'panel' => 'panel_3'
-	));
-	
-	
-	$wp_customize->add_setting( 'parallax_one_our_team_content' );
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_content',
-		array(
-			'section' => 'parallax_one_our_team_content',
-	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Our Team section.<br> There you must add the "Parallax One - Our Team widget"','parallax-one')
-	));
-	
-	/* OUR TEAM COLORS */
-	$wp_customize->add_section( 'parallax_one_our_team_colors_section' , array(
-			'title'       => __( 'Colors', 'parallax-one' ),
-			'priority'    => 3,
-			'panel' => 'panel_3'
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_our_team_colors_section' );
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_colors_section',
-		array(
-			'section' => 'parallax_one_our_team_colors_section',
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));
 	
 
 	/********************************************************/
@@ -308,7 +411,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
 			'title'       => __( 'Latest news section', 'parallax-one' ),
-			'priority'    => 33
+			'priority'    => 34
 	));
 	
 	
@@ -346,7 +449,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => __( 'Footer options', 'parallax-one' ),
-      	'priority'    => 33,
+      	'priority'    => 35,
       	'description' => __('The main content of this section is customizable in: <br/>Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	

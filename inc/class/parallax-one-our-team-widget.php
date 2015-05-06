@@ -159,7 +159,7 @@ class parallax_one_our_team_widget extends WP_Widget {
 	<p>
         <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
         <input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
-        <input type="button" class="button button-primary custom_media_button_team" id="<?php echo $this->get_field_id('image_uri'); ?>_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+        <input type="button" class="button button-primary custom_media_button_parallax_one_team" id="<?php echo $this->get_field_id('image_uri'); ?>_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
     </p>
 	
 	<p>

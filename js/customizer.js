@@ -57,11 +57,56 @@
     });
 
 
-
+	/******************************************************
+	*********** OUR SERVICES SECTION **************
+	*******************************************************/
+	//Show Happy Customers
+	wp.customize( 'parallax_one_our_services_show', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '#section1' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section1' ).addClass( 'paralax_one_only_customizer' );
+			}
+		} );
+	} );
+	
+	
+	//Title
+	wp.customize("parallax_one_our_services_title", function(value) {
+		
+        value.bind(function( to ) {
+			
+			if( to != '' ) {
+				$( '#section1 .section-header h2' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#section1 .colored-line').removeClass(  'paralax_one_only_customizer' );
+			}
+			else {
+				$( '#section1 .section-header h2' ).addClass( 'paralax_one_only_customizer' );
+				$( '#section1 .section-header .colored-line').addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section1 .section-header h2' ).text( to );
+	    } );
+		
+    });
+	
+	//Subtitle
+	wp.customize("parallax_one_our_services_subtitle", function(value) {
+		
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '#section1 .section-header .sub-heading' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section1 .section-header .sub-heading' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section1 .section-header .sub-heading' ).text( to );
+		} );
+		
+    });
 
 	
 	/******************************************************
-	*********** PROJECT TEAM SECTION **************
+	*********** OUR TEAM SECTION **************
 	*******************************************************/
 	//Show Happy Customers
 	wp.customize( 'parallax_one_our_team_show', function( value ) {

@@ -267,6 +267,64 @@
 		} );
 		
     });
+
+	/******************************************************
+	**************** RIBBON SECTION *****************
+	*******************************************************/
+	//Show Latest News
+	wp.customize( 'parallax_one_ribbon_show', function( value ) {
+		value.bind( function( to ) {
+			
+			if ( '1' != to ) {
+				$( '#section11' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section11' ).addClass( 'paralax_one_only_customizer' );
+			}
+			
+		} );
+	} );
+	
+	
+	//Title
+	wp.customize("parallax_one_ribbon_title", function(value) {
+		
+        value.bind(function( to ) {
+
+			if( to != '' ) {
+				$( '#section11 h2' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section11 h2' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section11 h2' ).text( to );
+		} );
+		
+    });
+	
+	
+	//Button text
+	wp.customize("parallax_one_button_text", function(value) {
+		
+        value.bind(function( to ) {
+
+			if( to != '' ) {
+				$( '#section11 button' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section11 button' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section11 button' ).text( to );
+		} );
+		
+    });
+
+
+	//Button link
+	wp.customize("parallax_one_button_link", function(value) {
+		
+        value.bind(function( to ) {
+			$( '#section11 button' ).attr( 'onclick', to );
+		} );
+		
+    });	
 	
 	
 	/******************************************************

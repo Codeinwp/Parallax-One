@@ -98,8 +98,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'section' => 'parallax_one_logos_sections_in_pro'
 	   ), __('Check out the PRO version to add logos section !','parallax-one')
 	));
-
-
+	
 	/********************************************************/
 	/******* OUR SERVICES OPTIONS  *******************/
 	/********************************************************/
@@ -200,13 +199,131 @@ function parallax_one_customize_register( $wp_customize ) {
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));	
 
+	/********************************************************/
+	/************** OUR STORY OPTIONS  ***************/
+	/********************************************************/
+	$wp_customize->add_panel( 'panel_5', array(
+		'priority' => 32,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Our Story section', 'parallax-one' )
+	) );
+	
+	/* OUR STORY SETTINGS */
+	
+	$wp_customize->add_section( 'parallax_one_our_story_show' , array(
+			'title'       => __( 'Settings', 'parallax-one' ),
+			'priority'    => 1,
+			'panel' => 'panel_5'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_story_show');
+
+	$wp_customize->add_control(
+		'parallax_one_our_story_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Our Story section?','parallax-one'),
+			'description' => __('If you check this box, the Our Story section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_our_story_show',
+			'priority'    => 1,
+		)
+	);
+	
+	$wp_customize->get_setting( 'parallax_one_our_story_show' )->transport = 'postMessage';
+	
+	/* OUR STORY HEADER */
+	
+	$wp_customize->add_section( 'parallax_one_our_story_header' , array(
+			'title'       => __( 'Header', 'parallax-one' ),
+			'priority'    => 2,
+			'panel' => 'panel_5'
+	));
+	
+	/* Our Story title */
+	$wp_customize->add_setting( 'parallax_one_our_story_title', array(
+		'default' => __('Our Story','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_our_story_title', array(
+		'label'    => __( 'Main title', 'parallax-one' ),
+		'section'  => 'parallax_one_our_story_header',
+		'settings' => 'parallax_one_our_story_title',
+		'priority'    => 1,
+	));
+	$wp_customize->get_setting( 'parallax_one_our_story_title' )->transport = 'postMessage';
+
+	/* OUR STORY CONTENT */
+	
+	$wp_customize->add_section( 'parallax_one_our_story_content' , array(
+			'title'       => __( 'Content', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_5'
+	));
+	
+	/* Our Story Content */
+	require_once ( 'class/parallax-one-textarea-custom-control.php');
+	
+	$wp_customize->add_setting( 'parallax_one_our_story_text', array( 
+		'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+		
+	));
+    $wp_customize->add_control( new Parallax_One_Customize_Textarea_Control( $wp_customize, 'parallax_one_our_story_text', array(
+            'label'   => __( 'Content', 'parallax-one' ),
+            'section' => 'parallax_one_our_story_content',
+            'settings'   => 'parallax_one_our_story_text',
+            'priority' => 1,
+    )) );
+	$wp_customize->get_setting( 'parallax_one_our_story_text' )->transport = 'postMessage';
+	
+	/* Our Story Image	*/
+	$wp_customize->add_setting( 'paralax_one_our_story_image', array(
+		'default' => get_stylesheet_directory_uri().'/images/about-us.jpg',
+		'sanitize_callback' => 'esc_url'
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
+	      	'label'    => __( 'Image', 'parallax-one' ),
+	      	'section'  => 'parallax_one_our_story_content',
+	      	'settings' => 'paralax_one_our_story_image',
+			'priority'    => 2,
+	)));
+	$wp_customize->get_setting( 'paralax_one_our_story_image' )->transport = 'postMessage';
+	
+	/*Our Story Image Position*/
+	$wp_customize->add_setting( 'parallax_one_our_story_image_position',array( 
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_story_image_position',
+		array(
+			'label'    => __( 'Image Position', 'parallax-one' ),
+			'section' => 'parallax_one_our_story_content',
+			'priority'    => 3,
+	   ),__('Check out the PRO version for full control over the image position !','parallax-one')
+	));
+	
+	/* OUR STORY COLORS */
+	$wp_customize->add_section( 'parallax_one_our_story_colors_section' , array(
+			'title'       => __( 'Colors', 'parallax-one' ),
+			'priority'    => 4,
+			'panel' => 'panel_5'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_our_story_colors_section' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_story_colors_section',
+		array(
+			'section' => 'parallax_one_our_story_colors_section',
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
+	));	
 
 	/********************************************************/
 	/******* OUR TEAM OPTIONS  *******************/
 	/********************************************************/
 	
 	$wp_customize->add_panel( 'panel_3', array(
-		'priority' => 32,
+		'priority' => 33,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
 		'title' => __( 'Our Team section', 'parallax-one' )
@@ -306,7 +423,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/********************************************************/
 	
 	$wp_customize->add_panel( 'panel_2', array(
-		'priority' => 33,
+		'priority' => 34,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
 		'title' => __( 'Happy  Customers section', 'parallax-one' )
@@ -411,7 +528,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
 			'title'       => __( 'Latest news section', 'parallax-one' ),
-			'priority'    => 34
+			'priority'    => 35
 	));
 	
 	
@@ -449,7 +566,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => __( 'Footer options', 'parallax-one' ),
-      	'priority'    => 35,
+      	'priority'    => 36,
       	'description' => __('The main content of this section is customizable in: <br/>Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	

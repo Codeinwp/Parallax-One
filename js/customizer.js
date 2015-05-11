@@ -56,6 +56,64 @@
         } );
     });
 
+	/******************************************************
+	************* OUR STORY SECTION ****************
+	*******************************************************/
+	//Show Our Story
+	wp.customize( 'parallax_one_our_story_show', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '#section2' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section2' ).addClass( 'paralax_one_only_customizer' );
+			}
+		} );
+	} );
+	
+	//Title
+	wp.customize("parallax_one_our_story_title", function(value) {
+		
+        value.bind(function( to ) {
+			
+			if( to != '' ) {
+				$( '#section2 .brief-content-one h2' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#section2 .colored-line-left').removeClass(  'paralax_one_only_customizer' );
+			}
+			else {
+				$( '#section2 .brief-content-one h2' ).addClass( 'paralax_one_only_customizer' );
+				$( '#section2 .colored-line-left').addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section2 .brief-content-one h2' ).text( to );
+	    } );
+		
+    });
+	
+	wp.customize("parallax_one_our_story_text",function(value) {
+		
+		value.bind(function( to ) {
+			if( to != '' ) {
+				$( '#section2 .brief-content-one p.text-left' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#section2 .brief-content-one p.text-left' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section2 .brief-content-one p.text-left' ).text( to );
+			
+		});
+		
+	});
+	
+	wp.customize("paralax_one_our_story_image",function(value) {
+		
+		value.bind(function( to ) {
+			if( to != '' ) {
+				$('#section2 .brief-content-two ').removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$('#section2 .brief-content-two ').addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#section2 .brief-content-two .brief-image-right img' ).attr('src', to);
+		});
+		
+	});
 
 	/******************************************************
 	*********** OUR SERVICES SECTION **************

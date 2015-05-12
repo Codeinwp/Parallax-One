@@ -1,5 +1,45 @@
 
 
+### 1.0.0 - 12/05/2015
+
+ Changes: 
+
+
+ * Removed Logos section and Sections order from Lite version
+ * Sticky footer
+ * Logo max height
+ * removed logos section widget file
+ * Update homepage Latest news js
+ * added logos section in customizer, added latest news section in frontpage and customizer (needs some css updates), made a custom control for all texts in customizer instead of making a separate class for each one
+ * Updated css
+ * Merge pull request #24 from cristian-ungureanu/development
+
+Development
+ * fixed show/hide section with transport
+ * added updated style
+ * added latest news section
+ * close divs from header in single.php
+ * added team widget with social icons repeater (works only in dashboard, not in customizer yet)
+ * Updated style for project team
+ * repaired the project team widget to work in customizer too, added project team panel in customizer
+ * Merge pull request #27 from cristian-ungureanu/development
+
+Development
+ * changed all project team to our team
+ * Merge pull request #28 from cristian-ungureanu/development
+
+changed all project team to our team
+ * Fixed default widgets for Our team section
+ * added our services section
+ * added template-blog
+ * added Our Story section
+ * added ribbon section
+ * added pannel for ribbon section
+ * Merge pull request #29 from cristian-ungureanu/development
+
+added our services section
+
+
 ### 1.0.0 - 24/04/2015
 
  Changes: 

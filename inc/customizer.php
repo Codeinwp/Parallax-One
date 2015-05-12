@@ -521,9 +521,18 @@ function parallax_one_customize_register( $wp_customize ) {
 	/********************************************************/
 	/***************** RIBBON OPTIONS  *****************/
 	/********************************************************/
-	$wp_customize->add_section( 'parallax_one_ribbon_section' , array(
-			'title'       => __( 'Ribbon section', 'parallax-one' ),
-			'priority'    => 35
+	$wp_customize->add_panel( 'panel_6', array(
+		'priority' => 35,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Ribbon section', 'parallax-one' )
+	) );
+	
+	/* RIBBON SETTINGS */
+	$wp_customize->add_section( 'parallax_one_ribbon_show' , array(
+		'title'       => __( 'Settings', 'parallax-one' ),
+		'priority'    => 1,
+		'panel' => 'panel_6'
 	));
 	
 	$wp_customize->add_setting( 'parallax_one_ribbon_show');
@@ -534,12 +543,18 @@ function parallax_one_customize_register( $wp_customize ) {
 			'type' => 'checkbox',
 			'label' => __('Hide Ribbon section?','parallax-one'),
 			'description' => __('If you check this box, the Ribbon section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_ribbon_section',
+			'section' => 'parallax_one_ribbon_show',
 			'priority'    => 1
 		)
 	);
 	$wp_customize->get_setting( 'parallax_one_ribbon_show' )->transport = 'postMessage';
 
+	/* RIBBON CONTENT */
+	$wp_customize->add_section( 'parallax_one_ribbon_content' , array(
+		'title'       => __( 'Content', 'parallax-one' ),
+		'priority'    => 2,
+		'panel' => 'panel_6'
+	));
 	
 	$wp_customize->add_setting( 'parallax_one_ribbon_title', array(
 		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
@@ -547,7 +562,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_ribbon_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
+		'section'  => 'parallax_one_ribbon_content',
 		'settings' => 'parallax_one_ribbon_title',
 		'priority'    => 2
 	));
@@ -560,7 +575,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_button_text', array(
 		'label'    => __( 'Button label', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
+		'section'  => 'parallax_one_ribbon_content',
 		'settings' => 'parallax_one_button_text',
 		'priority'    => 3
 	));
@@ -573,12 +588,26 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_button_link', array(
 		'label'    => __( 'Button link', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
+		'section'  => 'parallax_one_ribbon_content',
 		'settings' => 'parallax_one_button_link',
 		'priority'    => 4
 	));
 	$wp_customize->get_setting( 'parallax_one_button_link' )->transport = 'postMessage';
+
+	/* RIBBON COLORS */
+	$wp_customize->add_section( 'parallax_one_ribbon_colors_section' , array(
+			'title'       => __( 'Colors', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_6'
+	));
 	
+	$wp_customize->add_setting( 'parallax_one_ribbon_colors_section' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_ribbon_colors_section',
+		array(
+			'section' => 'parallax_one_ribbon_colors_section',
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
+	));
 	
 
 	/********************************************************/

@@ -3,7 +3,9 @@
 get_header(); 
 
 ?>
-
+<?php
+	include_once get_template_directory() . "/sections/parallax_one_header_section.php";
+?>
 	</div>
 	<!-- /END COLOR OVER IMAGE -->
 </header>

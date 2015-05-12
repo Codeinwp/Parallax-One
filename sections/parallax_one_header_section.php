@@ -15,7 +15,7 @@
 
 			<!-- ONLY LOGO ON HEADER -->
 			<?php
-				$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', get_stylesheet_directory_uri().'/images/logo-2.jpg');
+				$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', get_stylesheet_directory_uri().'/images/logo-2.png');
 				
 				if( !empty($paralax_one_header_logo) ){
 					echo '<div class="only-logo"><div class="navbar"><div class="navbar-header"><img src="'.$paralax_one_header_logo.'"   alt=""></div></div></div>';

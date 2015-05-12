@@ -21,6 +21,76 @@ jQuery(document).ready(function(){
 	
 });
 
+/********************************************
+*** Contact Info Repeater ***
+*********************************************/
+function parallax_one_refresh_contact_info_values(){
+	var values = [];
+	jQuery(".parallax_one_contact_info_repeater_container").each(function(){
+		var icon_value = jQuery(this).find('select').val();
+		var text = jQuery(this).find(".parallax_one_contact_text").val();
+		var link = jQuery(this).find(".parallax_one_contact_link").val();
+		if(icon_value != '' && text !='' ){
+			values.push({
+				"icon_value" : icon_value,
+				"icon_text" : text,
+				"icon_link" : link
+			});
+		}
+	})
+	jQuery("#parallax_one_contact_info_repeater_colector").val(JSON.stringify(values));
+	jQuery("#parallax_one_contact_info_repeater_colector").trigger('change');
+}
+
+
+jQuery(document).ready(function(){
+
+	jQuery("#parallax_one_contact_info_repeater").on('change', '.parallax_one_conatact_info_icons',function(){
+		parallax_one_refresh_contact_info_values();
+		return false; 
+	});
+
+	jQuery("#parallax_one_contact_info_new_field").on("click",function(){
+		
+		var th = jQuery(this).parent();
+		
+		limit = th.find(".parallax_one_contact_info_repeater_container").length;
+		
+		if(limit < 5) {
+			var field = jQuery(".parallax_one_contact_info_repeater_container:first").clone();
+			field.find(".parallax_one_contact_info_remove_field").show();
+			field.find("select").val('');
+			field.find(".parallax_one_contact_text").val('');
+			jQuery(".parallax_one_contact_info_repeater_container:first").parent().append(field);
+			parallax_one_refresh_contact_info_values();
+		} else {
+			alert('Sorry, the limit number of contact fields was reached!');
+		}
+		return false;
+	 });
+	 
+	jQuery("#parallax_one_contact_info_repeater").on("click", ".parallax_one_contact_info_remove_field",function(){
+		jQuery(this).parent().remove();
+		parallax_one_refresh_contact_info_values();
+		return false;
+	});
+
+	jQuery("#parallax_one_contact_info_repeater").on('keyup', '.parallax_one_contact_text',function(){	 
+		 parallax_one_refresh_contact_info_values();
+	});
+	
+	jQuery("#parallax_one_contact_info_repeater").on('keyup', '.parallax_one_contact_link',function(){	 
+		 parallax_one_refresh_contact_info_values();
+	});
+	
+	/*Drag and drop to change icons order*/
+	jQuery(".parallax_one_contact_info_droppable").sortable({
+		update: function( event, ui ) {
+			parallax_one_refresh_contact_info_values();
+		}
+	});	
+
+});
 
 /********************************************
 *** Footer Socials Repeater ***

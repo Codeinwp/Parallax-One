@@ -774,12 +774,80 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'parallax_one_latest_news_title' )->transport = 'postMessage';
 	
 	/********************************************************/
+	/************ CONTACT INFO OPTIONS  **************/
+	/********************************************************/
+	
+	$wp_customize->add_panel( 'panel_8', array(
+		'priority' => 37,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Contact Info section', 'parallax-one' )
+	) );
+	
+	/* CONTACT INFO SETTINGS */
+	$wp_customize->add_section( 'parallax_one_contact_info_show' , array(
+		'title'       => __( 'Settings', 'parallax-one' ),
+		'priority'    => 1,
+		'panel' => 'panel_8'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_contact_info_show');
+
+	$wp_customize->add_control(
+		'parallax_one_contact_info_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Contact Info section?','parallax-one'),
+			'description' => __('If you check this box, the Ribbon section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_contact_info_show',
+			'priority'    => 1
+		)
+	);
+	$wp_customize->get_setting( 'parallax_one_contact_info_show' )->transport = 'postMessage';
+
+
+	/* CONTACT INFO CONTENT */
+	$wp_customize->add_section( 'parallax_one_contact_info' , array(
+		'title'       => __( 'Content', 'parallax-one' ),
+		'priority'    => 2,
+		'panel' => 'panel_8'
+	));
+	
+	/* Socials icons */
+	require_once ( 'class/parallax-one-contact-info-custom-control.php');
+	
+	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( new Parallax_One_Contact_Info_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
+		'label'   => __('Add new social icon','parallax-one'),
+		'section' => 'parallax_one_contact_info',
+		'settings' => 'parallax_one_contact_info_content',
+		'priority' => 3
+	) ) );
+	
+	/* CONTACT INFO COLORS */
+	$wp_customize->add_section( 'parallax_one_contact_info_colors_section' , array(
+			'title'       => __( 'Colors', 'parallax-one' ),
+			'priority'    => 3,
+			'panel' => 'panel_8'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_contact_info_colors_section' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_contact_info_colors_section',
+		array(
+			'section' => 'parallax_one_contact_info_colors_section',
+	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
+	));
+	
+	/********************************************************/
 	/************** FOOTER OPTIONS  *************************/
 	/********************************************************/	
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => __( 'Footer options', 'parallax-one' ),
-      	'priority'    => 37,
+      	'priority'    => 38,
       	'description' => __('The main content of this section is customizable in: <br/>Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	

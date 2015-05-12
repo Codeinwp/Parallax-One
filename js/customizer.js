@@ -437,6 +437,23 @@
 		} );
 		
     });	
+
+
+	/******************************************************
+	*********** CONTACT INFO SECTION **************
+	*******************************************************/
+	//Show Contact Info
+	wp.customize( 'parallax_one_contact_info_show', function( value ) {
+		value.bind( function( to ) {
+			
+			if ( '1' != to ) {
+				$( '#parallax_one_contact_info_section' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#parallax_one_contact_info_section' ).addClass( 'paralax_one_only_customizer' );
+			}
+			
+		} );
+	} );
 	
 	/***************************************
 	******** FOOTER SECTION *********

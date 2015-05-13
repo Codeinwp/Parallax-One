@@ -9,6 +9,8 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 		}
 
 		public function render_content() {
+			$this_default = json_decode($this->setting->default);
+			
 			  $icons_array = array( 
 												'No Icon' => '',
 												'Blogger-1' => 'icon-social-blogger',
@@ -84,8 +86,9 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 			if(!is_array($json)) $json = array($values);
 			$it = 0;
  ?>
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<div id="parallax_one_icons_repeater" class="parallax_one_droppable">
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				
 				<?php 
 					if(empty($json[0]->icon_value)) {
 				?>
@@ -105,34 +108,71 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 						</div>
 				<?php
 					} else {
-						foreach($json as $icon){
+						if ( !empty($this_default) && empty($values))  {
+							foreach($this_default as $icon){
 				?>
-							<div class="parallax_one_repeater_container parallax_one_draggable">
-								<label>
-									<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
-										<?php
-											foreach($icons_array as $key => $value) {
-												if($icon->icon_value == $value){
-													printf('<option value="%s" selected="selected">%s</option>', $value, $key);
-												} else {
-													printf('<option value="%s">%s</option>', $value, $key);
+								<div class="parallax_one_repeater_container parallax_one_draggable">
+									<label>
+										<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
+											<?php
+												foreach($icons_array as $key => $value) {
+													if($icon->icon_value == $value){
+														printf('<option value="%s" selected="selected">%s</option>', $value, $key);
+													} else {
+														printf('<option value="%s">%s</option>', $value, $key);
+													}
 												}
-											}
-										?>
-									</select>
-									<input type="text" value="<?php echo $icon->icon_link; ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
-								</label>								
-								<button type="button" class="parallax_one_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
+											?>
+										</select>
+										<input type="text" value="<?php echo $icon->icon_link; ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+									</label>								
+									<button type="button" class="parallax_one_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
 
-							</div>
+								</div>
 				<?php
-							$it++;
+								$it++;
+							}
+						} else {
+						
+							foreach($json as $icon){
+					?>
+								<div class="parallax_one_repeater_container parallax_one_draggable">
+									<label>
+										<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
+											<?php
+												foreach($icons_array as $key => $value) {
+													if($icon->icon_value == $value){
+														printf('<option value="%s" selected="selected">%s</option>', $value, $key);
+													} else {
+														printf('<option value="%s">%s</option>', $value, $key);
+													}
+												}
+											?>
+										</select>
+										<input type="text" value="<?php echo $icon->icon_link; ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+									</label>								
+									<button type="button" class="parallax_one_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
+
+								</div>
+					<?php
+								$it++;
+							}
 						}
 					}
 				?>
 			</div>
 			
-			<input type="hidden" id="parallax_one_repeater_colector" <?php $this->link(); ?>value="<?php echo esc_textarea( $this->value() ); ?>" />
+			<?php
+			if ( !empty($this_default) && empty($values)) {
+			?>
+				<input type="hidden" id="parallax_one_repeater_colector" <?php $this->link(); ?>value="<?php echo esc_textarea( $this_default ); ?>" />
+			<?php
+			} else {
+			?>
+				<input type="hidden" id="parallax_one_repeater_colector" <?php $this->link(); ?>value="<?php echo esc_textarea( $this->value() ); ?>" />
+			<?php
+			}
+			?>
 			<button type="button"   id="parallax_one_new_field" class="button add_field"><?php _e('Add new field','parallax-one'); ?></button>
 
 			<?php

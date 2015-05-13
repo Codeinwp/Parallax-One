@@ -817,7 +817,8 @@ function parallax_one_customize_register( $wp_customize ) {
 	require_once ( 'class/parallax-one-contact-info-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default' => json_encode(array( array("icon_value" => "icon-basic-mail" ,"icon_text" => "hey@designlab.co", "icon_link" => "#" ), array("icon_value" => "icon-basic-geolocalize-01" ,"icon_text" => "Glen Road, E13 8 London, UK", "icon_link" => "#" ), array("icon_value" => "icon-basic-tablet" ,"icon_text" => "+44-12-3456-7890", "icon_link" => "#" ) ))
 	));
 	$wp_customize->add_control( new Parallax_One_Contact_Info_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
 		'label'   => __('Add new social icon','parallax-one'),
@@ -842,7 +843,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	
 	/********************************************************/
-	/************** FOOTER OPTIONS  *************************/
+	/************** FOOTER OPTIONS  *****************/
 	/********************************************************/	
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
@@ -855,7 +856,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	require_once ( 'class/parallax-one-menu-dropdown-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_menu_dropdown_setting', array(
-		'default'        => '',
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
 	$wp_customize->add_control( new Parallax_One_Menu_Dropdown_Custom_Control( $wp_customize, 'parallax_one_menu_dropdown_setting', array(
@@ -875,7 +875,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => __( 'Copyright', 'parallax-one' ),
 		'section'  => 'parallax_one_footer_section',
 		'settings' => 'parallax_one_copyright',
-		'priority'    => 2,
+		'priority'    => 2
 	));
 	$wp_customize->get_setting( 'parallax_one_copyright' )->transport = 'postMessage';
 	
@@ -884,7 +884,8 @@ function parallax_one_customize_register( $wp_customize ) {
 	require_once ( 'class/parallax-one-socials-dropdown-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default' => json_encode(array(array('icon_value' =>'icon-social-facebook' , 'icon_link' => '#'),array('icon_value' =>'icon-social-twitter' , 'icon_link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'icon_link' => '#')))
 	));
 	$wp_customize->add_control( new Parallax_One_Social_Icons_Repeater( $wp_customize, 'parallax_one_social_icons', array(
 		'label'   => __('Add new social icon','parallax-one'),

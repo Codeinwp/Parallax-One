@@ -61,6 +61,7 @@ jQuery(document).ready(function(){
 			field.find(".parallax_one_contact_info_remove_field").show();
 			field.find("select").val('');
 			field.find(".parallax_one_contact_text").val('');
+			field.find(".parallax_one_contact_link").val('');
 			jQuery(".parallax_one_contact_info_repeater_container:first").parent().append(field);
 			parallax_one_refresh_contact_info_values();
 		} else {

@@ -1399,7 +1399,8 @@ h2.site-description {
 	margin: 0;
 	line-height: 16px;
 	text-align: justify;
-	float: left;\
+	float: left;
+	width: 100%;
 }
 
 .timeline-box-wrap .info .entry-meta {

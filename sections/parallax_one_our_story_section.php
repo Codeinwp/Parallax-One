@@ -19,7 +19,7 @@
 			
 			<!-- BRIEF IMAGE -->
 			<?php
-				$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', get_stylesheet_directory_uri().'/images/about-us.png');
+				$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', get_stylesheet_directory_uri().'/images/about-us.jpg');
 				
 				if( !empty($paralax_one_our_story_image) ){
 					echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.$paralax_one_our_story_image.'" alt=""></div></div>';
@@ -32,7 +32,7 @@
 			<div class="col-md-6 content-section brief-content-one">
 			
 				<?php
-						$parallax_one_our_story_title = get_theme_mod('parallax_one_our_story_title','Our Services');
+						$parallax_one_our_story_title = get_theme_mod('parallax_one_our_story_title','Our Story');
 						
 						if( !empty($parallax_one_our_story_title) ){
 							echo '<h2 class="text-left dark-text">'.$parallax_one_our_story_title.'</h2><div class="colored-line-left"></div>';
@@ -51,24 +51,7 @@
 							echo '<p class=" text-left paralax_one_only_customizer"></p>';
 						}
 					?>
-			
-				<!-- FEATURE LIST -->
-				<!--div class="row brief-content">
-					<div class="col-md-6 col-sm-6">
-						<ul class="feature-list text-left">
-							<li>We care your businnes</li>
-							<li>Skilled professionals</li>
-							<li>Lorem ipsum dolor</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-sm-6">
-						<ul class="feature-list text-left">
-							<li>Startup ipsum does</li>
-							<li>Flexible schedule</li>
-							<li>Certified company</li>
-						</ul>
-					</div>
-				</div--><!-- .brief-content -->
+
 			</div><!-- .brief-content-one-->
 			
 		</div>

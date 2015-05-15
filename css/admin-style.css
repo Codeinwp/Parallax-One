@@ -2,13 +2,13 @@
 	margin-top: 15px;
 	color: rgb(0, 142, 214);
 }
-.parallax_one_repeater_container {
+.parallax_one_repeater_container, .parallax_one_contact_info_repeater_container {
 	width: 100%;
 	float: left;
 	padding: 5px 0;
 	cursor:move;
 }
-.parallax_one_repeater_container label {
+.parallax_one_repeater_container label, .parallax_one_contact_info_repeater_container label {
 	float: left;
 	width: 73%;
 }
@@ -20,21 +20,32 @@ button.parallax_one_remove_field {
 	line-height: 17px !important;
 	float: right;
 }
-.parallax_one_repeater_container .parallax_one_icon_link {
+
+button.parallax_one_contact_info_remove_field {
+  display: inline-block;
+  width: 25% !important;
+  height: 88px !important;
+  white-space: initial !important;
+  line-height: 17px !important;
+  float: right;
+}
+
+
+.parallax_one_repeater_container .parallax_one_icon_link,  .parallax_one_contact_info_repeater_container .parallax_one_contact_text, .parallax_one_contact_info_repeater_container .parallax_one_contact_link{
 	width: 100% !important;
 	margin: 3px 0 0 !important;
 }
-.parallax_one_repeater_container .parallax_one_icons {
+.parallax_one_repeater_container .parallax_one_icons, .parallax_one_contact_info_repeater_container .parallax_one_conatact_info_icons {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-#parallax_one_new_field {
+#parallax_one_new_field, #parallax_one_contact_info_new_field {
 	width: 100%;
 }
 .customize-control-widget_form .widget-control-save {
 	display:block !important;
 }
-.parallax_one_icons_repeater{
+.parallax_one_icons_repeater, .parallax_one_contact_info_repeater{
 	float:left;
 }

@@ -36,7 +36,7 @@
 							$parallax_one_button_link = get_theme_mod('parallax_one_button_link','#');
 							if( !empty($parallax_one_button_text) ){
 								if( empty($parallax_one_button_link) ){
-									echo '<button onclick="" class="btn btn-primary standard-button paralax_one_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal"></button>';
+									echo '<button onclick="" class="btn btn-primary standard-button paralax_one_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal">'.$parallax_one_button_text.'</button>';
 								} else {
 									echo '<button onclick="window.location=\''.$parallax_one_button_link.'\'" class="btn btn-primary standard-button" type="button" data-toggle="modal" data-target="#stamp-modal">'.$parallax_one_button_text.'</button>';
 								}

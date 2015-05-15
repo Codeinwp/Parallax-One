@@ -81,7 +81,7 @@
 			
 				/* SOCIAL ICONS */
 			
-				$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons' );
+				$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', json_encode(array(array('icon_value' =>'icon-social-facebook' , 'icon_link' => '#'),array('icon_value' =>'icon-social-twitter' , 'icon_link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'icon_link' => '#'))) );
 
 				if( !empty( $parallax_one_social_icons ) ){
 					

@@ -56,6 +56,85 @@
         } );
     });
 
+	//Show Header Section
+	wp.customize( 'parallax_one_header_show', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '#parallax_header' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#parallax_header' ).addClass( 'paralax_one_only_customizer' );
+			}
+		} );
+	});
+
+	//Show Header Logo
+	wp.customize('paralax_one_header_logo', function( value ){
+		value.bind(function( to ) {
+			if( to != '' ) {
+				$('#parallax_header .only-logo').removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$('#parallax_header .only-logo').addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#parallax_header .only-logo img' ).attr('src', to);
+		});
+		
+	});
+	
+	//Title
+	wp.customize("parallax_one_header_title", function(value) {
+		
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '#parallax_header .intro-section h1' ).removeClass( 'paralax_one_only_customizer' );
+			}
+			else {
+				$( '#parallax_header .intro-section h1' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#parallax_header .intro-section h1' ).text( to );
+	    } );
+		
+    });
+	
+	//Subtitle
+	wp.customize("parallax_one_header_subtitle", function(value) {
+		
+        value.bind(function( to ) {
+			if( to != '' ) {
+				$( '#parallax_header .intro-section h5' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#parallax_header .intro-section h5' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#parallax_header .intro-section h5' ).text( to );
+		} );
+		
+    });
+	
+	//Button text
+	wp.customize("parallax_one_header_button_text", function(value) {
+		
+        value.bind(function( to ) {
+
+			if( to != '' ) {
+				$( '#parallax_header .button a' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#parallax_header .button a' ).addClass( 'paralax_one_only_customizer' );
+			}
+			$( '#parallax_header .button a' ).text( to );
+		} );
+		
+    });
+
+
+	//Button link
+	wp.customize("parallax_one_header_button_link", function(value) {
+		
+        value.bind(function( to ) {
+			$( '#parallax_header .button a' ).attr( 'href', to );
+		} );
+		
+    });	
+
+
 	/******************************************************
 	************* OUR STORY SECTION ****************
 	*******************************************************/
@@ -358,6 +437,23 @@
 		} );
 		
     });	
+
+
+	/******************************************************
+	*********** CONTACT INFO SECTION **************
+	*******************************************************/
+	//Show Contact Info
+	wp.customize( 'parallax_one_contact_info_show', function( value ) {
+		value.bind( function( to ) {
+			
+			if ( '1' != to ) {
+				$( '#parallax_one_contact_info_section' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#parallax_one_contact_info_section' ).addClass( 'paralax_one_only_customizer' );
+			}
+			
+		} );
+	} );
 	
 	/***************************************
 	******** FOOTER SECTION *********

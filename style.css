@@ -66,9 +66,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     
     3.15 FOOTER
 
-4. RESPONSIVE
+4. BLOG
 
-5. ICONS
+5. SINGLE PAGE
+
+6. RESPONSIVE
+
+7. ICONS
 
 
 -----------------------------------------*/
@@ -91,23 +95,27 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 -----------------------------------------*/
 html {
 	font-size: 100%;
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
 }
-
 body {
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 16px;
-	line-height: 28px;
+	line-height: 24px;
 	font-weight: 300;
 	color: #313131;
-	text-align: center;
+	text-align: left;
 	overflow-x: hidden !important;
 	margin: auto !important;
+/**
 	background: transparent;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;
 	background-image: url(images/background-images/1.jpg);
+*/
 }
 
 /*---------------------------------------
@@ -171,23 +179,6 @@ a:hover {
 	width: device-width;
 }
 
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-ul,
-ol {
-	padding-left: 0 !important;
-}
-
-li {
-	list-style: none;
-}
-
 .row.no-gutters[class^="col-"],
 .row.no-gutters[class*=" col-"] {
 	padding-right: 0;
@@ -245,10 +236,23 @@ h2 {
 }
 
 h1 {
-	font-size: 3.75rem;
-	line-height: 5rem;
+
 }
 
+h1.intro {
+	font-size: 3.75rem;
+	line-height: 5rem;
+	text-align: center;
+}
+
+h1.single-title {
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: #000;
+}
+
+/*
 h2 {
 	font-size: 2.4rem;
 	line-height: 3.125rem;
@@ -272,6 +276,7 @@ h5 {
 	font-size: 18px;
 	line-height: 28px;
 }
+*/
 
 /* BUTTONS */
 .standard-button {
@@ -323,6 +328,213 @@ strong,
 	color: #666666;
 	font-size: 16px !important;
 }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	padding-left: 3px;
+	width: 100%;
+}
+
 /*---------------------------------------
    2.2 BUTTONS       
 -----------------------------------------*/
@@ -469,6 +681,7 @@ strong,
 .section-header {
 	margin-top: 90px;
 	margin-bottom: 60px;
+	text-align: center;
 }
 
 .section-header h2 {
@@ -769,6 +982,7 @@ h2.site-description {
 .only-logo .navbar-header {
     margin: auto;
     float: none;
+    text-align: center;
 }
 
 .only-logo .navbar-header img {
@@ -778,12 +992,14 @@ h2.site-description {
 /* INTRO */
 .intro-section {
     margin-top: 130px;
+    text-align: center;
 }
 
 .intro-section h5 {
     margin-top: 30px;
     margin-bottom: 40px;
     line-height: 1.5;
+    text-align: center;
 }
 
 .imac-image img {
@@ -1700,6 +1916,10 @@ a.control_next.fade-btn {
 	width: 100%;
 }
 
+.ribbon-wrap {
+	text-align: center;
+}
+
 /*---------------------------------------
    3.13 SECTION: CONTACT INFO
 -----------------------------------------*/
@@ -1739,6 +1959,7 @@ a.control_next.fade-btn {
 	display: inline-block;
 	margin-right: -4px;
 	vertical-align: top;
+	text-align: center;
 }
 
 /*---------------------------------------
@@ -1814,6 +2035,7 @@ a.control_next.fade-btn {
 	float: none;
 	width: 100%;
 }
+
 .footer-widget-wrap .widget-box {
 	float: none;
 	display: inline-block;
@@ -1821,6 +2043,7 @@ a.control_next.fade-btn {
 	vertical-align: top;
 	text-align: left;
 }
+
 .footer-widget-wrap .widget-box {
 	width: 25%;
 }
@@ -1830,6 +2053,11 @@ a.control_next.fade-btn {
 	margin-top: 30px;
 	border-top: 1px solid #e4e7e7;
 	padding-top: 5px;
+	text-align: center;
+}
+
+.footer-bottom-wrap {
+	text-align: center;
 }
 
 /*---------------------------------------
@@ -1954,10 +2182,88 @@ a:hover {
 	margin: auto;
 }
 
+/* --------------------------------------
+=========================================
+   4. BLOG
+=========================================
+-----------------------------------------*/
+
 
 /* --------------------------------------
 =========================================
-   5. RESPONSIVE CSS FIXES
+   5. SINGLE PAGE
+=========================================
+-----------------------------------------*/
+
+.post-author i,
+.post-time i,
+.post-comments i {
+	font-size: 13px;
+	padding-right: 5px;
+}
+
+.single-entry-meta {
+	padding: 10px 0;
+}
+
+.post-time {
+	padding-left: 6px;
+}
+
+.post-comments {
+	float: right;
+}
+
+.entry-content,
+.entry-content p,
+.entry-content span {
+	text-align: justify;
+}
+
+.cat-links,
+.tags-links {
+	clear: both;
+	width: 100%;
+	float: left;
+}
+
+.cat-links i,
+.tags-links i {
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+.post-navigation {
+	float: left;
+	clear: both;
+	width: 100%;
+	font-size: 13px;
+	padding-top: 15px;
+	margin-top: 40px;
+	border-top: 1px solid #E7E7E7;
+}
+
+.post-navigation .nav-previous {
+	float: left;
+	max-width: 50%;
+}
+
+.post-navigation .nav-next {
+	float: right;
+	max-width: 50%;
+}
+
+.comments-area {
+	padding-top: 15px;
+	margin-top: 40px;
+	border-top: 1px solid #E7E7E7;
+	float: left;
+	width: 100%;
+}
+
+/* --------------------------------------
+=========================================
+   6. RESPONSIVE CSS FIXES
 =========================================
 -----------------------------------------*/
 

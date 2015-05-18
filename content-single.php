@@ -4,12 +4,23 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('content-single-page'); ?>>
+	<header class="entry-header single-header">
+		<?php the_title( '<h1 class="entry-title single-title">', '</h1>' ); ?>
+		<div class="colored-line-left"></div>
+		<div class="clearfix"></div>
 
-		<div class="entry-meta">
-			<?php parallax_one_posted_on(); ?>
+		<div class="entry-meta single-entry-meta">
+			<?php // parallax_one_posted_on(); ?>
+			<span class="post-author">
+				<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
+			</span>
+			<span class="post-time">
+				<i class="icon-clock-alt"></i><?php the_time('F j, Y'); ?>
+			</span>
+			<a href="<?php comments_link(); ?>" class="post-comments">
+				<i class="icon-comment-alt"></i><?php comments_number( 'No comments', 'One comment', '% comments' ); ?>
+			</a>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

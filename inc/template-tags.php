@@ -107,13 +107,13 @@ function parallax_one_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'parallax-one' ) );
 		if ( $categories_list && parallax_one_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'parallax-one' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . __( 'Posted in %1$s', 'parallax-one' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'parallax-one' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'parallax-one' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i>' . __( 'Tagged %1$s', 'parallax-one' ) . '</span>', $tags_list );
 		}
 	}
 

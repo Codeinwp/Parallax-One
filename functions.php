@@ -351,3 +351,18 @@ function parallax_trigger_default_widgets(){
 	}
 }
 add_action( 'after_switch_theme', 'parallax_trigger_default_widgets' );
+
+/* remove custom-background from body_class() */
+add_filter( 'body_class', 'remove_class_function' );
+
+function remove_class_function( $classes ) {
+
+    if ( !is_home() ) {
+        // index of custom-background
+        $key = array_search('custom-background', $classes);
+        // remove class
+        unset($classes[$key]);
+    }
+    return $classes;
+
+}

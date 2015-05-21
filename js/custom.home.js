@@ -198,3 +198,15 @@ jQuery(document).ready(function() {
 	}
 
 });
+
+
+jQuery(window).load(function() {
+
+    "use strict";
+    /* useful for Our team section */
+    jQuery('.team-member-wrap .team-member-box').each(function(){
+        var thisHeight = jQuery(this).find('.member-pic').height();
+        jQuery(this).find('.member-details').height(thisHeight);
+    });
+
+});

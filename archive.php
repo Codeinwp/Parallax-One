@@ -7,10 +7,19 @@
  * @package parallax-one
  */
 
-get_header(); ?>
+	get_header(); 
+?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	</div>
+	<!-- /END COLOR OVER IMAGE -->
+</header>
+<!-- /END HOME / HEADER  -->
+
+<div class="content-wrap">
+	<div class="container">
+
+		<div id="primary" class="content-area col-md-8 post-list">
+			<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -42,8 +51,15 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			</main><!-- #main -->
+		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+		<div class="col-md-4">
+			<?php get_sidebar(); ?>
+		</div>
+
+	</div>
+</div><!-- .content-wrap -->
+
 <?php get_footer(); ?>
+

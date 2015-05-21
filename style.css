@@ -67,8 +67,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     3.15 FOOTER
 
 4. BLOG
+	
+	4.1. SINGLE PAGE
 
-5. SINGLE PAGE
+	4.2 SIDEBAR
 
 6. RESPONSIVE
 
@@ -101,8 +103,8 @@ html {
 }
 body {
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
-	font-size: 16px;
-	line-height: 24px;
+	font-size: 14px;
+	line-height: 22px;
 	font-weight: 300;
 	color: #313131;
 	text-align: left;
@@ -1617,6 +1619,7 @@ h2.site-description {
 	text-align: justify;
 	float: left;
 	width: 100%;
+	min-height: 55px;
 }
 
 .timeline-box-wrap .info .entry-meta {
@@ -1628,6 +1631,7 @@ h2.site-description {
 .parallax-slider-whole-wrap {
 	position: relative;
 	float: left;
+	width: 100%;
 }
 
 #parallax_slider {
@@ -1789,6 +1793,7 @@ a.control_next.fade-btn {
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 	background: rgba(0,0,0,0);
+	text-align: center;
 }
 
 .member-details h5 {
@@ -1845,6 +1850,7 @@ a.control_next.fade-btn {
     border: 3px solid #FFF;
     background-clip: padding-box;
     box-shadow: 0px 0px 0px 1px #008ED6;
+    background-color: #FAFAFA;
 }
 
 .feedback .pic-container img {
@@ -1870,6 +1876,7 @@ a.control_next.fade-btn {
 	display: inline-block;
 	margin-right: -4px;
 	vertical-align: top;
+	text-align: center;
 }
 
 .testimonials-wrap .testimonials-box .feedback {
@@ -2012,6 +2019,12 @@ a.control_next.fade-btn {
 	text-decoration: none;
 }
 
+ul.social-icons {
+	padding-left: 0;
+	margin-left: 0;
+	margin-top: 10px;
+}
+
 .social-icons li {
 	display: inline-block;
 	margin-right: 5px;
@@ -2058,6 +2071,11 @@ a.control_next.fade-btn {
 
 .footer-bottom-wrap {
 	text-align: center;
+}
+
+.footer-bottom-wrap ul {
+	margin: 0;
+	padding: 0;
 }
 
 /*---------------------------------------
@@ -2188,10 +2206,20 @@ a:hover {
 =========================================
 -----------------------------------------*/
 
+.post-list article {
+	border: 1px solid #eaeaea;
+	border-bottom: 4px solid #eaeaea;
+	float: left;
+	width: 100%;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+
 
 /* --------------------------------------
 =========================================
-   5. SINGLE PAGE
+   4.1 SINGLE PAGE
 =========================================
 -----------------------------------------*/
 
@@ -2200,6 +2228,12 @@ a:hover {
 .post-comments i {
 	font-size: 13px;
 	padding-right: 5px;
+}
+
+.post-author,
+.post-time,
+.post-comments {
+	font-weight: 500;
 }
 
 .single-entry-meta {
@@ -2225,6 +2259,7 @@ a:hover {
 	clear: both;
 	width: 100%;
 	float: left;
+	font-weight: 500;
 }
 
 .cat-links i,
@@ -2253,12 +2288,240 @@ a:hover {
 	max-width: 50%;
 }
 
+#primary {
+	margin: 50px 0;
+	padding-right: 30px;
+}
+
+#secondary {
+	margin: 50px 0;
+	padding-left: 30px;
+	border-left: 1px solid #E7E7E7;
+}
+
+.content-single-page .entry-content {
+	padding: 10px 0 10px;
+}
+
+/* comments */
 .comments-area {
 	padding-top: 15px;
 	margin-top: 40px;
 	border-top: 1px solid #E7E7E7;
 	float: left;
 	width: 100%;
+}
+
+.comment-list {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.comment-list ol {
+	list-style: none;
+	padding-left: 0;
+}
+
+.comment-list ol.children {
+	margin-left: 50px;
+}
+
+h2.comments-title {
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #000000;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	margin-top: 15px;
+}
+
+h2.screen-reader-text {
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #000000;
+	text-transform: uppercase;
+}
+
+.comment-list .comment > article {
+	border: 1px solid #eaeaea;
+	border-radius: 6px;
+	margin-left: 80px;
+	position: relative;
+	margin-bottom: 22px;
+	padding: 15px;
+}
+
+.comment-list .comment-author img {
+	position: absolute;
+	top: 0;
+	left: -80px;
+	border-radius: 50%;
+	border: 5px solid #e4e4e4;
+	width: 60px;
+	height: 60px;
+}
+
+.comment-list  .comment-author .fn {
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.comment-list  .comment-author .fn a {
+	font-weight: 700;
+	color: #000;
+	font-size: 14px;
+}
+
+.comment-list .comment-author .says {
+	font-weight: 500;
+	color: #a7a8b1;
+	font-size: 14px;
+}
+
+.comment-list .comment-metadata {
+	color: #008ed6;
+	font-size: 12px;
+	line-height: 14px;
+	font-style: italic;
+}
+
+.comment-list .comment-metadata .edit-link {
+	float: right;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+.comment-list .comment-content {
+	font-size: 13px;
+	line-height: 18px;
+	margin-top: 5px;
+}
+
+.comment-list .reply {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.comment-form p {
+	position: relative;
+	padding-left: 100px;
+}
+
+.comment-form p.comment-notes {
+	width: 100%;
+	padding-left: 0;
+}
+
+.comment-form label {
+  position: absolute;
+  left: 0;
+  line-height: 25px;
+}
+
+.comment-form input {
+	font-size: 12px;
+	font-weight: 500;
+	min-width: 50%;
+}
+
+.comment-form textarea {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.comment-form .form-allowed-tags,
+.comment-form .form-allowed-tags code {
+	font-size: 10px;
+	line-height: 14px;
+}
+
+.comment-form .form-submit input {
+	background: #008ed6;
+	border-radius: 3px;
+	box-shadow: none;
+	font-weight: 500;
+	text-align: center;
+	line-height: 30px;
+	color: #FFF;
+	text-shadow: none;
+	text-transform: uppercase;
+	padding: 7px 30px;
+	border: 1px solid #008ed6;
+	min-width: 10px;
+}
+
+.comment-form .form-submit input:hover {
+	background: #F7F8FA;
+	border: 1px solid #eaebec;
+	color: #008ed6;
+}
+
+.comment-reply-title {
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: 500;
+	margin-top: 50px;
+}
+
+
+/* --------------------------------------
+=========================================
+   4.2 SIDEBAR
+=========================================
+-----------------------------------------*/
+
+#secondary .widget-title {
+	font-size: 22px;
+	color: #4f4f4f;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+#secondary .widget-title:after {
+	height: 2px;
+	width: 80px;
+	display: block;
+	background: #008ed6;
+	float: left;
+}
+
+#secondary ul {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+#secondary .widget {
+	margin-bottom: 50px;
+}
+
+#secondary ul li {
+	margin: 0;
+	list-style: none;
+	position: relative;
+	padding-left: 14px;
+}
+
+#secondary ul li:before {
+	content: "";
+	width: 8px;
+	height: 8px;
+	background: #818181;
+	border: 2px solid #d3d3d3;
+	border-radius: 50%;
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 8px;
 }
 
 /* --------------------------------------

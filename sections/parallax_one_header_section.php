@@ -4,9 +4,9 @@
 	
 	$parallax_one_header_show = get_theme_mod('parallax_one_header_show');
 	if( isset($parallax_one_header_show) && $parallax_one_header_show != 1 ){
-		echo '<div class="container" id="parallax_header">';
+		echo '<div class="container overlay-layer" id="parallax_header">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<div class="container paralax_one_only_customizer" id="parallax_header">';
+		echo '<div class="container overlay-layer paralax_one_only_customizer" id="parallax_header">';
 	}
 	
 	if( ( isset($parallax_one_header_show) && $parallax_one_header_show != 1 ) || isset( $wp_customize ) ){

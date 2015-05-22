@@ -52,7 +52,14 @@
 	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
 
         <!-- COLOR OVER IMAGE -->
-        <div class="overlay-layer">	
+        <?php
+        	if( !is_front_page() ){
+        		$fixedheader = 'sticky-navigation-open';
+        	}else{
+        		$fixedheader = '';
+        	}
+        ?>
+        <div class="overlay-layer-wrap <?php echo $fixedheader; ?>">
 
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll" role="navigation">
@@ -111,7 +118,7 @@
 
                     </div>
                     
-                    <!-- MENU -->	
+                    <!-- MENU -->
                     <div class="navbar-collapse collapse" id="stamp-navigation">		
     					<?php 
     						wp_nav_menu( 

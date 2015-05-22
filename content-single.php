@@ -11,7 +11,6 @@
 		<div class="clearfix"></div>
 
 		<div class="entry-meta single-entry-meta">
-			<?php // parallax_one_posted_on(); ?>
 			<span class="post-author">
 				<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
 			</span>

@@ -252,6 +252,11 @@ h1.single-title {
 	line-height: 28px;
 	text-transform: uppercase;
 	color: #000;
+	margin-top: 0;
+}
+
+h1.page-title {
+	margin-top: 0;
 }
 
 /*
@@ -858,6 +863,9 @@ h2.site-description {
 	left: -999em;
 	z-index: 99999;
 	background: #FFf;
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
 }
 
 .sticky-navigation .main-navigation ul ul {
@@ -906,6 +914,16 @@ h2.site-description {
 .sticky-navigation .main-navigation ul .dropdownmenu {
 	top: 7px;
 	right: 7px;
+}
+
+.sticky-navigation-open .sticky-navigation {
+	top: 0px;
+	opacity: 1;
+}
+
+.sticky-navigation-open {
+	min-height: 70px;
+	background: transparent;
 }
 
 .menu-align-center .navbar-header {
@@ -2092,8 +2110,12 @@ ul.social-icons {
 }
 
 /* THE OVERLAY COLORS WHICH WILL SHOW IN FRONT OF BACKGROUND IMAGES*/
-.overlay-layer {
+.overlay-layer-wrap {
 	background: rgba(0, 5, 8, 0.6);
+}
+
+.overlay-layer-wrap.sticky-navigation-open {
+	background: transparent;
 }
 
 .overlay-layer-2 {
@@ -2213,9 +2235,100 @@ a:hover {
 	width: 100%;
 	border-radius: 3px;
 	padding: 10px;
+	margin-bottom: 40px;
 }
 
+.page-header {
+	margin-top: 0;
+}
 
+.post-img-wrap {
+	position: relative;
+}
+
+.list-post-entry-meta {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	background: rgba(255,255,255,0.85);
+	padding: 14px;
+}
+
+.posted-in i {
+	font-size: 16px;
+	position: absolute;
+	left: 0;
+	top: 1px;
+}
+
+.posted-in {
+	color: #676767;
+	font-weight: 500;
+	position: relative;
+	padding-left: 23px;
+}
+
+.post-list article .entry-content p {
+	margin: 10px 0 5px;
+}
+
+.post-list h1.entry-title {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.post-list h1.entry-title a {
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: #000;
+}
+
+.post-list h1.entry-title a:hover {
+	color: #008ed6;
+	text-decoration: none;
+}
+
+.page-title {
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: #008ED6;
+	margin-top: 0;
+}
+
+.post-date {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,142,214,0.9);
+	padding: 16px 20px;
+	text-align: center;
+	min-width: 90px;
+	min-height: 90px;
+}
+
+.post-date .post-date-day {
+	display: block;
+	font-size: 31px;
+	line-height: 34px;
+	color: #FFF;
+	font-weight: 700;
+}
+
+.post-date .post-date-month {
+	display: block;
+	font-size: 18px;
+	line-height: 24px;
+	color: #FFF;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.content-page {
+	margin-top: 15px;
+}
 
 /* --------------------------------------
 =========================================
@@ -2223,25 +2336,49 @@ a:hover {
 =========================================
 -----------------------------------------*/
 
-.post-author i,
-.post-time i,
+.post-author i {
+	font-size: 13px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.post-time i {
+	font-size: 13px;
+	position: absolute;
+	left: 0;
+	top: 1px;
+}
 .post-comments i {
 	font-size: 13px;
-	padding-right: 5px;
+	position: absolute;
+	left: 0;
+	top: 1px;
+	color: #313131;
 }
 
-.post-author,
-.post-time,
+.post-author {
+	font-weight: 500;
+	position: relative;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
+.post-time {
+	font-weight: 500;
+	position: relative;
+	margin-right: 10px;
+	padding-left: 18px;
+}
+
 .post-comments {
 	font-weight: 500;
+	position: relative;
+	margin-right: 10px;
+	padding-left: 19px;
 }
 
 .single-entry-meta {
 	padding: 10px 0;
-}
-
-.post-time {
-	padding-left: 6px;
 }
 
 .post-comments {
@@ -2290,7 +2427,7 @@ a:hover {
 
 #primary {
 	margin: 50px 0;
-	padding-right: 30px;
+	padding-right: 15px;
 }
 
 #secondary {
@@ -2794,9 +2931,11 @@ h2.screen-reader-text {
 		border: 0 !important;
 	}
 
+	.navbar-inverse .navbar-toggle,
 	.navbar-inverse .navbar-toggle:hover,
     .navbar-inverse .navbar-toggle:focus {
 		background-color: inherit;
+		box-shadow: none;
 	}
 
 	.sticky-navigation .main-navigation li a {
@@ -2806,7 +2945,7 @@ h2.screen-reader-text {
 
 	.border-right-colored,
     .border-left-colored {
-		boreder: none;
+		border: none;
 	}
 
 	.navbar-inverse .navbar-collapse,
@@ -2895,9 +3034,9 @@ h2.screen-reader-text {
 
 	/* fixed header */
 	.sticky-navigation {
-		  top: -60px !important;
-		  opacity: 1 !important;
-		  position: relative !important;
+		top: 0 !important;
+		opacity: 1 !important;
+		position: relative !important;
 	}
 
 	.sticky-navigation .main-navigation ul,
@@ -2969,6 +3108,19 @@ h2.screen-reader-text {
 	
 	#stamp-navigation {
 		float: none;
+	}
+
+	#primary,
+	#secondary {
+		float: left;
+	}
+
+	#secondary {
+		margin: 0;
+		padding-top: 50px;
+		border-top: 1px solid #E7E7E7;
+		border-left: 0;
+		padding-left: 0;
 	}
 
 }

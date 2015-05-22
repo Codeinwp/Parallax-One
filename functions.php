@@ -74,6 +74,12 @@ function parallax_one_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	add_theme_support( 'post-thumbnails' ); 
+
+	/* Set the image size by cropping the image */
+	add_image_size( 'post-thumbnail', 730, 340, true );
+
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );

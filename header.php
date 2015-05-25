@@ -89,7 +89,7 @@
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url( $parallax_one ).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 							

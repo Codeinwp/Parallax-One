@@ -35,9 +35,9 @@
 									
 									foreach($parallax_one_contact_info_item_decoded as $parallax_one_contact_item){
 										if(!empty($parallax_one_contact_item->icon_link)){
-											echo '<div class="col-sm-4 contact-link-box"><div class="icon-container"><span class="'.$parallax_one_contact_item->icon_value.' colored-text"></span></div><a href="'.$parallax_one_contact_item->icon_link.'" class="strong">'.$parallax_one_contact_item->icon_text.'</a></div>';
+											echo '<div class="col-sm-4 contact-link-box"><div class="icon-container"><span class="'.$parallax_one_contact_item->icon_value.' colored-text"></span></div><a href="'.esc_url($parallax_one_contact_item->icon_link).'" class="strong">'.esc_attr($parallax_one_contact_item->icon_text).'</a></div>';
 										} else {
-											echo '<div class="col-sm-4 contact-link-box"><div class="icon-container"><span class="'.$parallax_one_contact_item->icon_value.' colored-text"></span></div><a href="" class="strong">'.$parallax_one_contact_item->icon_text.'</a></div>';
+											echo '<div class="col-sm-4 contact-link-box"><div class="icon-container"><span class="'.$parallax_one_contact_item->icon_value.' colored-text"></span></div><a href="" class="strong">'.esc_attr($parallax_one_contact_item->icon_text).'</a></div>';
 										}
 									}
 								

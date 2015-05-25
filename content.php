@@ -20,9 +20,9 @@
 						$image_url_mobile = wp_get_attachment_image_src($image_id,'post-thumbnail', true);
 					?>
 			 		<picture>
-						<source media="(max-width: 600px)" srcset="<?php echo $image_url_mobile[0]; ?>">
-						<source media="(max-width: 768px)" srcset="<?php echo $image_url_tablet[0]; ?>">
-						<img src="<?php echo $image_url_big[0]; ?>" alt="<?php the_title_attribute(); ?>">
+						<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
+						<source media="(max-width: 768px)" srcset="<?php echo esc_url($image_url_tablet[0]); ?>">
+						<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
 					</picture>
 				</a>
 				<div class="entry-meta list-post-entry-meta">
@@ -42,7 +42,7 @@
 							}
 						?>
 					</span>
-					<a href="<?php comments_link(); ?>" class="post-comments">
+					<a href="<?php esc_url(comments_link()); ?>" class="post-comments">
 						<i class="icon-comment-alt"></i><?php comments_number( 'No comments', 'One comment', '% comments' ); ?>
 					</a>
 				</div><!-- .entry-meta -->

@@ -7,28 +7,27 @@
  * @package parallax-one
  */
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
+if ( ! function_exists( 'parallax_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @todo Remove this function when WordPress 4.3 is released.
  */
-function the_posts_navigation() {
+function parallax_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'parallax-one' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'parallax-one' ) ); ?></div>
+			<div class="nav-previous"><span class="meta-nav">←</span><?php next_posts_link( __( 'Older posts', 'parallax-one' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'parallax-one' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'parallax-one' ) ); ?><span class="meta-nav">→</span></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->

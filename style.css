@@ -110,14 +110,6 @@ body {
 	text-align: left;
 	overflow-x: hidden !important;
 	margin: auto !important;
-/**
-	background: transparent;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-	background-image: url(images/background-images/1.jpg);
-*/
 }
 
 /*---------------------------------------
@@ -238,7 +230,38 @@ h2 {
 }
 
 h1 {
+	font-size: 36px;
+	line-height: 40px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
 
+h2 {
+	font-size: 30px;
+	line-height: 34px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 28px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 22px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+h5 {
+	font-size: 14px;
+	line-height: 18px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 h1.intro {
@@ -259,31 +282,14 @@ h1.page-title {
 	margin-top: 0;
 }
 
-/*
-h2 {
-	font-size: 2.4rem;
-	line-height: 3.125rem;
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5 {
+	margin-top: 35px;
+	margin-bottom: 20px;
 }
-
-h2 strong {
-	color: #272727;
-}
-
-h3 {
-	font-size: 1.5rem;
-	line-height: 2.375rem;
-}
-
-h4 {
-	font-size: 1.25rem;
-	line-height: 1.875rem;
-}
-
-h5 {
-	font-size: 18px;
-	line-height: 28px;
-}
-*/
 
 /* BUTTONS */
 .standard-button {
@@ -352,7 +358,10 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	padding: 15px 20px;
+	font-size: 17.5px;
+	line-height: 24px;
+	margin-bottom: 1.5em;
 }
 
 address {
@@ -369,6 +378,8 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	background: #FAFAFA;
+	border: 1px solid #E7E7E7;
 }
 
 code,
@@ -434,7 +445,8 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0;
+	padding-left: 20px;
 }
 
 ul {
@@ -460,14 +472,33 @@ dd {
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
 }
 
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+table, 
+th, 
+td {
+	border: 1px solid #eaeaea;
+}
+
+th, 
+td {
+	padding: 0.4em;
+}
+
+.wp-caption {
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -540,6 +571,27 @@ input[type="search"] {
 textarea {
 	padding-left: 3px;
 	width: 100%;
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
 }
 
 /*---------------------------------------
@@ -1146,6 +1198,10 @@ h2.site-description {
 /*---------------------------------------
    3.3 SECTION: SERVICES    
 -----------------------------------------*/
+.services-wrap {
+	text-align: center;
+}
+
 .single-service {
 	padding: 40px 35px 40px 35px;
 	margin: 0 0 100px 0;
@@ -1820,6 +1876,10 @@ a.control_next.fade-btn {
 	color: #FFF;
 }
 
+.team-member-wrap {
+	text-align: center;
+}
+
 .team-member-wrap .team-member-box {
 	float: none;
 	display: inline-block;
@@ -1846,6 +1906,7 @@ a.control_next.fade-btn {
 -----------------------------------------*/
 .testimonials {
 	padding-bottom: 60px;
+	text-align: center;
 }
 
 .feedback {
@@ -1899,7 +1960,7 @@ a.control_next.fade-btn {
 
 .testimonials-wrap .testimonials-box .feedback {
   padding: 40px 0 40px 0;
-  margin: 0 0 100px 0;
+  margin: 40px 0 60px 0;
   background: #ffffff;
   border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
@@ -2244,6 +2305,8 @@ a:hover {
 
 .post-img-wrap {
 	position: relative;
+	min-height: 150px;
+	background-color: rgb(234, 234, 234);
 }
 
 .list-post-entry-meta {
@@ -2328,6 +2391,30 @@ a:hover {
 
 .content-page {
 	margin-top: 15px;
+}
+
+.post-list article.sticky {
+	border: 1px solid #008ed6;
+	border-bottom: 4px solid #008ed6;
+}
+
+.posts-navigation {
+	float: left;
+	width: 100%;
+}
+
+.posts-navigation .nav-previous {
+	width: 50%;
+	float: left;
+	text-align: left;
+	font-weight: bold;
+}
+
+.posts-navigation .nav-next {
+	width: 50%;
+	float: right;
+	text-align: right;
+	font-weight: bold;
 }
 
 /* --------------------------------------
@@ -2610,6 +2697,11 @@ h2.screen-reader-text {
 	margin-top: 50px;
 }
 
+.comment-list li.pingback {
+	padding: 0 0 15px;
+	border-bottom: 1px solid #ececec;
+	margin-bottom: 15px;
+}
 
 /* --------------------------------------
 =========================================
@@ -2883,6 +2975,18 @@ h2.screen-reader-text {
 
 	#parallax_slider {
 		margin: 0px auto 0 auto;
+	}
+
+	.testimonials-wrap .testimonials-box {
+		width: 100%;
+	}
+
+	.team-member-wrap .team-member-box {
+		max-width: 300px;
+	}
+	
+	.controls-wrap {
+		text-align: center;
 	}
 
 }

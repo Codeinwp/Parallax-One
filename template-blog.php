@@ -19,18 +19,23 @@ Template Name: Blog
 
 			<?php
 
-				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				query_posts( array( 'post_type' => 'post', 'posts_per_page' => 6, 'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ) ) );
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
+					
+						get_template_part( 'content', get_post_format() );
+					
+					endwhile; 
+					
+					parallax_posts_navigation();
 				
-				$wp_query = new WP_Query( array('post_type' => 'post', 'showposts' => '8', 'paged' => $paged) );
-					if( $wp_query->have_posts() ):					 
-						while ($wp_query->have_posts()) : 
-							
-							$wp_query->the_post();
-								get_template_part( 'content', get_post_format() );
-						endwhile;
-					endif;
-
-					wp_reset_postdata();
+				else : 
+				
+					get_template_part( 'content', 'none' );
+					
+				endif;
+				
+				wp_reset_postdata(); 
 					
 			?>
 

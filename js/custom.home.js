@@ -101,27 +101,27 @@ jQuery(document).ready(function () {
 
 /* PRE LOADER */
 jQuery(window).load(function () {
-	"use strict";
-	jQuery(".status").fadeOut();
-	jQuery(".preloader").delay(1000).fadeOut("slow");
+    "use strict";
+    jQuery(".status").fadeOut();
+    jQuery(".preloader").delay(1000).fadeOut("slow");
 })
-		
-		
+        
+        
 jQuery(window).load(function() {
 
     "use strict";
 
     /*---------------------------------------*/
-    /*	NAVIGATION
-	/*---------------------------------------*/
-    jQuery('.main-navigation').onePageNav({
+    /*  NAVIGATION
+    /*---------------------------------------*/
+/*    jQuery('.main-navigation').onePageNav({
         changeHash: true,
         currentClass: 'not-active', /* CHANGE THE VALUE TO 'current' TO HIGHLIGHT CURRENT SECTION LINK IN NAV */
-        scrollSpeed: 750,
+/*        scrollSpeed: 750,
         scrollThreshold: 0.5,
         filter: ':not(.external)'
     });
-
+*/
 });
 
 
@@ -138,13 +138,6 @@ jQuery(window).resize(function() {
         });
     }
 
-    /*---------------------------------------*/
-    /*  SCROLL PANE
-    /*---------------------------------------*/
-	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
-		jQuery('.scroll-pane').jScrollPane({showArrows: true});
-	}	
-
 });
 
 
@@ -157,45 +150,6 @@ jQuery(document).ready(function() {
     /*---------------------------------------*/
 
     mainNav();
-    jQuery(window).scroll(function() {
-        mainNav();
-    });
-
-    function mainNav() {
-        var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) jQuery('.appear-on-scroll').stop().animate({
-            "opacity": '1',
-            "top": '0'
-        });
-        else jQuery('.appear-on-scroll').stop().animate({
-            "top": '-70',
-            "opacity": '0'
-        });
-
-        if (top > 120) {
-        jQuery('.js-login').fadeOut(20);
-        }
-        else {
-        jQuery('.js-login').fadeIn(200);
-            
-        }
-        
-        if (top > 400) {
-        jQuery('.js-register').fadeIn(200);
-        }
-        else {
-        jQuery('.js-register').fadeOut(200);
-            
-        }
-    }
-
-
-    /*---------------------------------------*/
-    /*  SCROLL PANE
-    /*---------------------------------------*/
-	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
-		jQuery('.scroll-pane').jScrollPane({showArrows: true});
-	}
 
 });
 
@@ -210,3 +164,127 @@ jQuery(window).load(function() {
     });
 
 });
+
+function mainNav() {
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    if (top > 40) jQuery('.appear-on-scroll').stop().animate({
+        "opacity": '1',
+        "top": '0'
+    });
+    else jQuery('.appear-on-scroll').stop().animate({
+        "top": '-70',
+        "opacity": '0'
+    });
+
+    if (top > 120) {
+    jQuery('.js-login').fadeOut(20);
+    }
+    else {
+    jQuery('.js-login').fadeIn(200);
+        
+    }
+    
+    if (top > 400) {
+    jQuery('.js-register').fadeIn(200);
+    }
+    else {
+    jQuery('.js-register').fadeOut(200);
+        
+    }
+}
+
+
+/*=================================
+===  SMOOTH SCROLL NAVIGATION     ====
+=================================== */
+
+jQuery(document).ready(function(){
+  jQuery('#stamp-navigation a[href*=#]:not([href=#])').bind('click',function () {
+    var headerHeight;
+    var hash    = this.hash;
+    var idName  = hash.substring(1);    // get id name
+    var alink   = this;                 // this button pressed
+    // check if there is a section that had same id as the button pressed
+    if ( jQuery('section [id*=' + idName + ']').length > 0 && jQuery(window).width() >= 751 ){
+      jQuery('.current').removeClass('current');
+      jQuery(alink).parent('li').addClass('current');
+    }else{
+      jQuery('.current').removeClass('current');
+    }
+    if ( jQuery(window).width() >= 751 ) {
+      headerHeight = jQuery('.sticky-navigation').height();
+    } else {
+      headerHeight = 0;
+    }
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top - headerHeight + 10
+        }, 1200);
+        return false;
+      }
+    }
+  });
+});
+
+jQuery(document).ready(function(){
+    var headerHeight;
+    jQuery('.current').removeClass('current');
+    jQuery('#stamp-navigation  a[href$="' + window.location.hash + '"]').parent('li').addClass('current');
+    if ( jQuery(window).width() >= 751 ) {
+      headerHeight = jQuery('.sticky-navigation').height();
+    } else {
+      headerHeight = 0;
+    }
+    if (location.pathname.replace(/^\//,'') == window.location.pathname.replace(/^\//,'') && location.hostname == window.location.hostname) {
+      var target = jQuery(window.location.hash);
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top - headerHeight + 10
+        }, 1200);
+        return false;
+      }
+    }
+});
+
+/* TOP NAVIGATION MENU SELECTED ITEMS */
+var i = 0;
+function scrolled() {
+
+    console.log(i++);
+
+    jQuery(this).off('scroll')[0].setTimeout(function(){
+
+        if ( jQuery(window).width() >= 751 ) {
+            var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+            var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
+            var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
+            // for all sections check if the cursor is inside a section
+            jQuery("section").each( function() {
+                var thisID = '#' + jQuery(this).attr('id');           // section id
+                var zerif_offset = jQuery(this).offset().top;         // distance between top and our section
+                var thisHeight  = jQuery(this).outerHeight();         // section height
+                var thisBegin   = zerif_offset - headerHeight;                      // where the section begins
+                var thisEnd     = zerif_offset + thisHeight - headerHeight;         // where the section ends  
+                // if position of the cursor is inside of the this section
+                if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+                    isInOneSection = 'yes';
+                    jQuery('.current').removeClass('current');
+                    jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                    return false;
+                }
+                if (isInOneSection == 'no') {
+                    jQuery('.current').removeClass('current');
+                }
+            });
+        }
+
+
+        mainNav();
+
+    jQuery(this).on('scroll', scrolled );
+    }, 500)
+}
+jQuery(window).on('scroll', scrolled );

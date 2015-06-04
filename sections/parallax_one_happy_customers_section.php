@@ -6,9 +6,9 @@
 	
 	$parallax_one_happy_customers_show = get_theme_mod('parallax_one_happy_customers_show');
 	if( isset($parallax_one_happy_customers_show) && $parallax_one_happy_customers_show != 1 ){
-		echo '<section class="testimonials white-bg" id="section10">';
+		echo '<section class="testimonials white-bg" id="customers">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="testimonials white-bg paralax_one_only_customizer" id="section10">';
+		echo '<section class="testimonials white-bg paralax_one_only_customizer" id="customers">';
 	}
 	
 	if( ( isset($parallax_one_happy_customers_show) && $parallax_one_happy_customers_show != 1 ) || isset( $wp_customize ) ){

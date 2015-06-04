@@ -29,9 +29,8 @@
 						} else {
 					?>
 				 		<picture>
-							<source media="(max-width: 600px)" srcset="<?php bloginfo('template_directory'); ?>/images/no-thumbnail.png">
-							<source media="(max-width: 768px)" srcset="<?php bloginfo('template_directory'); ?>/images/no-thumbnail.png">
-							<img src="<?php bloginfo('template_directory'); ?>/images/no-thumbnail.png" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset="<?php bloginfo('template_directory'); ?>/images/no-thumbnail-mobile.jpg">
+							<img src="<?php bloginfo('template_directory'); ?>/images/no-thumbnail.jpg" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 

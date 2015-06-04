@@ -18,7 +18,7 @@ jQuery(window).resize(function() {
 
     /* calculate the new height for all slides */
     sliderUlHeight = slideCount * slideHeight;
-    
+
     /* set new height */
     jQuery('#parallax_slider').css({ height: slideHeight });
     jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
@@ -85,15 +85,13 @@ jQuery(document).ready(function () {
             }
         }
     }; 
-
     jQuery('a.control_prev').click(function () {
         moveBottom();
     });
-
     jQuery('a.control_next').click(function () {
         moveTop();
     });
-
+    
 });    
 
 /* slider [end] */
@@ -105,99 +103,60 @@ jQuery(window).load(function () {
     jQuery(".status").fadeOut();
     jQuery(".preloader").delay(1000).fadeOut("slow");
 })
-        
-        
-jQuery(window).load(function() {
-
-    "use strict";
-
-    /*---------------------------------------*/
-    /*  NAVIGATION
-    /*---------------------------------------*/
-/*    jQuery('.main-navigation').onePageNav({
-        changeHash: true,
-        currentClass: 'not-active', /* CHANGE THE VALUE TO 'current' TO HIGHLIGHT CURRENT SECTION LINK IN NAV */
-/*        scrollSpeed: 750,
-        scrollThreshold: 0.5,
-        filter: ':not(.external)'
-    });
-*/
-});
 
 
 jQuery(window).resize(function() {
-
     "use strict";
-
     var ww = jQuery(window).width();
-
     /* COLLAPSE NAVIGATION ON MOBILE AFTER CLICKING ON LINK */
     if (ww < 480) {
         jQuery('.sticky-navigation a').on('click', function() {
             jQuery(".navbar-toggle").click();
         });
     }
-
 });
 
 
 jQuery(document).ready(function() {
-
     "use strict";
-
-    /*---------------------------------------*/
-    /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
-    /*---------------------------------------*/
-
     mainNav();
-
 });
 
-
 jQuery(window).load(function() {
-
     "use strict";
     /* useful for Our team section */
     jQuery('.team-member-wrap .team-member-box').each(function(){
         var thisHeight = jQuery(this).find('.member-pic').height();
         jQuery(this).find('.member-details').height(thisHeight);
     });
-
 });
 
+/*---------------------------------------*/
+/*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
+/*---------------------------------------*/
 function mainNav() {
     var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    if (top > 40) jQuery('.appear-on-scroll').stop().animate({
-        "opacity": '1',
-        "top": '0'
-    });
+    var topMenuClose    = -70;
+    var topMenuOpen     = 0;
+    if ( jQuery('.admin-bar').length>0 ) {
+        topMenuClose    = -38;
+        topMenuOpen     = 32;
+    }
+    if ( top > 40 )
+        jQuery('.appear-on-scroll').stop().animate({
+            "opacity": '1',
+            "top": topMenuOpen
+        });
     else jQuery('.appear-on-scroll').stop().animate({
-        "top": '-70',
+        "top": topMenuClose,
         "opacity": '0'
     });
-
-    if (top > 120) {
-    jQuery('.js-login').fadeOut(20);
-    }
-    else {
-    jQuery('.js-login').fadeIn(200);
-        
-    }
-    
-    if (top > 400) {
-    jQuery('.js-register').fadeIn(200);
-    }
-    else {
-    jQuery('.js-register').fadeOut(200);
-        
-    }
 }
 
 
 /*=================================
 ===  SMOOTH SCROLL NAVIGATION     ====
 =================================== */
-
 jQuery(document).ready(function(){
   jQuery('#stamp-navigation a[href*=#]:not([href=#])').bind('click',function () {
     var headerHeight;
@@ -250,13 +209,8 @@ jQuery(document).ready(function(){
 });
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
-var i = 0;
 function scrolled() {
-
-    console.log(i++);
-
     jQuery(this).off('scroll')[0].setTimeout(function(){
-
         if ( jQuery(window).width() >= 751 ) {
             var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
             var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
@@ -280,10 +234,7 @@ function scrolled() {
                 }
             });
         }
-
-
         mainNav();
-
     jQuery(this).on('scroll', scrolled );
     }, 500)
 }

@@ -9,9 +9,9 @@
 		$parallax_one_latest_news_show = get_theme_mod('parallax_one_latest_news_show');
 		
 		if( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ){
-			echo '<section class="brief timeline grey-bg" id="section8">';
+			echo '<section class="brief timeline grey-bg" id="latestnews">';
 		} elseif ( isset( $wp_customize )   ) {
-			echo '<section class="brief timeline grey-bg paralax_one_only_customizer" id="section8">';
+			echo '<section class="brief timeline grey-bg paralax_one_only_customizer" id="latestnews">';
 		}	
 		
 		if( ( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ) || isset( $wp_customize ) ) {	
@@ -52,70 +52,69 @@
 											
 											while ( have_posts() ) : the_post();
 										
-											$i_latest_posts++;
-											
-											
-											if ( !wp_is_mobile() ){
-												if($i_latest_posts % 2 == 1){
+												$i_latest_posts++;
+												
+												
+												if ( !wp_is_mobile() ){
+													if($i_latest_posts % 2 == 1){
+														echo '<li>';
+													}
+												} else  {
 													echo '<li>';
 												}
-											} else  {
-												echo '<li>';
-											}
 										?>
 										
-
-											<div class="timeline-box-wrap">
-												<div class="date small-text strong">
-												<?php echo get_the_date('M, j'); ?>
-												</div>
-												<div class="icon-container white-text">
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-														<?php 
-															
-															if ( has_post_thumbnail() ) :
-																the_post_thumbnail();
-															else: ?>
-																<img src="http://demo.themeisle.com/zerif-pro/wp-content/uploads/2014/07/Thank-you1-e1405429544670-250x250.jpg" width="150" height="150" alt="trakaka">
-														<?php 
-															endif; 
-														?>
-													</a>
-												</div>
-												<div class="info">
-													<header class="entry-header">
-														<h1 class="entry-title">
-															<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-														</h1>
-														<div class="entry-meta">
-															<span class="entry-date">
-																<a href="#" rel="bookmark">
-																	<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
-																</a>
-															</span>
-															<span> by </span>
-															<span class="byline">
-																<span class="author vcard">
-																	<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+												<div class="timeline-box-wrap">
+													<div class="date small-text strong">
+													<?php echo get_the_date('M, j'); ?>
+													</div>
+													<div class="icon-container white-text">
+														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+															<?php 
+																
+																if ( has_post_thumbnail() ) :
+																	the_post_thumbnail('post-thumbnail-latest-news');
+																else: ?>
+																	<img src="<?php echo get_template_directory_uri(); ?>/images/no-thumbnail-latest-news.jpg" width="150" height="150" alt="<?php the_title(); ?>">
+															<?php 
+																endif; 
+															?>
+														</a>
+													</div>
+													<div class="info">
+														<header class="entry-header">
+															<h1 class="entry-title">
+																<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+															</h1>
+															<div class="entry-meta">
+																<span class="entry-date">
+																	<a href="#" rel="bookmark">
+																		<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
+																	</a>
 																</span>
-															</span>
-														</div><!-- .entry-meta -->
-													</header>
-													<div class="entry-content">
-														<?php the_excerpt(); ?>
-														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more">Read more</a>
+																<span> by </span>
+																<span class="byline">
+																	<span class="author vcard">
+																		<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+																	</span>
+																</span>
+															</div><!-- .entry-meta -->
+														</header>
+														<div class="entry-content">
+															<?php the_excerpt(); ?>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more">Read more</a>
+														</div>
 													</div>
 												</div>
-											</div>
-											
-										<?php
-										if ( !wp_is_mobile() ){
-											if($i_latest_posts % 4 == 0){
+												
+											<?php
+											if ( !wp_is_mobile() ){
+												if($i_latest_posts % 4 == 0){
+													echo '</li>';
+												}
+											} else {
 												echo '</li>';
 											}
-										} else {
-											echo '</li>';
-										}
 										
 										endwhile;
 										

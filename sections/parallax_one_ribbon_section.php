@@ -6,14 +6,13 @@
 	
 	$parallax_one_ribbon_show = get_theme_mod('parallax_one_ribbon_show');
 	if( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ){
-		echo '<section class="call-to-action ribbon-wrap" id="section11">';
+		echo '<section class="call-to-action ribbon-wrap" id="ribbon">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="section11">';
+		echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon">';
 	}
 	
 	if( ( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ) || isset( $wp_customize ) ){
 ?>
-
 
 		<div class="overlay-layer-2">
 			<div class="container">

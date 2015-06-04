@@ -51,9 +51,7 @@
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<div class="col-md-4">
-			<?php get_sidebar(); ?>
-		</div>
+		<?php get_sidebar(); ?>
 
 	</div>
 </div><!-- .content-wrap -->

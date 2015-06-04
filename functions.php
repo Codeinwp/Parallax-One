@@ -82,6 +82,9 @@ function parallax_one_setup() {
 	add_image_size( 'post-thumbnail-tablet', 730, 340, true );
 	add_image_size( 'post-thumbnail-mobile', 730, 340, true );
 
+	// Latest news Section (homepage)
+	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
+
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );

@@ -6,9 +6,9 @@
 	
 	$parallax_one_our_story_show = get_theme_mod('parallax_one_our_story_show');
 	if( isset($parallax_one_our_story_show) && $parallax_one_our_story_show != 1 ){
-		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left" id="section2">';
+		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left" id="story">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left paralax_one_only_customizer" id="section2">';
+		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left paralax_one_only_customizer" id="story">';
 	}
 	
 	if( ( isset($parallax_one_our_story_show) && $parallax_one_our_story_show != 1 ) || isset( $wp_customize ) ){

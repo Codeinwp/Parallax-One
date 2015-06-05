@@ -201,9 +201,9 @@ function parallax_admin_styles() {
 add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
 
-/********************************************/
-/*********** Default Widgets *************/
-/********************************************/
+/***************************************************/
+/*********** Widgets and Sidebars ************/
+/***************************************************/
 add_action( 'widgets_init', 'parallax_widget_init' );
 
 function parallax_widget_init(){
@@ -274,8 +274,8 @@ function parallax_one_our_services_widget_scripts() {
 }
 
 /********************************************/
-/********* Our Services Widget ************/
-/********************************************/
+/********* Default Widgets **************/
+/*******************************************/
 
 add_action( 'after_switch_theme', 'parallax_one_default_widgets_our_services' );
 
@@ -286,11 +286,10 @@ function parallax_one_default_widgets_our_services()
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
 
+	/* Default Our Services widgets */
 	
 	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-services-sidebar'] ] ) ):
 
-		/* Default Our Services widgets */
-		
 		$parallax_one_counter = 1;
 		
 		$active_widgets[ 'parallax-one-services-sidebar' ][0] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
@@ -319,20 +318,20 @@ function parallax_one_default_widgets_our_services()
 	 
 		$parallax_one_counter++;
 		
-		
 		update_option( 'sidebars_widgets', $active_widgets );
+		
     endif;
 	
-	 if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] ) ):
-
 	
+	/* Default Our Team widgets */
+		
+	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] ) ):
+
 		$parallax_one_counter = 1;
 		
 		$colector = array(array('icon_value'=>'icon-social-facebook','icon_link' => '#'),array('icon_value'=>'icon-social-twitter','icon_link' => '#'),array('icon_value'=>'icon-social-pinterest','icon_link' => '#'));
 		
 		$json_colector = json_encode($colector);
-		
-		/* Default Our Team widgets */
 		
 		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][0] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
 
@@ -366,11 +365,12 @@ function parallax_one_default_widgets_our_services()
 	
 	endif;
 	
+	
+	/* Default Happy Customer widgets */
+	
 	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )):
     
-		/* Default Happy Customer widgets */
-		
-		 $parallax_one_counter = 1;
+		$parallax_one_counter = 1;
 		
 		$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][0] = 'parallax_one_happy_customer_widget-' . $parallax_one_counter;
 		
@@ -398,17 +398,12 @@ function parallax_one_default_widgets_our_services()
 	 
 		$parallax_one_counter++;
 		
-		
 		update_option( 'sidebars_widgets', $active_widgets );
 	
 	endif;
 	
 	
 }
-
-
-
-
 
 
 /* remove custom-background from body_class() */

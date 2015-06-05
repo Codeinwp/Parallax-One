@@ -1,5 +1,36 @@
 
 
+### 1.0.0 - 05/06/2015
+
+ Changes: 
+
+
+ * picture + title fixes
+ * added header section
+ * added contact info section
+ * fixed the default widgets
+ * added default content for contact info section and footer social icons
+ * Fixed #26 Latest news section - Responsive
+ * Merge pull request #31 from cristian-ungureanu/development
+
+picture + title fixes
+ * Added single page style
+ * Added blog page style
+ * Added blog style
+ * Added style and menu smooth scroll
+ * Added style
+ * changes in default widgets
+ * Merge pull request #36 from cristian-ungureanu/development
+
+changes in default widgets
+ * this fixes default widgets
+ * added comments for defaut widgets
+ * Fixed #25 Latest news section slider
+ * Merge pull request #37 from cristian-ungureanu/development
+
+this fixes default widgets
+
+
 ### 1.0.0 - 12/05/2015
 
  Changes: 

@@ -48,6 +48,10 @@ jQuery(document).ready(function () {
         }
     });
 
+    if ( slideHeight < 50 ) {
+        slideHeight = 360;
+    }
+
     slideCount = jQuery('#parallax_slider ul li').length;
     sliderUlHeight = slideCount * slideHeight;
     

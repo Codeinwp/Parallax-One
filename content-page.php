@@ -8,10 +8,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title single-title">', '</h1>' ); ?>
+		<div class="colored-line-left"></div>
+		<div class="clearfix"></div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content content-page">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -23,5 +25,5 @@
 
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
+	</footer><!-- .fentry-footer -->
 </article><!-- #post-## -->

@@ -6,9 +6,9 @@
 	
 	$parallax_one_our_services_show = get_theme_mod('parallax_one_our_services_show');
 	if( isset($parallax_one_our_services_show) && $parallax_one_our_services_show != 1 ){
-		echo '<section class="services grey-bg" id="section1">';
+		echo '<section class="services grey-bg" id="services">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="services grey-bg paralax_one_only_customizer" id="section1">';
+		echo '<section class="services grey-bg paralax_one_only_customizer" id="services">';
 	}
 	
 	if( ( isset($parallax_one_our_services_show) && $parallax_one_our_services_show != 1 ) || isset( $wp_customize ) ){

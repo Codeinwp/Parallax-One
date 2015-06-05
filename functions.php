@@ -74,6 +74,17 @@ function parallax_one_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	add_theme_support( 'post-thumbnails' ); 
+
+	/* Set the image size by cropping the image */
+	add_image_size( 'post-thumbnail-big', 730, 340, true );
+	add_image_size( 'post-thumbnail-tablet', 730, 340, true );
+	add_image_size( 'post-thumbnail-mobile', 730, 340, true );
+
+	// Latest news Section (homepage)
+	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
+
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -84,24 +95,29 @@ add_action( 'after_setup_theme', 'parallax_one_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function parallax_one_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'parallax-one' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
 	
-	register_sidebars(4, array(
-		'name' => __('Footer area %d','parallax-one'),
-		'id' => 'footer-area',
-		'before_widget' => '<div class="widget widget_recent_entries">',
-		'after_widget'  => '</div>',
-		'before_title'=>'<h3 class="widget-title">',
-		'after_title'=>'</h3>'
-	) );
+	register_sidebar( 
+		array(
+			'name'          => __( 'Sidebar', 'parallax-one' ),
+			'id'            => 'sidebar-1',
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	
+	register_sidebars(4, 
+		array(
+			'name' => __('Footer area %d','parallax-one'),
+			'id' => 'footer-area',
+			'before_widget' => '<div class="widget widget_recent_entries">',
+			'after_widget'  => '</div>',
+			'before_title'=>'<h3 class="widget-title">',
+			'after_title'=>'</h3>'
+		) 
+	);
 	
 }
 add_action( 'widgets_init', 'parallax_one_widgets_init' );
@@ -133,7 +149,7 @@ function parallax_one_scripts() {
 
 	wp_enqueue_script( 'parallax-one-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v3.3.1', true );
 
-	wp_enqueue_script( 'parallax-one-jquery-all-plagins', get_template_directory_uri() . '/js/jquery.all_plagins.min.js', array('parallax-one-bootstrap'), '20150331', true );
+	wp_enqueue_script( 'parallax-one-jquery-all-plagins', get_template_directory_uri() . '/js/jquery.all_plugins.min.js', array('parallax-one-bootstrap'), '20150331', true );
 
 	wp_enqueue_script( 'parallax-one-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('parallax-one-jquery-all-plagins','jquery'), '20150331', true );
 
@@ -185,21 +201,64 @@ function parallax_admin_styles() {
 add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
 
+/***************************************************/
+/*********** Widgets and Sidebars ************/
+/***************************************************/
+add_action( 'widgets_init', 'parallax_widget_init' );
 
+function parallax_widget_init(){
+	
+	register_widget( 'parallax_one_happy_customer_widget' );
+	register_widget( 'parallax_one_our_team_widget' );
+	register_widget( 'parallax_one_our_services_widget' );
+	
+	$active_widgets = get_option( 'sidebars_widgets' );
+	
+	$parallax_one_sidebars = array ( 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' , 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' , 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar' );
+	
+	/* Register sidebar */
+	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
+	
+		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
+		
+			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
+		
+		elseif( $parallax_one_sidebar == 'parallax-one-team-sidebar' ):
+		
+			$parallax_one_name = __( 'Our Team section', 'parallax-one' );
+			
+		elseif( $parallax_one_sidebar == 'parallax-one-services-sidebar' ):
+		
+			$parallax_one_name = __( 'Our Services section', 'parallax-one' );
+			
+		else:
+		
+			$parallax_one_name = $parallax_one_sidebar;
+			
+		endif;
+		
+        register_sidebar(
+            array (
+                'name'          => $parallax_one_name,
+                'id'            => $parallax_one_sidebar,
+                'before_widget' => '',
+                'after_widget'  => ''
+            )
+        );
+		
+    endforeach;
 
-
-
-
-
-/*******************************************/
-/*********** WIDGETS ***********************/
-/*******************************************/
+}
 
 /********************************************/
-/********* Our Services Widget ************/
+/********* JS Widget Scripts ************/
 /********************************************/
 
 require_once ( 'inc/class/parallax-one-our-services-widget.php');
+
+require_once ( 'inc/class/parallax-one-our-team-widget.php');
+
+require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
 
 add_action('admin_enqueue_scripts', 'parallax_one_our_services_widget_scripts');
 
@@ -209,256 +268,155 @@ function parallax_one_our_services_widget_scripts() {
 
     wp_enqueue_script('paralax_one_our_services_widget_script', get_template_directory_uri() . '/js/widget-services.js', false, '1.0', true);
 
+	wp_enqueue_script('paralax_one_team_widget_script', get_template_directory_uri() . '/js/widget-team.js', false, '1.0', true);
+	
+	wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
 }
 
-add_action( 'widgets_init', 'parallax_one_default_widgets_our_services' );
+/********************************************/
+/********* Default Widgets **************/
+/*******************************************/
+
+add_action( 'after_switch_theme', 'parallax_one_default_widgets_our_services' );
 
 function parallax_one_default_widgets_our_services()
 {
-	register_widget( 'parallax_one_our_services_widget' );
+
+	$parallax_one_sidebars = array ( 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar', 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar',  'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar'   );
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
-	
-	register_sidebar(
-		array (
-			'name'          => __( 'Our Services section', 'parallax-one' ),
-			'id'            => 'parallax-one-services-sidebar',
-			'before_widget' => '',
-			'after_widget'  => ''
-		)
-	);
-	
-	if ( ! empty ( $active_widgets[ 'parallax-one-services-sidebar'] ) ):
-		/* There is already some content. */
-		return;
-	endif;
-	
+
 	/* Default Our Services widgets */
 	
-	$parallax_one_counter = 1;
-	
-    $active_widgets[ 'parallax-one-services-sidebar' ][0] = 'parallax_one_our_services-widget-' . $parallax_one_counter;
-	
-	$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-webpage-multiple', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-	
-    update_option( 'widget_parallax_one_our_services-widget', $our_services_content );
- 
-    $parallax_one_counter++;
-	
-	
-	$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services-widget-' . $parallax_one_counter;
-	
-	$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-ecommerce-graph3', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-	
-    update_option( 'widget_parallax_one_our_services-widget', $our_services_content );
- 
-    $parallax_one_counter++;
-	
-	
-	$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services-widget-' . $parallax_one_counter;
-	
-	$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-geolocalize-05', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-	
-    update_option( 'widget_parallax_one_our_services-widget', $our_services_content );
- 
-    $parallax_one_counter++;
-	
-	
-	update_option( 'sidebars_widgets', $active_widgets );
-	
-	
-}
+	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-services-sidebar'] ] ) ):
 
-
-/********************************************/
-/************* Our Team *********************/
-/********************************************/
-
-require_once ( 'inc/class/parallax-one-our-team-widget.php');
-
-add_action('admin_enqueue_scripts', 'parallax_one_our_team_widget_scripts');
-
-function parallax_one_our_team_widget_scripts() {
-	
-	wp_enqueue_media();
-
-    wp_enqueue_script('paralax_one_team_widget_script', get_template_directory_uri() . '/js/widget-team.js', false, '1.0', true);
-
-}
-
-/* Default widgets on Our team sidebar */
- 
-add_action( 'widgets_init', 'parallax_one_default_widgets_our_team' );
-
-function parallax_one_default_widgets_our_team()
-{
-	register_widget( 'parallax_one_our_team_widget' );
-	
-	$active_widgets = get_option( 'sidebars_widgets' );
-	
-	$parallax_one_sidebars = array ( 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' );
-	
-	/* Register sidebar */
-	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
-	
-		if( $parallax_one_sidebar == 'parallax-one-team-sidebar' ):
+		$parallax_one_counter = 1;
 		
-			$parallax_one_name = __( 'Our Team section', 'parallax-one' );
-			
-		else:
+		$active_widgets[ 'parallax-one-services-sidebar' ][0] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
 		
-			$parallax_one_name = $parallax_one_sidebar;
-			
-		endif;
+		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-webpage-multiple', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
 		
-        register_sidebar(
-            array (
-                'name'          => $parallax_one_name,
-                'id'            => $parallax_one_sidebar,
-                'before_widget' => '',
-                'after_widget'  => ''
-            )
-        );
+		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
+	 
+		$parallax_one_counter++;
 		
-    endforeach;
-
-
-    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] ) ):
-		/* There is already some content. */
-        return;
+		
+		$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
+		
+		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-ecommerce-graph3', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
+		
+		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
+	 
+		$parallax_one_counter++;
+		
+		
+		$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
+		
+		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-geolocalize-05', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
+		
+		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
+	 
+		$parallax_one_counter++;
+		
+		update_option( 'sidebars_widgets', $active_widgets );
+		
     endif;
 	
-    $parallax_one_counter = 1;
-	
-	$colector = array(array('icon_value'=>'icon-social-facebook','icon_link' => '#'),array('icon_value'=>'icon-social-twitter','icon_link' => '#'),array('icon_value'=>'icon-social-pinterest','icon_link' => '#'));
-	
-	$json_colector = json_encode($colector);
 	
 	/* Default Our Team widgets */
-	
-    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][0] = 'parallax_one_our_team-widget-' . $parallax_one_counter;
-
-	$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/1.jpg' );
-	
-    update_option( 'widget_parallax_one_our_team-widget', $our_team_content );
- 
-    $parallax_one_counter++;
-
-
-
-    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team-widget-' . $parallax_one_counter;
-
-	$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/2.jpg' );
-	
-    update_option( 'widget_parallax_one_our_team-widget', $our_team_content );
- 
-    $parallax_one_counter++;
-
-
-
-    $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team-widget-' . $parallax_one_counter;
-
-	$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/3.jpg' );
-	
-    update_option( 'widget_parallax_one_our_team-widget', $our_team_content );
- 
-    $parallax_one_counter++;
-	
-	update_option( 'sidebars_widgets', $active_widgets );
-
-}
-
-
-/********************************************/
-/********* Happy customer Widget ************/
-/********************************************/
-
-require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
-
-add_action('admin_enqueue_scripts', 'parallax_one_customers_widget_scripts');
-
-function parallax_one_customers_widget_scripts() {
-
-    wp_enqueue_media();
-
-    wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
-
-}
-
-/* Default widgets on Happy customers sidebar */
- 
-add_action( 'widgets_init', 'parallax_one_default_widgets_happy_customers' );
-
-function parallax_one_default_widgets_happy_customers()
-{
-	register_widget( 'parallax_one_happy_customer_widget' );
-	
-	$active_widgets = get_option( 'sidebars_widgets' );
-	
-	$parallax_one_sidebars = array ( 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' );
-	
-	/* Register sidebar */
-	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
-	
-		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
 		
-			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
+	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ] ) ):
+
+		$parallax_one_counter = 1;
 		
-		else:
+		$colector = array(array('icon_value'=>'icon-social-facebook','icon_link' => '#'),array('icon_value'=>'icon-social-twitter','icon_link' => '#'),array('icon_value'=>'icon-social-pinterest','icon_link' => '#'));
 		
-			$parallax_one_name = $parallax_one_sidebar;
-			
-		endif;
+		$json_colector = json_encode($colector);
 		
-        register_sidebar(
-            array (
-                'name'          => $parallax_one_name,
-                'id'            => $parallax_one_sidebar,
-                'before_widget' => '',
-                'after_widget'  => ''
-            )
-        );
+		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][0] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
+
+		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/1.jpg' );
 		
-    endforeach;
+		update_option( 'widget_parallax_one_our_team_widget', $our_team_content );
+	 
+		$parallax_one_counter++;
 
 
-    if ( ! empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )):
-		/* There is already some content. */
-        return;
-    endif;
+
+		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
+
+		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/2.jpg' );
+		
+		update_option( 'widget_parallax_one_our_team_widget', $our_team_content );
+	 
+		$parallax_one_counter++;
+
+
+
+		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
+
+		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/3.jpg' );
+		
+		update_option( 'widget_parallax_one_our_team_widget', $our_team_content );
+	 
+		$parallax_one_counter++;
+		
+		update_option( 'sidebars_widgets', $active_widgets );
 	
-    
+	endif;
+	
+	
 	/* Default Happy Customer widgets */
 	
-	 $parallax_one_counter = 1;
+	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ] )):
+    
+		$parallax_one_counter = 1;
+		
+		$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][0] = 'parallax_one_happy_customer_widget-' . $parallax_one_counter;
+		
+		$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
+		
+		update_option( 'widget_parallax_one_happy_customer_widget', $happy_customer_content );
+	 
+		$parallax_one_counter++;
+		
+		
+		$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][] = 'parallax_one_happy_customer_widget-' . $parallax_one_counter;
+		
+		$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
+		
+		update_option( 'widget_parallax_one_happy_customer_widget', $happy_customer_content );
+	 
+		$parallax_one_counter++;
+		
+		
+		$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][] = 'parallax_one_happy_customer_widget-' . $parallax_one_counter;
+		
+		$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
+		
+		update_option( 'widget_parallax_one_happy_customer_widget', $happy_customer_content );
+	 
+		$parallax_one_counter++;
+		
+		update_option( 'sidebars_widgets', $active_widgets );
 	
-    $active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][0] = 'parallax_one_happy_customer-widget-' . $parallax_one_counter;
-	
-	$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
-	
-    update_option( 'widget_parallax_one_happy_customer-widget', $happy_customer_content );
- 
-    $parallax_one_counter++;
+	endif;
 	
 	
-	$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][] = 'parallax_one_happy_customer-widget-' . $parallax_one_counter;
-	
-	$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
-	
-    update_option( 'widget_parallax_one_happy_customer-widget', $happy_customer_content );
- 
-    $parallax_one_counter++;
-	
-	
-	$active_widgets[ $parallax_one_sidebars['parallax-one-customers-sidebar'] ][] = 'parallax_one_happy_customer-widget-' . $parallax_one_counter;
-	
-	$happy_customer_content[ $parallax_one_counter ] = array ( 'title' => __( 'Happy Customer','parallax-one' ), 'text' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ), 'details' => __( 'Lorem ipsum','parallax-one' ), 'image_uri' => get_stylesheet_directory_uri().'/images/clients/1.jpg' );
-	
-    update_option( 'widget_parallax_one_happy_customer-widget', $happy_customer_content );
- 
-    $parallax_one_counter++;
-	
-	
-	update_option( 'sidebars_widgets', $active_widgets );
+}
+
+
+/* remove custom-background from body_class() */
+add_filter( 'body_class', 'remove_class_function' );
+
+function remove_class_function( $classes ) {
+
+    if ( !is_home() ) {
+        // index of custom-background
+        $key = array_search('custom-background', $classes);
+        // remove class
+        unset($classes[$key]);
+    }
+    return $classes;
 
 }

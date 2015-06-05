@@ -14,6 +14,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 <style>
 	.paralax_one_only_customizer{
 		display:none !important;
@@ -52,7 +53,14 @@
 	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
 
         <!-- COLOR OVER IMAGE -->
-        <div class="overlay-layer">	
+        <?php
+        	if( !is_front_page() ){
+        		$fixedheader = 'sticky-navigation-open';
+        	}else{
+        		$fixedheader = '';
+        	}
+        ?>
+        <div class="overlay-layer-wrap <?php echo $fixedheader; ?>">
 
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll" role="navigation">
@@ -111,7 +119,7 @@
 
                     </div>
                     
-                    <!-- MENU -->	
+                    <!-- MENU -->
                     <div class="navbar-collapse collapse" id="stamp-navigation">		
     					<?php 
     						wp_nav_menu( 

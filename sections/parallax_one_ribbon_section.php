@@ -6,14 +6,13 @@
 	
 	$parallax_one_ribbon_show = get_theme_mod('parallax_one_ribbon_show');
 	if( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ){
-		echo '<section class="call-to-action ribbon-wrap" id="section11">';
+		echo '<section class="call-to-action ribbon-wrap" id="ribbon">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="section11">';
+		echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon">';
 	}
 	
 	if( ( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ) || isset( $wp_customize ) ){
 ?>
-
 
 		<div class="overlay-layer-2">
 			<div class="container">
@@ -36,7 +35,7 @@
 							$parallax_one_button_link = get_theme_mod('parallax_one_button_link','#');
 							if( !empty($parallax_one_button_text) ){
 								if( empty($parallax_one_button_link) ){
-									echo '<button onclick="" class="btn btn-primary standard-button paralax_one_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal"></button>';
+									echo '<button onclick="" class="btn btn-primary standard-button paralax_one_only_customizer" type="button" data-toggle="modal" data-target="#stamp-modal">'.$parallax_one_button_text.'</button>';
 								} else {
 									echo '<button onclick="window.location=\''.$parallax_one_button_link.'\'" class="btn btn-primary standard-button" type="button" data-toggle="modal" data-target="#stamp-modal">'.$parallax_one_button_text.'</button>';
 								}

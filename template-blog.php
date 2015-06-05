@@ -3,8 +3,7 @@
 Template Name: Blog
 */
 
-get_header(); 
-
+	get_header(); 
 ?>
 
 	</div>
@@ -12,27 +11,40 @@ get_header();
 </header>
 <!-- /END HOME / HEADER  -->
 
-<?php
+<div class="content-wrap">
+	<div class="container">
 
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	
-	$wp_query = new WP_Query( array('post_type' => 'post', 'showposts' => '8', 'paged' => $paged) );
-		if( $wp_query->have_posts() ):					 
-			while ($wp_query->have_posts()) : 
+		<div id="primary" class="content-area col-md-8 post-list">
+			<main id="main" class="site-main" role="main">
+
+			<?php
+
+				query_posts( array( 'post_type' => 'post', 'posts_per_page' => 6, 'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ) ) );
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
+					
+						get_template_part( 'content', get_post_format() );
+					
+					endwhile; 
+					
+					parallax_posts_navigation();
 				
-				$wp_query->the_post();
-					get_template_part( 'content', get_post_format() );
-			endwhile;
-		endif;
+				else : 
+				
+					get_template_part( 'content', 'none' );
+					
+				endif;
+				
+				wp_reset_postdata(); 
+					
+			?>
 
-		wp_reset_postdata();
-		
-?>
+			</main><!-- #main -->
+		</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
-<?php 
+	</div>
+</div><!-- .content-wrap -->
 
-get_footer();
-
-?>
+<?php get_footer(); ?>

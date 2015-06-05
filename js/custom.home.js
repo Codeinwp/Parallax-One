@@ -18,7 +18,7 @@ jQuery(window).resize(function() {
 
     /* calculate the new height for all slides */
     sliderUlHeight = slideCount * slideHeight;
-    
+
     /* set new height */
     jQuery('#parallax_slider').css({ height: slideHeight });
     jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
@@ -47,6 +47,10 @@ jQuery(document).ready(function () {
             slideHeight = jQuery(this).height();
         }
     });
+
+    if ( slideHeight < 50 ) {
+        slideHeight = 360;
+    }
 
     slideCount = jQuery('#parallax_slider ul li').length;
     sliderUlHeight = slideCount * slideHeight;
@@ -85,15 +89,13 @@ jQuery(document).ready(function () {
             }
         }
     }; 
-
     jQuery('a.control_prev').click(function () {
         moveBottom();
     });
-
     jQuery('a.control_next').click(function () {
         moveTop();
     });
-
+    
 });    
 
 /* slider [end] */
@@ -101,100 +103,143 @@ jQuery(document).ready(function () {
 
 /* PRE LOADER */
 jQuery(window).load(function () {
-	"use strict";
-	jQuery(".status").fadeOut();
-	jQuery(".preloader").delay(1000).fadeOut("slow");
-})
-		
-		
-jQuery(window).load(function() {
-
     "use strict";
-
-    /*---------------------------------------*/
-    /*	NAVIGATION
-	/*---------------------------------------*/
-    jQuery('.main-navigation').onePageNav({
-        changeHash: true,
-        currentClass: 'not-active', /* CHANGE THE VALUE TO 'current' TO HIGHLIGHT CURRENT SECTION LINK IN NAV */
-        scrollSpeed: 750,
-        scrollThreshold: 0.5,
-        filter: ':not(.external)'
-    });
-
-});
+    jQuery(".status").fadeOut();
+    jQuery(".preloader").delay(1000).fadeOut("slow");
+})
 
 
 jQuery(window).resize(function() {
-
     "use strict";
-
     var ww = jQuery(window).width();
-
     /* COLLAPSE NAVIGATION ON MOBILE AFTER CLICKING ON LINK */
     if (ww < 480) {
         jQuery('.sticky-navigation a').on('click', function() {
             jQuery(".navbar-toggle").click();
         });
     }
-
-    /*---------------------------------------*/
-    /*  SCROLL PANE
-    /*---------------------------------------*/
-	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
-		jQuery('.scroll-pane').jScrollPane({showArrows: true});
-	}	
-
 });
 
 
 jQuery(document).ready(function() {
-
     "use strict";
-
-    /*---------------------------------------*/
-    /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
-    /*---------------------------------------*/
-
     mainNav();
-    jQuery(window).scroll(function() {
-        mainNav();
-    });
-
-    function mainNav() {
-        var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) jQuery('.appear-on-scroll').stop().animate({
-            "opacity": '1',
-            "top": '0'
-        });
-        else jQuery('.appear-on-scroll').stop().animate({
-            "top": '-70',
-            "opacity": '0'
-        });
-
-        if (top > 120) {
-        jQuery('.js-login').fadeOut(20);
-        }
-        else {
-        jQuery('.js-login').fadeIn(200);
-            
-        }
-        
-        if (top > 400) {
-        jQuery('.js-register').fadeIn(200);
-        }
-        else {
-        jQuery('.js-register').fadeOut(200);
-            
-        }
-    }
-
-
-    /*---------------------------------------*/
-    /*  SCROLL PANE
-    /*---------------------------------------*/
-	if (typeof jQuery('.scroll-pane').val() != 'undefined') {
-		jQuery('.scroll-pane').jScrollPane({showArrows: true});
-	}
-
 });
+
+jQuery(window).load(function() {
+    "use strict";
+    /* useful for Our team section */
+    jQuery('.team-member-wrap .team-member-box').each(function(){
+        var thisHeight = jQuery(this).find('.member-pic').height();
+        jQuery(this).find('.member-details').height(thisHeight);
+    });
+});
+
+/*---------------------------------------*/
+/*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
+/*---------------------------------------*/
+function mainNav() {
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var topMenuClose    = -70;
+    var topMenuOpen     = 0;
+    if ( jQuery('.admin-bar').length>0 ) {
+        topMenuClose    = -38;
+        topMenuOpen     = 32;
+    }
+    if ( top > 40 )
+        jQuery('.appear-on-scroll').stop().animate({
+            "opacity": '1',
+            "top": topMenuOpen
+        });
+    else jQuery('.appear-on-scroll').stop().animate({
+        "top": topMenuClose,
+        "opacity": '0'
+    });
+}
+
+
+/*=================================
+===  SMOOTH SCROLL NAVIGATION     ====
+=================================== */
+jQuery(document).ready(function(){
+  jQuery('#stamp-navigation a[href*=#]:not([href=#])').bind('click',function () {
+    var headerHeight;
+    var hash    = this.hash;
+    var idName  = hash.substring(1);    // get id name
+    var alink   = this;                 // this button pressed
+    // check if there is a section that had same id as the button pressed
+    if ( jQuery('section [id*=' + idName + ']').length > 0 && jQuery(window).width() >= 751 ){
+      jQuery('.current').removeClass('current');
+      jQuery(alink).parent('li').addClass('current');
+    }else{
+      jQuery('.current').removeClass('current');
+    }
+    if ( jQuery(window).width() >= 751 ) {
+      headerHeight = jQuery('.sticky-navigation').height();
+    } else {
+      headerHeight = 0;
+    }
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top - headerHeight + 10
+        }, 1200);
+        return false;
+      }
+    }
+  });
+});
+
+jQuery(document).ready(function(){
+    var headerHeight;
+    jQuery('.current').removeClass('current');
+    jQuery('#stamp-navigation  a[href$="' + window.location.hash + '"]').parent('li').addClass('current');
+    if ( jQuery(window).width() >= 751 ) {
+      headerHeight = jQuery('.sticky-navigation').height();
+    } else {
+      headerHeight = 0;
+    }
+    if (location.pathname.replace(/^\//,'') == window.location.pathname.replace(/^\//,'') && location.hostname == window.location.hostname) {
+      var target = jQuery(window.location.hash);
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top - headerHeight + 10
+        }, 1200);
+        return false;
+      }
+    }
+});
+
+/* TOP NAVIGATION MENU SELECTED ITEMS */
+function scrolled() {
+    jQuery(this).off('scroll')[0].setTimeout(function(){
+        if ( jQuery(window).width() >= 751 ) {
+            var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+            var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
+            var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
+            // for all sections check if the cursor is inside a section
+            jQuery("section").each( function() {
+                var thisID = '#' + jQuery(this).attr('id');           // section id
+                var zerif_offset = jQuery(this).offset().top;         // distance between top and our section
+                var thisHeight  = jQuery(this).outerHeight();         // section height
+                var thisBegin   = zerif_offset - headerHeight;                      // where the section begins
+                var thisEnd     = zerif_offset + thisHeight - headerHeight;         // where the section ends  
+                // if position of the cursor is inside of the this section
+                if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+                    isInOneSection = 'yes';
+                    jQuery('.current').removeClass('current');
+                    jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                    return false;
+                }
+                if (isInOneSection == 'no') {
+                    jQuery('.current').removeClass('current');
+                }
+            });
+        }
+        mainNav();
+    jQuery(this).on('scroll', scrolled );
+    }, 500)
+}
+jQuery(window).on('scroll', scrolled );

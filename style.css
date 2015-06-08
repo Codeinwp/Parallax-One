@@ -2726,6 +2726,7 @@ h2.screen-reader-text {
 	color: #4f4f4f;
 	text-transform: uppercase;
 	font-weight: 700;
+	margin-bottom: 5px;
 }
 
 #secondary .widget-title:after {
@@ -2749,20 +2750,60 @@ h2.screen-reader-text {
 	margin: 0;
 	list-style: none;
 	position: relative;
-	padding-left: 14px;
+	font-size: 16px;
+	padding-bottom: 10px;
 }
 
-#secondary ul li:before {
-	content: "";
-	width: 8px;
-	height: 8px;
-	background: #818181;
-	border: 2px solid #d3d3d3;
-	border-radius: 50%;
-	float: left;
-	position: absolute;
-	left: 0;
-	top: 8px;
+.widget-title-margin {
+	margin-bottom: 15px;
+}
+
+#secondary select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #E7E7E7;
+}
+
+/* Calendar Widget */
+.widget_calendar table,
+.widget_calendar td {
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+.widget_calendar caption {
+	font-size: 14px;
+	margin: 0;
+}
+
+.widget_calendar th,
+.widget_calendar td {
+	padding: 0;
+	text-align: center;
+	background-color: #F5F5F5;
+}
+
+.widget_calendar a {
+	display: block;
+	background-color: rgba(0, 142, 214, 0.1);
+	color: #000;
+}
+
+.widget_calendar a:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.widget_calendar tbody td {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .widget_calendar tbody td {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
+	background-color: transparent;
 }
 
 /* --------------------------------------
@@ -3017,6 +3058,10 @@ h2.screen-reader-text {
 
 	.entry-header .colored-line-left {
 		float: left;
+	}
+
+	.service-box {
+		width: 100%;
 	}
 
 }

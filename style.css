@@ -407,6 +407,10 @@ big {
 	font-size: 125%;
 }
 
+*:focus {
+    outline: 0;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -1961,7 +1965,8 @@ a.control_next.fade-btn {
 	padding: 0 35px;
 }
 
-.testimonials-wrap .testimonials-box {
+/**.testimonials-wrap .testimonials-box { */
+.testimonials-box {
 	float: none;
 	display: inline-block;
 	margin-right: -4px;
@@ -1969,7 +1974,7 @@ a.control_next.fade-btn {
 	text-align: center;
 }
 
-.testimonials-wrap .testimonials-box .feedback {
+.testimonials-box .feedback {
   padding: 40px 0 40px 0;
   margin: 40px 0 60px 0;
   background: #ffffff;
@@ -1983,7 +1988,7 @@ a.control_next.fade-btn {
   position: relative;
 }
 
-.testimonials-wrap .testimonials-box .feedback:hover {
+.testimonials-box .feedback:hover {
   border-bottom-color: #008ed6;
 }
 
@@ -2147,9 +2152,11 @@ ul.social-icons {
 	text-align: left;
 }
 
+/**
 .footer-widget-wrap .widget-box {
 	width: 25%;
 }
+*/
 
 .powered-by {
 	font-size: 13px;
@@ -2166,6 +2173,195 @@ ul.social-icons {
 .footer-bottom-wrap ul {
 	margin: 0;
 	padding: 0;
+}
+
+footer.footer .widget-title {
+	font-size: 24px;
+	line-height: 28px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+footer.footer .colored-line-left {
+	display: none;
+}
+
+/* foooter widget */
+footer.footer {
+	font-size: 15px;
+}
+
+footer.footer li {
+	list-style: none;
+}
+
+footer.footer ul {
+	padding-left: 0;
+}
+
+footer.footer ul li {
+	margin: 0;
+	list-style: none;
+	position: relative;
+	font-size: 16px;
+	padding-top: 10px;
+}
+
+footer.footer select {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #E7E7E7;
+}
+
+footer.footer .widget {
+	margin-bottom: 50px;
+}
+
+/* Calendar Widget */
+footer.footer #wp-calendar {
+	border: 1px solid #FFF;
+}
+
+footer.footer #wp-calendar,
+footer.footer #wp-calendar td {
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+footer.footer #wp-calendar caption {
+	font-size: 14px;
+	margin: 0;
+}
+
+footer.footer #wp-calendar th,
+footer.footer #wp-calendar td {
+	padding: 0;
+	text-align: center;
+	background-color: rgba(0, 142, 214, 0.1);
+}
+
+footer.footer #wp-calendar a {
+	display: block;
+	background-color: #FFF;
+	color: #000;
+}
+
+footer.footer #wp-calendar a:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+	text-decoration: none;
+	background: #008ed6;
+	color: #fff;
+}
+
+footer.footer #wp-calendar th{
+	border: 1px solid #DDECF5;
+}
+
+footer.footer #wp-calendar tbody td {
+	background-color: transparent;
+}
+
+footer.footer .site-footer #wp-calendar tbody td {
+	background-color: transparent;
+}
+
+footer.footer #wp-calendar tbody td.pad, 
+footer.footer .site-footer #wp-calendar tbody td.pad {
+	background-color: transparent;
+}
+
+footer.footer #wp-calendar td {
+	background: transparent;
+}
+
+/* search form */
+.widget_search .screen-reader-text {
+	display: none;
+}
+
+.widget_search label {
+	width: 100%;
+}
+
+.widget_search input {
+	width: 100%;
+	border: 1px solid #E7E7E7;
+	padding: 10px 50px 10px 5px;
+	font-weight: 300;
+}
+
+.widget_search form {
+	position: relative;
+}
+
+.widget_search .search-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: transparent;
+	width: 51px;
+	height: 44px;
+	padding: 0;
+	text-indent: -99999999px;
+	border: none;
+	box-shadow: none;
+}
+
+.widget_search .search-submit:hover {
+	box-shadow: none;
+}
+
+.widget_search .search-form:before {
+	content: "\e0a6";
+	font-family: "stamp-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 25px;
+	position: absolute;
+	right: 11px;
+	top: 10px;
+	color: #949495;
+}
+
+.widget_search .search-form:hover:before {
+	color: #008ed6;
+}
+
+/* parallax custom widgets footer */
+footer.footer .service-box {
+	width: 100%;
+	text-align: center;
+}
+
+footer.footer .single-service {
+	margin-bottom: 40px;
+}
+
+footer.footer .testimonials-box {
+	width: 100%;
+	text-align: center;
+}
+
+footer.footer .testimonials-box .feedback {
+	margin-bottom: 0;
+}
+
+footer.footer .team-member-box {
+	width: 100%;
+	text-align: center;	
+}
+
+footer.footer .team-member-box .team-member {
+	margin: 0 auto;
+	margin-bottom: 40px;
+	max-width: 350px;
 }
 
 /*---------------------------------------
@@ -2299,6 +2495,11 @@ a:hover {
    4. BLOG
 =========================================
 -----------------------------------------*/
+
+.content-wrap .container {
+	padding-left: 0;
+	padding-right: 0;
+}
 
 .post-list article {
 	border: 1px solid #eaeaea;
@@ -2739,7 +2940,6 @@ h2.screen-reader-text {
 
 #secondary ul {
 	padding-left: 0;
-	margin-left: 0;
 }
 
 #secondary .widget {
@@ -2751,7 +2951,11 @@ h2.screen-reader-text {
 	list-style: none;
 	position: relative;
 	font-size: 16px;
-	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#secondary ul ul li:last-child {
+	padding-bottom: 0;
 }
 
 .widget-title-margin {
@@ -2781,17 +2985,24 @@ h2.screen-reader-text {
 .widget_calendar td {
 	padding: 0;
 	text-align: center;
-	background-color: #F5F5F5;
+	background-color: rgba(0, 142, 214, 0.1);
 }
 
 .widget_calendar a {
 	display: block;
-	background-color: rgba(0, 142, 214, 0.1);
+	background-color: #F5F5F5;
 	color: #000;
 }
 
 .widget_calendar a:hover {
 	background-color: rgba(0, 0, 0, 0.15);
+	text-decoration: none;
+	background: #008ed6;
+	color: #fff;
+}
+
+.widget_calendar th{
+	border: 1px solid #E5F3FA;
 }
 
 .widget_calendar tbody td {
@@ -2802,9 +3013,103 @@ h2.screen-reader-text {
 	background-color: rgba(255, 255, 255, 0.05);
 }
 
-.widget_calendar tbody .pad, .site-footer .widget_calendar tbody .pad {
+.widget_calendar tbody .pad, 
+.site-footer .widget_calendar tbody .pad {
 	background-color: transparent;
 }
+
+.widget_calendar td.pad {
+	background: transparent;
+}
+
+/* search form */
+.widget_search .screen-reader-text {
+	display: none;
+}
+
+.widget_search label {
+	width: 100%;
+}
+
+.widget_search input {
+	width: 100%;
+	border: 1px solid #E7E7E7;
+	padding: 10px 50px 10px 5px;
+	font-weight: 300;
+}
+
+.widget_search form {
+	position: relative;
+}
+
+.widget_search .search-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: transparent;
+	width: 51px;
+	height: 44px;
+	padding: 0;
+	text-indent: -99999999px;
+	border: none;
+	box-shadow: none;
+}
+
+.widget_search .search-submit:hover {
+	box-shadow: none;
+}
+
+.widget_search .search-form:before {
+	content: "\e0a6";
+	font-family: "stamp-icons" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 25px;
+	position: absolute;
+	right: 11px;
+	top: 10px;
+	color: #949495;
+}
+
+.widget_search .search-form:hover:before {
+	color: #008ed6;
+}
+
+#secondary .service-box {
+	width: 100%;
+	text-align: center;
+}
+
+#secondary .single-service {
+	margin-bottom: 40px;
+}
+
+#secondary .testimonials-box {
+	width: 100%;
+	text-align: center;
+}
+
+#secondary .testimonials-box .feedback {
+	margin-bottom: 0;
+}
+
+#secondary .team-member-box {
+	width: 100%;
+	text-align: center;	
+}
+
+#secondary .team-member-box .team-member {
+	margin: 0 auto;
+	margin-bottom: 40px;
+	max-width: 350px;
+}
+
 
 /* --------------------------------------
 =========================================
@@ -3064,6 +3369,9 @@ h2.screen-reader-text {
 		width: 100%;
 	}
 
+	#secondary .colored-line-left {
+		float: left;
+	}
 }
 
 /*---------------------------------------
@@ -3491,6 +3799,9 @@ h2.screen-reader-text {
 		padding: 10px;
 		min-width: 80px;
 		min-height: 80px;
+	}
+	.footer-widget-wrap .widget-box {
+		width: 100%;
 	}
 
 }

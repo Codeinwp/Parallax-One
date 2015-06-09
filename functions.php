@@ -108,14 +108,14 @@ function parallax_one_widgets_init() {
 		)
 	);
 	
-	register_sidebars(4, 
+	register_sidebars( 4, 
 		array(
 			'name' => __('Footer area %d','parallax-one'),
 			'id' => 'footer-area',
-			'before_widget' => '<div class="widget widget_recent_entries">',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'=>'<h3 class="widget-title">',
-			'after_title'=>'</h3>'
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
 		) 
 	);
 	

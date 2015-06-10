@@ -31,45 +31,24 @@ jQuery(document).ready( function($) {
 /*Image control*/	
    
 
+
+	$('.widget-content .parallax_one_icon_type_our_services').live("change",function() {
+		var value = $(this).val();
+		  
+		if( this.value == 'parallax_image'){
+			$(this).parent().parent().find('.parallax_one_our_services_icon_control').hide();
+			$(this).parent().parent().find('.parallax_one_our_services_image_control').show();
+		} 
+		
+		if (this.value == 'parallax_icon') {
+			$(this).parent().parent().find('.parallax_one_our_services_image_control').hide();
+			$(this).parent().parent().find('.parallax_one_our_services_icon_control').show();
+		}
+		
+		if (this.value == 'parallax_no_icon') {
+			$(this).parent().parent().find('.parallax_one_our_services_image_control').hide();
+			$(this).parent().parent().find('.parallax_one_our_services_icon_control').hide();			
+		}
+	});
     media_upload('.custom_media_button_parallax_one_services');	
-
-	$('input[type=radio][class=parallax_one_icon_type_our_services]').change(function() {
-		if( this.value == 'parallax_image'){
-			$('.parallax_one_our_services_icon_control').hide();
-			$('.parallax_one_our_services_image_control').show();
-		} 
-		
-		if (this.value == 'parallax_icon') {
-			$('.parallax_one_our_services_image_control').hide();
-			$('.parallax_one_our_services_icon_control').show();
-		}
-		
-		if (this.value == 'parallax_no_icon') {
-			$('.parallax_one_our_services_image_control').hide();
-			$('.parallax_one_our_services_icon_control').hide();			
-		}
-	});
-});
-
-
-
-jQuery(document).on('widget-updated', function(e, widget){
-
-	jQuery('input[type=radio][class=parallax_one_icon_type_our_services]').change(function() {
-		if( this.value == 'parallax_image'){
-			jQuery('.parallax_one_our_services_icon_control').hide();
-			jQuery('.parallax_one_our_services_image_control').show();
-		} 
-		
-		if (this.value == 'parallax_icon') {
-			jQuery('.parallax_one_our_services_image_control').hide();
-			jQuery('.parallax_one_our_services_icon_control').show();
-		}
-		
-		if (this.value == 'parallax_no_icon') {
-			jQuery('.parallax_one_our_services_image_control').hide();
-			jQuery('.parallax_one_our_services_icon_control').hide();			
-		}
-	});
-	
 });

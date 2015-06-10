@@ -60,18 +60,18 @@
 			<p>
 				<label><?php _e('Image type:','parallax-one'); ?></label>
 				<br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_image') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_image" <?php checked( $default_icon == 'parallax_image', true) ?>><?php _e('Image','parallax-one'); ?><br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_icon" <?php checked( $default_icon == 'parallax_icon', true) ?>><?php _e('Icon','parallax-one'); ?><br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_no_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_no_icon" <?php checked( $default_icon == 'parallax_no_icon', true) ?>><?php _e('Empty','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_image') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_image" <?php checked( $default_icon == 'parallax_image', true) ?>/><?php _e('Image','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_icon" <?php checked( $default_icon == 'parallax_icon', true) ?>/><?php _e('Icon','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_no_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_no_icon" <?php checked( $default_icon == 'parallax_no_icon', true) ?>/><?php _e('Empty','parallax-one'); ?><br/>
 			</p>
 			
-			<p class="parallax_one_our_services_image_control" <?php if( !empty($instance['parallax_one_icon_type_our_services'] ) && $instance['parallax_one_icon_type_our_services'] != 'parallax_image') echo 'style="display:none"'; ?>>
+			<p class="parallax_one_our_services_image_control" <?php if( !empty($instance['parallax_one_icon_type_our_services'] ) && $instance['parallax_one_icon_type_our_services'] == 'parallax_image') echo 'style="display:block"'; ?>>
 				<label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
 				<input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
 				<input type="button" class="button button-primary custom_media_button_parallax_one_services" id="<?php echo $this->get_field_id('image_uri'); ?>_services_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
 			</p>
 			
-			<p class="parallax_one_our_services_icon_control" <?php if( !empty($instance['parallax_one_icon_type_our_services']) && $instance['parallax_one_icon_type_our_services'] != 'parallax_icon') echo 'style="display:none"'; ?>>
+			<p class="parallax_one_our_services_icon_control" <?php if( !empty($instance['parallax_one_icon_type_our_services']) && $instance['parallax_one_icon_type_our_services'] == 'parallax_icon') echo 'style="display:block"'; ?>>
 				<label for="<?php echo $this->get_field_name('services_icon'); ?>"><?php _e('Icon','parallax-one'); ?></label><br />
 				<select class="parallax_one_our_services_icons_widget" id="<?php echo $this->get_field_id('services_icon'); ?>" name="<?php echo $this->get_field_name('services_icon'); ?>">
 					<?php

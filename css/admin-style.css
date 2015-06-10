@@ -49,3 +49,12 @@ button.parallax_one_contact_info_remove_field {
 .parallax_one_icons_repeater, .parallax_one_contact_info_repeater{
 	float:left;
 }
+
+
+.parallax_one_our_services_image_control{
+	display:none;
+}
+
+.parallax_one_our_services_icon_control{
+	display:none;
+}

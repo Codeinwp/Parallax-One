@@ -11,36 +11,38 @@
 		
 		function widget($args, $instance) {
 			extract($args);
-?>
-		<div class="col-md-4 service-box">
-			<div class="single-service border-bottom-hover">
-				
-					<?php 
-					if( !empty($instance['parallax_one_icon_type_our_services']) ){
-						if ( $instance['parallax_one_icon_type_our_services'] == 'parallax_icon' ){
-							if( !empty($instance['services_icon']) ) {
-								echo '<div class="service-icon colored-text"><span class="'.$instance['services_icon'].'"></span></div>';
-							}
-						}
-						if( $instance['parallax_one_icon_type_our_services'] == 'parallax_image' ){
-							if( !empty($instance['image_uri'])){
-								echo '<img src="'.$instance['image_uri'].'"/>';
-							}
-						}
-					}
 
-					if(!empty($instance['service_title'])){
-						echo '<h3 class="colored-text">'.$instance['service_title'].'</h3>';
-					}
-					
-					if(!empty($instance['service_content'])){
-						echo '<p>'. $instance['service_content'].'</p>';
-					}
-				?>
+			if( (!empty($instance['services_icon']) && $instance['services_icon']!='No Icon') || !empty($instance['image_uri']) || !empty($instance['service_title']) || !empty($instance['service_content'])){?>
+				<div class="col-md-4 service-box">
+					<div class="single-service border-bottom-hover">
+						
+							<?php 
+							if( !empty($instance['parallax_one_icon_type_our_services']) ){
+								if ( $instance['parallax_one_icon_type_our_services'] == 'parallax_icon' ){
+									if( !empty($instance['services_icon']) ) {
+										echo '<div class="service-icon colored-text"><span class="'.$instance['services_icon'].'"></span></div>';
+									}
+								}
+								if( $instance['parallax_one_icon_type_our_services'] == 'parallax_image' ){
+									if( !empty($instance['image_uri'])){
+										echo '<img src="'.$instance['image_uri'].'"/>';
+									}
+								}
+							}
 
-			</div>
-		</div><!-- .service-box -->
-<?php
+							if(!empty($instance['service_title'])){
+								echo '<h3 class="colored-text">'.$instance['service_title'].'</h3>';
+							}
+							
+							if(!empty($instance['service_content'])){
+								echo '<p>'. $instance['service_content'].'</p>';
+							}
+						?>
+
+					</div>
+				</div><!-- .service-box -->
+		<?php
+				}
 		}
 		
 		function update($new_instance, $old_instance) {

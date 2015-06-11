@@ -22,6 +22,12 @@ function media_upload(button_class) {
 					case 'team':
 						display_field.val(attachment.sizes.team.url);
 						break
+					case 'services':
+						display_field.val(attachment.sizes.services.url);
+						break
+					case 'customers':
+						display_field.val(attachment.sizes.customers.url);
+						break;
 					default:
 						display_field.val(attachment.url);
 				}

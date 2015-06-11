@@ -101,6 +101,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
+
 body {
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 14px;
@@ -425,7 +426,13 @@ html {
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background-color: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+body.home {
+	background: url(images/background-images/background.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 blockquote:before,
@@ -1215,11 +1222,18 @@ h2.site-description {
 -----------------------------------------*/
 .services-wrap {
 	text-align: center;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px;
+	-moz-column-count: 3;
+	-moz-column-gap: 10px;
+	column-count: 3;
+	column-gap: 10px;
+	position: relative;
 }
 
 .single-service {
 	padding: 40px 35px 40px 35px;
-	margin: 0 0 100px 0;
+	margin: 0 0 50px 0;
 	background: #ffffff;
 	border-top: 1px solid #eaeaea;
 	border-left: 1px solid #eaeaea;
@@ -1228,6 +1242,19 @@ h2.site-description {
 	border-radius: 3px;
 	-webkit-transition: all ease 0.55s;
 	transition: all ease 0.55s;
+}
+
+.services-wrap .service-box {
+	display: inline-block;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	padding-left: 15px;
+ 	padding-right: 15px;
 }
 
 .single-service .service-icon {
@@ -1240,10 +1267,11 @@ h2.site-description {
 }
 
 .service-box {
-	float: none;
+/**	float: none;
 	display: inline-block;
 	margin-right: -4px;
 	vertical-align: top;
+*/
 }
 
 /*---------------------------------------
@@ -1920,7 +1948,7 @@ a.control_next.fade-btn {
    3.11 SECTION: TESTIMONIALS
 -----------------------------------------*/
 .testimonials {
-	padding-bottom: 60px;
+	padding-bottom: 20px;
 	text-align: center;
 }
 
@@ -1967,16 +1995,40 @@ a.control_next.fade-btn {
 
 /**.testimonials-wrap .testimonials-box { */
 .testimonials-box {
-	float: none;
+/*	float: none;
 	display: inline-block;
 	margin-right: -4px;
 	vertical-align: top;
+*/
 	text-align: center;
+}
+
+.testimonials-wrap {
+	-webkit-column-count: 3;
+	-webkit-column-gap: 10px;
+	-moz-column-count: 3;
+	-moz-column-gap: 10px;
+	column-count: 3;
+	column-gap: 10px;
+	position: relative;
+}
+
+.testimonials-wrap .testimonials-box {
+	display: inline-block;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	padding-left: 15px;
+ 	padding-right: 15px;
 }
 
 .testimonials-box .feedback {
   padding: 40px 0 40px 0;
-  margin: 40px 0 60px 0;
+  margin: 40px 0 30px 0;
   background: #ffffff;
   border-top: 1px solid #eaeaea;
   border-left: 1px solid #eaeaea;
@@ -2186,6 +2238,10 @@ footer.footer .colored-line-left {
 	display: none;
 }
 
+footer.footer .social-icons li a {
+	padding: 0 5px;
+}
+
 /* foooter widget */
 footer.footer {
 	font-size: 15px;
@@ -2338,6 +2394,7 @@ footer.footer #wp-calendar td {
 footer.footer .service-box {
 	width: 100%;
 	text-align: center;
+	padding: 0;
 }
 
 footer.footer .single-service {
@@ -2355,7 +2412,8 @@ footer.footer .testimonials-box .feedback {
 
 footer.footer .team-member-box {
 	width: 100%;
-	text-align: center;	
+	text-align: center;
+	padding: 0;
 }
 
 footer.footer .team-member-box .team-member {
@@ -2495,11 +2553,6 @@ a:hover {
    4. BLOG
 =========================================
 -----------------------------------------*/
-
-.content-wrap .container {
-	padding-left: 0;
-	padding-right: 0;
-}
 
 .post-list article {
 	border: 1px solid #eaeaea;
@@ -3111,6 +3164,39 @@ h2.screen-reader-text {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------
 =========================================
    6. RESPONSIVE CSS FIXES
@@ -3372,6 +3458,12 @@ h2.screen-reader-text {
 	#secondary .colored-line-left {
 		float: left;
 	}
+
+	.testimonials-wrap {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
 }
 
 /*---------------------------------------
@@ -3609,6 +3701,12 @@ h2.screen-reader-text {
 	.nav > li {
 		margin-left: 0;
 		padding-left: 0;
+	}
+
+	.testimonials-wrap {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
 	}
 
 }

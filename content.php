@@ -7,7 +7,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?>>
 	<header class="entry-header">
 
-		
 			<div class="post-img-wrap">
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
@@ -61,7 +60,6 @@
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
 			</div>
-
 
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>

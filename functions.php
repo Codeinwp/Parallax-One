@@ -84,10 +84,21 @@ function parallax_one_setup() {
 
 	// Latest news Section (homepage)
 	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
+	add_image_size( 'team', 268, 273, true );
 
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
+
+
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'team' => __('Parallax Team Member'),
+    ) );
+}
+
 
 /**
  * Register widget area.

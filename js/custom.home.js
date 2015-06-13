@@ -106,6 +106,11 @@ jQuery(window).load(function () {
     "use strict";
     jQuery(".status").fadeOut();
     jQuery(".preloader").delay(1000).fadeOut("slow");
+
+    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
+
+    jQuery(".testimonials-wrap").gridalicious({selector: '.testimonials-box', width: 360});
+    
 })
 
 
@@ -243,3 +248,14 @@ function scrolled() {
     }, 500)
 }
 jQuery(window).on('scroll', scrolled );
+
+
+
+
+
+jQuery(document).ready(function() {
+
+//    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
+
+
+});

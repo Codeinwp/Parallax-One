@@ -900,10 +900,6 @@ h2.site-description {
     box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
 }
 
-.sticky-navigation .navbar-brand {
-/**    padding: 18px 15px; */
-}
-
 .sticky-navigation .navbar-brand img {
     -webkit-backface-visibility: hidden;
 }
@@ -1234,12 +1230,6 @@ h2.site-description {
 -----------------------------------------*/
 .services-wrap {
 	text-align: center;
-	-webkit-column-count: 3;
-	-webkit-column-gap: 10px;
-	-moz-column-count: 3;
-	-moz-column-gap: 10px;
-	column-count: 3;
-	column-gap: 10px;
 	position: relative;
 }
 
@@ -1258,13 +1248,6 @@ h2.site-description {
 
 .services-wrap .service-box {
 	display: inline-block;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;	
-	-webkit-transition: all .2s ease;
-	-moz-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	transition: all .2s ease;
 	padding-left: 15px;
  	padding-right: 15px;
 }
@@ -1276,14 +1259,6 @@ h2.site-description {
 
 .single-service h3 {
 	margin-bottom: 10px;
-}
-
-.service-box {
-/**	float: none;
-	display: inline-block;
-	margin-right: -4px;
-	vertical-align: top;
-*/
 }
 
 /*---------------------------------------
@@ -2005,31 +1980,16 @@ a.control_next.fade-btn {
 	padding: 0 35px;
 }
 
-/**.testimonials-wrap .testimonials-box { */
 .testimonials-box {
-/*	float: none;
-	display: inline-block;
-	margin-right: -4px;
-	vertical-align: top;
-*/
 	text-align: center;
 }
 
 .testimonials-wrap {
-	-webkit-column-count: 3;
-	-webkit-column-gap: 10px;
-	-moz-column-count: 3;
-	-moz-column-gap: 10px;
-	column-count: 3;
-	column-gap: 10px;
 	position: relative;
 }
 
 .testimonials-wrap .testimonials-box {
 	display: inline-block;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;	
 	-webkit-transition: all .2s ease;
 	-moz-transition: all .2s ease;
 	-o-transition: all .2s ease;
@@ -2275,12 +2235,6 @@ ul.social-icons {
 	vertical-align: top;
 	text-align: left;
 }
-
-/**
-.footer-widget-wrap .widget-box {
-	width: 25%;
-}
-*/
 
 .powered-by {
 	font-size: 13px;
@@ -3235,40 +3189,6 @@ h2.screen-reader-text {
 	max-width: 350px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --------------------------------------
 =========================================
    6. RESPONSIVE CSS FIXES
@@ -3531,11 +3451,6 @@ h2.screen-reader-text {
 		float: left;
 	}
 
-	.testimonials-wrap {
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-	}
 	.content-page > .col-md-6 {
 		padding: 0;
 	}
@@ -3776,12 +3691,6 @@ h2.screen-reader-text {
 	.nav > li {
 		margin-left: 0;
 		padding-left: 0;
-	}
-
-	.testimonials-wrap {
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		column-count: 1;
 	}
 
 }

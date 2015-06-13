@@ -518,25 +518,37 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
+	background: #008ed6;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
+	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
+	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
+	-webkit-box-shadow: 0px 3px 0px #005885;
+	box-shadow: 0px 3px 0px #005885;
+	text-shadow: none;
+	border: none;
 	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
+	text-transform: uppercase;
+	letter-spacing: 1px;
 	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	line-height: 1.6;
+	border: none;
+	padding: 10px 30px 8px 30px;
+	color: #ffffff;
+	-webkit-transition: none;
+	transition: none;
+	font-weight: bold;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	background: #008ed6;
+	border-color: inherit;
+
 }
 
 button:focus,
@@ -2146,6 +2158,66 @@ a.control_next.fade-btn {
 }
 
 /*---------------------------------------
+   3.16 SECTION: Contact Page
+-----------------------------------------*/
+
+
+.page-template-template-contact-php .content-wrap > .container {
+	width: 100%;
+	padding: 0;
+}
+
+.page-template-template-contact-php #primary {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	float: none;
+}
+
+.contact-page-map-wrap {
+	margin-bottom: -6px;
+}
+
+.content-page > .col-md-6:nth-child(odd) {
+	padding-left: 0;
+}
+
+.content-page > .col-md-6:nth-child(even) {
+	padding-right: 0;
+}
+
+.content-page input:not([type="submit"]) {
+	width: 100%;
+}
+
+.content-page form {
+	font-size: 12px;
+}
+
+.content-page form p {
+  margin-bottom: 1em;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ng {
+	border: none;
+	background-color: rgba(255, 0, 0, 0.5);
+	color: #fff;
+}
+
+div.wpcf7-response-output {
+	margin: 2em 0 1em;
+}
+
+div.wpcf7-mail-sent-ok,
+div.wpcf7-mail-sent-ng {
+	border: none;
+	background-color: rgba(57, 143, 20, 0.5);
+}
+
+
+/*---------------------------------------
    3.15 SECTION: FOOTER
 -----------------------------------------*/
 .footer {
@@ -3463,6 +3535,9 @@ h2.screen-reader-text {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
+	}
+	.content-page > .col-md-6 {
+		padding: 0;
 	}
 }
 

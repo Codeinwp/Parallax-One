@@ -5,52 +5,60 @@ var slideHeight = 0;
 var sliderUlHeight = 0;
 var marginTop = 0;
 
-jQuery(window).resize(function() {
+/* LATEST NEWS */
+jQuery(document).ready(function () {
+    latest_news();
+    jQuery('a.control_prev').click(function () {
+        moveBottom();
+    });
+    jQuery('a.control_next').click(function () {
+         moveTop();
+    });
+});
 
+jQuery(window).resize(function() {    
+   
     /* maximum height for slides */
+    slideWidth;
+    slideCount;
     slideHeight = 0;
-    jQuery('#parallax_slider ul li').css('height','auto');
-    jQuery('#parallax_slider ul li').each(function(){
+    sliderUlHeight = 0;
+    marginTop = 0;
+
+    jQuery('#parallax_slider li').css('height','auto').each(function(){
         if ( slideHeight < jQuery(this).height() ){
             slideHeight = jQuery(this).height();
         }
     });
 
-    /* calculate the new height for all slides */
+    slideCount = jQuery('#parallax_slider ul li').length;
     sliderUlHeight = slideCount * slideHeight;
-
-    /* set new height */
-    jQuery('#parallax_slider').css({ height: slideHeight });
+    
+    /* set height */
+    jQuery('#parallax_slider').css({ width: slideWidth, height: slideHeight });
     jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
-    jQuery('#parallax_slider ul').css({ height: sliderUlHeight});
+    jQuery('#parallax_slider ul').css({ height: sliderUlHeight, top: marginTop });
 
-    /* reset slide position */
-    marginTop = 0;
-    jQuery('#parallax_slider ul').animate({ top: marginTop }, 400 );
-
-    /* reset to initial state */
-    if( !jQuery('.control_prev').hasClass('fade-btn') ){
-        jQuery('.control_prev').addClass('fade-btn');
-    }
     if( jQuery('.control_next').hasClass('fade-btn') ){
         jQuery('.control_next').removeClass('fade-btn');
+    }
+    if( !jQuery('.control_prev').hasClass('fade-btn') ){
+        jQuery('.control_prev').addClass('fade-btn');
     }
 
 });
 
-
-jQuery(document).ready(function () {
+/* latest news [start] */
+function latest_news() {
 
      /* maximum height for slides */
-    jQuery('#parallax_slider li').each(function(){
+    slideHeight = 0;
+
+    jQuery('#parallax_slider li').css('height','auto').each(function(){
         if ( slideHeight < jQuery(this).height() ){
             slideHeight = jQuery(this).height();
         }
     });
-
-    if ( slideHeight < 50 ) {
-        slideHeight = 360;
-    }
 
     slideCount = jQuery('#parallax_slider ul li').length;
     sliderUlHeight = slideCount * slideHeight;
@@ -60,52 +68,49 @@ jQuery(document).ready(function () {
     jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
     jQuery('#parallax_slider ul').css({ height: sliderUlHeight});
 
-    function moveTop() {
-        if ( marginTop - slideHeight >= - sliderUlHeight + slideHeight ){
-            marginTop = marginTop - slideHeight;
-            jQuery('#parallax_slider ul').animate({
-                top: marginTop
-            }, 400 );
-            if( marginTop == - slideHeight * (slideCount-1) ) {
-                jQuery('.control_next').addClass('fade-btn');
-            }
-            if( jQuery('.control_prev').hasClass('fade-btn') ){
-                jQuery('.control_prev').removeClass('fade-btn');
-            }
+}
+
+function moveTop() {
+    if ( marginTop - slideHeight >= - sliderUlHeight + slideHeight ){
+        marginTop = marginTop - slideHeight;
+        jQuery('#parallax_slider ul').animate({
+            top: marginTop
+        }, 400 );
+        if( marginTop == - slideHeight * (slideCount-1) ) {
+            jQuery('.control_next').addClass('fade-btn');
         }
-    };    
-
-    function moveBottom() {
-        if ( marginTop + slideHeight <= 0 ){
-            marginTop = marginTop + slideHeight;
-            jQuery('#parallax_slider ul').animate({
-                top: marginTop
-            }, 400 );
-            if( marginTop == 0 ) {
-                jQuery('.control_prev').addClass('fade-btn');
-            }
-            if( jQuery('.control_next').hasClass('fade-btn') ){
-                jQuery('.control_next').removeClass('fade-btn');
-            }
+        if( jQuery('.control_prev').hasClass('fade-btn') ){
+            jQuery('.control_prev').removeClass('fade-btn');
         }
-    }; 
-    jQuery('a.control_prev').click(function () {
-        moveBottom();
-    });
-    jQuery('a.control_next').click(function () {
-        moveTop();
-    });
-    
-});    
+    }
+};    
 
-/* slider [end] */
-
+function moveBottom() {
+    if ( marginTop + slideHeight <= 0 ){
+        marginTop = marginTop + slideHeight;
+        jQuery('#parallax_slider ul').animate({
+            top: marginTop
+        }, 400 );
+        if( marginTop == 0 ) {
+            jQuery('.control_prev').addClass('fade-btn');
+        }
+        if( jQuery('.control_next').hasClass('fade-btn') ){
+            jQuery('.control_next').removeClass('fade-btn');
+        }
+    }
+}; 
+/* latest news [end] */
 
 /* PRE LOADER */
 jQuery(window).load(function () {
     "use strict";
     jQuery(".status").fadeOut();
     jQuery(".preloader").delay(1000).fadeOut("slow");
+
+    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
+
+    jQuery(".testimonials-wrap").gridalicious({selector: '.testimonials-box', width: 360});
+    
 })
 
 
@@ -243,3 +248,14 @@ function scrolled() {
     }, 500)
 }
 jQuery(window).on('scroll', scrolled );
+
+
+
+
+
+jQuery(document).ready(function() {
+
+//    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
+
+
+});

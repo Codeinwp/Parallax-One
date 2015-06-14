@@ -12,7 +12,7 @@
 		function widget($args, $instance) {
 			extract($args);
 ?>
-		<div class="col-md-4 service-box">
+		<div class="service-box">
 			<div class="single-service border-bottom-hover">
 				
 					<?php 

@@ -12,7 +12,7 @@ class parallax_one_happy_customer_widget extends WP_Widget {
         echo $before_widget;
 ?>
 				<!-- SINGLE FEEDBACK -->
-                <div class="col-md-4 wow fadeInLeft testimonials-box" data-wow-offset="10" data-wow-duration="1.75s">
+                <div class="testimonials-box">
                     <div class="feedback border-bottom-hover">
                         <div class="pic-container">
                             <div class="pic-container-inner">

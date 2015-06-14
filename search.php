@@ -5,41 +5,54 @@
  * @package parallax-one
  */
 
-get_header(); ?>
+	get_header(); 
+?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	</div>
+	<!-- /END COLOR OVER IMAGE -->
+</header>
+<!-- /END HOME / HEADER  -->
 
-		<?php if ( have_posts() ) : ?>
+<div class="content-wrap">
+	<div class="container">
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+		<div id="primary" class="content-area col-md-8 post-list">
+			<main id="main" class="site-main" role="main">
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) : ?>
 
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'content', 'search' );
-				?>
+					<header class="page-header">
+						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					</header><!-- .page-header -->
 
-			<?php endwhile; ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php the_posts_navigation(); ?>
+						<?php
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'content', 'search' );
+						?>
 
-		<?php else : ?>
+					<?php endwhile; ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+					<?php the_posts_navigation(); ?>
 
-		<?php endif; ?>
+				<?php else : ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+					<?php get_template_part( 'content', 'none' ); ?>
 
-<?php get_sidebar(); ?>
+				<?php endif; ?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+		<?php get_sidebar(); ?>
+
+	</div>
+</div><!-- .content-wrap -->
+
 <?php get_footer(); ?>

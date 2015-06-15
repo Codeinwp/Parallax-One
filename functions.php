@@ -74,6 +74,9 @@ function parallax_one_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	
+	//Theme Support for WooCommerce
+	add_theme_support( 'woocommerce' );
 
 	add_theme_support( 'post-thumbnails' ); 
 

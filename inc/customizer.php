@@ -201,27 +201,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		array(
 			'section' => 'parallax_one_header_colors_section',
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));		
-	
-
-	/********************************************************/
-	/************* LOGOS OPTIONS  ***********************/
-	/********************************************************/	
-	
-	
-	$wp_customize->add_section( 'parallax_one_logos_sections_in_pro' , array(
-			'title'       => __( 'Logos section', 'parallax-one' ),
-			'priority'    => 30,
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_logos_sections_in_pro', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_logos_sections_in_pro',
-		array(
-			'section' => 'parallax_one_logos_sections_in_pro'
-	   ), __('Check out the PRO version to add logos section !','parallax-one')
 	));
 	
 	/********************************************************/

@@ -84,10 +84,25 @@ function parallax_one_setup() {
 
 	// Latest news Section (homepage)
 	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
+	add_image_size( 'team', 268, 273, true );
+	add_image_size( 'services',60,62,true );
+	add_image_size( 'customers',75,75,true );
 
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
+
+
+add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes' );
+
+function parallax_one_media_uploader_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'team' => __('Parallax One Team Member','parallax-one'),
+		'services' => __('Parallax One Services','parallax-one'),
+		'customers' => __('Parallax One Customers','parallax-one')
+    ) );
+}
+
 
 /**
  * Register widget area.
@@ -345,7 +360,7 @@ function parallax_one_default_widgets_our_services()
 
 		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
 
-		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/2.jpg' );
+		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/1.jpg' );
 		
 		update_option( 'widget_parallax_one_our_team_widget', $our_team_content );
 	 
@@ -355,7 +370,7 @@ function parallax_one_default_widgets_our_services()
 
 		$active_widgets[ $parallax_one_sidebars['parallax-one-team-sidebar'] ][] = 'parallax_one_our_team_widget-' . $parallax_one_counter;
 
-		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/3.jpg' );
+		$our_team_content[ $parallax_one_counter ] = array ( 'name' => __( 'Albert Jacobs','parallax-one' ), 'position' => __( 'Founder & CEO','parallax-one' ), 'colector' => $json_colector, 'image_uri' => get_stylesheet_directory_uri().'/images/team/1.jpg' );
 		
 		update_option( 'widget_parallax_one_our_team_widget', $our_team_content );
 	 

@@ -87,9 +87,9 @@ function parallax_one_setup() {
 
 	// Latest news Section (homepage)
 	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
-	add_image_size( 'team', 268, 273, true );
-	add_image_size( 'services',60,62,true );
-	add_image_size( 'customers',75,75,true );
+	add_image_size( 'parallax_one_team', 268, 273, true );
+	add_image_size( 'parallax_one_services',60,62,true );
+	add_image_size( 'parallax_one_customers',75,75,true );
 
 }
 endif; // parallax_one_setup
@@ -100,9 +100,9 @@ add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes
 
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'team' => __('Parallax One Team Member','parallax-one'),
-		'services' => __('Parallax One Services','parallax-one'),
-		'customers' => __('Parallax One Customers','parallax-one')
+        'parallax_one_team' => __('Parallax One Team Member','parallax-one'),
+		'parallax_one_services' => __('Parallax One Services','parallax-one'),
+		'parallax_one_customers' => __('Parallax One Customers','parallax-one')
     ) );
 }
 

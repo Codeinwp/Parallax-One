@@ -19,13 +19,13 @@ function media_upload(button_class) {
 						case 'thumbnail':
 							display_field.val(attachment.sizes.thumbnail.url);
 							break;
-						case 'team':
+						case 'parallax_one_team':
 							display_field.val(attachment.sizes.team.url);
 							break
-						case 'services':
+						case 'parallax_one_services':
 							display_field.val(attachment.sizes.services.url);
 							break
-						case 'customers':
+						case 'parallax_one_customers':
 							display_field.val(attachment.sizes.customers.url);
 							break;
 						default:

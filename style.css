@@ -841,7 +841,7 @@ textarea {
 
 .header .overlay-layer {
     padding-top: 84px;
-    padding-bottom: 100px;
+    padding-bottom: 175px;
     height: auto;
 }
 
@@ -1087,6 +1087,10 @@ h2.site-description {
     text-align: center;
 }
 
+.only-logo .navbar {
+	min-height: 10px;
+}
+
 .only-logo .navbar-header img {
     max-width: 1000px;
 }
@@ -1114,8 +1118,8 @@ h2.site-description {
     margin-top: 70px;
 }
 .header-style-one .intro-section h5 {
-	margin-top: 15px;
-	margin-bottom: 70px;
+	margin-top: 18px;
+	margin-bottom: 75px;
 }
 
 /* header style [2] */
@@ -1259,6 +1263,14 @@ h2.site-description {
 
 .single-service h3 {
 	margin-bottom: 10px;
+}
+
+.galcolumn .single-service {
+	width: 100%;
+}
+
+.display-none {
+	display: none !important;
 }
 
 /*---------------------------------------
@@ -2016,6 +2028,10 @@ a.control_next.fade-btn {
   border-bottom-color: #008ed6;
 }
 
+.galcolumn .testimonials-box {
+	width: 100%;
+}
+
 /*---------------------------------------
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
@@ -2196,6 +2212,7 @@ div.wpcf7-mail-sent-ng {
 
 .footer-links li a:hover {
 	text-decoration: none;
+	color: #008ed6;
 }
 
 ul.social-icons {
@@ -2707,6 +2724,12 @@ a:hover {
 	float: right;
 	text-align: right;
 	font-weight: bold;
+}
+
+.page-content input[type="search"] {
+	padding: 8px;
+	font-weight: normal;
+	border: 1px solid #E7E7E7;
 }
 
 /* --------------------------------------
@@ -3453,6 +3476,9 @@ h2.screen-reader-text {
 
 	.content-page > .col-md-6 {
 		padding: 0;
+	}
+	.gridalicious .galcolumn {
+		width: 100% !important;
 	}
 }
 

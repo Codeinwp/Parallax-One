@@ -133,7 +133,24 @@
 		} );
 		
     });	
-
+	
+	/***************************************
+	******** LOGOS SECTION ***********
+	****************************************/
+	//Show Logos
+	wp.customize( 'parallax_one_logos_show', function( value ) {
+		value.bind( function( to ) {
+			if ( true != to ) {
+				$( '#clients' ).css( {
+					'display': 'block'
+				} );
+			} else {
+				$( '#clients' ).css( {
+					'display': 'none'
+				} );
+			}
+		} );
+	} );
 
 	/******************************************************
 	************* OUR STORY SECTION ****************

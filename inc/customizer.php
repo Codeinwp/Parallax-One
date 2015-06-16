@@ -233,9 +233,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		)
 	);
 	
-
-	
-	//$wp_customize->get_setting( 'parallax_one_logos_show' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'parallax_one_logos_show' )->transport = 'postMessage';
 	
 	/********************************************************/
 	/******* OUR SERVICES OPTIONS  *******************/

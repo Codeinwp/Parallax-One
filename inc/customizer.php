@@ -203,6 +203,40 @@ function parallax_one_customize_register( $wp_customize ) {
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));
 	
+	/* LOGOS SETTINGS */
+	
+	$wp_customize->add_section( 'parallax_one_logos_settings_section' , array(
+			'title'       => __( 'Logos Bar', 'parallax-one' ),
+			'priority'    => 4,
+			'panel' => 'panel_7'
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_logos_content' );
+
+	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_logos_content',
+		array(
+			'section' => 'parallax_one_logos_settings_section',
+			'priority'    => 1,
+	   ), __('The main content of this section is customizable in:<br> Customize -> Widgets -> Logos section.<br> There you must add the "Parallax One - Logos widget"','parallax-one')
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_logos_show');
+
+	$wp_customize->add_control(
+		'parallax_one_logos_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Logos section?','parallax-one'),
+			'description' => __('If you check this box, the Logos section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_logos_settings_section',
+			'priority'    => 2,
+		)
+	);
+	
+
+	
+	//$wp_customize->get_setting( 'parallax_one_logos_show' )->transport = 'postMessage';
+	
 	/********************************************************/
 	/******* OUR SERVICES OPTIONS  *******************/
 	/********************************************************/

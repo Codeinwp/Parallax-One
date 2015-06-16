@@ -12,18 +12,18 @@ if( isset($parallax_one_logos_show) && $parallax_one_logos_show != 1 ){
 	}
 	
 	
-	if( isset($parallax_one_logos_show) && $parallax_one_logos_show != 1 ){
-		if( is_active_sidebar( 'parallax-one-logos-sidebar' ) ){
-		?>
-			
-				<ul class="client-logos">
-					<?php
-						dynamic_sidebar( 'parallax-one-logos-sidebar' );
-					?>
-				</ul>
-			
-		<?php
-		}
-	}
+if( isset($parallax_one_logos_show) && $parallax_one_logos_show != 1  || isset( $wp_customize ) ){
+	if( is_active_sidebar( 'parallax-one-logos-sidebar' ) ){
 	?>
-	</div><!-- .clients white-bg -->
+		
+			<ul class="client-logos">
+				<?php
+					dynamic_sidebar( 'parallax-one-logos-sidebar' );
+				?>
+			</ul>
+		</div><!-- .clients white-bg -->
+	<?php
+	}
+}
+?>
+	

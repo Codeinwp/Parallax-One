@@ -88,6 +88,8 @@ function parallax_one_setup() {
 	add_image_size( 'services',60,62,true );
 	add_image_size( 'customers',75,75,true );
 
+	add_theme_support( 'woocommerce' );
+
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -435,3 +437,21 @@ function remove_class_function( $classes ) {
     return $classes;
 
 }
+
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+	add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+	function my_theme_wrapper_start() {
+		echo '</div> </header>';
+		echo '<div class="content-wrap">
+				<div class="container">
+					<div id="primary" class="content-area col-md-12">';
+	}
+	function my_theme_wrapper_end() {
+		echo '</div></div></div>';
+	}
+
+
+	// add this code directly, no action needed
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );

@@ -1186,6 +1186,7 @@ h2.site-description {
 .client-logos {
 	margin-bottom: 0;
 	z-index: 1;
+	text-align: center;
 }
 
 .client-logos li {

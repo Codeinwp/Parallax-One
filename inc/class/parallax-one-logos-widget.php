@@ -25,12 +25,12 @@ class parallax_one_logos_widget extends WP_Widget {
 		
 		if( !empty($instance['image_uri']) && !empty($instance['link']) ):
 			if( isset($instance['new_tab']) && ($instance['new_tab'] == 'on') ):
-				echo '<a href="'.apply_filters('widget_title', $instance['link'] ).'" target="_blank"><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a>';
+				echo '<li><a href="'.apply_filters('widget_title', $instance['link'] ).'" target="_blank"><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a></li>';
 			else:
-				echo '<a href="'.apply_filters('widget_title', $instance['link'] ).'"><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a>';
+				echo '<li><a href="'.apply_filters('widget_title', $instance['link'] ).'"><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a></li>';
 			endif;
 		elseif( !empty($instance['image_uri'])):
-			echo '<a href=""><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a>';
+			echo '<li><a><img src="'.esc_url($instance['image_uri']).'" alt="Logo"></a></li>';
 		endif;
 		
         echo $after_widget;

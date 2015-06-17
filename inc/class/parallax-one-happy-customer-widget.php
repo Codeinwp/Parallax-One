@@ -9,7 +9,9 @@ class parallax_one_happy_customer_widget extends WP_Widget {
     }
     function widget($args, $instance) {
         extract($args);
-        echo $before_widget;
+        
+		if( !empty($instance['image_uri']) || !empty($instance['title']) || !empty($instance['details']) || !empty($instance['text']) ){
+			echo $before_widget;
 ?>
 				<!-- SINGLE FEEDBACK -->
                 <div class="testimonials-box">
@@ -40,7 +42,8 @@ class parallax_one_happy_customer_widget extends WP_Widget {
                     </div>
                 </div><!-- .testimonials-box -->
 <?php
-        echo $after_widget;
+			echo $after_widget;
+		}
     }
     function update($new_instance, $old_instance) {
         $instance = $old_instance;

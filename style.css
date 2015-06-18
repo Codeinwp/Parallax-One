@@ -3109,6 +3109,7 @@ ul.social-icons {
 .footer-widget-wrap {
 	width: 100%;
 	padding-bottom: 50px;
+	text-align: center;
 }
 
 .footer-widget-wrap .widget {

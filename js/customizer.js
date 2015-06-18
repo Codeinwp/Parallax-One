@@ -472,6 +472,23 @@
 			
 		} );
 	} );
+    
+    /******************************************************
+	*********** MAP SECTION **************
+	*******************************************************/
+	//Show Contact Info
+	wp.customize( 'parallax_one_frontpage_map_show', function( value ) {
+		value.bind( function( to ) {
+			
+			if ( '1' != to ) {
+				$( '#container-fluid' ).removeClass( 'paralax_one_only_customizer' );
+			} else {
+				$( '#container-fluid' ).addClass( 'paralax_one_only_customizer' );
+			}
+			
+		} );
+	} );
+    
 	
 	/***************************************
 	******** FOOTER SECTION *********

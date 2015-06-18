@@ -75,7 +75,6 @@
                         <!-- LOGO -->
 						
 						<?php
-							global $wp_customize;
 							
 							$parallax_one = get_theme_mod('paralax_one_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
 

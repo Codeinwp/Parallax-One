@@ -92,7 +92,7 @@
 																		<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
 																	</a>
 																</span>
-																<span> by </span>
+																<span> <?php _e('by','parallax-one');?> </span>
 																<span class="byline">
 																	<span class="author vcard">
 																		<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
@@ -102,7 +102,7 @@
 														</header>
 														<div class="entry-content">
 															<?php the_excerpt(); ?>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more">Read more</a>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php _e('Read more','parallax-one'); ?></a>
 														</div>
 													</div>
 												</div>

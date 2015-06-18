@@ -41,6 +41,7 @@ function parallax_one_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'parallax-one' ),
@@ -74,6 +75,11 @@ function parallax_one_setup() {
 	//Theme Support for WooCommerce
 	add_theme_support( 'woocommerce' );
 
+    /*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* Set the image size by cropping the image */
@@ -86,8 +92,6 @@ function parallax_one_setup() {
 	add_image_size( 'parallax_one_team', 268, 273, true );
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
-
-	add_theme_support( 'woocommerce' );
 
 }
 endif; // parallax_one_setup

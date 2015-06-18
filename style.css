@@ -803,6 +803,9 @@ textarea {
 /*---------------------------------------
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
+.paralax_one_only_customizer{
+    display:none !important;
+}
 
 .whole-video-bg {
 	position: fixed;

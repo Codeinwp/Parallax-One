@@ -15,11 +15,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-<style>
-	.paralax_one_only_customizer{
-		display:none !important;
-	}
-</style>
 <?php wp_head(); ?>
 </head>
 

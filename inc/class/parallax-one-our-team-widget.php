@@ -46,8 +46,8 @@ class parallax_one_our_team_widget extends WP_Widget {
 											echo '<ul class="social-icons">';
 											foreach($json as $icon){
 												if(!empty($icon->icon_link) && !empty($icon->icon_value)){
-													echo '<li><a href="'.$icon->icon_link.'">';
-														echo '<span class="'.$icon->icon_value.'"></span>';
+													echo '<li><a href="'.esc_url($icon->icon_link).'">';
+														echo '<span class="'.esc_attr($icon->icon_value).'"></span>';
 													echo '</a></li>';
 												}
 											}
@@ -162,19 +162,19 @@ class parallax_one_our_team_widget extends WP_Widget {
 	?>
 	
 	<p>
-        <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
-        <input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
-        <input type="button" class="button button-primary custom_media_button_parallax_one_team" id="<?php echo $this->get_field_id('image_uri'); ?>_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+        <label for="<?php echo esc_attr($this->get_field_id('image_uri')); ?>"><?php _e('Image','parallax-one'); ?></label><br />
+        <input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>" value="<?php if( !empty($instance['image_uri']) ): echo esc_url($instance['image_uri']); endif; ?>">
+        <input type="button" class="button button-primary custom_media_button_parallax_one_team" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>_trgger" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
     </p>
 	
 	<p>
-        <label for="<?php echo $this->get_field_id('name'); ?>"><?php _e('Name','parallax-one'); ?></label><br />
-        <input type="text" name="<?php echo $this->get_field_name('name'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php if( !empty($instance['name']) ): echo $instance['name']; endif; ?>" class="widefat" />
+        <label for="<?php echo esc_attr($this->get_field_id('name')); ?>"><?php _e('Name','parallax-one'); ?></label><br />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('name')); ?>" id="<?php echo esc_attr($this->get_field_id('title')); ?>" value="<?php if( !empty($instance['name']) ): echo esc_attr($instance['name']); endif; ?>" class="widefat" />
     </p>
 
     <p>
-        <label for="<?php echo $this->get_field_id('position'); ?>"><?php _e('Position','parallax-one'); ?></label><br />
-        <input type="text" name="<?php echo $this->get_field_name('position'); ?>" id="<?php echo $this->get_field_id('position'); ?>" value="<?php if( !empty($instance['position']) ): echo $instance['position']; endif; ?>" class="widefat" />
+        <label for="<?php echo esc_attr($this->get_field_id('position')); ?>"><?php _e('Position','parallax-one'); ?></label><br />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('position')); ?>" id="<?php echo $this->get_field_id('position'); ?>" value="<?php if( !empty($instance['position']) ): echo esc_attr($instance['position']); endif; ?>" class="widefat" />
     </p>
 	
 	<div class="parallax_one_full_repeater_control">
@@ -226,7 +226,7 @@ class parallax_one_our_team_widget extends WP_Widget {
 						
 						<p>
 							<label><?php _e('Social icon link','parallax-one'); ?></label><br />
-							<input type="text" class="parallax_one_icon_link_widget" value="<?php if(!empty($icon->icon_link)) echo $icon->icon_link; ?>" >
+							<input type="text" class="parallax_one_icon_link_widget" value="<?php if(!empty($icon->icon_link)) echo esc_url($icon->icon_link); ?>" >
 						</p>
 						
 						<p>
@@ -243,7 +243,7 @@ class parallax_one_our_team_widget extends WP_Widget {
 		</div>
 
 		
-		<input type="hidden"  name="<?php echo $this->get_field_name('colector'); ?>" id="<?php echo $this->get_field_id( 'colector' ); ?>" class="parallax_one_widget_repeater_colector"  value='<?php if(!empty($instance[ "colector" ])) echo $instance[ "colector" ]; ?>' >
+		<input type="hidden"  name="<?php echo esc_attr($this->get_field_name('colector')); ?>" id="<?php echo esc_attr($this->get_field_id( 'colector' )); ?>" class="parallax_one_widget_repeater_colector"  value='<?php if(!empty($instance[ "colector" ])) echo esc_attr($instance[ "colector" ]); ?>' >
 		<button type="button" class="add_field_widget parallax_one_widget_new_field"><?php _e('Add new field','parallax-one'); ?></button>
 	</div>
 <?php

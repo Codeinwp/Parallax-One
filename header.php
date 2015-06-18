@@ -60,7 +60,7 @@
         		$fixedheader = '';
         	}
         ?>
-        <div class="overlay-layer-wrap <?php echo $fixedheader; ?>">
+        <div class="overlay-layer-wrap <?php echo esc_attr($fixedheader); ?>">
 
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll" role="navigation">
@@ -90,7 +90,7 @@
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 							

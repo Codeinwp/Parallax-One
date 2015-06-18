@@ -56,22 +56,22 @@ class parallax_one_happy_customer_widget extends WP_Widget {
     function form($instance) {
 ?>
 	<p>
-        <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Customer name','parallax-one'); ?></label><br />
-        <input type="text" name="<?php echo $this->get_field_name('title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php if( !empty($instance['title']) ): echo $instance['title']; endif; ?>" class="widefat" />
+        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Customer name','parallax-one'); ?></label><br />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('title')); ?>" id="<?php echo esc_attr($this->get_field_id('title')); ?>" value="<?php if( !empty($instance['title']) ): echo $instance['title']; endif; ?>" class="widefat" />
     </p>
     
 	<p>
-        <label for="<?php echo $this->get_field_id('details'); ?>"><?php _e('Customer details','parallax-one'); ?></label><br />
-        <input type="text" name="<?php echo $this->get_field_name('details'); ?>" id="<?php echo $this->get_field_id('details'); ?>" value="<?php if( !empty($instance['details']) ): echo $instance['details']; endif; ?>" class="widefat" />
+        <label for="<?php echo esc_attr($this->get_field_id('details')); ?>"><?php _e('Customer details','parallax-one'); ?></label><br />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('details')) ?>" id="<?php echo esc_attr($this->get_field_id('details')); ?>" value="<?php if( !empty($instance['details']) ): echo esc_attr($instance['details']); endif; ?>" class="widefat" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text','parallax-one'); ?></label><br />
-        <input type="text" name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>" value="<?php if( !empty($instance['text']) ): echo $instance['text']; endif; ?>" class="widefat" />
+        <label for="<?php echo esc_attr($this->get_field_id('text')); ?>"><?php _e('Text','parallax-one'); ?></label><br />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('text')); ?>" id="<?php echo esc_attr($this->get_field_id('text')); ?>" value="<?php if( !empty($instance['text']) ): echo esc_attr($instance['text']); endif; ?>" class="widefat" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
-        <input type="text" class="widefat custom_media_url_testimonial" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>" >
-		<input type="button" class="button button-primary custom_media_button_parallax_one_customers" id="<?php echo $this->get_field_id('image_uri'); ?>_customers_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+        <label for="<?php echo esc_attr($this->get_field_id('image_uri')); ?>"><?php _e('Image','parallax-one'); ?></label><br />
+        <input type="text" class="widefat custom_media_url_testimonial" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>" value="<?php if( !empty($instance['image_uri']) ): echo esc_attr($instance['image_uri']); endif; ?>" >
+		<input type="button" class="button button-primary custom_media_button_parallax_one_customers" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>_customers_trgger" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
 
   </p>
 <?php

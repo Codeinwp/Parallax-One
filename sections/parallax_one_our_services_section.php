@@ -21,7 +21,7 @@
 						$parallax_one_our_services_title = get_theme_mod('parallax_one_our_services_title','Our Services');
 						
 						if( !empty($parallax_one_our_services_title) ){
-							echo '<h2 class="dark-text">'.$parallax_one_our_services_title.'</h2><div class="colored-line"></div>';
+							echo '<h2 class="dark-text">'.esc_attr($parallax_one_our_services_title).'</h2><div class="colored-line"></div>';
 						} elseif ( isset( $wp_customize )   ) {
 							echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
 						}
@@ -32,7 +32,7 @@
 						$parallax_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 
 						if( !empty($parallax_one_our_services_subtitle) ){
-							echo '<div class="sub-heading">'.$parallax_one_our_services_subtitle.'</div>';
+							echo '<div class="sub-heading">'.esc_attr($parallax_one_our_services_subtitle).'</div>';
 						} elseif ( isset( $wp_customize )   ) {
 							echo '<div class="sub-heading paralax_one_only_customizer"></div>';
 						}

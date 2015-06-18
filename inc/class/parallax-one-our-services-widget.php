@@ -20,22 +20,22 @@
 							if( !empty($instance['parallax_one_icon_type_our_services']) ){
 								if ( $instance['parallax_one_icon_type_our_services'] == 'parallax_icon' ){
 									if( !empty($instance['services_icon']) ) {
-										echo '<div class="service-icon colored-text"><span class="'.$instance['services_icon'].'"></span></div>';
+										echo '<div class="service-icon colored-text"><span class="'.esc_attr($instance['services_icon']).'"></span></div>';
 									}
 								}
 								if( $instance['parallax_one_icon_type_our_services'] == 'parallax_image' ){
 									if( !empty($instance['image_uri'])){
-										echo '<img src="'.$instance['image_uri'].'"/>';
+										echo '<img src="'.esc_url($instance['image_uri']).'"/>';
 									}
 								}
 							}
 
 							if(!empty($instance['service_title'])){
-								echo '<h3 class="colored-text">'.$instance['service_title'].'</h3>';
+								echo '<h3 class="colored-text">'.esc_attr($instance['service_title']).'</h3>';
 							}
 							
 							if(!empty($instance['service_content'])){
-								echo '<p>'. $instance['service_content'].'</p>';
+								echo '<p>'. esc_attr($instance['service_content']).'</p>';
 							}
 						?>
 
@@ -62,26 +62,26 @@
 			<p>
 				<label><?php _e('Image type:','parallax-one'); ?></label>
 				<br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_image') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_image" <?php checked( $default_icon == 'parallax_image', true) ?>/><?php _e('Image','parallax-one'); ?><br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_icon" <?php checked( $default_icon == 'parallax_icon', true) ?>/><?php _e('Icon','parallax-one'); ?><br/>
-				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_no_icon') ?>" name="<?php echo ($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_no_icon" <?php checked( $default_icon == 'parallax_no_icon', true) ?>/><?php _e('Empty','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo ($this->get_field_id( 'parallax_one_icon_type_our_services' ) . '-parallax_image') ?>" name="<?php echo esc_attr($this->get_field_name( 'parallax_one_icon_type_our_services' )); ?>" value="parallax_image" <?php checked( $default_icon == 'parallax_image', true) ?>/><?php _e('Image','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo esc_attr($this->get_field_id( 'parallax_one_icon_type_our_services' )) . '-parallax_icon'; ?>" name="<?php echo esc_attr($this->get_field_name( 'parallax_one_icon_type_our_services' )); ?>" value="parallax_icon" <?php checked( $default_icon == 'parallax_icon', true) ?>/><?php _e('Icon','parallax-one'); ?><br/>
+				<input type="radio" class="parallax_one_icon_type_our_services" id="<?php echo esc_attr($this->get_field_id( 'parallax_one_icon_type_our_services' )) . '-parallax_no_icon'; ?>" name="<?php echo esc_attr($this->get_field_name( 'parallax_one_icon_type_our_services' )) ?>" value="parallax_no_icon" <?php checked( $default_icon == 'parallax_no_icon', true) ?>/><?php _e('Empty','parallax-one'); ?><br/>
 			</p>
 			
 			<p class="parallax_one_our_services_image_control" <?php if( !empty($instance['parallax_one_icon_type_our_services'] ) && $instance['parallax_one_icon_type_our_services'] == 'parallax_image') echo 'style="display:block"'; ?>>
-				<label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
-				<input type="text" class="widefat custom_media_url_team" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
-				<input type="button" class="button button-primary custom_media_button_parallax_one_services" id="<?php echo $this->get_field_id('image_uri'); ?>_services_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+				<label for="<?php echo esc_attr($this->get_field_id('image_uri')); ?>"><?php _e('Image','parallax-one'); ?></label><br />
+				<input type="text" class="widefat custom_media_url_team" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>" value="<?php if( !empty($instance['image_uri']) ): echo esc_url($instance['image_uri']); endif; ?>">
+				<input type="button" class="button button-primary custom_media_button_parallax_one_services" id="<?php echo $this->get_field_id('image_uri'); ?>_services_trgger" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
 			</p>
 			
 			<p class="parallax_one_our_services_icon_control" <?php if( !empty($instance['parallax_one_icon_type_our_services']) && $instance['parallax_one_icon_type_our_services'] == 'parallax_icon') echo 'style="display:block"'; ?>>
-				<label for="<?php echo $this->get_field_name('services_icon'); ?>"><?php _e('Icon','parallax-one'); ?></label><br />
-				<select class="parallax_one_our_services_icons_widget" id="<?php echo $this->get_field_id('services_icon'); ?>" name="<?php echo $this->get_field_name('services_icon'); ?>">
+				<label for="<?php echo esc_attr($this->get_field_name('services_icon')); ?>"><?php _e('Icon','parallax-one'); ?></label><br />
+				<select class="parallax_one_our_services_icons_widget" id="<?php echo esc_attr($this->get_field_id('services_icon')); ?>" name="<?php echo esc_attr($this->get_field_name('services_icon')); ?>">
 					<?php
 						foreach($icons_array as $icon) {
 							if( !empty($instance['services_icon']) && $instance['services_icon'] == $icon) {
-								echo '<option value="'.$icon.'" selected>'.$icon.'</option>';
+								echo '<option value="'.esc_attr($icon).'" selected>'.esc_attr($icon).'</option>';
 							} else {
-								echo '<option value="'.$icon.'">'.$icon.'</option>';
+								echo '<option value="'.esc_attr($icon).'">'.esc_attr($icon).'</option>';
 							}
 						}
 					?>
@@ -89,13 +89,13 @@
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_name('service_title'); ?>"><?php _e('Service title','parallax-one'); ?></label><br />
-				<input type="text" name="<?php echo $this->get_field_name('service_title'); ?>" id="<?php echo $this->get_field_id('title'); ?>" value="<?php if( !empty($instance['service_title']) ): echo $instance['service_title']; endif; ?>" class="widefat" />
+				<label for="<?php echo esc_attr($this->get_field_name('service_title')); ?>"><?php _e('Service title','parallax-one'); ?></label><br />
+				<input type="text" name="<?php echo esc_attr($this->get_field_name('service_title')); ?>" id="<?php echo esc_attr($this->get_field_id('title')); ?>" value="<?php if( !empty($instance['service_title']) ): echo esc_attr($instance['service_title']); endif; ?>" class="widefat" />
 			</p>
 			
 			<p>
-				<label for="<?php echo $this->get_field_id('service_content'); ?>"><?php _e('Service content','parallax-one'); ?></label><br />
-				<textarea name="<?php echo $this->get_field_name('service_content'); ?>" style="width: 100%; height: 150px; resize: none;" ><?php if( !empty($instance['service_content']) ): echo $instance['service_content']; endif; ?></textarea>
+				<label for="<?php echo esc_attr($this->get_field_id('service_content')); ?>"><?php _e('Service content','parallax-one'); ?></label><br />
+				<textarea name="<?php echo esc_attr($this->get_field_name('service_content')); ?>" style="width: 100%; height: 150px; resize: none;" ><?php if( !empty($instance['service_content']) ): echo esc_attr($instance['service_content']); endif; ?></textarea>
 			</p>
 
 <?php

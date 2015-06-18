@@ -95,7 +95,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 			
 						<div class="parallax_one_repeater_container">
 							<label>
-								<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
+								<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icons">
 									<?php
 										foreach($icons_array as $key => $value) {
 											printf('<option value="%s">%s</option>', $value, $key);
@@ -113,7 +113,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 				?>
 								<div class="parallax_one_repeater_container parallax_one_draggable">
 									<label>
-										<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
+										<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icons">
 											<?php
 												foreach($icons_array as $key => $value) {
 													if($icon->icon_value == $value){
@@ -124,7 +124,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 												}
 											?>
 										</select>
-										<input type="text" value="<?php echo $icon->icon_link; ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+										<input type="text" value="<?php echo esc_url($icon->icon_link); ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
 									</label>								
 									<button type="button" class="parallax_one_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
 
@@ -138,7 +138,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 					?>
 								<div class="parallax_one_repeater_container parallax_one_draggable">
 									<label>
-										<select name="<?php echo $this->id; ?>" class="parallax_one_icons">
+										<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icons">
 											<?php
 												foreach($icons_array as $key => $value) {
 													if($icon->icon_value == $value){
@@ -149,7 +149,7 @@ class Parallax_One_Social_Icons_Repeater extends WP_Customize_Control {
 												}
 											?>
 										</select>
-										<input type="text" value="<?php echo $icon->icon_link; ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+										<input type="text" value="<?php echo esc_url($icon->icon_link); ?>" class="parallax_one_icon_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
 									</label>								
 									<button type="button" class="parallax_one_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
 

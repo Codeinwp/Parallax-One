@@ -26,7 +26,7 @@ class Parallax_One_Menu_Dropdown_Custom_Control extends WP_Customize_Control
             ?>
                 <label>
                     <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-                    <select name="<?php echo $this->id; ?>" id="parallax_one_menu">
+                    <select name="<?php echo esc_attr($this->id); ?>" id="parallax_one_menu">
                     <?php
 						$var = get_theme_mod( 'parallax_one_menu_dropdown_setting' );
 						if(empty($var )){

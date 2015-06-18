@@ -24,9 +24,9 @@
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'post-thumbnail-mobile', true);
 						?>
 				 		<picture>
-							<source media="(max-width: 600px)" srcset="<?php echo $image_url_mobile[0]; ?>">
-							<source media="(max-width: 768px)" srcset="<?php echo $image_url_tablet[0]; ?>">
-							<img src="<?php echo $image_url_big[0]; ?>" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
+							<source media="(max-width: 768px)" srcset="<?php echo esc_url($image_url_tablet[0]); ?>">
+							<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php
 						} else {

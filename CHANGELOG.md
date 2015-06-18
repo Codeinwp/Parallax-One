@@ -1,5 +1,45 @@
 
 
+### 1.0.0 - 18/06/2015
+
+ Changes: 
+
+
+ * this fixes #40 - when add a new services widget, control of image works only after save and refresh
+ * this fixes #38 - do not display widget if all fields are empty
+ * removed unused photos and modify default our team widgets to display the same photo
+ * this fixes #33 and #34 - upload images now work in dashboard widgets and user can select image size from media uploader
+ * this fixes #41 - removed logos section from customizer
+ * update to #34 - renamed the function that adds image size to media uploader, added image size for services and customers and added domain name to size labels
+ * Fixed #44 Top area is too small and Fixed pinterest style issue
+ * Fixed conflict
+ * Merge branch 'cristian-ungureanu-development' into development
+ * added woocommerce support
+ * this fixes #50 - check if undefined in js
+ * this fixes #48 - prefixes for add image size
+ * update to #48
+ * update to #38 - do not display widgets if all fields are empty (for customers and team too)
+ * this fixes #41 - added logos section back on lite version
+ * added transport for logos bar
+ * update to #41
+ * added contact form and map control in customizer. Also made frontpage customizer controls available only on frontpage and map
+ * this fixes #42 - added control to disable comments on pages
+ * Woocommerce style
+ * remove woocommerce file
+ * Merge pull request #55 from cristian-ungureanu/development
+
+Development
+ * Fixed #54 CSS for logos section
+ * added intergeo maps section to frontpage
+ * change images for happy customers default widgets
+ * Fixed #52 Default image for team member
+ * added wpml-config
+ * Fixed #2 Screenshot
+ * Merge pull request #56 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 05/06/2015
 
  Changes: 

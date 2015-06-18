@@ -52,7 +52,7 @@
 						?>
 					</span>
 					<a href="<?php comments_link(); ?>" class="post-comments">
-						<i class="icon-comment-alt"></i><?php comments_number( 'No comments', 'One comment', '% comments' ); ?>
+						<i class="icon-comment-alt"></i><?php comments_number( __('No comments','parallax-one'), __('One comment','parallax-one'), __('% comments','parallax-one') ); ?>
 					</a>
 				</div><!-- .entry-meta -->
 				<div class="post-date">

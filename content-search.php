@@ -42,21 +42,29 @@
 					<span class="post-author">
 						<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
 					</span>
-					<span class="posted-in">
-						<i class="icon-basic-elaboration-folder-check"></i>Posted in 
+					
 						<?php
 							/* translators: used between list items, there is a space after the comma */
 							$categories_list = get_the_category_list( __( ', ', 'parallax-one' ) );
-							$pos = strpos($categories_list, ',');
-							if ( $pos ) {
-								echo substr($categories_list, 0, $pos);
-							} else {
-								echo $categories_list;
-							}
+                            if(!empty($categories_list)){
+                            ?>
+                                <span class="posted-in">
+                                    <i class="icon-basic-elaboration-folder-check"></i>
+                            <?php
+                                _e('Posted in ','parallax-one');
+                            
+                                $pos = strpos($categories_list, ',');
+                                if ( $pos ) {
+                                    echo substr($categories_list, 0, $pos);
+                                } else {
+                                    echo $categories_list;
+                                }
+                                echo '</span>';
+                            }
 						?>
-					</span>
+					
 					<a href="<?php comments_link(); ?>" class="post-comments">
-						<i class="icon-comment-alt"></i><?php comments_number( 'No comments', 'One comment', '% comments' ); ?>
+						<i class="icon-comment-alt"></i><?php comments_number( __('No comments','parallax-one'), __('One comment','parallax-one'), __('% comments','parallax-one') ); ?>
 					</a>
 				</div><!-- .entry-meta -->
 				<div class="post-date">

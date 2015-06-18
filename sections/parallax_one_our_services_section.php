@@ -39,13 +39,15 @@
 					?>
 				</div>
 				
-				<div class="row services-wrap">
-					<?php
-						if( is_active_sidebar( 'parallax-one-services-sidebar' ) ){
-							dynamic_sidebar( 'parallax-one-services-sidebar' );
-						}
-					?>
-				</div>
+				
+                <?php
+                    if( is_active_sidebar( 'parallax-one-services-sidebar' ) ){
+                        echo '<div class="row services-wrap">';
+                        dynamic_sidebar( 'parallax-one-services-sidebar' );
+                        echo '</div>';
+                    }
+                ?>
+				
 			</div>
 		</section>
 <?php

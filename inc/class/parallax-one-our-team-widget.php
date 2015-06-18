@@ -12,55 +12,60 @@ class parallax_one_our_team_widget extends WP_Widget {
 ?>
 	
                 <!-- MEMBER -->
-                <div class="col-md-3 team-member-box">
-                    <div class="team-member border-bottom-hover">
-                        <div class="member-pic">
-							<?php
-								if( !empty($instance['image_uri']) ):
-									echo '<img src="'.esc_url($instance['image_uri']).'" alt="alt img">';
-								endif;	
-							?>
-                        </div><!-- .member-pic -->
-
-                        <div class="member-details">
-                            <div class="member-details-inner">
-                                <h5 class="colored-text"><?php if( !empty($instance['name']) ): echo apply_filters('widget_title', $instance['name'] ); endif; ?></h5>
-                                <div class="small-text">
-									<?php 
-										if( !empty($instance['position']) ):
-											echo apply_filters('widget_title', $instance['position'] ); 
-										endif;	
-									?>	
-                                </div>
-
+	<?php
+				if( !empty($instance['image_uri']) ||  !empty($instance['name']) || !empty($instance['position']) || !empty($instance[ 'colector' ])) {?>
+					<div class="col-md-3 team-member-box">
+						<div class="team-member border-bottom-hover">
+							<div class="member-pic">
 								<?php
-									$values = $instance[ 'colector' ];
-									$json = json_decode($values);
-									if(!is_array($json)) $json = array($values);
-									
-									if(!empty($json)){
-										echo '<ul class="social-icons">';
-										foreach($json as $icon){
-											if(!empty($icon->icon_link) && !empty($icon->icon_value)){
-												echo '<li><a href="'.$icon->icon_link.'">';
-													echo '<span class="'.$icon->icon_value.'"></span>';
-												echo '</a></li>';
-											}
-										}
-										echo '</ul>';
-									}
+									if( !empty($instance['image_uri']) ):
+										echo '<img src="'.esc_url($instance['image_uri']).'" alt="">';
+									else:
+										echo '<img src="'.get_stylesheet_directory_uri().'/images/team/default.png" alt="">';
+									endif;	
 								?>
-                                
+							</div><!-- .member-pic -->
+
+							<div class="member-details">
+								<div class="member-details-inner">
+									<h5 class="colored-text"><?php if( !empty($instance['name']) ): echo apply_filters('widget_title', $instance['name'] ); endif; ?></h5>
+									<div class="small-text">
+										<?php 
+											if( !empty($instance['position']) ):
+												echo apply_filters('widget_title', $instance['position'] ); 
+											endif;	
+										?>	
+									</div>
+
+									<?php
+										$values = $instance[ 'colector' ];
+										$json = json_decode($values);
+										if(!is_array($json)) $json = array($values);
+										
+										if(!empty($json)){
+											echo '<ul class="social-icons">';
+											foreach($json as $icon){
+												if(!empty($icon->icon_link) && !empty($icon->icon_value)){
+													echo '<li><a href="'.$icon->icon_link.'">';
+														echo '<span class="'.$icon->icon_value.'"></span>';
+													echo '</a></li>';
+												}
+											}
+											echo '</ul>';
+										}
+									?>
+									
 
 
-                            </div><!-- .member-details-inner -->
+								</div><!-- .member-details-inner -->
 
-                        </div><!-- .member-details -->
+							</div><!-- .member-details -->
 
-                    </div><!-- .team-member -->
-                </div><!-- .team-member -->         
-                <!-- MEMBER -->
-
+						</div><!-- .team-member -->
+					</div><!-- .team-member -->         
+					<!-- MEMBER -->
+	<?php
+				} ?>
 				
 <?php
 

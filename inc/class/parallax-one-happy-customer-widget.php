@@ -9,7 +9,9 @@ class parallax_one_happy_customer_widget extends WP_Widget {
     }
     function widget($args, $instance) {
         extract($args);
-        echo $before_widget;
+        
+		if( !empty($instance['image_uri']) || !empty($instance['title']) || !empty($instance['details']) || !empty($instance['text']) ){
+			echo $before_widget;
 ?>
 				<!-- SINGLE FEEDBACK -->
                 <div class="testimonials-box">
@@ -40,7 +42,8 @@ class parallax_one_happy_customer_widget extends WP_Widget {
                     </div>
                 </div><!-- .testimonials-box -->
 <?php
-        echo $after_widget;
+			echo $after_widget;
+		}
     }
     function update($new_instance, $old_instance) {
         $instance = $old_instance;
@@ -68,8 +71,9 @@ class parallax_one_happy_customer_widget extends WP_Widget {
     <p>
         <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
         <input type="text" class="widefat custom_media_url_testimonial" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>" >
-        <input type="button" class="button button-primary custom_media_button_parallax_one_customers" id="custom_media_button_testimonial" name="<?php echo $this->get_field_name('image_uri'); ?>" value="Upload Image" />
-    </p>
+		<input type="button" class="button button-primary custom_media_button_parallax_one_customers" id="<?php echo $this->get_field_id('image_uri'); ?>_customers_trgger" name="<?php echo $this->get_field_name('image_uri'); ?>" value="<?php _e('Upload Image','parallax-one'); ?>" />
+
+  </p>
 <?php
     }
 }

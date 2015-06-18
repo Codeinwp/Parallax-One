@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * Template name: Full Width
  *
  * @package parallax-one
  */
@@ -16,14 +16,12 @@
 <div class="content-wrap">
 	<div class="container">
 
-		<div id="primary" class="content-area col-md-8">
+		<div id="primary" class="content-area col-md-12">
 			<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
-
-				<?php the_post_navigation(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
@@ -37,10 +35,7 @@
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php get_sidebar(); ?>
-
 	</div>
 </div><!-- .content-wrap -->
 
 <?php get_footer(); ?>
-

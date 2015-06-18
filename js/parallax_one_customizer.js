@@ -7,8 +7,10 @@ function parallax_one_refresh_values(){
 	
 	var element = document.getElementById("parallax_one_menu");
 	var selectedValue = element.options[element.selectedIndex].value;
-	jQuery("#menu_selector").val(selectedValue);
-	jQuery("#menu_selector").trigger('change');
+	if(typeof jQuery("#menu_selector") != 'undefined'){
+		jQuery("#menu_selector").val(selectedValue);
+		jQuery("#menu_selector").trigger('change');
+	}
 	
 }
 
@@ -53,26 +55,31 @@ jQuery(document).ready(function(){
 	jQuery("#parallax_one_contact_info_new_field").on("click",function(){
 		
 		var th = jQuery(this).parent();
-		
-		limit = th.find(".parallax_one_contact_info_repeater_container").length;
-		
-		if(limit < 5) {
-			var field = jQuery(".parallax_one_contact_info_repeater_container:first").clone();
-			field.find(".parallax_one_contact_info_remove_field").show();
-			field.find("select").val('');
-			field.find(".parallax_one_contact_text").val('');
-			field.find(".parallax_one_contact_link").val('');
-			jQuery(".parallax_one_contact_info_repeater_container:first").parent().append(field);
-			parallax_one_refresh_contact_info_values();
-		} else {
-			alert('Sorry, the limit number of contact fields was reached!');
+		if(typeof th != 'undefined') {
+			limit = th.find(".parallax_one_contact_info_repeater_container").length;
+			
+			if(limit < 5) {
+				var field = jQuery(".parallax_one_contact_info_repeater_container:first").clone();
+				if(typeof field != 'undefined'){
+					field.find(".parallax_one_contact_info_remove_field").show();
+					field.find("select").val('');
+					field.find(".parallax_one_contact_text").val('');
+					field.find(".parallax_one_contact_link").val('');
+					jQuery(".parallax_one_contact_info_repeater_container:first").parent().append(field);
+					parallax_one_refresh_contact_info_values();
+				}
+			} else {
+				alert('Sorry, the limit number of contact fields was reached!');
+			}
 		}
 		return false;
 	 });
 	 
 	jQuery("#parallax_one_contact_info_repeater").on("click", ".parallax_one_contact_info_remove_field",function(){
-		jQuery(this).parent().remove();
-		parallax_one_refresh_contact_info_values();
+		if( typeof	jQuery(this).parent() != 'undefined'){
+			jQuery(this).parent().remove();
+			parallax_one_refresh_contact_info_values();
+		}
 		return false;
 	});
 
@@ -125,17 +132,21 @@ jQuery(document).ready(function(){
 
 	jQuery("#parallax_one_new_field").on("click",function(){
 		var field = jQuery(".parallax_one_repeater_container:first").clone();
-		field.find(".parallax_one_remove_field").show();
-		field.find("select").val('');
-		field.find(".parallax_one_icon_link").val('');
-		jQuery(".parallax_one_repeater_container:first").parent().append(field);
-		parallax_one_refresh_icon_values();
+		if(typeof field != 'undefined') {
+			field.find(".parallax_one_remove_field").show();
+			field.find("select").val('');
+			field.find(".parallax_one_icon_link").val('');
+			jQuery(".parallax_one_repeater_container:first").parent().append(field);
+			parallax_one_refresh_icon_values();
+		}
 		return false;
 	 });
 	 
 	jQuery("#parallax_one_icons_repeater").on("click", ".parallax_one_remove_field",function(){
-		jQuery(this).parent().remove();
-		parallax_one_refresh_icon_values();
+		if(typeof jQuery(this).parent() != 'undefined'){
+			jQuery(this).parent().remove();
+			parallax_one_refresh_icon_values();
+		}
 		return false;
 	});
 

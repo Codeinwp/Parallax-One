@@ -1838,6 +1838,7 @@ a.control_next.fade-btn {
 	border-radius: 3px;
 	border: 1px solid #e4e7e7;
 	border-bottom: 4px solid #e4e7e7;
+	min-height: 100px;
 }
 
 .team-member .social-icons {
@@ -2175,6 +2176,11 @@ div.wpcf7-mail-sent-ok,
 div.wpcf7-mail-sent-ng {
 	border: none;
 	background-color: rgba(57, 143, 20, 0.5);
+}
+
+.content-page .entry-footer {
+	float: left;
+	width: 100%;
 }
 
 /*---------------------------------------

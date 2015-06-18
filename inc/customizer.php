@@ -909,14 +909,52 @@ function parallax_one_customize_register( $wp_customize ) {
 			'active_callback' => 'is_front_page'
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));
+	/********************************************************/
+	/******************* INTERGEO MAPS  *********************/
+	/********************************************************/
+    $wp_customize->add_section( 'parallax_one_map_section' , array(
+		'title'       => __( 'Map section', 'parallax-one' ),
+      	'priority'    => 38,
+	));
+    
+	$wp_customize->add_setting( 'parallax_one_frontpage_map_show');
 
+	$wp_customize->add_control(
+		'parallax_one_frontpage_map_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide Map section?','parallax-one'),
+			'description' => __('If you check this box, the Map section will disappear from homepage.','parallax-one'),
+			'section' => 'parallax_one_map_section',
+			'active_callback' => 'is_front_page',
+			'priority'    => 1
+		)
+	);
+	$wp_customize->get_setting( 'parallax_one_frontpage_map_show' )->transport = 'postMessage';
+    
+
+	/* Map ShortCode  */
+	$wp_customize->add_setting( 'parallax_one_frontpage_map_shortcode', array(
+		'default' => '',
+		
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_frontpage_map_shortcode', array(
+		'label'    => __( 'Map shortcode', 'parallax-one' ),
+		'description' => __('To use this section please install Intergeo Maps plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
+		'section'  => 'parallax_one_map_section',
+		'active_callback' => 'is_front_page',
+		'settings' => 'parallax_one_frontpage_map_shortcode',
+		'priority'    => 2
+	));
+    
 	/********************************************************/
 	/********** CONTACT PAGE OPTIONS  ***************/
 	/********************************************************/	
 
 	$wp_customize->add_section( 'parallax_one_contact_page' , array(
 		'title'       => __( 'Contact page', 'parallax-one' ),
-      	'priority'    => 38,
+      	'priority'    => 39,
 	));
 	
 	/* Contact Form  */

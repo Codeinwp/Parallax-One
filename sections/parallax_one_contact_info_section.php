@@ -42,5 +42,6 @@
 			</div><!-- .contact-info -->
 <?php
 		}
+        echo '</div>';
 	}
 ?>

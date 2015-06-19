@@ -1,5 +1,26 @@
 
 
+### 1.0.0 - 19/06/2015
+
+ Changes: 
+
+
+ * escape all variables
+ * this fixes #58 - added parallax_one_only_customizer in style.css
+ * this fixes #59 - wp_customize declared only once
+ * this fixes #60 - added textdomain for comments_number and for Posted in and display it only if category exists
+ * this fixes #62 - added default background
+ * this fixes #64 - change author name and author uri
+ * this fixes #66 - change function name
+ * this fixes #67 - remove commented code from functions.php
+ * this fixes #68 - remove duplicate add_theme_support(woocommerce) and add comment back to post-thumbnails
+ * this fixes #69 - add text domain for read more and by
+ * this fixes #71 - include divs inside if
+ * Checked W3 validator
+ * Fixed conflict
+ * Merge branch 'cristian-ungureanu-development' into development
+
+
 ### 1.0.0 - 18/06/2015
 
  Changes: 

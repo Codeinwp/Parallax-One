@@ -220,6 +220,13 @@ function parallax_admin_styles() {
 }
 add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
+// Adding IE-only scripts to header.
+function parallax_one_ie () {
+    echo '<!--[if lt IE 9]>' . "\n";
+    echo '<script src="'. get_template_directory_uri() . '/js/html5shiv.min.js"></script>' . "\n";
+    echo '<![endif]-->' . "\n";
+}
+add_action('wp_head', 'parallax_one_ie');
 
 /***************************************************/
 /*********** Widgets and Sidebars ************/

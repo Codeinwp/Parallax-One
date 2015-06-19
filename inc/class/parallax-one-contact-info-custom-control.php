@@ -27,10 +27,10 @@ class Parallax_One_Contact_Info_Repeater extends WP_Customize_Control {
 			
 						<div class="parallax_one_contact_info_repeater_container">
 							<label>
-								<select name="<?php echo $this->id; ?>" class="parallax_one_conatact_info_icons">
+								<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_conatact_info_icons">
 									<?php
 										foreach($icons_array as $contact_icon) {
-											echo '<option value="'.$contact_icon.'">'.$contact_icon.'</option>';
+											echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
 										}
 									?>
 								</select>
@@ -46,19 +46,19 @@ class Parallax_One_Contact_Info_Repeater extends WP_Customize_Control {
 				?>
 								<div class="parallax_one_contact_info_repeater_container parallax_one_draggable">
 									<label>
-										<select name="<?php echo $this->id; ?>" class="parallax_one_conatact_info_icons">
+										<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_conatact_info_icons">
 											<?php
 												foreach($icons_array as $contact_icon) {
 													if($icon->icon_value == $contact_icon){
-														echo '<option value="'.$contact_icon.'" selected="selected">'.$contact_icon.'</option>';
+														echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
 													} else {
-														echo '<option value="'.$contact_icon.'">'.$contact_icon.'</option>';
+														echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
 													}
 												}
 											?>
 										</select>
-										<input type="text" value="<?php echo $icon->icon_text; ?>" class="parallax_one_contact_text" placeholder="<?php _e('Text','parallax-one'); ?>"/>
-										<input type="text" value="<?php if(!empty($icon->icon_link)) echo $icon->icon_link; ?>" class="parallax_one_contact_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+										<input type="text" value="<?php echo esc_attr($icon->icon_text); ?>" class="parallax_one_contact_text" placeholder="<?php _e('Text','parallax-one'); ?>"/>
+										<input type="text" value="<?php if(!empty($icon->icon_link)) echo esc_url($icon->icon_link); ?>" class="parallax_one_contact_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
 									</label>								
 									<button type="button" class="parallax_one_contact_info_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
 
@@ -72,19 +72,19 @@ class Parallax_One_Contact_Info_Repeater extends WP_Customize_Control {
 					?>
 								<div class="parallax_one_contact_info_repeater_container parallax_one_draggable">
 									<label>
-										<select name="<?php echo $this->id; ?>" class="parallax_one_conatact_info_icons">
+										<select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_conatact_info_icons">
 											<?php
 												foreach($icons_array as $contact_icon) {
 													if($icon->icon_value == $contact_icon){
-														echo '<option value="'.$contact_icon.'" selected="selected">'.$contact_icon.'</option>';
+														echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
 													} else {
-														echo '<option value="'.$contact_icon.'">'.$contact_icon.'</option>';
+														echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
 													}
 												}
 											?>
 										</select>
-										<input type="text" value="<?php echo $icon->icon_text; ?>" class="parallax_one_contact_text" placeholder="<?php _e('Text','parallax-one'); ?>"/>
-										<input type="text" value="<?php if(!empty($icon->icon_link)) echo $icon->icon_link; ?>" class="parallax_one_contact_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+										<input type="text" value="<?php echo esc_attr($icon->icon_text); ?>" class="parallax_one_contact_text" placeholder="<?php _e('Text','parallax-one'); ?>"/>
+										<input type="text" value="<?php if(!empty($icon->icon_link)) echo esc_url($icon->icon_link); ?>" class="parallax_one_contact_link" placeholder="<?php _e('Link','parallax-one'); ?>"/>
 									</label>								
 									<button type="button" class="parallax_one_contact_info_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
 

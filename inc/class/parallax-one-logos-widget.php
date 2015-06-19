@@ -63,26 +63,26 @@ class parallax_one_logos_widget extends WP_Widget {
 
 	<p>
 
-        <label for="<?php echo $this->get_field_id('link'); ?>"><?php _e('Link','parallax-one'); ?></label><br />
+        <label for="<?php echo esc_attr($this->get_field_id('link')); ?>"><?php _e('Link','parallax-one'); ?></label><br />
 
-        <input type="text" name="<?php echo $this->get_field_name('link'); ?>" id="<?php echo $this->get_field_id('link'); ?>" value="<?php if( !empty($instance['link']) ): echo $instance['link']; endif; ?>" class="widefat" />
+        <input type="text" name="<?php echo esc_attr($this->get_field_name('link')); ?>" id="<?php echo esc_attr($this->get_field_id('link')); ?>" value="<?php if( !empty($instance['link']) ): echo esc_url($instance['link']); endif; ?>" class="widefat" />
 
     </p>
 
 	<p>
-		<input type="checkbox" <?php if( !empty($instance['new_tab']) ): checked($instance['new_tab'], 'on'); endif; ?> id="<?php echo $this->get_field_id('new_tab'); ?>" name="<?php echo $this->get_field_name('new_tab'); ?>" /> 
-		<label for="<?php echo $this->get_field_id('new_tab'); ?>"><?php _e('Open in new tab','parallax-one'); ?></label>
+		<input type="checkbox" <?php if( !empty($instance['new_tab']) ): checked($instance['new_tab'], 'on'); endif; ?> id="<?php echo esc_attr($this->get_field_id('new_tab')); ?>" name="<?php echo esc_attr($this->get_field_name('new_tab')); ?>" /> 
+		<label for="<?php echo esc_attr($this->get_field_id('new_tab')); ?>"><?php _e('Open in new tab','parallax-one'); ?></label>
 	</p>
 
     <p>
 
-        <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image','parallax-one'); ?></label><br />
+        <label for="<?php echo esc_attr($this->get_field_id('image_uri')); ?>"><?php _e('Image','parallax-one'); ?></label><br />
 
-        <input type="text" class="widefat custom_media_url_clients" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php if( !empty($instance['image_uri']) ): echo $instance['image_uri']; endif; ?>">
+        <input type="text" class="widefat custom_media_url_clients" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" id="<?php echo esc_attr($this->get_field_id('image_uri')); ?>" value="<?php if( !empty($instance['image_uri']) ): echo esc_url($instance['image_uri']); endif; ?>">
 
 
 
-        <input type="button" class="button button-primary custom_media_button_clients" id="custom_media_button_clients" name="<?php echo $this->get_field_name('image_uri'); ?>" value="Upload Image"/>
+        <input type="button" class="button button-primary custom_media_button_clients" id="custom_media_button_clients" name="<?php echo esc_attr($this->get_field_name('image_uri')); ?>" value="Upload Image"/>
 
     </p>
 

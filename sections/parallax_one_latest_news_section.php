@@ -27,7 +27,7 @@
 									
 								$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title','Latest news');
 								if(!empty($parallax_one_latest_news_title)){
-									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.$parallax_one_latest_news_title.'</h2><div class="colored-line-left"></div></div>';
+									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($parallax_one_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
 								}
@@ -92,7 +92,7 @@
 																		<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
 																	</a>
 																</span>
-																<span> by </span>
+																<span> <?php _e('by','parallax-one');?> </span>
 																<span class="byline">
 																	<span class="author vcard">
 																		<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
@@ -102,7 +102,7 @@
 														</header>
 														<div class="entry-content">
 															<?php the_excerpt(); ?>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more">Read more</a>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php _e('Read more','parallax-one'); ?></a>
 														</div>
 													</div>
 												</div>

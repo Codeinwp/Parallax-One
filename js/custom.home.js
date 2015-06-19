@@ -111,8 +111,7 @@ jQuery(window).load(function () {
 
     jQuery(".testimonials-wrap").gridalicious({selector: '.testimonials-box', width: 360});
     
-})
-
+});
 
 jQuery(window).resize(function() {
     "use strict";
@@ -162,61 +161,6 @@ function mainNav() {
     });
 }
 
-
-/*=================================
-===  SMOOTH SCROLL NAVIGATION     ====
-=================================== */
-jQuery(document).ready(function(){
-  jQuery('#stamp-navigation a[href*=#]:not([href=#])').bind('click',function () {
-    var headerHeight;
-    var hash    = this.hash;
-    var idName  = hash.substring(1);    // get id name
-    var alink   = this;                 // this button pressed
-    // check if there is a section that had same id as the button pressed
-    if ( jQuery('section [id*=' + idName + ']').length > 0 && jQuery(window).width() >= 751 ){
-      jQuery('.current').removeClass('current');
-      jQuery(alink).parent('li').addClass('current');
-    }else{
-      jQuery('.current').removeClass('current');
-    }
-    if ( jQuery(window).width() >= 751 ) {
-      headerHeight = jQuery('.sticky-navigation').height();
-    } else {
-      headerHeight = 0;
-    }
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = jQuery(this.hash);
-      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        jQuery('html,body').animate({
-          scrollTop: target.offset().top - headerHeight + 10
-        }, 1200);
-        return false;
-      }
-    }
-  });
-});
-
-jQuery(document).ready(function(){
-    var headerHeight;
-    jQuery('.current').removeClass('current');
-    jQuery('#stamp-navigation  a[href$="' + window.location.hash + '"]').parent('li').addClass('current');
-    if ( jQuery(window).width() >= 751 ) {
-      headerHeight = jQuery('.sticky-navigation').height();
-    } else {
-      headerHeight = 0;
-    }
-    if (location.pathname.replace(/^\//,'') == window.location.pathname.replace(/^\//,'') && location.hostname == window.location.hostname) {
-      var target = jQuery(window.location.hash);
-      if (target.length) {
-        jQuery('html,body').animate({
-          scrollTop: target.offset().top - headerHeight + 10
-        }, 1200);
-        return false;
-      }
-    }
-});
-
 /* TOP NAVIGATION MENU SELECTED ITEMS */
 function scrolled() {
     jQuery(this).off('scroll')[0].setTimeout(function(){
@@ -248,14 +192,3 @@ function scrolled() {
     }, 500)
 }
 jQuery(window).on('scroll', scrolled );
-
-
-
-
-
-jQuery(document).ready(function() {
-
-//    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
-
-
-});

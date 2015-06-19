@@ -128,3 +128,37 @@ var parallax_woocommerce_prod_height = function () {
     }
 }
 
+
+/*=================================
+===  SMOOTH SCROLL NAVIGATION     ====
+=================================== */
+jQuery(document).ready(function(){
+  jQuery('#stamp-navigation a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
+    var headerHeight;
+    var hash    = this.hash;
+    var idName  = hash.substring(1);    // get id name
+    var alink   = this;                 // this button pressed
+    // check if there is a section that had same id as the button pressed
+    if ( jQuery('section [id*=' + idName + ']').length > 0 && jQuery(window).innerWidth() >= 767 ){
+      jQuery('.current').removeClass('current');
+      jQuery(alink).parent('li').addClass('current');
+    }else{
+      jQuery('.current').removeClass('current');
+    }
+    if ( jQuery(window).innerWidth() >= 767 ) {
+      headerHeight = jQuery('.sticky-navigation').outerHeight();
+    } else {
+      headerHeight = 0;
+    }
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top - headerHeight + 10
+        }, 1200);
+        return false;
+      }
+    }
+  });
+});

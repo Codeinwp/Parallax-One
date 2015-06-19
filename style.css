@@ -2607,6 +2607,11 @@ div.wpcf7-mail-sent-ng {
 	color: #000;
 }
 
+.woocommerce #reviews #comments h2 {
+	float: left;
+	width: 100%;
+}
+
 .woocommerce #review_form #respond .form-submit input {
 	background: #008ed6;
 	border-radius: 3px;
@@ -3284,6 +3289,7 @@ footer.footer #wp-calendar td {
 
 .widget_search .search-submit:hover {
 	box-shadow: none;
+	background: none;
 }
 
 .widget_search .search-form:before {
@@ -3389,7 +3395,7 @@ a:hover {
 	color: #008ed6;
 }
 
-.sticky-navigation .main-navigation li.current a {
+.sticky-navigation .main-navigation li.current > a {
 	color: #008ed6;
 }
 
@@ -4647,6 +4653,21 @@ h2.screen-reader-text {
 		width: 100%;
 		padding: 10px 5px;
 		border-right: none;
+	}
+
+	.comment-list .comment-author img {
+		left: -45px;
+		border: 3px solid #e4e4e4;
+		width: 32px;
+		height: 32px;
+	}
+
+	.comment-list .comment > article {
+		margin-left: 45px;
+	}
+
+	.comment-list ol.children {
+	    margin-left: 30px;
 	}
 
 }

@@ -1,8 +1,8 @@
 /*
 Theme Name: Parallax One
 Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Author: ThemeIsle
+Author URI: http://themeisle.com/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -803,6 +803,9 @@ textarea {
 /*---------------------------------------
    3.1 SECTION: HOME / HEADER         
 -----------------------------------------*/
+.paralax_one_only_customizer{
+    display:none !important;
+}
 
 .whole-video-bg {
 	position: fixed;

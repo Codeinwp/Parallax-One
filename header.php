@@ -15,11 +15,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-<style>
-	.paralax_one_only_customizer{
-		display:none !important;
-	}
-</style>
 <?php wp_head(); ?>
 </head>
 
@@ -60,7 +55,7 @@
         		$fixedheader = '';
         	}
         ?>
-        <div class="overlay-layer-wrap <?php echo $fixedheader; ?>">
+        <div class="overlay-layer-wrap <?php echo esc_attr($fixedheader); ?>">
 
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll" role="navigation">
@@ -80,7 +75,6 @@
                         <!-- LOGO -->
 						
 						<?php
-							global $wp_customize;
 							
 							$parallax_one = get_theme_mod('paralax_one_logo', get_stylesheet_directory_uri().'/images/logo-nav.png');
 
@@ -90,7 +84,7 @@
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.$parallax_one.'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 							

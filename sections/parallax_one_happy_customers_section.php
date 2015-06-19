@@ -23,7 +23,7 @@
 						$parallax_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title','Happy Customers');
 						
 						if( !empty($parallax_one_happy_customers_title) ){
-							echo '<h2 class="dark-text">'.$parallax_one_happy_customers_title.'</h2><div class="colored-line"></div>';
+							echo '<h2 class="dark-text">'.esc_attr($parallax_one_happy_customers_title).'</h2><div class="colored-line"></div>';
 						} elseif ( isset( $wp_customize )   ) {
 							echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
 						}
@@ -33,7 +33,7 @@
 						$parallax_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle','Cloud computing subscription model out of the box proactive solution.');
 
 						if( !empty($parallax_one_happy_customers_subtitle) ){
-							echo '<div class="sub-heading">'.$parallax_one_happy_customers_subtitle.'</div>';
+							echo '<div class="sub-heading">'.esc_attr($parallax_one_happy_customers_subtitle).'</div>';
 						} elseif ( isset( $wp_customize )   ) {
 							echo '<div class="sub-heading paralax_one_only_customizer"></div>';
 						}

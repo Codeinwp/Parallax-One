@@ -18,7 +18,7 @@
 			if(!empty( $this->label )) {
 				echo '<span class="customize-control-title">'.esc_html( $this->label ).'</span>';
 			}
-			echo $this->text;
+			echo esc_attr($this->text);
 			echo '</label>';
 		}
 	}

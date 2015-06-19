@@ -20,9 +20,9 @@
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'post-thumbnail-mobile', true);
 						?>
 				 		<picture>
-							<source media="(max-width: 600px)" srcset="<?php echo $image_url_mobile[0]; ?>">
-							<source media="(max-width: 768px)" srcset="<?php echo $image_url_tablet[0]; ?>">
-							<img src="<?php echo $image_url_big[0]; ?>" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
+							<source media="(max-width: 768px)" srcset="<?php echo esc_url($image_url_tablet[0]); ?>">
+							<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php
 						} else {
@@ -52,7 +52,7 @@
 						?>
 					</span>
 					<a href="<?php comments_link(); ?>" class="post-comments">
-						<i class="icon-comment-alt"></i><?php comments_number( 'No comments', 'One comment', '% comments' ); ?>
+						<i class="icon-comment-alt"></i><?php comments_number( __('No comments','parallax-one'), __('One comment','parallax-one'), __('% comments','parallax-one') ); ?>
 					</a>
 				</div><!-- .entry-meta -->
 				<div class="post-date">
@@ -63,7 +63,7 @@
 
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
-		<div class="clearfix"><div>
+		<div class="clearfix"></div>
 
 	</header><!-- .entry-header -->
 	<div class="entry-content">

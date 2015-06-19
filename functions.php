@@ -41,12 +41,6 @@ function parallax_one_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -72,12 +66,20 @@ function parallax_one_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'parallax_one_custom_background_args', array(
 		'default-color' => 'ffffff',
-		'default-image' => '',
+		'default-image' => get_stylesheet_directory_uri().'/images/background-images/background.jpg',
+        'default-repeat'         => 'no-repeat',
+        'default-position-x'     => 'center',
+        'default-attachment'     => 'fixed'
 	) ) );
 	
 	//Theme Support for WooCommerce
 	add_theme_support( 'woocommerce' );
 
+    /*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* Set the image size by cropping the image */
@@ -90,8 +92,6 @@ function parallax_one_setup() {
 	add_image_size( 'parallax_one_team', 268, 273, true );
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
-
-	add_theme_support( 'woocommerce' );
 
 }
 endif; // parallax_one_setup
@@ -220,6 +220,13 @@ function parallax_admin_styles() {
 }
 add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
 
+// Adding IE-only scripts to header.
+function parallax_one_ie () {
+    echo '<!--[if lt IE 9]>' . "\n";
+    echo '<script src="'. get_template_directory_uri() . '/js/html5shiv.min.js"></script>' . "\n";
+    echo '<![endif]-->' . "\n";
+}
+add_action('wp_head', 'parallax_one_ie');
 
 /***************************************************/
 /*********** Widgets and Sidebars ************/
@@ -507,15 +514,15 @@ function remove_class_function( $classes ) {
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-	add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-	add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
-	function my_theme_wrapper_start() {
+	add_action('woocommerce_before_main_content', 'parallax_one_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'parallax_one_wrapper_end', 10);
+	function parallax_one_wrapper_start() {
 		echo '</div> </header>';
 		echo '<div class="content-wrap">
 				<div class="container">
 					<div id="primary" class="content-area col-md-12">';
 	}
-	function my_theme_wrapper_end() {
+	function parallax_one_wrapper_end() {
 		echo '</div></div></div>';
 	}
 

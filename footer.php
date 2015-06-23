@@ -78,7 +78,7 @@
 				
 					/* SOCIAL ICONS */
 				
-					$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', json_encode(array(array('icon_value' =>'icon-social-facebook' , 'icon_link' => '#'),array('icon_value' =>'icon-social-twitter' , 'icon_link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'icon_link' => '#'))) );
+					$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))) );
 
 					if( !empty( $parallax_one_social_icons ) ){
 						
@@ -90,7 +90,7 @@
 							
 								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
 									
-									echo '<li><a href="'.esc_url($parallax_one_social_icon->icon_link).'"><span class="'.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+									echo '<li><a href="'.esc_url($parallax_one_social_icon->link).'"><span class="'.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
 
 								}
 						

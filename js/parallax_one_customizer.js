@@ -24,77 +24,92 @@ jQuery(document).ready(function(){
 });
 
 /********************************************
-*** Contact Info Repeater ***
+*** General Repeater ***
 *********************************************/
-function parallax_one_refresh_contact_info_values(){
-	var values = [];
-	jQuery(".parallax_one_contact_info_repeater_container").each(function(){
-		var icon_value = jQuery(this).find('select').val();
-		var text = jQuery(this).find(".parallax_one_contact_text").val();
-		var link = jQuery(this).find(".parallax_one_contact_link").val();
-		if(icon_value != '' && text !='' ){
-			values.push({
-				"icon_value" : icon_value,
-				"icon_text" : text,
-				"icon_link" : link
-			});
-		}
-	})
-	jQuery("#parallax_one_contact_info_repeater_colector").val(JSON.stringify(values));
-	jQuery("#parallax_one_contact_info_repeater_colector").trigger('change');
+function parallax_one_refresh_general_control_values(){
+	jQuery(".parallax_one_general_control_repeater").each(function(){
+        var values = [];
+        var th = jQuery(this);
+        th.find(".parallax_one_general_control_repeater_container").each(function(){
+            var icon_value = jQuery(this).find('select').val();
+            var text = jQuery(this).find(".parallax_one_text_control").val();
+            var link = jQuery(this).find(".parallax_one_link_control").val();
+            var image_url = jQuery(this).find(".custom_media_url").val();
+            if(icon_value != '' || text !='' || image_url!='' ){
+                values.push({
+                    "icon_value" : icon_value,
+                    "text" : text,
+                    "link" : link,
+                    "image_url" : image_url
+                });
+            }
+
+        });
+
+        th.find('.parallax_one_repeater_colector').val(JSON.stringify(values));
+        th.find('.parallax_one_repeater_colector').trigger('change');
+    });
 }
 
 
 jQuery(document).ready(function(){
+    
+    jQuery('#customize-theme-controls').on('click','.parallax-customize-control-title',function(){
+        jQuery(this).next().slideToggle();
+    });
+    
+    media_upload('.custom_media_button_parallax_one');
+    jQuery(".custom_media_url").live('change',function(){
+        parallax_one_refresh_general_control_values();
+        return false;
+    });
+    
 
-	jQuery("#parallax_one_contact_info_repeater").on('change', '.parallax_one_conatact_info_icons',function(){
-		parallax_one_refresh_contact_info_values();
+	jQuery("#customize-theme-controls").on('change', '.parallax_one_icon_control',function(){
+		parallax_one_refresh_general_control_values();
 		return false; 
 	});
 
-	jQuery("#parallax_one_contact_info_new_field").on("click",function(){
-		
+	jQuery(".parallax_one_general_control_new_field").on("click",function(){
+	 
 		var th = jQuery(this).parent();
 		if(typeof th != 'undefined') {
-			limit = th.find(".parallax_one_contact_info_repeater_container").length;
 			
-			if(limit < 5) {
-				var field = jQuery(".parallax_one_contact_info_repeater_container:first").clone();
-				if(typeof field != 'undefined'){
-					field.find(".parallax_one_contact_info_remove_field").show();
-					field.find("select").val('');
-					field.find(".parallax_one_contact_text").val('');
-					field.find(".parallax_one_contact_link").val('');
-					jQuery(".parallax_one_contact_info_repeater_container:first").parent().append(field);
-					parallax_one_refresh_contact_info_values();
-				}
-			} else {
-				alert('Sorry, the limit number of contact fields was reached!');
-			}
+            var field = th.find(".parallax_one_general_control_repeater_container:first").clone();
+            if(typeof field != 'undefined'){
+                field.find(".parallax_one_general_control_remove_field").show();
+                field.find("select").val('');
+                field.find(".parallax_one_text_control").val('');
+                field.find(".parallax_one_link_control").val('');
+                field.find(".custom_media_url").val('');
+                th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
+                parallax_one_refresh_general_control_values();
+            }
+			
 		}
 		return false;
 	 });
 	 
-	jQuery("#parallax_one_contact_info_repeater").on("click", ".parallax_one_contact_info_remove_field",function(){
+	jQuery("#customize-theme-controls").on("click", ".parallax_one_general_control_remove_field",function(){
 		if( typeof	jQuery(this).parent() != 'undefined'){
-			jQuery(this).parent().remove();
-			parallax_one_refresh_contact_info_values();
+			jQuery(this).parent().parent().remove();
+			parallax_one_refresh_general_control_values();
 		}
 		return false;
 	});
 
-	jQuery("#parallax_one_contact_info_repeater").on('keyup', '.parallax_one_contact_text',function(){	 
-		 parallax_one_refresh_contact_info_values();
+	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
+		 parallax_one_refresh_general_control_values();
 	});
 	
-	jQuery("#parallax_one_contact_info_repeater").on('keyup', '.parallax_one_contact_link',function(){	 
-		 parallax_one_refresh_contact_info_values();
+	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_link_control',function(){
+		parallax_one_refresh_general_control_values();
 	});
 	
 	/*Drag and drop to change icons order*/
-	jQuery(".parallax_one_contact_info_droppable").sortable({
+	jQuery(".parallax_one_general_control_droppable").sortable({
 		update: function( event, ui ) {
-			parallax_one_refresh_contact_info_values();
+			parallax_one_refresh_general_control_values();
 		}
 	});	
 

@@ -75,7 +75,7 @@
 							'container'         => false,
 							'menu_class'        => 'footer-links small-text',
 							'depth' 			=> 1,
-							'fallback_cb'       => 'parallax_one_wp_page_menu' ) );
+							'fallback_cb'       => false ) );
 				
 					/* SOCIAL ICONS */
 				

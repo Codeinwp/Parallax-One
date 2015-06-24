@@ -69,16 +69,16 @@
 					}
 				
 					/* OPTIONAL FOOTER LINKS */
-				
-					$parallax_one_menu_dropdown_setting = get_theme_mod( 'parallax_one_menu_dropdown_setting' );
-					
-					if( !empty($parallax_one_menu_dropdown_setting) ){
-						wp_nav_menu( array( 'menu' => $parallax_one_menu_dropdown_setting ,'container_class' => false, 'menu_class' => 'footer-links small-text', 'depth' => '-1' ) ); 
-					}
+					wp_nav_menu( 
+						array( 
+							'theme_location'    => 'parallax_footer_menu',
+							'container'         => false,
+							'menu_class'        => 'footer-links small-text',
+							'depth' 			=> 1,
+							'fallback_cb'       => 'parallax_one_wp_page_menu' ) );
 				
 					/* SOCIAL ICONS */
 				
-					$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))) );
 
 					if( !empty( $parallax_one_social_icons ) ){
 						

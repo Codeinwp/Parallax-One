@@ -45,6 +45,7 @@ function parallax_one_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'parallax-one' ),
+		'parallax_footer_menu' => __('Footer Menu', 'parallax-one'),
 	) );
 
 	/*
@@ -248,15 +249,15 @@ function parallax_widget_init(){
 		
 		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
 		
-			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
+			$parallax_one_name = __( 'Testimonials section', 'parallax-one' );
 		
 		elseif( $parallax_one_sidebar == 'parallax-one-team-sidebar' ):
 		
-			$parallax_one_name = __( 'Our Team section', 'parallax-one' );
+			$parallax_one_name = __( 'Team section', 'parallax-one' );
 			
 		elseif( $parallax_one_sidebar == 'parallax-one-services-sidebar' ):
 		
-			$parallax_one_name = __( 'Our Services section', 'parallax-one' );
+			$parallax_one_name = __( 'Services section', 'parallax-one' );
 			
 		else:
 		

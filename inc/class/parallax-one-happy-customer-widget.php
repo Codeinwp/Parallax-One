@@ -5,7 +5,7 @@ if ( ! class_exists( 'WP_Widget' ) )
 class parallax_one_happy_customer_widget extends WP_Widget {
     function parallax_one_happy_customer_widget() {
         $widget_ops = array('classname' => 'parallax_one_happy_customer_widget');
-        $this->WP_Widget('parallax_one_happy_customer_widget', 'Parallax One - Happy Customer widget', $widget_ops);
+        $this->WP_Widget('parallax_one_happy_customer_widget', 'Parallax One - Testimonials widget', $widget_ops);
     }
     function widget($args, $instance) {
         extract($args);

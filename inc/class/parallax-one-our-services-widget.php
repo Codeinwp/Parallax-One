@@ -6,7 +6,7 @@
 		
 		function parallax_one_our_services_widget() {
 			$widget_ops = array('classname' => 'parallax_one_our_services_widget');
-			$this->WP_Widget('parallax_one_our_services_widget', 'Parallax One - Our Services widget', $widget_ops);
+			$this->WP_Widget('parallax_one_our_services_widget', 'Parallax One - Services widget', $widget_ops);
 		}
 		
 		function widget($args, $instance) {

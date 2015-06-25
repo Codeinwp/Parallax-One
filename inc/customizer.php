@@ -830,12 +830,151 @@ function parallax_one_customize_register( $wp_customize ) {
     
 	/********************************************************/
 	/*************** CONTACT PAGE OPTIONS  ******************/
-	/********************************************************/	
-
+	/********************************************************/
+	
+	
 	$wp_customize->add_section( 'parallax_one_contact_page' , array(
 		'title'       => __( 'Contact page', 'parallax-one' ),
       	'priority'    => 39,
 	));
+	
+		
+	$wp_customize->add_setting( 'parallax_one_default_contact_form_show');
+
+	$wp_customize->add_control(
+		'parallax_one_default_contact_form_show',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide default form?','parallax-one'),
+			'description' => __('If you check this box, the default form will disappear.After you disable the default form, a control to put your contact form shortcode will be available.','parallax-one'),
+			'section' => 'parallax_one_contact_page',
+			'active_callback' => 'parallax_one_is_contact_page',
+			'priority'    => 1
+		)
+	);
+	
+	/*Contact Email */
+	$wp_customize->add_setting( 'parallax_one_default_contact_form_email', array(
+		'default' => '',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_default_contact_form_email', array(
+		'label'    => __( 'Email', 'parallax-one' ),
+		'description' => __('The email address where messages will be delivered','parallax-one'),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_default_contact_form_email',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 2
+	));	
+	
+	
+	/*Name Placeholder*/
+	$wp_customize->add_setting( 'parallax_one_name_placeholder', array(
+		'default' => __('Your Name','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_name_placeholder', array(
+		'label'    => __( 'Name Input Placeholder', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_name_placeholder',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 3
+	));	
+	
+
+	/*Email Placeholder*/
+	$wp_customize->add_setting( 'parallax_one_email_placeholder', array(
+		'default' => __('Your Email','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_email_placeholder', array(
+		'label'    => __( 'Email Input Placeholder', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_email_placeholder',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 4
+	));	
+	
+	
+	/*Subject Placeholder*/
+	$wp_customize->add_setting( 'parallax_one_subject_placeholder', array(
+		'default' => __('Subject','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_subject_placeholder', array(
+		'label'    => __( 'Subject Input Placeholder', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_subject_placeholder',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 5
+	));	
+	
+	
+	/*Message Placeholder*/
+	$wp_customize->add_setting( 'parallax_one_message_placeholder', array(
+		'default' => __('Your Message','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_message_placeholder', array(
+		'label'    => __( 'Message Input Placeholder', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_message_placeholder',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 6
+	));	
+	
+	/*Button Label*/
+	$wp_customize->add_setting( 'parallax_one_button_label', array(
+		'default' => __('Send Message','parallax-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_button_label', array(
+		'label'    => __( 'Button Label', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_button_label',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 7
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_default_contact_form_show_recaptcha');
+
+	$wp_customize->add_control(
+		'parallax_one_default_contact_form_show_recaptcha',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Disable reCAPTCHA?','parallax-one'),
+			'section' => 'parallax_one_contact_page',
+			'active_callback' => 'parallax_one_is_contact_page',
+			'priority'    => 8
+		)
+	);
+	
+	/*reCAPTCHA site key*/
+	$wp_customize->add_setting( 'parallax_one_recaptcha_sitekey', array(
+		'default' => '',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_recaptcha_sitekey', array(
+		'label'    => __( 'reCAPTCHA site key', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_recaptcha_sitekey',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 9
+	));
+	
+	/*reCAPTCHA secret key*/
+	$wp_customize->add_setting( 'parallax_one_recaptacha_secretkey', array(
+		'default' => '',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_recaptacha_secretkey', array(
+		'label'    => __( 'reCAPTCHA secret key', 'parallax-one' ),
+		'section'  => 'parallax_one_contact_page',
+		'settings' => 'parallax_one_recaptacha_secretkey',
+		'active_callback' => 'parallax_one_is_contact_page',
+		'priority'    => 10
+	));
+
 	
 	/* Contact Form  */
 	$wp_customize->add_setting( 'parallax_one_contact_form_shortcode', array(
@@ -847,7 +986,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_contact_page',
 		'settings' => 'parallax_one_contact_form_shortcode',
 		'active_callback' => 'parallax_one_is_contact_page',
-		'priority'    => 1
+		'priority'    => 11
 	));
 	
 	/* Map ShortCode  */
@@ -862,7 +1001,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_contact_page',
 		'active_callback' => 'parallax_one_is_contact_page',
 		'settings' => 'parallax_one_contact_map_shortcode',
-		'priority'    => 1
+		'priority'    => 12
 	));
 	
 	/********************************************************/

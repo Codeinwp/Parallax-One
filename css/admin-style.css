@@ -94,3 +94,7 @@ button.parallax_one_general_control_remove_field:hover{
 .parallax_one_image_control .custom_media_button_parallax_one{
 	margin-top: 5px;
 }
+
+#customize-control-parallax_one_contact_form_shortcode{
+	display:none;
+}

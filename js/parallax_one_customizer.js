@@ -217,3 +217,51 @@ jQuery( document ).ready(function() {
 	
 	
 });
+
+/********************************************
+*** Contact page
+*********************************************/
+
+jQuery(document).ready(function(){
+ jQuery('#customize-control-parallax_one_default_contact_form_show').find('input:checkbox').on('change',function(){
+  if(jQuery(this).is(':checked')){
+     jQuery('#customize-control-parallax_one_default_contact_form_email').fadeOut();
+     jQuery('#customize-control-parallax_one_name_placeholder').fadeOut();
+     jQuery('#customize-control-parallax_one_email_placeholder').fadeOut();
+     jQuery('#customize-control-parallax_one_subject_placeholder').fadeOut();
+     jQuery('#customize-control-parallax_one_message_placeholder').fadeOut();
+     jQuery('#customize-control-parallax_one_button_label').fadeOut();
+     jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').fadeOut();
+     jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeOut();
+     jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeOut();
+     jQuery('#customize-control-parallax_one_contact_form_shortcode').fadeIn();
+  } else {
+     jQuery('#customize-control-parallax_one_default_contact_form_email').fadeIn();
+     jQuery('#customize-control-parallax_one_name_placeholder').fadeIn();
+     jQuery('#customize-control-parallax_one_email_placeholder').fadeIn();
+     jQuery('#customize-control-parallax_one_subject_placeholder').fadeIn();
+     jQuery('#customize-control-parallax_one_message_placeholder').fadeIn();
+     jQuery('#customize-control-parallax_one_button_label').fadeIn();
+     jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').fadeIn();
+     if( jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').find('input:checkbox').is(':checked')){
+     } else {
+      jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeIn();
+      jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeIn();
+     }
+     jQuery('#customize-control-parallax_one_contact_form_shortcode').fadeOut();
+
+     }
+  
+ 
+ 
+ });
+ 
+  jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').find('input:checkbox').on('change',function(){
+  if(jQuery(this).is(':checked')){
+   jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeOut();
+   jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeOut();
+  } else {
+   jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeIn();
+   jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeIn();
+  } });
+});

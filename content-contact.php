@@ -112,30 +112,34 @@
 						echo do_shortcode( $parallax_one_contact_form_shortcode);
 						echo '</div>';
 					} else {
+						global $wp_customize;
 						$parallax_one_default_contact_form_show = get_theme_mod('parallax_one_default_contact_form_show');
 						if( isset($parallax_one_default_contact_form_show) && $parallax_one_default_contact_form_show != 1 ){
+							echo '<div class="col-md-6 parallax_one_default_contact_form">';
+						} elseif ( isset( $wp_customize )   ) {
+							echo '<div class="col-md-6 parallax_one_default_contact_form paralax_one_only_customizer">';
+						}
+						if( isset($parallax_one_default_contact_form_show) && $parallax_one_default_contact_form_show != 1  || isset( $wp_customize )){
 						
-				?>
-						<div class="col-md-6">
-							<?php 
-								if(isset($emailSent) && $emailSent == true) :
-									echo '<p class="error error_thanks">'.__('Thanks, your email was sent successfully!','parallax-one').'</p>';                            
-								elseif(isset($_POST['submitted'])):                                    
-									echo '<p class="error error_sorry">'.__('Sorry, an error occured.','parallax-one').'</p>';                            
-								endif;
 
-								if(isset($nameError) && $nameError != '') :																		 
-									echo '<p class="error">'.esc_html($nameError).'</p>';																 
-								endif;	
-								if(isset($emailError) && $emailError != '') :																		 
-									echo '<p class="error">'.esc_html($emailError).'</p>';																 
-								endif;	
-								if(isset($subjectError) && $subjectError != '') :																		 
-									echo '<p class="error">'.esc_html($subjectError).'</p>';																 
-								endif;	
-								if(isset($messageError) && $messageError != '') :																		 
-									echo '<p class="error">'.esc_html($messageError).'</p>';																 
-								endif;	
+							if(isset($emailSent) && $emailSent == true) :
+								echo '<p class="error error_thanks">'.__('Thanks, your email was sent successfully!','parallax-one').'</p>';                            
+							elseif(isset($_POST['submitted'])):                                    
+								echo '<p class="error error_sorry">'.__('Sorry, an error occured.','parallax-one').'</p>';                            
+							endif;
+
+							if(isset($nameError) && $nameError != '') :																		 
+								echo '<p class="error">'.esc_html($nameError).'</p>';																 
+							endif;	
+							if(isset($emailError) && $emailError != '') :																		 
+								echo '<p class="error">'.esc_html($emailError).'</p>';																 
+							endif;	
+							if(isset($subjectError) && $subjectError != '') :																		 
+								echo '<p class="error">'.esc_html($subjectError).'</p>';																 
+							endif;	
+							if(isset($messageError) && $messageError != '') :																		 
+								echo '<p class="error">'.esc_html($messageError).'</p>';																 
+							endif;	
 							?>
 							<form role="form" method="POST" action="" onSubmit="this.scrollPosition.value=(document.body.scrollTop || document.documentElement.scrollTop)" class="contact-form">
 
@@ -193,15 +197,18 @@
 									$parallax_one_recaptcha_sitekey = get_theme_mod('parallax_one_recaptcha_sitekey');
 									$parallax_one_recaptacha_secretkey = get_theme_mod('parallax_one_recaptacha_secretkey');
 									$parallax_one_default_contact_form_show_recaptcha = get_theme_mod('parallax_one_default_contact_form_show_recaptcha');
-									if( isset($parallax_one_default_contact_form_show_recaptcha) && $parallax_one_default_contact_form_show_recaptcha != 1 && !empty($parallax_one_recaptcha_sitekey) && !empty($parallax_one_recaptacha_secretkey) ) :
+									if( isset($parallax_one_default_contact_form_show_recaptcha) && $parallax_one_default_contact_form_show_recaptcha != 1 && !empty($parallax_one_recaptcha_sitekey) && !empty($parallax_one_recaptacha_secretkey) ){
 										echo '<div class="g-recaptcha" data-sitekey="' . $parallax_one_recaptcha_sitekey . '"></div>';
-									endif;
+									} elseif(isset( $wp_customize )) {
+										echo '<div class="g-recaptcha paralax_one_only_customizer" data-sitekey="' . $parallax_one_recaptcha_sitekey . '"></div>';
+									}
 								?>
 							</form>
 						</div>
 				<?php
 						}
 					}
+
 				?>
 
 			<footer class="entry-footer">

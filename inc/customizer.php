@@ -853,6 +853,8 @@ function parallax_one_customize_register( $wp_customize ) {
 		)
 	);
 	
+	$wp_customize->get_setting( 'parallax_one_default_contact_form_show' )->transport = 'postMessage';
+	
 	/*Contact Email */
 	$wp_customize->add_setting( 'parallax_one_default_contact_form_email', array(
 		'default' => '',
@@ -948,6 +950,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 8
 		)
 	);
+	$wp_customize->get_setting( 'parallax_one_default_contact_form_show_recaptcha' )->transport = 'postMessage';
 	
 	/*reCAPTCHA site key*/
 	$wp_customize->add_setting( 'parallax_one_recaptcha_sitekey', array(

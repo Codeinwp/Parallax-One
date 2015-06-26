@@ -6,13 +6,15 @@
 	
 	$parallax_one_our_services_show = get_theme_mod('parallax_one_our_services_show');
 	if( isset($parallax_one_our_services_show) && $parallax_one_our_services_show != 1 ){
-		echo '<section class="services grey-bg" id="services">';
+		echo '<section class="services" id="services">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="services grey-bg paralax_one_only_customizer" id="services">';
+		echo '<section class="services paralax_one_only_customizer" id="services">';
 	}
 	
 	if( ( isset($parallax_one_our_services_show) && $parallax_one_our_services_show != 1 ) || isset( $wp_customize ) ){
 ?>
+
+		<div class="section-overlay-layer">
 			<div class="container">
 				
 				<!-- SECTION HEADER -->
@@ -47,9 +49,9 @@
                         echo '</div>';
                     }
                 ?>
-				
-			</div>
-		</section>
+			</div>	
+		</div>
+	</section>
 <?php
 	}
 ?>

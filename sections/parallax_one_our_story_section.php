@@ -6,14 +6,15 @@
 	
 	$parallax_one_our_story_show = get_theme_mod('parallax_one_our_story_show');
 	if( isset($parallax_one_our_story_show) && $parallax_one_our_story_show != 1 ){
-		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left" id="story">';
+		echo ' <section class="brief text-left brief-design-one brief-left" id="story">';
 	} elseif ( isset( $wp_customize )   ) {
-		echo ' <section class="brief white-bg-border text-left brief-design-one brief-left paralax_one_only_customizer" id="story">';
+		echo ' <section class="brief text-left brief-design-one brief-left paralax_one_only_customizer" id="story">';
 	}
 	
 	if( ( isset($parallax_one_our_story_show) && $parallax_one_our_story_show != 1 ) || isset( $wp_customize ) ){
 		
 ?>
+<div class="section-overlay-layer">
 	<div class="container">
 		<div class="row">
 			
@@ -52,8 +53,8 @@
 						}
 					?>
 
-			</div><!-- .brief-content-one-->
-			
+				</div><!-- .brief-content-one-->
+			</div>
 		</div>
 	</div>
 </section><!-- .brief-design-one -->

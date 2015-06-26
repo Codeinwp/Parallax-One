@@ -1224,6 +1224,14 @@ h2.site-description {
 	position: relative;
 }
 
+.services {
+	background-color: #F7F8FA;
+	border-bottom: 1px solid #eaebec;
+}
+
+.services .section-overlay-layer {
+}
+
 .single-service {
 	padding: 40px 35px 40px 35px;
 	margin: 0 0 50px 0;
@@ -1264,6 +1272,11 @@ h2.site-description {
    3.4 SECTION: APP BRIEF    
 -----------------------------------------*/
 .brief {
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.brief .section-overlay-layer {
 	padding-top: 80px;
 	padding-bottom: 115px;
 }
@@ -1628,6 +1641,16 @@ h2.site-description {
 /*---------------------------------------
    3.9 VERTICAL TIMELINE
 -----------------------------------------*/
+.latest-news {
+	background-color: #F7F8FA;
+	border-bottom: 1px solid #eaebec;
+}
+
+.latest-news .section-overlay-layer {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
 .vertical-timeline {
 	padding: 0;
 	margin: 0;
@@ -1830,6 +1853,11 @@ a.control_next.fade-btn {
    3.10 SECTION: TEAM
 -----------------------------------------*/
 .team {
+	background-color: #FFF;	
+	border-bottom: 1px solid #eaebec;
+}
+
+.team .section-overlay-layer {
 	padding-bottom: 50px;
 }
 
@@ -1935,8 +1963,13 @@ a.control_next.fade-btn {
    3.11 SECTION: TESTIMONIALS
 -----------------------------------------*/
 .testimonials {
-	padding-bottom: 20px;
 	text-align: center;
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.testimonials .section-overlay-layer {
+	padding-bottom: 20px;
 }
 
 .feedback {
@@ -2024,15 +2057,21 @@ a.control_next.fade-btn {
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
-    background: transparent;
-    -webkit-background-size: cover;
-    background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url("images/background-images/parallax-img/parallax-img1.jpg");
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
 }
 
-.call-to-action .overlay-layer-2 {
-    padding-top: 100px;
-    padding-bottom: 100px;
+.call-to-action .section-overlay-layer {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background: rgba(0, 5, 8, 0.80);
 }
+
 .call-to-action h2 {
 	margin-top: 20px;
 	margin-bottom: 50px;
@@ -2056,6 +2095,12 @@ a.control_next.fade-btn {
    3.13 SECTION: CONTACT INFO
 -----------------------------------------*/
 .contact-info {
+	text-align: center;
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.contact-info .section-overlay-layer {
 	padding-top: 30px;
 	padding-bottom: 70px;
 }

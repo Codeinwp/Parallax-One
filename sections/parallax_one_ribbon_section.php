@@ -14,7 +14,7 @@
 	if( ( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ) || isset( $wp_customize ) ){
 ?>
 
-		<div class="overlay-layer-2">
+		<div class="section-overlay-layer">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">

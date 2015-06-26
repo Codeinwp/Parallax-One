@@ -6,14 +6,15 @@
 		
 		$parallax_one_our_team_show = get_theme_mod('parallax_one_our_team_show');
 		if( isset($parallax_one_our_team_show) && $parallax_one_our_team_show != 1 ){
-			echo '<section class="team white-bg" id="team">';
+			echo '<section class="team" id="team">';
 		} elseif ( isset( $wp_customize )   ) {
-			echo '<section class="team white-bg paralax_one_only_customizer" id="team">';
+			echo '<section class="team paralax_one_only_customizer" id="team">';
 		}
 		
 		if( ( isset($parallax_one_our_team_show) && $parallax_one_our_team_show != 1 ) || isset( $wp_customize ) ){
 	?>
     
+	    <div class="section-overlay-layer">
 			<div class="container">
 				
 				<!-- SECTION HEADER -->
@@ -48,9 +49,9 @@
 						}
 					?>
 				</div><!-- .row.wow -->
-			
-			</div><!-- container  -->
-		</section><!-- #section9 -->
+			</div>
+		</div><!-- container  -->
+	</section><!-- #section9 -->
 		
 	<?php
 		}

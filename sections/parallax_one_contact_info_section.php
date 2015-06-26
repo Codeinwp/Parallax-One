@@ -12,13 +12,15 @@
 	if( !empty($parallax_one_contact_info_item_decoded) ){
 	
 		if( isset($parallax_one_contact_info_show) && $parallax_one_contact_info_show != 1 ){
-			echo '<div class="contact-info white-bg" id="contactinfo">';
+			echo '<div class="contact-info" id="contactinfo">';
 		} elseif ( isset( $wp_customize )   ) {
-			echo '<div class="contact-info white-bg paralax_one_only_customizer" id="contactinfo">';
+			echo '<div class="contact-info paralax_one_only_customizer" id="contactinfo">';
 		}
 		
 		if( ( isset($parallax_one_contact_info_show) && $parallax_one_contact_info_show != 1 ) || isset( $wp_customize ) ){
 	?>
+
+			<div class="section-overlay-layer">
 				<div class="container">
 					
 					<!-- CONTACT INFO -->
@@ -38,8 +40,9 @@
 							}
 						
 						?>         
-				</div><!-- .contact-links -->
-			</div><!-- .container -->
+					</div><!-- .contact-links -->
+				</div><!-- .container -->
+			</div>
 		</div><!-- .contact-info -->
 <?php
 		}

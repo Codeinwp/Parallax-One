@@ -62,13 +62,20 @@ function parallax_one_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'esc_url'
 	));
 	
+	$show_on_front = $wp_customize->get_control('show_on_front');
+	if(!empty($show_on_front)){
+		$show_on_front->section='parallax_one_general_section';
+		$show_on_front->priority=1;
+	}
 	
-	$wp_customize->get_control('show_on_front')->section='parallax_one_general_section';
-	$wp_customize->get_control('show_on_front')->priority=1;
 	$wp_customize->remove_section('static_front_page');
 	
-	$wp_customize->get_control('nav_menu_locations[primary]')->section = 'parallax_one_general_section';
-	$wp_customize->get_control('nav_menu_locations[primary]')->priority = 2;
+	
+	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
+	if(!empty($nav_menu_locations_primary)){
+		$nav_menu_locations_primary->section = 'parallax_one_general_section';
+		$nav_menu_locations_primary->priority = 2;
+	}
 	
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_logo', array(
@@ -356,7 +363,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'label' => __('Content','parallax-one'),
 			'active_callback' => 'is_front_page',
 			'priority' => 4
-	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Services section.<br> There you must add the "Parallax One - Our Services widget"','parallax-one')
+	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Services section. There you must add the "Parallax One - Services widget"','parallax-one')
 	));
 	
 	
@@ -531,7 +538,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'label' => __('Content','parallax-one'),
 			'priority' => 4,
 			'active_callback' => 'is_front_page'
-	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Team section.<br> There you must add the "Parallax One - Our Team widget"','parallax-one')
+	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Team section. There you must add the "Parallax One - Team widget"','parallax-one')
 	));
 	
 	
@@ -610,7 +617,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'label' => __('Content','parallax-one'),
 			'priority'    => 4,
 			'active_callback' => 'is_front_page'
-	   ),__('The main content of this section is customizable in:<br> Customize -> Widgets -> Happy Customers section.<br> There you must add the "Parallax One - Testimonials widget"','parallax-one')
+	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Testimonials section. There you must add the "Parallax One - Testimonials widget"','parallax-one')
 	));
 	
 	$wp_customize->add_setting( 'parallax_one_happy_customers_colors_section' );
@@ -1014,13 +1021,15 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => __( 'Footer options', 'parallax-one' ),
       	'priority'    => 39,
-      	'description' => __('The main content of this section is customizable in: <br/>Customize -> Widgets -> Footer area. ','parallax-one'),
+      	'description' => __('The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	
 	/* Footer Menu */
-	$wp_customize->get_control('nav_menu_locations[parallax_footer_menu]')->section = 'parallax_one_footer_section';
-	$wp_customize->get_control('nav_menu_locations[parallax_footer_menu]')->priority = 1;
-	
+	$nav_menu_locations_footer = $wp_customize->get_control('nav_menu_locations[parallax_footer_menu]');
+	if(!empty($nav_menu_locations_footer)){
+		$nav_menu_locations_footer->section = 'parallax_one_footer_section';
+		$nav_menu_locations_footer->priority = 1;
+	}
 	/* Copyright */
 	$wp_customize->add_setting( 'parallax_one_copyright', array(
 		'default' => '&copy;Themeisle',

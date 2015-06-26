@@ -45,6 +45,7 @@ function parallax_one_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'parallax-one' ),
+		'parallax_footer_menu' => __('Footer Menu', 'parallax-one'),
 	) );
 
 	/*
@@ -186,6 +187,8 @@ function parallax_one_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js' );
 }
 add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 
@@ -238,30 +241,25 @@ function parallax_widget_init(){
 	register_widget( 'parallax_one_happy_customer_widget' );
 	register_widget( 'parallax_one_our_team_widget' );
 	register_widget( 'parallax_one_our_services_widget' );
-	register_widget( 'parallax_one_logos_widget' );
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
 	
-	$parallax_one_sidebars = array ( 'parallax-one-logos-sidebar' => 'parallax-one-logos-sidebar' , 'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' , 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' , 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar' );
+	$parallax_one_sidebars = array ('parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' , 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' , 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar' );
 	
 	/* Register sidebar */
 	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
 		
-		if( $parallax_one_sidebar == 'parallax-one-logos-sidebar' ):
+		if( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
 		
-			$parallax_one_name = __( 'Logos section', 'parallax-one' );
-		
-		elseif( $parallax_one_sidebar == 'parallax-one-customers-sidebar' ):
-		
-			$parallax_one_name = __( 'Happy Customers section', 'parallax-one' );
+			$parallax_one_name = __( 'Testimonials section', 'parallax-one' );
 		
 		elseif( $parallax_one_sidebar == 'parallax-one-team-sidebar' ):
 		
-			$parallax_one_name = __( 'Our Team section', 'parallax-one' );
+			$parallax_one_name = __( 'Team section', 'parallax-one' );
 			
 		elseif( $parallax_one_sidebar == 'parallax-one-services-sidebar' ):
 		
-			$parallax_one_name = __( 'Our Services section', 'parallax-one' );
+			$parallax_one_name = __( 'Services section', 'parallax-one' );
 			
 		else:
 		
@@ -292,8 +290,6 @@ require_once ( 'inc/class/parallax-one-our-team-widget.php');
 
 require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
 
-require_once ( 'inc/class/parallax-one-logos-widget.php');
-
 add_action('admin_enqueue_scripts', 'parallax_one_our_services_widget_scripts');
 
 function parallax_one_our_services_widget_scripts() {
@@ -305,77 +301,21 @@ function parallax_one_our_services_widget_scripts() {
 	wp_enqueue_script('paralax_one_team_widget_script', get_template_directory_uri() . '/js/widget-team.js', false, '1.0', true);
 	
 	wp_enqueue_script('paralax_one_customers_widget_script', get_template_directory_uri() . '/js/widget-customers.js', false, '1.0', true);
-	
-	wp_enqueue_script('parallax_one_logos_widget_script', get_template_directory_uri() . '/js/widget-logos.js', false, '1.0', true);
 }
 
 /********************************************/
 /********* Default Widgets **************/
 /*******************************************/
 
-add_action( 'after_switch_theme', 'parallax_one_default_widgets_our_services' );
+add_action( 'after_switch_theme', 'parallax_one_default_widgets' );
 
-function parallax_one_default_widgets_our_services()
+function parallax_one_default_widgets()
 {
 
 	$parallax_one_sidebars = array ( 'parallax-one-logos-sidebar' => 'parallax-one-logos-sidebar', 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar', 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar',  'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar'   );
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
-	
-	
-	/* Default Logos widgets */
-	
-	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-logos-sidebar'] ] ) ):
 
-		$parallax_one_counter = 1;
-		
-		$active_widgets[ 'parallax-one-logos-sidebar' ][0] = 'parallax_one_logos_widget-' . $parallax_one_counter;
-		
-		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#', 'image_uri' => get_stylesheet_directory_uri().'/images/companies/1.png', 'new_tab' => false );
-		
-		update_option( 'widget_parallax_one_logos_widget', $logos_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-logos-sidebar' ][] = 'parallax_one_logos_widget-' . $parallax_one_counter;
-		
-		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#', 'image_uri' => get_stylesheet_directory_uri().'/images/companies/2.png', 'new_tab' => false );
-		
-		update_option( 'widget_parallax_one_logos_widget', $logos_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-logos-sidebar' ][] = 'parallax_one_logos_widget-' . $parallax_one_counter;
-		
-		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#', 'image_uri' => get_stylesheet_directory_uri().'/images/companies/3.png', 'new_tab' => false );
-		
-		update_option( 'widget_parallax_one_logos_widget', $logos_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-logos-sidebar' ][] = 'parallax_one_logos_widget-' . $parallax_one_counter;
-		
-		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#', 'image_uri' => get_stylesheet_directory_uri().'/images/companies/4.png', 'new_tab' => false );
-		
-		update_option( 'widget_parallax_one_logos_widget', $logos_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-logos-sidebar' ][] = 'parallax_one_logos_widget-' . $parallax_one_counter;
-		
-		$logos_content[ $parallax_one_counter ] = array ( 'link' => '#', 'image_uri' => get_stylesheet_directory_uri().'/images/companies/5.png', 'new_tab' => false );
-		
-		update_option( 'widget_parallax_one_logos_widget', $logos_content );
-	 
-		$parallax_one_counter++;
-		
-		update_option( 'sidebars_widgets', $active_widgets );
-		
-    endif;
 
 	/* Default Our Services widgets */
 	
@@ -529,3 +469,61 @@ function remove_class_function( $classes ) {
 
 	// add this code directly, no action needed
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+
+/* tgm-plugin-activation */
+require_once get_template_directory() . '/class-tgm-plugin-activation.php';
+
+
+add_action( 'tgmpa_register', 'parallax_one_register_required_plugins' );
+function parallax_one_register_required_plugins() {
+	
+		$plugins = array(
+			array(
+	 
+				'name'      => 'Intergeo Maps - Google Maps Plugin',
+	 
+				'slug'      => 'intergeo-maps',
+	 
+				'required'  => false,
+	 
+			)
+		);
+	
+	
+ 
+	$theme_text_domain = 'parallax-one';
+	
+	$config = array(
+        'default_path' => '',                      
+        'menu'         => 'tgmpa-install-plugins', 
+        'has_notices'  => true,                   
+        'dismissable'  => true,                  
+        'dismiss_msg'  => '',                   
+        'is_automatic' => false,                 
+        'message'      => '',     
+        'strings'      => array(
+            'page_title'                      => __( 'Install Required Plugins', $theme_text_domain ),
+            'menu_title'                      => __( 'Install Plugins', $theme_text_domain ),
+            'installing'                      => __( 'Installing Plugin: %s', $theme_text_domain ), 
+            'oops'                            => __( 'Something went wrong with the plugin API.', $theme_text_domain ),
+            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
+            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
+            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
+            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ),
+            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ),
+            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), 
+            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), 
+            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
+            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
+            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
+            'return'                          => __( 'Return to Required Plugins Installer', $theme_text_domain ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', $theme_text_domain ),
+            'complete'                        => __( 'All plugins installed and activated successfully. %s', $theme_text_domain ), 
+            'nag_type'                        => 'updated'
+        )
+    );
+ 
+	tgmpa( $plugins, $config );
+ 
+}

@@ -11,24 +11,31 @@ function media_upload(button_class) {
 					switch(props.size){
 						case 'full':
 							display_field.val(attachment.sizes.full.url);
+                            display_field.trigger('change');
 							break;
 						case 'medium':
 							display_field.val(attachment.sizes.medium.url);
+                            display_field.trigger('change');
 							break;
 						case 'thumbnail':
 							display_field.val(attachment.sizes.thumbnail.url);
+                            display_field.trigger('change');
 							break;
 						case 'parallax_one_team':
 							display_field.val(attachment.sizes.parallax_one_team.url);
+                            display_field.trigger('change');
 							break
 						case 'parallax_one_services':
 							display_field.val(attachment.sizes.parallax_one_services.url);
+                            display_field.trigger('change');
 							break
 						case 'parallax_one_customers':
 							display_field.val(attachment.sizes.parallax_one_customers.url);
+                            display_field.trigger('change');
 							break;
 						default:
 							display_field.val(attachment.url);
+                            display_field.trigger('change');
 					}
 				}
 				_custom_media = false;

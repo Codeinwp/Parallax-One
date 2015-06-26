@@ -5,7 +5,7 @@ if ( ! class_exists( 'WP_Widget' ) )
 class parallax_one_our_team_widget extends WP_Widget {
     function parallax_one_our_team_widget() {
         $widget_ops = array('classname' => 'parallax_one_our_team_widget');
-        $this->WP_Widget('parallax_one_our_team_widget', 'Parallax One - Our Team widget', $widget_ops);
+        $this->WP_Widget('parallax_one_our_team_widget', 'Parallax One - Team widget', $widget_ops);
     }
     function widget($args, $instance) {
         extract($args);

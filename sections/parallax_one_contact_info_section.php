@@ -6,8 +6,8 @@
 	global $wp_customize;
 	$parallax_one_contact_info_show = get_theme_mod('parallax_one_contact_info_show');
 	
-	$parallax_one_contact_info_item = get_theme_mod('parallax_one_contact_info_content',json_encode(array( array("icon_value" => "icon-basic-mail" ,"icon_text" => "hey@designlab.co", "icon_link" => "#" ), array("icon_value" => "icon-basic-geolocalize-01" ,"icon_text" => "Glen Road, E13 8 London, UK", "icon_link" => "#" ), array("icon_value" => "icon-basic-tablet" ,"icon_text" => "+44-12-3456-7890", "icon_link" => "#" ) )));
-	$parallax_one_contact_info_item_decoded = json_decode($parallax_one_contact_info_item);
+	$parallax_one_contact_info_item = get_theme_mod('parallax_one_contact_info_content',json_encode(array( array("icon_value" => "icon-basic-mail" ,"text" => "hey@designlab.co", "link" => "#" ), array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Glen Road, E13 8 London, UK", "link" => "#" ), array("icon_value" => "icon-basic-tablet" ,"text" => "+44-12-3456-7890", "link" => "#" ) )));
+		$parallax_one_contact_info_item_decoded = json_decode($parallax_one_contact_info_item);
 	
 	if( !empty($parallax_one_contact_info_item_decoded) ){
 	
@@ -29,19 +29,19 @@
 							if(!empty($parallax_one_contact_info_item_decoded)){	
 									
 									foreach($parallax_one_contact_info_item_decoded as $parallax_one_contact_item){
-										if(!empty($parallax_one_contact_item->icon_link)){
-											echo '<div class="col-sm-4 contact-link-box col-xs-12"><div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div><a href="'.$parallax_one_contact_item->icon_link.'" class="strong">'.$parallax_one_contact_item->icon_text.'</a></div>';
+										if(!empty($parallax_one_contact_item->link)){
+											echo '<div class="col-sm-4 contact-link-box col-xs-12"><div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div><a href="'.$parallax_one_contact_item->link.'" class="strong">'.$parallax_one_contact_item->text.'</a></div>';
 										} else {
-											echo '<div class="col-sm-4 contact-link-box  col-xs-12"><div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div><a href="" class="strong">'.esc_attr($parallax_one_contact_item->icon_text).'</a></div>';
+											echo '<div class="col-sm-4 contact-link-box  col-xs-12"><div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div><a href="" class="strong">'.esc_attr($parallax_one_contact_item->text).'</a></div>';
 										}
 									}
 							}
 						
 						?>         
-				</div>
-			</div><!-- .contact-info -->
+				</div><!-- .contact-links -->
+			</div><!-- .container -->
+		</div><!-- .contact-info -->
 <?php
 		}
-        echo '</div>';
 	}
 ?>

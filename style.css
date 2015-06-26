@@ -496,7 +496,7 @@ big {
 }
 
 *:focus {
-    outline: 0;
+    outline: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -737,7 +737,7 @@ input[type="password"],
 input[type="search"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	border: 1px solid #dedede;
 	border-radius: 3px;
 }
 
@@ -755,18 +755,19 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 10px;
 }
 
 textarea {
-	padding-left: 3px;
 	width: 100%;
+	height: auto;
+	min-height: 150px;
+	padding: 10px;
 }
 
 .input-box,
 .textarea-box {
 	margin-bottom: 15px;
-	margin-top: 15px;
 	outline: 0;
 	border: 0;
 	-webkit-box-shadow: none;
@@ -774,16 +775,20 @@ textarea {
 	border: 1px solid #dedede;
 	border-radius: 3px;
 	color: #999999;
-	padding-left: 21px;
 	line-height: auto;
 }
 
 .input-box {
-	min-height: 50px;
+	min-height: 45px;
 }
 
 .textarea-box {
-	padding-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+textarea.form-control {
+	min-height: 100px;
 }
 
 .input-box:active,
@@ -794,6 +799,19 @@ textarea {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
+
+. { 
+	background: #008ed6;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
+	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
+	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
+	-webkit-box-shadow: 0px 3px 0px #005885;
+	box-shadow: 0px 3px 0px #005885;
+}
+
 
 /* --------------------------------------
 =========================================

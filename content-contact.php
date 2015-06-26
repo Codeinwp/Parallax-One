@@ -102,7 +102,7 @@
 			<?php
 				$parallax_one_contact_form_shortcode = get_theme_mod('parallax_one_contact_form_shortcode');
 			?>
-			<div class="<?php if(!empty($parallax_one_contact_form_shortcode)) {echo 'col-md-6';} else {echo 'col-md-12';}?>">
+			<div class="col-md-6">
 				<?php the_content(); ?>
 			</div>
 				<?php 
@@ -147,48 +147,48 @@
 
 								<input type="hidden" name="submitted" id="submitted" value="true" />
 
-								<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
+								<p class="col-md-12" data-scrollreveal="enter left after 0s over 1s">
 
 									<?php $parallax_one_name_placeholder = get_theme_mod('parallax_one_name_placeholder','Your Name'); ?>
 
-									<input type="text" name="myname" placeholder="<?php if(!empty($parallax_one_name_placeholder)) echo $parallax_one_name_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
+									<input type="text" name="myname" placeholder="<?php if(!empty($parallax_one_name_placeholder)) echo $parallax_one_name_placeholder; ?>" class="" value="<?php if(isset($_POST['myname'])) echo esc_attr($_POST['myname']);?>">
 
-								</div>
+								</p>
 
-								<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
+								<p class="col-md-12" data-scrollreveal="enter left after 0s over 1s">
 
 									<?php $parallax_one_email_placeholder = get_theme_mod('parallax_one_email_placeholder','Your Email'); ?>
 
-									<input type="email" name="myemail" placeholder="<?php if(!empty($parallax_one_email_placeholder)) echo $parallax_one_email_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
+									<input type="email" name="myemail" placeholder="<?php if(!empty($parallax_one_email_placeholder)) echo $parallax_one_email_placeholder; ?>" class="" value="<?php if(isset($_POST['myemail'])) echo is_email($_POST['myemail']) ? $_POST['myemail'] : ""; ?>">
 
-								</div>
+								</p>
 
-								<div class="col-lg-4 col-sm-4" data-scrollreveal="enter left after 0s over 1s">
+								<p class="col-md-12" data-scrollreveal="enter left after 0s over 1s">
 
 									<?php $parallax_one_subject_placeholder = get_theme_mod('parallax_one_subject_placeholder','Subject'); ?>
 
-									<input type="text" name="mysubject" placeholder="<?php if(!empty($parallax_one_subject_placeholder)) echo $parallax_one_subject_placeholder; ?>" class="form-control input-box" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
+									<input type="text" name="mysubject" placeholder="<?php if(!empty($parallax_one_subject_placeholder)) echo $parallax_one_subject_placeholder; ?>" class="" value="<?php if(isset($_POST['mysubject'])) echo esc_attr($_POST['mysubject']);?>">
 
-								</div>
+								</p>
 
-								<div class="col-lg-12 col-sm-12" data-scrollreveal="enter right after 0s over 1s">
+								<p class="col-md-12" data-scrollreveal="enter right after 0s over 1s">
 
 									<?php $parallax_one_message_placeholder = get_theme_mod('parallax_one_message_placeholder','Your Message'); ?>
 
-									<textarea name="mymessage" class="form-control textarea-box" placeholder="<?php if(!empty($parallax_one_message_placeholder)) echo $parallax_one_message_placeholder; ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
+									<textarea name="mymessage" class="" placeholder="<?php if(!empty($parallax_one_message_placeholder)) echo $parallax_one_message_placeholder; ?>"><?php if(isset($_POST['mymessage'])) { echo esc_html($_POST['mymessage']); } ?></textarea>
 
-								</div>
+								</p>
 								
 								<?php
 									$parallax_one_button_label = get_theme_mod('parallax_one_button_label','Send Message');
 
 									if( !empty($parallax_one_button_label) ):
 
-										echo '<button class="btn btn-primary custom-button red-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$parallax_one_button_label.'</button>';
+										echo '<div class="col-md-12"><button class="red-btn" type="submit" data-scrollreveal="enter left after 0s over 1s">'.$parallax_one_button_label.'</button></div>';
 
 									elseif ( isset( $wp_customize ) ):
 
-										echo '<button class="btn btn-primary custom-button red-btn parallax-one_hidden_if_not_customizer" type="submit" data-scrollreveal="enter left after 0s over 1s"></button>';
+										echo '<div class="col-md-12"><button class="red-btn parallax-one_hidden_if_not_customizer" type="submit" data-scrollreveal="enter left after 0s over 1s"></button></div>';
 
 									endif;
 								?>

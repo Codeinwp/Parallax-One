@@ -21,8 +21,20 @@ function parallax_one_customize_register( $wp_customize ) {
 	/********************************************************/
 	
 	$wp_customize->get_control('background_image')->section='colors';
+	$wp_customize->get_control('background_repeat')->section='colors';
+	$wp_customize->get_control('background_position_x')->section='colors';
+	$wp_customize->get_control('background_attachment')->section='colors';
+	
 	$wp_customize->get_control('background_image')->priority=1;
+	$wp_customize->get_control('background_repeat')->priority=2;
+	$wp_customize->get_control('background_position_x')->priority=3;
+	$wp_customize->get_control('background_attachment')->priority=4;
+	
 	$wp_customize->get_control('background_image')->active_callback='is_front_page';
+	$wp_customize->get_control('background_repeat')->active_callback='is_front_page';
+	$wp_customize->get_control('background_position_x')->active_callback='is_front_page';
+	$wp_customize->get_control('background_attachment')->active_callback='is_front_page';
+	
 	$wp_customize->get_section('colors')->title=__('Appearance Section','parallax-one');
 	
 	/********************************************************/
@@ -656,6 +668,19 @@ function parallax_one_customize_register( $wp_customize ) {
 	);
 	$wp_customize->get_setting( 'parallax_one_ribbon_show' )->transport = 'postMessage';
 
+	/* Ribbon Background	*/
+	$wp_customize->add_setting( 'paralax_one_ribbon_background', array(
+		'default' => get_stylesheet_directory_uri().'/images/background-images/parallax-img/parallax-img1.jpg',
+		'sanitize_callback' => 'esc_url'
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
+	      	'label'    => __( 'Ribbon Background', 'parallax-one' ),
+	      	'section'  => 'parallax_one_ribbon_section',
+	      	'settings' => 'paralax_one_ribbon_background',
+			'active_callback' => 'is_front_page',
+			'priority'    => 2
+	)));
+	$wp_customize->get_setting( 'paralax_one_ribbon_background' )->transport = 'postMessage';
 	
 	$wp_customize->add_setting( 'parallax_one_ribbon_title', array(
 		'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'),
@@ -666,7 +691,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_ribbon_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2
+		'priority'    => 3
 	));
 	$wp_customize->get_setting( 'parallax_one_ribbon_title' )->transport = 'postMessage';
 	
@@ -680,7 +705,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_button_text',
 		'active_callback' => 'is_front_page',
-		'priority'    => 3
+		'priority'    => 4
 	));
 	$wp_customize->get_setting( 'parallax_one_button_text' )->transport = 'postMessage';
 	
@@ -694,7 +719,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_button_link',
 		'active_callback' => 'is_front_page',
-		'priority'    => 4
+		'priority'    => 5
 	));
 	$wp_customize->get_setting( 'parallax_one_button_link' )->transport = 'postMessage';
 	
@@ -704,7 +729,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		array(
 			'section' => 'parallax_one_ribbon_section',
 			'label' => __('Colors','parallax-one'),
-			'priority' => 5,
+			'priority' => 6,
 			'active_callback' => 'is_front_page'
 	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
 	));

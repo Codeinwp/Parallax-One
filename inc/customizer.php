@@ -1108,6 +1108,16 @@ function parallax_one_sanitize_text( $input ) {
 
 function parallax_one_customizer_script() {
 	wp_enqueue_script( 'parallax_one_customizer_script', get_template_directory_uri() . '/js/parallax_one_customizer.js', array("jquery","jquery-ui-draggable"),'', true  );
+	wp_register_script( 'parallax_one_buttons', get_template_directory_uri() . '/js/parallax_one_buttons_control.js', array("jquery"), '20120206', true  );
+	wp_enqueue_script( 'parallax_one_buttons' );
+	
+	wp_localize_script( 'parallax_one_buttons', 'objectL10n', array(
+		
+		'documentation' => __( 'Documentation', 'parallax-one' ),
+		'pro' => __('View PRO version','parallax-one'),
+		'support' => __('Support Forum','parallax-one')
+		
+	) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
 

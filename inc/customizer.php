@@ -1124,7 +1124,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'   => __('Add new social icon','parallax-one'),
 		'section' => 'parallax_one_footer_section',
 		'settings' => 'parallax_one_social_icons',
-		'active_callback' => 'is_front_page',
 		'priority' => 3,
         'parallax_image_control' => false,
         'parallax_icon_control' => true,

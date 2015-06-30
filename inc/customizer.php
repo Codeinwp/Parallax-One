@@ -24,6 +24,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_control('background_repeat')->section='colors';
 	$wp_customize->get_control('background_position_x')->section='colors';
 	$wp_customize->get_control('background_attachment')->section='colors';
+	$wp_customize->remove_control('background_color');
 	
 	$wp_customize->get_control('background_image')->priority=1;
 	$wp_customize->get_control('background_repeat')->priority=2;
@@ -81,7 +82,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	}
 	
 	$wp_customize->remove_section('static_front_page');
-	
 	
 	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
 	if(!empty($nav_menu_locations_primary)){

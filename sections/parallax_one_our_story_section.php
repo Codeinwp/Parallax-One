@@ -20,7 +20,7 @@
 			
 			<!-- BRIEF IMAGE -->
 			<?php
-				$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', get_stylesheet_directory_uri().'/images/about-us.jpg');
+				$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', get_stylesheet_directory_uri().'/images/about-us.png');
 				
 				if( !empty($paralax_one_our_story_image) ){
 					echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt=""></div></div>';

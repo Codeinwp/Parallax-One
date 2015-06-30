@@ -685,15 +685,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	text-shadow: none;
 	border: none;
 	border-radius: 3px;
@@ -702,7 +699,7 @@ input[type="submit"] {
 	font-size: 12px;
 	line-height: 1.6;
 	border: none;
-	padding: 10px 30px 8px 30px;
+	padding: 10px 30px 10px 30px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
@@ -2259,17 +2256,17 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce ul.products li.product .button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	color: #FFF;
 	font-weight: normal;
+	border: none;
+	padding-top: 1px;
+	padding-bottom: 4px;
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -2468,15 +2465,12 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce div.product form.cart .button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	border-radius: 3px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -2877,6 +2871,25 @@ div.wpcf7-mail-sent-ng {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	border: none;
+}
+
+.woocommerce .woocommerce-error .button {
+	border: none;
+	float: right;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 16px;
+	margin-top: -5px;
+	margin-bottom: -5px;
+	padding: 7px;
+}
+
+.woocommerce .woocommerce-error .button:hover {
+	color: #E86A6A;
+	border: none;
 }
 
 .woocommerce .woocommerce-error a {
@@ -3472,21 +3485,18 @@ a:hover {
 /* BUTTONS*/
 .standard-button,
 .navbar-register-button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTlmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDhlZDYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .standard-button:hover,
 .navbar-register-button:hover {
 	color: #ffffff;
-	background: #008ed6 !important;
+	background: #008ed6;
 	text-decoration: none;
 }
 
@@ -3959,6 +3969,18 @@ h2.screen-reader-text {
 	padding: 0 0 15px;
 	border-bottom: 1px solid #ececec;
 	margin-bottom: 15px;
+}
+
+.wp-caption-text {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+	
 }
 
 /* --------------------------------------

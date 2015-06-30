@@ -121,7 +121,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 								
 												if($parallax_text_control==true){ ?>
 													<span class="customize-control-title"><?php _e('Text','parallax-one')?></span>
-													<input type="text" value="<?php echo esc_attr($icon->text); ?>" class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"/>
+													<input type="text" value="<?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?>" class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"/>
 										<?php	}
 								
 												if($parallax_link_control){ ?>
@@ -169,7 +169,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 								
 										if($parallax_text_control==true ){?>
 											<span class="customize-control-title"><?php _e('Text','parallax-one')?></span>
-											<input type="text" value="<?php echo esc_attr($icon->text); ?>" class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"/>
+											<input type="text" value="<?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?>" class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"/>
                                         <?php }
 										
 										if($parallax_link_control){ ?>

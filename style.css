@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
-Tags:
+Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2079,7 +2079,6 @@ a.control_next.fade-btn {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	background-image: url("images/background-images/parallax-img/parallax-img1.jpg");
 	background-color: #FFF;
 	border-bottom: 1px solid #eaebec;
 }

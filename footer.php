@@ -60,7 +60,7 @@
 					global $wp_customize;
 				
 					/* COPYRIGHT */
-					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','&copy;Themeisle');
+					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','Themeisle');
 					
 					if( !empty($paralax_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($paralax_one_copyright).'</span>';

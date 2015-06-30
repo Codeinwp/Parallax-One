@@ -6,9 +6,18 @@
 	
 	$parallax_one_ribbon_show = get_theme_mod('parallax_one_ribbon_show');
 	if( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ){
-		echo '<section class="call-to-action ribbon-wrap" id="ribbon">';
+		$ribbon_background = get_theme_mod('paralax_one_ribbon_background', get_stylesheet_directory_uri().'/images/background-images/parallax-img/parallax-img1.jpg');
+		if(!empty($ribbon_background)){
+			echo '<section class="call-to-action ribbon-wrap" id="ribbon" style="background-image:url('.$ribbon_background.');">';
+		} else {
+			echo '<section class="call-to-action ribbon-wrap" id="ribbon">';
+		}
 	} elseif ( isset( $wp_customize )   ) {
-		echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon">';
+		if(!empty($ribbon_background)){
+			echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" style="background-image:url('.$ribbon_background.');">';
+		} else {
+			echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon">';
+		}
 	}
 	
 	if( ( isset($parallax_one_ribbon_show) && $parallax_one_ribbon_show != 1 ) || isset( $wp_customize ) ){

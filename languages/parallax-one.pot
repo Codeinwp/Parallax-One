@@ -1,56 +1,270 @@
-# Copyright (C) 2015 Automattic
-# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
+"Project-Id-Version: Parallax One\n"
+"POT-Creation-Date: 2015-06-30 14:11+0200\n"
+"PO-Revision-Date: 2015-06-30 14:11+0200\n"
+"Last-Translator: \n"
+"Language-Team: Themeisle <friends@themeisle.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: sections\n"
+"X-Poedit-SearchPath-2: inc\n"
+"X-Poedit-SearchPath-3: inc/class\n"
 
-#: 404.php:15
+#: 404.php:25
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:19
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: 404.php:29
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#: 404.php:27
-msgid "Most Used Categories"
+#: class-tgm-plugin-activation.php:161 functions.php:502
+msgid "Install Required Plugins"
 msgstr ""
 
-#. translators: %1$s: smiley
-
-#: 404.php:44
-msgid "Try looking in the monthly archives. %1$s"
+#: class-tgm-plugin-activation.php:162 functions.php:503
+msgid "Install Plugins"
 msgstr ""
 
-#: comments.php:28
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+#: class-tgm-plugin-activation.php:163 functions.php:504
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
 
-#: comments.php:35 comments.php:52
+#: class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:175 functions.php:516
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:177 class-tgm-plugin-activation.php:1956
+#: functions.php:517
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:532 class-tgm-plugin-activation.php:2173
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1167 class-tgm-plugin-activation.php:1348
+msgid "Private Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1170 class-tgm-plugin-activation.php:1351
+msgid "Pre-Packaged"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1175
+msgid "WordPress Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1178
+msgid "Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1178
+msgid "Recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1181
+msgid "Not Installed"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1183
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1288 class-tgm-plugin-activation.php:1409
+msgid "Install"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1312 class-tgm-plugin-activation.php:1410
+msgid "Activate"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1372
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1388
+msgid "Plugin"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1389
+msgid "Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1390
+msgid "Type"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1391
+msgid "Status"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1939
+msgid "Install package not available."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1940
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1941
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1942
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1943
+msgid "Plugin install failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1944
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1955
+msgid "Plugin activation failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2069
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2070
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2070 class-tgm-plugin-activation.php:2079
+msgid "Show Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2070 class-tgm-plugin-activation.php:2079
+msgid "Hide Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2071
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2072
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2076
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2077
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2078
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2079
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2080
+msgid "All installations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2081
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: comments.php:35 comments.php:56
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:36 comments.php:53
-msgid "&larr; Older Comments"
+#: comments.php:38 comments.php:59
+msgid "Older Comments"
 msgstr ""
 
-#: comments.php:37 comments.php:54
-msgid "Newer Comments &rarr;"
+#: comments.php:39 comments.php:60
+msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:72
 msgid "Comments are closed."
+msgstr ""
+
+#: content-contact.php:32
+msgid "* Please enter your name."
+msgstr ""
+
+#: content-contact.php:39
+msgid "* Please enter your email address."
+msgstr ""
+
+#: content-contact.php:42
+msgid "* You entered an invalid email address."
+msgstr ""
+
+#: content-contact.php:49
+msgid "* Please enter a subject."
+msgstr ""
+
+#: content-contact.php:56
+msgid "* Please enter a message."
+msgstr ""
+
+#: content-contact.php:126
+msgid "Thanks, your email was sent successfully!"
+msgstr ""
+
+#: content-contact.php:128
+msgid "Sorry, an error occured."
+msgstr ""
+
+#: content-contact.php:215 content-page.php:27 inc/template-tags.php:125
+msgid "Edit"
 msgstr ""
 
 #: content-none.php:13
@@ -58,227 +272,759 @@ msgid "Nothing Found"
 msgstr ""
 
 #: content-none.php:19
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:23
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
 #: content-none.php:28
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:29
+#: content-page.php:20 content-search.php:88 content-single.php:30
+#: content.php:76
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:25 inc/template-tags.php:126
-msgid "Edit"
-msgstr ""
-
-#. translators: %s: Name of current post
-
-#: content.php:22
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: footer.php:15
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: footer.php:15
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:17
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:53 header.php:31
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:88
-msgid "Sidebar"
-msgstr ""
-
-#: header.php:22
-msgid "Skip to content"
-msgstr ""
-
-#: inc/extras.php:64
-msgid "Page %s"
-msgstr ""
-
-#: inc/template-tags.php:23
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:27
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:31
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:56
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:86
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/template-tags.php:91
-msgctxt "post author"
-msgid "by %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:108 inc/template-tags.php:114
+#: content-search.php:48 content.php:45 inc/template-tags.php:107
+#: inc/template-tags.php:113
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:110
+#: content-search.php:54
+msgid "Posted in "
+msgstr ""
+
+#: content-search.php:67 content-single.php:21 content.php:55
+msgid "No comments"
+msgstr ""
+
+#: content-search.php:67 content-single.php:21 content.php:55
+msgid "One comment"
+msgstr ""
+
+#: content-search.php:67 content-single.php:21 content.php:55
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: footer.php:106
+msgid "powered by"
+msgstr ""
+
+#: footer.php:106
+msgid "WordPress"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:48
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:106
+msgid "Parallax One Team Member"
+msgstr ""
+
+#: functions.php:107
+msgid "Parallax One Services"
+msgstr ""
+
+#: functions.php:108
+msgid "Parallax One Customers"
+msgstr ""
+
+#: functions.php:122
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:134
+#, php-format
+msgid "Footer area %d"
+msgstr ""
+
+#: functions.php:254
+msgid "Testimonials section"
+msgstr ""
+
+#: functions.php:258 inc/customizer.php:512
+msgid "Team section"
+msgstr ""
+
+#: functions.php:262 inc/customizer.php:326
+msgid "Services section"
+msgstr ""
+
+#: functions.php:328 functions.php:337 functions.php:346
+msgid "Lorem Ipsum"
+msgstr ""
+
+#: functions.php:328 functions.php:337 functions.php:346
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
+"feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
+"eros sit amet arcu vestibulum accumsan in in leo."
+msgstr ""
+
+#: functions.php:369
+msgid "Albert Jacobs"
+msgstr ""
+
+#: functions.php:369
+msgid "Founder & CEO"
+msgstr ""
+
+#: functions.php:379
+msgid "Tonya Garcia"
+msgstr ""
+
+#: functions.php:379
+msgid "Account Manager"
+msgstr ""
+
+#: functions.php:389
+msgid "Linda Guthrie"
+msgstr ""
+
+#: functions.php:389
+msgid "Business Development"
+msgstr ""
+
+#: functions.php:408 functions.php:417 functions.php:426
+msgid "Happy Customer"
+msgstr ""
+
+#: functions.php:408 functions.php:417 functions.php:426
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
+"feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
+"eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate "
+"faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non "
+"imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin "
+"laoreet."
+msgstr ""
+
+#: functions.php:408 functions.php:417 functions.php:426
+msgid "Lorem ipsum"
+msgstr ""
+
+#: functions.php:505
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: functions.php:518
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: header.php:69
+msgid "Toggle navigation"
+msgstr ""
+
+#: search.php:25
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "Appearance Section"
+msgstr ""
+
+#: inc/customizer.php:47
+msgid "Sections order"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid ""
+"Check out the PRO version for full control over homepage sections order !"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "General options"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Paralax One theme general options"
+msgstr ""
+
+#: inc/customizer.php:94
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "Disable preloader?"
+msgstr ""
+
+#: inc/customizer.php:111
+msgid "If this box is checked, the preloader will be disabled from homepage."
+msgstr ""
+
+#: inc/customizer.php:127
+msgid "Disable comments on pages?"
+msgstr ""
+
+#: inc/customizer.php:128
+msgid "If this box is checked, the comments will be disabled on pages."
+msgstr ""
+
+#: inc/customizer.php:142
+msgid "Header section"
+msgstr ""
+
+#: inc/customizer.php:148
+msgid "Settings"
+msgstr ""
+
+#: inc/customizer.php:161
+msgid "Hide Header section?"
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "If you check this box, the Header section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:175 inc/customizer.php:385 inc/customizer.php:456
+#: inc/customizer.php:570 inc/customizer.php:655
+msgid "Content"
+msgstr ""
+
+#: inc/customizer.php:186
+msgid "Header Logo"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Simple, Reliable and Awesome."
+msgstr ""
+
+#: inc/customizer.php:200 inc/customizer.php:355 inc/customizer.php:439
+#: inc/customizer.php:540 inc/customizer.php:625 inc/customizer.php:720
+#: inc/customizer.php:804
+msgid "Main title"
+msgstr ""
+
+#: inc/customizer.php:210 inc/customizer.php:365 inc/customizer.php:550
+#: inc/customizer.php:716
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr ""
+
+#: inc/customizer.php:214 inc/customizer.php:369 inc/customizer.php:554
+#: inc/customizer.php:639
+msgid "Subtitle"
+msgstr ""
+
+#: inc/customizer.php:224 inc/customizer.php:730
+msgid "GET STARTED"
+msgstr ""
+
+#: inc/customizer.php:228 inc/customizer.php:734
+msgid "Button label"
+msgstr ""
+
+#: inc/customizer.php:238 inc/customizer.php:744
+msgid "#"
+msgstr ""
+
+#: inc/customizer.php:242 inc/customizer.php:748
+msgid "Button link"
+msgstr ""
+
+#: inc/customizer.php:255 inc/customizer.php:399 inc/customizer.php:500
+#: inc/customizer.php:584 inc/customizer.php:668 inc/customizer.php:763
+#: inc/customizer.php:898
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer.php:268 inc/customizer.php:402 inc/customizer.php:503
+#: inc/customizer.php:587 inc/customizer.php:671 inc/customizer.php:766
+#: inc/customizer.php:900
+msgid "Check out the PRO version for full control over the color scheme !"
+msgstr ""
+
+#: inc/customizer.php:274
+msgid "Logos Bar"
+msgstr ""
+
+#: inc/customizer.php:288 inc/customizer.php:845 inc/customizer.php:1124
+msgid "Add new social icon"
+msgstr ""
+
+#: inc/customizer.php:308
+msgid "Hide Logos section?"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "If you check this box, the Logos section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:338
+msgid "Hide Services section?"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid ""
+"If you check this box, the Services section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:351
+msgid "Our Services"
+msgstr ""
+
+#: inc/customizer.php:388
+msgid ""
+"The main content of this section is customizable in: Customize -> Widgets -> "
+"Services section. There you must add the \"Parallax One - Services widget\""
+msgstr ""
+
+#: inc/customizer.php:411
+msgid "About section"
+msgstr ""
+
+#: inc/customizer.php:423
+msgid "Hide About section?"
+msgstr ""
+
+#: inc/customizer.php:424
+msgid "If you check this box, the About section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:435
+msgid "Our Story"
+msgstr ""
+
+#: inc/customizer.php:451
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat."
+msgstr ""
+
+#: inc/customizer.php:470 inc/class/parallax-one-general-control.php:59
+#: inc/class/parallax-one-general-control.php:99
+#: inc/class/parallax-one-general-control.php:147
+#: inc/class/parallax-one-happy-customer-widget.php:72
+#: inc/class/parallax-one-our-services-widget.php:65
+#: inc/class/parallax-one-our-services-widget.php:71
+#: inc/class/parallax-one-our-team-widget.php:165
+msgid "Image"
+msgstr ""
+
+#: inc/customizer.php:485
+msgid "Image Position"
+msgstr ""
+
+#: inc/customizer.php:489
+msgid "Check out the PRO version for full control over the image position !"
+msgstr ""
+
+#: inc/customizer.php:524
+msgid "Hide Team section?"
+msgstr ""
+
+#: inc/customizer.php:525
+msgid "If you check this box, the Team section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:536
+msgid "Our Team"
+msgstr ""
+
+#: inc/customizer.php:573
+msgid ""
+"The main content of this section is customizable in: Customize -> Widgets -> "
+"Team section. There you must add the \"Parallax One - Team widget\""
+msgstr ""
+
+#: inc/customizer.php:596
+msgid "Testimonial section"
+msgstr ""
+
+#: inc/customizer.php:608
+msgid "Hide Testimonials section?"
+msgstr ""
+
+#: inc/customizer.php:609
+msgid ""
+"If you check this box, the Testimonials section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:621
+msgid "Happy Customers"
+msgstr ""
+
+#: inc/customizer.php:635
+msgid "Cloud computing subscription model out of the box proactive solution."
+msgstr ""
+
+#: inc/customizer.php:658
+msgid ""
+"The main content of this section is customizable in: Customize -> Widgets -> "
+"Testimonials section. There you must add the \"Parallax One - Testimonials "
+"widget\""
+msgstr ""
+
+#: inc/customizer.php:680
+msgid "Ribbon section"
+msgstr ""
+
+#: inc/customizer.php:692
+msgid "Hide Ribbon section?"
+msgstr ""
+
+#: inc/customizer.php:693
+msgid "If you check this box, the Ribbon section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:707
+msgid "Ribbon Background"
+msgstr ""
+
+#: inc/customizer.php:775
+msgid "Latest news section"
+msgstr ""
+
+#: inc/customizer.php:788
+msgid "Hide Latest news section?"
+msgstr ""
+
+#: inc/customizer.php:789
+msgid ""
+"If you check this box, the Latest news section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:800
+msgid "Latest news"
+msgstr ""
+
+#: inc/customizer.php:819
+msgid "Contact section"
+msgstr ""
+
+#: inc/customizer.php:831
+msgid "Hide Contact section?"
+msgstr ""
+
+#: inc/customizer.php:832
+msgid ""
+"If you check this box, the Contact section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:864
+msgid "Hide Map section?"
+msgstr ""
+
+#: inc/customizer.php:865
+msgid "If you check this box, the Map section will disappear from homepage."
+msgstr ""
+
+#: inc/customizer.php:880 inc/customizer.php:1077
+msgid "Map shortcode"
+msgstr ""
+
+#: inc/customizer.php:881 inc/customizer.php:1078
+msgid ""
+"To use this section please install Intergeo Maps plugin then use it to "
+"create a map and paste here the shortcode generated"
+msgstr ""
+
+#: inc/customizer.php:909
+msgid "Contact page"
+msgstr ""
+
+#: inc/customizer.php:922
+msgid "Hide default form?"
+msgstr ""
+
+#: inc/customizer.php:923
+msgid ""
+"If you check this box, the default form will disappear.After you disable the "
+"default form, a control to put your contact form shortcode will be available."
+msgstr ""
+
+#: inc/customizer.php:938
+msgid "Email"
+msgstr ""
+
+#: inc/customizer.php:939
+msgid "The email address where messages will be delivered"
+msgstr ""
+
+#: inc/customizer.php:949
+msgid "Your Name"
+msgstr ""
+
+#: inc/customizer.php:953
+msgid "Name Input Placeholder"
+msgstr ""
+
+#: inc/customizer.php:963
+msgid "Your Email"
+msgstr ""
+
+#: inc/customizer.php:967
+msgid "Email Input Placeholder"
+msgstr ""
+
+#: inc/customizer.php:977
+msgid "Subject"
+msgstr ""
+
+#: inc/customizer.php:981
+msgid "Subject Input Placeholder"
+msgstr ""
+
+#: inc/customizer.php:991
+msgid "Your Message"
+msgstr ""
+
+#: inc/customizer.php:995
+msgid "Message Input Placeholder"
+msgstr ""
+
+#: inc/customizer.php:1004
+msgid "Send Message"
+msgstr ""
+
+#: inc/customizer.php:1008
+msgid "Button Label"
+msgstr ""
+
+#: inc/customizer.php:1023
+msgid "Disable reCAPTCHA?"
+msgstr ""
+
+#: inc/customizer.php:1037
+msgid "reCAPTCHA site key"
+msgstr ""
+
+#: inc/customizer.php:1050
+msgid "reCAPTCHA secret key"
+msgstr ""
+
+#: inc/customizer.php:1064
+msgid "Contact form shortcode"
+msgstr ""
+
+#: inc/customizer.php:1090
+msgid "Footer options"
+msgstr ""
+
+#: inc/customizer.php:1092
+msgid ""
+"The main content of this section is customizable in: Customize -> Widgets -> "
+"Footer area. "
+msgstr ""
+
+#: inc/customizer.php:1107
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer.php:1159
+msgid "Documentation"
+msgstr ""
+
+#: inc/customizer.php:1160
+msgid "View PRO version"
+msgstr ""
+
+#: inc/customizer.php:1161
+msgid "Support Forum"
+msgstr ""
+
+#: inc/extras.php:52
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:26
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:55
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:109
+#, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:116
+#: inc/template-tags.php:115
+#, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:122
+#: inc/template-tags.php:121
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:122
+#: inc/template-tags.php:121
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:122
+#: inc/template-tags.php:121
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:143
+#: inc/template-tags.php:142
+#, php-format
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:145
+#: inc/template-tags.php:144
+#, php-format
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:147
+#: inc/template-tags.php:146
+#, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:149
+#: inc/template-tags.php:148
+#, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:149
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:151
+#: inc/template-tags.php:150
+#, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:151
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: inc/template-tags.php:153
+#: inc/template-tags.php:152
+#, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:153
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: inc/template-tags.php:155
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/template-tags.php:157
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/template-tags.php:159
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/template-tags.php:161
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: inc/template-tags.php:163
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: inc/template-tags.php:165
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: inc/template-tags.php:167
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: inc/template-tags.php:169
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: inc/template-tags.php:171
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: inc/template-tags.php:173
+#: inc/template-tags.php:174
+#, php-format
 msgid "Archives: %s"
 msgstr ""
 
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-
-#: inc/template-tags.php:177
+#: inc/template-tags.php:178
+#, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:179
+#: inc/template-tags.php:180
 msgid "Archives"
 msgstr ""
 
-#: search.php:16
-msgid "Search Results for: %s"
-msgstr ""
-#. Theme Name of the plugin/theme
-msgid "_s"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+#: inc/class/parallax-one-general-control.php:56
+#: inc/class/parallax-one-general-control.php:96
+#: inc/class/parallax-one-general-control.php:143
+msgid "Parallax One"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
+#: inc/class/parallax-one-general-control.php:62
+#: inc/class/parallax-one-general-control.php:102
+#: inc/class/parallax-one-general-control.php:150
+#: inc/class/parallax-one-happy-customer-widget.php:74
+#: inc/class/parallax-one-our-services-widget.php:73
+#: inc/class/parallax-one-our-team-widget.php:167
+msgid "Upload Image"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Automattic"
+#: inc/class/parallax-one-general-control.php:68
+#: inc/class/parallax-one-general-control.php:107
+#: inc/class/parallax-one-general-control.php:155
+#: inc/class/parallax-one-our-services-widget.php:66
+#: inc/class/parallax-one-our-services-widget.php:77
+msgid "Icon"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+#: inc/class/parallax-one-general-control.php:79
+#: inc/class/parallax-one-general-control.php:80
+#: inc/class/parallax-one-general-control.php:123
+#: inc/class/parallax-one-general-control.php:124
+#: inc/class/parallax-one-general-control.php:171
+#: inc/class/parallax-one-general-control.php:172
+#: inc/class/parallax-one-happy-customer-widget.php:68
+msgid "Text"
+msgstr ""
+
+#: inc/class/parallax-one-general-control.php:84
+#: inc/class/parallax-one-general-control.php:85
+#: inc/class/parallax-one-general-control.php:128
+#: inc/class/parallax-one-general-control.php:129
+#: inc/class/parallax-one-general-control.php:176
+#: inc/class/parallax-one-general-control.php:177
+msgid "Link"
+msgstr ""
+
+#: inc/class/parallax-one-general-control.php:87
+#: inc/class/parallax-one-general-control.php:131
+#: inc/class/parallax-one-general-control.php:180
+#: inc/class/parallax-one-our-team-widget.php:203
+#: inc/class/parallax-one-our-team-widget.php:233
+msgid "Delete field"
+msgstr ""
+
+#: inc/class/parallax-one-general-control.php:197
+#: inc/class/parallax-one-our-team-widget.php:247
+msgid "Add new field"
+msgstr ""
+
+#: inc/class/parallax-one-happy-customer-widget.php:59
+msgid "Customer name"
+msgstr ""
+
+#: inc/class/parallax-one-happy-customer-widget.php:64
+msgid "Customer details"
+msgstr ""
+
+#: inc/class/parallax-one-our-services-widget.php:63
+msgid "Image type:"
+msgstr ""
+
+#: inc/class/parallax-one-our-services-widget.php:67
+msgid "Empty"
+msgstr ""
+
+#: inc/class/parallax-one-our-services-widget.php:92
+msgid "Service title"
+msgstr ""
+
+#: inc/class/parallax-one-our-services-widget.php:97
+msgid "Service content"
+msgstr ""
+
+#: inc/class/parallax-one-our-team-widget.php:171
+msgid "Name"
+msgstr ""
+
+#: inc/class/parallax-one-our-team-widget.php:176
+msgid "Position"
+msgstr ""
+
+#: inc/class/parallax-one-our-team-widget.php:187
+#: inc/class/parallax-one-our-team-widget.php:213
+msgid "Social icon"
+msgstr ""
+
+#: inc/class/parallax-one-our-team-widget.php:198
+#: inc/class/parallax-one-our-team-widget.php:228
+msgid "Social icon link"
+msgstr ""
+
+#: sections/parallax_one_latest_news_section.php:96
+msgid "by"
+msgstr ""
+
+#: sections/parallax_one_latest_news_section.php:106
+msgid "Read more"
 msgstr ""

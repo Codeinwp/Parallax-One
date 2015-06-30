@@ -1130,6 +1130,50 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_text_control' => false,
         'parallax_link_control' => true
 	) ) );
+	
+	
+	/********************************************************/
+	/********************* APPEARANCE  **********************/
+	/********************************************************/
+	
+	$wp_customize->add_setting( 'parallax_one_text_color', array( 
+		'default' => '#313131',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+		
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'parallax_one_text_color',
+			array(
+				'label'      => __( 'Text color', 'parallax-one' ),
+				'section'    => 'colors',
+				'settings'   => 'parallax_one_text_color',
+				'priority'   => 5
+			)
+		)
+	);
+	
+	
+	$wp_customize->add_setting( 'parallax_one_title_color', array( 
+		'default' => '#454545',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+		
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'parallax_one_title_color',
+			array(
+				'label'      => __( 'Title color', 'parallax-one' ),
+				'section'    => 'colors',
+				'settings'   => 'parallax_one_title_color',
+				'priority'   => 6
+			)
+		)
+	);
+	
+	
 
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );

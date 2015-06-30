@@ -523,3 +523,17 @@ function parallax_one_register_required_plugins() {
 	tgmpa( $plugins, $config );
  
 }
+
+add_action('wp_footer','parallax_one_php_style', 100);
+function parallax_one_php_style() {
+	echo '<style type="text/css">';
+	$parallax_one_title_color = get_theme_mod('parallax_one_title_color');
+	if(!empty($parallax_one_title_color)){
+		echo '.dark-text { color: '. $parallax_one_title_color .' }';
+	}
+	$parallax_one_text_color = get_theme_mod('parallax_one_text_color');
+	if(!empty($parallax_one_text_color)){
+		echo 'body{ color: '.$parallax_one_text_color.'}';
+	}
+	echo '</style>';
+}

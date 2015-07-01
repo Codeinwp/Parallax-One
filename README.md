@@ -31,6 +31,9 @@
 		* images/background-images/background.jpg
 			Source: https://download.unsplash.com/31/8jLdwLg6TLKIQfJcZgDb_Freedom_5.jpg
 
+		* images/background-images/parallax-img/parallax-img1.jpg
+			Source: https://download.unsplash.com/photo-1434626881859-194d67b2b86f
+
 	 	* images/team/1.jpg
 			Source: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
 			

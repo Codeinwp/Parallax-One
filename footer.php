@@ -60,7 +60,7 @@
 					global $wp_customize;
 				
 					/* COPYRIGHT */
-					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','&copy;Themeisle');
+					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','Themeisle');
 					
 					if( !empty($paralax_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($paralax_one_copyright).'</span>';
@@ -79,6 +79,7 @@
 				
 					/* SOCIAL ICONS */
 				
+					$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons',json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))));
 
 					if( !empty( $parallax_one_social_icons ) ){
 						

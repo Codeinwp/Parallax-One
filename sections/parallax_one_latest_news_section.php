@@ -9,15 +9,16 @@
 		$parallax_one_latest_news_show = get_theme_mod('parallax_one_latest_news_show');
 		
 		if( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ){
-			echo '<section class="brief timeline grey-bg" id="latestnews">';
+			echo '<section class="brief timeline" id="latestnews">';
 		} elseif ( isset( $wp_customize )   ) {
-			echo '<section class="brief timeline grey-bg paralax_one_only_customizer" id="latestnews">';
+			echo '<section class="brief timeline paralax_one_only_customizer" id="latestnews">';
 		}	
 		
 		if( ( isset($parallax_one_latest_news_show) && $parallax_one_latest_news_show != 1 ) || isset( $wp_customize ) ) {	
 
 	?>
 
+				<div class="section-overlay-layer">
 					<div class="container">
 						
 						<div class="row">
@@ -127,7 +128,8 @@
 
 						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 	<?php
 		} 
 	}

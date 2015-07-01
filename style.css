@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
-Tags:
+Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -496,7 +496,7 @@ big {
 }
 
 *:focus {
-    outline: 0;
+    outline: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -685,15 +685,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	text-shadow: none;
 	border: none;
 	border-radius: 3px;
@@ -702,7 +699,7 @@ input[type="submit"] {
 	font-size: 12px;
 	line-height: 1.6;
 	border: none;
-	padding: 10px 30px 8px 30px;
+	padding: 10px 30px 10px 30px;
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
@@ -737,7 +734,7 @@ input[type="password"],
 input[type="search"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
+	border: 1px solid #dedede;
 	border-radius: 3px;
 }
 
@@ -755,18 +752,19 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 10px;
 }
 
 textarea {
-	padding-left: 3px;
 	width: 100%;
+	height: auto;
+	min-height: 150px;
+	padding: 10px;
 }
 
 .input-box,
 .textarea-box {
 	margin-bottom: 15px;
-	margin-top: 15px;
 	outline: 0;
 	border: 0;
 	-webkit-box-shadow: none;
@@ -774,16 +772,20 @@ textarea {
 	border: 1px solid #dedede;
 	border-radius: 3px;
 	color: #999999;
-	padding-left: 21px;
 	line-height: auto;
 }
 
 .input-box {
-	min-height: 50px;
+	min-height: 45px;
 }
 
 .textarea-box {
-	padding-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+textarea.form-control {
+	min-height: 100px;
 }
 
 .input-box:active,
@@ -794,6 +796,19 @@ textarea {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
+
+. { 
+	background: #008ed6;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
+	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
+	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
+	-webkit-box-shadow: 0px 3px 0px #005885;
+	box-shadow: 0px 3px 0px #005885;
+}
+
 
 /* --------------------------------------
 =========================================
@@ -1224,6 +1239,14 @@ h2.site-description {
 	position: relative;
 }
 
+.services {
+	background-color: #F7F8FA;
+	border-bottom: 1px solid #eaebec;
+}
+
+.services .section-overlay-layer {
+}
+
 .single-service {
 	padding: 40px 35px 40px 35px;
 	margin: 0 0 50px 0;
@@ -1264,6 +1287,11 @@ h2.site-description {
    3.4 SECTION: APP BRIEF    
 -----------------------------------------*/
 .brief {
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.brief .section-overlay-layer {
 	padding-top: 80px;
 	padding-bottom: 115px;
 }
@@ -1628,6 +1656,16 @@ h2.site-description {
 /*---------------------------------------
    3.9 VERTICAL TIMELINE
 -----------------------------------------*/
+.latest-news {
+	background-color: #F7F8FA;
+	border-bottom: 1px solid #eaebec;
+}
+
+.latest-news .section-overlay-layer {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
 .vertical-timeline {
 	padding: 0;
 	margin: 0;
@@ -1830,6 +1868,11 @@ a.control_next.fade-btn {
    3.10 SECTION: TEAM
 -----------------------------------------*/
 .team {
+	background-color: #FFF;	
+	border-bottom: 1px solid #eaebec;
+}
+
+.team .section-overlay-layer {
 	padding-bottom: 50px;
 }
 
@@ -1935,8 +1978,13 @@ a.control_next.fade-btn {
    3.11 SECTION: TESTIMONIALS
 -----------------------------------------*/
 .testimonials {
-	padding-bottom: 20px;
 	text-align: center;
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.testimonials .section-overlay-layer {
+	padding-bottom: 20px;
 }
 
 .feedback {
@@ -2024,15 +2072,20 @@ a.control_next.fade-btn {
    3.12 SECTION: CALL TO ACTION
 -----------------------------------------*/
 .call-to-action {
-    background: transparent;
-    -webkit-background-size: cover;
-    background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
 }
 
-.call-to-action .overlay-layer-2 {
-    padding-top: 100px;
-    padding-bottom: 100px;
+.call-to-action .section-overlay-layer {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background: rgba(0, 5, 8, 0.80);
 }
+
 .call-to-action h2 {
 	margin-top: 20px;
 	margin-bottom: 50px;
@@ -2056,6 +2109,12 @@ a.control_next.fade-btn {
    3.13 SECTION: CONTACT INFO
 -----------------------------------------*/
 .contact-info {
+	text-align: center;
+	background-color: #FFF;
+	border-bottom: 1px solid #eaebec;
+}
+
+.contact-info .section-overlay-layer {
 	padding-top: 30px;
 	padding-bottom: 70px;
 }
@@ -2197,17 +2256,17 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce ul.products li.product .button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	color: #FFF;
 	font-weight: normal;
+	border: none;
+	padding-top: 1px;
+	padding-bottom: 4px;
 }
 
 .woocommerce ul.products li.product .button:hover {
@@ -2406,15 +2465,12 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce div.product form.cart .button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	border-radius: 3px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -2815,6 +2871,25 @@ div.wpcf7-mail-sent-ng {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	border: none;
+}
+
+.woocommerce .woocommerce-error .button {
+	border: none;
+	float: right;
+	background-color: rgba(0,0,0,0.2);
+	color: #fff;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 16px;
+	margin-top: -5px;
+	margin-bottom: -5px;
+	padding: 7px;
+}
+
+.woocommerce .woocommerce-error .button:hover {
+	color: #E86A6A;
+	border: none;
 }
 
 .woocommerce .woocommerce-error a {
@@ -3410,21 +3485,18 @@ a:hover {
 /* BUTTONS*/
 .standard-button,
 .navbar-register-button {
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTlmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDhlZDYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
+	background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;
+	background-color: #00a5f9;
+	background-size: contain;
+	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .standard-button:hover,
 .navbar-register-button:hover {
 	color: #ffffff;
-	background: #008ed6 !important;
+	background: #008ed6;
 	text-decoration: none;
 }
 
@@ -3897,6 +3969,18 @@ h2.screen-reader-text {
 	padding: 0 0 15px;
 	border-bottom: 1px solid #ececec;
 	margin-bottom: 15px;
+}
+
+.wp-caption-text {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+	
 }
 
 /* --------------------------------------

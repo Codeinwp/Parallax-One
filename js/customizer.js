@@ -380,6 +380,19 @@
 		} );
 	} );
 	
+	wp.customize( 'paralax_one_ribbon_background', function( value ) {
+		value.bind( function( to ) {
+			
+			if ( '' != to ) {
+				$( '#ribbon' ).attr( 'style','background-image:url('+to+')' );
+			} else {
+				$( '#ribbon' ).removeAttr('style');
+			}
+			
+		} );
+	} );	
+	
+	
 	
 	//Title
 	wp.customize("parallax_one_ribbon_title", function(value) {

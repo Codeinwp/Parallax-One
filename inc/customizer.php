@@ -20,23 +20,11 @@ function parallax_one_customize_register( $wp_customize ) {
 	/************** WP DEFAULT CONTROLS  ********************/
 	/********************************************************/
 	
-	$wp_customize->get_control('background_image')->section='colors';
-	$wp_customize->get_control('background_repeat')->section='colors';
-	$wp_customize->get_control('background_position_x')->section='colors';
-	$wp_customize->get_control('background_attachment')->section='colors';
 	$wp_customize->remove_control('background_color');
-	
-	$wp_customize->get_control('background_image')->priority=1;
-	$wp_customize->get_control('background_repeat')->priority=2;
-	$wp_customize->get_control('background_position_x')->priority=3;
-	$wp_customize->get_control('background_attachment')->priority=4;
-	
 	$wp_customize->get_control('background_image')->active_callback='is_front_page';
 	$wp_customize->get_control('background_repeat')->active_callback='is_front_page';
 	$wp_customize->get_control('background_position_x')->active_callback='is_front_page';
 	$wp_customize->get_control('background_attachment')->active_callback='is_front_page';
-	
-	$wp_customize->get_section('colors')->title=__('Appearance Section','parallax-one');
 	
 	/********************************************************/
 	/************** SECTIONS ORDER  ************************/

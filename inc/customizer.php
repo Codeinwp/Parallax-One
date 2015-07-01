@@ -463,7 +463,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	/* About Image	*/
 	$wp_customize->add_setting( 'paralax_one_our_story_image', array(
-		'default' => get_stylesheet_directory_uri().'/images/about-us.jpg',
+		'default' => get_stylesheet_directory_uri().'/images/about-us.png',
 		'sanitize_callback' => 'esc_url'
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(

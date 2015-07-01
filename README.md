@@ -51,3 +51,8 @@
 
 	 	* images/clients/3.jpg
 			Source: https://download.unsplash.com/photo-1427088625471-da8a7193afd3
+
+		* images/about-us.png
+			Source: https://download.unsplash.com/reserve/ysPfhVSzSP2m629CW0mw_selfPortrait.jpg
+			Source: https://download.unsplash.com/photo-1435536949628-9954f4e829cd
+			Source: https://download.unsplash.com/photo-1432921481493-3d589756af70

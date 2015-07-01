@@ -1,5 +1,37 @@
 
 
+### 1.0.0 - 01/07/2015
+
+ Changes: 
+
+
+ * Parallax effect homepage
+ * Contact page form style
+ * small fixes - added control for image on ribbon section and move background controls in appearance
+ * this fixes #75 - added buttons for documentation, support and buy pro
+ * #64 - added tags in style.css
+ * do not display sidebar if is empty
+ * verify variable in general control and in contact section
+ * update theme tags
+ * themecheck fixes
+ * Merge pull request #83 from cristian-ungureanu/development
+
+Development
+ * #65 - regenerate pot file
+ * this fixes #85 - remove active callback
+ * Merge pull request #84 from cristian-ungureanu/development
+
+#65 - regenerate pot file
+ * this fixes #88 - added footer socials back
+ * Fixed #87 Add image source in readme AND Fixed #86 ThemeCheck errors
+ * added color controls for headings and text
+ * Fixed #89 Our story image needs to be replaced
+ * Improved js
+ * Merge pull request #90 from cristian-ungureanu/development
+
+this fixes #88 - added footer socials back
+
+
 ### 1.0.0 - 19/06/2015
 
  Changes: 

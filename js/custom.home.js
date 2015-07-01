@@ -163,32 +163,40 @@ function mainNav() {
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
 function scrolled() {
-    jQuery(this).off('scroll')[0].setTimeout(function(){
-        if ( jQuery(window).width() >= 751 ) {
-            var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
-            var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
-            var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
-            // for all sections check if the cursor is inside a section
-            jQuery("section").each( function() {
-                var thisID = '#' + jQuery(this).attr('id');           // section id
-                var zerif_offset = jQuery(this).offset().top;         // distance between top and our section
-                var thisHeight  = jQuery(this).outerHeight();         // section height
-                var thisBegin   = zerif_offset - headerHeight;                      // where the section begins
-                var thisEnd     = zerif_offset + thisHeight - headerHeight;         // where the section ends  
-                // if position of the cursor is inside of the this section
-                if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
-                    isInOneSection = 'yes';
-                    jQuery('.current').removeClass('current');
-                    jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
-                    return false;
-                }
-                if (isInOneSection == 'no') {
-                    jQuery('.current').removeClass('current');
-                }
-            });
-        }
-        mainNav();
-    jQuery(this).on('scroll', scrolled );
-    }, 500)
+
+    if ( jQuery(window).width() >= 751 ) {
+        var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
+        var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
+        // for all sections check if the cursor is inside a section
+        jQuery("section").each( function() {
+            var thisID = '#' + jQuery(this).attr('id');           // section id
+            var zerif_offset = jQuery(this).offset().top;         // distance between top and our section
+            var thisHeight  = jQuery(this).outerHeight();         // section height
+            var thisBegin   = zerif_offset - headerHeight;                      // where the section begins
+            var thisEnd     = zerif_offset + thisHeight - headerHeight;         // where the section ends  
+            // if position of the cursor is inside of the this section
+            if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+                isInOneSection = 'yes';
+                jQuery('.current').removeClass('current');
+                jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                return false;
+            }
+            if (isInOneSection == 'no') {
+                jQuery('.current').removeClass('current');
+            }
+        });
+    }
+    mainNav();
+
 }
-jQuery(window).on('scroll', scrolled );
+
+var timer;
+jQuery(window).scroll(function(){
+
+    if ( timer ) clearTimeout(timer);
+    timer = setTimeout(function(){
+        scrolled();
+    }, 500);
+
+});

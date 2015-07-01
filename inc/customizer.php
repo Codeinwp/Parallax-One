@@ -12,6 +12,8 @@
  */
 
 function parallax_one_customize_register( $wp_customize ) {
+	
+	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -20,23 +22,13 @@ function parallax_one_customize_register( $wp_customize ) {
 	/************** WP DEFAULT CONTROLS  ********************/
 	/********************************************************/
 	
-	$wp_customize->get_control('background_image')->section='colors';
-	$wp_customize->get_control('background_repeat')->section='colors';
-	$wp_customize->get_control('background_position_x')->section='colors';
-	$wp_customize->get_control('background_attachment')->section='colors';
 	$wp_customize->remove_control('background_color');
-	
-	$wp_customize->get_control('background_image')->priority=1;
-	$wp_customize->get_control('background_repeat')->priority=2;
-	$wp_customize->get_control('background_position_x')->priority=3;
-	$wp_customize->get_control('background_attachment')->priority=4;
-	
+	$wp_customize->get_section('background_image')->panel='panel_2';
+	$wp_customize->get_section('colors')->panel='panel_2';
 	$wp_customize->get_control('background_image')->active_callback='is_front_page';
 	$wp_customize->get_control('background_repeat')->active_callback='is_front_page';
 	$wp_customize->get_control('background_position_x')->active_callback='is_front_page';
 	$wp_customize->get_control('background_attachment')->active_callback='is_front_page';
-	
-	$wp_customize->get_section('colors')->title=__('Appearance Section','parallax-one');
 	
 	/********************************************************/
 	/************** SECTIONS ORDER  ************************/
@@ -135,7 +127,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/********************************************************/
 	/************* HEADER OPTIONS  ********************/
 	/********************************************************/	
-	$wp_customize->add_panel( 'panel_7', array(
+	$wp_customize->add_panel( 'panel_1', array(
 		'priority' => 31,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
@@ -147,7 +139,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_header_show' , array(
 			'title'       => __( 'Settings', 'parallax-one' ),
 			'priority'    => 1,
-			'panel' => 'panel_7'
+			'panel' => 'panel_1'
 	));
 	
 	$wp_customize->add_setting( 'parallax_one_header_show',array(
@@ -174,7 +166,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_header_content' , array(
 			'title'       => __( 'Content', 'parallax-one' ),
 			'priority'    => 2,
-			'panel' => 'panel_7'
+			'panel' => 'panel_1'
 	));
 	
 	/* Header Logo	*/
@@ -254,7 +246,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_header_colors_section' , array(
 		'title'       => __( 'Colors', 'parallax-one' ),
 		'priority'    => 3,
-		'panel' => 'panel_7'
+		'panel' => 'panel_1'
 	));
 	
 	$wp_customize->add_setting( 'parallax_one_header_colors_section' , array(
@@ -273,7 +265,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_logos_settings_section' , array(
 			'title'       => __( 'Logos Bar', 'parallax-one' ),
 			'priority'    => 4,
-			'panel' => 'panel_7'
+			'panel' => 'panel_1'
 	));
 	
     
@@ -1135,6 +1127,12 @@ function parallax_one_customize_register( $wp_customize ) {
 	/********************************************************/
 	/********************* APPEARANCE  **********************/
 	/********************************************************/
+	$wp_customize->add_panel( 'panel_2', array(
+		'priority' => 40,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Appearance', 'parallax-one' )
+	) );
 	
 	$wp_customize->add_setting( 'parallax_one_text_color', array( 
 		'default' => '#313131',

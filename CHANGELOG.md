@@ -5,6 +5,21 @@
  Changes: 
 
 
+ * Fixed #64 Added description and theme uri AND Fixed #91 Comment form looks bad on mobile
+ * Fixed #89 Replaced Our story image
+ * this fixes #93 - disabled comments on full width template too
+ * #75 - panel for background and colors sections
+ * Small issue pinterest style plugin js
+ * Merge pull request #94 from cristian-ungureanu/development
+
+Development
+
+
+### 1.0.0 - 01/07/2015
+
+ Changes: 
+
+
  * Parallax effect homepage
  * Contact page form style
  * small fixes - added control for image on ribbon section and move background controls in appearance

@@ -537,3 +537,8 @@ function parallax_one_php_style() {
 	}
 	echo '</style>';
 }
+
+$pro_functions_path = get_template_directory() . '/Parallax-One-Pro/functions.php';
+if (file_exists($pro_functions_path)) {
+	require $pro_functions_path;
+}

@@ -727,7 +727,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_frontpage_map_shortcode', array(
 		'label'    => __( 'Map shortcode', 'parallax-one' ),
-		'description' => __('To use this section please install Intergeo Maps plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
+		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_section',
 		'active_callback' => 'is_front_page',
 		'settings' => 'parallax_one_frontpage_map_shortcode',
@@ -910,7 +910,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_contact_map_shortcode', array(
 		'label'    => __( 'Map shortcode', 'parallax-one' ),
-		'description' => __('To use this section please install Intergeo Maps plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
+		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_page',
 		'active_callback' => 'parallax_one_is_contact_page',
 		'settings' => 'parallax_one_contact_map_shortcode',

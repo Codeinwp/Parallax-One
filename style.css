@@ -98,7 +98,7 @@ body {
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 14px;
 	line-height: 22px;
-	font-weight: 300;
+	font-weight: 400;
 	color: #313131;
 	text-align: left;
 	overflow-x: hidden !important;
@@ -1744,7 +1744,7 @@ h2.site-description {
 
 .timeline-box-wrap .info h1 {
 	font-size: 20px;
-	line-height: 20px;
+	line-height: 22px;
 	float: left;
 	width: 100%;
 	margin: 0;
@@ -1756,17 +1756,19 @@ h2.site-description {
 
 .timeline-box-wrap .info .entry-content p {
 	margin: 0;
-	line-height: 16px;
+	line-height: 18px;
 	text-align: justify;
 	float: left;
 	width: 100%;
 	min-height: 55px;
+	padding: 2px 0;
 }
 
 .timeline-box-wrap .info .entry-meta {
 	float: left;
 	width: 100%;
 	font-size: 12px;
+	line-height: 22px;
 }
 
 .parallax-slider-whole-wrap {
@@ -3819,6 +3821,12 @@ a:hover {
 	padding-left: 0;
 }
 
+.comment-list .comment-body ol {
+	margin: 0 0 1.5em 0;
+	padding-left: 20px;
+	list-style: decimal;
+}
+
 .comment-list ol.children {
 	margin-left: 50px;
 }
@@ -3882,7 +3890,7 @@ h2.screen-reader-text {
 .comment-list .comment-metadata {
 	color: #008ed6;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 16px;
 	font-style: italic;
 }
 
@@ -3894,9 +3902,9 @@ h2.screen-reader-text {
 }
 
 .comment-list .comment-content {
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 .comment-list .reply {
@@ -3912,7 +3920,8 @@ h2.screen-reader-text {
 	padding-left: 100px;
 }
 
-.comment-form p.comment-notes {
+.comment-form p.comment-notes,
+.comment-form p.logged-in-as {
 	width: 100%;
 	padding-left: 0;
 }

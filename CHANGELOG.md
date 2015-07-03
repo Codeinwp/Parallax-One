@@ -1,5 +1,13 @@
 
 
+### 1.0.0 - 03/07/2015
+
+ Changes: 
+
+
+ * Revert "Development"
+
+
 ### 1.0.0 - 01/07/2015
 
  Changes: 

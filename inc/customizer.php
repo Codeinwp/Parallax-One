@@ -29,26 +29,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_control('background_repeat')->active_callback='is_front_page';
 	$wp_customize->get_control('background_position_x')->active_callback='is_front_page';
 	$wp_customize->get_control('background_attachment')->active_callback='is_front_page';
-	
-	/********************************************************/
-	/************** SECTIONS ORDER  ************************/
-	/********************************************************/
 
-	require_once ( 'class/parallax-one-display-message-custom-control.php');
-	$wp_customize->add_section( 'parallax_one_sections_order_in_pro' , array(
-			'title'       => __( 'Sections order', 'parallax-one' ),
-			'priority'    => 29,
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_sections_order_in_pro', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_sections_order_in_pro',
-		array(
-			'section' => 'parallax_one_sections_order_in_pro'
-	   ), __('Check out the PRO version for full control over homepage sections order !','parallax-one')
-	));	
 
 
 	/********************************************************/
@@ -240,31 +221,11 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'parallax_one_header_button_link' )->transport = 'postMessage';
 	
 	
-
-	
-	/* HEADER COLORS */
-	$wp_customize->add_section( 'parallax_one_header_colors_section' , array(
-		'title'       => __( 'Colors', 'parallax-one' ),
-		'priority'    => 3,
-		'panel' => 'panel_1'
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_header_colors_section' , array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_header_colors_section',
-		array(
-			'section' => 'parallax_one_header_colors_section',
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));
-	
 	/* LOGOS SETTINGS */
 	
 	$wp_customize->add_section( 'parallax_one_logos_settings_section' , array(
 			'title'       => __( 'Logos Bar', 'parallax-one' ),
-			'priority'    => 4,
+			'priority'    => 3,
 			'panel' => 'panel_1'
 	));
 	
@@ -365,34 +326,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'priority'    => 3
 	));
 	$wp_customize->get_setting( 'parallax_one_our_services_subtitle' )->transport = 'postMessage';
-	
-	
-	$wp_customize->add_setting( 'parallax_one_our_services_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_services_content',
-		array(
-			'section' => 'parallax_one_services_section',
-			'label' => __('Content','parallax-one'),
-			'active_callback' => 'is_front_page',
-			'priority' => 4
-	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Services section. There you must add the "Parallax One - Services widget"','parallax-one')
-	));
-	
-	
-	$wp_customize->add_setting( 'parallax_one_our_services_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_services_colors_section',
-		array(
-			'section' => 'parallax_one_services_section',
-			'label' => __('Colors','parallax-one'),
-			'active_callback' => 'is_front_page',
-			'priority' => 5
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));	
+    
 
 	/********************************************************/
 	/******************** ABOUT OPTIONS  ********************/
@@ -472,29 +406,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
 
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_story_image_position',
-		array(
-			'label'    => __( 'Image Position', 'parallax-one' ),
-			'section' => 'parallax_one_about_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 4
-	   ),__('Check out the PRO version for full control over the image position !','parallax-one')
-	));
-	
-	
-	$wp_customize->add_setting( 'parallax_one_our_story_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_story_colors_section',
-		array(
-			'section' => 'parallax_one_about_section',
-			'label' => __('Colors','parallax-one'),
-			'priority' => 5,
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));	
-
 	/********************************************************/
 	/*******************  TEAM OPTIONS  *********************/
 	/********************************************************/
@@ -555,29 +466,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'parallax_one_our_team_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_content',
-		array(
-			'section' => 'parallax_one_team_section',
-			'label' => __('Content','parallax-one'),
-			'priority' => 4,
-			'active_callback' => 'is_front_page'
-	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Team section. There you must add the "Parallax One - Team widget"','parallax-one')
-	));
-	
-	
-	$wp_customize->add_setting( 'parallax_one_our_team_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_our_team_colors_section',
-		array(
-			'section' => 'parallax_one_team_section',
-			'label' => __('Colors','parallax-one'),
-			'priority' => 5,
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));	
+    
 
 	/********************************************************/
 	/********** TESTIMONIALS OPTIONS  ***********************/
@@ -641,32 +530,12 @@ function parallax_one_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
 
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_happy_customers_content',
-		array(
-			'section' => 'parallax_one_testimonials_section',
-			'label' => __('Content','parallax-one'),
-			'priority'    => 4,
-			'active_callback' => 'is_front_page'
-	   ),__('The main content of this section is customizable in: Customize -> Widgets -> Testimonials section. There you must add the "Parallax One - Testimonials widget"','parallax-one')
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_happy_customers_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
 
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_happy_customers_colors_section',
-		array(
-			'section' => 'parallax_one_testimonials_section',
-			'label' => __('Colors','parallax-one'),
-			'priority'    => 5,
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));
-	
 	/********************************************************/
 	/***************** RIBBON OPTIONS  *****************/
 	/********************************************************/
 	
+    
 	/* RIBBON SETTINGS */
 	$wp_customize->add_section( 'parallax_one_ribbon_section' , array(
 		'title'       => __( 'Ribbon section', 'parallax-one' ),
@@ -745,24 +614,12 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->get_setting( 'parallax_one_button_link' )->transport = 'postMessage';
 	
-	$wp_customize->add_setting( 'parallax_one_ribbon_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_ribbon_colors_section',
-		array(
-			'section' => 'parallax_one_ribbon_section',
-			'label' => __('Colors','parallax-one'),
-			'priority' => 6,
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));
-	
 
 	/********************************************************/
 	/************ LATEST NEWS OPTIONS  **************/
 	/********************************************************/
 	
+    
 	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
 			'title'       => __( 'Latest news section', 'parallax-one' ),
 			'priority'    => 36
@@ -877,20 +734,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'priority'    => 4
 	));
 	
-
-	
-	$wp_customize->add_setting( 'parallax_one_contact_info_colors_section', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control( new Parallax_One_Display_Message( $wp_customize, 'parallax_one_contact_info_colors_section',
-		array(
-			'section' => 'parallax_one_contact_section',
-			'priority' => 5,
-			'label' => __('Colors','parallax-one'),
-			'active_callback' => 'is_front_page'
-	   ), __('Check out the PRO version for full control over the color scheme !','parallax-one')
-	));
     
 	/********************************************************/
 	/*************** CONTACT PAGE OPTIONS  ******************/

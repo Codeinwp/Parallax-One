@@ -240,11 +240,10 @@ function parallax_widget_init(){
 	
 	register_widget( 'parallax_one_happy_customer_widget' );
 	register_widget( 'parallax_one_our_team_widget' );
-	register_widget( 'parallax_one_our_services_widget' );
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
 	
-	$parallax_one_sidebars = array ('parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' , 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar' , 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar' );
+	$parallax_one_sidebars = array ('parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar' , 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar');
 	
 	/* Register sidebar */
 	foreach ( $parallax_one_sidebars as $parallax_one_sidebar ):
@@ -284,8 +283,6 @@ function parallax_widget_init(){
 /********* JS Widget Scripts ************/
 /********************************************/
 
-require_once ( 'inc/class/parallax-one-our-services-widget.php');
-
 require_once ( 'inc/class/parallax-one-our-team-widget.php');
 
 require_once ( 'inc/class/parallax-one-happy-customer-widget.php');
@@ -295,8 +292,6 @@ add_action('admin_enqueue_scripts', 'parallax_one_our_services_widget_scripts');
 function parallax_one_our_services_widget_scripts() {
 
     wp_enqueue_media();
-
-    wp_enqueue_script('paralax_one_our_services_widget_script', get_template_directory_uri() . '/js/widget-services.js', false, '1.0', true);
 
 	wp_enqueue_script('paralax_one_team_widget_script', get_template_directory_uri() . '/js/widget-team.js', false, '1.0', true);
 	
@@ -315,43 +310,6 @@ function parallax_one_default_widgets()
 	$parallax_one_sidebars = array ( 'parallax-one-logos-sidebar' => 'parallax-one-logos-sidebar', 'parallax-one-services-sidebar' => 'parallax-one-services-sidebar', 'parallax-one-team-sidebar' => 'parallax-one-team-sidebar',  'parallax-one-customers-sidebar' => 'parallax-one-customers-sidebar'   );
 	
 	$active_widgets = get_option( 'sidebars_widgets' );
-
-
-	/* Default Our Services widgets */
-	
-	if ( empty ( $active_widgets[ $parallax_one_sidebars['parallax-one-services-sidebar'] ] ) ):
-
-		$parallax_one_counter = 1;
-		
-		$active_widgets[ 'parallax-one-services-sidebar' ][0] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
-		
-		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-webpage-multiple', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-		
-		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
-		
-		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-ecommerce-graph3', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-		
-		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
-	 
-		$parallax_one_counter++;
-		
-		
-		$active_widgets[ 'parallax-one-services-sidebar' ][] = 'parallax_one_our_services_widget-' . $parallax_one_counter;
-		
-		$our_services_content[ $parallax_one_counter ] = array ( 'service_title' => __( 'Lorem Ipsum','parallax-one' ), 'service_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'services_icon' => 'icon-basic-geolocalize-05', 'image_uri' => '', 'parallax_one_icon_type_our_services' => 'parallax_icon' );
-		
-		update_option( 'widget_parallax_one_our_services_widget', $our_services_content );
-	 
-		$parallax_one_counter++;
-		
-		update_option( 'sidebars_widgets', $active_widgets );
-		
-    endif;
 	
 	
 	/* Default Our Team widgets */

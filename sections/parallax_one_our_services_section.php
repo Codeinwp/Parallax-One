@@ -43,9 +43,46 @@
 				
 				
                 <?php
-                    if( is_active_sidebar( 'parallax-one-services-sidebar' ) ){
+					$parallax_one_services = get_theme_mod('parallax_one_services_content',
+						json_encode(
+							array(
+									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-webpage-multiple','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
+									array('choice'=>'parallax_icon','icon_value' => 'icon-ecommerce-graph3','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
+									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one'))
+							)
+						)
+					);
+					$parallax_one_services_decoded = json_decode($parallax_one_services);
+		
+                    if( !empty($parallax_one_services_decoded) ){
                         echo '<div class="row services-wrap">';
-                        dynamic_sidebar( 'parallax-one-services-sidebar' );
+							foreach($parallax_one_services_decoded as $parallax_one_service_box){
+								if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_uri)  && $parallax_one_service_box->image_uri == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
+									echo '<div class="service-box"><div class="single-service border-bottom-hover">';
+
+										if( !empty($parallax_one_service_box->choice) && $parallax_one_service_box->choice !== 'parallax_none'  ){
+											if ( $parallax_one_service_box->choice == 'parallax_icon' ){
+												if( !empty($parallax_one_service_box->icon_value) ) {
+													echo '<div class="service-icon colored-text"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></div>';
+												}
+											}
+											if( $parallax_one_service_box->choice == 'parallax_image' ){
+												if( !empty($parallax_one_service_box->image_uri)){
+													echo '<img src="'.esc_url($parallax_one_service_box->image_uri).'"/>';
+												}
+											}
+										}
+
+										if(!empty($parallax_one_service_box->title)){
+											echo '<h3 class="colored-text">'.esc_attr($parallax_one_service_box->title).'</h3>';
+										}
+
+										if(!empty($parallax_one_service_box->text)){
+											echo '<p>'. esc_attr($parallax_one_service_box->text).'</p>';
+										}
+									echo '</div></div>';
+								}
+							}
                         echo '</div>';
                     }
                 ?>

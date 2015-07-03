@@ -327,7 +327,29 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->get_setting( 'parallax_one_our_services_subtitle' )->transport = 'postMessage';
     
-
+    
+    /* Services content */
+	$wp_customize->add_setting( 'parallax_one_services_content', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default' => json_encode(
+							array(
+									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-webpage-multiple','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
+									array('choice'=>'parallax_icon','icon_value' => 'icon-ecommerce-graph3','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
+									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => __('Lorem Ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one'))
+							)
+						)
+	));
+	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_services_content', array(
+		'label'   => __('Add new service box','parallax-one'),
+		'section' => 'parallax_one_services_section',
+		'settings' => 'parallax_one_services_content',
+		'active_callback' => 'is_front_page',
+		'priority' => 4,
+        'parallax_image_control' => true,
+        'parallax_icon_control' => true,
+		'parallax_title_control' => true,
+        'parallax_text_control' => true
+	) ) );
 	/********************************************************/
 	/******************** ABOUT OPTIONS  ********************/
 	/********************************************************/

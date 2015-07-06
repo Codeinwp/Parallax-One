@@ -841,29 +841,39 @@ function parallax_one_customize_register( $wp_customize ) {
       	'description' => __('Paralax One theme general options','parallax-one'),
 	));
 	
-	
+	$blogname = $wp_customize->get_control('blogname');
+	$blogdescription = $wp_customize->get_control('blogdescription');
 	$show_on_front = $wp_customize->get_control('show_on_front');
 	$page_on_front = $wp_customize->get_control('page_on_front');
 	$page_for_posts = $wp_customize->get_control('page_for_posts');
+	if(!empty($blogname)){
+		$blogname->section = 'parallax_one_general_section';
+		$blogname->priority = 1;
+	}
+	if(!empty($blogdescription)){
+		$blogdescription->section = 'parallax_one_general_section';
+		$blogdescription->priority = 2;
+	}
 	if(!empty($show_on_front)){
 		$show_on_front->section='parallax_one_general_section';
-		$show_on_front->priority=1;
+		$show_on_front->priority=3;
 	}
 	if(!empty($page_on_front)){
 		$page_on_front->section='parallax_one_general_section';
-		$page_on_front->priority=2;
+		$page_on_front->priority=4;
 	}
 	if(!empty($page_for_posts)){
 		$page_for_posts->section='parallax_one_general_section';
-		$page_for_posts->priority=3;
+		$page_for_posts->priority=5;
 	}
 	
 	$wp_customize->remove_section('static_front_page');
+	$wp_customize->remove_section('title_tagline');
 	
 	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
 	if(!empty($nav_menu_locations_primary)){
 		$nav_menu_locations_primary->section = 'parallax_one_general_section';
-		$nav_menu_locations_primary->priority = 4;
+		$nav_menu_locations_primary->priority = 6;
 	}
 	
 	/* Disable preloader */
@@ -878,7 +888,7 @@ function parallax_one_customize_register( $wp_customize ) {
 				'description' => __('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
 				'section' => 'parallax_one_general_section',
 				'settings' => 'paralax_one_disable_preloader',
-				'priority'    => 6,
+				'priority'    => 7,
 			)
 	);
 	
@@ -895,10 +905,12 @@ function parallax_one_customize_register( $wp_customize ) {
 				'description' => __('If this box is checked, the comments will be disabled on pages.','parallax-one'),
 				'section' => 'parallax_one_general_section',
 				'settings' => 'paralax_one_disable_comments_on_pages',
-				'priority'    => 7,
+				'priority'    => 8,
 			)
 	);
 
+
+	
 	
 	
 

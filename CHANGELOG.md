@@ -1,5 +1,20 @@
 
 
+### 1.0.0 - 06/07/2015
+
+ Changes: 
+
+
+ * fixed undefined value error #82
+ * Fixed #101 blog font weight AND #102 font comments small AND #104 comments form un-aligned
+ * Fixed #98 Header menu appears late on scroll
+ * optimized images
+ * Fixed #101 blog font weight AND #102 font on comment
+ * Fixed #108 Font on post meta
+ * Fixed #109 Visual issue on sidebar
+ * Increased font size
+
+
 ### 1.0.0 - 03/07/2015
 
  Changes: 

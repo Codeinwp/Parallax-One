@@ -1763,6 +1763,7 @@ h2.site-description {
 
 .timeline-box-wrap .info .entry-content p {
 	margin: 0;
+	font-size: 14px;
 	line-height: 18px;
 	text-align: justify;
 	float: left;
@@ -1774,7 +1775,13 @@ h2.site-description {
 .timeline-box-wrap .info .entry-meta {
 	float: left;
 	width: 100%;
-	font-size: 12px;
+	font-size: 13px;
+	line-height: 22px;
+	font-weight: 400;
+}
+
+.timeline-box-wrap .read-more {
+	font-size: 13px;
 	line-height: 22px;
 }
 
@@ -3835,9 +3842,10 @@ a:hover {
 .entry-content,
 .entry-content p,
 .entry-content span {
-	text-align: justify;
 	font-weight: 400;
 	color: #666666;
+	font-size: 16px;
+	line-height: 26px;
 }
 
 .cat-links,

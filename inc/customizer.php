@@ -115,38 +115,11 @@ function parallax_one_customize_register( $wp_customize ) {
 		'title' => __( 'Header section', 'parallax-one' )
 	) );
 	
-	/* HEADER SETTINGS */
-	
-	$wp_customize->add_section( 'parallax_one_header_show' , array(
-			'title'       => __( 'Settings', 'parallax-one' ),
-			'priority'    => 1,
-			'panel' => 'panel_1'
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_header_show',array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_header_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Header section?','parallax-one'),
-			'description' => __('If you check this box, the Header section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_header_show',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1,
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_header_show' )->transport = 'postMessage';
-	
-	
 	/* HEADER CONTENT */
 	
 	$wp_customize->add_section( 'parallax_one_header_content' , array(
 			'title'       => __( 'Content', 'parallax-one' ),
-			'priority'    => 2,
+			'priority'    => 1,
 			'panel' => 'panel_1'
 	));
 	
@@ -225,7 +198,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_logos_settings_section' , array(
 			'title'       => __( 'Logos Bar', 'parallax-one' ),
-			'priority'    => 3,
+			'priority'    => 2,
 			'panel' => 'panel_1'
 	));
 	
@@ -242,31 +215,12 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section' => 'parallax_one_logos_settings_section',
 		'settings' => 'parallax_one_logos_content',
 		'active_callback' => 'is_front_page',
-		'priority' => 2,
+		'priority' => 1,
         'parallax_image_control' => true,
         'parallax_icon_control' => false,
         'parallax_text_control' => false,
         'parallax_link_control' => true
 	) ) );
-    
-	
-	$wp_customize->add_setting( 'parallax_one_logos_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_logos_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Logos section?','parallax-one'),
-			'description' => __('If you check this box, the Logos section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_logos_settings_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_logos_show' )->transport = 'postMessage';
 	
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
@@ -274,30 +228,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	
 	/* SERVICES SECTION */
-	
-	$wp_customize->add_section( 'parallax_one_services_section' , array(
-			'title'       => __( 'Services section', 'parallax-one' ),
-			'priority'    => 32,
-	));
-	
-	$wp_customize->add_setting( 'parallax_one_our_services_show',array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
 
-	$wp_customize->add_control(
-		'parallax_one_our_services_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Services section?','parallax-one'),
-			'description' => __('If you check this box, the Services section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_services_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_our_services_show' )->transport = 'postMessage';
-	
 	
 	/* Services title */
 	$wp_customize->add_setting( 'parallax_one_our_services_title', array(
@@ -309,7 +240,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_services_section',
 		'settings' => 'parallax_one_our_services_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2
+		'priority'    => 1
 	));
 	$wp_customize->get_setting( 'parallax_one_our_services_title' )->transport = 'postMessage';
 	
@@ -323,7 +254,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_services_section',
 		'settings' => 'parallax_one_our_services_subtitle',
 		'active_callback' => 'is_front_page',
-		'priority'    => 3
+		'priority'    => 2
 	));
 	$wp_customize->get_setting( 'parallax_one_our_services_subtitle' )->transport = 'postMessage';
     
@@ -344,7 +275,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section' => 'parallax_one_services_section',
 		'settings' => 'parallax_one_services_content',
 		'active_callback' => 'is_front_page',
-		'priority' => 4,
+		'priority' => 3,
         'parallax_image_control' => true,
         'parallax_icon_control' => true,
 		'parallax_title_control' => true,
@@ -360,24 +291,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 33,
 	));
 	
-	$wp_customize->add_setting( 'parallax_one_our_story_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_our_story_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide About section?','parallax-one'),
-			'description' => __('If you check this box, the About section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_about_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_our_story_show' )->transport = 'postMessage';
-	
 	/* About title */
 	$wp_customize->add_setting( 'parallax_one_our_story_title', array(
 		'default' => __('Our Story','parallax-one'),
@@ -388,7 +301,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_about_section',
 		'settings' => 'parallax_one_our_story_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2,
+		'priority'    => 1,
 	));
 	$wp_customize->get_setting( 'parallax_one_our_story_title' )->transport = 'postMessage';
 
@@ -405,7 +318,7 @@ function parallax_one_customize_register( $wp_customize ) {
             'section' => 'parallax_one_about_section',
             'settings'   => 'parallax_one_our_story_text',
 			'active_callback' => 'is_front_page',
-            'priority' => 3,
+            'priority' => 2,
     )) );
 	$wp_customize->get_setting( 'parallax_one_our_story_text' )->transport = 'postMessage';
 	
@@ -419,7 +332,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'section'  => 'parallax_one_about_section',
 	      	'settings' => 'paralax_one_our_story_image',
 			'active_callback' => 'is_front_page',
-			'priority'    => 4,
+			'priority'    => 3,
 	)));
 	$wp_customize->get_setting( 'paralax_one_our_story_image' )->transport = 'postMessage';
 	
@@ -438,24 +351,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 34,
 	));
 	
-	$wp_customize->add_setting( 'parallax_one_our_team_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_our_team_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Team section?','parallax-one'),
-			'description' => __('If you check this box, the Team section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_team_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1,
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_our_team_show' )->transport = 'postMessage';
-	
 	/* Team title */
 	$wp_customize->add_setting( 'parallax_one_our_team_title', array(
 		'default' => __('Our Team','parallax-one'),
@@ -466,7 +361,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_team_section',
 		'settings' => 'parallax_one_our_team_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2,
+		'priority'    => 1,
 	));
 	$wp_customize->get_setting( 'parallax_one_our_team_title' )->transport = 'postMessage';
 	
@@ -480,7 +375,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_team_section',
 		'settings' => 'parallax_one_our_team_subtitle',
 		'active_callback' => 'is_front_page',
-		'priority'    => 3,
+		'priority'    => 2,
 	));
 	$wp_customize->get_setting( 'parallax_one_our_team_subtitle' )->transport = 'postMessage';
 	
@@ -505,11 +400,12 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section' => 'parallax_one_team_section',
 		'settings' => 'parallax_one_team_content',
 		'active_callback' => 'is_front_page',
-		'priority' => 4,
+		'priority' => 3,
         'parallax_image_control' => true,
 		'parallax_title_control' => true,
 		'parallax_subtitle_control' => true
 	) ) );
+	
 	/********************************************************/
 	/********** TESTIMONIALS OPTIONS  ***********************/
 	/********************************************************/
@@ -519,24 +415,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			'title'       => __( 'Testimonial section', 'parallax-one' ),
 			'priority'    => 35,
 	));
-	
-	$wp_customize->add_setting( 'parallax_one_happy_customers_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_happy_customers_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Testimonials section?','parallax-one'),
-			'description' => __('If you check this box, the Testimonials section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_testimonials_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1,
-		)
-	);
-	
-	$wp_customize->get_setting( 'parallax_one_happy_customers_show' )->transport = 'postMessage';
 	
 	
 	/* Testimonials title */
@@ -549,7 +427,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_testimonials_section',
 		'settings' => 'parallax_one_happy_customers_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2,
+		'priority'    => 1,
 	));
 	$wp_customize->get_setting( 'parallax_one_happy_customers_title' )->transport = 'postMessage';
 	
@@ -563,7 +441,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_testimonials_section',
 		'settings' => 'parallax_one_happy_customers_subtitle',
 		'active_callback' => 'is_front_page',
-		'priority'    => 3,
+		'priority'    => 2,
 	));
 	$wp_customize->get_setting( 'parallax_one_happy_customers_subtitle' )->transport = 'postMessage';
 	
@@ -588,7 +466,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section' => 'parallax_one_testimonials_section',
 		'settings' => 'parallax_one_testimonials_content',
 		'active_callback' => 'is_front_page',
-		'priority' => 4,
+		'priority' => 3,
         'parallax_image_control' => true,
 		'parallax_title_control' => true,
 		'parallax_subtitle_control' => true,
@@ -607,22 +485,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'priority'    => 36,
 	));
 	
-	$wp_customize->add_setting( 'parallax_one_ribbon_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_ribbon_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Ribbon section?','parallax-one'),
-			'description' => __('If you check this box, the Ribbon section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_ribbon_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	$wp_customize->get_setting( 'parallax_one_ribbon_show' )->transport = 'postMessage';
 
 	/* Ribbon Background	*/
 	$wp_customize->add_setting( 'paralax_one_ribbon_background', array(
@@ -634,7 +496,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'section'  => 'parallax_one_ribbon_section',
 	      	'settings' => 'paralax_one_ribbon_background',
 			'active_callback' => 'is_front_page',
-			'priority'    => 2
+			'priority'    => 1
 	)));
 	$wp_customize->get_setting( 'paralax_one_ribbon_background' )->transport = 'postMessage';
 	
@@ -647,7 +509,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_ribbon_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 3
+		'priority'    => 2
 	));
 	$wp_customize->get_setting( 'parallax_one_ribbon_title' )->transport = 'postMessage';
 	
@@ -661,7 +523,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_button_text',
 		'active_callback' => 'is_front_page',
-		'priority'    => 4
+		'priority'    => 3
 	));
 	$wp_customize->get_setting( 'parallax_one_button_text' )->transport = 'postMessage';
 	
@@ -675,7 +537,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_ribbon_section',
 		'settings' => 'parallax_one_button_link',
 		'active_callback' => 'is_front_page',
-		'priority'    => 5
+		'priority'    => 4
 	));
 	$wp_customize->get_setting( 'parallax_one_button_link' )->transport = 'postMessage';
 	
@@ -690,26 +552,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 36
 	));
 	
-	
-	$wp_customize->add_setting( 'parallax_one_latest_news_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_latest_news_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Latest news section?','parallax-one'),
-			'description' => __('If you check this box, the Latest news section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_latest_news_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	$wp_customize->get_setting( 'parallax_one_latest_news_show' )->transport = 'postMessage';
-	
-	
-	
 	$wp_customize->add_setting( 'parallax_one_latest_news_title', array(
 		'default' => __('Latest news','parallax-one'),
 		'sanitize_callback' => 'parallax_one_sanitize_text'
@@ -719,7 +561,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_latest_news_section',
 		'settings' => 'parallax_one_latest_news_title',
 		'active_callback' => 'is_front_page',
-		'priority'    => 2
+		'priority'    => 1
 	));
 	$wp_customize->get_setting( 'parallax_one_latest_news_title' )->transport = 'postMessage';
 	
@@ -733,23 +575,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'title'       => __( 'Contact section', 'parallax-one' ),
 		'priority'    => 37,
 	));
-	
-	$wp_customize->add_setting( 'parallax_one_contact_info_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
 
-	$wp_customize->add_control(
-		'parallax_one_contact_info_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Contact section?','parallax-one'),
-			'description' => __('If you check this box, the Contact section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_contact_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 1
-		)
-	);
-	$wp_customize->get_setting( 'parallax_one_contact_info_show' )->transport = 'postMessage';
 
 	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text',
@@ -760,31 +586,14 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section' => 'parallax_one_contact_section',
 		'settings' => 'parallax_one_contact_info_content',
 		'active_callback' => 'is_front_page',
-		'priority' => 2,
+		'priority' => 1,
         'parallax_image_control' => false,
         'parallax_icon_control' => true,
         'parallax_text_control' => true,
         'parallax_link_control' => true
 	) ) );
 	
-	$wp_customize->add_setting( 'parallax_one_frontpage_map_show', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-
-	$wp_customize->add_control(
-		'parallax_one_frontpage_map_show',
-		array(
-			'type' => 'checkbox',
-			'label' => __('Hide Map section?','parallax-one'),
-			'description' => __('If you check this box, the Map section will disappear from homepage.','parallax-one'),
-			'section' => 'parallax_one_contact_section',
-			'active_callback' => 'is_front_page',
-			'priority'    => 3
-		)
-	);
-	$wp_customize->get_setting( 'parallax_one_frontpage_map_show' )->transport = 'postMessage';
     
-
 	/* Map ShortCode  */
 	$wp_customize->add_setting( 'parallax_one_frontpage_map_shortcode', array(
 		'default' => '',
@@ -796,7 +605,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'section'  => 'parallax_one_contact_section',
 		'active_callback' => 'is_front_page',
 		'settings' => 'parallax_one_frontpage_map_shortcode',
-		'priority'    => 4
+		'priority'    => 2
 	));
 	
     

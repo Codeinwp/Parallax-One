@@ -187,12 +187,13 @@ function scrolled() {
             }
         });
     }
-    mainNav();
 
 }
 
 var timer;
 jQuery(window).scroll(function(){
+
+    mainNav();
 
     if ( timer ) clearTimeout(timer);
     timer = setTimeout(function(){

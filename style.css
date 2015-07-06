@@ -282,6 +282,7 @@ h1.page-title {
 .entry-content h5 {
 	margin-top: 35px;
 	margin-bottom: 20px;
+	color: #000;
 }
 
 /* BUTTONS */
@@ -450,6 +451,12 @@ blockquote {
 	font-size: 17.5px;
 	line-height: 24px;
 	margin-bottom: 1.5em;
+	font-weight: 300;
+}
+
+.entry-content blockquote p{
+	font-weight: 300;
+	color: #313131;
 }
 
 address {
@@ -1744,7 +1751,7 @@ h2.site-description {
 
 .timeline-box-wrap .info h1 {
 	font-size: 20px;
-	line-height: 20px;
+	line-height: 22px;
 	float: left;
 	width: 100%;
 	margin: 0;
@@ -1756,17 +1763,26 @@ h2.site-description {
 
 .timeline-box-wrap .info .entry-content p {
 	margin: 0;
-	line-height: 16px;
+	font-size: 14px;
+	line-height: 18px;
 	text-align: justify;
 	float: left;
 	width: 100%;
 	min-height: 55px;
+	padding: 2px 0;
 }
 
 .timeline-box-wrap .info .entry-meta {
 	float: left;
 	width: 100%;
-	font-size: 12px;
+	font-size: 13px;
+	line-height: 22px;
+	font-weight: 400;
+}
+
+.timeline-box-wrap .read-more {
+	font-size: 13px;
+	line-height: 22px;
 }
 
 .parallax-slider-whole-wrap {
@@ -2605,7 +2621,7 @@ div.wpcf7-mail-sent-ng {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	line-height: 22px;
+	line-height: 20px;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
@@ -3151,6 +3167,85 @@ div.wpcf7-mail-sent-ng {
 	margin-left: 20px;
 }
 
+.widget.woocommerce .widget-title:after {
+	content: "";
+	display: none !important;
+}
+
+.widget.woocommerce input[type="search"] {
+	width: 100%;
+	padding-right: 110px;
+	padding-bottom: 11px;
+	line-height: 22px;
+}
+
+.widget.woocommerce form {
+	position: relative;
+}
+
+.widget.woocommerce input[type="submit"] {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+
+.widget.woocommerce label {
+	display: none;
+}
+
+.widget.woocommerce ul.cart_list li a, 
+.widget.woocommerce ul.product_list_widget li a {
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.widget.woocommerce ul.cart_list li {
+	padding-top: 0;
+}
+
+.widget.woocommerce del,
+.widget.woocommerce ins {
+	font-size: 14px;
+	background: transparent;
+}
+
+.widget.woocommerce .widget_shopping_cart .cart_list li a.remove, 
+.widget.woocommerce.widget_shopping_cart .cart_list li a.remove {
+	position: absolute;
+	left: 0;
+	top: 12px;
+}
+
+.widget.woocommerce .widget_shopping_cart .total, 
+.widget.woocommerce.widget_shopping_cart .total {
+	border-top: 3px double #ebe9eb;
+	padding: 10px 0 0;
+	margin-top: 10px;
+}
+
+.widget.woocommerce ul.cart_list li .star-rating, 
+.widget.woocommerce ul.product_list_widget li .star-rating {
+	float: left;
+	padding-top: 6px;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.widget.woocommerce .reviewer {
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.widget.woocommerce ul.cart_list li img, 
+.widget.woocommerce ul.product_list_widget li img {
+	float: right;
+	margin-left: 4px;
+	width: 65px;
+	height: auto;
+	box-shadow: none;
+}
+
 /*---------------------------------------
    3.17 SECTION: FOOTER
 -----------------------------------------*/
@@ -3592,7 +3687,7 @@ a:hover {
 
 .posted-in {
 	color: #676767;
-	font-weight: 500;
+	font-weight: 600;
 	position: relative;
 	padding-left: 23px;
 	margin-right: 10px;
@@ -3627,7 +3722,7 @@ a:hover {
 	margin-top: 0;
 }
 
-.post-date {
+.post-img-wrap .post-date {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -3716,7 +3811,7 @@ a:hover {
 }
 
 .post-author {
-	font-weight: 500;
+	font-weight: 600;
 	position: relative;
 	margin-right: 10px;
 	padding-left: 18px;
@@ -3730,7 +3825,7 @@ a:hover {
 }
 
 .post-comments {
-	font-weight: 500;
+	font-weight: 600;
 	position: relative;
 	margin-right: 10px;
 	padding-left: 19px;
@@ -3747,7 +3842,10 @@ a:hover {
 .entry-content,
 .entry-content p,
 .entry-content span {
-	text-align: justify;
+	font-weight: 400;
+	color: #666666;
+	font-size: 16px;
+	line-height: 26px;
 }
 
 .cat-links,
@@ -3819,6 +3917,17 @@ a:hover {
 	padding-left: 0;
 }
 
+.comment-list .comment-body {
+	font-weight: 400;
+	color: #666666;
+}
+
+.comment-list .comment-body ol {
+	margin: 0 0 1.5em 0;
+	padding-left: 20px;
+	list-style: decimal;
+}
+
 .comment-list ol.children {
 	margin-left: 50px;
 }
@@ -3882,7 +3991,7 @@ h2.screen-reader-text {
 .comment-list .comment-metadata {
 	color: #008ed6;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 16px;
 	font-style: italic;
 }
 
@@ -3894,9 +4003,9 @@ h2.screen-reader-text {
 }
 
 .comment-list .comment-content {
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 .comment-list .reply {
@@ -3912,7 +4021,8 @@ h2.screen-reader-text {
 	padding-left: 100px;
 }
 
-.comment-form p.comment-notes {
+.comment-form p.comment-notes,
+.comment-form p.logged-in-as {
 	width: 100%;
 	padding-left: 0;
 }
@@ -3924,13 +4034,13 @@ h2.screen-reader-text {
 }
 
 .comment-form input {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 	min-width: 50%;
 }
 
 .comment-form textarea {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 }
 
@@ -4037,6 +4147,10 @@ h2.screen-reader-text {
 	width: 100%;
 	padding: 10px 5px 10px 5px;
 	border: 1px solid #E7E7E7;
+}
+
+.widget .post-date {
+	padding-left: 10px;
 }
 
 /* Calendar Widget */

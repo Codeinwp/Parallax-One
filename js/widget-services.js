@@ -1,11 +1,12 @@
 function media_upload(button_class) {
-	
+
 	jQuery('body').on('click', button_class, function(e) {
 		var button_id ='#'+jQuery(this).attr('id');
 		var display_field = jQuery(this).parent().children('input:text');
 		var _custom_media = true;
 
 		wp.media.editor.send.attachment = function(props, attachment){
+
 			if ( _custom_media  ) {
 				if(typeof display_field != 'undefined'){
 					switch(props.size){
@@ -44,6 +45,9 @@ function media_upload(button_class) {
 			}
 		}
 		wp.media.editor.open(button_class);
+		window.send_to_editor = function(html) {
+
+		}
 		return false;
 	});
 }
@@ -66,8 +70,8 @@ jQuery(document).ready( function($) {
 			if(typeof parallax_one_our_services_image_control != 'undefined'){
 				parallax_one_our_services_image_control.show();
 			}
-		} 
-		
+		}
+
 		if (this.value == 'parallax_icon') {
 			if(typeof parallax_one_our_services_image_control != 'undefined'){
 				parallax_one_our_services_image_control.hide();
@@ -76,7 +80,7 @@ jQuery(document).ready( function($) {
 				parallax_one_our_services_icon_control.show();
 			}
 		}
-		
+
 		if (this.value == 'parallax_no_icon') {
 			if(typeof parallax_one_our_services_image_control != 'undefined'){
 				parallax_one_our_services_image_control.hide();
@@ -86,7 +90,7 @@ jQuery(document).ready( function($) {
 			}
 		}
 	});
-	
-	/*Image control*/	
-    media_upload('.custom_media_button_parallax_one_services');	
+
+	/*Image control*/
+    media_upload('.custom_media_button_parallax_one_services');
 });

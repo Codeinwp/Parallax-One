@@ -25,85 +25,76 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->remove_control('background_color');
 	$wp_customize->get_section('background_image')->panel='panel_2';
 	$wp_customize->get_section('colors')->panel='panel_2';
-	$wp_customize->get_control('background_image')->active_callback='is_front_page';
-	$wp_customize->get_control('background_repeat')->active_callback='is_front_page';
-	$wp_customize->get_control('background_position_x')->active_callback='is_front_page';
-	$wp_customize->get_control('background_attachment')->active_callback='is_front_page';
-
 
 
 	/********************************************************/
-	/************** GENERAL OPTIONS  ************************/
+	/********************* APPEARANCE  **********************/
 	/********************************************************/
+	$wp_customize->add_panel( 'panel_2', array(
+		'priority' => 30,
+		'capability' => 'edit_theme_options',
+		'theme_supports' => '',
+		'title' => __( 'Appearance', 'parallax-one' )
+	) );
 	
-	$wp_customize->add_section( 'parallax_one_general_section' , array(
+	$wp_customize->add_setting( 'parallax_one_text_color', array( 
+		'default' => '#313131',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+		
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'parallax_one_text_color',
+			array(
+				'label'      => __( 'Text color', 'parallax-one' ),
+				'section'    => 'colors',
+				'settings'   => 'parallax_one_text_color',
+				'priority'   => 5
+			)
+		)
+	);
+	
+	
+	$wp_customize->add_setting( 'parallax_one_title_color', array( 
+		'default' => '#454545',
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+		
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'parallax_one_title_color',
+			array(
+				'label'      => __( 'Title color', 'parallax-one' ),
+				'section'    => 'colors',
+				'settings'   => 'parallax_one_title_color',
+				'priority'   => 6
+			)
+		)
+	);
+	
+	$wp_customize->add_section( 'parallax_one_appearance_general' , array(
 		'title'       => __( 'General options', 'parallax-one' ),
-      	'priority'    => 30,
-      	'description' => __('Paralax One theme general options','parallax-one'),
+      	'priority'    => 3,
+      	'description' => __('Paralax One theme general appearance options','parallax-one'),
+		'panel'		  => 'panel_2'
 	));
 	
-	/* Logo	*/
+		/* Logo	*/
 	$wp_customize->add_setting( 'paralax_one_logo', array(
 		'default' => get_stylesheet_directory_uri().'/images/logo-nav.png',
 		'sanitize_callback' => 'esc_url'
 	));
 	
-	$show_on_front = $wp_customize->get_control('show_on_front');
-	if(!empty($show_on_front)){
-		$show_on_front->section='parallax_one_general_section';
-		$show_on_front->priority=1;
-	}
-	
-	$wp_customize->remove_section('static_front_page');
-	
-	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
-	if(!empty($nav_menu_locations_primary)){
-		$nav_menu_locations_primary->section = 'parallax_one_general_section';
-		$nav_menu_locations_primary->priority = 2;
-	}
-	
-	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_logo', array(
 	      	'label'    => __( 'Logo', 'parallax-one' ),
-	      	'section'  => 'parallax_one_general_section',
+	      	'section'  => 'parallax_one_appearance_general',
 	      	'settings' => 'paralax_one_logo',
-			'priority'    => 3,
+			'priority'    => 1,
 	)));
 	$wp_customize->get_setting( 'paralax_one_logo' )->transport = 'postMessage';
-	
-	
-	/* Disable preloader */
-	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-	$wp_customize->add_control(
-			'paralax_one_disable_preloader',
-			array(
-				'type' => 'checkbox',
-				'label' => __('Disable preloader?','parallax-one'),
-				'description' => __('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
-				'section' => 'parallax_one_general_section',
-				'settings' => 'paralax_one_disable_preloader',
-				'priority'    => 4,
-			)
-	);
-	
-	
-	/* Disable comments on pages */
-	$wp_customize->add_setting( 'paralax_one_disable_comments_on_pages', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-	$wp_customize->add_control(
-			'paralax_one_disable_comments_on_pages',
-			array(
-				'type' => 'checkbox',
-				'label' => __('Disable comments on pages?','parallax-one'),
-				'description' => __('If this box is checked, the comments will be disabled on pages.','parallax-one'),
-				'section' => 'parallax_one_general_section',
-				'settings' => 'paralax_one_disable_comments_on_pages',
-				'priority'    => 5,
-			)
-	);
+
 
 	/********************************************************/
 	/************* HEADER OPTIONS  ********************/
@@ -840,53 +831,74 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_link_control' => true
 	) ) );
 	
-	
 	/********************************************************/
-	/********************* APPEARANCE  **********************/
+	/************** ADVANCED OPTIONS  ***********************/
 	/********************************************************/
-	$wp_customize->add_panel( 'panel_2', array(
-		'priority' => 40,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => __( 'Appearance', 'parallax-one' )
-	) );
 	
-	$wp_customize->add_setting( 'parallax_one_text_color', array( 
-		'default' => '#313131',
+	$wp_customize->add_section( 'parallax_one_general_section' , array(
+		'title'       => __( 'Advanced options', 'parallax-one' ),
+      	'priority'    => 40,
+      	'description' => __('Paralax One theme general options','parallax-one'),
+	));
+	
+	
+	$show_on_front = $wp_customize->get_control('show_on_front');
+	$page_on_front = $wp_customize->get_control('page_on_front');
+	$page_for_posts = $wp_customize->get_control('page_for_posts');
+	if(!empty($show_on_front)){
+		$show_on_front->section='parallax_one_general_section';
+		$show_on_front->priority=1;
+	}
+	if(!empty($page_on_front)){
+		$page_on_front->section='parallax_one_general_section';
+		$page_on_front->priority=2;
+	}
+	if(!empty($page_for_posts)){
+		$page_for_posts->section='parallax_one_general_section';
+		$page_for_posts->priority=3;
+	}
+	
+	$wp_customize->remove_section('static_front_page');
+	
+	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
+	if(!empty($nav_menu_locations_primary)){
+		$nav_menu_locations_primary->section = 'parallax_one_general_section';
+		$nav_menu_locations_primary->priority = 4;
+	}
+	
+	/* Disable preloader */
+	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-		
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'parallax_one_text_color',
+			'paralax_one_disable_preloader',
 			array(
-				'label'      => __( 'Text color', 'parallax-one' ),
-				'section'    => 'colors',
-				'settings'   => 'parallax_one_text_color',
-				'priority'   => 5
+				'type' => 'checkbox',
+				'label' => __('Disable preloader?','parallax-one'),
+				'description' => __('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
+				'section' => 'parallax_one_general_section',
+				'settings' => 'paralax_one_disable_preloader',
+				'priority'    => 6,
 			)
-		)
 	);
 	
 	
-	$wp_customize->add_setting( 'parallax_one_title_color', array( 
-		'default' => '#454545',
+	/* Disable comments on pages */
+	$wp_customize->add_setting( 'paralax_one_disable_comments_on_pages', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
-		
 	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'parallax_one_title_color',
+			'paralax_one_disable_comments_on_pages',
 			array(
-				'label'      => __( 'Title color', 'parallax-one' ),
-				'section'    => 'colors',
-				'settings'   => 'parallax_one_title_color',
-				'priority'   => 6
+				'type' => 'checkbox',
+				'label' => __('Disable comments on pages?','parallax-one'),
+				'description' => __('If this box is checked, the comments will be disabled on pages.','parallax-one'),
+				'section' => 'parallax_one_general_section',
+				'settings' => 'paralax_one_disable_comments_on_pages',
+				'priority'    => 7,
 			)
-		)
 	);
+
 	
 	
 

@@ -98,3 +98,11 @@ button.parallax_one_general_control_remove_field:hover{
 #customize-control-parallax_one_contact_form_shortcode{
 	display:none;
 }
+
+.parallax_one_radio_control{
+    margin-top: 0;
+}
+
+.parallax_one_general_control_repeater_container label{
+    padding-top: 5px;
+}

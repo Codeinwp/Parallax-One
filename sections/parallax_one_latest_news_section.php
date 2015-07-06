@@ -76,7 +76,7 @@
 														</h1>
 														<div class="entry-meta">
 															<span class="entry-date">
-																<a href="#" rel="bookmark">
+																<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">
 																	<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
 																</a>
 															</span>

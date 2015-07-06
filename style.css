@@ -2614,7 +2614,7 @@ div.wpcf7-mail-sent-ng {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	line-height: 22px;
+	line-height: 20px;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
@@ -3160,6 +3160,85 @@ div.wpcf7-mail-sent-ng {
 	margin-left: 20px;
 }
 
+.widget.woocommerce .widget-title:after {
+	content: "";
+	display: none !important;
+}
+
+.widget.woocommerce input[type="search"] {
+	width: 100%;
+	padding-right: 110px;
+	padding-bottom: 11px;
+	line-height: 22px;
+}
+
+.widget.woocommerce form {
+	position: relative;
+}
+
+.widget.woocommerce input[type="submit"] {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+}
+
+.widget.woocommerce label {
+	display: none;
+}
+
+.widget.woocommerce ul.cart_list li a, 
+.widget.woocommerce ul.product_list_widget li a {
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.widget.woocommerce ul.cart_list li {
+	padding-top: 0;
+}
+
+.widget.woocommerce del,
+.widget.woocommerce ins {
+	font-size: 14px;
+	background: transparent;
+}
+
+.widget.woocommerce .widget_shopping_cart .cart_list li a.remove, 
+.widget.woocommerce.widget_shopping_cart .cart_list li a.remove {
+	position: absolute;
+	left: 0;
+	top: 12px;
+}
+
+.widget.woocommerce .widget_shopping_cart .total, 
+.widget.woocommerce.widget_shopping_cart .total {
+	border-top: 3px double #ebe9eb;
+	padding: 10px 0 0;
+	margin-top: 10px;
+}
+
+.widget.woocommerce ul.cart_list li .star-rating, 
+.widget.woocommerce ul.product_list_widget li .star-rating {
+	float: left;
+	padding-top: 6px;
+	margin-top: 3px;
+	margin-right: 5px;
+}
+
+.widget.woocommerce .reviewer {
+	font-size: 14px;
+	line-height: 14px;
+}
+
+.widget.woocommerce ul.cart_list li img, 
+.widget.woocommerce ul.product_list_widget li img {
+	float: right;
+	margin-left: 4px;
+	width: 65px;
+	height: auto;
+	box-shadow: none;
+}
+
 /*---------------------------------------
    3.17 SECTION: FOOTER
 -----------------------------------------*/
@@ -3636,7 +3715,7 @@ a:hover {
 	margin-top: 0;
 }
 
-.post-date {
+.post-img-wrap .post-date {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -4060,6 +4139,10 @@ h2.screen-reader-text {
 	width: 100%;
 	padding: 10px 5px 10px 5px;
 	border: 1px solid #E7E7E7;
+}
+
+.widget .post-date {
+	padding-left: 10px;
 }
 
 /* Calendar Widget */

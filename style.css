@@ -98,7 +98,7 @@ body {
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 14px;
 	line-height: 22px;
-	font-weight: 400;
+	font-weight: 300;
 	color: #313131;
 	text-align: left;
 	overflow-x: hidden !important;
@@ -282,6 +282,7 @@ h1.page-title {
 .entry-content h5 {
 	margin-top: 35px;
 	margin-bottom: 20px;
+	color: #000;
 }
 
 /* BUTTONS */
@@ -450,6 +451,11 @@ blockquote {
 	font-size: 17.5px;
 	line-height: 24px;
 	margin-bottom: 1.5em;
+	font-weight: 300;
+}
+
+.entry-content blockquote p{
+	font-weight: 300;
 }
 
 address {
@@ -3750,6 +3756,8 @@ a:hover {
 .entry-content p,
 .entry-content span {
 	text-align: justify;
+	font-weight: 400;
+	color: #666666;
 }
 
 .cat-links,
@@ -3819,6 +3827,11 @@ a:hover {
 .comment-list ol {
 	list-style: none;
 	padding-left: 0;
+}
+
+.comment-list .comment-body {
+	font-weight: 400;
+	color: #666666;
 }
 
 .comment-list .comment-body ol {
@@ -3933,13 +3946,13 @@ h2.screen-reader-text {
 }
 
 .comment-form input {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 	min-width: 50%;
 }
 
 .comment-form textarea {
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 500;
 }
 

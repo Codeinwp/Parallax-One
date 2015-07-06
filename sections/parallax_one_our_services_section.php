@@ -52,9 +52,8 @@
 							)
 						)
 					);
-					$parallax_one_services_decoded = json_decode($parallax_one_services);
-		
-                    if( !empty($parallax_one_services_decoded) ){
+                    if( !empty($parallax_one_services) ){
+						$parallax_one_services_decoded = json_decode($parallax_one_services);
                         echo '<div class="row services-wrap">';
 							foreach($parallax_one_services_decoded as $parallax_one_service_box){
 								if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_uri)  && $parallax_one_service_box->image_uri == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){

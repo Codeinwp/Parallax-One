@@ -135,7 +135,9 @@ jQuery(document).ready(function(){
             if(typeof field != 'undefined'){
                 field.find(".parallax_one_image_choice").val('parallax_icon');
                 field.find('.parallax_one_general_control_icon').show();
-                field.find('.parallax_one_image_control').hide();
+				if(field.find('.parallax_one_general_control_icon').length > 0){
+                	field.find('.parallax_one_image_control').hide();
+				}
                 field.find(".parallax_one_general_control_remove_field").show();
                 field.find(".parallax_one_icon_control").val('');
                 field.find(".parallax_one_text_control").val('');

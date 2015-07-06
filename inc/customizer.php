@@ -489,7 +489,27 @@ function parallax_one_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
     
-
+    /* Team content */
+	$wp_customize->add_setting( 'parallax_one_team_content', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default' => json_encode(
+							array(
+									array('image_url' => get_template_directory_uri().'/images/team/1.jpg','title' => __('Albert Jacobs','parallax-one'),'subtitle' => __('Founder & CEO','parallax-one')),
+									array('image_url' => get_template_directory_uri().'/images/team/2.jpg','title' => __('Tonya Garcia','parallax-one'),'subtitle' => __('Account Manager','parallax-one')),
+									array('image_url' => get_template_directory_uri().'/images/team/3.jpg','title' => __('Linda Guthrie','parallax-one'),'subtitle' => __('Business Development','parallax-one'))
+							)
+						)
+	));
+	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
+		'label'   => __('Add new team member','parallax-one'),
+		'section' => 'parallax_one_team_section',
+		'settings' => 'parallax_one_team_content',
+		'active_callback' => 'is_front_page',
+		'priority' => 4,
+        'parallax_image_control' => true,
+		'parallax_title_control' => true,
+		'parallax_subtitle_control' => true
+	) ) );
 	/********************************************************/
 	/********** TESTIMONIALS OPTIONS  ***********************/
 	/********************************************************/
@@ -551,6 +571,29 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'parallax_one_happy_customers_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text'
 	));
+	
+    /* Testimonials content */
+	$wp_customize->add_setting( 'parallax_one_testimonials_content', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default' => json_encode(
+							array(
+									array('image_url' => get_template_directory_uri().'/images/clients/1.jpg','title' => __('Happy Customer','parallax-one'),'subtitle' => __('Lorem ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one')),
+									array('image_url' => get_template_directory_uri().'/images/clients/2.jpg','title' => __('Happy Customer','parallax-one'),'subtitle' => __('Lorem ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one')),
+									array('image_url' => get_template_directory_uri().'/images/clients/3.jpg','title' => __('Happy Customer','parallax-one'),'subtitle' => __('Lorem ipsum','parallax-one'),'text' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one'))
+							)
+						)
+	));
+	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_testimonials_content', array(
+		'label'   => __('Add new testimonial','parallax-one'),
+		'section' => 'parallax_one_testimonials_section',
+		'settings' => 'parallax_one_testimonials_content',
+		'active_callback' => 'is_front_page',
+		'priority' => 4,
+        'parallax_image_control' => true,
+		'parallax_title_control' => true,
+		'parallax_subtitle_control' => true,
+		'parallax_text_control' => true
+	) ) );
 
 
 	/********************************************************/

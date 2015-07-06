@@ -57,8 +57,8 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
  ?>
 
+            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <div class="parallax_one_general_control_repeater parallax_one_general_control_droppable">
-                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
                 <?php
                     if(empty($json)) {
                 ?>

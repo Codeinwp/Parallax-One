@@ -1,9 +1,10 @@
-<?php 
-
+<?php
+if ( get_option( 'show_on_front' ) == 'page' ) {
+} else {
+/*TODO*/
 get_header(); 
 
-?>
-<?php
+
 	include_once get_template_directory() . "/sections/parallax_one_header_section.php";
 ?>
 	</div>
@@ -29,5 +30,5 @@ get_header();
 <?php 
 
 get_footer();
-
+}
 ?>

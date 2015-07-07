@@ -64,7 +64,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
                             <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
-                            <label>
+                            <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
@@ -139,7 +139,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         <input type="text" class="parallax_one_link_control" placeholder="<?php _e('Link','parallax-one'); ?>"/>
                                 <?php } ?>
                             <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php _e('Delete field','parallax-one'); ?></button>
-                            </label>
+                            </div>
                         </div>
                 <?php
                     } else {
@@ -148,7 +148,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
                                     <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
-                                    <label>
+                                    <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
                                                 <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
@@ -229,7 +229,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php _e('Link','parallax-one'); ?>"/>
                                         <?php	}?>
                                     <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
-                                    </label>
+                                    </div>
 
                                 </div>
 
@@ -241,7 +241,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                     ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
                                     <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
-                                    <label>
+                                    <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
@@ -325,7 +325,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         <?php }?>
 
                                         <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
-                                    </label>
+                                    </div>
 
                                 </div>
                     <?php

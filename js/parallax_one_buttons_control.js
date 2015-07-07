@@ -4,7 +4,4 @@ jQuery(document).ready(function() {
 	
 	jQuery('.wp-full-overlay-sidebar-content').prepend('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-parallax-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
 	
-	jQuery('.wp-full-overlay-sidebar-content').prepend('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/themes/parallax-one-pro/" class="button" target="_blank">{pro}</a>'.replace('{pro}',objectL10n.pro));
-
-	
 });

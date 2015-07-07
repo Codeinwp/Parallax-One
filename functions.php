@@ -170,8 +170,6 @@ function parallax_one_scripts() {
 
 	wp_enqueue_script( 'parallax-one-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v3.3.1', true );
 
-	wp_enqueue_script( 'parallax-one-jquery-all-plagins', get_template_directory_uri() . '/js/jquery.all_plugins.min.js', array('parallax-one-bootstrap'), '20150331', true );
-
 	wp_enqueue_script( 'parallax-one-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('parallax-one-jquery-all-plagins','jquery'), '20150331', true );
 
 	if( is_home() ):
@@ -187,8 +185,6 @@ function parallax_one_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js' );
 }
 add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 

@@ -378,27 +378,4 @@
 	    } );
     });
 	
-	/***************************************
-	******** CONTACT FORM PAGE *********
-	****************************************/
-	wp.customize("parallax_one_default_contact_form_show", function(value) {
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$('.parallax_one_default_contact_form').addClass( 'paralax_one_only_customizer' );
-			} else {
-				$('.parallax_one_default_contact_form').removeClass( 'paralax_one_only_customizer' );
-			}
-		} );
-	});
-	
-	wp.customize("parallax_one_default_contact_form_show_recaptcha", function(value) {
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$('.g-recaptcha').addClass( 'paralax_one_only_customizer' );
-			} else {
-				$('.g-recaptcha').removeClass( 'paralax_one_only_customizer' );
-			}
-		} );
-	});
-	
 } )( jQuery );

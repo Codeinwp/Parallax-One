@@ -150,11 +150,11 @@
 		
 		value.bind(function( to ) {
 			if( to != '' ) {
-				$( '#story .brief-content-one p.text-left' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#story .brief-content-one .brief-content-text' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
-				$( '#story .brief-content-one p.text-left' ).addClass( 'paralax_one_only_customizer' );
+				$( '#story .brief-content-one .brief-content-text' ).addClass( 'paralax_one_only_customizer' );
 			}
-			$( '#story .brief-content-one p.text-left' ).text( to );
+			$( '#story .brief-content-one .brief-content-text' ).html( to );
 			
 		});
 		

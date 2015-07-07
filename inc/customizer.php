@@ -301,7 +301,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'parallax_one_our_story_text', array( 
 		'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'),
-		'sanitize_callback' => 'parallax_one_sanitize_text'
+		'sanitize_callback' => 'parallax_one_sanitize_html'
 		
 	));
     $wp_customize->add_control( new Parallax_One_Customize_Textarea_Control( $wp_customize, 'parallax_one_our_story_text', array(
@@ -928,6 +928,19 @@ add_action( 'customize_preview_init', 'parallax_one_customize_preview_js' );
 
 function parallax_one_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
+}
+
+function parallax_one_sanitize_html( $input ){
+	$allowed_html = array(
+    						'p' => array(),
+							'br' => array(),
+							'em' => array(),
+							'strong' => array(),
+							'ul' => array(),
+							'li' => array()
+						);
+	$string = force_balance_tags($input);
+	return wp_kses($string, $allowed_html);
 }
 
 

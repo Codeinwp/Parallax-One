@@ -49,7 +49,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'label'      => __( 'Text color', 'parallax-one' ),
 				'section'    => 'colors',
-				'settings'   => 'parallax_one_text_color',
 				'priority'   => 5
 			)
 		)
@@ -68,7 +67,6 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'label'      => __( 'Title color', 'parallax-one' ),
 				'section'    => 'colors',
-				'settings'   => 'parallax_one_title_color',
 				'priority'   => 6
 			)
 		)
@@ -91,7 +89,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_logo', array(
 	      	'label'    => __( 'Logo', 'parallax-one' ),
 	      	'section'  => 'parallax_one_appearance_general',
-	      	'settings' => 'paralax_one_logo',
 			'priority'    => 1,
 	)));
 
@@ -123,7 +120,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_header_logo', array(
 	      	'label'    => __( 'Header Logo', 'parallax-one' ),
 	      	'section'  => 'parallax_one_header_content',
-	      	'settings' => 'paralax_one_header_logo',
 			'active_callback' => 'parallax_one_show_on_front',
 			'priority'    => 1
 	)));
@@ -137,7 +133,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
-		'settings' => 'parallax_one_header_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 2
 	));
@@ -151,7 +146,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_subtitle', array(
 		'label'    => __( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
-		'settings' => 'parallax_one_header_subtitle',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 3
 	));
@@ -166,7 +160,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_button_text', array(
 		'label'    => __( 'Button label', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
-		'settings' => 'parallax_one_header_button_text',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 4
 	));
@@ -180,7 +173,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_button_link', array(
 		'label'    => __( 'Button link', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
-		'settings' => 'parallax_one_header_button_link',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 5
 	));
@@ -205,7 +197,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
 		'label'   => __('Add new social icon','parallax-one'),
 		'section' => 'parallax_one_logos_settings_section',
-		'settings' => 'parallax_one_logos_content',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 1,
         'parallax_image_control' => true,
@@ -234,7 +225,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_services_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_services_section',
-		'settings' => 'parallax_one_our_services_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 1
 	));
@@ -248,7 +238,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_services_subtitle', array(
 		'label'    => __( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_services_section',
-		'settings' => 'parallax_one_our_services_subtitle',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 2
 	));
@@ -268,7 +257,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_services_content', array(
 		'label'   => __('Add new service box','parallax-one'),
 		'section' => 'parallax_one_services_section',
-		'settings' => 'parallax_one_services_content',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 3,
         'parallax_image_control' => true,
@@ -295,7 +283,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_story_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_about_section',
-		'settings' => 'parallax_one_our_story_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 1,
 	));
@@ -312,7 +299,6 @@ function parallax_one_customize_register( $wp_customize ) {
     $wp_customize->add_control( new Parallax_One_Customize_Textarea_Control( $wp_customize, 'parallax_one_our_story_text', array(
             'label'   => __( 'Content', 'parallax-one' ),
             'section' => 'parallax_one_about_section',
-            'settings'   => 'parallax_one_our_story_text',
 			'active_callback' => 'parallax_one_show_on_front',
             'priority' => 2,
     )) );
@@ -326,15 +312,9 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
 	      	'label'    => __( 'Image', 'parallax-one' ),
 	      	'section'  => 'parallax_one_about_section',
-	      	'settings' => 'paralax_one_our_story_image',
 			'active_callback' => 'parallax_one_show_on_front',
 			'priority'    => 3,
 	)));
-	
-	/*About Image Position*/
-	$wp_customize->add_setting( 'parallax_one_our_story_image_position',array( 
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
 
 	/********************************************************/
 	/*******************  TEAM OPTIONS  *********************/
@@ -355,7 +335,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_team_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_team_section',
-		'settings' => 'parallax_one_our_team_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 1,
 	));
@@ -369,16 +348,11 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
 		'label'    => __( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_team_section',
-		'settings' => 'parallax_one_our_team_subtitle',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 2,
 	));
 	
 	
-	$wp_customize->add_setting( 'parallax_one_our_team_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-    
     /* Team content */
 	$wp_customize->add_setting( 'parallax_one_team_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text',
@@ -393,7 +367,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
 		'label'   => __('Add new team member','parallax-one'),
 		'section' => 'parallax_one_team_section',
-		'settings' => 'parallax_one_team_content',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 3,
         'parallax_image_control' => true,
@@ -421,7 +394,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_happy_customers_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_testimonials_section',
-		'settings' => 'parallax_one_happy_customers_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 1,
 	));
@@ -435,15 +407,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_happy_customers_subtitle', array(
 		'label'    => __( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_testimonials_section',
-		'settings' => 'parallax_one_happy_customers_subtitle',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 2,
 	));
 	
-	
-	$wp_customize->add_setting( 'parallax_one_happy_customers_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
 	
     /* Testimonials content */
 	$wp_customize->add_setting( 'parallax_one_testimonials_content', array(
@@ -459,7 +426,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_testimonials_content', array(
 		'label'   => __('Add new testimonial','parallax-one'),
 		'section' => 'parallax_one_testimonials_section',
-		'settings' => 'parallax_one_testimonials_content',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 3,
         'parallax_image_control' => true,
@@ -490,7 +456,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
 	      	'label'    => __( 'Ribbon Background', 'parallax-one' ),
 	      	'section'  => 'parallax_one_ribbon_section',
-	      	'settings' => 'paralax_one_ribbon_background',
 			'active_callback' => 'parallax_one_show_on_front',
 			'priority'    => 1
 	)));
@@ -503,7 +468,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_ribbon_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'settings' => 'parallax_one_ribbon_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 2
 	));
@@ -517,7 +481,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_button_text', array(
 		'label'    => __( 'Button label', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'settings' => 'parallax_one_button_text',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 3
 	));
@@ -531,7 +494,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_button_link', array(
 		'label'    => __( 'Button link', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'settings' => 'parallax_one_button_link',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 4
 	));
@@ -554,7 +516,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_latest_news_title', array(
 		'label'    => __( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_latest_news_section',
-		'settings' => 'parallax_one_latest_news_title',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority'    => 1
 	));
@@ -578,7 +539,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
 		'label'   => __('Add new social icon','parallax-one'),
 		'section' => 'parallax_one_contact_section',
-		'settings' => 'parallax_one_contact_info_content',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 1,
         'parallax_image_control' => false,
@@ -598,7 +558,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'settings' => 'parallax_one_frontpage_map_shortcode',
 		'priority'    => 2
 	));
 	
@@ -622,7 +581,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => __( 'Contact form shortcode', 'parallax-one' ),
 		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a> but you can use any plugin you like.','parallax-one'),
 		'section'  => 'parallax_one_contact_page',
-		'settings' => 'parallax_one_contact_form_shortcode',
 		'active_callback' => 'parallax_one_is_contact_page',
 		'priority'    => 1
 	));
@@ -637,7 +595,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_page',
 		'active_callback' => 'parallax_one_is_contact_page',
-		'settings' => 'parallax_one_contact_map_shortcode',
 		'priority'    => 2
 	));
 	
@@ -666,7 +623,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_copyright', array(
 		'label'    => __( 'Copyright', 'parallax-one' ),
 		'section'  => 'parallax_one_footer_section',
-		'settings' => 'parallax_one_copyright',
 		'priority'    => 2
 	));
 	
@@ -682,7 +638,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_social_icons', array(
 		'label'   => __('Add new social icon','parallax-one'),
 		'section' => 'parallax_one_footer_section',
-		'settings' => 'parallax_one_social_icons',
 		'priority' => 3,
         'parallax_image_control' => false,
         'parallax_icon_control' => true,
@@ -746,7 +701,6 @@ function parallax_one_customize_register( $wp_customize ) {
 				'label' => __('Disable preloader?','parallax-one'),
 				'description' => __('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
 				'section' => 'parallax_one_general_section',
-				'settings' => 'paralax_one_disable_preloader',
 				'priority'    => 7,
 			)
 	);

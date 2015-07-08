@@ -62,7 +62,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 5. BLOG
 	5.1. SINGLE PAGE
-	5.2 SIDEBAR
+	5.2 GALLERY
+	5.3 SIDEBAR
 
 6. RESPONSIVE
 
@@ -2390,6 +2391,7 @@ div.wpcf7-mail-sent-ng {
 	height: 20px;
 	position: relative;
 	float: left;
+	margin-top: 10px;
 }
 
 .product .comment-form p.stars span a {
@@ -2399,7 +2401,7 @@ div.wpcf7-mail-sent-ng {
 	top: 0;
 	width: 20px;
 	height: 0;
-	padding-top: 20px;
+	padding-top: 24px;
 	overflow: hidden;
 	color: rgba(255, 174, 0, 1);
 }
@@ -2448,6 +2450,7 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce .star-rating span {
 	color: rgb(255, 174, 0);
+	line-height: 17px;
 }
 
 .woocommerce ul.products li.product .price ins {
@@ -2528,11 +2531,11 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce div.product .woocommerce-product-rating {
-	margin-bottom: 30px;
+	margin-bottom: 11px;
 }
 
 .woocommerce div.product .product_title {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 .woocommerce div.product p.price, 
@@ -2544,6 +2547,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce div.product p.stock {
 	margin: 10px 0 30px;
 	color: #008ed6;
+	font-size: 14px;
 }
 
 .woocommerce .woocommerce-breadcrumb {
@@ -2609,6 +2613,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce h3 {
 	font-size: 18px;
 	line-height: 22px;
+	font-weight: 700;
 }
 
 .woocommerce .product_meta .sku_wrapper {
@@ -2766,6 +2771,13 @@ div.wpcf7-mail-sent-ng {
 	margin-top: 20px;
 }
 
+.woocommerce .woocommerce-breadcrumb a,
+.woocommerce .woocommerce-breadcrumb{
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+}
+
 .woocommerce .woocommerce-breadcrumb a:hover {
 	color: #008ed6;
 }
@@ -2807,6 +2819,11 @@ div.wpcf7-mail-sent-ng {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	line-height: 18px;
+}
+
+.woocommerce div.product div.images, 
+.woocommerce div.product div.summary {
+	font-weight: 400;
 }
 
 .woocommerce .woocommerce-message a {
@@ -2878,6 +2895,7 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce table.shop_table {
 	text-align: center;
+	font-size: 14px;
 }
 
 .woocommerce-cart table.cart .product-name {
@@ -2894,6 +2912,11 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
 	line-height: 16px;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+	font-size: 14px;
+	line-height: 18px;
 }
 
 .woocommerce .woocommerce-error {
@@ -3045,11 +3068,18 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce-checkout #payment div.payment_box {
+	font-size: 14px;
+	line-height: 18px;
 	background: #FFF;
 	border-bottom: 1px solid #ccc;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+}
+
+.woocommerce-checkout #payment div.payment_box p {
+	font-size: 14px;
+	line-height: 18px;
 }
 
 .woocommerce-checkout #payment div.payment_box:after {
@@ -3179,6 +3209,32 @@ div.wpcf7-mail-sent-ng {
 .woocommerce form .form-row label.inline {
 	display: inline;
 	margin-left: 20px;
+}
+
+.woocommerce #review_form #respond p {
+	margin-bottom: 15px;
+	min-height: 38px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.woocommerce #reviews .reply-title {
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.woocommerce form .form-row label {
+	font-size: 14px;
+}
+
+.woocommerce form .form-row input.input-text, 
+.woocommerce form .form-row textarea, 
+.woocommerce form .form-row select {
+	font-size: 14px;
+	line-height: 18px;
 }
 
 .widget.woocommerce .widget-title:after {
@@ -4047,6 +4103,7 @@ h2.screen-reader-text {
 	position: absolute;
 	left: 0;
 	line-height: 38px;
+	font-weight: 400;
 }
 
 .comment-form input {
@@ -4101,8 +4158,111 @@ h2.screen-reader-text {
 	margin-bottom: 15px;
 }
 
-.wp-caption-text {
+/* --------------------------------------
+=========================================
+   5.2 GALLERY
+=========================================
+-----------------------------------------*/
 
+
+/**
+ * 14.1 Captions
+ */
+
+.wp-caption {
+	margin-bottom: 1.6em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+
+.wp-caption-text {
+	color: #707070;
+	color: rgba(51, 51, 51, 0.7);
+	font-family: "Noto Sans", sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	padding: 0.5em 0;
+}
+
+
+/**
+ * 14.2 Galleries
+ */
+
+.gallery {
+	margin-bottom: 1.6em;
+}
+
+.gallery-item {
+	display: inline-block;
+	padding: 1.79104477%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-icon img {
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	color: #707070;
+	color: rgba(51, 51, 51, 0.7);
+	display: block;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	padding: 0.5em 0;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
+
+.wp-caption-text {
+	font-size: 14px;
+	line-height: 20px;
 }
 
 .gallery-caption {
@@ -4115,7 +4275,7 @@ h2.screen-reader-text {
 
 /* --------------------------------------
 =========================================
-   5.2 SIDEBAR
+   5.3 SIDEBAR
 =========================================
 -----------------------------------------*/
 

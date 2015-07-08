@@ -31,6 +31,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 	get_footer();
 } else {
+
 	include( get_page_template() );
 }
 ?>

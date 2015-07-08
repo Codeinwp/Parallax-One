@@ -143,6 +143,9 @@ jQuery(window).load(function() {
 /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
 /*---------------------------------------*/
 function mainNav() {
+    if(jQuery('.overlay-layer-wrap').hasClass('sticky-navigation-open')){
+        return false;
+    }
     var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
     var topMenuClose    = -70;
     var topMenuOpen     = 0;

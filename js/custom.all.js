@@ -163,3 +163,20 @@ jQuery(document).ready(function(){
   });
 });
 
+
+/*=============================
+========= MAP OVERLAY =========
+===============================*/
+jQuery(document).ready(function(){
+    jQuery('html').click(function(event) {
+        jQuery('.parallax_one_map_overlay').show();
+    });
+    
+    jQuery('#container-fluid').click(function(event){
+        event.stopPropagation();
+    });
+    
+    jQuery('.parallax_one_map_overlay').on('click',function(event){
+        jQuery(this).hide();
+    })
+});

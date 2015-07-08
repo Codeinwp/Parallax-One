@@ -750,29 +750,6 @@ function parallax_one_customize_register( $wp_customize ) {
 				'priority'    => 7,
 			)
 	);
-	
-	
-	/* Disable comments on pages */
-	$wp_customize->add_setting( 'paralax_one_disable_comments_on_pages', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text'
-	));
-	$wp_customize->add_control(
-			'paralax_one_disable_comments_on_pages',
-			array(
-				'type' => 'checkbox',
-				'label' => __('Disable comments on pages?','parallax-one'),
-				'description' => __('If this box is checked, the comments will be disabled on pages.','parallax-one'),
-				'section' => 'parallax_one_general_section',
-				'settings' => 'paralax_one_disable_comments_on_pages',
-				'priority'    => 8,
-			)
-	);
-
-
-	
-	
-	
-
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );
 

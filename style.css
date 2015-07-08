@@ -2717,7 +2717,12 @@ div.wpcf7-mail-sent-ng {
 .woocommerce-page .upsells.products ul li.product, 
 .woocommerce-page .upsells.products ul.products li.product, 
 .woocommerce .upsells.products ul li.product, 
-.woocommerce .upsells.products ul.products li.product {
+.woocommerce .upsells.products ul.products li.product,
+
+.woocommerce .related ul li.product, 
+.woocommerce .related ul.products li.product
+.woocommerce-page .related ul li.product, 
+.woocommerce-page .related ul.products li.product {
 	float: left;
 	margin: 0 3.8% 2.992em 0;
 	padding: 0;
@@ -2736,7 +2741,11 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .upsells.products ul, 
 .woocommerce .upsells.products ul.products,
 .woocommerce-page .upsells.products ul, 
-.woocommerce-page .upsells.products ul.products {
+.woocommerce-page .upsells.products ul.products,
+.woocommerce .related ul, 
+.woocommerce .related ul.products,
+.woocommerce-page .related ul, 
+.woocommerce-page .related ul.products {
 	margin-top: 40px;
 }
 
@@ -3675,11 +3684,11 @@ a:hover {
 }
 
 .list-post-entry-meta {
-	position: absolute;
+	position: relative;
 	bottom: -1px;
 	left: 0;
 	width: 100%;
-	background: rgba(255,255,255,0.85);
+	background: rgba(247, 247, 247, 1);
 	padding: 14px;
 }
 
@@ -4835,7 +4844,9 @@ h2.screen-reader-text {
 	.woocommerce-page .upsells.products ul li.product, 
 	.woocommerce-page .upsells.products ul.products li.product, 
 	.woocommerce .upsells.products ul li.product, 
-	.woocommerce .upsells.products ul.products li.product {
+	.woocommerce .upsells.products ul.products li.product,
+	.woocommerce .related ul li.product,
+	.woocommerce-page .related ul.products li.product {
 		width: 48%;
 		float: left;
 		clear: both;
@@ -4845,7 +4856,9 @@ h2.screen-reader-text {
 	.woocommerce-page .upsells.products ul li.product:nth-child(even), 
 	.woocommerce-page .upsells.products ul.products li.product:nth-child(even), 
 	.woocommerce .upsells.products ul li.product:nth-child(even), 
-	.woocommerce .upsells.products ul.products li.product:nth-child(even) {
+	.woocommerce .upsells.products ul.products li.product:nth-child(even),
+	.woocommerce .related ul li.product:nth-child(even),
+	.woocommerce-page .related ul.products li.product:nth-child(even) {
 		float: right;
 	}
 
@@ -5108,7 +5121,9 @@ h2.screen-reader-text {
 	.woocommerce-page .upsells.products ul li.product, 
 	.woocommerce-page .upsells.products ul.products li.product, 
 	.woocommerce .upsells.products ul li.product, 
-	.woocommerce .upsells.products ul.products li.product {
+	.woocommerce .upsells.products ul.products li.product,
+	.woocommerce .related ul li.product,
+	.woocommerce-page .related ul.products li.product {
 		width: 100%;
 		max-width: 300px;
 		float: none !important;

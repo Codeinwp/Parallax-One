@@ -212,10 +212,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function parallax_admin_styles() {
+function parallax_one_admin_styles() {
 	wp_enqueue_style( 'parallax_admin_stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
 }
-add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
+add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function parallax_one_ie () {
@@ -228,9 +228,9 @@ add_action('wp_head', 'parallax_one_ie');
 
 
 /* remove custom-background from body_class() */
-add_filter( 'body_class', 'remove_class_function' );
+add_filter( 'body_class', 'parallax_one_remove_class_function' );
 
-function remove_class_function( $classes ) {
+function parallax_one_remove_class_function( $classes ) {
 
     if ( !is_home() ) {
         // index of custom-background

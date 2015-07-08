@@ -84,15 +84,14 @@ function parallax_one_setup() {
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* Set the image size by cropping the image */
-	add_image_size( 'post-thumbnail-big', 730, 340, true );
-	add_image_size( 'post-thumbnail-tablet', 730, 340, true );
-	add_image_size( 'post-thumbnail-mobile', 730, 340, true );
+	add_image_size( 'parallax-one-post-thumbnail-big', 730, 340, true );
+	add_image_size( 'parallax-one-post-thumbnail-mobile', 500, 233, true );
 
 	// Latest news Section (homepage)
-	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
-	add_image_size( 'parallax_one_team', 268, 273, true );
-	add_image_size( 'parallax_one_services',60,62,true );
-	add_image_size( 'parallax_one_customers',75,75,true );
+	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true ); 	
+	add_image_size( 'parallax-one-team', 268, 273, true );
+	add_image_size( 'parallax-one-services',60,62,true );
+	add_image_size( 'parallax-one-customers',75,75,true );
 
 }
 endif; // parallax_one_setup
@@ -103,9 +102,9 @@ add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes
 
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'parallax_one_team' => __('Parallax One Team Member','parallax-one'),
-		'parallax_one_services' => __('Parallax One Services','parallax-one'),
-		'parallax_one_customers' => __('Parallax One Customers','parallax-one')
+        'parallax-one-team' => __('Parallax One Team Member','parallax-one'),
+		'parallax-one-services' => __('Parallax One Services','parallax-one'),
+		'parallax-one-customers' => __('Parallax One Testimonials','parallax-one')
     ) );
 }
 

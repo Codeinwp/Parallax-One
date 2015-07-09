@@ -4,7 +4,7 @@
 <?php
 	$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', get_stylesheet_directory_uri().'/images/about-us.png');
 	$parallax_one_our_story_title = get_theme_mod('parallax_one_our_story_title','Our Story');
-	$parallax_one_our_story_content = get_theme_mod('parallax_one_our_story_content','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+	$parallax_one_our_story_text = get_theme_mod('parallax_one_our_story_text',__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'));
 	if(!empty($paralax_one_our_story_image) || !empty($parallax_one_our_story_title) || !empty($parallax_one_our_story_content)){
 ?>
 		<section class="brief text-left brief-design-one brief-left" id="story">
@@ -32,10 +32,10 @@
 
 							<?php
 
-								if( !empty($parallax_one_our_story_content) ){
-									echo '<p class="text-left">'.esc_attr($parallax_one_our_story_content).'</p>';
+								if( !empty($parallax_one_our_story_text) ){
+									echo '<div class="brief-content-text">'.$parallax_one_our_story_text.'</div>';
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<p class=" text-left paralax_one_only_customizer"></p>';
+									echo '<div class="brief-content-text paralax_one_only_customizer"></div>';
 								}
 							?>
 						</div><!-- .brief-content-one-->

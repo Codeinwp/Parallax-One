@@ -84,15 +84,14 @@ function parallax_one_setup() {
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* Set the image size by cropping the image */
-	add_image_size( 'post-thumbnail-big', 730, 340, true );
-	add_image_size( 'post-thumbnail-tablet', 730, 340, true );
-	add_image_size( 'post-thumbnail-mobile', 730, 340, true );
+	add_image_size( 'parallax-one-post-thumbnail-big', 730, 340, true );
+	add_image_size( 'parallax-one-post-thumbnail-mobile', 500, 233, true );
 
 	// Latest news Section (homepage)
-	add_image_size( 'post-thumbnail-latest-news', 150, 150, true ); 	
-	add_image_size( 'parallax_one_team', 268, 273, true );
-	add_image_size( 'parallax_one_services',60,62,true );
-	add_image_size( 'parallax_one_customers',75,75,true );
+	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true ); 	
+	add_image_size( 'parallax-one-team', 268, 273, true );
+	add_image_size( 'parallax-one-services',60,62,true );
+	add_image_size( 'parallax-one-customers',75,75,true );
 
 }
 endif; // parallax_one_setup
@@ -103,9 +102,9 @@ add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes
 
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'parallax_one_team' => __('Parallax One Team Member','parallax-one'),
-		'parallax_one_services' => __('Parallax One Services','parallax-one'),
-		'parallax_one_customers' => __('Parallax One Customers','parallax-one')
+        'parallax-one-team' => __('Parallax One Team Member','parallax-one'),
+		'parallax-one-services' => __('Parallax One Services','parallax-one'),
+		'parallax-one-customers' => __('Parallax One Testimonials','parallax-one')
     ) );
 }
 
@@ -164,31 +163,27 @@ function parallax_one_wp_page_menu()
  */
 function parallax_one_scripts() {
 
-	wp_enqueue_style( 'parallax-one-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style( 'parallax-one-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css','3.3.1');
 
-	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'v1');
+	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 
-	wp_enqueue_script( 'parallax-one-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), 'v3.3.1', true );
+	wp_enqueue_script( 'parallax-one-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 
-	wp_enqueue_script( 'parallax-one-jquery-all-plagins', get_template_directory_uri() . '/js/jquery.all_plugins.min.js', array('parallax-one-bootstrap'), '20150331', true );
-
-	wp_enqueue_script( 'parallax-one-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('parallax-one-jquery-all-plagins','jquery'), '20150331', true );
+	wp_enqueue_script( 'parallax-one-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('jquery'), '1.0.0', true );
 
 	if( is_home() ):
 
-		wp_enqueue_script( 'parallax-one-jquery-home-plugins', get_template_directory_uri() . '/js/jquery.home_plugins.min.js', array(), '20150331', true );
+		wp_enqueue_script( 'parallax-one-grid-a-licious', get_template_directory_uri() . '/js/jquery.grid-a-licious.min.js', array(), '3.0.1', true );
 
-		wp_enqueue_script( 'parallax-one-custom-home', get_template_directory_uri() . '/js/custom.home.js', array('parallax-one-jquery-home-plugins','jquery'), '20150331', true );
+		wp_enqueue_script( 'parallax-one-custom-home', get_template_directory_uri() . '/js/custom.home.js', array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
 
 	endif;
 
-	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	
-	wp_enqueue_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js' );
 }
 add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 
@@ -217,11 +212,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function parallax_admin_styles() {
-    wp_register_style( 'parallax_admin_stylesheet', get_template_directory_uri() . '/css/admin-style.css' );
-    wp_enqueue_style( 'parallax_admin_stylesheet' );
+function parallax_one_admin_styles() {
+	wp_enqueue_style( 'parallax_admin_stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
 }
-add_action( 'admin_enqueue_scripts', 'parallax_admin_styles', 10 );
+add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function parallax_one_ie () {
@@ -234,9 +228,9 @@ add_action('wp_head', 'parallax_one_ie');
 
 
 /* remove custom-background from body_class() */
-add_filter( 'body_class', 'remove_class_function' );
+add_filter( 'body_class', 'parallax_one_remove_class_function' );
 
-function remove_class_function( $classes ) {
+function parallax_one_remove_class_function( $classes ) {
 
     if ( !is_home() ) {
         // index of custom-background

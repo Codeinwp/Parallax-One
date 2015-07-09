@@ -8,7 +8,7 @@
 	padding: 5px 0;
 	cursor:move;
 }
-.parallax_one_repeater_container label, .parallax_one_general_control_repeater_container label {
+.parallax_one_repeater_container .parallax-box-content-hidden, .parallax_one_general_control_repeater_container .parallax-box-content-hidden {
 	padding: 5px;
 	border: 1px solid #dfdfdf;
 	border-top:0px;
@@ -62,7 +62,7 @@ button.parallax_one_general_control_remove_field:hover{
 	display:none;
 }
 
-.parallax_one_general_control_repeater_container label{
+.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
 	display: none;
 }
 
@@ -103,6 +103,6 @@ button.parallax_one_general_control_remove_field:hover{
     margin-top: 0;
 }
 
-.parallax_one_general_control_repeater_container label{
+.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
     padding-top: 5px;
 }

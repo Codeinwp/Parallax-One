@@ -150,11 +150,11 @@
 		
 		value.bind(function( to ) {
 			if( to != '' ) {
-				$( '#story .brief-content-one p.text-left' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#story .brief-content-one .brief-content-text' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
-				$( '#story .brief-content-one p.text-left' ).addClass( 'paralax_one_only_customizer' );
+				$( '#story .brief-content-one .brief-content-text' ).addClass( 'paralax_one_only_customizer' );
 			}
-			$( '#story .brief-content-one p.text-left' ).text( to );
+			$( '#story .brief-content-one .brief-content-text' ).html( to );
 			
 		});
 		
@@ -246,17 +246,7 @@
 		
     });
 	
-	
-	
 
-
-
-
-
-
-
-	
-	
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********
 	*******************************************************/
@@ -387,29 +377,5 @@
 			$( '.parallax_one_copyright_content' ).text( to );
 	    } );
     });
-	
-	/***************************************
-	******** CONTACT FORM PAGE *********
-	****************************************/
-	wp.customize("parallax_one_default_contact_form_show", function(value) {
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$('.parallax_one_default_contact_form').addClass( 'paralax_one_only_customizer' );
-			} else {
-				$('.parallax_one_default_contact_form').removeClass( 'paralax_one_only_customizer' );
-			}
-		} );
-	});
-	
-	wp.customize("parallax_one_default_contact_form_show_recaptcha", function(value) {
-		value.bind(function( to ) {
-			if( to != '' ) {
-				$('.g-recaptcha').addClass( 'paralax_one_only_customizer' );
-			} else {
-				$('.g-recaptcha').removeClass( 'paralax_one_only_customizer' );
-			}
-		} );
-	});
-	
 	
 } )( jQuery );

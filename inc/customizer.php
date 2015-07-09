@@ -290,7 +290,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	/* About Content */
-	require_once ( 'class/parallax-one-textarea-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_our_story_text', array( 
 		'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'),

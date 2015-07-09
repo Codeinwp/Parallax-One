@@ -205,6 +205,8 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_link_control' => true
 	) ) );
 	
+	$wp_customize->get_section('header_image')->panel='panel_1';
+
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/

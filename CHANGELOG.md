@@ -5,6 +5,21 @@
  Changes: 
 
 
+ * this fixes background size
+ * Merge pull request #175 from cristian-ungureanu/development
+
+this fixes background size
+ * #158 - change get_stylesheet with get_template,#160 small change to css
+ * Merge pull request #176 from cristian-ungureanu/development
+
+#158 - change get_stylesheet with get_template,#160 small change to css
+
+
+### 1.0.0 - 09/07/2015
+
+ Changes: 
+
+
  * #127 - fixed header/background image
  * #156 - use wp default textarea control
  * fixes for last commit

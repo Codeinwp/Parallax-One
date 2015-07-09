@@ -355,6 +355,10 @@ body {
 	background-color: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
+body.home {
+	background-size: cover;
+}
+
 .header {
 	background-size: cover;
 	background-attachment: fixed;

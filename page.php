@@ -30,12 +30,9 @@
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					$paralax_one_disable_comments_on_pages = get_theme_mod('paralax_one_disable_comments_on_pages');
-					if( isset($paralax_one_disable_comments_on_pages) && $paralax_one_disable_comments_on_pages != 1 ){
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-					}
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
 				?>
 
 			<?php endwhile; // end of the loop. ?>

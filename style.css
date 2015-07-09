@@ -355,7 +355,7 @@ body {
 	background-color: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
-body.home {
+body.custom-background {
 	background-size: cover;
 }
 

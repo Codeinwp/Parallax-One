@@ -1,6 +1,6 @@
 <!-- CONTAINER -->
 <?php
-	$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', get_stylesheet_directory_uri().'/images/logo-2.png');
+	$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', get_template_directory_uri().'/images/logo-2.png');
 	$parallax_one_header_title = get_theme_mod('parallax_one_header_title','Simple, Reliable and Awesome.');
 	$parallax_one_header_subtitle = get_theme_mod('parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 	$parallax_one_header_button_text = get_theme_mod('parallax_one_header_button_text','GET STARTED');

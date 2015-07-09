@@ -57,7 +57,7 @@
 													if( !empty($parallax_one_team_member->image_url)){
 														echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="">';
 													} else {
-														$default_url = get_stylesheet_directory_uri().'/images/team/default.png';
+														$default_url = get_template_directory_uri().'/images/team/default.png';
 														echo '<img src="'.esc_url($default_url).'" alt="">';
 													}
 												?>

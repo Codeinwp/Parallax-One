@@ -3,7 +3,7 @@
 ============================== -->
 <?php
 
-	$ribbon_background = get_theme_mod('paralax_one_ribbon_background', get_stylesheet_directory_uri().'/images/background-images/parallax-img/parallax-img1.jpg');
+	$ribbon_background = get_theme_mod('paralax_one_ribbon_background', get_template_directory_uri().'/images/background-images/parallax-img/parallax-img1.jpg');
 	$parallax_one_ribbon_title = get_theme_mod('parallax_one_ribbon_title','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 	$parallax_one_button_text = get_theme_mod('parallax_one_button_text','GET STARTED');
 	$parallax_one_button_link = get_theme_mod('parallax_one_button_link','#');

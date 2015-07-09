@@ -65,8 +65,12 @@ function parallax_one_setup() {
 	) );
 	
 	// Set up the WordPress core custom background feature.
-	add_theme_support('custom-background');
-	
+	add_theme_support('custom-background',apply_filters( 'parallax_one_custom_background_args', array(
+		'default-repeat'         => 'no-repeat',
+		'default-position-x'     => 'center',
+		'default-attachment'     => 'fixed'
+	)));
+
 	 /*
 	 * This feature enables Custom_Headers support for a theme as of Version 3.4.
 	 *
@@ -238,20 +242,6 @@ add_action('wp_head', 'parallax_one_ie');
 
 
 
-/* remove custom-background from body_class() */
-add_filter( 'body_class', 'parallax_one_remove_class_function' );
-
-function parallax_one_remove_class_function( $classes ) {
-
-    if ( !is_home() ) {
-        // index of custom-background
-        $key = array_search('custom-background', $classes);
-        // remove class
-        unset($classes[$key]);
-    }
-    return $classes;
-
-}
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -268,8 +258,8 @@ function parallax_one_remove_class_function( $classes ) {
 	}
 
 
-	// add this code directly, no action needed
-	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+// add this code directly, no action needed
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 
 /* tgm-plugin-activation */

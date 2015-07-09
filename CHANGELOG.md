@@ -1,5 +1,56 @@
 
 
+### 1.0.0 - 09/07/2015
+
+ Changes: 
+
+
+ * fixed link to pro
+ * removed pro texts from customizer
+ * added link to intergeo maps in customizer description
+ * removed services sidebar and widget and added repeater in customizer
+ * made testimonials and our team with customizer repeater
+ * this fixes #110 - Remove hide section setting
+ * this fixes #111 - Archive link is not working on homepage
+ * #126 - removed rtl.css
+ * this fixes #99
+ * this fixes #105
+ * this fixes #107 - changed content width
+ * Merge pull request #137 from cristian-ungureanu/development
+
+Development
+ * this fixes #97 - cursor moves when trying to write smth
+ * this fixes #100
+ * this fixes #103 - gravatar size
+ * this fixes #138 - remove pro button
+ * #119 - removed default contact form
+ * #119 - removed captcha from function.php
+ * Small issues
+ * #118 - added development version for min js and remove wow plugin that was not used
+ * this fixes #115 - change frontpage
+ * #116 - move content from index to home and in index include home template
+ * Fixed #141 Woocommerce related product issue
+ * #121 - scripts versioning
+ * Fixed #165 Galleries broken
+ * #125 - removed favicon
+ * #128 - header now display when static frondpage is set
+ * Fixed #151 text inconsistency
+ * Fixed #150 header subtitle issue
+ * #140 - added overlay on map section
+ * #120 - prefixing and remove same size
+ * #124 - prefixing functions
+ * #146 - removed layouts
+ * #163 - remove disable comments on pages
+ * CSS issues
+ * #162 - use wp_query instead of query_posts
+ * #116 - home.php missing
+ * #159 - move transport in setting args
+ * remove settings parameter from control
+ * Merge pull request #169 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 06/07/2015
 
  Changes: 

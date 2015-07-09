@@ -298,12 +298,17 @@ function parallax_one_customize_register( $wp_customize ) {
 		'transport' => 'postMessage'
 		
 	));
-    $wp_customize->add_control( new Parallax_One_Customize_Textarea_Control( $wp_customize, 'parallax_one_our_story_text', array(
-            'label'   => __( 'Content', 'parallax-one' ),
-            'section' => 'parallax_one_about_section',
-			'active_callback' => 'parallax_one_show_on_front',
-            'priority' => 2,
-    )) );
+	
+	$wp_customize->add_control(
+			'parallax_one_our_story_text',
+			array(
+				'type' => 'textarea',
+				'label'   => __( 'Content', 'parallax-one' ),
+				'section' => 'parallax_one_about_section',
+				'active_callback' => 'parallax_one_show_on_front',
+				'priority'    => 2,
+			)
+	);
 	
 	/* About Image	*/
 	$wp_customize->add_setting( 'paralax_one_our_story_image', array(

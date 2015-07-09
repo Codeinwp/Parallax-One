@@ -12,7 +12,7 @@
  * @package parallax-one
  */
 
-	get_header(); 
+	get_header();
 ?>
 
 	</div>

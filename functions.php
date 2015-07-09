@@ -48,8 +48,8 @@ function parallax_one_setup() {
 		'parallax_footer_menu' => __('Footer Menu', 'parallax-one'),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
+	
+	 /* Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
@@ -63,15 +63,34 @@ function parallax_one_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
-
+	
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'parallax_one_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => get_stylesheet_directory_uri().'/images/background-images/background.jpg',
-        'default-repeat'         => 'no-repeat',
-        'default-position-x'     => 'center',
-        'default-attachment'     => 'fixed'
-	) ) );
+	add_theme_support('custom-background',apply_filters( 'parallax_one_custom_background_args', array(
+		'default-repeat'         => 'no-repeat',
+		'default-position-x'     => 'center',
+		'default-attachment'     => 'fixed'
+	)));
+
+	 /*
+	 * This feature enables Custom_Headers support for a theme as of Version 3.4.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
+	 */
+	
+	add_theme_support( 'custom-header',apply_filters( 'parallax_one_custom_header_args', array(
+		'default-image' => get_template_directory_uri().'/images/background-images/background.jpg',
+		'width'         => 1000,
+		'height'        => 680,
+		'flex-height'   => true,
+		'flex-width'    => true,
+	)));
+	
+	register_default_headers( array(
+		'parallax_one_default_header_image' => array(
+			'url'   => get_template_directory_uri().'/images/background-images/background.jpg',
+			'thumbnail_url' => get_template_directory_uri().'/images/background-images/background_thumbnail.jpg',
+		),
+	));
 	
 	//Theme Support for WooCommerce
 	add_theme_support( 'woocommerce' );
@@ -187,10 +206,6 @@ function parallax_one_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -227,20 +242,6 @@ add_action('wp_head', 'parallax_one_ie');
 
 
 
-/* remove custom-background from body_class() */
-add_filter( 'body_class', 'parallax_one_remove_class_function' );
-
-function parallax_one_remove_class_function( $classes ) {
-
-    if ( !is_home() ) {
-        // index of custom-background
-        $key = array_search('custom-background', $classes);
-        // remove class
-        unset($classes[$key]);
-    }
-    return $classes;
-
-}
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -257,8 +258,8 @@ function parallax_one_remove_class_function( $classes ) {
 	}
 
 
-	// add this code directly, no action needed
-	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+// add this code directly, no action needed
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 
 
 /* tgm-plugin-activation */
@@ -316,7 +317,9 @@ function parallax_one_register_required_plugins() {
 
 add_action('wp_footer','parallax_one_php_style', 100);
 function parallax_one_php_style() {
+	
 	echo '<style type="text/css">';
+	
 	$parallax_one_title_color = get_theme_mod('parallax_one_title_color');
 	if(!empty($parallax_one_title_color)){
 		echo '.dark-text { color: '. $parallax_one_title_color .' }';
@@ -324,6 +327,10 @@ function parallax_one_php_style() {
 	$parallax_one_text_color = get_theme_mod('parallax_one_text_color');
 	if(!empty($parallax_one_text_color)){
 		echo 'body{ color: '.$parallax_one_text_color.'}';
+	}
+	$parallax_one_header_image = get_header_image();
+	if(!empty($parallax_one_header_image)){
+		echo '.header{ background-image: url('.$parallax_one_header_image.');}';
 	}
 	echo '</style>';
 }

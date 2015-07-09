@@ -205,6 +205,8 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_link_control' => true
 	) ) );
 	
+	$wp_customize->get_section('header_image')->panel='panel_1';
+
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/
@@ -288,7 +290,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	/* About Content */
-	require_once ( 'class/parallax-one-textarea-custom-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_our_story_text', array( 
 		'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'),
@@ -296,12 +297,17 @@ function parallax_one_customize_register( $wp_customize ) {
 		'transport' => 'postMessage'
 		
 	));
-    $wp_customize->add_control( new Parallax_One_Customize_Textarea_Control( $wp_customize, 'parallax_one_our_story_text', array(
-            'label'   => __( 'Content', 'parallax-one' ),
-            'section' => 'parallax_one_about_section',
-			'active_callback' => 'parallax_one_show_on_front',
-            'priority' => 2,
-    )) );
+	
+	$wp_customize->add_control(
+			'parallax_one_our_story_text',
+			array(
+				'type' => 'textarea',
+				'label'   => __( 'Content', 'parallax-one' ),
+				'section' => 'parallax_one_about_section',
+				'active_callback' => 'parallax_one_show_on_front',
+				'priority'    => 2,
+			)
+	);
 	
 	/* About Image	*/
 	$wp_customize->add_setting( 'paralax_one_our_story_image', array(

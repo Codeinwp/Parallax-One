@@ -355,8 +355,7 @@ body {
 	background-color: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
-body.home {
-	background: url(images/background-images/background.jpg) no-repeat;
+.header {
 	background-size: cover;
 	background-attachment: fixed;
 }

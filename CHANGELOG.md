@@ -5,6 +5,20 @@
  Changes: 
 
 
+ * #127 - fixed header/background image
+ * #156 - use wp default textarea control
+ * fixes for last commit
+ * remove function that removes the background
+ * Merge pull request #173 from cristian-ungureanu/development
+
+Development
+
+
+### 1.0.0 - 09/07/2015
+
+ Changes: 
+
+
  * fixed link to pro
  * removed pro texts from customizer
  * added link to intergeo maps in customizer description

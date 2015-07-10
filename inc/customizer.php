@@ -91,6 +91,21 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'section'  => 'parallax_one_appearance_general',
 			'priority'    => 1,
 	)));
+	
+	/* Sticky header */
+	$wp_customize->add_setting( 'paralax_one_sticky_header', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+	));
+	$wp_customize->add_control(
+			'paralax_one_sticky_header',
+			array(
+				'type' => 'checkbox',
+				'label' => esc_html__('Header visibility','parallax-one'),
+				'description' => esc_html__('If this box is checked, the header will toggle on frontpage.','parallax-one'),
+				'section' => 'parallax_one_appearance_general',
+				'priority'    => 2,
+			)
+	);
 
 
 	/********************************************************/

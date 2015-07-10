@@ -48,14 +48,23 @@
 
         <!-- COLOR OVER IMAGE -->
         <?php
-        	if( !is_front_page() ){
-        		$fixedheader = 'sticky-navigation-open';
-        	}else{
-				$fixedheader = '';
-				if ( 'posts' != get_option( 'show_on_front' ) ) {
+			$paralax_one_sticky_header = get_theme_mod('paralax_one_sticky_header','parallax-one');
+			if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+				$fixedheader = 'sticky-navigation-open';
+			} else {
+				if( !is_front_page() ){
 					$fixedheader = 'sticky-navigation-open';
+				}else{
+					$fixedheader = '';
+					if ( 'posts' != get_option( 'show_on_front' ) ) {
+						if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+							$fixedheader = 'sticky-navigation-open';
+						} else {
+							$fixedheader = '';
+						}
+					}
 				}
-        	}
+			}
         ?>
 		<div class="overlay-layer-wrap <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 

@@ -164,19 +164,69 @@ jQuery(document).ready(function(){
 });
 
 
-/*=============================
-========= MAP OVERLAY =========
-===============================*/
-jQuery(document).ready(function(){
-    jQuery('html').click(function(event) {
-        jQuery('.parallax_one_map_overlay').show();
+
+/*---------------------------------------*/
+/*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
+/*---------------------------------------*/
+function mainNav() {
+    if(jQuery('.overlay-layer-wrap').hasClass('sticky-navigation-open')){
+        return false;
+    }
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var topMenuClose    = -70;
+    var topMenuOpen     = 0;
+    if ( jQuery('.admin-bar').length>0 ) {
+        topMenuClose    = -38;
+        topMenuOpen     = 32;
+    }
+    if ( top > 40 )
+        jQuery('.appear-on-scroll').stop().animate({
+            "opacity": '1',
+            "top": topMenuOpen
+        });
+    else jQuery('.appear-on-scroll').stop().animate({
+        "top": topMenuClose,
+        "opacity": '0'
     });
-    
-    jQuery('#container-fluid').click(function(event){
-        event.stopPropagation();
-    });
-    
-    jQuery('.parallax_one_map_overlay').on('click',function(event){
-        jQuery(this).hide();
-    })
+}
+
+/* TOP NAVIGATION MENU SELECTED ITEMS */
+function scrolled() {
+
+    if ( jQuery(window).width() >= 751 ) {
+        var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
+        var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
+        // for all sections check if the cursor is inside a section
+        jQuery("section").each( function() {
+            var thisID = '#' + jQuery(this).attr('id');           // section id
+            var parallax_one_offset = jQuery(this).offset().top;         // distance between top and our section
+            var thisHeight  = jQuery(this).outerHeight();         // section height
+            var thisBegin   = parallax_one_offset - headerHeight;                      // where the section begins
+            var thisEnd     = parallax_one_offset + thisHeight - headerHeight;         // where the section ends  
+            // if position of the cursor is inside of the this section
+            if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+                isInOneSection = 'yes';
+                jQuery('.current').removeClass('current');
+                jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                return false;
+            }
+            if (isInOneSection == 'no') {
+                jQuery('.current').removeClass('current');
+            }
+        });
+    }
+
+}
+
+var timer;
+jQuery(window).scroll(function(){
+
+    mainNav();
+
+    if ( timer ) clearTimeout(timer);
+    timer = setTimeout(function(){
+        scrolled();
+    }, 500);
+
 });

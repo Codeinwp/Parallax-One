@@ -98,14 +98,22 @@
 									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
+
+								echo '<div class="header-logo-wrap paralax_one_only_customizer">';
+
+									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								
+									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+
+								echo '</div>';	
 							
 							else:
 							
 								if( isset( $wp_customize ) ):
 								
-									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
+									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand paralax_one_only_customizer" title="'.get_bloginfo('title').'">';
 
-										echo '<img src="" alt="'.get_bloginfo('title').'" class="paralax_one_only_customizer">';
+										echo '<img src="" alt="'.get_bloginfo('title').'">';
 
 									echo '</a>';
 								

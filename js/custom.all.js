@@ -176,7 +176,8 @@ function mainNav() {
     var topMenuClose    = -70;
     var topMenuOpen     = 0;
     if ( jQuery('.admin-bar').length>0 ) {
-        topMenuClose    = -38;
+        $parallax_one_header_height = jQuery('.navbar').height();
+        topMenuClose    = $parallax_one_header_height * -1;
         topMenuOpen     = 32;
     }
     if ( top > 40 )

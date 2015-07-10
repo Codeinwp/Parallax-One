@@ -153,9 +153,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
                                                 <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
                                                 <select class="parallax_one_image_choice">
-                                                    <option value="parallax_icon" <?php if(!empty($icon->choice) && $icon->choice=='parallax_icon'){ echo 'selected';}?>><?php esc_html_e('Icon','parallax-one');?></option>
-                                                    <option value="parallax_image" <?php if(!empty($icon->choice) && $icon->choice=='parallax_image'){ echo 'selected';}?>><?php esc_html_e('Image','parallax-one');?></option>
-                                                    <option value="parallax_none" <?php if(!empty($icon->choice) && $icon->choice=='parallax_none'){ echo 'selected';}?>><?php esc_html_e('None','parallax-one');?></option>
+                                                    <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
+                                                    <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
+                                                    <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
                                                 </select>
 
                                                 <p class="parallax_one_image_control"  <?php if(!empty($icon->choice) && $icon->choice!='parallax_image'){ echo 'style="display:none"';}?>>
@@ -169,11 +169,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
-                                                                if($icon->icon_value == $contact_icon){
-                                                                    echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                                } else {
-                                                                    echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                                }
+                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                             }
                                                         ?>
                                                     </select>
@@ -195,11 +191,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
-                                                                if($icon->icon_value == $contact_icon){
-                                                                    echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                                } else {
-                                                                    echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                                }
+                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                             }
                                                         ?>
                                                     </select>
@@ -246,9 +238,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
                                         <select class="parallax_one_image_choice">
-                                            <option value="parallax_icon" <?php if(!empty($icon->choice) && $icon->choice=='parallax_icon'){ echo 'selected';}?>><?php esc_html_e('Icon','parallax-one') ?></option>
-                                            <option value="parallax_image" <?php if(!empty($icon->choice) && $icon->choice=='parallax_image'){ echo 'selected';}?>><?php esc_html_e('Image','parallax-one') ?></option>
-                                            <option value="parallax_none" <?php if(!empty($icon->choice) && $icon->choice=='parallax_none'){ echo 'selected';}?>><?php esc_html_e('None','parallax-one') ?></option>
+                                            <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
+                                            <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
+                                            <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
                                         </select>
 
 
@@ -263,11 +255,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                             <?php
                                                 foreach($icons_array as $contact_icon) {
-                                                    if($icon->icon_value == $contact_icon){
-                                                        echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                    } else {
-                                                        echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                    }
+                                                    echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                 }
                                             ?>
                                             </select>
@@ -290,11 +278,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
-                                                        if($icon->icon_value == $contact_icon){
-                                                            echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                        } else {
-                                                            echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                        }
+                                                        echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                     }
                                                 ?>
                                                 </select>

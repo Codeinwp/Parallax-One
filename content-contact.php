@@ -30,7 +30,7 @@
 				?>
 
 			<footer class="entry-footer">
-				<?php edit_post_link( __( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer><!-- .fentry-footer -->
 
 		</div><!-- .entry-content -->

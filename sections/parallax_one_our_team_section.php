@@ -7,9 +7,9 @@
 	$parallax_one_team_content = get_theme_mod('parallax_one_team_content',
 		json_encode(
 			array(
-					array('image_url' => get_template_directory_uri().'/images/team/1.jpg','title' => __('Albert Jacobs','parallax-one'),'subtitle' => __('Founder & CEO','parallax-one')),
-					array('image_url' => get_template_directory_uri().'/images/team/2.jpg','title' => __('Tonya Garcia','parallax-one'),'subtitle' => __('Account Manager','parallax-one')),
-					array('image_url' => get_template_directory_uri().'/images/team/3.jpg','title' => __('Linda Guthrie','parallax-one'),'subtitle' => __('Business Development','parallax-one'))
+					array('image_url' => get_template_directory_uri().'/images/team/1.jpg','title' => esc_html__('Albert Jacobs','parallax-one'),'subtitle' => esc_html__('Founder & CEO','parallax-one')),
+					array('image_url' => get_template_directory_uri().'/images/team/2.jpg','title' => esc_html__('Tonya Garcia','parallax-one'),'subtitle' => esc_html__('Account Manager','parallax-one')),
+					array('image_url' => get_template_directory_uri().'/images/team/3.jpg','title' => esc_html__('Linda Guthrie','parallax-one'),'subtitle' => esc_html__('Business Development','parallax-one'))
 			)
 		)
 	);

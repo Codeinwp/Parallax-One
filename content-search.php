@@ -49,13 +49,13 @@
 				
 					<?php
 						/* translators: used between list items, there is a space after the comma */
-						$categories_list = get_the_category_list( __( ', ', 'parallax-one' ) );
+						$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
                         if(!empty($categories_list)){
                         ?>
                             <span class="posted-in">
                                 <i class="icon-basic-elaboration-folder-check"></i>
                         <?php
-                            _e('Posted in ','parallax-one');
+                            esc_html_e('Posted in ','parallax-one');
                         
                             $pos = strpos($categories_list, ',');
                             if ( $pos ) {
@@ -68,7 +68,7 @@
 					?>
 				
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt"></i><?php comments_number( __('No comments','parallax-one'), __('One comment','parallax-one'), __('% comments','parallax-one') ); ?>
+					<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','parallax-one'), esc_html__('One comment','parallax-one'), esc_html__('% comments','parallax-one') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 
@@ -84,7 +84,7 @@
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'parallax-one' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
 				'after'  => '</div>',
 			) );
 		?>

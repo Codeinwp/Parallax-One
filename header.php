@@ -68,7 +68,7 @@
                         
                         <!-- LOGO ON STICKY NAV BAR -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
-                            <span class="sr-only"><?php _e('Toggle navigation','parallax-one'); ?></span>
+                            <span class="sr-only"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

@@ -340,3 +340,17 @@ $pro_functions_path = get_template_directory_uri() . '/pro/functions.php';
 if (file_exists($pro_functions_path)) {
 	require $pro_functions_path;
 }
+
+
+function parallax_get_file($file){
+	$file_parts = pathinfo($file);
+	$accepted_ext = array("jpg","img","png");
+	if( in_array($file_parts['extension'], $accepted_ext) ){
+		$file_path = get_stylesheet_directory() . $file;
+		if ( file_exists( $file_path ) ){
+			get_stylesheet_directory_uri() . $file; 
+		} else {
+			get_template_directory_uri();
+		}
+	}
+}

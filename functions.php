@@ -44,8 +44,8 @@ function parallax_one_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'parallax-one' ),
-		'parallax_footer_menu' => __('Footer Menu', 'parallax-one'),
+		'primary' => esc_html__( 'Primary Menu', 'parallax-one' ),
+		'parallax_footer_menu' => esc_html__('Footer Menu', 'parallax-one'),
 	) );
 
 	
@@ -121,9 +121,9 @@ add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes
 
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'parallax-one-team' => __('Parallax One Team Member','parallax-one'),
-		'parallax-one-services' => __('Parallax One Services','parallax-one'),
-		'parallax-one-customers' => __('Parallax One Testimonials','parallax-one')
+        'parallax-one-team' => esc_html__('Parallax One Team Member','parallax-one'),
+		'parallax-one-services' => esc_html__('Parallax One Services','parallax-one'),
+		'parallax-one-customers' => esc_html__('Parallax One Testimonials','parallax-one')
     ) );
 }
 
@@ -137,7 +137,7 @@ function parallax_one_widgets_init() {
 	
 	register_sidebar( 
 		array(
-			'name'          => __( 'Sidebar', 'parallax-one' ),
+			'name'          => esc_html__( 'Sidebar', 'parallax-one' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -149,7 +149,7 @@ function parallax_one_widgets_init() {
 	
 	register_sidebars( 4, 
 		array(
-			'name' => __('Footer area %d','parallax-one'),
+			'name' => esc_html__('Footer area %d','parallax-one'),
 			'id' => 'footer-area',
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -190,13 +190,12 @@ function parallax_one_scripts() {
 
 	wp_enqueue_script( 'parallax-one-custom-all', get_template_directory_uri() . '/js/custom.all.js', array('jquery'), '1.0.0', true );
 
-	if( is_home() ):
-
+	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	
 		wp_enqueue_script( 'parallax-one-grid-a-licious', get_template_directory_uri() . '/js/jquery.grid-a-licious.min.js', array(), '3.0.1', true );
-
+		
 		wp_enqueue_script( 'parallax-one-custom-home', get_template_directory_uri() . '/js/custom.home.js', array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
-
-	endif;
+	}
 
 	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
@@ -290,10 +289,10 @@ function parallax_one_register_required_plugins() {
         'is_automatic' => false,                 
         'message'      => '',     
         'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'parallax-one' ),
-            'menu_title'                      => __( 'Install Plugins', 'parallax-one' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'parallax-one' ), 
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'parallax-one' ),
+            'page_title'                      => esc_html__( 'Install Required Plugins', 'parallax-one' ),
+            'menu_title'                      => esc_html__( 'Install Plugins', 'parallax-one' ),
+            'installing'                      => esc_html__( 'Installing Plugin: %s', 'parallax-one' ), 
+            'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'parallax-one' ),
             'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
             'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -304,9 +303,9 @@ function parallax_one_register_required_plugins() {
             'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
             'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
             'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'parallax-one' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'parallax-one' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'parallax-one' ), 
+            'return'                          => esc_html__( 'Return to Required Plugins Installer', 'parallax-one' ),
+            'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'parallax-one' ),
+            'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'parallax-one' ), 
             'nag_type'                        => 'updated'
         )
     );

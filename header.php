@@ -48,14 +48,23 @@
 
         <!-- COLOR OVER IMAGE -->
         <?php
-        	if( !is_front_page() ){
-        		$fixedheader = 'sticky-navigation-open';
-        	}else{
-				$fixedheader = '';
-				if ( 'posts' != get_option( 'show_on_front' ) ) {
+			$paralax_one_sticky_header = get_theme_mod('paralax_one_sticky_header','parallax-one');
+			if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+				$fixedheader = 'sticky-navigation-open';
+			} else {
+				if( !is_front_page() ){
 					$fixedheader = 'sticky-navigation-open';
+				}else{
+					$fixedheader = '';
+					if ( 'posts' != get_option( 'show_on_front' ) ) {
+						if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+							$fixedheader = 'sticky-navigation-open';
+						} else {
+							$fixedheader = '';
+						}
+					}
 				}
-        	}
+			}
         ?>
 		<div class="overlay-layer-wrap <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
@@ -68,7 +77,7 @@
                         
                         <!-- LOGO ON STICKY NAV BAR -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
-                            <span class="sr-only"><?php _e('Toggle navigation','parallax-one'); ?></span>
+                            <span class="sr-only"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -89,14 +98,22 @@
 									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
+
+								echo '<div class="header-logo-wrap paralax_one_only_customizer">';
+
+									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+								
+									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+
+								echo '</div>';	
 							
 							else:
 							
 								if( isset( $wp_customize ) ):
 								
-									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
+									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand paralax_one_only_customizer" title="'.get_bloginfo('title').'">';
 
-										echo '<img src="" alt="'.get_bloginfo('title').'" class="paralax_one_only_customizer">';
+										echo '<img src="" alt="'.get_bloginfo('title').'">';
 
 									echo '</a>';
 								

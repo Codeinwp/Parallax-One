@@ -63,25 +63,25 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                     if(empty($json)) {
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
-                            <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
+                            <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
                             <div class="parallax-box-content-hidden">
                                 <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                        <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
                                         <select class="parallax_one_image_choice">
-                                            <option value="parallax_icon" selected><?php _e('Icon','parallax-one'); ?></option>
-                                            <option value="parallax_image"><?php _e('Image','parallax-one'); ?></option>
-                                            <option value="parallax_none"><?php _e('None','parallax-one'); ?></option>
+                                            <option value="parallax_icon" selected><?php esc_html_e('Icon','parallax-one'); ?></option>
+                                            <option value="parallax_image"><?php esc_html_e('Image','parallax-one'); ?></option>
+                                            <option value="parallax_none"><?php esc_html_e('None','parallax-one'); ?></option>
                                         </select>
 
                                         <p class="parallax_one_image_control" style="display:none">
-                                            <span class="customize-control-title"><?php _e('Image','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                             <input type="text" class="widefat custom_media_url">
-                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                         </p>
 
                                         <div class="parallax_one_general_control_icon">
-                                            <span class="customize-control-title"><?php _e('Icon','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
                                             <select class="parallax_one_icon_control">
                                             <?php
                                                 foreach($icons_array as $contact_icon) {
@@ -93,17 +93,17 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                 <?php
                                     } else {
                                         if($parallax_image_control ==true){	?>
-                                            <span class="customize-control-title"><?php _e('Image','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                             <p class="parallax_one_image_control">
                                                 <input type="text" class="widefat custom_media_url">
-                                                <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                                <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                             </p>
                                 <?php
                                         }
 
                                        if($parallax_icon_control ==true){
                                 ?>
-                                            <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
@@ -116,29 +116,29 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                         
                                     if($parallax_title_control==true){
                                 ?>
-                                        <span class="customize-control-title"><?php _e('Title','parallax-one')?></span>
-                                        <input type="text" class="parallax_one_title_control" placeholder="<?php _e('Title','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
+                                        <input type="text" class="parallax_one_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
                                 <?php
                                     }
                         
                                     if($parallax_subtitle_control==true){
                                 ?>
-                                        <span class="customize-control-title"><?php _e('Subtitle','parallax-one')?></span>
-                                        <input type="text" class="parallax_one_subtitle_control" placeholder="<?php _e('Subtitle','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
+                                        <input type="text" class="parallax_one_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
                                 <?php
                                     }
  
 
                                     if($parallax_text_control==true){?>
-                                        <span class="customize-control-title"><?php _e('Text','parallax-one')?></span>
-                                        <textarea class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"></textarea>
+                                        <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                                        <textarea class="parallax_one_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"></textarea>
                                 <?php }
 
                                     if($parallax_link_control==true){ ?>
-                                        <span class="customize-control-title"><?php _e('Link','parallax-one')?></span>
-                                        <input type="text" class="parallax_one_link_control" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+                                        <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
+                                        <input type="text" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                                 <?php } ?>
-                            <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php _e('Delete field','parallax-one'); ?></button>
+                            <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','parallax-one'); ?></button>
                             </div>
                         </div>
                 <?php
@@ -147,33 +147,29 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                             foreach($this_default as $icon){
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                          <?php
                                             if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                                <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
                                                 <select class="parallax_one_image_choice">
-                                                    <option value="parallax_icon" <?php if(!empty($icon->choice) && $icon->choice=='parallax_icon'){ echo 'selected';}?>><?php _e('Icon','parallax-one');?></option>
-                                                    <option value="parallax_image" <?php if(!empty($icon->choice) && $icon->choice=='parallax_image'){ echo 'selected';}?>><?php _e('Image','parallax-one');?></option>
-                                                    <option value="parallax_none" <?php if(!empty($icon->choice) && $icon->choice=='parallax_none'){ echo 'selected';}?>><?php _e('None','parallax-one');?></option>
+                                                    <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
+                                                    <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
+                                                    <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
                                                 </select>
 
                                                 <p class="parallax_one_image_control"  <?php if(!empty($icon->choice) && $icon->choice!='parallax_image'){ echo 'style="display:none"';}?>>
-                                                    <span class="customize-control-title"><?php _e('Image','parallax-one');?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Image','parallax-one');?></span>
                                                     <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                                 </p>
 
                                                 <div class="parallax_one_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='parallax_icon'){ echo 'style="display:none"';}?>>
-                                                    <span class="customize-control-title"><?php _e('Icon','parallax-one');?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
-                                                                if($icon->icon_value == $contact_icon){
-                                                                    echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                                } else {
-                                                                    echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                                }
+                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                             }
                                                         ?>
                                                     </select>
@@ -183,23 +179,19 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             } else {
                                         ?>
                                         <?php	if($parallax_image_control==true){ ?>
-                                                    <span class="customize-control-title"><?php _e('Image','parallax-one')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                                     <p class="parallax_one_image_control">
                                                         <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                        <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                                        <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                                     </p>
                                         <?php	}
 
                                                 if($parallax_icon_control==true){ ?>
-                                                    <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+                                                    <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
-                                                                if($icon->icon_value == $contact_icon){
-                                                                    echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                                } else {
-                                                                    echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                                }
+                                                                echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                             }
                                                         ?>
                                                     </select>
@@ -208,27 +200,27 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             }
                                                 if($parallax_title_control==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php _e('Title','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="parallax_one_title_control" placeholder="<?php _e('Title','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="parallax_one_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
                                         <?php
                                                 }
 
                                                 if($parallax_subtitle_control==true){
                                         ?>
-                                                    <span class="customize-control-title"><?php _e('Subtitle','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="parallax_one_subtitle_control" placeholder="<?php _e('Subtitle','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="parallax_one_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
                                         <?php
                                                 }
  
                                                 if($parallax_text_control==true){ ?>
-                                                    <span class="customize-control-title"><?php _e('Text','parallax-one')?></span>
-                                                    <textarea placeholder="<?php _e('Text','parallax-one'); ?>" class="parallax_one_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
+                                                    <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                                                    <textarea placeholder="<?php esc_html_e('Text','parallax-one'); ?>" class="parallax_one_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php	}
                                                 if($parallax_link_control){ ?>
-                                                    <span class="customize-control-title"><?php _e('Link','parallax-one')?></span>
-                                                    <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+                                                    <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
+                                                    <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                                         <?php	}?>
-                                    <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
+                                    <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
 
                                 </div>
@@ -240,34 +232,30 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                             foreach($json as $icon){
                     ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
-                                    <div class="parallax-customize-control-title"><?php _e('Parallax One','parallax-one')?></div>
+                                    <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
                                     <div class="parallax-box-content-hidden">
                                     <?php
                                     if($parallax_image_control == true && $parallax_icon_control == true){ ?>
-                                        <span class="customize-control-title"><?php _e('Image type','parallax-one');?></span>
+                                        <span class="customize-control-title"><?php esc_html_e('Image type','parallax-one');?></span>
                                         <select class="parallax_one_image_choice">
-                                            <option value="parallax_icon" <?php if(!empty($icon->choice) && $icon->choice=='parallax_icon'){ echo 'selected';}?>><?php _e('Icon','parallax-one') ?></option>
-                                            <option value="parallax_image" <?php if(!empty($icon->choice) && $icon->choice=='parallax_image'){ echo 'selected';}?>><?php _e('Image','parallax-one') ?></option>
-                                            <option value="parallax_none" <?php if(!empty($icon->choice) && $icon->choice=='parallax_none'){ echo 'selected';}?>><?php _e('None','parallax-one') ?></option>
+                                            <option value="parallax_icon" <?php selected($icon->choice,'parallax_icon');?>><?php esc_html_e('Icon','parallax-one');?></option>
+                                            <option value="parallax_image" <?php selected($icon->choice,'parallax_image');?>><?php esc_html_e('Image','parallax-one');?></option>
+                                            <option value="parallax_none" <?php selected($icon->choice,'parallax_none');?>><?php esc_html_e('None','parallax-one');?></option>
                                         </select>
 
 
                                         <p class="parallax_one_image_control" <?php if(!empty($icon->choice) && $icon->choice!='parallax_image'){ echo 'style="display:none"';}?>>
-                                            <span class="customize-control-title"><?php _e('Image','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Image','parallax-one');?></span>
                                             <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                            <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                         </p>
 
                                         <div class="parallax_one_general_control_icon" <?php  if(!empty($icon->choice) && $icon->choice!='parallax_icon'){ echo 'style="display:none"';}?>>
-                                            <span class="customize-control-title"><?php _e('Icon','parallax-one');?></span>
+                                            <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one');?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                             <?php
                                                 foreach($icons_array as $contact_icon) {
-                                                    if($icon->icon_value == $contact_icon){
-                                                        echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                    } else {
-                                                        echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                    }
+                                                    echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                 }
                                             ?>
                                             </select>
@@ -278,23 +266,19 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                     ?>
                                         <?php
                                             if($parallax_image_control == true){ ?>
-                                                <span class="customize-control-title"><?php _e('Image','parallax-one')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Image','parallax-one')?></span>
                                                 <p class="parallax_one_image_control">
                                                     <input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php _e('Upload Image','parallax-one'); ?>" />
+                                                    <input type="button" class="button button-primary custom_media_button_parallax_one" value="<?php esc_html_e('Upload Image','parallax-one'); ?>" />
                                                 </p>
                                         <?php }
 
                                             if($parallax_icon_control==true){ ?>
-                                                <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+                                                <span class="customize-control-title"><?php esc_html_e('Icon','parallax-one')?></span>
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="parallax_one_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
-                                                        if($icon->icon_value == $contact_icon){
-                                                            echo '<option value="'.esc_attr($contact_icon).'" selected="selected">'.esc_attr($contact_icon).'</option>';
-                                                        } else {
-                                                            echo '<option value="'.esc_attr($contact_icon).'">'.esc_attr($contact_icon).'</option>';
-                                                        }
+                                                        echo '<option value="'.esc_attr($contact_icon).'" '.selected($icon->icon_value,$contact_icon).'">'.esc_attr($contact_icon).'</option>';
                                                     }
                                                 ?>
                                                 </select>
@@ -303,28 +287,28 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         }
                                         if($parallax_title_control==true){
                                         ?>
-                                            <span class="customize-control-title"><?php _e('Title','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="parallax_one_title_control" placeholder="<?php _e('Title','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Title','parallax-one')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->title)) echo esc_attr($icon->title); ?>" class="parallax_one_title_control" placeholder="<?php esc_html_e('Title','parallax-one'); ?>"/>
                                         <?php
                                                 }
 
                                         if($parallax_subtitle_control==true){
                                         ?>
-                                            <span class="customize-control-title"><?php _e('Subtitle','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="parallax_one_subtitle_control" placeholder="<?php _e('Subtitle','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Subtitle','parallax-one')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->subtitle)) echo esc_attr($icon->subtitle); ?>" class="parallax_one_subtitle_control" placeholder="<?php esc_html_e('Subtitle','parallax-one'); ?>"/>
                                         <?php
                                         }
                                         if($parallax_text_control==true ){?>
-                                            <span class="customize-control-title"><?php _e('Text','parallax-one')?></span>
-                                            <textarea class="parallax_one_text_control" placeholder="<?php _e('Text','parallax-one'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
+                                            <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                                            <textarea class="parallax_one_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                                         <?php }
 
                                         if($parallax_link_control){ ?>
-                                            <span class="customize-control-title"><?php _e('Link','parallax-one')?></span>
-                                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php _e('Link','parallax-one'); ?>"/>
+                                            <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
+                                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                                         <?php }?>
 
-                                        <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','parallax-one'); ?></button>
+                                        <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
 
                                 </div>
@@ -341,7 +325,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             <?php } ?>
             </div>
 
-            <button type="button"   class="button add_field parallax_one_general_control_new_field"><?php _e('Add new field','parallax-one'); ?></button>
+            <button type="button"   class="button add_field parallax_one_general_control_new_field"><?php esc_html_e('Add new field','parallax-one'); ?></button>
 
             <?php
 

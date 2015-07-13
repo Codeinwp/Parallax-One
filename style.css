@@ -900,7 +900,6 @@ h2.site-description {
 }
 
 .header-logo-wrap {
-	float: left;
 	text-align: center;
 	padding: 4px 10px;
 }
@@ -3756,10 +3755,6 @@ footer.footer .team-member-box .team-member {
 /* THE OVERLAY COLORS WHICH WILL SHOW IN FRONT OF BACKGROUND IMAGES*/
 .overlay-layer-wrap {
 	background: rgba(0, 5, 8, 0.6);
-}
-
-.overlay-layer-wrap.sticky-navigation-open {
-	background: transparent;
 }
 
 .overlay-layer-2 {

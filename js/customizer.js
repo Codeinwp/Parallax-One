@@ -43,11 +43,11 @@
 	wp.customize("paralax_one_logo", function(value) {
         value.bind(function( to ) {
 			if( to != '' ) {
-				$( '.navbar-brand  img' ).removeClass( 'paralax_one_only_customizer' );
+				$( '.navbar-brand' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.header-logo-wrap' ).addClass( 'paralax_one_only_customizer' );
 			}
 			else {
-				$( '.navbar-brand  img' ).addClass( 'paralax_one_only_customizer' );
+				$( '.navbar-brand' ).addClass( 'paralax_one_only_customizer' );
 				$( '.header-logo-wrap' ).removeClass( 'paralax_one_only_customizer' );
 			}
 				

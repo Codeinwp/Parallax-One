@@ -23,11 +23,11 @@ function parallax_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><span class="meta-nav"><span class="icon icon-arrows-slim-left"></span></span><?php next_posts_link( __( 'Older posts', 'parallax-one' ) ); ?></div>
+			<div class="nav-previous"><span class="meta-nav"><span class="icon icon-arrows-slim-left"></span></span><?php next_posts_link( esc_html__( 'Older posts', 'parallax-one' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'parallax-one' ) ); ?><span class="meta-nav"><span class="icon icon-arrows-slim-right"></span></span></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'parallax-one' ) ); ?><span class="meta-nav"><span class="icon icon-arrows-slim-right"></span></span></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -52,7 +52,7 @@ function the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'parallax-one' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'parallax-one' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
@@ -104,25 +104,25 @@ function parallax_one_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'parallax-one' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
 		if ( $categories_list && parallax_one_categorized_blog() ) {
-			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . __( 'Posted in %1$s', 'parallax-one' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Posted in %1$s', 'parallax-one' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'parallax-one' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'parallax-one' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i>' . __( 'Tagged %1$s', 'parallax-one' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Tagged %1$s', 'parallax-one' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'parallax-one' ), __( '1 Comment', 'parallax-one' ), __( '% Comments', 'parallax-one' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'parallax-one' ), esc_html__( '1 Comment', 'parallax-one' ), esc_html__( '% Comments', 'parallax-one' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -139,17 +139,17 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'parallax-one' ), single_cat_title( '', false ) );
+		$title = sprintf( esc_html__( 'Category: %s', 'parallax-one' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
+		$title = sprintf( esc_html__( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'parallax-one' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( esc_html__( 'Author: %s', 'parallax-one' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'parallax-one' ), get_the_date( _x( 'Y', 'yearly archives date format', 'parallax-one' ) ) );
+		$title = sprintf( esc_html__( 'Year: %s', 'parallax-one' ), get_the_date( _x( 'Y', 'yearly archives date format', 'parallax-one' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'parallax-one' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'parallax-one' ) ) );
+		$title = sprintf( esc_html__( 'Month: %s', 'parallax-one' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'parallax-one' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'parallax-one' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'parallax-one' ) ) );
+		$title = sprintf( esc_html__( 'Day: %s', 'parallax-one' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'parallax-one' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
 			$title = _x( 'Asides', 'post format archive title', 'parallax-one' );
@@ -171,13 +171,13 @@ function the_archive_title( $before = '', $after = '' ) {
 			$title = _x( 'Chats', 'post format archive title', 'parallax-one' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'parallax-one' ), post_type_archive_title( '', false ) );
+		$title = sprintf( esc_html__( 'Archives: %s', 'parallax-one' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'parallax-one' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( esc_html__( '%1$s: %2$s', 'parallax-one' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'parallax-one' );
+		$title = esc_html__( 'Archives', 'parallax-one' );
 	}
 
 	/**

@@ -1,5 +1,20 @@
 
 
+### 1.0.0 - 13/07/2015
+
+ Changes: 
+
+
+ * #154 - use esc_html__() and esc_html_e() intstead of __() and _e()
+ * #149 - made control for sticky header
+ * fix menu when it was not displaying
+ * #133 - support more tag
+ * #155 - use selected() function
+ * Merge pull request #178 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 09/07/2015
 
  Changes: 

@@ -708,8 +708,6 @@ input[type="submit"] {
 	background-repeat: repeat-x;
 	background-color: #00a5f9;
 	background-size: contain;
-	-webkit-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	text-shadow: none;
 	border: none;
 	-webkit-border-radius: 3px;
@@ -4307,6 +4305,28 @@ h2.screen-reader-text {
 	margin-bottom: 15px;
 }
 
+.mejs-container span{
+	font-size:11px;
+	line-height: 11px;
+	color:#FFFFFF;
+}
+
+.mejs-container, .mejs-embed, .mejs-embed body, .mejs-container .mejs-controls {
+	background: #008ed6!important;
+}
+
+.mejs-controls .mejs-button button:focus {
+	outline:none;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-float {
+	background: #008ed6!important;
+}
+
+.wp-playlist-caption span{
+	line-height: 21px;
+}
+
 /* --------------------------------------
 =========================================
    5.2 GALLERY
@@ -5478,6 +5498,7 @@ h2.screen-reader-text {
 	}
 
 }
+
 
 /* --------------------------------------
 =========================================

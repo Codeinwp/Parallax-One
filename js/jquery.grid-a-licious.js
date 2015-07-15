@@ -104,7 +104,7 @@
             this.cols = Math.floor(this.box.width() / this.options.width);
             //If Cols lower than 1, the grid disappears
             if (this.cols < 1) { this.cols = 1; }
-			this.cols = 3;
+			//this.cols = 4;
             diff = (this.box.width() - (this.cols * this.options.width) - this.options.gutter) / this.cols;
             w = (this.options.width + diff) / this.box.width() * 100;
             this.w = w;
@@ -112,7 +112,7 @@
             // add columns to box
             if ( initNoBoxes > 2 ) {
 	            for (var i = 0; i < this.cols; i++) {
-	                var div = $('<div></div>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
 	                    'width': w + '%',
 	                    'paddingLeft': this.options.gutter,
 	                    'paddingBottom': this.options.gutter,
@@ -126,7 +126,7 @@
 	            }
         	} else {
         		for (var i = 0; i < this.cols; i++) {
-	                var div = $('<div></div>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
 	                    'width': w + '%',
 	                    'paddingLeft': this.options.gutter,
 	                    'paddingBottom': this.options.gutter,
@@ -140,7 +140,7 @@
 
             this.box.find($('#clear' + this.name)).remove();
             // add clear float
-            var clear = $('<div></div>').css({
+            var clear = $('<li></li>').css({
                 'clear': 'both',
                 'height': '0',
                 'width': '0',
@@ -220,7 +220,6 @@
                     'filter': 'alpha(opacity=0)',
                     'opacity': '0'
                 }).find('img, object, embed, iframe').css({
-                    'width': width,
                     'height': 'auto',
                     'display': 'block',
                     'margin-left': 'auto',
@@ -422,3 +421,22 @@
     }
 
 })(jQuery);
+
+
+jQuery(window).load(function () {
+    jQuery(".post-type-archive-product .products").gridalicious({selector: 'li', width: 250, gutter: 30});
+    jQuery(".post-type-archive-product .products").show();
+    
+    jQuery(".single-product .upsells .products").gridalicious({selector: '.product', width: 250, gutter: 30,});
+    jQuery(".single-product .upsells .products").show();
+    
+    jQuery(".single-product .related .products").gridalicious({selector: '.product', width: 200, gutter: 30,});
+    jQuery(".single-product .related .products").show();
+    
+    jQuery(".archive .products").gridalicious({selector: '.product', width: 250, gutter: 30,});
+    jQuery(".archive .products").show();
+    
+    jQuery("#reviews").show();
+    
+
+});

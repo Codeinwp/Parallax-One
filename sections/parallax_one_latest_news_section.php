@@ -67,7 +67,7 @@
 																	if ( has_post_thumbnail() ) :
 																		the_post_thumbnail('parallax-one-post-thumbnail-latest-news');
 																	else: ?>
-																		<img src="<?php echo get_template_directory_uri(); ?>/images/no-thumbnail-latest-news.jpg" width="150" height="150" alt="<?php the_title(); ?>">
+																		<img src="<?php echo parallax_get_file('/images/no-thumbnail-latest-news.jpg'); ?>" width="150" height="150" alt="<?php the_title(); ?>">
 																<?php 
 																	endif; 
 																?>

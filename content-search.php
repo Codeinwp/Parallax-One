@@ -30,8 +30,8 @@
 						} else {
 					?>
 				 		<picture>
-							<source media="(max-width: 600px)" srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-thumbnail-mobile.jpg">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-thumbnail.jpg" alt="<?php the_title_attribute(); ?>">
+							<source media="(max-width: 600px)" srcset=" <?php echo parallax_get_file('/images/no-thumbnail-mobile.jpg'); ?> ">
+							<img src="<?php echo parallax_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 

@@ -61,6 +61,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             <div class="parallax_one_general_control_repeater parallax_one_general_control_droppable">
                 <?php
                     if(empty($json)) {
+                        
                 ?>
                         <div class="parallax_one_general_control_repeater_container">
                             <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
@@ -145,6 +146,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                     } else {
                         if ( !empty($this_default) && empty($json)) {
                             foreach($this_default as $icon){
+                             
                 ?>
                                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
                                     <div class="parallax-customize-control-title"><?php esc_html_e('Parallax One','parallax-one')?></div>
@@ -318,8 +320,10 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                         }
                     }
 
-                if ( !empty($this_default) && empty($json)) {	?>
-                    <input type="hidden" id="parallax_one_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="parallax_one_repeater_colector" value="<?php echo esc_textarea( $this_default ); ?>" />
+                if ( !empty($this_default) && empty($json)) {
+                     
+                ?>
+                    <input type="hidden" id="parallax_one_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="parallax_one_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
             <?php } else {	?>
                     <input type="hidden" id="parallax_one_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="parallax_one_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
             <?php } ?>

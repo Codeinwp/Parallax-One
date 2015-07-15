@@ -13,7 +13,7 @@
 			<div class="clearfix"></div>
 		</header><!-- .entry-header -->
 
-		<div class="entry-content content-page">
+		<div class="entry-content content-page parallax_one_contact_form">
 
 			<?php
 				$parallax_one_contact_form_shortcode = get_theme_mod('parallax_one_contact_form_shortcode');

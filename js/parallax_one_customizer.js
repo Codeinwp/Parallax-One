@@ -22,15 +22,16 @@ function media_upload(button_class) {
 							display_field.val(attachment.sizes.thumbnail.url);
                             display_field.trigger('change');
 							break;
-						case 'parallax-one-team':
+						case 'parallax_one_team':
+							console.log(attachment.sizes);
 							display_field.val(attachment.sizes.parallax_one_team.url);
                             display_field.trigger('change');
 							break
-						case 'parallax-one-services':
+						case 'parallax_one_services':
 							display_field.val(attachment.sizes.parallax_one_services.url);
                             display_field.trigger('change');
 							break
-						case 'parallax-one-customers':
+						case 'parallax_one_customers':
 							display_field.val(attachment.sizes.parallax_one_customers.url);
                             display_field.trigger('change');
 							break;

@@ -5,11 +5,11 @@
 	$parallax_one_logos = get_theme_mod('parallax_one_logos_content',
 		json_encode(
 			array( 
-				array("image_url" => get_template_directory_uri().'/images/companies/1.png' ,"link" => "#" ),
-				array("image_url" => get_template_directory_uri().'/images/companies/2.png' ,"link" => "#" ),
-				array("image_url" => get_template_directory_uri().'/images/companies/3.png' ,"link" => "#" ),
-				array("image_url" => get_template_directory_uri().'/images/companies/4.png' ,"link" => "#" ),
-				array("image_url" => get_template_directory_uri().'/images/companies/5.png' ,"link" => "#" ) 
+				array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),
+				array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),
+				array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),
+				array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),
+				array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) 
 			)
 		)
 	);

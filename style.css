@@ -708,8 +708,6 @@ input[type="submit"] {
 	background-repeat: repeat-x;
 	background-color: #00a5f9;
 	background-size: contain;
-	-webkit-box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
 	text-shadow: none;
 	border: none;
 	-webkit-border-radius: 3px;
@@ -753,6 +751,14 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="week"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="date"],
+input[type="color"],
 textarea {
 	color: #666;
 	border: 1px solid #dedede;
@@ -770,13 +776,6 @@ textarea:focus {
 	color: #111;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 10px;
-}
 
 textarea {
 	width: 100%;
@@ -834,6 +833,14 @@ textarea.form-control {
 	box-shadow: 0px 3px 0px #005885;
 }
 
+input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]{
+	line-height: normal;
+}
+
+label{
+	vertical-align: top;
+	padding-right: 5px;
+}
 
 /* --------------------------------------
 =========================================
@@ -1292,7 +1299,6 @@ h2.site-description {
 
 .single-service {
 	padding: 40px 35px 40px 35px;
-	margin: 0 0 50px 0;
 	background: #ffffff;
 	border-top: 1px solid #eaeaea;
 	border-left: 1px solid #eaeaea;
@@ -1307,8 +1313,7 @@ h2.site-description {
 
 .services-wrap .service-box {
 	display: inline-block;
-	padding-left: 15px;
- 	padding-right: 15px;
+	width: 100%;
 }
 
 .single-service .service-icon {
@@ -1581,10 +1586,6 @@ h2.site-description {
 
 .unique-features-cols-two .unique-features-col {
 	width: 50%;
-}
-
-.unique-features-cols-three {
-	
 }
 
 /*---------------------------------------
@@ -2313,7 +2314,7 @@ a.control_next.fade-btn {
 }
 
 .content-page input:not([type="submit"]) {
-	width: 100%;
+
 }
 
 .content-page form {
@@ -2346,9 +2347,25 @@ div.wpcf7-mail-sent-ng {
 	width: 100%;
 }
 
+.parallax_one_contact_form input:not([type="submit"]){
+	width: 100%;
+}
+.parallax_one_contact_form input[type="text"],
+.parallax_one_contact_form input[type="email"],
+.parallax_one_contact_form input[type="url"],
+.parallax_one_contact_form input[type="password"],
+.parallax_one_contact_form input[type="search"] {
+	padding: 10px;
+}
+
 /*---------------------------------------
    3.16 WOOCOMMERCE STYLE
 -----------------------------------------*/
+
+.gridalicious{
+	list-style-type: none;
+}
+
 .woocommerce .woocommerce-ordering select {
 	width: 100%;
 	padding: 10px 5px 10px 5px;
@@ -2379,7 +2396,6 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce ul.products li.product, 
 .woocommerce-page ul.products li.product {
-	text-align: center;
 }
 
 .woocommerce ul.products li.product h3 {
@@ -3331,6 +3347,51 @@ div.wpcf7-mail-sent-ng {
 	line-height: 18px;
 }
 
+.post-type-archive-product .products{
+	clear: both;
+	display: none;
+}
+
+.products .product{
+	text-align: center;
+}
+
+.product{
+
+	float: left;
+	position: relative;
+	padding: 20px;
+	width: 100%;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce ul.products li.product a:first-child, .woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce .related ul li.product, .woocommerce .related ul.products li.product
+ .woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product{
+	width: 100%;
+}
+
+.woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce .related ul li.product, .woocommerce .related ul.products li.product
+.woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product{
+	padding: 20px;
+}
+
+.woocommerce ul.products li.product a:first-child img{
+	width: auto;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	background: #ffffff;
+	border-top: 1px solid #eaeaea;
+	border-left: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 4px solid #eaeaea;
+	padding: 20px;
+	transition: all ease 0.55s;
+}
+
+.woocommerce ul.products li.product:hover, .woocommerce-page ul.products li.product:hover{
+	border-bottom-color: #008ed6;
+}
+
 .widget.woocommerce .widget-title:after {
 	content: "";
 	display: none !important;
@@ -3408,6 +3469,14 @@ div.wpcf7-mail-sent-ng {
 	width: 65px;
 	height: auto;
 	box-shadow: none;
+}
+
+.single-product .upsells .products, .archive .products, .single-product .related .products{
+	display: none;
+}
+
+#reviews{
+	display: none;
 }
 
 /*---------------------------------------
@@ -4307,6 +4376,28 @@ h2.screen-reader-text {
 	margin-bottom: 15px;
 }
 
+.mejs-container span{
+	font-size:11px;
+	line-height: 11px;
+	color:#FFFFFF;
+}
+
+.mejs-container, .mejs-embed, .mejs-embed body, .mejs-container .mejs-controls {
+	background: #008ed6!important;
+}
+
+.mejs-controls .mejs-button button:focus {
+	outline:none;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-float {
+	background: #008ed6!important;
+}
+
+.wp-playlist-caption span{
+	line-height: 21px;
+}
+
 /* --------------------------------------
 =========================================
    5.2 GALLERY
@@ -4900,7 +4991,7 @@ h2.screen-reader-text {
 		padding: 0;
 	}
 	.gridalicious .galcolumn {
-		width: 100% !important;
+		width: 50% ;
 	}
 }
 
@@ -5152,6 +5243,7 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 
+	
 	.woocommerce-page .upsells.products ul li.product, 
 	.woocommerce-page .upsells.products ul.products li.product, 
 	.woocommerce .upsells.products ul li.product, 
@@ -5171,10 +5263,6 @@ h2.screen-reader-text {
 	.woocommerce .related ul li.product:nth-child(even),
 	.woocommerce-page .related ul.products li.product:nth-child(even) {
 		float: right;
-	}
-
-	.woocommerce ul.products li.product a:not(.add_to_cart_button) {
-		width: 100%;
 	}
 
 	.woocommerce .cart_item .quantity .qty {
@@ -5478,6 +5566,7 @@ h2.screen-reader-text {
 	}
 
 }
+
 
 /* --------------------------------------
 =========================================

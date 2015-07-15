@@ -87,7 +87,7 @@
 						
 						<?php
 							
-							$parallax_one = get_theme_mod('paralax_one_logo', get_template_directory_uri().'/images/logo-nav.png');
+							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
 
 							
 							

@@ -48,9 +48,9 @@
 					<?php
 						if( !empty($parallax_one_services) ){
 							$parallax_one_services_decoded = json_decode($parallax_one_services);
-							echo '<div class="row services-wrap">';
+							echo '<ul class="row services-wrap">';
 								foreach($parallax_one_services_decoded as $parallax_one_service_box){
-									if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_uri)  && $parallax_one_service_box->image_uri == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
+									if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_url)  && $parallax_one_service_box->choice == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
 										echo '<div class="service-box"><div class="single-service border-bottom-hover">';
 
 											if( !empty($parallax_one_service_box->choice) && $parallax_one_service_box->choice !== 'parallax_none'  ){
@@ -60,8 +60,8 @@
 													}
 												}
 												if( $parallax_one_service_box->choice == 'parallax_image' ){
-													if( !empty($parallax_one_service_box->image_uri)){
-														echo '<img src="'.esc_url($parallax_one_service_box->image_uri).'"/>';
+													if( !empty($parallax_one_service_box->image_url)){
+														echo '<img src="'.esc_url($parallax_one_service_box->image_url).'"/>';
 													}
 												}
 											}
@@ -76,7 +76,7 @@
 										echo '</div></div>';
 									}
 								}
-							echo '</div>';
+							echo '</ul>';
 						}
 					?>
 				</div>	

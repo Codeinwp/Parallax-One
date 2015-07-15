@@ -5,12 +5,10 @@ jQuery(document).ready(function(){
 jQuery(window).load(function(){ 
     fixFooterBottom();
     callback_menu_align();
-    parallax_woocommerce_prod_height();
 });
 jQuery(window).resize(function(){
     fixFooterBottom();
     callback_menu_align();
-    parallax_woocommerce_prod_height();
 });
 
 /*** DROPDOWN FOR MOBILE MENU */
@@ -109,24 +107,6 @@ jQuery(document).ready(function($) {
         document.querySelector('head').appendChild(msViewportStyle)
     }
 });
-
-
-/* woocommerce box height */
-var parallax_woocommerce_prod_height = function () {
-    if ( jQuery('.woocommerce ul.products').length > 0 ) {
-        var maxHeight = 0;
-        jQuery('.woocommerce ul.products li.product a:first-child').height('auto');
-        jQuery('.woocommerce ul.products li.product').each(function(){
-            var thisHeight = jQuery(this).children(':first-child').outerHeight();
-            if ( maxHeight < thisHeight ) {
-                maxHeight = thisHeight;
-            }
-        });
-        setTimeout(function(){
-            jQuery('.woocommerce ul.products li.product a:first-child').height(maxHeight);
-        }, 200);
-    }
-}
 
 
 /*=================================

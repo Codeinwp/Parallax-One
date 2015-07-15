@@ -108,9 +108,9 @@ function parallax_one_setup() {
 
 	// Latest news Section (homepage)
 	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true ); 	
-	add_image_size( 'parallax-one-team', 268, 273, true );
-	add_image_size( 'parallax-one-services',60,62,true );
-	add_image_size( 'parallax-one-customers',75,75,true );
+	add_image_size( 'parallax_one_team', 268, 273, true );
+	add_image_size( 'parallax_one_services',60,62,true );
+	add_image_size( 'parallax_one_customers',75,75,true );
 
 }
 endif; // parallax_one_setup
@@ -121,9 +121,9 @@ add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes
 
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'parallax-one-team' => esc_html__('Parallax One Team Member','parallax-one'),
-		'parallax-one-services' => esc_html__('Parallax One Services','parallax-one'),
-		'parallax-one-customers' => esc_html__('Parallax One Testimonials','parallax-one')
+        'parallax_one_team' => esc_html__('Parallax One Team Member','parallax-one'),
+		'parallax_one_services' => esc_html__('Parallax One Services','parallax-one'),
+		'parallax_one_customers' => esc_html__('Parallax One Testimonials','parallax-one')
     ) );
 }
 
@@ -188,12 +188,15 @@ function parallax_one_scripts() {
 
 	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 
+	if( (function_exists('is_shop') && is_shop()) || ('posts' == get_option( 'show_on_front' ) && is_front_page()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag()) ){
+	
+		wp_enqueue_script( 'parallax-one-grid-a-licious', parallax_get_file('/js/jquery.grid-a-licious.min.js'), array(), '3.0.1', true );
+	}
+	
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '1.0.0', true );
 
 	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
-	
-		wp_enqueue_script( 'parallax-one-grid-a-licious', parallax_get_file('/js/jquery.grid-a-licious.min.js'), array(), '3.0.1', true );
-		
+
 		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
 	}
 

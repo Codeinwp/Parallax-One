@@ -112,7 +112,7 @@
             // add columns to box
             if ( initNoBoxes > 2 ) {
 	            for (var i = 0; i < this.cols; i++) {
-	                var div = $('<div></div>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
 	                    'width': w + '%',
 	                    'paddingLeft': this.options.gutter,
 	                    'paddingBottom': this.options.gutter,
@@ -126,7 +126,7 @@
 	            }
         	} else {
         		for (var i = 0; i < this.cols; i++) {
-	                var div = $('<div></div>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
 	                    'width': w + '%',
 	                    'paddingLeft': this.options.gutter,
 	                    'paddingBottom': this.options.gutter,
@@ -140,7 +140,7 @@
 
             this.box.find($('#clear' + this.name)).remove();
             // add clear float
-            var clear = $('<div></div>').css({
+            var clear = $('<li></li>').css({
                 'clear': 'both',
                 'height': '0',
                 'width': '0',
@@ -220,7 +220,6 @@
                     'filter': 'alpha(opacity=0)',
                     'opacity': '0'
                 }).find('img, object, embed, iframe').css({
-                    'width': width,
                     'height': 'auto',
                     'display': 'block',
                     'margin-left': 'auto',

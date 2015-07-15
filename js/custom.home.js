@@ -107,7 +107,7 @@ jQuery(window).load(function () {
     jQuery(".status").fadeOut();
     jQuery(".preloader").delay(1000).fadeOut("slow");
 
-    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 360});
+    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 300, gutter: 30});
 
     jQuery(".testimonials-wrap").gridalicious({selector: '.testimonials-box', width: 360});
     

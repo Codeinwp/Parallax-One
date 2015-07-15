@@ -104,7 +104,7 @@
             this.cols = Math.floor(this.box.width() / this.options.width);
             //If Cols lower than 1, the grid disappears
             if (this.cols < 1) { this.cols = 1; }
-			this.cols = 3;
+			//this.cols = 4;
             diff = (this.box.width() - (this.cols * this.options.width) - this.options.gutter) / this.cols;
             w = (this.options.width + diff) / this.box.width() * 100;
             this.w = w;
@@ -421,3 +421,22 @@
     }
 
 })(jQuery);
+
+
+jQuery(window).load(function () {
+    jQuery(".post-type-archive-product .products").gridalicious({selector: 'li', width: 250, gutter: 30});
+    jQuery(".post-type-archive-product .products").show();
+    
+    jQuery(".single-product .upsells .products").gridalicious({selector: '.product', width: 250, gutter: 30,});
+    jQuery(".single-product .upsells .products").show();
+    
+    jQuery(".single-product .related .products").gridalicious({selector: '.product', width: 200, gutter: 30,});
+    jQuery(".single-product .related .products").show();
+    
+    jQuery(".archive .products").gridalicious({selector: '.product', width: 250, gutter: 30,});
+    jQuery(".archive .products").show();
+    
+    jQuery("#reviews").show();
+    
+
+});

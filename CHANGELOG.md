@@ -1,5 +1,21 @@
 
 
+### 1.0.0 - 15/07/2015
+
+ Changes: 
+
+
+ * #179 - prefix functions
+ * #167 - audio/video , #166 - playlist
+ * #158 - use get_template_directory_uri
+ * this fixes #171 - style form fields
+ * fixes #183, #141
+ * minify gridalicious js
+ * Merge pull request #181 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.0 - 13/07/2015
 
  Changes: 

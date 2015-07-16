@@ -187,6 +187,12 @@ function parallax_one_scripts() {
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 
 	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
+	
+	if( (function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag()) ){
+
+		wp_enqueue_script( 'parallax-one-shop', parallax_get_file('/js/parallax_one_shop.js'), array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
+	
+	}
 
 	if( (function_exists('is_shop') && is_shop()) || ('posts' == get_option( 'show_on_front' ) && is_front_page()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag()) ){
 	

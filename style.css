@@ -765,6 +765,7 @@ textarea {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	padding: 5px;
 }
 
 input[type="text"]:focus,
@@ -838,7 +839,7 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
 }
 
 label{
-	vertical-align: top;
+	vertical-align: middle;
 	padding-right: 5px;
 }
 
@@ -1324,6 +1325,10 @@ h2.site-description {
 .single-service h3 {
 	margin-bottom: 15px;
 	padding-top: 5px;
+}
+
+.woocommerce ul.products li .galcolumn{
+	margin-right: 0!important;
 }
 
 .galcolumn .single-service {
@@ -2313,8 +2318,8 @@ a.control_next.fade-btn {
 	padding-right: 0;
 }
 
-.content-page input:not([type="submit"]) {
-
+.content-page input:not([type="submit"]):not([type="reset"]):not([type="button"]) {
+	padding: 5px;
 }
 
 .content-page form {
@@ -3357,10 +3362,8 @@ div.wpcf7-mail-sent-ng {
 }
 
 .product{
-
 	float: left;
 	position: relative;
-	padding: 20px;
 	width: 100%;
 }
 
@@ -4998,6 +5001,11 @@ h2.screen-reader-text {
 /*---------------------------------------
    6.5 FIXES FOR => 768PX to <= 991PX SCREENS          
 -----------------------------------------*/
+@media (max-width: 782px) {
+	.admin-bar .sticky-navigation-open .sticky-navigation {
+	  top: 46px;
+	}
+}
 @media (min-width: 768px) and (max-width: 991px) {
 	html {
 		font-size: 95%;
@@ -5027,6 +5035,13 @@ h2.screen-reader-text {
    6.6 FIXES FOR <= 768PX SCREENS          
 -----------------------------------------*/
 @media (max-width: 767px) {
+	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	  width: 100%;
+	  max-width: 300px;
+	  float: none !important;
+	  display: inline-block;
+	}
+	
 	html {
 		font-size: 80%;
 	}

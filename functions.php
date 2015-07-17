@@ -336,9 +336,12 @@ function parallax_one_php_style() {
 	if(!empty($parallax_one_text_color)){
 		echo 'body{ color: '.$parallax_one_text_color.'}';
 	}
-	$parallax_one_header_image = get_header_image();
-	if(!empty($parallax_one_header_image)){
-		echo '.header{ background-image: url('.$parallax_one_header_image.');}';
+	
+	if('posts' == get_option( 'show_on_front' ) && is_front_page()){
+		$parallax_one_header_image = get_header_image();
+		if(!empty($parallax_one_header_image)){
+			echo '.header{ background-image: url('.$parallax_one_header_image.');}';
+		}
 	}
 	echo '</style>';
 }
@@ -362,4 +365,27 @@ function parallax_get_file($file){
 			return esc_url(get_template_directory_uri());
 		}
 	}
+}
+
+
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Change number of related products on product page
+ * Set your own value for 'posts_per_page'
+ *
+ */ 
+function woo_related_products_limit() {
+  global $product;
+	
+	$args['posts_per_page'] = 6;
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+
+	$args['posts_per_page'] = 4; // 4 related products
+	$args['columns'] = 2; // arranged in 2 columns
+	return $args;
 }

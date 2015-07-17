@@ -146,6 +146,9 @@
         _setCols: function () {
             // calculate columns
             this.cols = Math.floor(this.box.width() / this.options.width);
+            if($('body').hasClass('woocommerce')){
+                this.cols = 4;
+            }
             //console.log(this.cols);
             //If Cols lower than 1, the grid disappears
             if (this.cols < 1) { this.cols = 1; }

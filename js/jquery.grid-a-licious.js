@@ -12,7 +12,7 @@
 // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
 // Copy pasted from http://paulirish.com/2009/throttled-smartresize-jquery-event-handler/
 (function ($, sr) {
-    var debounce = function (func, threshold, execAsap) {
+    var debounce = function (func, threshold, execAsap) { 
         var timeout;
         return function debounced() {
             var obj = this,
@@ -22,6 +22,18 @@
                 if (!execAsap) func.apply(obj, args);
                 timeout = null;
             };
+            var width = $(window).width();
+            
+            if($('body').hasClass('woocommerce')){
+                if(width  < 768 ) {
+                    $('.woocommerce ul.products li').css('width','100%');
+                    $('.woocommerce ul.products li').css('margin-right','0');
+                    $('.woocommerce ul.products li').css('display','block');
+                    $('.woocommerce ul.products li').css('margin','30px auto');
+                    return false;    
+                }
+            }
+            
             if (timeout) clearTimeout(timeout);
             else if (execAsap) func.apply(obj, args);
 
@@ -83,15 +95,47 @@
             this.boxArr = [];
 
             // build columns
-            this._setCols();
-            // build grid
-            this._renderGrid('append');
-            // add class 'gridalicious' to container
-            $(this.box).addClass('gridalicious');
-            // add smartresize
-            $(window).smartresize(function () {
-                container.resize();
-            });
+            var width = $(window).width();
+            
+            if($('body').hasClass('woocommerce')){
+                if(width  < 768 ) {
+                    this._setCols();
+                    // build grid
+                    this._renderGrid('append');
+                    // add class 'gridalicious' to container
+                    $(this.box).addClass('gridalicious');
+                    // add smartresize
+                    $(window).smartresize(function () {
+                        container.resize();
+                    });
+                    
+                    $('.woocommerce ul.products li').css('width','100%');
+                    $('.woocommerce ul.products li').css('margin-right','0');
+                    $('.woocommerce ul.products li').css('display','block');
+                    $('.woocommerce ul.products li').css('margin','30px auto');
+  
+                } else {
+                    this._setCols();
+                    // build grid
+                    this._renderGrid('append');
+                    // add class 'gridalicious' to container
+                    $(this.box).addClass('gridalicious');
+                    // add smartresize
+                    $(window).smartresize(function () {
+                        container.resize();
+                    });
+                }
+            } else {
+                this._setCols();
+                // build grid
+                this._renderGrid('append');
+                // add class 'gridalicious' to container
+                $(this.box).addClass('gridalicious');
+                // add smartresize
+                $(window).smartresize(function () {
+                    container.resize();
+                });
+            }
         },
 
         _setName: function (length, current) {
@@ -102,40 +146,110 @@
         _setCols: function () {
             // calculate columns
             this.cols = Math.floor(this.box.width() / this.options.width);
+            //console.log(this.cols);
             //If Cols lower than 1, the grid disappears
             if (this.cols < 1) { this.cols = 1; }
-			//this.cols = 4;
+            
+            if($('body').hasClass('woocommerce')){
+                var marginR = Math.floor((2 * this.options.gutter) / (this.cols - 1)) + this.options.gutter;
+            }
+
             diff = (this.box.width() - (this.cols * this.options.width) - this.options.gutter) / this.cols;
-            w = (this.options.width + diff) / this.box.width() * 100;
+            if($('body').hasClass('woocommerce')){
+                w = (this.options.width + diff - this.options.gutter) / this.box.width() * 100;
+            } else {
+                w = (this.options.width + diff) / this.box.width() * 100;
+            }
             this.w = w;
             var initNoBoxes = this.box.find(this.options.selector).length;
             // add columns to box
             if ( initNoBoxes > 2 ) {
-	            for (var i = 0; i < this.cols; i++) {
-	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
-	                    'width': w + '%',
-	                    'paddingLeft': this.options.gutter,
-	                    'paddingBottom': this.options.gutter,
-	                    'float': 'left',
-	                    '-webkit-box-sizing': 'border-box',
-	                    '-moz-box-sizing': 'border-box',
-	                    '-o-box-sizing': 'border-box',
-	                    'box-sizing': 'border-box'
-	                });
-	                this.box.append(div);
-	            }
+                if($('body').hasClass('woocommerce')){
+                    for (var i = 0; i < this.cols; i++) {
+                        if(i == this.cols - 1){
+                            var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                'width': w + '%',
+                                'marginRight': 0,
+                                'paddingBottom': marginR,
+                                'float': 'left',
+                                '-webkit-box-sizing': 'border-box',
+                                '-moz-box-sizing': 'border-box',
+                                '-o-box-sizing': 'border-box',
+                                'box-sizing': 'border-box'
+                            });
+                            this.box.append(div);                        
+                        } else { 
+                            var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                'width': w + '%',
+                                'marginRight': marginR,
+                                'paddingBottom': marginR,
+                                'float': 'left',
+                                '-webkit-box-sizing': 'border-box',
+                                '-moz-box-sizing': 'border-box',
+                                '-o-box-sizing': 'border-box',
+                                'box-sizing': 'border-box'
+                            });
+                            this.box.append(div);
+                        }
+                    }                    
+                } else {
+                    
+                        for (var i = 0; i < this.cols; i++) {
+                            var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                'width': w + '%',
+                                'paddingLeft': this.options.gutter,
+                                'paddingBottom': this.options.gutter,
+                                'float': 'left',
+                                '-webkit-box-sizing': 'border-box',
+                                '-moz-box-sizing': 'border-box',
+                                '-o-box-sizing': 'border-box',
+                                'box-sizing': 'border-box'
+                            });
+                            this.box.append(div);
+                        } 
+                }
         	} else {
-        		for (var i = 0; i < this.cols; i++) {
-	                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
-	                    'width': w + '%',
-	                    'paddingLeft': this.options.gutter,
-	                    'paddingBottom': this.options.gutter,
-	                    'float': 'none',
-	                    'display': 'inline-block',
-	                    'vertical-align': 'top'
-	                });
-	                this.box.append(div);
-	            }
+                if($('body').hasClass('woocommerce')){ 
+                        for (var i = 0; i < this.cols; i++) {
+                            if(i == this.cols - 1){
+                                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                    'width': w + '%',
+                                    'marginRight': 0,
+                                    'paddingBottom': marginR,
+                                    'float': 'left',
+                                    '-webkit-box-sizing': 'border-box',
+                                    '-moz-box-sizing': 'border-box',
+                                    '-o-box-sizing': 'border-box',
+                                    'box-sizing': 'border-box'
+                                });
+                                this.box.append(div);
+                            } else {
+                                var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                    'width': w + '%',
+                                    'marginRight': marginR,
+                                    'paddingBottom': marginR,
+                                    'float': 'left',
+                                    '-webkit-box-sizing': 'border-box',
+                                    '-moz-box-sizing': 'border-box',
+                                    '-o-box-sizing': 'border-box',
+                                    'box-sizing': 'border-box'
+                                });
+                                this.box.append(div);                            
+                            }
+                        }
+                    } else {
+                        for (var i = 0; i < this.cols; i++) {
+                            var div = $('<li></li>').addClass('galcolumn').attr('id', 'item' + i + this.name).css({
+                                'width': w + '%',
+                                'paddingLeft': this.options.gutter,
+                                'paddingBottom': this.options.gutter,
+                                'float': 'none',
+                                'display': 'inline-block',
+                                'vertical-align': 'top'
+                            });
+                            this.box.append(div);
+                        }
+                    }
         	}
 
             this.box.find($('#clear' + this.name)).remove();
@@ -163,7 +277,9 @@
             var w = $('.galcolumn').width();
 
             var columnsHeight = {};
-
+            if($('body').hasClass('woocommerce')){
+                var marginR = Math.floor((2 * this.options.gutter) / (this.cols - 1)) + this.options.gutter;
+            }
             // if arr
             if (arr) {
                 boxes = arr;
@@ -214,18 +330,32 @@
                   width = 'auto';
                 }
                 
-                item.css({
-                    'marginBottom': gutter,
-                    'zoom': '1',
-                    'filter': 'alpha(opacity=0)',
-                    'opacity': '0'
-                }).find('img, object, embed, iframe').css({
-                    'height': 'auto',
-                    'display': 'block',
-                    'margin-left': 'auto',
-                    'margin-right': 'auto'
-                });
                 
+                 if($('body').hasClass('woocommerce')){
+                    item.css({
+                        'marginBottom': marginR,
+                        'zoom': '1',
+                        'filter': 'alpha(opacity=0)',
+                        'opacity': '0'
+                    }).find('img, object, embed, iframe').css({
+                        'height': 'auto',
+                        'display': 'block',
+                        'margin-left': 'auto',
+                        'margin-right': 'auto'
+                    });                 
+                 }else{
+                    item.css({
+                        'marginBottom': gutter,
+                        'zoom': '1',
+                        'filter': 'alpha(opacity=0)',
+                        'opacity': '0'
+                    }).find('img, object, embed, iframe').css({
+                        'height': 'auto',
+                        'display': 'block',
+                        'margin-left': 'auto',
+                        'margin-right': 'auto'
+                    });
+                 }
                 // prepend on append to column
                 if (method == 'prepend') {
                     itemCount--;

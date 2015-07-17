@@ -1,5 +1,25 @@
 
 
+### 1.0.1 - 17/07/2015
+
+ Changes: 
+
+
+ * Update style.css
+ * #190 - rename function
+ * minify js
+ * #188 - update tgm
+ * #147 - contact placeholders
+ * changed the label for contact repeater
+ * Merge pull request #192 from cristian-ungureanu/development
+
+Development
+ * fix shop when there are only 2 related products
+ * Merge pull request #195 from cristian-ungureanu/development
+
+fix shop when there are only 2 related products
+
+
 ### 1.0.0 - 17/07/2015
 
  Changes: 

@@ -1,5 +1,21 @@
 
 
+### 1.0.0 - 17/07/2015
+
+ Changes: 
+
+
+ * #140 - removed escape html in customizer where a tag is needed
+ * speed optimization
+ * Merge pull request #187 from cristian-ungureanu/development
+
+Development
+ * blogfix , shop fix, inputs fix
+ * Merge pull request #189 from cristian-ungureanu/development
+
+blogfix , shop fix, inputs fix
+
+
 ### 1.0.0 - 15/07/2015
 
  Changes: 

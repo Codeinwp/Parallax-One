@@ -376,16 +376,11 @@ function parallax_get_file($file){
  * Set your own value for 'posts_per_page'
  *
  */ 
-function woo_related_products_limit() {
-  global $product;
-	
-	$args['posts_per_page'] = 6;
-	return $args;
-}
-add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
-  function jk_related_products_args( $args ) {
 
-	$args['posts_per_page'] = 4; // 4 related products
-	$args['columns'] = 2; // arranged in 2 columns
+add_filter( 'woocommerce_output_related_products_args', 'parallax_one_related_products_args' );
+
+function parallax_one_related_products_args( $args ) {
+	$args['posts_per_page'] = 4;
+	$args['columns'] = 4;
 	return $args;
 }

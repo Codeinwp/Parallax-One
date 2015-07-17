@@ -6,9 +6,9 @@
 	$parallax_one_contact_info_item = get_theme_mod('parallax_one_contact_info_content',
 		json_encode(
 			array( 
-					array("icon_value" => "icon-basic-mail" ,"text" => "hey@designlab.co", "link" => "#" ), 
-					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Glen Road, E13 8 London, UK", "link" => "#" ), 
-					array("icon_value" => "icon-basic-tablet" ,"text" => "+44-12-3456-7890", "link" => "#" ) 
+					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
+					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ), 
+					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" ) 
 				)
 		)
 	);

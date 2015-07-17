@@ -564,7 +564,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		)
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
-		'label'   => esc_html__('Add new social icon','parallax-one'),
+		'label'   => esc_html__('Add new contact field','parallax-one'),
 		'section' => 'parallax_one_contact_section',
 		'active_callback' => 'parallax_one_show_on_front',
 		'priority' => 1,

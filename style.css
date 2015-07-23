@@ -362,6 +362,7 @@ body.custom-background {
 .header {
 	background-size: cover;
 	background-attachment: fixed;
+	background-position:top center;
 }
 
 blockquote:before,

@@ -1,5 +1,25 @@
 
 
+### 1.0.4 - 24/07/2015
+
+ Changes: 
+
+
+ * this fixes #198 - responsive header image
+ * #198 - center background image
+ * #199 - latest news section appears only if it has posts
+ * update to #198 - responsive header image
+ * update to #198
+ * update to #199
+ * Merge pull request #200 from cristian-ungureanu/development
+
+Development
+ * Fixed #136 rtl support
+ * Fixed #148 Basic bbpress integration
+ * Small css issue
+ * Update style
+
+
 ### 1.0.1 - 17/07/2015
 
  Changes: 

@@ -710,6 +710,7 @@ footer.footer ul{
 }
 #primary{
     padding-left:15px;
+    float: right;
 }
 #secondary{
     padding-right:30px;

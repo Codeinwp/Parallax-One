@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 1.0.3 
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -362,6 +362,7 @@ body.custom-background {
 .header {
 	background-size: cover;
 	background-attachment: fixed;
+	background-position:top center;
 }
 
 blockquote:before,
@@ -2553,6 +2554,10 @@ div.wpcf7-mail-sent-ng {
 	line-height: 17px;
 }
 
+.woocommerce .products .star-rating span {
+	top: -1px;
+}
+
 .woocommerce ul.products li.product .price ins {
 	font-size: 20px;
 	color: #000;
@@ -2729,7 +2734,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce .quantity .qty {
-	padding: 13px 0;
+	padding: 11px 0;
 	font-weight: bold;
 	border: 1px solid #E7E7E7;
 	-webkit-border-radius: 3px;
@@ -3495,7 +3500,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 #subscription-toggle {
-	margin: 10px 0;	
+/**	margin: 10px 0;	*/
 }
 
 #bbpress-forums div.bbp-template-notice img.avatar {
@@ -3522,13 +3527,15 @@ div.bbp-template-notice a {
 
 #bbpress-forums li.bbp-header {
 	background: #FBFBFB;
+	padding: 10px 0;
 }
 
 #bbpress-forums #bbp-search-form #bbp_search {
-	padding: 5px 0;
+	padding: 0;
 }
 
-#bbpress-forums .bbp-forum-info .bbp-forum-content, #bbpress-forums p.bbp-topic-meta {
+#bbpress-forums .bbp-forum-info .bbp-forum-content, 
+#bbpress-forums p.bbp-topic-meta {
 	font-size: 11px;
 	line-height: 16px;
 }
@@ -3539,6 +3546,249 @@ div.bbp-template-notice a {
 
 #bbpress-forums fieldset.bbp-form input {
 	padding: 5px;
+}
+
+#bbpress-forums li.bbp-header, 
+#bbpress-forums li.bbp-footer {
+	border-top: none;
+}
+
+#bbpress-forums li.bbp-header {
+	background: none;
+}
+
+#bbpress-forums div.odd, 
+#bbpress-forums ul.odd {
+	background: none;
+}
+
+#bbpress-forums input[type="submit"] {
+    padding: 5px 30px 5px 30px;
+}
+
+#bbpress-forums li.bbp-header, 
+#bbpress-forums li.bbp-footer {
+	background: none;
+}
+
+.bbp-breadcrumb,
+.bbp-breadcrumb a,
+.bbp-breadcrumb p {
+    font-weight: 400;
+    color: #666666;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+#bbpress-forums ul.bbp-lead-topic, 
+#bbpress-forums ul.bbp-topics, 
+#bbpress-forums ul.bbp-forums, 
+#bbpress-forums ul.bbp-replies, 
+#bbpress-forums ul.bbp-search-results {
+    font-weight: 400;
+    color: #666666;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content, 
+#bbpress-forums p.bbp-topic-meta {
+    font-weight: 400;
+    color: #666666;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.bbp-forum-title {
+	font-size: 18px;
+	line-height: 22px;
+	font-weight: 700;
+	color: #000;
+	margin-bottom: 15px;
+	float: left;
+	width: 100%;
+}
+
+.bbp-forum-title:hover {
+	text-decoration: none;
+}
+
+.bbp-forum-title:after {
+    content: "";
+    height: 2px;
+    width: 80px;
+    display: block;
+    background: #008ed6;
+    margin-top: 5px;
+}
+
+#bbpress-forums li.bbp-body ul.forum, 
+#bbpress-forums li.bbp-body ul.topic {
+	border-top: 1px solid #eee;
+	padding: 20px 5px;
+}
+
+.bbp-forum-freshness p,
+.bbp-forum-freshness a,
+.bbp-forum-freshness span {
+	font-size: 14px;
+}
+
+#bbpress-forums p.bbp-topic-meta img.avatar, 
+#bbpress-forums ul.bbp-reply-revision-log img.avatar, 
+#bbpress-forums ul.bbp-topic-revision-log img.avatar, 
+#bbpress-forums div.bbp-template-notice img.avatar, 
+#bbpress-forums .widget_display_topics img.avatar, 
+#bbpress-forums .widget_display_replies img.avatar {
+	margin-bottom: 0;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content, 
+#bbpress-forums p.bbp-topic-meta {
+	margin: 0;
+}
+
+#bbpress-forums .bbp-forum-info .bbp-forum-content, 
+#bbpress-forums p.bbp-topic-meta {
+	margin: 0;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+#bbpress-forums li {
+    font-size: 14px;
+}
+
+#bbpress-forums ul.bbp-lead-topic, 
+#bbpress-forums ul.bbp-topics, 
+#bbpress-forums ul.bbp-forums, 
+#bbpress-forums ul.bbp-replies, 
+#bbpress-forums ul.bbp-search-results {
+	border: none;
+}
+
+#bbpress-forums .bbp-author-name {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+#bbpress-forums fieldset.bbp-form {
+	border: none;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper textarea.bbp-the-content {
+	border: 1px solid #E7E7E7;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+	font-size: 14px;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper div.quicktags-toolbar {
+	border: 1px solid #E7E7E7;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	border-bottom: none;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper div.quicktags-toolbar {
+	border: 1px solid #E7E7E7;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	border-radius: 3px 3px 0 0;
+	border-bottom: none;
+}
+
+li.bbp-forum-freshness, 
+li.bbp-topic-freshness {
+	text-align: center;
+	float: left;
+	width: 25%;
+}
+
+#bbpress-forums div.bbp-the-content-wrapper div.quicktags-toolbar input {
+    padding: 5px;
+    box-shadow: none;
+    background-color: #FBFBFB;
+    border: 1px solid #E7E7E7;
+}
+
+#bbpress-forums fieldset.bbp-form select {
+	color: #666;
+	border: 1px solid #dedede;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+.bbp-topics-front ul.super-sticky, 
+.bbp-topics ul.super-sticky, 
+.bbp-topics ul.sticky, 
+.bbp-forum-content ul.sticky {
+	background: red;
+}
+
+#bbpress-forums div.bbp-topic-tags {
+	float: left;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+#bbpress-forums .bbp-topic-description a {
+	font-size: 12px;
+}
+
+#bbpress-forums fieldset.bbp-form legend {
+    padding: 5px 0;
+}
+
+div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body div.hentry {
+	padding: 8px 0;
+}
+
+#bbpress-forums div.bbp-reply-header {
+    background: none;
+}
+
+#bbpress-forums .bbp-admin-links {
+	color: transparent;
+}
+
+#bbpress-forums .bbp-admin-links a:hover {
+	color: #008ed6;
+}
+
+.bbp-forum-header a.bbp-forum-permalink, 
+.bbp-topic-header a.bbp-topic-permalink, 
+.bbp-reply-header a.bbp-reply-permalink {
+	float: right;
+	margin-left: 10px;
+	color: #ccc;
+	font-size: 12px;
+	line-height: 32px;
+}
+
+#bbpress-forums #bbp-user-wrapper h2.entry-title {
+	font-size: 30px;
+	line-height: 34px;
+}
+
+#bbpress-forums #bbp-single-user-details #bbp-user-navigation li.current a {
+	background: #008ED6;
+	opacity: 0.8;
+	color: #FFF;
+}
+
+#bbpress-forums #bbp-your-profile fieldset fieldset.password span.description {
+    line-height: 18px;
+}
+
+#bbpress-forums .bbp-forum-description .bbp-author-name {
+	font-size: 12px;
 }
 
 

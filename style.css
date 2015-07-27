@@ -823,18 +823,6 @@ textarea.form-control {
 	box-shadow: none;
 }
 
-. { 
-	background: #008ed6;
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00a9ff), color-stop(100%, #008ed6));
-	background: -webkit-linear-gradient(top, #00a9ff 0%, #008ed6 100%);
-	background: -webkit-gradient(linear, left top, left bottom, from(#00a9ff), to(#008ed6));
-	background: linear-gradient(to bottom, #00a9ff 0%, #008ed6 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@gradient-light', endColorstr='@main-color', GradientType=0);
-	-webkit-box-shadow: 0px 3px 0px #005885;
-	box-shadow: 0px 3px 0px #005885;
-}
-
 input[type="date"], input[type="time"], input[type="datetime-local"], input[type="month"]{
 	line-height: normal;
 }
@@ -922,8 +910,8 @@ h2.site-description {
     opacity: 0;
 }
 
-.navbar-brand {
-	padding: 7px;
+header .navbar-brand {
+	padding: 7px 7px 7px 0;
 	height: 70px;
 	line-height: 52px;
 }
@@ -1765,7 +1753,7 @@ h2.site-description {
 	float: left;
 	margin-left: -100px;
 	max-width: 55px;
-	margin-top: 5px;
+	margin-top: 35px;
 	position: absolute;
 	left: -50px;
 	top: 70px;
@@ -1788,6 +1776,7 @@ h2.site-description {
 	padding-top: 0;
 	overflow: hidden;
 	background: rgb(240, 240, 240);
+	margin-top: 30px;
 }
 
 .timeline-box-wrap .icon-container img {
@@ -1846,7 +1835,7 @@ h2.site-description {
 	padding: 2px 0;
 	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
 	font-size: 16px;
-	line-height: 28px;
+	line-height: 26px;
 	font-weight: 300;
 	color: #313131;
 	margin-bottom: 5px;
@@ -3420,6 +3409,26 @@ div.wpcf7-mail-sent-ng {
 
 .woocommerce ul.products li.product:hover, .woocommerce-page ul.products li.product:hover{
 	border-bottom-color: #008ed6;
+}
+
+.woocommerce-page #primary {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.woocommerce div.product form.cart .variations label {
+    font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+    font-size: 16px;
+    line-height: 53px;
+    font-weight: 400;
+    color: #313131;
+}
+
+.woocommerce div.product form.cart .variations select {
+    float: left;
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+    border: 1px solid #E7E7E7;
 }
 
 .widget.woocommerce .widget-title:after {
@@ -5278,6 +5287,14 @@ h2.screen-reader-text {
 	  top: 46px;
 	}
 }
+
+@media (min-width: 768px) {
+	.navbar>.container .navbar-brand, 
+	.navbar>.container-fluid .navbar-brand {
+    	margin-left: 0;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
 	html {
 		font-size: 95%;

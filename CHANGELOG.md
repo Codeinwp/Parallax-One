@@ -1,5 +1,18 @@
 
 
+### 1.0.5 - 27/07/2015
+
+ Changes: 
+
+
+ * Home Latest news section redesign
+ * #209 - fixed child theme support
+ * Merge pull request #210 from cristian-ungureanu/development
+
+#209 - fixed child theme support
+ * Update style.css
+
+
 ### 1.0.4 - 24/07/2015
 
  Changes: 

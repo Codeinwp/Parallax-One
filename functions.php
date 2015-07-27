@@ -362,7 +362,7 @@ function parallax_get_file($file){
 		if ( file_exists( $file_path ) ){
 			return esc_url(get_stylesheet_directory_uri() . $file); 
 		} else {
-			return esc_url(get_template_directory_uri());
+			return esc_url(get_template_directory_uri() . $file);
 		}
 	}
 }

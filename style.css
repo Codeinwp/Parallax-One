@@ -1746,7 +1746,6 @@ h2.site-description {
 	padding-right: 110px;
 }
 
-/*.timeline-section li { */
 .timeline-box-wrap {
 	list-style-type: none;
 	padding: 1em 1em 1em 0;
@@ -1770,6 +1769,10 @@ h2.site-description {
 	position: absolute;
 	left: -50px;
 	top: 70px;
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 300;
 }
 
 .timeline-box-wrap .icon-container {
@@ -1793,18 +1796,11 @@ h2.site-description {
 
 .timeline-box-wrap .info {
 	text-align: left;
-	padding: 10px;
+	padding: 0 10px;
 	font-size: 14px;
 	margin-left: 0;
 	min-height: 150px;
 	padding-left: 100px;
-	border: 1px solid #e4e7e7;
-	border-left: none;
-	-webkit-border-radius: 0 3px 3px 0;
-	-moz-border-radius: 0 3px 3px 0;
-	border-radius:  0 3px 3px 0;
-	border-bottom: 4px solid #e4e7e7;
-	border-bottom-color: #e4e7e7;
 	background: #FFF;
 }
 
@@ -1821,31 +1817,57 @@ h2.site-description {
 }
 
 .timeline-box-wrap .info h1 a {
-	color: #000;
+	font-size: 22px;
+	line-height: 26px;
+    font-family: 'Cabin', Helvetica Neue, Sans-serif;
+    font-weight: 400;	
+	color: #454545;
+}
+
+.timeline-box-wrap .info h1 a:hover {
+	text-decoration: none;
+	color: #008ed6;
+}
+
+.timeline-box-wrap .info h1:after {
+	content: "";
+	height: 2px;
+	width: 80px;
+	display: block;
+	background: #008ed6;
+	margin-top: 5px;
 }
 
 .timeline-box-wrap .info .entry-content p {
 	margin: 0;
-	font-size: 14px;
-	line-height: 18px;
 	text-align: justify;
 	float: left;
 	width: 100%;
-	min-height: 55px;
 	padding: 2px 0;
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 300;
+	color: #313131;
+	margin-bottom: 5px;
 }
 
 .timeline-box-wrap .info .entry-meta {
 	float: left;
 	width: 100%;
-	font-size: 13px;
-	line-height: 22px;
-	font-weight: 400;
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 14px;
+	line-height: 28px;
+	font-weight: 300;
+	padding: 5px 0 2px;
+	font-style: italic;
 }
 
 .timeline-box-wrap .read-more {
-	font-size: 13px;
-	line-height: 22px;
+    font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
 }
 
 .parallax-slider-whole-wrap {

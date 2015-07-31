@@ -149,7 +149,7 @@ jQuery(document).ready(function(){
 /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
 /*---------------------------------------*/
 function mainNav() {
-    if(jQuery('.overlay-layer-wrap').hasClass('sticky-navigation-open')){
+    if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
         return false;
     }
     var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;

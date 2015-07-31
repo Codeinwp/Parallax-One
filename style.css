@@ -1131,6 +1131,18 @@ header .navbar-brand {
     max-width: 1000px;
 }
 
+.header-layer-one {
+	background: url(images/background1.png);
+	background-size: cover;
+	background-position: 0px 0px;
+}
+
+.header-layer-two {
+	background: url(images/background2.png);
+	background-size: cover;
+	background-position: 0px 0px;
+}
+
 /* INTRO */
 .intro-section {
     margin-top: 130px;

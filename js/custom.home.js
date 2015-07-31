@@ -105,12 +105,7 @@ function parallax_one_moveBottom() {
 jQuery(window).load(function () {
     "use strict";
     jQuery(".status").fadeOut();
-    jQuery(".preloader").delay(1000).fadeOut("slow");
-
-    jQuery(".services-wrap").gridalicious({selector: '.service-box', width: 300, gutter: 30});
-
-    jQuery(".testimonials-wrap").gridalicious({selector: '.testimonials-box', width: 360});
-    
+    jQuery(".preloader").delay(1000).fadeOut("slow");    
 });
 
 jQuery(window).resize(function() {
@@ -135,6 +130,31 @@ jQuery(window).load(function() {
 });
 
 
+
+var window_width_old;
+jQuery(document).ready(function(){
+    window_width_old = jQuery('.container').width();
+    if( window_width_old < 750  ){
+        jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 1,selector: '.service-box'});
+        jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 1,selector: '.testimonials-box'});
+    } else if( window_width_old >= 750  ){
+        jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 3,selector: '.service-box'});
+        jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 3,selector: '.testimonials-box'});
+    } 
+});
+
+jQuery(window).resize(function() {
+    if( window_width_old != jQuery('.container').outerWidth() ){
+        window_width_old = jQuery('.container').outerWidth();
+        if( window_width_old < 750  ){
+            jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 1,selector: '.service-box'});
+            jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 1,selector: '.testimonials-box'});
+        } else if( window_width_old >= 750  ){
+            jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 3,selector: '.service-box'});
+            jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 3,selector: '.testimonials-box'});
+        } 
+    }
+});
 
 
 /*=============================

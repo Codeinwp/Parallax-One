@@ -1316,6 +1316,7 @@ header .navbar-brand {
 .services-wrap .service-box {
 	display: inline-block;
 	width: 100%;
+	text-align: center;
 }
 
 .single-service .service-icon {
@@ -1339,6 +1340,40 @@ header .navbar-brand {
 .display-none {
 	display: none !important;
 }
+
+.parallax_one_grid_col_4 > div,
+.parallax_one_grid_col_3 > div,
+.parallax_one_grid_col_2 > div,
+.parallax_one_grid_col_1 > div {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.parallax_one_grid_col_4 {
+	float: left;
+	width: 22%;
+	margin: 0 1.5% 0 1.5%;
+}
+
+.parallax_one_grid_col_3 {
+	float: left;
+	width: 30%;
+	margin: 0 1.5% 0 1.5%;
+}
+
+.parallax_one_grid_col_2 {
+	float: left;
+	width: 47%;
+	margin: 0 1.5% 0 1.5%;
+}
+
+.parallax_one_grid_col_1 {
+	float: left;
+	width: 97%;
+	margin: 0 1.5% 0 1.5%;
+}
+
+
 
 /*---------------------------------------
    3.4 SECTION: APP BRIEF    
@@ -2154,8 +2189,6 @@ a.control_next.fade-btn {
 	-moz-transition: all .2s ease;
 	-o-transition: all .2s ease;
 	transition: all .2s ease;
-	padding-left: 15px;
- 	padding-right: 15px;
 }
 
 .testimonials-box .feedback {

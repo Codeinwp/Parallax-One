@@ -44,7 +44,7 @@
 
 
 				if(!empty($parallax_one_testimonials_content)) {
-					echo '<ul class="row no-gutters testimonials-wrap">';
+					echo '<div id="happy_customers_wrap" class="row no-gutters testimonials-wrap">';
 					$parallax_one_testimonials_content_decoded = json_decode($parallax_one_testimonials_content);
 					foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
 						if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){
@@ -103,7 +103,7 @@
 				<?php
 					}
 				}
-				echo '</ul>';
+				echo '</div>';
 			}
 				?>
 			</div>

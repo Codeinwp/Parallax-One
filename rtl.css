@@ -775,6 +775,42 @@ footer.footer ul{
 .widget .post-date{
     padding-right:10px;
 }
+.parallax_one_grid_col_1,
+.parallax_one_grid_col_2,
+.parallax_one_grid_col_3,
+.parallax_one_grid_col_4 {
+    float: right;
+}
+.parallax_one_grid_first {
+    margin-right: 0;
+}
+.parallax_one_grid_last {
+    margin-left: 0;
+}
+.parallax_one_grid_col_1.parallax_one_grid_first {
+    margin-left: 0;
+}
+.parallax_one_grid_col_2.parallax_one_grid_first {
+    margin-left: 1.75%;
+}
+.parallax_one_grid_col_3.parallax_one_grid_first {
+    margin-left: 1.25%;
+}
+.parallax_one_grid_col_4.parallax_one_grid_first {
+    margin-left: 1.25%;
+}
+.parallax_one_grid_col_1.parallax_one_grid_last {
+    margin-right: 0;
+}
+.parallax_one_grid_col_2.parallax_one_grid_last {
+    margin-right: 1.75%;
+}
+.parallax_one_grid_col_3.parallax_one_grid_last {
+    margin-right: 1.25%;
+}
+.parallax_one_grid_col_4.parallax_one_grid_last {
+    margin-right: 1.25%;
+}
 
 @media (max-width:1200px) {
     .woocommerce ul.products li.product a.added_to_cart{

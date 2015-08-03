@@ -187,23 +187,12 @@ function parallax_one_scripts() {
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 
 	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
-	
-	if( (function_exists('is_shop') && is_shop()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag()) ){
-
-		wp_enqueue_script( 'parallax-one-shop', parallax_get_file('/js/parallax_one_shop.js'), array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
-	
-	}
-
-	if( (function_exists('is_shop') && is_shop()) || ('posts' == get_option( 'show_on_front' ) && is_front_page()) || (function_exists('is_product') && is_product()) || (function_exists('is_product_category') && is_product_category()) || (function_exists('is_product_tag') && is_product_tag()) ){
-	
-		wp_enqueue_script( 'parallax-one-grid-a-licious', parallax_get_file('/js/jquery.grid-a-licious.min.js'), array(), '3.0.1', true );
-	}
-	
+		
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '1.0.0', true );
 
 	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('parallax-one-grid-a-licious','jquery'), '1.0.0', true );
+		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
 
 	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );

@@ -212,6 +212,32 @@ jQuery(window).scroll(function(){
 
 });
 
+var window_width_old;
+jQuery(document).ready(function(){
+    window_width_old = jQuery('.container').width();
+    if( window_width_old <= 462 ) {
+        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+    } else if( window_width_old <= 750  ){
+        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+    } else {
+        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+    }
+});
+
+jQuery(window).resize(function() {
+    if( window_width_old != jQuery('.container').outerWidth() ){
+        window_width_old = jQuery('.container').outerWidth();
+        if( window_width_old <= 462 ) {
+            jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+        } else if( window_width_old <= 750  ){
+            jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+        } else {
+            jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+        }
+    }
+});
+
+
 ;(function ($, window, document, undefined) {
     var defaults = {
             columns:    3,
@@ -241,11 +267,21 @@ jQuery(window).scroll(function(){
         } else {
             classname = this.element.className;
         }
-        $container.after('<div id="' + this.element.id + '" class="' + classname + ' parallax_one_grid ' + unique_class + '"></div>');
+        var my_id;
+        if( this.element.id == '' ) {
+            my_id = 'parallax_one_id_' + self.make_unique();
+        } else {
+            my_id = this.element.id;
+        }
+        $container.after('<div id="' + my_id + '" class="' + classname + ' parallax_one_grid ' + unique_class + '"></div>');
         var i;
         for(i=1; i<=this.options.columns; i++){
             columns_height.push(0);
-            $('.'+unique_class).append('<div class="parallax_one_grid_col_' + this.options.columns +' parallax_one_grid_column_' + i +'"><div>');
+            var first_cols = '';
+            var last_cols = '';
+            if( i%self.options.columns == 1 ) { first_cols = 'parallax_one_grid_first'; }
+            if( i%self.options.columns == 0 ) { first_cols = 'parallax_one_grid_last'; }
+            $('.'+unique_class).append('<div class="parallax_one_grid_col_' + this.options.columns +' parallax_one_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
         if( this.element.className.indexOf('parallax_one_grid')<0 ){
             $container.children(this.options.selector).each(function(index){

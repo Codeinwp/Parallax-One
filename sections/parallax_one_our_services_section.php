@@ -48,7 +48,7 @@
 					<?php
 						if( !empty($parallax_one_services) ){
 							$parallax_one_services_decoded = json_decode($parallax_one_services);
-							echo '<div id="our_services_wrap" class="row services-wrap">';
+							echo '<div id="our_services_wrap" class="services-wrap">';
 								foreach($parallax_one_services_decoded as $parallax_one_service_box){
 									if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_url)  && $parallax_one_service_box->choice == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
 										echo '<div class="service-box"><div class="single-service border-bottom-hover">';

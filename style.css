@@ -2973,16 +2973,37 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .upsells.products ul li.product, 
 .woocommerce .upsells.products ul.products li.product,
 .woocommerce .related ul li.product, 
-.woocommerce .related ul.products li.product
+.woocommerce .related ul.products li.product,
 .woocommerce-page .related ul li.product, 
 .woocommerce-page .related ul.products li.product {
-	float: left;
-	margin: 0 3.8% 2.992em 0;
-	padding: 0;
-	position: relative;
-	width: 22.05%;
-	clear: none;
+    float: left;
+    width: 23%;
+    margin: 0 1.25% 0 1.25%;
 }
+
+.woocommerce-page .upsells.products ul li.product:nth-child(4n+1), 
+.woocommerce-page .upsells.products ul.products li.product:nth-child(4n+1), 
+.woocommerce .upsells.products ul li.product:nth-child(4n+1), 
+.woocommerce .upsells.products ul.products li.product:nth-child(4n+1), 
+.woocommerce .related ul li.product:nth-child(4n+1), 
+.woocommerce .related ul.products li.product:nth-child(4n+1),
+	.woocommerce-page .related ul li.product:nth-child(4n+1), 
+	.woocommerce-page .related ul.products li.product:nth-child(4n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+
+.woocommerce-page .upsells.products ul li.product:nth-child(4n), 
+.woocommerce-page .upsells.products ul.products li.product:nth-child(4n), 
+.woocommerce .upsells.products ul li.product:nth-child(4n), 
+.woocommerce .upsells.products ul.products li.product:nth-child(4n), 
+.woocommerce .related ul li.product:nth-child(4n), 
+.woocommerce .related ul.products li.product:nth-child(4n),
+	.woocommerce-page .related ul li.product:nth-child(4n), 
+	.woocommerce-page .related ul.products li.product:nth-child(4n) {
+		margin-right: 0;
+		clear: right;
+	}
 
 .woocommerce-page .upsells.products ul li.product:nth-child(4n),
 .woocommerce-page .upsells.products ul.products li.product:nth-child(4n), 
@@ -3500,21 +3521,6 @@ div.wpcf7-mail-sent-ng {
 	line-height: 18px;
 }
 
-
-.woocommerce ul.products li.product, 
-.woocommerce-page ul.products li.product, 
-.woocommerce ul.products li.product a:first-child, 
-.woocommerce-page .upsells.products ul li.product, 
-.woocommerce-page .upsells.products ul.products li.product, 
-.woocommerce .upsells.products ul li.product, 
-.woocommerce .upsells.products ul.products li.product, 
-.woocommerce .related ul li.product, 
-.woocommerce .related ul.products li.product
- .woocommerce-page .related ul li.product, 
- .woocommerce-page .related ul.products li.product {
-	width: 100%;
-}
-
 .woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product, .woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product, .woocommerce .related ul li.product, .woocommerce .related ul.products li.product
 .woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product{
 	padding: 20px;
@@ -3666,6 +3672,19 @@ div.wpcf7-mail-sent-ng {
 	width: 65px;
 	height: auto;
 	box-shadow: none;
+}
+
+.woocommerce .upsells.products ul > li, 
+.woocommerce .upsells.products ul.products > li, 
+.woocommerce-page .upsells.products ul > li, 
+.woocommerce-page .upsells.products ul.products > li, 
+.woocommerce .related ul > li, 
+.woocommerce .related ul.products > li, 
+.woocommerce-page .related ul > li, 
+.woocommerce-page .related ul.products > li {
+    float: left;
+    width: 23%;
+    margin: 0 1.25% 0 1.25%;
 }
 
 /*---------------------------------------
@@ -5448,6 +5467,45 @@ h2.screen-reader-text {
 		margin-right: 0;
 		clear: right;
 	}
+
+	.woocommerce-page .upsells.products ul li.product, 
+	.woocommerce-page .upsells.products ul.products li.product, 
+	.woocommerce .upsells.products ul li.product, 
+	.woocommerce .upsells.products ul.products li.product, 
+	.woocommerce .related ul li.product, 
+	.woocommerce .related ul.products li.product,
+ 	.woocommerce-page .related ul li.product, 
+ 	.woocommerce-page .related ul.products li.product {
+	    float: left;
+	    width: 48%;
+	    margin: 0 1.75% 0 1.75%;
+	    margin-bottom: 30px;
+	}
+
+	.woocommerce-page .upsells.products ul li.product:nth-child(2n+1), 
+	.woocommerce-page .upsells.products ul.products li.product:nth-child(2n+1), 
+	.woocommerce .upsells.products ul li.product:nth-child(2n+1), 
+	.woocommerce .upsells.products ul.products li.product:nth-child(2n+1), 
+	.woocommerce .related ul li.product:nth-child(2n+1), 
+	.woocommerce .related ul.products li.product:nth-child(2n+1),
+ 	.woocommerce-page .related ul li.product:nth-child(2n+1), 
+ 	.woocommerce-page .related ul.products li.product:nth-child(2n+1) {
+ 		margin-left: 0;
+ 		clear: left;
+ 	}
+
+	.woocommerce-page .upsells.products ul li.product:nth-child(2n), 
+	.woocommerce-page .upsells.products ul.products li.product:nth-child(2n), 
+	.woocommerce .upsells.products ul li.product:nth-child(2n), 
+	.woocommerce .upsells.products ul.products li.product:nth-child(2n), 
+	.woocommerce .related ul li.product:nth-child(2n), 
+	.woocommerce .related ul.products li.product:nth-child(2n),
+ 	.woocommerce-page .related ul li.product:nth-child(2n), 
+ 	.woocommerce-page .related ul.products li.product:nth-child(2n) {
+ 		margin-right: 0;
+ 		clear: right;
+ 	}
+
 }
 
 /*---------------------------------------

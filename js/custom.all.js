@@ -212,6 +212,7 @@ jQuery(window).scroll(function(){
 
 });
 
+
 var window_width_old;
 jQuery(document).ready(function(){
     window_width_old = jQuery('.container').width();
@@ -228,11 +229,11 @@ jQuery(window).resize(function() {
     if( window_width_old != jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
-            jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product'});
         } else if( window_width_old <= 750  ){
-            jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product'});
         } else {
-            jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product'});
         }
     }
 });
@@ -240,8 +241,9 @@ jQuery(window).resize(function() {
 
 ;(function ($, window, document, undefined) {
     var defaults = {
-            columns:    3,
-            selector:   'div',
+            columns:                3,
+            selector:               'div',
+            excludeParentClass:     '',
         };
     function ParallaxOneGridPinterest(element, options) {
         this.element    = element;
@@ -253,6 +255,9 @@ jQuery(window).resize(function() {
         var self            = this,
             $container      = $(this.element);
             $select_options = $(this.element).children();
+        if( $('.upsells').length>0 || $('.related').length>0 ){
+            return;
+        } 
         self.make_magic( $container, $select_options );
     };
     ParallaxOneGridPinterest.prototype.make_magic = function (container) {

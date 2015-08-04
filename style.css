@@ -1163,6 +1163,10 @@ header .navbar-brand {
     margin-top: 70px;
 }
 
+.header-parallax-effect-mobil {
+	background-position: top center;
+}
+
 /* header style [1] */
 .header-style-one .intro-section {
     margin-top: 70px;
@@ -2987,8 +2991,8 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .upsells.products ul.products li.product:nth-child(4n+1), 
 .woocommerce .related ul li.product:nth-child(4n+1), 
 .woocommerce .related ul.products li.product:nth-child(4n+1),
-	.woocommerce-page .related ul li.product:nth-child(4n+1), 
-	.woocommerce-page .related ul.products li.product:nth-child(4n+1) {
+.woocommerce-page .related ul li.product:nth-child(4n+1), 
+.woocommerce-page .related ul.products li.product:nth-child(4n+1) {
 		margin-left: 0;
 		clear: left;
 	}
@@ -5756,6 +5760,10 @@ h2.screen-reader-text {
 		margin-left: 0;
 		padding-left: 0;
 	}
+	#header_layer_one,
+	#header_layer_two {
+	    background-position: top center !important;
+	}
 
 	/* woocommerce */
 	.woocommerce div.product .woocommerce-tabs {
@@ -5834,6 +5842,7 @@ h2.screen-reader-text {
 		clear: right;
 	}
 
+}
 
 @media (max-width: 680px) {
 	.single-feature {

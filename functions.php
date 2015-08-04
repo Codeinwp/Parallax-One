@@ -190,6 +190,12 @@ function parallax_one_scripts() {
 		
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '1.0.0', true );
 
+	if ( is_front_page() ) {
+
+		wp_enqueue_script( 'parallax-one-parallax-effect', parallax_get_file('/js/parallax-effect.js'), array('jquery','parallax-one-custom-all'), '1.0.0', true );
+
+	}
+
 	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
 		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );

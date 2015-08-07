@@ -13,8 +13,12 @@
 
 <?php
 	if(!empty($parallax_one_enable_move) && $parallax_one_enable_move && !empty($parallax_one_first_layer) && !empty($parallax_one_second_layer)){
-		echo '<div class="header-layer-one" id="header_layer_one" style="background: url('.$parallax_one_first_layer.');">';
-		echo '<div class="header-layer-two" id="header_layer_two" style="background: url('.$parallax_one_second_layer.');">';	
+		echo '
+		<ul id="parallax_move">
+		  <li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_first_layer.');"></li>
+		  <li class="layer layer2" data-depth="0.20" style="background-image: url('.$parallax_one_second_layer.');"></li>
+		</ul>';
+
 	}
 ?>
 
@@ -80,12 +84,6 @@
 			</div>
 			</div>
 		</div>
-<?php
-	if(!empty($parallax_one_enable_move) && $parallax_one_enable_move && !empty($parallax_one_first_layer) && !empty($parallax_one_second_layer)){
-		echo '</div>';
-		echo '</div>';	
-	}
-?>
 
 <?php
 	}

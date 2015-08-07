@@ -192,7 +192,7 @@ function parallax_one_scripts() {
 
 	if ( is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-parallax-effect', parallax_get_file('/js/parallax-effect.js'), array('jquery','parallax-one-custom-all'), '1.0.0', true );
+		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.0', true );
 
 	}
 

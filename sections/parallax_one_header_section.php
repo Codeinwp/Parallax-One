@@ -5,12 +5,18 @@
 	$parallax_one_header_subtitle = get_theme_mod('parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 	$parallax_one_header_button_text = get_theme_mod('parallax_one_header_button_text','GET STARTED');
 	$parallax_one_header_button_link = get_theme_mod('parallax_one_header_button_link','#');
+	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
+	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
+	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
 	if(!empty($paralax_one_header_logo) || !empty($parallax_one_header_title) || !empty($parallax_one_header_subtitle) || !empty($parallax_one_header_button_text)){
 ?>
 
-
-<div class="header-layer-one" id="header_layer_one">
-	<div class="header-layer-two" id="header_layer_two">
+<?php
+	if(!empty($parallax_one_enable_move) && $parallax_one_enable_move && !empty($parallax_one_first_layer) && !empty($parallax_one_second_layer)){
+		echo '<div class="header-layer-one" id="header_layer_one" style="background: url('.$parallax_one_first_layer.');">';
+		echo '<div class="header-layer-two" id="header_layer_two" style="background: url('.$parallax_one_second_layer.');">';	
+	}
+?>
 
 		<div class="overlay-layer-wrap">
 			<div class="container overlay-layer" id="parallax_header">
@@ -74,9 +80,12 @@
 			</div>
 			</div>
 		</div>
-
-	</div><!-- #header_layer_two -->
-</div><!-- #header_layer_one -->
+<?php
+	if(!empty($parallax_one_enable_move) && $parallax_one_enable_move && !empty($parallax_one_first_layer) && !empty($parallax_one_second_layer)){
+		echo '</div>';
+		echo '</div>';	
+	}
+?>
 
 <?php
 	}

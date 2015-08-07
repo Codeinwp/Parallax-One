@@ -2,10 +2,9 @@
 
 if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
-	get_header(); 
+		get_header(); 
 
-
-		include_once get_template_directory() . "/sections/parallax_one_header_section.php";
+		get_template_part('/sections/parallax_one_header_section');
 	?>
 		</div>
 		<!-- /END COLOR OVER IMAGE -->
@@ -20,7 +19,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 		if(!empty($sections_array)){
 			foreach($sections_array as $section){
-				include_once get_template_directory() . "/". $section.".php";
+				get_template_part($section);
 			}
 		}
 	?>

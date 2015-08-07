@@ -7,7 +7,7 @@
 	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
-		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title','Latest news');
+		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
 			<section class="brief timeline" id="latestnews">

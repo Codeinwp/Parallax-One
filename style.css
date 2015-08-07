@@ -1132,14 +1132,12 @@ header .navbar-brand {
 }
 
 .header-layer-one {
-	background: url(images/background1.png);
-	background-size: cover;
+	background-size: cover!important;
 	background-position: 0px 0px;
 }
 
 .header-layer-two {
-	background: url(images/background2.png);
-	background-size: cover;
+	background-size: cover!important;
 	background-position: 0px 0px;
 }
 

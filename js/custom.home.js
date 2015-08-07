@@ -227,7 +227,7 @@ if( !isMobile.any() && jQuery('#parallax_move').length>0 ){
             $('.intro-section-text-wrap').css({
                 'position': 'initial',
             });
-            if ( parallax_one_bigTitle_height-parallax_one_scrollTop > parallax_one_navigation_height+parallax_one_bigTitle_logo_height+$('#intro_section_text_3').height()+150 ) {
+            if ( parallax_one_bigTitle_height-parallax_one_scrollTop > parallax_one_navigation_height+parallax_one_bigTitle_logo_height+$('#intro_section_text_3').height()+250 ) {
                 document.getElementById('inpage_scroll_btn').style.top = parallax_one_bigTitle_logo_position + 55 + parallax_one_bigTitle_logo_height + "px";
             }
         } else {
@@ -241,7 +241,7 @@ if( !isMobile.any() && jQuery('#parallax_move').length>0 ){
                 'top': 'auto',
             });
         }
-        if ( parallax_one_bigTitle_height-parallax_one_scrollTop > parallax_one_navigation_height+parallax_one_bigTitle_logo_height+$('#intro_section_text_3').height()+150 ) {
+        if ( parallax_one_bigTitle_height-parallax_one_scrollTop > parallax_one_navigation_height+parallax_one_bigTitle_logo_height+$('#intro_section_text_3').height()+250 ) {
             document.getElementById('only-logo-inner').style.top  = parallax_one_bigTitle_logo_position + "px"            
         }
     });
@@ -274,8 +274,6 @@ function parallax_effect(){
         });
         });
         var parallax = new Parallax(scene);
-
-        console.log( 'a' );
     }
 
 }

@@ -279,8 +279,17 @@ function parallax_one_register_required_plugins() {
 	 
 				'slug'      => 'intergeo-maps',
 	 
-				'required'  => false,
+				'required'  => false
 	 
+			),
+			
+			array(
+			
+				'name' => 'ShortPixel Image Optimizer',
+			
+				'slug' => 'shortpixel-image-optimiser',
+			
+				'required' => false
 			)
 		);
 	

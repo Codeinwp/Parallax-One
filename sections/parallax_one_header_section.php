@@ -12,12 +12,28 @@
 ?>
 
 <?php
-	if(!empty($parallax_one_enable_move) && $parallax_one_enable_move && !empty($parallax_one_first_layer) && !empty($parallax_one_second_layer)){
-		echo '
-		<ul id="parallax_move">
-		  <li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_first_layer.');"></li>
-		  <li class="layer layer2" data-depth="0.20" style="background-image: url('.$parallax_one_second_layer.');"></li>
-		</ul>';
+	if( !empty($parallax_one_enable_move) && $parallax_one_enable_move ) {
+		
+		echo '<ul id="parallax_move">';
+
+
+			if ( empty($parallax_one_first_layer) && empty($parallax_one_second_layer) ) {
+
+				$parallax_one_header_image2 = get_header_image();
+				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_header_image2.');"></li>';
+
+			} else {
+
+				if( !empty($parallax_one_first_layer) )  {
+					echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_first_layer.');"></li>';
+				}
+				if( !empty($parallax_one_second_layer) ) {
+					echo '<li class="layer layer2" data-depth="0.20" style="background-image: url('.$parallax_one_second_layer.');"></li>';
+				}
+
+			}
+
+		echo '</ul>';
 
 	}
 ?>

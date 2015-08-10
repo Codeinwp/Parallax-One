@@ -344,12 +344,17 @@ function parallax_one_php_style() {
 		echo 'body{ color: '.$parallax_one_text_color.'}';
 	}
 	
-	if('posts' == get_option( 'show_on_front' ) && is_front_page()){
+	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
+	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
+	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
+
+	if( empty($parallax_one_enable_move) && !$parallax_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 		$parallax_one_header_image = get_header_image();
 		if(!empty($parallax_one_header_image)){
 			echo '.header{ background-image: url('.$parallax_one_header_image.');}';
 		}
 	}
+
 	echo '</style>';
 }
 

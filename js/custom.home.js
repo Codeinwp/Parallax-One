@@ -261,10 +261,9 @@ function parallax_effect(){
         var scene = document.getElementById('parallax_move');
         var window_width = jQuery(window).outerWidth();
         jQuery('#parallax_move').css({
-        'width':            window_width + 50,
-        'margin-left':      -25,
-        'margin-top':       -25,
-        'margin-bottom':    -25,
+        'width':            window_width + 120,
+        'margin-left':      -60,
+        'margin-top':       -60,
         'position':         'absolute',
         });
         var h = jQuery('.overlay-layer-wrap').outerHeight();

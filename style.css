@@ -708,7 +708,6 @@ big {
 .header {
 	overflow: hidden;
 	position: relative;
-	background: none !important;
 }
 
 .overlay-layer-wrap {
@@ -892,7 +891,7 @@ label{
 
 .header .overlay-layer {
     padding-top: 84px;
-    padding-bottom: 175px;
+    padding-bottom: 195px;
     height: auto;
 }
 

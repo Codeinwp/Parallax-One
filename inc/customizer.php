@@ -220,7 +220,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	) ) );
 	
 	$wp_customize->get_section('header_image')->panel='panel_1';
-	$wp_customize->get_section('header_image')->title=esc_html__( 'Header', 'parallax-one' );
+	$wp_customize->get_section('header_image')->title=esc_html__( 'Background', 'parallax-one' );
 	
 	/* Enable parallax effect*/
 	$wp_customize->add_setting( 'paralax_one_enable_move', array(

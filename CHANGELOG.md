@@ -1,5 +1,43 @@
 
 
+### 2.0.0 - 12/08/2015
+
+ Changes: 
+
+
+ * CSS issues
+ * Added parallax efect on header
+ * Replaced pinterest plugin fo Our services and Testimonials
+ * Pinterest style on shop
+ * Fixed Related and Upsells products issue
+ * Parallax issues
+ * optimized screenshot
+ * #215 - suggest short pixel image optimiser plugin
+ * #202 - added textdomain to latest news title
+ * use get_template_part instead of include
+ * added parallax controls
+ * changed name in customizr from header image to header
+ * #215 - added sp zip
+ * Merge pull request #220 from cristian-ungureanu/development
+
+Development
+ * Fixed #221 Header Parallax effect
+ * Fixed #221 parallax effect issue
+ * Fixed #221 Header Parallax effect header height issue
+ * Fixed #221 Parallax effect header issue
+ * Fixed #221 Header parallax issue
+ * #217, #117 - added readme.txt , removed unused images
+ * Merge pull request #222 from cristian-ungureanu/development
+
+#217, #117 - added readme.txt , removed unused images
+ * Prevent theme from beeing updated by wordpress.org updates
+ * Rename Header section to Background
+ * update conditon of header
+ * Merge pull request #223 from cristian-ungureanu/development
+
+update conditon of header
+
+
 ### 1.0.5 - 27/07/2015
 
  Changes: 

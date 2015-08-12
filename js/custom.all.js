@@ -149,7 +149,7 @@ jQuery(document).ready(function(){
 /*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
 /*---------------------------------------*/
 function mainNav() {
-    if(jQuery('.overlay-layer-wrap').hasClass('sticky-navigation-open')){
+    if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
         return false;
     }
     var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -211,3 +211,137 @@ jQuery(window).scroll(function(){
     }, 500);
 
 });
+
+
+var window_width_old;
+jQuery(document).ready(function(){
+    window_width_old = jQuery('.container').width();
+    if( window_width_old <= 462 ) {
+        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+    } else if( window_width_old <= 750  ){
+        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+    } else {
+        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+    }
+});
+
+jQuery(window).resize(function() {
+    if( window_width_old != jQuery('.container').outerWidth() ){
+        window_width_old = jQuery('.container').outerWidth();
+        if( window_width_old <= 462 ) {
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+        } else if( window_width_old <= 750  ){
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+        } else {
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+        }
+    }
+});
+
+
+;(function ($, window, document, undefined) {
+    var defaults = {
+            columns:                3,
+            selector:               'div',
+            excludeParentClass:     '',
+        };
+    function ParallaxOneGridPinterest(element, options) {
+        this.element    = element;
+        this.options    = $.extend({}, defaults, options);
+        this.defaults   = defaults;
+        this.init();
+    }
+    ParallaxOneGridPinterest.prototype.init = function () {
+        var self            = this,
+            $container      = $(this.element);
+            $select_options = $(this.element).children();
+        if( $('.upsells').length>0 || $('.related').length>0 ){
+            return;
+        } 
+        self.make_magic( $container, $select_options );
+    };
+    ParallaxOneGridPinterest.prototype.make_magic = function (container) {
+        var self            = this;
+            $container      = $(container),
+            columns_height  = [],
+            unique_class    = 'parallax_one_grid_' + self.make_unique();
+        var classname;
+        var substr_index    = this.element.className.indexOf('parallax_one_grid_');
+        if( substr_index>-1 ) {
+            classname = this.element.className.substr( 0, this.element.className.length-47 );
+        } else {
+            classname = this.element.className;
+        }
+        var my_id;
+        if( this.element.id == '' ) {
+            my_id = 'parallax_one_id_' + self.make_unique();
+        } else {
+            my_id = this.element.id;
+        }
+        $container.after('<div id="' + my_id + '" class="' + classname + ' parallax_one_grid ' + unique_class + '"></div>');
+        var i;
+        for(i=1; i<=this.options.columns; i++){
+            columns_height.push(0);
+            var first_cols = '';
+            var last_cols = '';
+            if( i%self.options.columns == 1 ) { first_cols = 'parallax_one_grid_first'; }
+            if( i%self.options.columns == 0 ) { first_cols = 'parallax_one_grid_last'; }
+            $('.'+unique_class).append('<div class="parallax_one_grid_col_' + this.options.columns +' parallax_one_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
+        }
+        if( this.element.className.indexOf('parallax_one_grid')<0 ){
+            $container.children(this.options.selector).each(function(index){
+                var min = Math.min.apply(null,columns_height);
+                var this_index = columns_height.indexOf(min)+1;
+                $(this).attr('parallax-one-attr','this-'+index).appendTo('.'+unique_class +' .parallax_one_grid_column_'+this_index);
+                columns_height[this_index-1] = $('.'+unique_class +' .parallax_one_grid_column_'+this_index).height();
+            });
+        } else {
+            var no_boxes = $container.find(this.options.selector).length;
+            var i;
+            for( i=0; i<no_boxes; i++ ){
+                var min = Math.min.apply(null,columns_height);
+                var this_index = columns_height.indexOf(min)+1;
+                $('#'+this.element.id).find('[parallax-one-attr="this-'+i+'"]').appendTo('.'+unique_class +' .parallax_one_grid_column_'+this_index);
+                columns_height[this_index-1] = $('.'+unique_class +' .parallax_one_grid_column_'+this_index).height();
+            }
+        }
+        $container.remove();
+    }
+    ParallaxOneGridPinterest.prototype.make_unique = function () {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for( var i=0; i<10; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
+    $.fn.parallaxonegridpinterest = function (options) {
+        return this.each(function () {
+            var value = '';
+            if (!$.data(this, value)) {
+                $.data(this, value, new ParallaxOneGridPinterest(this, options) );
+            }
+        });
+    }
+})(jQuery);
+
+
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};

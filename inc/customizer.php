@@ -10,7 +10,6 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-
 function parallax_one_customize_register( $wp_customize ) {
 	
 	
@@ -221,7 +220,48 @@ function parallax_one_customize_register( $wp_customize ) {
 	) ) );
 	
 	$wp_customize->get_section('header_image')->panel='panel_1';
-
+	$wp_customize->get_section('header_image')->title=esc_html__( 'Background', 'parallax-one' );
+	
+	/* Enable parallax effect*/
+	$wp_customize->add_setting( 'paralax_one_enable_move', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+	));
+	$wp_customize->add_control(
+			'paralax_one_enable_move',
+			array(
+				'type' => 'checkbox',
+				'label' => esc_html__('Parallax effect','parallax-one'),
+				'description' => esc_html__('If this box is checked, the parallax effect is enabled.','parallax-one'),
+				'section' => 'header_image',
+				'priority'    => 3,
+			)
+	);
+	
+	/* Layer one */
+	$wp_customize->add_setting( 'paralax_one_first_layer', array(
+		'default' => parallax_get_file('/images/background1.png'),
+		'sanitize_callback' => 'esc_url',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_first_layer', array(
+	      	'label'    => esc_html__( 'First layer', 'parallax-one' ),
+	      	'section'  => 'header_image',
+			'priority'    => 4,
+	)));
+	
+	/* Layer two */
+	$wp_customize->add_setting( 'paralax_one_second_layer', array(
+		'default' => parallax_get_file('/images/background2.png'),
+		'sanitize_callback' => 'esc_url',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_second_layer', array(
+	      	'label'    => esc_html__( 'Second layer', 'parallax-one' ),
+	      	'section'  => 'header_image',
+			'priority'    => 5,
+	)));
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/

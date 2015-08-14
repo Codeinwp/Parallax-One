@@ -5533,6 +5533,9 @@ h2.screen-reader-text {
 	.admin-bar .sticky-navigation-open .sticky-navigation {
 	  top: 46px;
 	}
+	.contact-links .contact-link-box {
+		margin-right: 0;
+	}
 }
 
 @media (min-width: 768px) {

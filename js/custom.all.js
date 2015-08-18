@@ -255,45 +255,44 @@ jQuery(window).resize(function() {
         var self            = this,
             $container      = $(this.element);
             $select_options = $(this.element).children();
-        if( $('.upsells').length>0 || $('.related').length>0 ){
-            return;
-        } 
         self.make_magic( $container, $select_options );
     };
     ParallaxOneGridPinterest.prototype.make_magic = function (container) {
         var self            = this;
             $container      = $(container),
             columns_height  = [],
-            unique_class    = 'parallax_one_grid_' + self.make_unique();
+            prefix          = 'parallax_one',
+            unique_class    = prefix + '_grid_' + self.make_unique();
+            local_class     = prefix + '_grid';
         var classname;
-        var substr_index    = this.element.className.indexOf('parallax_one_grid_');
+        var substr_index    = this.element.className.indexOf(prefix+'_grid_');
         if( substr_index>-1 ) {
-            classname = this.element.className.substr( 0, this.element.className.length-47 );
+            classname = this.element.className.substr( 0, this.element.className.length-unique_class.length-local_class.length-2 );
         } else {
             classname = this.element.className;
         }
         var my_id;
         if( this.element.id == '' ) {
-            my_id = 'parallax_one_id_' + self.make_unique();
+            my_id = prefix+'_id_' + self.make_unique();
         } else {
             my_id = this.element.id;
         }
-        $container.after('<div id="' + my_id + '" class="' + classname + ' parallax_one_grid ' + unique_class + '"></div>');
+        $container.after('<div id="' + my_id + '" class="' + classname + ' ' + local_class + ' ' + unique_class + '"></div>');
         var i;
         for(i=1; i<=this.options.columns; i++){
             columns_height.push(0);
             var first_cols = '';
             var last_cols = '';
-            if( i%self.options.columns == 1 ) { first_cols = 'parallax_one_grid_first'; }
-            if( i%self.options.columns == 0 ) { first_cols = 'parallax_one_grid_last'; }
-            $('.'+unique_class).append('<div class="parallax_one_grid_col_' + this.options.columns +' parallax_one_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
+            if( i%self.options.columns == 1 ) { first_cols = prefix + '_grid_first'; }
+            if( i%self.options.columns == 0 ) { first_cols = prefix + '_grid_last'; }
+            $('.'+unique_class).append('<div class="' + prefix + '_grid_col_' + this.options.columns +' ' + prefix + '_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
-        if( this.element.className.indexOf('parallax_one_grid')<0 ){
+        if( this.element.className.indexOf(local_class)<0 ){
             $container.children(this.options.selector).each(function(index){
                 var min = Math.min.apply(null,columns_height);
                 var this_index = columns_height.indexOf(min)+1;
-                $(this).attr('parallax-one-attr','this-'+index).appendTo('.'+unique_class +' .parallax_one_grid_column_'+this_index);
-                columns_height[this_index-1] = $('.'+unique_class +' .parallax_one_grid_column_'+this_index).height();
+                $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             });
         } else {
             var no_boxes = $container.find(this.options.selector).length;
@@ -301,8 +300,8 @@ jQuery(window).resize(function() {
             for( i=0; i<no_boxes; i++ ){
                 var min = Math.min.apply(null,columns_height);
                 var this_index = columns_height.indexOf(min)+1;
-                $('#'+this.element.id).find('[parallax-one-attr="this-'+i+'"]').appendTo('.'+unique_class +' .parallax_one_grid_column_'+this_index);
-                columns_height[this_index-1] = $('.'+unique_class +' .parallax_one_grid_column_'+this_index).height();
+                $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             }
         }
         $container.remove();
@@ -323,6 +322,7 @@ jQuery(window).resize(function() {
         });
     }
 })(jQuery);
+
 
 
 var isMobile = {

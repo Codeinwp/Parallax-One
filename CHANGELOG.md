@@ -1,5 +1,27 @@
 
 
+### 2.0.1 - 18/08/2015
+
+ Changes: 
+
+
+ * #224 - buttons issue
+ * Merge pull request #225 from cristian-ungureanu/development
+
+#224 - buttons issue
+ * Updated pinterest js plugin AND Removed horizontal scroll on mobile
+ * change meta viewport
+ * Removed logo effect on scroll
+ * Update style.css
+ * Revert "change meta viewport"
+
+This reverts commit dde5534928ce5fb22d2b0d752def0edac462ba45.
+ * #204 - added git button
+ * Merge pull request #229 from cristian-ungureanu/development
+
+Development
+
+
 ### 2.0.0 - 12/08/2015
 
  Changes: 

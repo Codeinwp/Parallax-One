@@ -411,3 +411,12 @@ function parallax_one_prevent_wporg_update( $r, $url ) {
 }
  
 add_filter( 'http_request_args', 'parallax_one_prevent_wporg_update', 5, 2 );
+
+
+
+function parallax_one_responsive_embed($html, $url, $attr, $post_ID) {
+	$return = '<div class="parallax-one-video-container">'.$html.'</div>';
+	return $return;
+}
+
+add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );

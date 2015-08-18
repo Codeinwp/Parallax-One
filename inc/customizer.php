@@ -802,14 +802,15 @@ function parallax_one_sanitize_html( $input ){
 
 
 function parallax_one_customizer_script() {
-	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'', true  );
-	wp_register_script( 'parallax_one_buttons', parallax_get_file('/js/parallax_one_buttons_control.js'), array("jquery"), '20120206', true  );
+	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
+	wp_register_script( 'parallax_one_buttons', parallax_get_file('/js/parallax_one_buttons_control.js'), array("jquery"), '1.0.0', true  );
 	wp_enqueue_script( 'parallax_one_buttons' );
 	
 	wp_localize_script( 'parallax_one_buttons', 'objectL10n', array(
 		
 		'documentation' => esc_html__( 'Documentation', 'parallax-one' ),
-		'support' => esc_html__('Support Forum','parallax-one')
+		'support' => esc_html__('Support Forum','parallax-one'),
+		'github' => esc_html__('Github','parallax-one')
 		
 	) );
 }

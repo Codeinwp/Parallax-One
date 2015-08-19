@@ -83,6 +83,7 @@ function parallax_one_setup() {
 		'height'        => 680,
 		'flex-height'   => true,
 		'flex-width'    => true,
+		'header-text' 	=> false
 	)));
 	
 	register_default_headers( array(

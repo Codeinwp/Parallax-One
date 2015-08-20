@@ -319,7 +319,8 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_image_control' => true,
         'parallax_icon_control' => true,
 		'parallax_title_control' => true,
-        'parallax_text_control' => true
+        'parallax_text_control' => true,
+		'parallax_link_control' => true
 	) ) );
 	/********************************************************/
 	/******************** ABOUT OPTIONS  ********************/

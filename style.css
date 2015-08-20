@@ -1338,6 +1338,12 @@ header .navbar-brand {
 	text-align: center;
 }
 
+.single-service > h3 > a:hover, .service-icon > a:hover{
+	text-decoration:none;
+}
+
+
+
 .services-wrap > .service-box {
     width: 31.5%;
     margin: 0 1.25% 0 1.25%;

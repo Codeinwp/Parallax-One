@@ -6186,12 +6186,12 @@ h2.screen-reader-text {
 /*---------------------------------------
    8.1 POSTMATIC          
 -----------------------------------------*/
-.comment-form label {
+.comment-form > #prompt-comment-subscribe {
 	position: inherit;
 	width:100%;
 }
 
-.comment-form input {
+.comment-form > #prompt-comment-subscribe > input {
 	min-width: 0;
 }
 

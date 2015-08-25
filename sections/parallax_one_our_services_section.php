@@ -56,18 +56,30 @@
 											if( !empty($parallax_one_service_box->choice) && $parallax_one_service_box->choice !== 'parallax_none'  ){
 												if ( $parallax_one_service_box->choice == 'parallax_icon' ){
 													if( !empty($parallax_one_service_box->icon_value) ) {
-														echo '<div class="service-icon colored-text"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></div>';
+														if( !empty($parallax_one_service_box->link) ){
+															echo '<div class="service-icon colored-text"><a href="'.esc_url($parallax_one_service_box->link).'"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></a></div>';
+														} else {
+															echo '<div class="service-icon colored-text"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></div>';
+														}
 													}
 												}
 												if( $parallax_one_service_box->choice == 'parallax_image' ){
 													if( !empty($parallax_one_service_box->image_url)){
-														echo '<img src="'.esc_url($parallax_one_service_box->image_url).'"/>';
+														if( !empty($parallax_one_service_box->link) ){
+															echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.esc_url($parallax_one_service_box->image_url).'"/></a>';
+														} else {
+															echo '<img src="'.esc_url($parallax_one_service_box->image_url).'"/>';
+														}
 													}
 												}
 											}
 
 											if(!empty($parallax_one_service_box->title)){
-												echo '<h3 class="colored-text">'.esc_attr($parallax_one_service_box->title).'</h3>';
+												if( !empty($parallax_one_service_box->link) ){
+													echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_service_box->title).'</a></h3>';
+												} else {
+													echo '<h3 class="colored-text">'.esc_attr($parallax_one_service_box->title).'</h3>';
+												}
 											}
 
 											if(!empty($parallax_one_service_box->text)){

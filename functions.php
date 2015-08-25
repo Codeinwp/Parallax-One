@@ -83,6 +83,7 @@ function parallax_one_setup() {
 		'height'        => 680,
 		'flex-height'   => true,
 		'flex-width'    => true,
+		'header-text' 	=> false
 	)));
 	
 	register_default_headers( array(
@@ -309,16 +310,16 @@ function parallax_one_register_required_plugins() {
             'menu_title'                      => esc_html__( 'Install Plugins', 'parallax-one' ),
             'installing'                      => esc_html__( 'Installing Plugin: %s', 'parallax-one' ), 
             'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'parallax-one' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
-            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
-            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
-            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ),
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ),
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), 
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), 
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), 
-            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
+            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'parallax-one' ),
+            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'parallax-one' ),
+            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'parallax-one' ),
+            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'parallax-one' ),
+            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'parallax-one' ),
+            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'parallax-one' ), 
+            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'parallax-one' ), 
+            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'parallax-one' ), 
+            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'parallax-one' ),
+            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'parallax-one' ),
             'return'                          => esc_html__( 'Return to Required Plugins Installer', 'parallax-one' ),
             'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'parallax-one' ),
             'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'parallax-one' ), 
@@ -326,7 +327,7 @@ function parallax_one_register_required_plugins() {
         )
     );
  
-	tgmpa( $plugins, $config );
+	tgmpa( $plugins, $config );	
  
 }
 
@@ -411,3 +412,12 @@ function parallax_one_prevent_wporg_update( $r, $url ) {
 }
  
 add_filter( 'http_request_args', 'parallax_one_prevent_wporg_update', 5, 2 );
+
+
+
+function parallax_one_responsive_embed($html, $url, $attr, $post_ID) {
+	$return = '<div class="parallax-one-video-container">'.$html.'</div>';
+	return $return;
+}
+
+add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );

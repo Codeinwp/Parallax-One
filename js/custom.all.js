@@ -239,7 +239,7 @@ jQuery(window).resize(function() {
 });
 
 
-;(function ($, window, document, undefined) {
+(function ($, window, document, undefined) {
     var defaults = {
             columns:                3,
             selector:               'div',
@@ -289,8 +289,13 @@ jQuery(window).resize(function() {
         }
         if( this.element.className.indexOf(local_class)<0 ){
             $container.children(this.options.selector).each(function(index){
-                var min = Math.min.apply(null,columns_height);
-                var this_index = columns_height.indexOf(min)+1;
+                
+                if(self.allValuesSame(columns_height)){
+                    var this_index = 2;
+                } else {
+                    var min = Math.min.apply(null,columns_height);
+                    var this_index = columns_height.indexOf(min)+1; 
+                }
                 $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
                 columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             });
@@ -298,14 +303,19 @@ jQuery(window).resize(function() {
             var no_boxes = $container.find(this.options.selector).length;
             var i;
             for( i=0; i<no_boxes; i++ ){
-                var min = Math.min.apply(null,columns_height);
-                var this_index = columns_height.indexOf(min)+1;
+                if(self.allValuesSame(columns_height)){
+                    var this_index = 2;
+                } else {
+                    var min = Math.min.apply(null,columns_height);
+                    var this_index = columns_height.indexOf(min)+1;
+                }
                 $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
                 columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             }
         }
         $container.remove();
     }
+    
     ParallaxOneGridPinterest.prototype.make_unique = function () {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -313,6 +323,15 @@ jQuery(window).resize(function() {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
     }
+    
+    ParallaxOneGridPinterest.prototype.allValuesSame = function(arr) {
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] !== arr[0])
+                return false;
+        }
+        return true;
+    }
+    
     $.fn.parallaxonegridpinterest = function (options) {
         return this.each(function () {
             var value = '';
@@ -321,6 +340,7 @@ jQuery(window).resize(function() {
             }
         });
     }
+    
 })(jQuery);
 
 

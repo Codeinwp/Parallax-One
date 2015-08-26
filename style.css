@@ -1399,6 +1399,7 @@ header .navbar-brand {
     float: left;
     width: 31.5%;
     margin: 0 1.25% 0 1.25%;
+	min-height: 1px;
 }
 
 .parallax_one_grid_col_2 {

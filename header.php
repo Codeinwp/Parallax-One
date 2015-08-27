@@ -44,7 +44,7 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
+	<header role="banner" class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
 
         <!-- COLOR OVER IMAGE -->
         <?php
@@ -74,16 +74,15 @@
                 <div class="container">
 				
                     <div class="navbar-header">
-                        
-                        <!-- LOGO ON STICKY NAV BAR -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#stamp-navigation">
+                     
+                        <!-- LOGO -->
+						
+                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#parallax-one-navigation">
                             <span class="sr-only"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                     
-                        <!-- LOGO -->
 						
 						<?php
 							
@@ -99,7 +98,7 @@
 
 								echo '</a>';
 
-								echo '<div class="header-logo-wrap paralax_one_only_customizer">';
+								echo '<div class="header-logo-wrap text-header paralax_one_only_customizer">';
 
 									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
 								
@@ -119,7 +118,7 @@
 								
 								endif;
 							
-								echo '<div class="header-logo-wrap">';
+								echo '<div class="header-logo-wrap text-header">';
 
 									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
 								
@@ -133,17 +132,21 @@
                     </div>
                     
                     <!-- MENU -->
-                    <div class="navbar-collapse collapse" id="stamp-navigation">		
+					<nav class="navbar-collapse collapse" id="parallax-one-navigation" role="navigation" aria-label='<?php _e( 'Primary Menu ', 'parallax-one' ); ?>'>		
+						<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'parallax-one' ); ?></h1>
+						<!-- LOGO ON STICKY NAV BAR -->
     					<?php 
     						wp_nav_menu( 
                                 array( 
                                     'theme_location'    => 'primary',
                                     'container'         => false,
                                     'menu_class'        => 'nav navbar-nav navbar-right main-navigation small-text', 
-                                    'fallback_cb'       => 'parallax_one_wp_page_menu' ) );
+                                    'fallback_cb'       => 'parallax_one_wp_page_menu' ) 
+							);
     					?>
-                    </div>
-					<!-- /END MENU -->
+                    </nav>
+					
+					
                 </div>
                 <!-- /END CONTAINER -->
             </div>

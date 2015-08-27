@@ -74,7 +74,7 @@ label{
 .whole-page-wrap{
     right:0px;
 }
-#stamp-navigation{
+#parallax-one-navigation{
     float:left;
 }
 .sticky-navigation .main-navigation li{
@@ -101,7 +101,7 @@ label{
 .navbar-header{
     float: right;
 }
-.menu-align-center #stamp-navigation > ul > li.has_children a{
+.menu-align-center #parallax-one-navigation > ul > li.has_children a{
     padding:5px 8px 5px 18px;
 }
 .navbar-toggle{
@@ -117,7 +117,7 @@ label{
 .navbar-inverse .navbar-toggle{
     float: left;
 }
-.menu-align-center #stamp-navigation > ul > li.has_children > .dropdownmenu {
+.menu-align-center #parallax-one-navigation > ul > li.has_children > .dropdownmenu {
     right: auto;
     left: 0;
 }
@@ -902,7 +902,7 @@ footer.footer ul{
     .dropdownmenu:before{
         float:right;
     }
-    .menu-align-center #stamp-navigation > ul{
+    .menu-align-center #parallax-one-navigation > ul{
         margin-right:0;
     }
     .woocommerce-page .upsells.products ul li.product, 

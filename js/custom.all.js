@@ -13,7 +13,7 @@ jQuery(window).resize(function(){
 
 /*** DROPDOWN FOR MOBILE MENU */
 var callback_mobile_dropdown = function () {
-    var navLi = jQuery('#stamp-navigation li');
+    var navLi = jQuery('#parallax-one-navigation li');
     navLi.each(function(){
         if ( jQuery(this).find('ul').length > 0 && !jQuery(this).hasClass('has_children') ){
             jQuery(this).addClass('has_children');
@@ -38,7 +38,7 @@ var callback_mobile_dropdown = function () {
 /*** CENTERED MENU */
 var callback_menu_align = function () {
     var headerWrap      = jQuery('header.header');
-    var navWrap         = jQuery('#stamp-navigation');
+    var navWrap         = jQuery('#parallax-one-navigation');
     var logoWrap        = jQuery('.navbar-header');
     var containerWrap   = jQuery('.container');
     var classToAdd      = 'menu-align-center';
@@ -113,7 +113,7 @@ jQuery(document).ready(function($) {
 ===  SMOOTH SCROLL NAVIGATION     ====
 =================================== */
 jQuery(document).ready(function(){
-  jQuery('#stamp-navigation a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
+  jQuery('#parallax-one-navigation a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
     var headerHeight;
     var hash    = this.hash;
     var idName  = hash.substring(1);    // get id name
@@ -189,7 +189,7 @@ function scrolled() {
             if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
-                jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                jQuery('#parallax-one-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
                 return false;
             }
             if (isInOneSection == 'no') {

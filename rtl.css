@@ -74,7 +74,7 @@ label{
 .whole-page-wrap{
     right:0px;
 }
-#parallax-one-navigation{
+#menu-primary{
     float:left;
 }
 .sticky-navigation .main-navigation li{
@@ -101,7 +101,7 @@ label{
 .navbar-header{
     float: right;
 }
-.menu-align-center #parallax-one-navigation > ul > li.has_children a{
+.menu-align-center #menu-primary > ul > li.has_children a{
     padding:5px 8px 5px 18px;
 }
 .navbar-toggle{
@@ -117,7 +117,7 @@ label{
 .navbar-inverse .navbar-toggle{
     float: left;
 }
-.menu-align-center #parallax-one-navigation > ul > li.has_children > .dropdownmenu {
+.menu-align-center #menu-primary > ul > li.has_children > .dropdownmenu {
     right: auto;
     left: 0;
 }
@@ -712,7 +712,7 @@ footer.footer ul{
     padding-left:15px;
     float: right;
 }
-#secondary{
+#sidebar-secondary{
     padding-right:30px;
     border-right:1px solid #E7E7E7;
     border-left:none;
@@ -763,13 +763,13 @@ footer.footer ul{
 .comment-form label{
     right:0;
 }
-#secondary .widget-title:after{
+#sidebar-secondary .widget-title:after{
     float:right;
 }
-#secondary ul{
+#sidebar-secondary ul{
     padding-right:0;
 }
-#secondary select{
+#sidebar-secondary select{
     padding:10px 5px 10px 5px;
 }
 .widget .post-date{
@@ -847,18 +847,18 @@ footer.footer ul{
     #parallax_slider{
         margin:0px auto 0 auto;
     }
-    #secondary{
+    #sidebar-secondary{
         border-right:0;
         padding-right:15px;
     }
     #primary, 
-    #secondary{
+    #sidebar-secondary{
         float:right;
     }
     .entry-header .colored-line-left{
         float:right;
     }
-    #secondary .colored-line-left{
+    #sidebar-secondary .colored-line-left{
         float:right;
     }
 }
@@ -902,7 +902,7 @@ footer.footer ul{
     .dropdownmenu:before{
         float:right;
     }
-    .menu-align-center #parallax-one-navigation > ul{
+    .menu-align-center #menu-primary > ul{
         margin-right:0;
     }
     .woocommerce-page .upsells.products ul li.product, 

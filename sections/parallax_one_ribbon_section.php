@@ -11,9 +11,9 @@
 	if(!empty($parallax_one_ribbon_title) || !empty($parallax_one_button_text)){
 		
 		if(!empty($ribbon_background)){
-			echo '<section class="call-to-action ribbon-wrap" id="ribbon" style="background-image:url('.$ribbon_background.');">';
+			echo '<section class="call-to-action ribbon-wrap" id="ribbon" style="background-image:url('.$ribbon_background.');" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
 		} else {
-			echo '<section class="call-to-action ribbon-wrap" id="ribbon">';
+			echo '<section class="call-to-action ribbon-wrap" id="ribbon" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
 		}
 	
 	

@@ -16,7 +16,7 @@
 
 	if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !empty($parallax_one_team_content)){
 ?>
-		<section class="team" id="team">
+		<section class="team" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
 			<div class="section-overlay-layer">
 				<div class="container">
 

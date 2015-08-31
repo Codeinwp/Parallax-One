@@ -113,6 +113,8 @@ function parallax_one_setup() {
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
 
+	// Load the HTML attributes functions.
+	require_once( get_template_directory() . '/inc/attr.php' );
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );

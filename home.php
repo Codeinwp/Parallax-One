@@ -20,7 +20,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div class="content-wrap">
+<div <?php hybrid_attr('content'); ?>>
 	<div class="container">
 		<div id="primary" class="content-area col-md-8 post-list">
 			<main id="main" class="site-main" role="main">

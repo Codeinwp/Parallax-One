@@ -15,7 +15,7 @@
 	);
 	if(!empty($parallax_one_logos)){
 		$parallax_one_logos_decoded = json_decode($parallax_one_logos);
-		echo '<div class="clients white-bg" id="clients"><div class="container">';
+		echo '<div class="clients white-bg" id="clients" role="region" aria-label="'.__('Affiliates Logos','parallax-one').'"><div class="container">';
 			echo '<ul class="client-logos">';					
 			foreach($parallax_one_logos_decoded as $parallax_one_logo){
 				if(!empty($parallax_one_logo->image_url)){

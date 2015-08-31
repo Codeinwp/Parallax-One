@@ -11,7 +11,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	</header>
 	<!-- /END HOME / HEADER  -->
 
-	<div class="content-wrap">
+	<div <?php hybrid_attr('content'); ?>>
 
 	<?php
 

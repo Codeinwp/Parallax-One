@@ -16,7 +16,7 @@
 
 	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !empty($parallax_one_services)){
 ?>
-		<section class="services" id="services">
+		<section class="services" id="services" role="region" aria-label="<?php esc_html_e('Services','parallax-one') ?>">
 			<div class="section-overlay-layer">
 				<div class="container">
 

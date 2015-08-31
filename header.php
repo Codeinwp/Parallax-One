@@ -17,7 +17,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php hybrid_attr('body'); ?>>
 
 	<!-- =========================
      PRE LOADER       
@@ -44,7 +44,7 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header role="banner" class="header header-style-one" data-stellar-background-ratio="0.5" id="home">
+	<header <?php hybrid_attr('header','',array('data-stellar-background-ratio' => '0.5','class' => 'header header-style-one')); ?> >
 
         <!-- COLOR OVER IMAGE -->
         <?php
@@ -69,7 +69,7 @@
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
             <!-- STICKY NAVIGATION -->
-            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll" role="navigation">
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
 				
@@ -77,7 +77,7 @@
                      
                         <!-- LOGO -->
 						
-                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#parallax-one-navigation">
+                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-primary">
                             <span class="sr-only"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -100,9 +100,9 @@
 
 								echo '<div class="header-logo-wrap text-header paralax_one_only_customizer">';
 
-									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+									echo "<h1 ".hybrid_get_attr('site-title','',array('class' => 'site-title'))."><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
 								
-									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+									echo "<h2 ".hybrid_get_attr('site-description','',array('class' => 'site-description')).">".get_bloginfo( 'description' )."</h2>";
 
 								echo '</div>';	
 							
@@ -120,9 +120,9 @@
 							
 								echo '<div class="header-logo-wrap text-header">';
 
-									echo "<h1 class='site-title'><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+									echo "<h1 ".hybrid_get_attr('site-title','',array('class' => 'site-title'))."><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
 								
-									echo "<h2 class='site-description'>".get_bloginfo( 'description' )."</h2>";
+									echo "<h2 ".hybrid_get_attr('site-description','',array('class' => 'site-description')).">".get_bloginfo( 'description' )."</h2>";
 
 								echo '</div>';							
 							endif;	
@@ -132,7 +132,7 @@
                     </div>
                     
                     <!-- MENU -->
-					<nav class="navbar-collapse collapse" id="parallax-one-navigation" role="navigation" aria-label='<?php _e( 'Primary Menu ', 'parallax-one' ); ?>'>		
+					<div <?php hybrid_attr('menu','primary',array('aria-label' => esc_html__('Primary Menu','parallax-one'), 'class' => 'navbar-collapse collapse')) ?>>		
 						<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'parallax-one' ); ?></h1>
 						<!-- LOGO ON STICKY NAV BAR -->
     					<?php 
@@ -144,7 +144,7 @@
                                     'fallback_cb'       => 'parallax_one_wp_page_menu' ) 
 							);
     					?>
-                    </nav>
+                    </div>
 					
 					
                 </div>

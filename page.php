@@ -18,7 +18,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div class="content-wrap">
+<div <?php hybrid_attr('content'); ?>>
 	<div class="container">
 
 		<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else {echo 'col-md-12';}  ?>">
@@ -39,9 +39,9 @@
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-
+		
 		<?php get_sidebar(); ?>
-
+		
 	</div>
 </div><!-- .content-wrap -->
 

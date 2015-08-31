@@ -60,12 +60,12 @@
 				</a>
 			</div><!-- .entry-meta -->
 
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h1 %s><a href="%s" rel="bookmark">',hybrid_get_attr('loop-title','',array('class' => 'loop-title entry-title')) ,esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
 
 	</header><!-- .entry-header -->
-	<div class="entry-content">
+	<div <?php hybrid_attr('loop-description','',array('class' => 'entry-content loop-description')) ?>>
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
 			if($ismore) : the_content();

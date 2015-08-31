@@ -923,7 +923,7 @@ h2.site-description {
 }
 
 /* STICKY NAVIGATION AND LOGO */
-#parallax-one-navigation {
+#menu-primary {
 	float: right;
 }
 
@@ -1056,7 +1056,7 @@ header .navbar-brand {
 	background: transparent;
 }
 
-#parallax-one-navigation > ul {
+#menu-primary > ul {
 	width: auto;
 }
 
@@ -1071,26 +1071,26 @@ header .navbar-brand {
 	float: none;
 }
 
-.menu-align-center #parallax-one-navigation > ul {
+.menu-align-center #menu-primary > ul {
 	text-align: center;
 	width: 100%;
 	margin-bottom: 10px;
 }
 
-.menu-align-center #parallax-one-navigation > ul > li {
+.menu-align-center #menu-primary > ul > li {
 	display: inline-block;
 	float: none;
 }
 
-.menu-align-center #parallax-one-navigation > ul > li a {
+.menu-align-center #menu-primary > ul > li a {
 	padding: 5px 8px;
 }
 
-.menu-align-center #parallax-one-navigation > ul > li.has_children a {
+.menu-align-center #menu-primary > ul > li.has_children a {
 	padding: 5px 18px 5px 8px;
 }
 
-.menu-align-center #parallax-one-navigation > ul > li.has_children > .dropdownmenu {
+.menu-align-center #menu-primary > ul > li.has_children > .dropdownmenu {
 	top: 4px;
 }
 
@@ -4672,7 +4672,7 @@ a:hover {
 	padding-right: 15px;
 }
 
-#secondary {
+#sidebar-secondary {
 	margin: 50px 0;
 	padding-left: 30px;
 	border-left: 1px solid #E7E7E7;
@@ -5020,7 +5020,7 @@ h2.screen-reader-text {
 =========================================
 -----------------------------------------*/
 
-#secondary .widget-title {
+#sidebar-secondary .widget-title {
 	font-size: 20px;
 	color: #4f4f4f;
 	text-transform: uppercase;
@@ -5028,7 +5028,7 @@ h2.screen-reader-text {
 	margin-bottom: 5px;
 }
 
-#secondary .widget-title:after {
+#sidebar-secondary .widget-title:after {
 	height: 2px;
 	width: 80px;
 	display: block;
@@ -5036,15 +5036,15 @@ h2.screen-reader-text {
 	float: left;
 }
 
-#secondary ul {
+#sidebar-secondary ul {
 	padding-left: 0;
 }
 
-#secondary .widget {
+#sidebar-secondary .widget {
 	margin-bottom: 50px;
 }
 
-#secondary ul li {
+#sidebar-secondary ul li {
 	margin: 0;
 	list-style: none;
 	position: relative;
@@ -5052,7 +5052,7 @@ h2.screen-reader-text {
 	padding-top: 10px;
 }
 
-#secondary ul ul li:last-child {
+#sidebar-secondary ul ul li:last-child {
 	padding-bottom: 0;
 }
 
@@ -5060,7 +5060,7 @@ h2.screen-reader-text {
 	margin-bottom: 15px;
 }
 
-#secondary select {
+#sidebar-secondary select {
 	width: 100%;
 	padding: 10px 5px 10px 5px;
 	border: 1px solid #E7E7E7;
@@ -5183,30 +5183,30 @@ h2.screen-reader-text {
 	color: #008ed6;
 }
 
-#secondary .service-box {
+#sidebar-secondary .service-box {
 	width: 100%;
 	text-align: center;
 }
 
-#secondary .single-service {
+#sidebar-secondary .single-service {
 	margin-bottom: 40px;
 }
 
-#secondary .testimonials-box {
+#sidebar-secondary .testimonials-box {
 	width: 100%;
 	text-align: center;
 }
 
-#secondary .testimonials-box .feedback {
+#sidebar-secondary .testimonials-box .feedback {
 	margin-bottom: 0;
 }
 
-#secondary .team-member-box {
+#sidebar-secondary .team-member-box {
 	width: 100%;
 	text-align: center;	
 }
 
-#secondary .team-member-box .team-member {
+#sidebar-secondary .team-member-box .team-member {
 	margin: 0 auto;
 	margin-bottom: 40px;
 	max-width: 350px;
@@ -5461,7 +5461,7 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 
-	#secondary {
+	#sidebar-secondary {
 		margin: 0;
 		padding-top: 50px;
 		border-top: 1px solid #E7E7E7;
@@ -5471,7 +5471,7 @@ h2.screen-reader-text {
 	}
 	
 	#primary, 
-	#secondary {
+	#sidebar-secondary {
 	  float: left;
 	  width: 100%;
 	}
@@ -5484,7 +5484,7 @@ h2.screen-reader-text {
 		width: 100%;
 	}
 
-	#secondary .colored-line-left {
+	#sidebar-secondary .colored-line-left {
 		float: left;
 	}
 
@@ -5795,12 +5795,12 @@ h2.screen-reader-text {
 		max-height: 2000px;
 	}	
 	
-	#parallax-one-navigation {
+	#menu-primary {
 		float: none;
 		width: 100%;
 		margin: 0;
 	}
-	.menu-align-center #parallax-one-navigation > ul {
+	.menu-align-center #menu-primary > ul {
 		margin-left: 0;
 	}
 	.nav > li {

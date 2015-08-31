@@ -10,7 +10,7 @@
 		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
-			<section class="brief timeline" id="latestnews">
+			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html__('Latest blog posts','parallax-one'); ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="row">
@@ -70,7 +70,7 @@
 													</div>
 													<div class="info">
 														<header class="entry-header">
-															<h1 class="entry-title">
+															<h1 <?php hybrid_attr('loop-title','',array('class' => 'entry-title loop-title')); ?>>
 																<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 															</h1>
 															<div class="entry-meta">
@@ -87,7 +87,7 @@
 																</span>
 															</div><!-- .entry-meta -->
 														</header>
-														<div class="entry-content">
+														<div <?php hybrid_attr('loop-description','',array('class' => 'entry-content loop-description')) ?>>
 															<?php the_excerpt(); ?>
 															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php esc_html_e('Read more','parallax-one'); ?></a>
 														</div>

@@ -16,7 +16,7 @@
 
 	if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle) || !empty($parallax_one_testimonials_content) ){
 ?>
-	<section class="testimonials" id="customers">
+	<section class="testimonials" id="customers" role="region" aria-label="<?php esc_html_e('Testimonials','parallax-one') ?>">
 		<div class="section-overlay-layer">
 			<div class="container">
 

@@ -11,7 +11,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	</header>
 	<!-- /END HOME / HEADER  -->
 
-	<div <?php hybrid_attr('content'); ?>>
+	<div itemprop id="content" class="content-warp" role="main">
 
 	<?php
 

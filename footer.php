@@ -8,7 +8,7 @@
  */
 ?>
 
-    <footer <?php hybrid_attr('footer','',array('class' => 'footer grey-bg')); ?>>
+    <footer itemscope itemtype="http://schema.org/WPFooter" id="footer" role="contentinfo" class = "footer grey-bg">
 
         <div class="container">
             <div class="footer-widget-wrap">
@@ -16,7 +16,7 @@
 				<?php
 					if( is_active_sidebar( 'footer-area' ) ){
 				?>
-						<div <?php hybrid_attr('sidebar','widgets-area-1',array('class' => 'col-md-3 col-sm-6 col-xs-12 widget-box', 'aria-label' => esc_html__('Widgets Area 1','parallax-one')) ); ?>>
+						<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-1" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e('Widgets Area 1','parallax-one'); ?>">
 							<?php
 								dynamic_sidebar( 'footer-area' );
 							?>
@@ -26,7 +26,7 @@
 					}
 					if( is_active_sidebar( 'footer-area-2' ) ){
 				?>
-						<div <?php hybrid_attr('sidebar','widgets-area-2',array('class' => 'col-md-3 col-sm-6 col-xs-12 widget-box', 'aria-label' => esc_html__('Widgets Area 2','parallax-one')) ); ?>>
+						<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e('Widgets Area 2','parallax-one'); ?>">
 							<?php
 								dynamic_sidebar( 'footer-area-2' );
 							?>
@@ -35,7 +35,7 @@
 					}
 					if( is_active_sidebar( 'footer-area-3' ) ){
 				?>
-						<div <?php hybrid_attr('sidebar','widgets-area-3',array('class' => 'col-md-3 col-sm-6 col-xs-12 widget-box', 'aria-label' => esc_html__('Widgets Area 3','parallax-one')) ); ?>>
+						<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e('Widgets Area 3','parallax-one'); ?>">
 						   <?php
 								dynamic_sidebar( 'footer-area-3' );
 							?>
@@ -44,7 +44,7 @@
 					}
 					if( is_active_sidebar( 'footer-area-4' ) ){
 				?>
-						<div <?php hybrid_attr('sidebar','widgets-area-4',array('class' => 'col-md-3 col-sm-6 col-xs-12 widget-box', 'aria-label' => esc_html__('Widgets Area 4','parallax-one')) ); ?>>
+						<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-4" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e('Widgets Area 4','parallax-one'); ?>">
 							<?php
 								dynamic_sidebar( 'footer-area-4' );
 							?>
@@ -70,7 +70,7 @@
 				
 					/* OPTIONAL FOOTER LINKS */
 					
-					echo '<div '.hybrid_get_attr('menu','secondary',array('aria-label' => esc_html__('Secondary Menu','parallax-one'))).'>';
+					echo '<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="'.esc_html__('Secondary Menu','parallax-one').'">';
 						echo '<h1 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'parallax-one' ).'</h1>';
 						wp_nav_menu( 
 							array( 

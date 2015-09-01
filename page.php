@@ -18,7 +18,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div <?php hybrid_attr('content'); ?>>
+<div itemprop="mainContentOfPage" role="main" id="content" class="content-warp">
 	<div class="container">
 
 		<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else {echo 'col-md-12';}  ?>">

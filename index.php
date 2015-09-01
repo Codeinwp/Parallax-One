@@ -20,7 +20,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div <?php hybrid_attr('content'); ?>>
+<div itemprop="mainContentOfPage" itemtype="http://schema.org/Blog" role="main" id="content" class="content-warp">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8">

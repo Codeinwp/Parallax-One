@@ -17,7 +17,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php hybrid_attr('body'); ?>>
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class( $class ); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 
 	<!-- =========================
      PRE LOADER       
@@ -44,7 +44,7 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header <?php hybrid_attr('header','',array('data-stellar-background-ratio' => '0.5','class' => 'header header-style-one')); ?> >
+	<header itemscope itemtype="http://schema.org/WPHeader" id="header" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one">
 
         <!-- COLOR OVER IMAGE -->
         <?php
@@ -100,9 +100,9 @@
 
 								echo '<div class="header-logo-wrap text-header paralax_one_only_customizer">';
 
-									echo "<h1 ".hybrid_get_attr('site-title','',array('class' => 'site-title'))."><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
+									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 								
-									echo "<h2 ".hybrid_get_attr('site-description','',array('class' => 'site-description')).">".get_bloginfo( 'description' )."</h2>";
+									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
 
 								echo '</div>';	
 							
@@ -119,10 +119,10 @@
 								endif;
 							
 								echo '<div class="header-logo-wrap text-header">';
+									
+									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-									echo "<h1 ".hybrid_get_attr('site-title','',array('class' => 'site-title'))."><a href='".esc_url( home_url( '/' ) )."' title='".esc_attr( get_bloginfo( 'name', 'display' ) )."' rel='home'>".get_bloginfo( 'name' )."</a></h1>";
-								
-									echo "<h2 ".hybrid_get_attr('site-description','',array('class' => 'site-description')).">".get_bloginfo( 'description' )."</h2>";
+									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
 
 								echo '</div>';							
 							endif;	
@@ -132,7 +132,7 @@
                     </div>
                     
                     <!-- MENU -->
-					<div <?php hybrid_attr('menu','primary',array('aria-label' => esc_html__('Primary Menu','parallax-one'), 'class' => 'navbar-collapse collapse')) ?>>		
+					<div itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_html_e('Primary Menu','parallax-one') ?>" id="menu-primary" class="navbar-collapse collapse">		
 						<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'parallax-one' ); ?></h1>
 						<!-- LOGO ON STICKY NAV BAR -->
     					<?php 

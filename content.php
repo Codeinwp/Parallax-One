@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?>>
+<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -32,17 +32,17 @@
 					<?php } ?>
 
 				</a>
-				<div class="post-date">
+				<div class="post-date entry-published updated" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
 					<span class="post-date-day"><?php the_time('d'); ?></span>
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
 			</div>
 			
 			<div class="entry-meta list-post-entry-meta">
-				<span class="post-author">
+				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
 				</span>
-				<span class="posted-in">
+				<span class="posted-in entry-terms-categories" itemprop="articleSection">
 					<i class="icon-basic-elaboration-folder-check"></i>Posted in 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
@@ -60,12 +60,12 @@
 				</a>
 			</div><!-- .entry-meta -->
 
-		<?php the_title( sprintf( '<h1 %s><a href="%s" rel="bookmark">',hybrid_get_attr('loop-title','',array('class' => 'loop-title entry-title')) ,esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
 
 	</header><!-- .entry-header -->
-	<div <?php hybrid_attr('loop-description','',array('class' => 'entry-content loop-description')) ?>>
+	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
 			if($ismore) : the_content();

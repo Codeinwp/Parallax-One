@@ -4569,6 +4569,10 @@ a:hover {
 	max-height: 100%;
 }
 
+.parallax-one-post-meta{
+	visibility: none;
+	position: absolute;
+}
 /* --------------------------------------
 =========================================
    5.1 SINGLE PAGE

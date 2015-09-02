@@ -4,7 +4,7 @@
  */
 ?>
 
-<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -18,21 +18,24 @@
 							$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
 						?>
-				 		<picture>
+				 		<picture itemscope itemprop="image">
 							<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
 							<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php
 						} else {
 					?>
-				 		<picture>
+				 		<picture itemscope itemprop="image">
 							<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file('/images/no-thumbnail-mobile.jpg');?> ">
 							<img src="<?php echo parallax_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 
 				</a>
-				<div class="post-date entry-published updated" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
+				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
+					<?php echo get_the_date('F j, Y');?>
+				</div>
+				<div class="post-date entry-published updated">
 					<span class="post-date-day"><?php the_time('d'); ?></span>
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
@@ -40,7 +43,9 @@
 			
 			<div class="entry-meta list-post-entry-meta">
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
-					<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
+					<span  itemprop="name" class="entry-author author vcard">
+					<i class="icon-man-people-streamline-user"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+					</span>
 				</span>
 				<span class="posted-in entry-terms-categories" itemprop="articleSection">
 					<i class="icon-basic-elaboration-folder-check"></i>Posted in 

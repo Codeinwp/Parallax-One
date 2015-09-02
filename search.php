@@ -13,7 +13,7 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-warp">
+<div itemscope itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-warp">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8 post-list">

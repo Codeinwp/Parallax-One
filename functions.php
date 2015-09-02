@@ -442,12 +442,12 @@ function parallax_one_comment($comment, $args, $depth) {
 	
 		default :
 		?>
-			<li itemscope itemprop="comment" itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 				<article id="comment-<?php comment_ID(); ?>" class="comment-body">
 					<footer>
 						<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
 							<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-							<?php printf( __( '%s <span class="says">says:</span>', 'parallax-one' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+							<?php printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'parallax-one' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
 						</div><!-- .comment-author .vcard -->
 						<?php if ( $comment->comment_approved == '0' ) : ?>
 							<em><?php _e( 'Your comment is awaiting moderation.', 'parallax-one' ); ?></em>

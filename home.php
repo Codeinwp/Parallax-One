@@ -20,10 +20,10 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div itemprop="mainContentOfPage" itemtype="http://schema.org/Blog" role="main" id="content" class="content-warp">
+<div role="main" id="content" class="content-warp">
 	<div class="container">
 		<div id="primary" class="content-area col-md-8 post-list">
-			<main id="main" class="site-main" role="main">
+			<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
 				

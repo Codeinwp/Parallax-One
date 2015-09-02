@@ -8,12 +8,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title single-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title single-title" itemprop="headline">', '</h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content content-page">
+	<div class="entry-content content-page" itemprop="text">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

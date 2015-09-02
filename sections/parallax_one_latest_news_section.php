@@ -30,7 +30,7 @@
 									<a class="control_prev fade-btn"><div class="icon icon-arrow-carrot-up"></div></a>
 								</div>
 								<!-- TIMLEINE SCROLLER -->
-								<div id="parallax_slider" class="col-md-12 timeline-section">
+								<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
 									<ul class="vertical-timeline" id="timeline-scroll">
 
 										<?php
@@ -51,7 +51,7 @@
 												}
 										?>
 
-												<div itemscope itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>">
+												<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>">
 													<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-published date small-text strong">
 													<?php echo get_the_date('M, j'); ?>
 													</div>
@@ -80,9 +80,9 @@
 																	</a>
 																</span>
 																<span> <?php esc_html_e('by','parallax-one');?> </span>
-																<span class="byline">
-																	<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author author vcard">
-																		<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+																<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="author-link">
+																	<span  itemprop="name" class="entry-author author vcard">
+																		<a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
 																	</span>
 																</span>
 															</div><!-- .entry-meta -->

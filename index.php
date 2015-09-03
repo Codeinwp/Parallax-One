@@ -20,11 +20,11 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div class="content-wrap">
+<div role="main" id="content" class="content-warp">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8">
-			<main id="main" class="site-main" role="main">
+			<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
 

@@ -10,7 +10,7 @@
 		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
-			<section class="brief timeline" id="latestnews">
+			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html__('Latest blog posts','parallax-one'); ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="row">
@@ -30,7 +30,7 @@
 									<a class="control_prev fade-btn"><div class="icon icon-arrow-carrot-up"></div></a>
 								</div>
 								<!-- TIMLEINE SCROLLER -->
-								<div id="parallax_slider" class="col-md-12 timeline-section">
+								<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
 									<ul class="vertical-timeline" id="timeline-scroll">
 
 										<?php
@@ -51,11 +51,11 @@
 												}
 										?>
 
-												<div class="timeline-box-wrap">
-													<div class="date small-text strong">
+												<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>">
+													<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-published date small-text strong">
 													<?php echo get_the_date('M, j'); ?>
 													</div>
-													<div class="icon-container white-text">
+													<div itemscope itemprop="image" class="icon-container white-text">
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 															<?php 
 
@@ -70,24 +70,24 @@
 													</div>
 													<div class="info">
 														<header class="entry-header">
-															<h1 class="entry-title">
+															<h1 itemprop="headline" class="entry-title">
 																<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 															</h1>
 															<div class="entry-meta">
 																<span class="entry-date">
 																	<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">
-																		<time class="entry-date" datetime="<?php echo get_the_date('c'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
+																		<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo get_the_date('F j, Y'); ?></time>
 																	</a>
 																</span>
 																<span> <?php esc_html_e('by','parallax-one');?> </span>
-																<span class="byline">
-																	<span class="author vcard">
-																		<a class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+																<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="author-link">
+																	<span  itemprop="name" class="entry-author author vcard">
+																		<a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
 																	</span>
 																</span>
 															</div><!-- .entry-meta -->
 														</header>
-														<div class="entry-content">
+														<div itemprop="description" class="entry-content entry-summary">
 															<?php the_excerpt(); ?>
 															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php esc_html_e('Read more','parallax-one'); ?></a>
 														</div>

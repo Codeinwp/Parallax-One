@@ -112,7 +112,6 @@ function parallax_one_setup() {
 	add_image_size( 'parallax_one_team', 268, 273, true );
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
-
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -191,9 +190,10 @@ function parallax_one_scripts() {
 		
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '1.0.0', true );
 
-	if ( is_front_page() ) {
+	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
+	if ( !empty($parallax_one_enable_move) && $parallax_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.0', true );
+		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
@@ -421,3 +421,57 @@ function parallax_one_responsive_embed($html, $url, $attr, $post_ID) {
 }
 
 add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );
+
+
+
+/* Comments callback function*/
+function parallax_one_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+	
+	
+		case 'trackback' :
+		?>
+			<li class="post pingback">
+				<p><?php _e( 'Pingback:', 'parallax-one' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'parallax-one' ), ' ' ); ?></p>
+		<?php
+		break;
+
+	
+		default :
+		?>
+			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+				<article id="comment-<?php comment_ID(); ?>" class="comment-body">
+					<footer>
+						<div itemscope itemprop="creator" itemtype="http://schema.org/Person" class="comment-author vcard" >
+							<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
+							<?php printf( __( '<span itemprop="name">%s </span><span class="says">says:</span>', 'parallax-one' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
+						</div><!-- .comment-author .vcard -->
+						<?php if ( $comment->comment_approved == '0' ) : ?>
+							<em><?php _e( 'Your comment is awaiting moderation.', 'parallax-one' ); ?></em>
+							<br />
+						<?php endif; ?>
+						<div class="comment-metadata">
+							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink" itemprop="url">
+								<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'parallax-one' ) ); ?>" itemprop="commentTime">
+									<?php printf( __( '%1$s at %2$s', 'parallax-one' ), get_comment_date(), get_comment_time() ); ?>
+								</time>
+							</a>
+							<?php edit_comment_link( __( '(Edit)', 'parallax-one' ), ' ' );?>
+						</div><!-- .comment-meta .commentmetadata -->
+					</footer>
+
+					<div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
+
+					<div class="reply">
+						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					</div><!-- .reply -->
+				</article><!-- #comment-## -->
+
+<?php
+		break;
+	
+	endswitch;
+}

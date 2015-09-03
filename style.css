@@ -191,6 +191,7 @@ a:hover {
 
 .navbar-inverse .navbar-nav > li > a:focus {
 	color: inherit;
+	outline: 2px solid #008ed6;
 }
 
 .navbar-inverse .navbar-nav > li.not-active {
@@ -511,9 +512,9 @@ big {
 	font-size: 125%;
 }
 
-*:focus {
+/**:focus {
     outline: 0 !important;
-}
+}*/
 
 /*--------------------------------------------------------------
 	2.3 ALIGNMENTS
@@ -1991,7 +1992,7 @@ header .navbar-brand {
 	text-align: center;
 }
 
-a.control_next {
+button.control_next {
 	right: 60px;
 	position: absolute;
 	top: -70px;
@@ -2005,14 +2006,18 @@ a.control_next {
 	font-size: 70px;
 	opacity: 0.8;
 	cursor: pointer;
+	background: none;
+	padding: 0;
 }
 
-a.control_next span {
-	cursor: pointer;
-	float: left;
+button.control_next:active, 
+button.control_next:focus, 
+button.control_prev:active, 
+button.control_prev:focus{
+	box-shadow: none;
 }
 
-a.control_prev {
+button.control_prev {
 	right: 0;
 	position: absolute;
 	top: -70px;
@@ -2026,31 +2031,24 @@ a.control_prev {
 	font-size: 70px;
 	opacity: 0.8;
 	cursor: pointer;
+	background: none;
+	padding: 0;
 }
 
-a.control_prev span {
-	margin-right: 1em;
-	cursor: pointer;
-	width: 0;
-	height: 0;
-	float: left;
-}
-
-
-a.control_prev:hover, 
-a.control_next:hover {
+button.control_prev:hover, 
+button.control_next:hover {
 	opacity: 1;
 	-webkit-transition: all 0.2s ease;
 }
 
-a.control_prev {
+button.control_prev {
 	-webkit-border-radius: 0 2px 2px 0;
 	-moz-border-radius: 0 2px 2px 0;
 	border-radius: 0 2px 2px 0;
 }
 
-a.control_prev.fade-btn,
-a.control_next.fade-btn {
+button.control_prev.fade-btn,
+button.control_next.fade-btn {
 	opacity: 0.1 !important;
 }
 

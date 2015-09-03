@@ -81,9 +81,9 @@
 							<?php
 								if( !empty($parallax_one_header_button_text) ){
 									if( empty($parallax_one_header_button_link) ){
-										echo '<div id="intro_section_text_3" class="button"><div id="inpage_scroll_btn"><a href="" class="btn btn-primary standard-button inpage-scroll">'.esc_attr($parallax_one_header_button_text).'</a></div></div>';
+										echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll"><span class="screen-reader-text">'.esc_html__('Header button label:','parallax-one').$parallax_one_header_button_text.'</span>'.$parallax_one_header_button_text.'</button>';
 									} else {
-										echo '<div id="intro_section_text_3" class="button"><div id="inpage_scroll_btn"><a href="'.esc_url($parallax_one_header_button_link).'" class="btn btn-primary standard-button inpage-scroll">'.$parallax_one_header_button_text.'</a></div></div>';
+										echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll" onClick="parent.location=\''.esc_url($parallax_one_header_button_link).'\'"><span class="screen-reader-text">'.esc_html__('Header button label:','parallax-one').$parallax_one_header_button_text.'</span>'.$parallax_one_header_button_text.'</button>';
 									}
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<div id="intro_section_text_3" class="button"><div id="inpage_scroll_btn"><a href="" class="btn btn-primary standard-button inpage-scroll paralax_one_only_customizer"></a></div></div>';

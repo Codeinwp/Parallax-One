@@ -26,8 +26,8 @@
 
 							<div class="parallax-slider-whole-wrap">
 								<div class="controls-wrap">
-									<a class="control_next"><div class="icon icon-arrow-carrot-down"></div></a>
-									<a class="control_prev fade-btn"><div class="icon icon-arrow-carrot-up"></div></a>
+									<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Down','parallax-one')?></span></button>
+									<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Up','parallax-one')?></span></button>
 								</div>
 								<!-- TIMLEINE SCROLLER -->
 								<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
@@ -89,7 +89,7 @@
 														</header>
 														<div itemprop="description" class="entry-content entry-summary">
 															<?php the_excerpt(); ?>
-															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php esc_html_e('Read more','parallax-one'); ?></a>
+															<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php printf( esc_html__( 'Read more %s', 'textdomain' ), '<span class="screen-reader-text">  '.get_the_title().'</span>' ); ?></a>
 														</div>
 													</div>
 												</div>

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One\n"
 "POT-Creation-Date: 2015-06-30 14:11+0200\n"
-"PO-Revision-Date: 2015-09-05 23:19+0500\n"
+"PO-Revision-Date: 2015-09-06 03:56+0500\n"
 "Last-Translator: \n"
 "Language-Team: Max Koryukov <maxkoryukov@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -82,8 +82,9 @@ msgid "Private Repository"
 msgstr "Частный Репозиторий"
 
 #: class-tgm-plugin-activation.php:1170 class-tgm-plugin-activation.php:1351
+#, fuzzy
 msgid "Pre-Packaged"
-msgstr ""
+msgstr "Пред-пакет"
 
 #: class-tgm-plugin-activation.php:1175
 msgid "WordPress Repository"
@@ -119,113 +120,121 @@ msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
+"Не выбран плагин для установки или активации. <a href=\"%1$s\" title="
+"\"Вернуться к Консоли\">Вернуться к Консоли</a>"
 
 #: class-tgm-plugin-activation.php:1388
 msgid "Plugin"
-msgstr ""
+msgstr "Плагин"
 
 #: class-tgm-plugin-activation.php:1389
 msgid "Source"
-msgstr ""
+msgstr "Исходник"
 
 #: class-tgm-plugin-activation.php:1390
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: class-tgm-plugin-activation.php:1391
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: class-tgm-plugin-activation.php:1939
 msgid "Install package not available."
-msgstr ""
+msgstr "Установка пакета недоступна."
 
 #: class-tgm-plugin-activation.php:1940
 #, php-format
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
 msgstr ""
+"Загрузка установочного пакета из <span class=\"code\">%s</span>&hellip;"
 
 #: class-tgm-plugin-activation.php:1941
 msgid "Unpacking the package&#8230;"
-msgstr ""
+msgstr "Извлечение пакета из архива&hellip;"
 
 #: class-tgm-plugin-activation.php:1942
 msgid "Installing the plugin&#8230;"
-msgstr ""
+msgstr "Установка плагина&hellip;"
 
 #: class-tgm-plugin-activation.php:1943
 msgid "Plugin install failed."
-msgstr ""
+msgstr "Не удалось установить плагин."
 
 #: class-tgm-plugin-activation.php:1944
 msgid "Plugin installed successfully."
-msgstr ""
+msgstr "Плагин успешно установлен."
 
 #: class-tgm-plugin-activation.php:1955
 msgid "Plugin activation failed."
-msgstr ""
+msgstr "Не удалось активировать плагин."
 
+# there is duplicate
 #: class-tgm-plugin-activation.php:2069
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
+"Начинается процесс установки и активации. На некоторых серверах этот процесс "
+"может занять некоторое время, поэтому, пожалуйста, будьте терпеливы."
 
 #: class-tgm-plugin-activation.php:2070
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr ""
+msgstr "%1$s установлен и активирован успешно."
 
 #: class-tgm-plugin-activation.php:2070 class-tgm-plugin-activation.php:2079
 msgid "Show Details"
-msgstr ""
+msgstr "Показать подробности"
 
 #: class-tgm-plugin-activation.php:2070 class-tgm-plugin-activation.php:2079
 msgid "Hide Details"
-msgstr ""
+msgstr "Скрыть подробности"
 
 #: class-tgm-plugin-activation.php:2071
 msgid "All installations and activations have been completed."
-msgstr ""
+msgstr "Все процессы установки и активации завершены."
 
 #: class-tgm-plugin-activation.php:2072
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
 
 #: class-tgm-plugin-activation.php:2076
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
+"Начинается процесс установки. На некоторых серверах этот процесс может "
+"занять некоторое время, поэтому будьте терпеливы, пожалуйста."
 
 #: class-tgm-plugin-activation.php:2077
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
+msgstr "При установке %1$s: <strong>%2$s</strong> произошла ошибка."
 
 #: class-tgm-plugin-activation.php:2078
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr ""
+msgstr "Установка %1$s завершилась ошибкой."
 
 #: class-tgm-plugin-activation.php:2079
 #, php-format
 msgid "%1$s installed successfully."
-msgstr ""
+msgstr "%1$s успешно установлен."
 
 #: class-tgm-plugin-activation.php:2080
 msgid "All installations have been completed."
-msgstr ""
+msgstr "Все процессы установки завершены."
 
 #: class-tgm-plugin-activation.php:2081
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Установка Плагина %1$s (%2$d/%3$d)"
 
 #: comments.php:35 comments.php:56
 msgid "Comment navigation"
-msgstr ""
+msgstr "Навигация по комментариям"
 
 #: comments.php:38 comments.php:59
 msgid "Older Comments"
@@ -237,7 +246,7 @@ msgstr "Новые Комментарии"
 
 #: comments.php:72
 msgid "Comments are closed."
-msgstr ""
+msgstr "Комментарии закрыты."
 
 #: content-contact.php:32
 msgid "* Please enter your name."
@@ -273,52 +282,58 @@ msgstr "Правка"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "Ничего не найдено"
 
 #: content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Готовы опубликовать свою первую запись? <a href=\"%1$s\">Начните отсюда</a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Извините, но ничего, подходящего под ваш поисковый запрос, не найдено. "
+"Пожалуйста, попробуйте ещё раз, используя другие ключевые слова."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Кажется, мы не можем найти то, что вы ищете. Возможно, поиск может помочь "
+"вам."
 
 #: content-page.php:20 content-search.php:88 content-single.php:30
 #: content.php:76
 msgid "Pages:"
-msgstr ""
+msgstr "Страницы:"
 
+# Why it is here????
 #: content-search.php:48 content.php:45 inc/template-tags.php:107
 #: inc/template-tags.php:113
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-search.php:54
 msgid "Posted in "
-msgstr ""
+msgstr "Опубликовано в"
 
 #: content-search.php:67 content-single.php:21 content.php:55
 msgid "No comments"
-msgstr ""
+msgstr "Нет комментариев"
 
 #: content-search.php:67 content-single.php:21 content.php:55
 msgid "One comment"
-msgstr ""
+msgstr "Один комментарий"
 
 #: content-search.php:67 content-single.php:21 content.php:55
-#, php-format
+#, fuzzy, php-format
 msgid "% comments"
-msgstr ""
+msgstr "% комментариев"
 
 #: footer.php:106
 msgid "powered by"
@@ -333,21 +348,20 @@ msgid "Primary Menu"
 msgstr "Основное меню"
 
 #: functions.php:48
-#, fuzzy
 msgid "Footer Menu"
-msgstr "Меню подвала"
+msgstr "Меню нижнего колонтитула"
 
 #: functions.php:106
 msgid "Parallax One Team Member"
-msgstr ""
+msgstr "Члены команды Parallax One"
 
 #: functions.php:107
 msgid "Parallax One Services"
-msgstr ""
+msgstr "Сервисы Parallax One"
 
 #: functions.php:108
 msgid "Parallax One Customers"
-msgstr ""
+msgstr "Клиенты Parallax One"
 
 #: functions.php:122
 msgid "Sidebar"
@@ -356,12 +370,12 @@ msgstr "Боковая панель"
 #: functions.php:134
 #, php-format
 msgid "Footer area %d"
-msgstr ""
+msgstr "Нижний колонтитул %d"
 
 # Seems, like this field is not used
 #: functions.php:254
 msgid "Testimonials section"
-msgstr ""
+msgstr "Секция Рекомендации"
 
 #: functions.php:258 inc/customizer.php:512
 msgid "Team section"
@@ -399,15 +413,16 @@ msgstr "Тоня Гарсиа"
 
 #: functions.php:379
 msgid "Account Manager"
-msgstr ""
+msgstr "Менеджер учетных записей"
 
 #: functions.php:389
 msgid "Linda Guthrie"
-msgstr ""
+msgstr "Линда Гутри"
 
 #: functions.php:389
+#, fuzzy
 msgid "Business Development"
-msgstr ""
+msgstr "Деловая разработка"
 
 #: functions.php:408 functions.php:417 functions.php:426
 msgid "Happy Customer"
@@ -435,25 +450,25 @@ msgstr "Lorem ipsum"
 
 #: functions.php:505
 msgid "Something went wrong with the plugin API."
-msgstr ""
+msgstr "Что-то пошло не так с API плагина."
 
 #: functions.php:518
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
-msgstr ""
+msgstr "Все плагины установлены и активированы успешно. %s"
 
 #: header.php:69
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Переключить навигацию"
 
 #: search.php:25
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Результаты поиска для: %s"
 
 #: inc/customizer.php:39
 msgid "Appearance Section"
-msgstr ""
+msgstr "Внешний вид"
 
 #: inc/customizer.php:47
 msgid "Sections order"
@@ -463,14 +478,15 @@ msgstr "Порядок секций"
 msgid ""
 "Check out the PRO version for full control over homepage sections order !"
 msgstr ""
+"Оценитие PRO-версию, в  которой доступен полный контроль над порядком секций!"
 
 #: inc/customizer.php:67
 msgid "General options"
-msgstr ""
+msgstr "Общие настройки"
 
 #: inc/customizer.php:69
 msgid "Paralax One theme general options"
-msgstr ""
+msgstr "Общие настройки темы Paralax One"
 
 #: inc/customizer.php:94
 msgid "Logo"
@@ -487,11 +503,11 @@ msgstr ""
 
 #: inc/customizer.php:127
 msgid "Disable comments on pages?"
-msgstr ""
+msgstr "Отключить комментарии на страницах?"
 
 #: inc/customizer.php:128
 msgid "If this box is checked, the comments will be disabled on pages."
-msgstr ""
+msgstr "Если снять эту галочку, комментарии на страницах будут отключены."
 
 #: inc/customizer.php:142
 msgid "Header section"
@@ -568,6 +584,7 @@ msgstr "Цвета"
 #: inc/customizer.php:900
 msgid "Check out the PRO version for full control over the color scheme !"
 msgstr ""
+"Оценитие PRO-версию, в  которой доступен полный контроль над цветовой гаммой!"
 
 #: inc/customizer.php:274
 msgid "Logos Bar"
@@ -606,6 +623,8 @@ msgid ""
 "The main content of this section is customizable in: Customize -> Widgets -> "
 "Services section. There you must add the \"Parallax One - Services widget\""
 msgstr ""
+"Основное содержание этой секции можно настроить в: Настроить -> Виджеты -> "
+"Секция Сервисы. Там вы должны добавить \"Parallax One - Виджет Сервисы\""
 
 #: inc/customizer.php:411
 msgid "About section"
@@ -653,6 +672,8 @@ msgstr "Позиция изображения"
 #: inc/customizer.php:489
 msgid "Check out the PRO version for full control over the image position !"
 msgstr ""
+"Оценитие PRO-версию, в  которой доступен полный контроль над положением "
+"изображения!"
 
 #: inc/customizer.php:524
 msgid "Hide Team section?"
@@ -661,6 +682,8 @@ msgstr "Скрыть Секцию Наша Команда"
 #: inc/customizer.php:525
 msgid "If you check this box, the Team section will disappear from homepage."
 msgstr ""
+"Если вы установите эту галочку, Секция Наша Команда исчезнет с главной "
+"страницы"
 
 #: inc/customizer.php:536
 msgid "Our Team"
@@ -671,6 +694,9 @@ msgid ""
 "The main content of this section is customizable in: Customize -> Widgets -> "
 "Team section. There you must add the \"Parallax One - Team widget\""
 msgstr ""
+"Основное содержание этой секции можно настроить в: Настроить -> Виджеты -> "
+"Секции Наша Команда. Там вы должны добавить \"Parallax One - Виджет Наша "
+"Команда\""
 
 #: inc/customizer.php:596
 msgid "Testimonial section"
@@ -701,6 +727,9 @@ msgid ""
 "Testimonials section. There you must add the \"Parallax One - Testimonials "
 "widget\""
 msgstr ""
+"Основное содержание этой секции можно настроить в: Настроить -> Виджеты -> "
+"Секция Рекомендации. Там вы должны добавить \"Parallax One - Виджет "
+"Рекомендации\""
 
 #: inc/customizer.php:680
 msgid "Ribbon section"
@@ -763,101 +792,110 @@ msgstr ""
 
 #: inc/customizer.php:880 inc/customizer.php:1077
 msgid "Map shortcode"
-msgstr ""
+msgstr "Shortcode карты"
 
 #: inc/customizer.php:881 inc/customizer.php:1078
 msgid ""
 "To use this section please install Intergeo Maps plugin then use it to "
 "create a map and paste here the shortcode generated"
 msgstr ""
+"Для того, чтобы использовать эту секцию, пожалуйста, установите плагин "
+"Intergeo Maps, затем используйте его для создания карты. Полученный "
+"shortcode карты вы можете копировать в эту форму"
 
 #: inc/customizer.php:909
 msgid "Contact page"
-msgstr ""
+msgstr "Страница Контакты"
 
 #: inc/customizer.php:922
 msgid "Hide default form?"
-msgstr ""
+msgstr "Скрыть форму по умолчанию"
 
 #: inc/customizer.php:923
 msgid ""
 "If you check this box, the default form will disappear.After you disable the "
 "default form, a control to put your contact form shortcode will be available."
 msgstr ""
+"Если вы установите эту галочку, форма по умолчанию исчезнет. Если вы "
+"отключите форму по умолчанию, станет доступен элемент управления для ввода "
+"shortcode вашей формы контактных данных."
 
 #: inc/customizer.php:938
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: inc/customizer.php:939
 msgid "The email address where messages will be delivered"
-msgstr ""
+msgstr "Email-адрес, куда будут доставляться сообщения"
 
 #: inc/customizer.php:949
 msgid "Your Name"
-msgstr ""
+msgstr "Ваше Имя"
 
 #: inc/customizer.php:953
 msgid "Name Input Placeholder"
-msgstr ""
+msgstr "Placeholder для поля Имя"
 
 #: inc/customizer.php:963
 msgid "Your Email"
-msgstr ""
+msgstr "Ваш Email"
 
 #: inc/customizer.php:967
 msgid "Email Input Placeholder"
-msgstr ""
+msgstr "Placehoder для поля Email"
 
 #: inc/customizer.php:977
 msgid "Subject"
-msgstr ""
+msgstr "Тема сообщения"
 
 #: inc/customizer.php:981
 msgid "Subject Input Placeholder"
-msgstr ""
+msgstr "Placeholder для поля Тема сообщения"
 
 #: inc/customizer.php:991
 msgid "Your Message"
-msgstr ""
+msgstr "Ваше Сообщение"
 
 #: inc/customizer.php:995
 msgid "Message Input Placeholder"
-msgstr ""
+msgstr "Placeholder для поля Сообщение"
 
 #: inc/customizer.php:1004
 msgid "Send Message"
-msgstr ""
+msgstr "Отправить Сообщение"
 
+# Try to search for duplicates
 #: inc/customizer.php:1008
 msgid "Button Label"
-msgstr ""
+msgstr "Надпись на кнопке"
 
 #: inc/customizer.php:1023
 msgid "Disable reCAPTCHA?"
-msgstr ""
+msgstr "Отключить reCAPTCHA?"
 
 #: inc/customizer.php:1037
 msgid "reCAPTCHA site key"
-msgstr ""
+msgstr "Ключ сайта (site key) reCAPTHCA"
 
 #: inc/customizer.php:1050
 msgid "reCAPTCHA secret key"
-msgstr ""
+msgstr "Секрет (secret key) reCAPTHCA"
 
 #: inc/customizer.php:1064
 msgid "Contact form shortcode"
-msgstr ""
+msgstr "shortcode контактной формы"
 
 #: inc/customizer.php:1090
 msgid "Footer options"
-msgstr "Настройки подвала"
+msgstr "Настройки нижнего колонтитула"
 
 #: inc/customizer.php:1092
 msgid ""
 "The main content of this section is customizable in: Customize -> Widgets -> "
 "Footer area. "
 msgstr ""
+"Основное содержание этой секции можно настроить в: Настроить -> Виджеты -> "
+"Нижний колонтитул."
 
 #: inc/customizer.php:1107
 #, fuzzy
@@ -870,20 +908,20 @@ msgstr "Документация"
 
 #: inc/customizer.php:1160
 msgid "View PRO version"
-msgstr ""
+msgstr "Ознакомиться с PRO-версией"
 
 #: inc/customizer.php:1161
 msgid "Support Forum"
-msgstr ""
+msgstr "Форум поддержки"
 
 #: inc/extras.php:52
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Страница %s"
 
 #: inc/template-tags.php:26
 msgid "Older posts"
-msgstr ""
+msgstr "Старые записи"
 
 #: inc/template-tags.php:30
 msgid "Newer posts"
@@ -891,17 +929,17 @@ msgstr "Новые записи"
 
 #: inc/template-tags.php:55
 msgid "Post navigation"
-msgstr ""
+msgstr "Навигация по записи"
 
 #: inc/template-tags.php:109
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Опубликовано в %1$s"
 
 #: inc/template-tags.php:115
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Отмечено в %1$s"
 
 #: inc/template-tags.php:121
 msgid "Leave a comment"
@@ -919,7 +957,7 @@ msgstr "% Комментариев"
 #: inc/template-tags.php:142
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Рубрика: %s"
 
 #: inc/template-tags.php:144
 #, php-format

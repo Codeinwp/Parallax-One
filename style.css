@@ -5742,7 +5742,7 @@ h2.screen-reader-text {
 		margin: 0;
 	}
 
-	.main-navigation .menu-item-has-children > a:after, .sticky-navigation .no-menu > li.page_item_has_children > a:after {
+	.main-navigation .menu-item-has-children > a:after{
 		content: "\e0d4";
 		font-family: stamp-icons!important;
 		position: absolute;
@@ -5791,7 +5791,7 @@ h2.screen-reader-text {
 		padding: 5px 8px;
 	}
 	
-	.menu-align-center .primary-menu > li.menu-item-has-children a, .sticky-navigation .no-menu > li.page_item_has_children > a {
+	.menu-align-center .primary-menu > li.menu-item-has-children a{
 		padding: 5px 18px 5px 8px;
 	}
 	

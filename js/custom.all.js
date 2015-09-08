@@ -1,44 +1,17 @@
-
-jQuery(document).ready(function(){
-    //callback_mobile_dropdown();
-});
 jQuery(window).load(function(){ 
     fixFooterBottom();
-    //callback_menu_align();
+    callback_menu_align();
 });
 jQuery(window).resize(function(){
     fixFooterBottom();
-    //callback_menu_align();
+    callback_menu_align();
 });
 
-/*** DROPDOWN FOR MOBILE MENU */
-/*var callback_mobile_dropdown = function () {
-    var navLi = jQuery('#menu-primary li');
-    navLi.each(function(){
-        if ( jQuery(this).find('ul').length > 0 && !jQuery(this).hasClass('has_children') ){
-            jQuery(this).addClass('has_children');
-            jQuery(this).find('a').first().after('<p class="dropdownmenu icon icon-arrows-down"></p>');
-        }
-    });
-    jQuery('.dropdownmenu').click(function(){
-        if( jQuery(this).parent('li').hasClass('this-open') ){
-            jQuery(this).parent('li').removeClass('this-open');
-            jQuery(this).parent('li').children('.icon-arrows-up').removeClass('icon-arrows-up').addClass('icon-arrows-down');
-        }else{
-            jQuery(this).parent('li').addClass('this-open');
-            jQuery(this).parent('li').children('.icon-arrows-down').removeClass('icon-arrows-down').addClass('icon-arrows-up');
-        }
-    });
-    navLi.find('a').click(function(){
-        jQuery('.navbar-toggle').addClass('collapsed');
-        jQuery('.collapse').removeClass('in'); 
-    });
-};
-*/
-/*** CENTERED MENU */
-/*var callback_menu_align = function () {
+
+/* CENTERED MENU */
+var callback_menu_align = function () {
     var headerWrap      = jQuery('header.header');
-    var navWrap         = jQuery('#menu-primary');
+    var navWrap         = jQuery('.main-navigation');
     var logoWrap        = jQuery('.navbar-header');
     var containerWrap   = jQuery('.container');
     var classToAdd      = 'menu-align-center';
@@ -63,7 +36,7 @@ jQuery(window).resize(function(){
         jQuery('.sticky-navigation-open').css('min-height', 70);
     }
 }
-*/
+
 /* STICKY FOOTER */
 function fixFooterBottom(){
     var header      = jQuery('header.header');
@@ -372,12 +345,11 @@ var isMobile = {
 ========= ACCESSIBILITY READY =========
 =======================================*/
 
-// menu navigation with arrow keys 
+// MENU NAVIGATION WITH ARROW KEYS 
 ( function( $ ) {
 
     
   $('.menu-item a').on('keydown', function(e) {
-
 		// left key
 		if(e.which === 37) {
 			e.preventDefault();
@@ -409,26 +381,16 @@ var isMobile = {
 				$(this).parents('ul').first().prev().prev().focus();
 			}
 		}
-
 	});
-
-
 } )( jQuery );
 
 
-
-
-
-
-
-
-/*accessibility menu*/
-
+//ACCESSIBILITY MENU
 ( function( $ ) {
 
     function initMainNavigation( container ) {
-		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+        // Add dropdown toggle that display child menu items.
+        container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
 		// Toggle buttons and submenu items with active children menu items.
 		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
@@ -438,14 +400,15 @@ var isMobile = {
 		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this );
-			e.preventDefault();
+            var _this = $( this );
+            e.preventDefault();
 			_this.toggleClass( 'toggled-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
-		} );
+		});
     }
+    
     initMainNavigation( $( '.main-navigation' ) );
     
     masthead = $( '#masthead' );
@@ -453,13 +416,10 @@ var isMobile = {
 	siteHeaderMenu   = masthead.find( '#site-header-menu' );
 	siteNavigation   = masthead.find( '#site-navigation' ); 
     
-    
-    
-    
-    	// Enable menuToggle.
+    // Enable menuToggle.
 	( function() {
 		// Return early if menuToggle is missing.
-		if ( ! menuToggle ) {
+        if ( ! menuToggle ) {
 			return;
 		}
 
@@ -469,17 +429,16 @@ var isMobile = {
 		} );
 	} )();
 
-	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+
+    // Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
 	( function() {
-		if ( ! siteNavigation || ! siteNavigation.children().length ) {
-            //alert($(masthead).html());
+        if ( ! siteNavigation || ! siteNavigation.children().length ) {
 			return;
 		}
 
 		if ( 'ontouchstart' in window ) {
 			siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.parallax-one', function( e ) {
 				var el = $( this ).parent( 'li' );
-
 				if ( ! el.hasClass( 'focus' ) ) {
 					e.preventDefault();
 					el.toggleClass( 'focus' );
@@ -492,6 +451,7 @@ var isMobile = {
 			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
 		} );
 	} )();
+
 
 	// Add he default ARIA attributes for the menu toggle and the navigations.
 	function onResizeARIA() {
@@ -517,10 +477,7 @@ var isMobile = {
 	}
     
     $( document ).ready( function() {
-		$body = $( document.body );
-
-		$( window )
-			.on( 'load.parallax-one', onResizeARIA )
+		$( window ).on( 'load.parallax-one', onResizeARIA )
 	} );
     
     

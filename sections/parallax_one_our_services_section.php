@@ -66,9 +66,17 @@
 												if( $parallax_one_service_box->choice == 'parallax_image' ){
 													if( !empty($parallax_one_service_box->image_url)){
 														if( !empty($parallax_one_service_box->link) ){
-															echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.esc_url($parallax_one_service_box->image_url).'"/></a>';
+															if(!empty($parallax_one_service_box->title)){
+																echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.$parallax_one_service_box->title.'"/></a>';
+															} else {
+																echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.esc_html__('Featured Image','parallax-one').'"/></a>';
+															}
 														} else {
-															echo '<img src="'.esc_url($parallax_one_service_box->image_url).'"/>';
+															if(!empty($parallax_one_service_box->title)){
+																echo '<img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.$parallax_one_service_box->title.'"/>';
+															} else {
+																echo '<img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.esc_html__('Featured Image','parallax-one').'"/>';
+															}
 														}
 													}
 												}

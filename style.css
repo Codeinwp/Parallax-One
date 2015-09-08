@@ -907,7 +907,7 @@ h1.site-title {
 	margin-top: 12px;
 }
 
-h2.site-description {
+p.site-description {
 	font-size: 1rem;
 	line-height: 1rem;
 	margin-top: 0;
@@ -5761,7 +5761,6 @@ h2.screen-reader-text {
 
 	.dropdown-toggle,
 	.main-navigation ul .dropdown-toggle.toggled-on,
-	.menu-toggle,
 	.site-header .social-navigation,
 	.site-footer .main-navigation {
 		display: none;

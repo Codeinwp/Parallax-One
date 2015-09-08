@@ -18,7 +18,7 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
-
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'parallax-one' ); ?></a>
 	<!-- =========================
      PRE LOADER       
     ============================== -->
@@ -76,6 +76,7 @@
 				
                     <div class="navbar-header">
                      
+						
                         <!-- LOGO -->
 						
                         <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
@@ -84,7 +85,6 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-						
 						<?php
 							
 							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
@@ -103,7 +103,7 @@
 
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 								
-									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
+									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';	
 							
@@ -123,33 +123,34 @@
 									
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
+									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';							
 							endif;	
 
 						?>
+						
+						<!-- MENU -->
+						<div itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_html_e('Primary Menu','parallax-one') ?>" id="menu-primary" class="navbar-collapse collapse">
+							<!-- LOGO ON STICKY NAV BAR -->
+							<div id="site-header-menu" class="site-header-menu">
+								<nav id="site-navigation" class="main-navigation" role="navigation">
+								<?php 
+									wp_nav_menu( 
+										array( 
+											'theme_location'    => 'primary',
+											'menu_class'        => 'primary-menu small-text', //nav navbar-nav navbar-right main-navigation small-text', 
+											'depth'           	=> 4,
+											 ) 
+									);
+								?>
+								</nav>
+							</div>
+						</div>
 
+						
                     </div>
                     
-                    <!-- MENU -->
-					<div itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_html_e('Primary Menu','parallax-one') ?>" id="menu-primary" class="navbar-collapse collapse">		
-						<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'parallax-one' ); ?></h1>
-						<!-- LOGO ON STICKY NAV BAR -->
-						<div id="site-header-menu" class="site-header-menu">
-							<nav id="site-navigation" class="main-navigation" role="navigation">
-							<?php 
-								wp_nav_menu( 
-									array( 
-										'theme_location'    => 'primary',
-										'menu_class'        => 'primary-menu small-text', //nav navbar-nav navbar-right main-navigation small-text', 
-										'depth'           	=> 4,
-										 ) 
-								);
-							?>
-							</nav>
-						</div>
-                    </div>
 					
 					
                 </div>

@@ -424,7 +424,7 @@ var isMobile = {
 		}
 
 		// Add an initial values for the attribute.
-		menuToggle.on( 'click.parallax-one', function() {
+		menuToggle.click(function() {
 			$( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
 		} );
 	} )();

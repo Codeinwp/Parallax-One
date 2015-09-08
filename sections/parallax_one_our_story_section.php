@@ -14,7 +14,11 @@
 						<!-- BRIEF IMAGE -->
 						<?php
 							if( !empty($paralax_one_our_story_image) ){
-								echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt=""></div></div>';
+								if( !empty($parallax_one_our_story_title) ){
+									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt="'.esc_attr($parallax_one_our_story_title).'"></div></div>';
+								} else {
+									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.esc_url($paralax_one_our_story_image).'" alt="'.esc_html__('About','parallax-one').'"></div></div>';
+								}
 							} elseif ( isset( $wp_customize )   ) {
 								echo '<div class="col-md-6 brief-content-two paralax_one_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>';
 							}

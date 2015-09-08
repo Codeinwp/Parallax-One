@@ -1193,6 +1193,10 @@ header .navbar-brand {
 	top: 4px;
 }
 
+.menu-align-center .no-menu > li > a{
+	padding: 5px 8px;
+}
+
 .navbar-inverse .navbar-toggle .icon-bar {
 	background-color: #008ed6;
 	height: 4px;
@@ -5738,7 +5742,7 @@ h2.screen-reader-text {
 		margin: 0;
 	}
 
-	.main-navigation .menu-item-has-children > a:after {
+	.main-navigation .menu-item-has-children > a:after, .sticky-navigation .no-menu > li.page_item_has_children > a:after {
 		content: "\e0d4";
 		font-family: stamp-icons!important;
 		position: absolute;
@@ -5759,6 +5763,11 @@ h2.screen-reader-text {
 		right: 10px;
 	}
 
+	.no-menu > li{
+		float:none;
+		display: inline-block;
+	}
+	
 	.dropdown-toggle,
 	.main-navigation ul .dropdown-toggle.toggled-on,
 	.site-header .social-navigation,
@@ -5766,14 +5775,14 @@ h2.screen-reader-text {
 		display: none;
 	}
 	
-	.menu-align-center .primary-menu{
+	.menu-align-center .primary-menu, 	.menu-align-center .no-menu{
     	text-align: center;
     	width: 100%;
     	margin-bottom: 10px;
 		padding: 0;
 	}
 	
-	.menu-align-center .primary-menu > li {
+	.menu-align-center .primary-menu > li, 	.menu-align-center .no-menu > li {
     	display: inline-block;
     	float: none;
 	}
@@ -5782,11 +5791,11 @@ h2.screen-reader-text {
 		padding: 5px 8px;
 	}
 	
-	.menu-align-center .primary-menu > li.menu-item-has-children a {
+	.menu-align-center .primary-menu > li.menu-item-has-children a, .sticky-navigation .no-menu > li.page_item_has_children > a {
 		padding: 5px 18px 5px 8px;
 	}
 	
-	.menu-align-center .primary-menu > li.menu-item-has-children a:after {
+	.menu-align-center .primary-menu > li.menu-item-has-children a:after, .sticky-navigation .no-menu > li.page_item_has_children > a:after {
 		line-height: 28px;
 		top: 0;
 	}
@@ -5941,7 +5950,7 @@ h2.screen-reader-text {
 
 	.sticky-navigation .main-navigation ul,
 	.sticky-navigation .main-navigation ul ul,
-	.sticky-navigation .main-navigation ul ul ul {
+	.sticky-navigation .main-navigation ul ul ul{
 		position: relative;
 		left: 0;
 		left: auto;

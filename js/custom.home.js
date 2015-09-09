@@ -8,10 +8,10 @@ var marginTop = 0;
 /* LATEST NEWS */
 jQuery(document).ready(function () {
     parallax_one_latest_news();
-    jQuery('a.control_prev').click(function () {
+    jQuery('button.control_prev').click(function () {
         parallax_one_moveBottom();
     });
-    jQuery('a.control_next').click(function () {
+    jQuery('button.control_next').click(function () {
          parallax_one_moveTop();
     });
 });

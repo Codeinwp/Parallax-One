@@ -7,7 +7,7 @@
  * @package parallax-one
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,8 @@
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class( $class ); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
-
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'parallax-one' ); ?></a>
 	<!-- =========================
      PRE LOADER       
     ============================== -->
@@ -44,7 +44,8 @@
 	<!-- =========================
      SECTION: HOME / HEADER  
     ============================== -->
-	<header itemscope itemtype="http://schema.org/WPHeader" id="header" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one">
+	<!--header-->
+	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one site-header">
 
         <!-- COLOR OVER IMAGE -->
         <?php
@@ -77,8 +78,8 @@
                      
                         <!-- LOGO -->
 						
-                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-primary">
-                            <span class="sr-only"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
+                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
+                            <span class="screen-reader-text"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -102,7 +103,7 @@
 
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 								
-									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
+									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';	
 							
@@ -122,7 +123,7 @@
 									
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
-									echo '<h2 itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</h2>';
+									echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 
 								echo '</div>';							
 							endif;	
@@ -132,18 +133,22 @@
                     </div>
                     
                     <!-- MENU -->
-					<div itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_html_e('Primary Menu','parallax-one') ?>" id="menu-primary" class="navbar-collapse collapse">		
-						<h1 class="screen-reader-text"><?php _e( 'Primary Menu', 'parallax-one' ); ?></h1>
+					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e('Primary Menu','parallax-one') ?>" id="menu-primary" class="navbar-collapse collapse">
 						<!-- LOGO ON STICKY NAV BAR -->
-    					<?php 
-    						wp_nav_menu( 
-                                array( 
-                                    'theme_location'    => 'primary',
-                                    'container'         => false,
-                                    'menu_class'        => 'nav navbar-nav navbar-right main-navigation small-text', 
-                                    'fallback_cb'       => 'parallax_one_wp_page_menu' ) 
-							);
-    					?>
+						<div id="site-header-menu" class="site-header-menu">
+							<nav id="site-navigation" class="main-navigation" role="navigation">
+							<?php 
+								wp_nav_menu( 
+									array( 
+										'theme_location'    => 'primary',
+										'menu_class'        => 'primary-menu small-text',
+										'depth'           	=> 4,
+										'fallback_cb'       => 'parallax_one_wp_page_menu'
+										 ) 
+								);
+							?>
+							</nav>
+						</div>
                     </div>
 					
 					

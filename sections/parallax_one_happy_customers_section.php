@@ -57,10 +57,14 @@
 											<?php
 
 												if( !empty($parallax_one_testimonial->image_url) ){
-													echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="">';
+													if(!empty($parallax_one_testimonial->title)){
+														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.$parallax_one_testimonial->title.'">';
+													} else {
+														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.esc_html('Avatar','parallax-one').'">';
+													}
 												} else {
 													$default_image = parallax_get_file('/images/clients/client-no-image.jpg');
-													echo '<img src="'.esc_url($default_image).'" alt="">';	
+													echo '<img src="'.esc_url($default_image).'" alt="'.esc_html('Avatar','parallax-one').'">';	
 												}	
 											?>
 										</div>

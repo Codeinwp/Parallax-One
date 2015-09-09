@@ -10,7 +10,7 @@
 		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
-			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html__('Latest blog posts','parallax-one'); ?>">
+			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e('Latest blog posts','parallax-one'); ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="row">

@@ -4772,6 +4772,12 @@ a:hover {
 	max-width: 50%;
 }
 
+.post-navigation h2.screen-reader-text {
+	position: inherit!important;
+	width: auto;
+	height: auto;
+}
+
 #primary {
 	margin: 50px 0;
 	padding-right: 15px;

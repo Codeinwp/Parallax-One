@@ -190,8 +190,9 @@ a:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:focus {
-	color: inherit;
-	outline: 2px solid #008ed6;
+	color: #008ed6;
+	outline: 1px solid #008ed6;
+	outline-style: dotted;
 }
 
 .navbar-inverse .navbar-nav > li.not-active {
@@ -965,7 +966,17 @@ header .navbar-brand {
 .sticky-navigation .main-navigation li a {
     text-transform: uppercase;
 	line-height: 18px;
-	padding: 26px 18px;
+	margin: 26px 18px;
+	padding: 0;
+}
+
+.sticky-navigation .main-navigation .sub-menu li a {
+	margin: 0;
+}
+
+
+.menu-align-center  .main-navigation li a {
+	margin: 0;
 }
 
 .sticky-navigation .main-navigation a {
@@ -1077,6 +1088,10 @@ header .navbar-brand {
 	text-decoration: inherit;
 	text-transform: none;
 	vertical-align: top;
+}
+
+.menu-item > a:focus{
+	outline: 1px dotted #008ed6;
 }
 
 .site-header-menu.toggled-on,
@@ -6122,7 +6137,10 @@ h2.screen-reader-text {
 		margin-right: 0;
 		clear: right;
 	}
-
+	.navbar-collapse .main-navigation li a{
+		margin: 0;
+		line-height: 25px;
+	}
 }
 
 @media (max-width: 680px) {

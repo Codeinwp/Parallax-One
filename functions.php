@@ -481,3 +481,17 @@ function parallax_one_comment($comment, $args, $depth) {
 	
 	endswitch;
 }
+
+/*Polylang repeater*/
+$parallax_one_services_pl = get_theme_mod('parallax_one_services_content');
+if(!empty($parallax_one_services_pl)){
+	$id = 1;
+	$parallax_one_services_pl_decoded = json_decode($parallax_one_services_pl);
+	foreach($parallax_one_services_pl_decoded as $parallax_one_service_box){
+		$title = $parallax_one_service_box->title;
+		if(!empty($title)){
+			icl_register_string( 'Featured Area' , 'parallax_service_box_'.$id, $title );
+		}
+		$id++;
+	}
+}

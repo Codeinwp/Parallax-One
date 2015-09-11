@@ -1,11 +1,14 @@
 <wpml-config>
 	<admin-texts>
-		<key name="theme_mods_parallax-one">
+		<key name="theme_mods_Parallax-One">
 			<key name="parallax_one_header_title" />
 			<key name="parallax_one_header_subtitle" />
 			<key name="parallax_one_header_button_text" />
 			<key name="parallax_one_our_services_title" />
 			<key name="parallax_one_our_services_subtitle" />
+			<key name="parallax_one_services_content" >
+				<key name="parallax_text_control"/>
+			</key>>
 			<key name="parallax_one_our_story_title" />
 			<key name="parallax_one_our_story_text" />
 			<key name="parallax_one_our_team_title" />

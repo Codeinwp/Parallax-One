@@ -142,10 +142,16 @@ a {
 	text-decoration: none;
 	-webkit-transition: all ease 0.25s;
 	transition: all ease 0.25s;
+	
 }
 
-a:hover {
-	text-decoration: underline;
+a:hoverv {
+	text-decoration: none;
+}
+
+a:focus {
+	outline: 1px dotted #008ed6;
+	text-decoration: none;
 }
 
 /*---------------------------------------
@@ -190,8 +196,9 @@ a:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:focus {
-	color: inherit;
-	outline: 2px solid #008ed6;
+	color: #008ed6;
+	outline: 1px solid #008ed6;
+	outline-style: dotted;
 }
 
 .navbar-inverse .navbar-nav > li.not-active {
@@ -362,6 +369,13 @@ body {
 
 body.custom-background {
 	background-size: cover;
+}
+
+.skip-link {
+	z-index: 1031!important;
+	top:40px!important;
+	text-decoration: none!important;
+	color:#008ed6!important;
 }
 
 .header {
@@ -965,7 +979,17 @@ header .navbar-brand {
 .sticky-navigation .main-navigation li a {
     text-transform: uppercase;
 	line-height: 18px;
-	padding: 26px 18px;
+	margin: 26px 18px;
+	padding: 0;
+}
+
+.sticky-navigation .main-navigation .sub-menu li a {
+	margin: 0;
+}
+
+
+.menu-align-center  .main-navigation li a {
+	margin: 0;
 }
 
 .sticky-navigation .main-navigation a {
@@ -1077,6 +1101,10 @@ header .navbar-brand {
 	text-decoration: inherit;
 	text-transform: none;
 	vertical-align: top;
+}
+
+.menu-item > a:focus{
+	outline: 1px dotted #008ed6;
 }
 
 .site-header-menu.toggled-on,
@@ -1388,6 +1416,11 @@ header .navbar-brand {
 	display: inline-block;
 	margin: 25px 25px 25px 25px;
 	vertical-align: middle;
+}
+
+.client-logos li a{
+	display: block;
+	padding: 5px;
 }
 
 .client-logos li img {
@@ -2117,6 +2150,7 @@ button.control_next:focus,
 button.control_prev:active, 
 button.control_prev:focus{
 	box-shadow: none;
+	outline: 1px dotted #008ed6;
 }
 
 button.control_prev {
@@ -2455,8 +2489,8 @@ button.control_next.fade-btn {
 }
 
 .contact-info .contact-links a {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 65px;
+	padding-bottom: 0;
 }
 
 .contact-links .contact-link-box {
@@ -6122,7 +6156,10 @@ h2.screen-reader-text {
 		margin-right: 0;
 		clear: right;
 	}
-
+	.navbar-collapse .main-navigation li a{
+		margin: 0;
+		line-height: 25px;
+	}
 }
 
 @media (max-width: 680px) {

@@ -725,6 +725,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$blogname = $wp_customize->get_control('blogname');
 	$blogdescription = $wp_customize->get_control('blogdescription');
+	$blogicon = $wp_customize->get_control('site_icon');
 	$show_on_front = $wp_customize->get_control('show_on_front');
 	$page_on_front = $wp_customize->get_control('page_on_front');
 	$page_for_posts = $wp_customize->get_control('page_for_posts');
@@ -736,17 +737,21 @@ function parallax_one_customize_register( $wp_customize ) {
 		$blogdescription->section = 'parallax_one_general_section';
 		$blogdescription->priority = 2;
 	}
+	if(!empty($blogicon)){
+		$blogicon->section = 'parallax_one_general_section';
+		$blogicon->priority = 3;
+	}
 	if(!empty($show_on_front)){
 		$show_on_front->section='parallax_one_general_section';
-		$show_on_front->priority=3;
+		$show_on_front->priority=4;
 	}
 	if(!empty($page_on_front)){
 		$page_on_front->section='parallax_one_general_section';
-		$page_on_front->priority=4;
+		$page_on_front->priority=5;
 	}
 	if(!empty($page_for_posts)){
 		$page_for_posts->section='parallax_one_general_section';
-		$page_for_posts->priority=5;
+		$page_for_posts->priority=6;
 	}
 	
 	$wp_customize->remove_section('static_front_page');

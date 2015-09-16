@@ -76,7 +76,15 @@
 										<?php
 											if(!empty($parallax_one_testimonial->title)){
 										?>
-												<h5 class="colored-text"><?php echo esc_attr($parallax_one_testimonial->title); ?></h5>
+												<h5 class="colored-text">
+													<?php
+														if(function_exists('icl_translate')){
+															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_title',esc_attr($parallax_one_testimonial->title));
+														} else {
+															echo esc_attr($parallax_one_testimonial->title);
+														}
+													?>
+												</h5>
 										<?php
 											}
 
@@ -84,7 +92,11 @@
 										?>
 												<div class="small-text">
 													<?php 
+														if(function_exists('icl_translate')){
+															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_subtitle',esc_attr($parallax_one_testimonial->subtitle));
+														} else {
 															echo esc_attr($parallax_one_testimonial->subtitle);
+														}
 													?>	
 												</div>
 										<?php
@@ -93,7 +105,13 @@
 											if(!empty($parallax_one_testimonial->text)){
 										?>
 												<p>
-													<?php echo esc_attr($parallax_one_testimonial->text); ?>
+													<?php 
+														if(function_exists('icl_translate')){
+															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',esc_attr($parallax_one_testimonial->text));
+														} else {
+															echo esc_attr($parallax_one_testimonial->text); 
+														}
+													?>
 												</p>
 										<?php
 											}

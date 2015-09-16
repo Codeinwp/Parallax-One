@@ -700,7 +700,13 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(
 		'sanitize_callback' => 'parallax_one_sanitize_text',
-		'default' => json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#')))
+		'default' => json_encode(
+			array(
+				array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
+				array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
+				array('icon_value' =>'icon-social-googleplus' , 'link' => '#')
+			)
+		)
 
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_social_icons', array(
@@ -775,8 +781,8 @@ function parallax_one_customize_register( $wp_customize ) {
 				'description' => esc_html__('If this box is checked, the preloader will be disabled from homepage.','parallax-one'),
 				'section' => 'parallax_one_general_section',
 				'priority'    => 7,
-			)
-	);
+			) 
+	); 
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );
 

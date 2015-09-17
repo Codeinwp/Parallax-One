@@ -117,6 +117,13 @@ function parallax_one_setup() {
 	if( !get_option( 'parallax_one_migrate_translation' ) ) {
 		add_option( 'parallax_one_migrate_translation', false );
 	}
+	
+	/**
+	* Welcome screen
+	*/
+	if ( is_admin() ) {
+		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
+	}
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -432,7 +439,7 @@ function parallax_one_register_required_plugins() {
 			
 				'slug' 	   => 'shortpixel-image-optimiser',
 
-				'source'   => get_stylesheet_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
+				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
 
 				'required' => false
 			

@@ -148,7 +148,7 @@ function mainNav() {
 function scrolled() {
 
     if ( jQuery(window).width() >= 751 ) {
-        var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var prallax-one_scrollTop = jQuery(window).scrollTop();       // cursor position
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
@@ -159,7 +159,7 @@ function scrolled() {
             var thisBegin   = parallax_one_offset - headerHeight;                      // where the section begins
             var thisEnd     = parallax_one_offset + thisHeight - headerHeight;         // where the section ends  
             // if position of the cursor is inside of the this section
-            if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+            if ( prallax-one_scrollTop >= thisBegin && prallax-one_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section

@@ -18,7 +18,7 @@
 	if( !empty($parallax_one_contact_info_item) ){
 		$parallax_one_contact_info_item_decoded = json_decode($parallax_one_contact_info_item);
 	?>
-			<div class="contact-info" id="contactinfo">
+			<div class="contact-info" id="contactinfo" role="region" aria-label="<?php esc_html_e('Contact Info','parallax-one'); ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 
@@ -46,7 +46,11 @@
 													echo '<div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div>';
 												}
 												if(!empty($parallax_one_contact_item->text)){
-													echo '<a href="" class="strong">'.esc_attr($parallax_one_contact_item->text).'</a>';
+													if(function_exists('icl_translate')){
+														echo '<a href="" class="strong">'.icl_translate('Contact',$parallax_one_contact_item->id.'_contact',esc_attr($parallax_one_contact_item->text)).'</a>';
+													} else {
+														echo '<a href="" class="strong">'.esc_attr($parallax_one_contact_item->text).'</a>';
+													}
 												}
 												echo '</div>';
 											}

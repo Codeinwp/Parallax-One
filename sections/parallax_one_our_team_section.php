@@ -16,7 +16,7 @@
 
 	if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !empty($parallax_one_team_content)){
 ?>
-		<section class="team" id="team">
+		<section class="team" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
 			<div class="section-overlay-layer">
 				<div class="container">
 
@@ -55,10 +55,14 @@
 											<div class="member-pic">
 												<?php
 													if( !empty($parallax_one_team_member->image_url)){
-														echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="">';
+														if( !empty($parallax_one_team_member->title) ){
+															echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="'.esc_attr($parallax_one_team_member->title).'">';
+														} else {
+															echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="'.esc_html__('Avatar','parallax-one').'">';
+														}
 													} else {
 														$default_url = parallax_get_file('/images/team/default.png');
-														echo '<img src="'.$default_url.'" alt="">';
+														echo '<img src="'.$default_url.'" alt="'.esc_html__('Avatar','parallax-one').'">';
 													}
 												?>
 											</div><!-- .member-pic -->
@@ -67,14 +71,21 @@
 											<div class="member-details">
 												<div class="member-details-inner">
 													<?php 
-													if( !empty($parallax_one_team_member->title) ){?>
-														<h5 class="colored-text"><?php echo esc_attr($parallax_one_team_member->title);?></h5>
-													<?php 
+													if( !empty($parallax_one_team_member->title) ){
+														if(function_exists('icl_translate')){
+															echo '<h5 class="colored-text">'.icl_translate('Team',$parallax_one_team_member->id.'_team_title',esc_attr($parallax_one_team_member->title)).'</h5>';
+														} else {
+															echo '<h5 class="colored-text">'.esc_attr($parallax_one_team_member->title).'</h5>';
+														}
 													}
 													if( !empty($parallax_one_team_member->subtitle) ){ ?>
 														<div class="small-text">
-															<?php 
-															   echo esc_attr($parallax_one_team_member->subtitle);
+															<?php
+																if(function_exists('icl_translate')){
+																	echo icl_translate('Team',$parallax_one_team_member->id.'_team_subtitle',esc_attr($parallax_one_team_member->subtitle));
+																} else {
+																	echo esc_attr($parallax_one_team_member->subtitle);
+																}
 															?>	
 														</div>
 

@@ -8,10 +8,10 @@ var marginTop = 0;
 /* LATEST NEWS */
 jQuery(document).ready(function () {
     parallax_one_latest_news();
-    jQuery('a.control_prev').click(function () {
+    jQuery('button.control_prev').click(function () {
         parallax_one_moveBottom();
     });
-    jQuery('a.control_next').click(function () {
+    jQuery('button.control_next').click(function () {
          parallax_one_moveTop();
     });
 });
@@ -186,30 +186,3 @@ jQuery(document).ready(function(){
         jQuery('.header .overlay-layer').css('padding-top',$parallax_one_header_height);
     }
 });
-
-
-/* Header section */
-jQuery(window).load(parallax_effect);
-jQuery(window).resize(parallax_effect);
-
-function parallax_effect(){
-
-    if( jQuery('#parallax_move').length>0 ) {
-        var scene = document.getElementById('parallax_move');
-        var window_width = jQuery(window).outerWidth();
-        jQuery('#parallax_move').css({
-        'width':            window_width + 120,
-        'margin-left':      -60,
-        'margin-top':       -60,
-        'position':         'absolute',
-        });
-        var h = jQuery('.overlay-layer-wrap').outerHeight();
-        jQuery('#parallax_move').children().each(function(){
-        jQuery(this).css({
-            'height': h+100,
-        });
-        });
-        var parallax = new Parallax(scene);
-    }
-
-}

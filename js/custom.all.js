@@ -1,7 +1,3 @@
-
-jQuery(document).ready(function(){
-    callback_mobile_dropdown();
-});
 jQuery(window).load(function(){ 
     fixFooterBottom();
     callback_menu_align();
@@ -11,34 +7,11 @@ jQuery(window).resize(function(){
     callback_menu_align();
 });
 
-/*** DROPDOWN FOR MOBILE MENU */
-var callback_mobile_dropdown = function () {
-    var navLi = jQuery('#stamp-navigation li');
-    navLi.each(function(){
-        if ( jQuery(this).find('ul').length > 0 && !jQuery(this).hasClass('has_children') ){
-            jQuery(this).addClass('has_children');
-            jQuery(this).find('a').first().after('<p class="dropdownmenu icon icon-arrows-down"></p>');
-        }
-    });
-    jQuery('.dropdownmenu').click(function(){
-        if( jQuery(this).parent('li').hasClass('this-open') ){
-            jQuery(this).parent('li').removeClass('this-open');
-            jQuery(this).parent('li').children('.icon-arrows-up').removeClass('icon-arrows-up').addClass('icon-arrows-down');
-        }else{
-            jQuery(this).parent('li').addClass('this-open');
-            jQuery(this).parent('li').children('.icon-arrows-down').removeClass('icon-arrows-down').addClass('icon-arrows-up');
-        }
-    });
-    navLi.find('a').click(function(){
-        jQuery('.navbar-toggle').addClass('collapsed');
-        jQuery('.collapse').removeClass('in'); 
-    });
-};
 
-/*** CENTERED MENU */
+/* CENTERED MENU */
 var callback_menu_align = function () {
     var headerWrap      = jQuery('header.header');
-    var navWrap         = jQuery('#stamp-navigation');
+    var navWrap         = jQuery('.main-navigation');
     var logoWrap        = jQuery('.navbar-header');
     var containerWrap   = jQuery('.container');
     var classToAdd      = 'menu-align-center';
@@ -113,7 +86,7 @@ jQuery(document).ready(function($) {
 ===  SMOOTH SCROLL NAVIGATION     ====
 =================================== */
 jQuery(document).ready(function(){
-  jQuery('#stamp-navigation a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
+  jQuery('#menu-primary a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
     var headerHeight;
     var hash    = this.hash;
     var idName  = hash.substring(1);    // get id name
@@ -189,7 +162,7 @@ function scrolled() {
             if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
-                jQuery('#stamp-navigation a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
+                jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
                 return false;
             }
             if (isInOneSection == 'no') {
@@ -239,7 +212,7 @@ jQuery(window).resize(function() {
 });
 
 
-;(function ($, window, document, undefined) {
+(function ($, window, document, undefined) {
     var defaults = {
             columns:                3,
             selector:               'div',
@@ -289,8 +262,13 @@ jQuery(window).resize(function() {
         }
         if( this.element.className.indexOf(local_class)<0 ){
             $container.children(this.options.selector).each(function(index){
-                var min = Math.min.apply(null,columns_height);
-                var this_index = columns_height.indexOf(min)+1;
+                
+                if(self.allValuesSame(columns_height)){
+                    var this_index = 2;
+                } else {
+                    var min = Math.min.apply(null,columns_height);
+                    var this_index = columns_height.indexOf(min)+1; 
+                }
                 $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
                 columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             });
@@ -298,14 +276,19 @@ jQuery(window).resize(function() {
             var no_boxes = $container.find(this.options.selector).length;
             var i;
             for( i=0; i<no_boxes; i++ ){
-                var min = Math.min.apply(null,columns_height);
-                var this_index = columns_height.indexOf(min)+1;
+                if(self.allValuesSame(columns_height)){
+                    var this_index = 2;
+                } else {
+                    var min = Math.min.apply(null,columns_height);
+                    var this_index = columns_height.indexOf(min)+1;
+                }
                 $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
                 columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             }
         }
         $container.remove();
     }
+    
     ParallaxOneGridPinterest.prototype.make_unique = function () {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -313,6 +296,15 @@ jQuery(window).resize(function() {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
     }
+    
+    ParallaxOneGridPinterest.prototype.allValuesSame = function(arr) {
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] !== arr[0])
+                return false;
+        }
+        return true;
+    }
+    
     $.fn.parallaxonegridpinterest = function (options) {
         return this.each(function () {
             var value = '';
@@ -321,6 +313,7 @@ jQuery(window).resize(function() {
             }
         });
     }
+    
 })(jQuery);
 
 
@@ -345,3 +338,147 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
+
+
+
+/*=====================================
+========= ACCESSIBILITY READY =========
+=======================================*/
+
+// MENU NAVIGATION WITH ARROW KEYS 
+( function( $ ) {
+
+    
+  $('.menu-item a').on('keydown', function(e) {
+		// left key
+		if(e.which === 37) {
+			e.preventDefault();
+			$(this).parent().prev().children('a').focus();
+		}
+		// right key
+		else if(e.which === 39) {
+			e.preventDefault();
+			$(this).parent().next().children('a').focus();
+		}
+		// down key
+		else if(e.which === 40) {
+			e.preventDefault();
+			if($(this).next().next().length){
+				$(this).next().next().find('li:first-child a').first().focus();
+			}
+			else {
+				$(this).parent().next().children('a').focus();
+			}
+		}
+		// up key
+		else if(e.which === 38) {
+			e.preventDefault();
+			if($(this).parent().prev().length){
+				$(this).parent().prev().children('a').focus();
+			}
+			else {
+                console.log($(this).parents('ul'));
+				$(this).parents('ul').first().prev().prev().focus();
+			}
+		}
+	});
+} )( jQuery );
+
+
+//ACCESSIBILITY MENU
+( function( $ ) {
+
+    function initMainNavigation( container ) {
+        // Add dropdown toggle that display child menu items.
+        container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+
+		// Toggle buttons and submenu items with active children menu items.
+		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
+		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+
+		// Add menu items with submenus to aria-haspopup="true".
+		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
+
+		container.find( '.dropdown-toggle' ).click( function( e ) {
+            var _this = $( this );
+            e.preventDefault();
+			_this.toggleClass( 'toggled-on' );
+			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+		});
+    }
+    
+    initMainNavigation( $( '.main-navigation' ) );
+    
+    masthead = $( '#masthead' );
+	menuToggle       = masthead.find( '#menu-toggle' );
+	siteHeaderMenu   = masthead.find( '#site-header-menu' );
+	siteNavigation   = masthead.find( '#site-navigation' ); 
+    
+    // Enable menuToggle.
+	( function() {
+		// Return early if menuToggle is missing.
+        if ( ! menuToggle ) {
+			return;
+		}
+
+		// Add an initial values for the attribute.
+		menuToggle.click(function() {
+			$( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
+		} );
+	} )();
+
+
+    // Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	( function() {
+        if ( ! siteNavigation || ! siteNavigation.children().length ) {
+			return;
+		}
+
+		if ( 'ontouchstart' in window ) {
+			siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.parallax-one', function( e ) {
+				var el = $( this ).parent( 'li' );
+				if ( ! el.hasClass( 'focus' ) ) {
+					e.preventDefault();
+					el.toggleClass( 'focus' );
+					el.siblings( '.focus' ).removeClass( 'focus' );
+				}
+			} );
+		}
+
+		siteNavigation.find( 'a' ).on( 'focus.parallax-one blur.parallax-one', function() {
+			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
+		} );
+	} )();
+
+
+	// Add he default ARIA attributes for the menu toggle and the navigations.
+	function onResizeARIA() {
+		if ( 910 > window.innerWidth ) {
+			if ( menuToggle.hasClass( 'toggled-on' ) ) {
+				menuToggle.attr( 'aria-expanded', 'true' );
+			} else {
+				menuToggle.attr( 'aria-expanded', 'false' );
+			}
+
+			if ( siteHeaderMenu.hasClass( 'toggled-on' ) ) {
+				siteNavigation.attr( 'aria-expanded', 'true' );
+			} else {
+				siteNavigation.attr( 'aria-expanded', 'false' );
+			}
+
+			menuToggle.attr( 'aria-controls', 'site-navigation social-navigation' );
+		} else {
+			menuToggle.removeAttr( 'aria-expanded' );
+			siteNavigation.removeAttr( 'aria-expanded' );
+			menuToggle.removeAttr( 'aria-controls' );
+		}
+	}
+    
+    $( document ).ready( function() {
+		$( window ).on( 'load.parallax-one', onResizeARIA )
+	} );
+    
+    
+} )( jQuery );

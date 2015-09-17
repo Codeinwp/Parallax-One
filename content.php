@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('border-bottom-hover'); ?>>
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -18,31 +18,36 @@
 							$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
 						?>
-				 		<picture>
+				 		<picture itemscope itemprop="image">
 							<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
 							<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php
 						} else {
 					?>
-				 		<picture>
+				 		<picture itemscope itemprop="image">
 							<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file('/images/no-thumbnail-mobile.jpg');?> ">
 							<img src="<?php echo parallax_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
 						</picture>
 					<?php } ?>
 
 				</a>
-				<div class="post-date">
+				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
+					<?php echo get_the_date('F j, Y');?>
+				</div>
+				<div class="post-date entry-published updated">
 					<span class="post-date-day"><?php the_time('d'); ?></span>
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
 			</div>
 			
 			<div class="entry-meta list-post-entry-meta">
-				<span class="post-author">
-					<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
+				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
+					<span  itemprop="name" class="entry-author author vcard">
+					<i class="icon-man-people-streamline-user"></i><a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>" rel="author"><?php the_author(); ?> </a>
+					</span>
 				</span>
-				<span class="posted-in">
+				<span class="posted-in entry-terms-categories" itemprop="articleSection">
 					<i class="icon-basic-elaboration-folder-check"></i>Posted in 
 					<?php
 						/* translators: used between list items, there is a space after the comma */
@@ -60,15 +65,15 @@
 				</a>
 			</div><!-- .entry-meta -->
 
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
 
 	</header><!-- .entry-header -->
-	<div class="entry-content">
+	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content();
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','parallax-one'), '<span class="screen-reader-text">'.esc_html__('about ', 'parallax-one').get_the_title().'</span>' ) );
 			else : the_excerpt();
 			endif;
 		?>

@@ -53,6 +53,52 @@ function media_upload(button_class) {
 	});
 }
 
+/********************************************
+*** Generate uniq id ***
+*********************************************/
+function uniqid(prefix, more_entropy) {
+
+  if (typeof prefix === 'undefined') {
+    prefix = '';
+  }
+
+  var retId;
+  var formatSeed = function(seed, reqWidth) {
+    seed = parseInt(seed, 10)
+      .toString(16); // to hex str
+    if (reqWidth < seed.length) { // so long we split
+      return seed.slice(seed.length - reqWidth);
+    }
+    if (reqWidth > seed.length) { // so short we pad
+      return Array(1 + (reqWidth - seed.length))
+        .join('0') + seed;
+    }
+    return seed;
+  };
+
+  // BEGIN REDUNDANT
+  if (!this.php_js) {
+    this.php_js = {};
+  }
+  // END REDUNDANT
+  if (!this.php_js.uniqidSeed) { // init seed with big random int
+    this.php_js.uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
+  }
+  this.php_js.uniqidSeed++;
+
+  retId = prefix; // start with prefix, add current milliseconds hex string
+  retId += formatSeed(parseInt(new Date()
+    .getTime() / 1000, 10), 8);
+  retId += formatSeed(this.php_js.uniqidSeed, 5); // add seed hex string
+  if (more_entropy) {
+    // for more entropy we add a float lower to 10
+    retId += (Math.random() * 10)
+      .toFixed(8)
+      .toString();
+  }
+
+  return retId;
+}
 
 /********************************************
 *** General Repeater ***
@@ -69,6 +115,7 @@ function parallax_one_refresh_general_control_values(){
             var choice = jQuery(this).find(".parallax_one_image_choice").val();
             var title = jQuery(this).find(".parallax_one_title_control").val();
             var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
+			var id = jQuery(this).find(".parallax_one_box_id").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : icon_value,
@@ -77,7 +124,8 @@ function parallax_one_refresh_general_control_values(){
                     "image_url" : image_url,
                     "choice" : choice,
                     "title" : title,
-                    "subtitle" : subtitle
+                    "subtitle" : subtitle,
+					"id" : id
                 });
             }
 
@@ -90,7 +138,6 @@ function parallax_one_refresh_general_control_values(){
 
 
 jQuery(document).ready(function(){
-    
     jQuery('#customize-theme-controls').on('click','.parallax-customize-control-title',function(){
         jQuery(this).next().slideToggle('medium', function() {
             if (jQuery(this).is(':visible'))
@@ -130,6 +177,7 @@ jQuery(document).ready(function(){
 	jQuery(".parallax_one_general_control_new_field").on("click",function(){
 	 
 		var th = jQuery(this).parent();
+		var id = 'parallax_one_'+uniqid();
 		if(typeof th != 'undefined') {
 			
             var field = th.find(".parallax_one_general_control_repeater_container:first").clone();
@@ -143,6 +191,7 @@ jQuery(document).ready(function(){
                 field.find(".parallax_one_icon_control").val('');
                 field.find(".parallax_one_text_control").val('');
                 field.find(".parallax_one_link_control").val('');
+				field.find(".parallax_one_box_id").val(id);
                 field.find(".custom_media_url").val('');
                 field.find(".parallax_one_title_control").val('');
                 field.find(".parallax_one_subtitle_control").val('');
@@ -190,41 +239,10 @@ jQuery(document).ready(function(){
 
 
 /********************************************
-*** Contact page
+*** Parallax effect
 *********************************************/
 
 jQuery(document).ready(function(){
- jQuery('#customize-control-parallax_one_default_contact_form_show').find('input:checkbox').on('change',function(){
-  if(jQuery(this).is(':checked')){
-     jQuery('#customize-control-parallax_one_default_contact_form_email').fadeOut();
-     jQuery('#customize-control-parallax_one_name_placeholder').fadeOut();
-     jQuery('#customize-control-parallax_one_email_placeholder').fadeOut();
-     jQuery('#customize-control-parallax_one_subject_placeholder').fadeOut();
-     jQuery('#customize-control-parallax_one_message_placeholder').fadeOut();
-     jQuery('#customize-control-parallax_one_button_label').fadeOut();
-     jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').fadeOut();
-     jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeOut();
-     jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeOut();
-     jQuery('#customize-control-parallax_one_contact_form_shortcode').fadeIn();
-  } else {
-     jQuery('#customize-control-parallax_one_default_contact_form_email').fadeIn();
-     jQuery('#customize-control-parallax_one_name_placeholder').fadeIn();
-     jQuery('#customize-control-parallax_one_email_placeholder').fadeIn();
-     jQuery('#customize-control-parallax_one_subject_placeholder').fadeIn();
-     jQuery('#customize-control-parallax_one_message_placeholder').fadeIn();
-     jQuery('#customize-control-parallax_one_button_label').fadeIn();
-     jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').fadeIn();
-     if( jQuery('#customize-control-parallax_one_default_contact_form_show_recaptcha').find('input:checkbox').is(':checked')){
-     } else {
-      jQuery('#customize-control-parallax_one_recaptcha_sitekey').fadeIn();
-      jQuery('#customize-control-parallax_one_recaptacha_secretkey').fadeIn();
-     }
-     jQuery('#customize-control-parallax_one_contact_form_shortcode').fadeOut();
-
-     }
-  
- 
- });
   
 	var sh = jQuery('#customize-control-paralax_one_enable_move').find('input:checkbox');
 	if(!sh.is(':checked')){

@@ -1,6 +1,6 @@
 <wpml-config>
 	<admin-texts>
-		<key name="theme_mods_parallax-one">
+		<key name="theme_mods_Parallax-One">
 			<key name="parallax_one_header_title" />
 			<key name="parallax_one_header_subtitle" />
 			<key name="parallax_one_header_button_text" />

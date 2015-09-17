@@ -66,6 +66,10 @@ button.parallax_one_general_control_remove_field:hover{
 	display: none;
 }
 
+.parallax-box-content-hidden{
+	background-color: #FFFFFF;
+}
+
 .parallax-customize-control-title{
 	border: 1px solid #dfdfdf;
 	cursor: move !important;

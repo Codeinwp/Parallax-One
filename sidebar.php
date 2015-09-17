@@ -10,6 +10,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div id="secondary" class="col-md-4 widget-area" role="complementary">
+<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" aria-label="<?php esc_html_e('Main sidebar','parallax-one')?>" id="sidebar-secondary" class="col-md-4 widget-area">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div><!-- #secondary -->
+</div><!-- #sidebar-secondary -->

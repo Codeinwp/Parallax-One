@@ -1,5 +1,64 @@
 
 
+### 2.0.2 - 17/09/2015
+
+ Changes: 
+
+
+ * this fixes #212 - oEmbed is now responsive
+ * Updated screenshot
+ * removed unused control header text color from customizer, changed background color of repeater fields in customizer from transparent to white
+ * this fixes errors in theme check
+ * added links on features boxes
+ * #207 - postmatic integration
+ * Merge pull request #230 from cristian-ungureanu/development
+
+this fixes #212 - oEmbed is now responsive
+ * #235 - include parallax js only if it is activated
+ * #212 - change width and height with max-width and max-height for videos
+ * #207 - fixed Postnatic integration
+ * #237 - align testimonials
+ * #238 - optimize bk
+ * #237 - fix the grid js, when all columns are equal, it adds the box in middle
+ * #238 - optimize ribbon image
+ * #214 accessibility header
+ * Update readme.txt
+ * markdown for readme
+
+markdown-ify the readme
+ * #214 - added aria rols, #112 - added part of schema markup
+ * #112,#214 - removed hybrid code , added tags for markup, validate frontpage
+ * #112 - implement schema markup, validating all pages
+ * fixed comment did not look the same as in old version
+ * Merge pull request #241 from cristian-ungureanu/development
+
+Development
+ * added menu control with keyboard
+ * Russian translation. Partial
+ * Russian translation. Full
+ * #214 - accessibility ready menu in full width and keyboard control
+ * Merge branch 'maxkoryukov-translation-RU' into development
+ * #214 - accessibility ready - menu is now responsive
+ * #214 - accessibility ready - added alt attribute to images
+ * fixed top menu when no item is selected
+ * fixed top menu when no menu is selected
+ * this fixes #242
+ * #214 - small fixes
+ * Merge pull request #248 from cristian-ungureanu/development
+
+Development
+ * #250 - site icon control is not visible in customizer
+ * Fixed #249, translations for frontpage strings
+ * #214 - style links on focus
+ * Merge pull request #252 from cristian-ungureanu/development
+
+Development
+ * #249 - added translation support for repeater content
+ * Merge pull request #256 from cristian-ungureanu/development
+
+#249 - added translation support for repeater content
+
+
 ### 2.0.1 - 18/08/2015
 
  Changes: 

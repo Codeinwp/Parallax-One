@@ -20,11 +20,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 1. GLOBAL STYLES (USED IN VARIOUS SECTION OF THE WEBSITE)
-	1.0 GOOGLE FONTS
-	1.1 GENERAL STYLES
-	1.2 PRE LOADER
-	1.3 ANCHOR
-	1.4 MISC FIXES  
+	1.0 GENERAL STYLES
+	1.1 PRE LOADER
+	1.2 ANCHOR
+	1.3 MISC FIXES  
 
 2. COMPONENTS (ELEMNTS USED IN MANY SECTION)
 	2.1 TYPOGRAPHY
@@ -82,15 +81,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 =========================================
 -----------------------------------------*/
 
-/*---------------------------------------
-   1.0 GOOGLE FONTS
------------------------------------------*/
-
-@import url(//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600);
 
 
 /*---------------------------------------
-   1.1 GENERAL STYLES                
+   1.0 GENERAL STYLES                
 -----------------------------------------*/
 html {
 	font-size: 100%;
@@ -111,7 +105,7 @@ body {
 }
 
 /*---------------------------------------
-   1.2 PRE-LOADER              
+   1.1 PRE-LOADER              
 -----------------------------------------*/
 .preloader {
 	position: fixed;
@@ -136,7 +130,7 @@ body {
 }
 
 /*---------------------------------------
-   2.3 ANCHOR AND BOLD TEXT           
+   1.2 ANCHOR AND BOLD TEXT           
 -----------------------------------------*/
 a {
 	text-decoration: none;
@@ -155,7 +149,7 @@ a:focus {
 }
 
 /*---------------------------------------
-   1.4 MISC FIXES         
+   1.3 MISC FIXES         
 -----------------------------------------*/
 @-webkit-viewport {
 	width: device-width;

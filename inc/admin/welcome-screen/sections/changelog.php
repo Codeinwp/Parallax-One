@@ -15,33 +15,17 @@ $parallax_one = wp_get_theme( 'parallax-one' );
 	</div>
 
 	<?php
-	$parallax_one_changelog_file = @fopen(get_template_directory().'/CHANGELOG.md', 'r');
-	if($parallax_one_changelog_file) {
-		while(!feof($parallax_one_changelog_file)) {
-
-			$parallax_one_changelog_line = fgets($parallax_one_changelog_file);
-
-			if( !empty($parallax_one_changelog_line) ) {
-				$parallax_one_changelog_line_substr = substr($parallax_one_changelog_line, 0, 3);
-
-				if( !empty($parallax_one_changelog_line_substr) ){
-					if( strcmp($parallax_one_changelog_line_substr,'###') == 0) {
-						?>
-						<hr />
-						<h1><?php echo substr($parallax_one_changelog_line, 3); ?></h1>
-						<?php
-					}
-					else {
-						echo $parallax_one_changelog_line.'<br>';
-					}
-				}
-
-			}
-
+	WP_Filesystem();
+	global $wp_filesystem;
+	$parallax_one_changelog = $wp_filesystem->get_contents( get_template_directory().'/CHANGELOG.md' );
+	$parallax_one_changelog_lines = explode(PHP_EOL, $parallax_one_changelog);
+	foreach($parallax_one_changelog_lines as $parallax_one_changelog_line){
+		if(substr( $parallax_one_changelog_line, 0, 3 ) === "###"){
+			echo '<hr /><h1>'.substr($parallax_one_changelog_line,3).'</h1>';
+		} else {
+			echo $parallax_one_changelog_line,'<br/>';
 		}
-		fclose($parallax_one_changelog_file);
 	}
-
 
 ?>
 	

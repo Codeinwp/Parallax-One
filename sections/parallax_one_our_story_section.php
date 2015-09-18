@@ -2,6 +2,7 @@
  SECTION: BRIEF LEFT
 ============================== -->
 <?php
+	global $wp_customize;
 	$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', parallax_get_file('/images/about-us.png'));
 	$parallax_one_our_story_title = get_theme_mod('parallax_one_our_story_title','Our Story');
 	$parallax_one_our_story_text = get_theme_mod('parallax_one_our_story_text',esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one'));
@@ -48,5 +49,17 @@
 			</div>
 		</section><!-- .brief-design-one -->
 <?php
+	} else {
+		if( isset( $wp_customize ) ) {
+?>
+			<section class="brief text-left brief-design-one brief-left paralax_one_only_customizer" id="story" role="region" aria-label="<?php esc_html_e('About','parallax-one') ?>">
+				<div class="col-md-6 brief-content-two paralax_one_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>
+				<div class="col-md-6 content-section brief-content-one">
+					<h2 class="text-left dark-text paralax_one_only_customizer"></h2><div class="colored-line-left paralax_one_only_customizer"></div>
+					<div class="brief-content-text paralax_one_only_customizer"></div>
+				</div>
+			</section>
+<?php
+		}
 	}
 ?>

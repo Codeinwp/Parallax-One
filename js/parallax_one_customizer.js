@@ -118,10 +118,10 @@ function parallax_one_refresh_general_control_values(){
 			var id = jQuery(this).find(".parallax_one_box_id").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
-                    "icon_value" : icon_value,
+                    "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
                     "text" : text,
                     "link" : link,
-                    "image_url" : image_url,
+                    "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,
                     "title" : title,
                     "subtitle" : subtitle,

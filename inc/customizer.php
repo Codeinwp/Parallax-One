@@ -790,7 +790,7 @@ add_action( 'customize_register', 'parallax_one_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function parallax_one_customize_preview_js() {
-	wp_enqueue_script( 'parallax_one_customizer', parallax_get_file('/js/customizer.js'), array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'parallax_one_customizer', parallax_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.2', true );
 }
 add_action( 'customize_preview_init', 'parallax_one_customize_preview_js' );
 

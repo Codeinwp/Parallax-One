@@ -2,7 +2,6 @@
  SECTION: CONTACT INFO  
 ============================== -->
 <?php
-	
 	$parallax_one_contact_info_item = get_theme_mod('parallax_one_contact_info_content',
 		json_encode(
 			array( 
@@ -13,9 +12,7 @@
 		)
 	);
 
-
-	
-	if( !empty($parallax_one_contact_info_item) ){
+	if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 		$parallax_one_contact_info_item_decoded = json_decode($parallax_one_contact_info_item);
 	?>
 			<div class="contact-info" id="contactinfo" role="region" aria-label="<?php esc_html_e('Contact Info','parallax-one'); ?>">
@@ -63,5 +60,5 @@
 				</div>
 			</div><!-- .contact-info -->
 <?php
-	}
+	} 
 ?>

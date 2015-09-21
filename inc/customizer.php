@@ -801,12 +801,31 @@ function parallax_one_sanitize_text( $input ) {
 
 function parallax_one_sanitize_html( $input ){
 	$allowed_html = array(
-    						'p' => array(),
+    						'p' => array(
+								'class' => array(),
+								'id' => array()
+							),
 							'br' => array(),
 							'em' => array(),
 							'strong' => array(),
-							'ul' => array(),
-							'li' => array()
+							'ul' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'li' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'a' => array(
+								'href' => array(),
+								'class' => array(),
+								'id' => array(),
+								'target' => array()
+							),
+							'button' => array(
+								'class' => array(),
+								'id' => array()
+							)
 						);
 	$string = force_balance_tags($input);
 	return wp_kses($string, $allowed_html);

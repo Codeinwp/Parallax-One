@@ -4977,7 +4977,7 @@ h2.screen-reader-text {
 	line-height: 14px;
 }
 
-.comment-form .form-submit input {
+.comment-form .form-submit input, #recaptcha-submit-btn-area input{
 	background: #008ed6;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -4994,7 +4994,15 @@ h2.screen-reader-text {
 	min-width: 10px;
 }
 
-.comment-form .form-submit input:hover {
+.g-recaptcha{
+	margin-bottom: 10px;
+}
+
+#recaptcha-submit-btn-area input{
+	margin-top: 10px
+}
+
+.comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover {
 	background: #F7F8FA;
 	border: 1px solid #eaebec;
 	color: #008ed6;

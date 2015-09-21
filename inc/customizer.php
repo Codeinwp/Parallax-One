@@ -790,7 +790,7 @@ add_action( 'customize_register', 'parallax_one_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function parallax_one_customize_preview_js() {
-	wp_enqueue_script( 'parallax_one_customizer', parallax_get_file('/js/customizer.js'), array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'parallax_one_customizer', parallax_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.2', true );
 }
 add_action( 'customize_preview_init', 'parallax_one_customize_preview_js' );
 
@@ -801,12 +801,31 @@ function parallax_one_sanitize_text( $input ) {
 
 function parallax_one_sanitize_html( $input ){
 	$allowed_html = array(
-    						'p' => array(),
+    						'p' => array(
+								'class' => array(),
+								'id' => array()
+							),
 							'br' => array(),
 							'em' => array(),
 							'strong' => array(),
-							'ul' => array(),
-							'li' => array()
+							'ul' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'li' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'a' => array(
+								'href' => array(),
+								'class' => array(),
+								'id' => array(),
+								'target' => array()
+							),
+							'button' => array(
+								'class' => array(),
+								'id' => array()
+							)
 						);
 	$string = force_balance_tags($input);
 	return wp_kses($string, $allowed_html);

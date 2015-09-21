@@ -148,7 +148,7 @@ function mainNav() {
 function scrolled() {
 
     if ( jQuery(window).width() >= 751 ) {
-        var zerif_scrollTop = jQuery(window).scrollTop();       // cursor position
+        var prallax_one_scrollTop = jQuery(window).scrollTop();       // cursor position
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
@@ -159,7 +159,7 @@ function scrolled() {
             var thisBegin   = parallax_one_offset - headerHeight;                      // where the section begins
             var thisEnd     = parallax_one_offset + thisHeight - headerHeight;         // where the section ends  
             // if position of the cursor is inside of the this section
-            if ( zerif_scrollTop >= thisBegin && zerif_scrollTop <= thisEnd ) {
+            if ( prallax_one_scrollTop >= thisBegin && prallax_one_scrollTop <= thisEnd ) {
                 isInOneSection = 'yes';
                 jQuery('.current').removeClass('current');
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
@@ -190,11 +190,11 @@ var window_width_old;
 jQuery(document).ready(function(){
     window_width_old = jQuery('.container').width();
     if( window_width_old <= 462 ) {
-        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else if( window_width_old <= 750  ){
-        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product',calcMin: false});
     } else {
-        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product',calcMin: false});
     }
 });
 
@@ -202,21 +202,21 @@ jQuery(window).resize(function() {
     if( window_width_old != jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product',calcMin: false});
         } else if( window_width_old <= 750  ){
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product',calcMin: false});
         } else {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product',calcMin: false});
         }
     }
 });
 
 
-(function ($, window, document, undefined) {
+(function ($) {
     var defaults = {
             columns:                3,
             selector:               'div',
-            excludeParentClass:     '',
+            calcMin:                true
         };
     function ParallaxOneGridPinterest(element, options) {
         this.element    = element;
@@ -260,35 +260,34 @@ jQuery(window).resize(function() {
             if( i%self.options.columns == 0 ) { first_cols = prefix + '_grid_last'; }
             $('.'+unique_class).append('<div class="' + prefix + '_grid_col_' + this.options.columns +' ' + prefix + '_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
+        var calcMin = this.options.calcMin;
+        var cols = this.options.columns;
         if( this.element.className.indexOf(local_class)<0 ){
             $container.children(this.options.selector).each(function(index){
-                
-                if(self.allValuesSame(columns_height)){
-                    var this_index = 2;
+                if(calcMin == false){
+                    var this_index = index % (cols+1);
+                    $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                    
                 } else {
                     var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1; 
+                    var this_index = columns_height.indexOf(min)+1;
+
+                    $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                    columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
                 }
-                $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             });
         } else {
             var no_boxes = $container.find(this.options.selector).length;
             var i;
             for( i=0; i<no_boxes; i++ ){
-                if(self.allValuesSame(columns_height)){
-                    var this_index = 2;
-                } else {
-                    var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1;
-                }
+                var min = Math.min.apply(null,columns_height);
+                var this_index = columns_height.indexOf(min)+1;
                 $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
                 columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
             }
         }
         $container.remove();
     }
-    
     ParallaxOneGridPinterest.prototype.make_unique = function () {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -296,15 +295,6 @@ jQuery(window).resize(function() {
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
     }
-    
-    ParallaxOneGridPinterest.prototype.allValuesSame = function(arr) {
-        for(var i = 1; i < arr.length; i++){
-            if(arr[i] !== arr[0])
-                return false;
-        }
-        return true;
-    }
-    
     $.fn.parallaxonegridpinterest = function (options) {
         return this.each(function () {
             var value = '';
@@ -313,7 +303,6 @@ jQuery(window).resize(function() {
             }
         });
     }
-    
 })(jQuery);
 
 

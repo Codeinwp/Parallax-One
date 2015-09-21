@@ -190,11 +190,11 @@ var window_width_old;
 jQuery(document).ready(function(){
     window_width_old = jQuery('.container').width();
     if( window_width_old <= 462 ) {
-        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else if( window_width_old <= 750  ){
-        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product',calcMin: false});
     } else {
-        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product',calcMin: false});
     }
 });
 
@@ -202,11 +202,11 @@ jQuery(window).resize(function() {
     if( window_width_old != jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product',calcMin: false});
         } else if( window_width_old <= 750  ){
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product',calcMin: false});
         } else {
-            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product'});
+            jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product',calcMin: false});
         }
     }
 });
@@ -216,7 +216,7 @@ jQuery(window).resize(function() {
     var defaults = {
             columns:                3,
             selector:               'div',
-            excludeParentClass:     '',
+            calcMin:                true
         };
     function ParallaxOneGridPinterest(element, options) {
         this.element    = element;
@@ -260,12 +260,21 @@ jQuery(window).resize(function() {
             if( i%self.options.columns == 0 ) { first_cols = prefix + '_grid_last'; }
             $('.'+unique_class).append('<div class="' + prefix + '_grid_col_' + this.options.columns +' ' + prefix + '_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
+        var calcMin = this.options.calcMin;
+        var cols = this.options.columns;
         if( this.element.className.indexOf(local_class)<0 ){
             $container.children(this.options.selector).each(function(index){
-                var min = Math.min.apply(null,columns_height);
-                var this_index = columns_height.indexOf(min)+1;
-                $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
+                if(calcMin == false){
+                    var this_index = index % (cols+1);
+                    $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                    
+                } else {
+                    var min = Math.min.apply(null,columns_height);
+                    var this_index = columns_height.indexOf(min)+1;
+
+                    $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
+                    columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
+                }
             });
         } else {
             var no_boxes = $container.find(this.options.selector).length;

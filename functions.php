@@ -386,7 +386,7 @@ require get_template_directory() . '/inc/jetpack.php';
 if (!class_exists('TAV_Remote_Notification_Client')) {
 	require( get_template_directory() . '/inc/admin/class-remote-notification-client.php' );
 }
-$notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
+$parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
 
 
 function parallax_one_admin_styles() {

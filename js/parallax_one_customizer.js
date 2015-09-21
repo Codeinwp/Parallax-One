@@ -56,7 +56,7 @@ function media_upload(button_class) {
 /********************************************
 *** Generate uniq id ***
 *********************************************/
-function uniqid(prefix, more_entropy) {
+function parallax_one_uniqid(prefix, more_entropy) {
 
   if (typeof prefix === 'undefined') {
     prefix = '';
@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 	jQuery(".parallax_one_general_control_new_field").on("click",function(){
 	 
 		var th = jQuery(this).parent();
-		var id = 'parallax_one_'+uniqid();
+		var id = 'parallax_one_'+parallax_one_uniqid();
 		if(typeof th != 'undefined') {
 			
             var field = th.find(".parallax_one_general_control_repeater_container:first").clone();

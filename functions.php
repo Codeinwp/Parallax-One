@@ -380,6 +380,15 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * TAV_Remote_Notification_Client.
+ */
+if (!class_exists('TAV_Remote_Notification_Client')) {
+	require( get_template_directory() . '/inc/admin/class-remote-notification-client.php' );
+}
+$notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
+
+
 function parallax_one_admin_styles() {
 	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file('/css/admin-style.css'),'1.0.0' );
 }

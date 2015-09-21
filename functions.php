@@ -728,22 +728,21 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}
 	}
-	
-	
-	/*Check if Repeater is empty*/
-	function parallax_one_general_repeater_is_empty($parallax_one_arr){
-		$parallax_one_services_decoded = json_decode($parallax_one_arr);
-		foreach($parallax_one_services_decoded as $parallax_box){
-			if($parallax_box->choice == 'parallax_none'){
-				$parallax_box->icon_value = '';
-				$parallax_box->image_url = '';
-			}
-			foreach ($parallax_box as $key => $value){
-				if(!empty($value) && $key!='choice' && $key!='id' && ($value!='No Icon' && $key=='icon_value') ) {
-					return false;
-				}
+}
+
+/*Check if Repeater is empty*/
+function parallax_one_general_repeater_is_empty($parallax_one_arr){
+	$parallax_one_services_decoded = json_decode($parallax_one_arr);
+	foreach($parallax_one_services_decoded as $parallax_box){
+		if($parallax_box->choice == 'parallax_none'){
+			$parallax_box->icon_value = '';
+			$parallax_box->image_url = '';
+		}
+		foreach ($parallax_box as $key => $value){
+			if(!empty($value) && $key!='choice' && $key!='id' && ($value!='No Icon' && $key=='icon_value') ) {
+				return false;
 			}
 		}
-		return true;
 	}
+	return true;
 }

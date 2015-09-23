@@ -1,5 +1,23 @@
 
 
+### 2.0.3 - 23/09/2015
+
+ Changes: 
+
+
+ * #259 - include font wit wp_enqueue_style
+ * #243 - added welcome page
+ * #243 - fixed themecheck errors from welcome page
+ * #251 - options are hiding when they are empty
+ * #243 - added links to documentation
+ * #265 - about section allows now a and button tag
+ * #264 - fixed sections display on mobile and tablet
+ * #268 - fixed sorting in woocommerce shop
+ * Merge pull request #263 from cristian-ungureanu/development
+
+Development
+
+
 ### 2.0.2 - 17/09/2015
 
  Changes: 

@@ -117,6 +117,13 @@ function parallax_one_setup() {
 	if( !get_option( 'parallax_one_migrate_translation' ) ) {
 		add_option( 'parallax_one_migrate_translation', false );
 	}
+	
+	/**
+	* Welcome screen
+	*/
+	if ( is_admin() ) {
+		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
+	}
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -186,14 +193,16 @@ function parallax_one_wp_page_menu()
  * Enqueue scripts and styles.
  */
 function parallax_one_scripts() {
+	
+	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
 
 	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
-
+	
 	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 		
-	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '2.0.1', true );
+	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
 	
 	wp_localize_script( 'parallax-one-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'parallax-one' ) . '</span>',
@@ -371,6 +380,15 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * TAV_Remote_Notification_Client.
+ */
+if (!class_exists('TAV_Remote_Notification_Client')) {
+	require( get_template_directory() . '/inc/admin/class-remote-notification-client.php' );
+}
+$parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
+
+
 function parallax_one_admin_styles() {
 	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file('/css/admin-style.css'),'1.0.0' );
 }
@@ -430,7 +448,7 @@ function parallax_one_register_required_plugins() {
 			
 				'slug' 	   => 'shortpixel-image-optimiser',
 
-				'source'   => get_stylesheet_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
+				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
 
 				'required' => false
 			
@@ -719,4 +737,21 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}
 	}
+}
+
+/*Check if Repeater is empty*/
+function parallax_one_general_repeater_is_empty($parallax_one_arr){
+	$parallax_one_services_decoded = json_decode($parallax_one_arr);
+	foreach($parallax_one_services_decoded as $parallax_box){
+		if(!empty($parallax_box->choice) && $parallax_box->choice == 'parallax_none'){
+			$parallax_box->icon_value = '';
+			$parallax_box->image_url = '';
+		}
+		foreach ($parallax_box as $key => $value){
+			if(!empty($value) && $key!='choice' && $key!='id' && ($value!='No Icon' && $key=='icon_value') ) {
+				return false;
+			}
+		}
+	}
+	return true;
 }

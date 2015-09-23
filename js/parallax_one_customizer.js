@@ -56,7 +56,7 @@ function media_upload(button_class) {
 /********************************************
 *** Generate uniq id ***
 *********************************************/
-function uniqid(prefix, more_entropy) {
+function parallax_one_uniqid(prefix, more_entropy) {
 
   if (typeof prefix === 'undefined') {
     prefix = '';
@@ -118,10 +118,10 @@ function parallax_one_refresh_general_control_values(){
 			var id = jQuery(this).find(".parallax_one_box_id").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
-                    "icon_value" : icon_value,
+                    "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
                     "text" : text,
                     "link" : link,
-                    "image_url" : image_url,
+                    "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,
                     "title" : title,
                     "subtitle" : subtitle,
@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 	jQuery(".parallax_one_general_control_new_field").on("click",function(){
 	 
 		var th = jQuery(this).parent();
-		var id = 'parallax_one_'+uniqid();
+		var id = 'parallax_one_'+parallax_one_uniqid();
 		if(typeof th != 'undefined') {
 			
             var field = th.find(".parallax_one_general_control_repeater_container:first").clone();

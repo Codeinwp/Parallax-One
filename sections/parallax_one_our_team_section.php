@@ -2,6 +2,7 @@
  SECTION: TEAM   
 ============================== -->
 <?php
+	global $wp_customize;
 	$parallax_one_our_team_title = get_theme_mod('parallax_one_our_team_title','Our Team');
 	$parallax_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 	$parallax_one_team_content = get_theme_mod('parallax_one_team_content',
@@ -14,7 +15,7 @@
 		)
 	);
 
-	if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !empty($parallax_one_team_content)){
+	if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_team_content) ){
 ?>
 		<section class="team" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
 			<div class="section-overlay-layer">
@@ -108,5 +109,20 @@
 		</section><!-- #section9 -->
 		
 <?php
+	} else {
+		if( isset( $wp_customize ) ) {
+?>
+			<section class="team paralax_one_only_customizer" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
+				<div class="section-overlay-layer">
+					<div class="container">
+						<div class="section-header">
+							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
+							<div class="sub-heading paralax_one_only_customizer"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+<?php
+		}
 	}
 ?>

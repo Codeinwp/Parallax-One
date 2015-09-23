@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.0.2
+Version: 2.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -20,11 +20,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 1. GLOBAL STYLES (USED IN VARIOUS SECTION OF THE WEBSITE)
-	1.0 GOOGLE FONTS
-	1.1 GENERAL STYLES
-	1.2 PRE LOADER
-	1.3 ANCHOR
-	1.4 MISC FIXES  
+	1.0 GENERAL STYLES
+	1.1 PRE LOADER
+	1.2 ANCHOR
+	1.3 MISC FIXES  
 
 2. COMPONENTS (ELEMNTS USED IN MANY SECTION)
 	2.1 TYPOGRAPHY
@@ -82,15 +81,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 =========================================
 -----------------------------------------*/
 
-/*---------------------------------------
-   1.0 GOOGLE FONTS
------------------------------------------*/
-
-@import url(//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600);
 
 
 /*---------------------------------------
-   1.1 GENERAL STYLES                
+   1.0 GENERAL STYLES                
 -----------------------------------------*/
 html {
 	font-size: 100%;
@@ -111,7 +105,7 @@ body {
 }
 
 /*---------------------------------------
-   1.2 PRE-LOADER              
+   1.1 PRE-LOADER              
 -----------------------------------------*/
 .preloader {
 	position: fixed;
@@ -136,7 +130,7 @@ body {
 }
 
 /*---------------------------------------
-   2.3 ANCHOR AND BOLD TEXT           
+   1.2 ANCHOR AND BOLD TEXT           
 -----------------------------------------*/
 a {
 	text-decoration: none;
@@ -155,7 +149,7 @@ a:focus {
 }
 
 /*---------------------------------------
-   1.4 MISC FIXES         
+   1.3 MISC FIXES         
 -----------------------------------------*/
 @-webkit-viewport {
 	width: device-width;
@@ -4983,7 +4977,7 @@ h2.screen-reader-text {
 	line-height: 14px;
 }
 
-.comment-form .form-submit input {
+.comment-form .form-submit input, #recaptcha-submit-btn-area input{
 	background: #008ed6;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -5000,7 +4994,15 @@ h2.screen-reader-text {
 	min-width: 10px;
 }
 
-.comment-form .form-submit input:hover {
+.g-recaptcha{
+	margin-bottom: 10px;
+}
+
+#recaptcha-submit-btn-area input{
+	margin-top: 10px
+}
+
+.comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover {
 	background: #F7F8FA;
 	border: 1px solid #eaebec;
 	color: #008ed6;

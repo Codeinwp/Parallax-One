@@ -2,6 +2,7 @@
  SECTION: SERVICES
 ============================== -->
 <?php
+	global $wp_customize;
 	$parallax_one_our_services_title = get_theme_mod('parallax_one_our_services_title','Our Services');
 	$parallax_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
 	$parallax_one_services = get_theme_mod('parallax_one_services_content',
@@ -13,7 +14,8 @@
 			)
 		)
 	);
-	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !empty($parallax_one_services)){
+
+	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_services)){
 ?>
 		<section class="services" id="services" role="region" aria-label="<?php esc_html_e('Services','parallax-one') ?>">
 			<div class="section-overlay-layer">
@@ -102,5 +104,20 @@
 			</div>
 		</section>
 <?php
+	} else {
+		if( isset( $wp_customize ) ) {
+?>
+			<section class="services paralax_one_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','parallax-one') ?>">
+				<div class="section-overlay-layer">
+					<div class="container">
+						<div class="section-header">
+							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
+							<div class="sub-heading paralax_one_only_customizer"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+<?php
+		}
 	}
 ?>

@@ -78,10 +78,16 @@
 											}
 											if(!empty($parallax_one_service_box->title)){
 												if( !empty($parallax_one_service_box->link) ){
-													echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_service_box->title).'</a></h3>';
+													if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
+														$parallax_one_title_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
+														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_title_services).'</a></h3>';
+													} else {
+														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_service_box->title).'</a></h3>';
+													}
 												} else {
 													if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-														echo '<h3 class="colored-text">'.icl_translate('Featured Area',$parallax_one_service_box->id.'_services_title',esc_attr($parallax_one_service_box->title)).'</h3>';
+														$parallax_one_title_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
+														echo '<h3 class="colored-text">'.esc_attr($parallax_one_title_services).'</h3>';
 													} else {
 														echo '<h3 class="colored-text">'.esc_attr($parallax_one_service_box->title).'</h3>';
 													}
@@ -89,9 +95,10 @@
 											}
 											if(!empty($parallax_one_service_box->text)){
 												if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-													echo '<p>'. icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',esc_attr($parallax_one_service_box->text)).'</p>';
+													$parallax_one_text_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',$parallax_one_service_box->text);
+													echo '<p>'.parallax_one_sanitize_html($parallax_one_text_services, true).'</p>';
 												} else {
-													echo '<p>'. esc_attr($parallax_one_service_box->text).'</p>';
+													echo '<p>'.parallax_one_sanitize_html( $parallax_one_service_box->text, true ).'</p>';
 												}
 											}
 										echo '</div></div>';

@@ -108,9 +108,10 @@
 												<p>
 													<?php 
 														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',esc_attr($parallax_one_testimonial->text));
+															$parallax_one_testimonial_text = icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',$parallax_one_testimonial->text);
+															echo parallax_one_sanitize_html($parallax_one_testimonial_text, true);
 														} else {
-															echo esc_attr($parallax_one_testimonial->text); 
+															echo parallax_one_sanitize_html($parallax_one_testimonial->text, true); 
 														}
 													?>
 												</p>

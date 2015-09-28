@@ -204,7 +204,7 @@ function parallax_one_customize_register( $wp_customize ) {
     require_once ( 'class/parallax-one-general-control.php');
 	
 	$wp_customize->add_setting( 'parallax_one_logos_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(array( array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) ))
 
 	));
@@ -302,7 +302,7 @@ function parallax_one_customize_register( $wp_customize ) {
     
     /* Services content */
 	$wp_customize->add_setting( 'parallax_one_services_content', array(
-		'sanitize_callback' => 'parallax_one_fake_sanitize',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(
 							array(
 									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-webpage-multiple','title' => esc_html__('Lorem Ipsum','parallax-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
@@ -417,7 +417,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
     /* Team content */
 	$wp_customize->add_setting( 'parallax_one_team_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(
 							array(
 									array('image_url' => parallax_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','parallax-one'),'subtitle' => esc_html__('Founder & CEO','parallax-one')),
@@ -476,7 +476,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
     /* Testimonials content */
 	$wp_customize->add_setting( 'parallax_one_testimonials_content', array(
-		'sanitize_callback' => 'parallax_one_fake_sanitize',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(
 							array(
 									array('image_url' => parallax_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','parallax-one'),'subtitle' => esc_html__('Lorem ipsum','parallax-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one')),
@@ -595,7 +595,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(
 			array( 
 					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
@@ -699,7 +699,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'sanitize_callback' => 'parallax_one_sanitize_repeater',
 		'default' => json_encode(
 			array(
 				array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
@@ -799,8 +799,8 @@ function parallax_one_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function parallax_one_fake_sanitize($input){
-	$input_decoded = json_decode($input);
+function parallax_one_sanitize_repeater($input){
+	$input_decoded = json_decode($input,true);
 	$allowed_html = array(
 								'br' => array(),
 								'em' => array(),
@@ -816,14 +816,13 @@ function parallax_one_fake_sanitize($input){
 									'id' => array()
 								)
 							);
-	
-	foreach ($input_decoded as $box){
-		foreach ($box as $key => & $value){
+	foreach ($input_decoded as $boxk => $box ){
+		foreach ($box as $key => $value){
 			if ($key == 'text'){
-				$value = wp_kses($value, $allowed_html);
+				$input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
 				
 			} else {
-				$value = wp_kses_post( force_balance_tags( $value ) );
+				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
 			}
 			
 		}
@@ -831,52 +830,38 @@ function parallax_one_fake_sanitize($input){
 	
 	return json_encode($input_decoded);
 }
-function parallax_one_sanitize_html( $input, $repeater="" ){
-	if($repeater == true){
-		$allowed_html = array(
-								'br' => array(),
-								'em' => array(),
-								'strong' => array(),
-								'a' => array(
-									'href' => array(),
-									'class' => array(),
-									'id' => array(),
-									'target' => array()
-								),
-								'button' => array(
-									'class' => array(),
-									'id' => array()
-								)
-							);
-	} else {
-		$allowed_html = array(
-								'p' => array(
-									'class' => array(),
-									'id' => array()
-								),
-								'br' => array(),
-								'em' => array(),
-								'strong' => array(),
-								'ul' => array(
-									'class' => array(),
-									'id' => array()
-								),
-								'li' => array(
-									'class' => array(),
-									'id' => array()
-								),
-								'a' => array(
-									'href' => array(),
-									'class' => array(),
-									'id' => array(),
-									'target' => array()
-								),
-								'button' => array(
-									'class' => array(),
-									'id' => array()
-								)
-							);
-	}
+
+
+function parallax_one_sanitize_html( $input){
+	
+	$allowed_html = array(
+							'p' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'br' => array(),
+							'em' => array(),
+							'strong' => array(),
+							'ul' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'li' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'a' => array(
+								'href' => array(),
+								'class' => array(),
+								'id' => array(),
+								'target' => array()
+							),
+							'button' => array(
+								'class' => array(),
+								'id' => array()
+							)
+						);
+	
 	$string = force_balance_tags($input);
 	return wp_kses($string, $allowed_html);
 }

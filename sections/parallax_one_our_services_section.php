@@ -95,10 +95,9 @@
 											}
 											if(!empty($parallax_one_service_box->text)){
 												if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-													$parallax_one_text_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',$parallax_one_service_box->text);
-													echo '<p>'.parallax_one_sanitize_html($parallax_one_text_services, true).'</p>';
+													echo '<p>'.icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',$parallax_one_service_box->text).'</p>';
 												} else {
-													echo '<p>'.parallax_one_sanitize_html( $parallax_one_service_box->text, true ).'</p>';
+													echo '<p>'.$parallax_one_service_box->text.'</p>';
 												}
 											}
 										echo '</div></div>';

@@ -121,9 +121,31 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 
 		?>
+		
+		<hr/>
+		<!-- WP Product Review -->
+		<h4><?php esc_html_e( 'Pirate Forms', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'parallax-one' ); ?></p>
+
+		<?php if ( is_plugin_active( 'pirate-forms/pirate-forms.php' ) ) { ?>
+
+				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		}
+		else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
 
 	</div>
 
+
+	
 	<div class="prallax-one-tab-pane-half">
 
 		<!-- ShortPixel Image Optimizer -->

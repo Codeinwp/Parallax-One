@@ -1273,10 +1273,6 @@ header .navbar-brand {
 	min-height: 10px;
 }
 
-.only-logo .navbar-header img {
-    max-width: 1000px;
-}
-
 .header-layer-one {
 	background-size: cover!important;
 	background-position: 0px 0px;

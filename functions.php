@@ -444,11 +444,9 @@ function parallax_one_register_required_plugins() {
 			
 			array(
 			
-				'name'     => 'ShortPixel Image Optimizer',
+				'name'     => 'Pirate Forms',
 			
-				'slug' 	   => 'shortpixel-image-optimiser',
-
-				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
+				'slug' 	   => 'pirate-forms',
 
 				'required' => false
 			

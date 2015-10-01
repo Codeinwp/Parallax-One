@@ -92,8 +92,16 @@ class Parallax_One_Welcome {
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','parallax-one'); ?></a></li>
 
 			<!-- Actions required appears only if there is a news -->
-			<?php $parallax_one_actions_required = 1; ?>
-			<?php if ( !is_plugin_active( 'shortpixel-image-optimiser/wp-shortpixel.php' ) ) { ?>
+			<?php $parallax_one_actions_required = 2; 
+				if(is_plugin_active( 'pirate-forms/pirate-forms.php' )){
+					$parallax_one_actions_required--;
+				}
+		
+				if(is_plugin_active( 'intergeo-maps/index.php' )){
+					$parallax_one_actions_required--;
+				}
+			?>
+			<?php if ( $parallax_one_actions_required != 0 ) { ?>
 				<li role="presentation" class="parallax-one-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','parallax-one'); ?><?php if( !empty($parallax_one_actions_required) ): echo '<span class="parallax-one-actions-count">'.$parallax_one_actions_required.'</span>'; endif; ?></a></li>
 			<?php } ?>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one'); ?></a></li>

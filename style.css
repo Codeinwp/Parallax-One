@@ -1273,10 +1273,6 @@ header .navbar-brand {
 	min-height: 10px;
 }
 
-.only-logo .navbar-header img {
-    max-width: 1000px;
-}
-
 .header-layer-one {
 	background-size: cover!important;
 	background-position: 0px 0px;
@@ -2693,7 +2689,6 @@ div.wpcf7-mail-sent-ng {
 .woocommerce-page img {
 	height: auto;
 	max-width: 100%;
-	width: 100%;
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -6492,4 +6487,13 @@ h2.screen-reader-text {
 	#prompt-comment-subscribe{
 		padding: 0;
 	}
+}
+
+/*---------------------------------------
+   9.2 PIRATE FORMS         
+-----------------------------------------*/
+.pirate-forms-submit-button{
+    clear: both;
+    margin-left: 15px;
+    float: left;
 }

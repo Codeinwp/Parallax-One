@@ -135,7 +135,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'label'    => esc_html__( 'Header Logo', 'parallax-one' ),
 	      	'section'  => 'parallax_one_header_content',
 			'active_callback' => 'parallax_one_show_on_front',
-			'priority'    => 1
+			'priority'    => 10
 	)));
 	
 	/* Header title */
@@ -148,7 +148,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 2
+		'priority'    => 20
 	));
 	
 	/* Header subtitle */
@@ -161,7 +161,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 3
+		'priority'    => 30
 	));
 
 	
@@ -175,7 +175,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Button label', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 4
+		'priority'    => 40
 	));
 	
 	
@@ -188,7 +188,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Button link', 'parallax-one' ),
 		'section'  => 'parallax_one_header_content',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 5
+		'priority'    => 50
 	));
 	
 	

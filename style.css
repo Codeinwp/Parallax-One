@@ -104,6 +104,10 @@ body {
 	margin: auto !important;
 }
 
+.parallax_one_only_customizer {
+	display: none !important;
+}
+
 /*---------------------------------------
    1.1 PRE-LOADER              
 -----------------------------------------*/

@@ -111,7 +111,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/************* HEADER OPTIONS  ********************/
 	/********************************************************/	
 	$wp_customize->add_panel( 'panel_1', array(
-		'priority' => 31,
+		'priority' => 35,
 		'capability' => 'edit_theme_options',
 		'theme_supports' => '',
 		'title' => esc_html__( 'Header section', 'parallax-one' )
@@ -270,7 +270,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* SERVICES SECTION */
 	$wp_customize->add_section( 'parallax_one_services_section' , array(
 			'title'       => esc_html__( 'Services section', 'parallax-one' ),
-			'priority'    => 32,
+			'priority'    => 40,
 	));
 	
 	/* Services title */
@@ -329,7 +329,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_about_section' , array(
 			'title'       => esc_html__( 'About section', 'parallax-one' ),
-			'priority'    => 33,
+			'priority'    => 45,
 	));
 	
 	/* About title */
@@ -385,7 +385,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_team_section' , array(
 			'title'       => esc_html__( 'Team section', 'parallax-one' ),
-			'priority'    => 34,
+			'priority'    => 50,
 	));
 	
 	/* Team title */
@@ -443,7 +443,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_testimonials_section' , array(
 			'title'       => esc_html__( 'Testimonial section', 'parallax-one' ),
-			'priority'    => 35,
+			'priority'    => 55,
 	));
 	
 	
@@ -505,7 +505,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* RIBBON SETTINGS */
 	$wp_customize->add_section( 'parallax_one_ribbon_section' , array(
 		'title'       => esc_html__( 'Ribbon section', 'parallax-one' ),
-		'priority'    => 36,
+		'priority'    => 60,
 	));
 	
 
@@ -567,7 +567,7 @@ function parallax_one_customize_register( $wp_customize ) {
     
 	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
 			'title'       => esc_html__( 'Latest news section', 'parallax-one' ),
-			'priority'    => 36
+			'priority'    => 65
 	));
 	
 	$wp_customize->add_setting( 'parallax_one_latest_news_title', array(
@@ -590,7 +590,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* CONTACT SETTINGS */
 	$wp_customize->add_section( 'parallax_one_contact_section' , array(
 		'title'       => esc_html__( 'Contact section', 'parallax-one' ),
-		'priority'    => 37,
+		'priority'    => 70,
 	));
 
 
@@ -637,7 +637,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_contact_page' , array(
 		'title'       => esc_html__( 'Contact page', 'parallax-one' ),
-      	'priority'    => 39,
+      	'priority'    => 75,
 	));
 
 	/* Contact Form  */
@@ -672,7 +672,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_footer_section' , array(
 		'title'       => esc_html__( 'Footer options', 'parallax-one' ),
-      	'priority'    => 39,
+      	'priority'    => 80,
       	'description' => esc_html__('The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','parallax-one'),
 	));	
 	
@@ -725,7 +725,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section( 'parallax_one_general_section' , array(
 		'title'       => esc_html__( 'Advanced options', 'parallax-one' ),
-      	'priority'    => 40,
+      	'priority'    => 85,
       	'description' => esc_html__('Paralax One theme general options','parallax-one'),
 	));
 	

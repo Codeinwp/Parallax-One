@@ -398,7 +398,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_team_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 1,
+		'priority'    => 10,
 	));
 	
 	/* Team subtitle */
@@ -411,7 +411,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_team_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 2,
+		'priority'    => 20,
 	));
 	
 	
@@ -457,7 +457,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_testimonials_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 1,
+		'priority'    => 10,
 	));
 	
 	/* Testimonials subtitle */
@@ -470,7 +470,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
 		'section'  => 'parallax_one_testimonials_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 2,
+		'priority'    => 20,
 	));
 	
 	
@@ -489,7 +489,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'   => esc_html__('Add new testimonial','parallax-one'),
 		'section' => 'parallax_one_testimonials_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority' => 3,
+		'priority' => 30,
         'parallax_image_control' => true,
 		'parallax_title_control' => true,
 		'parallax_subtitle_control' => true,

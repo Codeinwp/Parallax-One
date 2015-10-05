@@ -452,6 +452,18 @@ function parallax_one_register_required_plugins() {
 
 				'required' => false
 			
+			),
+			
+			array(
+			
+				'name'     => 'ShortPixel Image Optimizer',
+			
+				'slug' 	   => 'shortpixel-image-optimiser',
+				
+				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
+				
+				'required' => false
+			
 			)
 		);
 	

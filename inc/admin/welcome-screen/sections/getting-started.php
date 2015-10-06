@@ -90,7 +90,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="prallax-one-tab-pane-center">
 
 		<h1><?php esc_html_e( 'View full documentation', 'parallax-one' ); ?></h1>
-		<p><?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Zerif Lite.', 'parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Parallax One.', 'parallax-one' ); ?></p>
 		<p><a href="http://themeisle.com/documentation-parallax-one/" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'parallax-one' ); ?></a></p>
 
 	</div>

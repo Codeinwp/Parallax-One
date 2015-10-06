@@ -122,6 +122,33 @@ function parallax_one_setup() {
 	* Welcome screen
 	*/
 	if ( is_admin() ) {
+		
+		global $parallax_one_required_actions;
+        /*
+         * id - unique id; required
+         * title
+         * description
+         * check - check for plugins (if installed)
+         * plugin_slug - the plugin's slug (used for installing the plugin)
+         *
+         */
+        $parallax_one_required_actions = array(
+			array(
+                "id" => 'parallax-one-req-ac-install-intergeo-maps',
+                "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'parallax-one' ),
+                "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','parallax-one' ),
+                "check" => is_plugin_active( 'intergeo-maps/index.php' ),
+                "plugin_slug" => 'intergeo-maps'
+            ),
+            array(
+                "id" => 'parallax-one-req-ac-install-pirate-forms',
+                "title" => esc_html__( 'Install Pirate Forms' ,'parallax-one' ),
+                "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','parallax-one' ),
+                "check" => defined("PIRATE_FORMS_VERSION"),
+                "plugin_slug" => 'pirate-forms'
+            ),
+		);
+		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 	}
 }

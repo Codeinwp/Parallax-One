@@ -10,39 +10,53 @@
 
     <!-- NEWS -->
     <hr />
+	
+	<?php
+	global $parallax_one_required_actions;
+	
+	if( !empty($parallax_one_required_actions) ):
+	
+		/* $parallax_one_required_actions is an array of true/false for each required action that was dismissed */
+		
+		$parallax_one_show_required_actions = get_option("parallax_one_show_required_actions");
+		
+		foreach( $parallax_one_required_actions as $parallax_one_required_action_key => $parallax_one_required_action_value ):
+		
+			if(@$parallax_one_show_required_actions[$parallax_one_required_action_value['id']] === false) continue;
+			if(@$parallax_one_required_action_value['check']) continue;
+			?>
+			<div class="parallax-one-action-required-box">
+				<span class="dashicons dashicons-no-alt parallax-one-dismiss-required-action" id="<?php echo $parallax_one_required_action_value['id']; ?>"></span>
+				<h4><?php echo $parallax_one_required_action_key + 1; ?>. <?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></h4>
+				<p><?php if( !empty($parallax_one_required_action_value['description']) ): echo $parallax_one_required_action_value['description']; endif; ?></p>
+				<?php
+					if( !empty($parallax_one_required_action_value['plugin_slug']) ):
+						?><p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin='.$parallax_one_required_action_value['plugin_slug'] ), 'install-plugin_'.$parallax_one_required_action_value['plugin_slug'] ) ); ?>" class="button button-primary"><?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></a></p><?php
+					endif;
+				?>
 
-    <div class="prallax-one-tab-pane-half prallax-one-tab-pane-first-half">
-
-        <h4><?php esc_html_e( '1. Intergeo Maps - Google Maps Plugin' ,'parallax-one' ); ?></h4>
-        <p><?php esc_html_e( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode', 'parallax-one' ); ?></p>
-
-        <?php if ( is_plugin_active( 'intergeo-maps/index.php' ) ) { ?>
-            <p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
-        <?php } else { ?>
-            <p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Intergeo Maps', 'parallax-one' ); ?></a></p>
-
-        <?php } ?>
-
-    </div>
-    
-    
-    <div class="prallax-one-tab-pane-half">
-    
-        <h4><?php esc_html_e( 'Pirate Forms', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'parallax-one' ); ?></p>
-        
-		<?php if ( is_plugin_active( 'pirate-forms/pirate-forms.php' ) ) { ?>
-				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+				<hr />
+			</div>
 			<?php
-		}
-		else { ?>
-				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'parallax-one' ); ?></a></p>
-        <?php } ?>
-
-    </div>
-
-    <div class="parallax-one-clear"></div>
-
-
+		endforeach;
+	endif;
+	$nr_actions_required = 0;
+	/* get number of required actions */
+	if( get_option('parallax_one_show_required_actions') ):
+		$parallax_one_show_required_actions = get_option('parallax_one_show_required_actions');
+	else:
+		$parallax_one_show_required_actions = array();
+	endif;
+	if( !empty($parallax_one_required_actions) ):
+		foreach( $parallax_one_required_actions as $parallax_one_required_action_value ):
+			if(( !isset( $parallax_one_required_action_value['check'] ) || ( isset( $parallax_one_required_action_value['check'] ) && ( $parallax_one_required_action_value['check'] == false ) ) ) && ((isset($parallax_one_show_required_actions[$parallax_one_required_action_value['id']]) && ($parallax_one_show_required_actions[$parallax_one_required_action_value['id']] == true)) || !isset($parallax_one_show_required_actions[$parallax_one_required_action_value['id']]) )) :
+				$nr_actions_required++;
+			endif;
+		endforeach;
+	endif;
+	if( $nr_actions_required == 0 ):
+		echo '<p>'.__( 'Hooray! There are no required actions for you right now.','parallax-one' ).'</p>';
+	endif;
+	?>
 
 </div>

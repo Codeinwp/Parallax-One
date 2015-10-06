@@ -187,3 +187,20 @@
     border-radius: 10px;
     z-index: 26;
 }
+.parallax-one-action-required-box {
+    position: relative;
+}
+.parallax-one-dismiss-required-action {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    background-color: #D24A4A;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+.parallax-one-dismiss-required-action:hover {
+    background-color: #CC8C8C;
+}

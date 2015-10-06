@@ -4,7 +4,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
 		get_header(); 
 
-		get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
+		parallax_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
 	?>
 		</div>
 		<!-- /END COLOR OVER IMAGE -->
@@ -19,7 +19,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 		if(!empty($sections_array)){
 			foreach($sections_array as $section){
-				get_template_part($section);
+				parallax_one_get_template_part($section);
 			}
 		}
 	?>

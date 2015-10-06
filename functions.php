@@ -380,6 +380,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+
 /**
  * TAV_Remote_Notification_Client.
  */
@@ -448,6 +450,18 @@ function parallax_one_register_required_plugins() {
 			
 				'slug' 	   => 'pirate-forms',
 
+				'required' => false
+			
+			),
+			
+			array(
+			
+				'name'     => 'ShortPixel Image Optimizer',
+			
+				'slug' 	   => 'shortpixel-image-optimiser',
+				
+				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
+				
 				'required' => false
 			
 			)
@@ -752,4 +766,17 @@ function parallax_one_general_repeater_is_empty($parallax_one_arr){
 		}
 	}
 	return true;
+}
+
+function parallax_one_get_template_part($template){
+
+    if(locate_template($template.'.php')) {
+		get_template_part($template);
+    } else {
+		if(defined('PARALLAX_ONE_PLUS_PATH')){		
+			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
+				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
+			}
+		}
+	}
 }

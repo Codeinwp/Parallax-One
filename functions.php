@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */
+	$content_width = 730; /* pixels */   
 }
 
 if ( ! function_exists( 'parallax_one_setup' ) ) :

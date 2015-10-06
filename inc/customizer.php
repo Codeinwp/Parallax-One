@@ -205,7 +205,15 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'parallax_one_logos_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode(array( array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) ))
+		'default' => json_encode(
+				array( 
+					array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),
+					array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),
+					array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),
+					array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),
+					array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) 
+				)
+		)
 
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
@@ -519,7 +527,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'label'    => esc_html__( 'Ribbon Background', 'parallax-one' ),
 	      	'section'  => 'parallax_one_ribbon_section',
 			'active_callback' => 'parallax_one_show_on_front',
-			'priority'    => 1
+			'priority'    => 10
 	)));
 	
 	$wp_customize->add_setting( 'parallax_one_ribbon_title', array(
@@ -531,7 +539,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 2
+		'priority'    => 20
 	));
 	
 
@@ -544,7 +552,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Button label', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 3
+		'priority'    => 30
 	));
 	
 	
@@ -557,7 +565,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Button link', 'parallax-one' ),
 		'section'  => 'parallax_one_ribbon_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 4
+		'priority'    => 40
 	));
 
 	/********************************************************/
@@ -579,7 +587,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Main title', 'parallax-one' ),
 		'section'  => 'parallax_one_latest_news_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 1
+		'priority'    => 10
 	));
 	
 	/********************************************************/
@@ -608,7 +616,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'   => esc_html__('Add new contact field','parallax-one'),
 		'section' => 'parallax_one_contact_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority' => 1,
+		'priority' => 10,
         'parallax_image_control' => false,
         'parallax_icon_control' => true,
         'parallax_text_control' => true,
@@ -626,7 +634,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_section',
 		'active_callback' => 'parallax_one_show_on_front',
-		'priority'    => 2
+		'priority'    => 20
 	));
 	
     

@@ -5454,6 +5454,24 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 
+	.timeline-box-wrap .info h1:after {
+		content: "";
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#latestnews .timeline-text .text-left {
+		text-align: left;
+	}
+
+	#latestnews .timeline-text .colored-line-left {
+		float: left;
+	}
+
+	.brief .section-overlay-layer {
+		padding-bottom: 40px;
+	}
+
 	.colored-line-left {
 		float: none;
 		margin: auto;
@@ -5901,7 +5919,11 @@ h2.screen-reader-text {
 
 	.brief {
 		padding-top: 65px;
-		padding-bottom: 75px;
+		padding-bottom: 0px;
+	}
+
+	.brief .section-overlay-layer {
+		padding-bottom: 0px;
 	}
 
 	.section-header {
@@ -6272,7 +6294,8 @@ h2.screen-reader-text {
 	}
 
 	.timeline-section li .info {
-		border-left: 1px solid #e4e7e7;
+		border-left: none;
+		text-align: center;
 	}
 
 	.list-post-entry-meta {
@@ -6280,6 +6303,16 @@ h2.screen-reader-text {
 		float: left;
 		padding: 0;
 		margin: 15px 0 0;
+	}
+
+	.brief {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.brief .section-overlay-layer {
+		margin-bottom: 0;
+		padding-bottom: 0;
 	}
 
 	.post-author {

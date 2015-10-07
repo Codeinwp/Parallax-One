@@ -6156,12 +6156,9 @@ h2.screen-reader-text {
 	}
 	.call-to-action {
 	    background-position: center;
-	    background-repeat: no-repeat;
 	    background-attachment: initial;
 	    background-size: cover;
-	    border-bottom: 1px solid #eaebec;
 	}
-
 
 }
 

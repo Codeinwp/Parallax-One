@@ -6312,7 +6312,7 @@ h2.screen-reader-text {
 
 	.brief .section-overlay-layer {
 		margin-bottom: 0;
-		padding-bottom: 0;
+		padding-bottom: 80px;
 	}
 
 	.post-author {

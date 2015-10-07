@@ -1,5 +1,25 @@
 
 
+### 2.0.4 - 07/10/2015
+
+ Changes: 
+
+
+ * #272 - html tags a , button , strong, em, br are now allowed in box content
+ * #273 - fixed smooth scroll on button click
+ * #270 - fixed payment options image
+ * Merge pull request #274 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #280 from cristian-ungureanu/development
+
+Development
+ * Fixed translation issues for frontpage buttons
+ * Merge pull request #281 from cristian-ungureanu/development
+
+!!!small changes for plus version
+
+
 ### 2.0.3 - 23/09/2015
 
  Changes: 

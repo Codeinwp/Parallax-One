@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */
+	$content_width = 730; /* pixels */   
 }
 
 if ( ! function_exists( 'parallax_one_setup' ) ) :
@@ -37,7 +37,7 @@ function parallax_one_setup() {
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
+	 * provide it for us.  
 	 */
 	add_theme_support( 'title-tag' );
 
@@ -122,6 +122,33 @@ function parallax_one_setup() {
 	* Welcome screen
 	*/
 	if ( is_admin() ) {
+		
+		global $parallax_one_required_actions;
+        /*
+         * id - unique id; required
+         * title
+         * description
+         * check - check for plugins (if installed)
+         * plugin_slug - the plugin's slug (used for installing the plugin)
+         *
+         */
+        $parallax_one_required_actions = array(
+			array(
+                "id" => 'parallax-one-req-ac-install-intergeo-maps',
+                "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'parallax-one' ),
+                "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','parallax-one' ),
+                "check" => defined('INTERGEO_PLUGIN_NAME'),
+                "plugin_slug" => 'intergeo-maps'
+            ),
+            array(
+                "id" => 'parallax-one-req-ac-install-pirate-forms',
+                "title" => esc_html__( 'Install Pirate Forms' ,'parallax-one' ),
+                "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','parallax-one' ),
+                "check" => defined('PIRATE_FORMS_VERSION'),
+                "plugin_slug" => 'pirate-forms'
+            ),
+		);
+		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 	}
 }
@@ -380,6 +407,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+
 /**
  * TAV_Remote_Notification_Client.
  */
@@ -444,12 +473,22 @@ function parallax_one_register_required_plugins() {
 			
 			array(
 			
+				'name'     => 'Pirate Forms',
+			
+				'slug' 	   => 'pirate-forms',
+
+				'required' => false
+			
+			),
+			
+			array(
+			
 				'name'     => 'ShortPixel Image Optimizer',
 			
 				'slug' 	   => 'shortpixel-image-optimiser',
-
+				
 				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
-
+				
 				'required' => false
 			
 			)
@@ -754,4 +793,17 @@ function parallax_one_general_repeater_is_empty($parallax_one_arr){
 		}
 	}
 	return true;
+}
+
+function parallax_one_get_template_part($template){
+
+    if(locate_template($template.'.php')) {
+		get_template_part($template);
+    } else {
+		if(defined('PARALLAX_ONE_PLUS_PATH')){		
+			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
+				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
+			}
+		}
+	}
 }

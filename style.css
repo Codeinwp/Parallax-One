@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.0.3
+Version: 2.0.4  
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -102,6 +102,10 @@ body {
 	text-align: left;
 	overflow-x: hidden !important;
 	margin: auto !important;
+}
+
+.parallax_one_only_customizer {
+	display: none !important;
 }
 
 /*---------------------------------------
@@ -1273,10 +1277,6 @@ header .navbar-brand {
 	min-height: 10px;
 }
 
-.only-logo .navbar-header img {
-    max-width: 1000px;
-}
-
 .header-layer-one {
 	background-size: cover!important;
 	background-position: 0px 0px;
@@ -1703,40 +1703,7 @@ header .navbar-brand {
 	float: left;
 }
 
-/*---------------------------------------
-   3.5 SECTION: STATS 
------------------------------------------*/
-.stats {
-	background: transparent;
-	-webkit-background-size: cover;
-	background-size: cover;
-}
 
-.stats .overlay-layer-2 {
-	padding-top: 80px;
-	padding-bottom: 80px;
-}
-
-.single-stats {
-	margin-top: 40px;
-	margin-bottom: 40px;
-	float: none;
-	display: inline-block;
-	margin-right: -4px;
-	vertical-align: top;
-}
-
-.single-stats .icon-container {
-	margin-bottom: 35px;
-}
-
-.single-stats .icon-container span {
-	font-size: 70px;
-}
-
-.stats-footer .long-transparent-line {
-	margin-bottom: 45px;
-}
 
 /*---------------------------------------
    3.6 SECTION: UNIQUE FEATURES 
@@ -2693,7 +2660,6 @@ div.wpcf7-mail-sent-ng {
 .woocommerce-page img {
 	height: auto;
 	max-width: 100%;
-	width: 100%;
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -6492,4 +6458,13 @@ h2.screen-reader-text {
 	#prompt-comment-subscribe{
 		padding: 0;
 	}
+}
+
+/*---------------------------------------
+   9.2 PIRATE FORMS         
+-----------------------------------------*/
+.pirate-forms-submit-button{
+    clear: both;
+    margin-left: 15px;
+    float: left;
 }

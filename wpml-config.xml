@@ -4,6 +4,7 @@
 			<key name="parallax_one_header_title" />
 			<key name="parallax_one_header_subtitle" />
 			<key name="parallax_one_header_button_text" />
+			<key name="parallax_one_header_button_link" />
 			<key name="parallax_one_our_services_title" />
 			<key name="parallax_one_our_services_subtitle" />
 			<key name="parallax_one_our_story_title" />
@@ -14,7 +15,10 @@
 			<key name="parallax_one_happy_customers_subtitle" />
 			<key name="parallax_one_ribbon_title" />
 			<key name="parallax_one_button_text" />
+			<key name="parallax_one_button_link" />
 			<key name="parallax_one_latest_news_title" />
+			<key name="parallax_one_contact_form_shortcode" />
+			<key name="parallax_one_contact_map_shortcode" />
 			<key name="parallax_one_copyright" />
 		</key>
 	</admin-texts>

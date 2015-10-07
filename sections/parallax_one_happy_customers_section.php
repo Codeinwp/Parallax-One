@@ -108,9 +108,9 @@
 												<p>
 													<?php 
 														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',esc_attr($parallax_one_testimonial->text));
+															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',$parallax_one_testimonial->text);
 														} else {
-															echo esc_attr($parallax_one_testimonial->text); 
+															echo $parallax_one_testimonial->text; 
 														}
 													?>
 												</p>

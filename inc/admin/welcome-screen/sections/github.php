@@ -15,4 +15,14 @@
 	<p>
 		<a href="https://github.com/Codeinwp/parallax-one" class="button button-primary"><?php esc_html_e( 'Parallax One on GitHub', 'parallax-one' ); ?></a>
 	</p>
+	
+	<hr/>
+	
+	<p><?php esc_html_e( 'Do you have some suggestions for us?','parallax-one'); ?></p>
+	<p><?php esc_html_e( 'Your opinion matter!','parallax-one' ); ?></p>
+
+	<p>
+		<a href="https://themeisle.uservoice.com/forums/252899-themeisle/category/137634-parallaxone" class="button button-primary"><?php esc_html_e( 'Tell us your thoughts', 'parallax-one' ); ?></a>
+	</p>
+	
 </div>

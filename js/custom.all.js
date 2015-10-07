@@ -114,6 +114,15 @@ jQuery(document).ready(function(){
       }
     }
   });
+    
+    
+    jQuery("#inpage_scroll_btn").click(function(event) {
+        var anchor = jQuery('#inpage_scroll_btn').attr('data-anchor');
+        var offset = -60;
+        jQuery('html, body').animate({
+            scrollTop: jQuery(anchor).offset().top + offset
+        }, 1200);
+    });
 });
 
 

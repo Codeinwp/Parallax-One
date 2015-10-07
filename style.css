@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.0.4  
+Version: 2.0.5  
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -2660,6 +2660,10 @@ div.wpcf7-mail-sent-ng {
 .woocommerce-page img {
 	height: auto;
 	max-width: 100%;
+}
+
+.parallax_one_grid img {
+	width: 100%;
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -5450,6 +5454,24 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 
+	.timeline-box-wrap .info h1:after {
+		content: "";
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#latestnews .timeline-text .text-left {
+		text-align: left;
+	}
+
+	#latestnews .timeline-text .colored-line-left {
+		float: left;
+	}
+
+	.brief .section-overlay-layer {
+		padding-bottom: 40px;
+	}
+
 	.colored-line-left {
 		float: none;
 		margin: auto;
@@ -5897,7 +5919,11 @@ h2.screen-reader-text {
 
 	.brief {
 		padding-top: 65px;
-		padding-bottom: 75px;
+		padding-bottom: 0px;
+	}
+
+	.brief .section-overlay-layer {
+		padding-bottom: 0px;
 	}
 
 	.section-header {
@@ -6128,6 +6154,12 @@ h2.screen-reader-text {
 		margin: 0;
 		line-height: 25px;
 	}
+	.call-to-action {
+	    background-position: center;
+	    background-attachment: initial;
+	    background-size: cover;
+	}
+
 }
 
 @media (max-width: 680px) {
@@ -6268,7 +6300,8 @@ h2.screen-reader-text {
 	}
 
 	.timeline-section li .info {
-		border-left: 1px solid #e4e7e7;
+		border-left: none;
+		text-align: center;
 	}
 
 	.list-post-entry-meta {
@@ -6276,6 +6309,16 @@ h2.screen-reader-text {
 		float: left;
 		padding: 0;
 		margin: 15px 0 0;
+	}
+
+	.brief {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.brief .section-overlay-layer {
+		margin-bottom: 0;
+		padding-bottom: 80px;
 	}
 
 	.post-author {

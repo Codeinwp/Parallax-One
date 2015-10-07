@@ -6154,6 +6154,15 @@ h2.screen-reader-text {
 		margin: 0;
 		line-height: 25px;
 	}
+	.call-to-action {
+	    background-position: 50% 50%;
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-size: initial;
+	    border-bottom: 1px solid #eaebec;
+	}
+
+
 }
 
 @media (max-width: 680px) {

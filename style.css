@@ -2662,6 +2662,10 @@ div.wpcf7-mail-sent-ng {
 	max-width: 100%;
 }
 
+.parallax_one_grid img {
+	width: 100%;
+}
+
 .woocommerce nav.woocommerce-pagination {
     text-align: center;
     float: left;

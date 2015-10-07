@@ -194,18 +194,18 @@ jQuery(window).scroll(function(){
 
 });
 
-
-
-
 var window_width_old;
 jQuery(document).ready(function(){
     window_width_old = jQuery('.container').width();
     if( window_width_old <= 462 ) {
-        jQuery('.products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else if( window_width_old <= 750  ){
-        jQuery('.products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
     } else {
-        jQuery('.products').parallaxonegridpinterest({columns: 4,selector: '.product', calcMin: false});
+        jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product', calcMin: false});
+        jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
     }
 });
 
@@ -214,14 +214,16 @@ jQuery(window).resize(function() {
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
             jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
         } else if( window_width_old <= 750  ){
             jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
         } else {
             jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 4,selector: '.product', calcMin: false});
+            jQuery('.cart-collaterals .products').parallaxonegridpinterest({columns: 2,selector: '.product', calcMin: false});
         }
     }
 });
-
 
 (function ($, window, document, undefined) {
     var defaults = {

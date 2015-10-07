@@ -6158,7 +6158,7 @@ h2.screen-reader-text {
 	    background-position: center;
 	    background-repeat: no-repeat;
 	    background-attachment: initial;
-	    background-size: initial;
+	    background-size: cover;
 	    border-bottom: 1px solid #eaebec;
 	}
 

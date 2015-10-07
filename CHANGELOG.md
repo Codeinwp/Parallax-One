@@ -1,5 +1,16 @@
 
 
+### 2.0.5 - 07/10/2015
+
+ Changes: 
+
+
+ * Fixed #276 You may be interested in Section in cart
+ * Fixed #284 Latest news issue on mobile
+ * Fixed #283 Reduced big spaces on mobile
+ * Fixed #282 Ribbon background is stretching weird on mobile
+
+
 ### 2.0.4 - 07/10/2015
 
  Changes: 

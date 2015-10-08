@@ -71,7 +71,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 8. ACCESSIBILITY
 
 9. PLUGINS COMPATIBILITY
-	9.1 
+	9.1 POSTMATIC 
+	9.2 PIRATE FORMS
+	9.3 JETPACK
 
 -----------------------------------------*/
 
@@ -794,7 +796,8 @@ input[type="datetime-local"],
 input[type="datetime"],
 input[type="date"],
 input[type="color"],
-textarea {
+textarea,
+select {
 	color: #666;
 	border: 1px solid #dedede;
 	-webkit-border-radius: 3px;
@@ -6511,3 +6514,69 @@ h2.screen-reader-text {
     margin-left: 15px;
     float: left;
 }
+
+/*---------------------------------------
+   9.3 JETPACK
+-----------------------------------------*/
+	
+.grunion-field-label.checkbox,
+.grunion-radio-label.radio {
+	margin-left: 20px;
+}
+.contact-form.commentsblock .contact-submit {
+	margin-top: 20px;
+}
+#jp-carousel-comment-form-button-submit {
+	background: #008ed6 !important;
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important;
+	border-radius: 3px !important;
+	box-shadow: none !important;
+	font-weight: 500 !important;
+	text-align: center !important;
+	font-size: 14px !important;
+	line-height: 30px !important;
+	color: #FFF !important;
+	text-shadow: none !important;
+	text-transform: uppercase !important;
+	padding: 7px 30px !important;
+	border: 1px solid #008ed6 !important;
+	min-width: 10px !important;
+}
+/* portfolio ^ testimonial */
+.testimonial-entry {
+    padding-left: 180px !important;
+    position: relative !important;
+}
+.testimonial-featured-image {
+    float: left;
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.widget_wpcom_social_media_icons_widget .genericon {
+	padding: 0 5px;
+}
+
+@media (max-width: 992px) {
+	.contact-form.commentsblock textarea {
+		width: 100%;
+	}
+}
+@media (max-width: 480px) {
+	.testimonial-entry {
+		padding-left: 0 !important; 
+		padding-top: 180px !important;
+	}
+	.testimonial-featured-image {
+	    padding: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    width: 100%;
+	}
+	.portfolio-entry-mobile-first-item-row,
+	.portfolio-entry-mobile-last-item-row {
+		width: 100% !important;
+	}
+}
+

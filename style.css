@@ -74,6 +74,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	9.1 POSTMATIC 
 	9.2 PIRATE FORMS
 	9.3 JETPACK
+	9.4 EASY DIGITAL DOWNLOADS
 
 -----------------------------------------*/
 
@@ -6578,5 +6579,23 @@ h2.screen-reader-text {
 	.portfolio-entry-mobile-last-item-row {
 		width: 100% !important;
 	}
+}
+
+/*---------------------------------------
+   9.4 EASY DIGITAL DOWNLOADS
+-----------------------------------------*/
+
+.edd-submit.button.red span,
+.edd-submit.button.blue span,
+.edd-submit.button.green span,
+.edd-submit.button.orange span,
+.edd-submit.button.dark-gray span {
+	color: #FFF;
+}
+
+#edd-purchase-button, 
+.edd-submit, 
+input[type=submit].edd-submit {
+	border: none;
 }
 

@@ -503,3 +503,29 @@ var isMobile = {
     
     
 } )( jQuery );
+
+
+jQuery(document).ready( function(){
+
+    if( isMobile ) {
+        fixed_responsive_bg_body();
+    }
+
+});
+
+function fixed_responsive_bg_body() {
+
+    if( jQuery('body').hasClass('custom-background') ) {
+
+//        console.log( jQuery('body.custom-background').css('background-image') );
+
+        var thisItem = jQuery('body.custom-background');
+
+        thisItem.prepend( '<div class="mobile-bg-fixed" style="background-image:' + thisItem.css('background-image') + ';"></div>' );
+
+    }
+
+    console.log( 'ura' );
+
+}
+

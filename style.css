@@ -5340,6 +5340,7 @@ h2.screen-reader-text {
     top: 0;
     left: 0;
     background-size: cover;
+    background-position: top center;
 }
 
 /* --------------------------------------

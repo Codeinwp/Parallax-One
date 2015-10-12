@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.0.5  
+Version: 2.0.6  
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -71,7 +71,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 8. ACCESSIBILITY
 
 9. PLUGINS COMPATIBILITY
-	9.1 
+	9.1 POSTMATIC 
+	9.2 PIRATE FORMS
+	9.3 JETPACK
+	9.4 EASY DIGITAL DOWNLOADS
 
 -----------------------------------------*/
 
@@ -794,7 +797,8 @@ input[type="datetime-local"],
 input[type="datetime"],
 input[type="date"],
 input[type="color"],
-textarea {
+textarea,
+select {
 	color: #666;
 	border: 1px solid #dedede;
 	-webkit-border-radius: 3px;
@@ -2662,7 +2666,7 @@ div.wpcf7-mail-sent-ng {
 	max-width: 100%;
 }
 
-.parallax_one_grid img {
+.woocommerce .type-product img {
 	width: 100%;
 }
 
@@ -5329,6 +5333,16 @@ h2.screen-reader-text {
 	max-width: 350px;
 }
 
+.mobile-bg-fixed {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: top center;
+}
+
 /* --------------------------------------
 =========================================
    6. RESPONSIVE CSS FIXES
@@ -6511,3 +6525,87 @@ h2.screen-reader-text {
     margin-left: 15px;
     float: left;
 }
+
+/*---------------------------------------
+   9.3 JETPACK
+-----------------------------------------*/
+	
+.grunion-field-label.checkbox,
+.grunion-radio-label.radio {
+	margin-left: 20px;
+}
+.contact-form.commentsblock .contact-submit {
+	margin-top: 20px;
+}
+#jp-carousel-comment-form-button-submit {
+	background: #008ed6 !important;
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important;
+	border-radius: 3px !important;
+	box-shadow: none !important;
+	font-weight: 500 !important;
+	text-align: center !important;
+	font-size: 14px !important;
+	line-height: 30px !important;
+	color: #FFF !important;
+	text-shadow: none !important;
+	text-transform: uppercase !important;
+	padding: 7px 30px !important;
+	border: 1px solid #008ed6 !important;
+	min-width: 10px !important;
+}
+/* portfolio ^ testimonial */
+.testimonial-entry {
+    padding-left: 180px !important;
+    position: relative !important;
+}
+.testimonial-featured-image {
+    float: left;
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+.widget_wpcom_social_media_icons_widget .genericon {
+	padding: 0 5px;
+}
+
+@media (max-width: 992px) {
+	.contact-form.commentsblock textarea {
+		width: 100%;
+	}
+}
+@media (max-width: 480px) {
+	.testimonial-entry {
+		padding-left: 0 !important; 
+		padding-top: 180px !important;
+	}
+	.testimonial-featured-image {
+	    padding: 0;
+	    margin: 0 auto;
+	    text-align: center;
+	    width: 100%;
+	}
+	.portfolio-entry-mobile-first-item-row,
+	.portfolio-entry-mobile-last-item-row {
+		width: 100% !important;
+	}
+}
+
+/*---------------------------------------
+   9.4 EASY DIGITAL DOWNLOADS
+-----------------------------------------*/
+
+.edd-submit.button.red span,
+.edd-submit.button.blue span,
+.edd-submit.button.green span,
+.edd-submit.button.orange span,
+.edd-submit.button.dark-gray span {
+	color: #FFF;
+}
+
+#edd-purchase-button, 
+.edd-submit, 
+input[type=submit].edd-submit {
+	border: none;
+}
+

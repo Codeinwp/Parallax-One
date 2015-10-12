@@ -44,10 +44,10 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<p><a href="http://docs.themeisle.com/article/14-how-to-create-a-child-theme/" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 		<hr />
-
-		<h4><?php esc_html_e( 'Slider in big title section', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'If you are in the position where you want to change the default appearance of the big title section, you may want to replace it with a nice looking slider. This can be accomplished by following the documention below.', 'parallax-one' ); ?></p>
-		<p><a href="http://docs.themeisle.com/article/70-parallax-one-replacing-big-title-section-with-an-image-slider" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+		
+		<h4><?php esc_html_e( 'How to Internationalize Your Website', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'Although English is the most used language on the internet, you should consider all your web users as well. Find out what it takes to make your website ready for foreign markets from this document.', 'parallax-one' ); ?></p>
+		<p><a href="http://docs.themeisle.com/article/80-how-to-translate-zerif" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 		<hr />
 
@@ -80,6 +80,12 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h4><?php esc_html_e( 'Change anchors', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'To better suit your site\'s needs, you can change each section\'s anchor to what you want. The entire process is described below.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/72-parallax-one-how-to-change-section-anchor" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+		
+		<hr />
+		
+		<h4><?php esc_html_e( 'Slider in big title section', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'If you are in the position where you want to change the default appearance of the big title section, you may want to replace it with a nice looking slider. This can be accomplished by following the documention below.', 'parallax-one' ); ?></p>
+		<p><a href="http://docs.themeisle.com/article/70-parallax-one-replacing-big-title-section-with-an-image-slider" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 	</div>
 

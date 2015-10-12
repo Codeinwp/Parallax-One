@@ -1,5 +1,16 @@
 
 
+### 2.0.6 - 12/10/2015
+
+ Changes: 
+
+
+ * Fixed #208 check JetPack widgets integration
+ * Fixed #114 EDD integration
+ * Fixed #287 Services images are stretching
+ * Fixed #286 Responsive background for single page on mobile
+
+
 ### 2.0.5 - 07/10/2015
 
  Changes: 

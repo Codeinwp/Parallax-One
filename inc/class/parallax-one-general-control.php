@@ -21,6 +21,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             $json = json_decode($values);
             if(!is_array($json)) $json = array($values);
             $it = 0;
+            $it2 = 0;
 
             $options = $this->options;
             if(!empty($options['parallax_image_control'])){
@@ -54,6 +55,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             } else {
                 $parallax_link_control = false;
             }
+            if(!empty($options['parallax_shortcode_control'])){
+                $parallax_shortcode_control = $options['parallax_shortcode_control'];
+            } else {
+                $parallax_shortcode_control = false;
+            }
+            
 
  ?>
 
@@ -138,7 +145,14 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                     if($parallax_link_control==true){ ?>
                                         <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
                                         <input type="text" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
-                                <?php } ?>
+                                <?php } 
+                                    if($parallax_shortcode_control==true){
+                                    ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
+                                        <input type="text" class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                 <?php   
+                                    }
+                                ?>
                                 <input type="hidden" class="parallax_one_box_id">
                             <button type="button" class="parallax_one_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','parallax-one'); ?></button>
                             </div>
@@ -222,7 +236,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 if($parallax_link_control){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
-                                        <?php	}?>
+                                        <?php	}
+                                                if($parallax_shortcode_control==true){ ?>
+                                        <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
+                                        <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                  <?php  }
+                                        ?>
                                         <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                     <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
@@ -310,14 +329,24 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         if($parallax_link_control){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
-                                        <?php }?>
+                                        <?php }
+                                        
+                                
+                                        if($parallax_shortcode_control==true){ ?>
+                                            <span class="customize-control-title"><?php esc_html_e('Shortcode','parallax-one')?></span>
+                                            <input type="text" value='<?php if(!empty($icon->shortcode)) echo $icon->shortcode; ?>' class="parallax_one_shortcode_control" placeholder="<?php esc_html_e('Shortcode','parallax-one'); ?>"/>
+                                  <?php  }
+                                        ?>
                                         <input type="hidden" class="parallax_one_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
-                                        <button type="button" class="parallax_one_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
+                                        <button type="button" class="parallax_one_general_control_remove_field button" <?php 
+                                            if ($it == 0)
+                                            echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','parallax-one'); ?></button>
                                     </div>
 
                                 </div>
                     <?php
                                 $it++;
+                                
                             }
                         }
                     }
@@ -331,7 +360,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             <?php } ?>
             </div>
 
-            <button type="button"   class="button add_field parallax_one_general_control_new_field"><?php esc_html_e('Add new field','parallax-one'); ?></button>
+            <button type="button"   class="button add_field parallax_one_general_control_new_field"    
+
+            ><?php esc_html_e('Add new field','parallax-one'); ?></button>
 
             <?php
 

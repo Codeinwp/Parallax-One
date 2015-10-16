@@ -100,6 +100,7 @@ function parallax_one_uniqid(prefix, more_entropy) {
   return retId;
 }
 
+
 /********************************************
 *** General Repeater ***
 *********************************************/
@@ -125,6 +126,7 @@ function parallax_one_refresh_general_control_values(){
 				subtitle = subtitle.replace(/(['"])/g, "\\$1");
 			}
 			var id = jQuery(this).find(".parallax_one_box_id").val();
+            var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
@@ -134,7 +136,8 @@ function parallax_one_refresh_general_control_values(){
                     "choice" : choice,
                     "title" : title,
                     "subtitle" : subtitle,
-					"id" : id
+					"id" : id,
+                    "shortcode" : escapeHtml(shortcode)
                 });
             }
 
@@ -143,6 +146,7 @@ function parallax_one_refresh_general_control_values(){
         th.find('.parallax_one_repeater_colector').trigger('change');
     });
 }
+
 
 
 jQuery(document).ready(function(){
@@ -203,6 +207,7 @@ jQuery(document).ready(function(){
                 field.find(".custom_media_url").val('');
                 field.find(".parallax_one_title_control").val('');
                 field.find(".parallax_one_subtitle_control").val('');
+                field.find(".parallax_one_shortcode_control").val('');
                 th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
                 parallax_one_refresh_general_control_values();
             }
@@ -228,6 +233,10 @@ jQuery(document).ready(function(){
 		 parallax_one_refresh_general_control_values();
 	});
     
+    jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
+		 parallax_one_refresh_general_control_values();
+	});
+    
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
@@ -245,7 +254,20 @@ jQuery(document).ready(function(){
 
 });
 
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  };
 
+  function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    });
+  }
 /********************************************
 *** Parallax effect
 *********************************************/

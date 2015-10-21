@@ -112,7 +112,8 @@ function parallax_one_refresh_general_control_values(){
 			var icon_value = jQuery(this).find('.parallax_one_icon_control').val();
 			var text = jQuery(this).find(".parallax_one_text_control").val();
 			if(text){
-				text = text.replace(/(['"])/g, "\\$1");
+				text = escapeHtml(text);
+				//text = text.replace(/(['"])/g, "\\$1");
 			}
 			var link = jQuery(this).find(".parallax_one_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();

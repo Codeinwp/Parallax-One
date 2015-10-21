@@ -827,10 +827,9 @@ function parallax_one_sanitize_repeater($input){
 	foreach ($input_decoded as $boxk => $box ){
 		foreach ($box as $key => $value){
 			if ($key == 'text'){
-				$input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
-				
+				$input_decoded[$boxk][$key] = esc_attr(wp_kses($value, $allowed_html));
 			} else {
-				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+				$input_decoded[$boxk][$key] = esc_attr(wp_kses_post( force_balance_tags( $value ) ));
 			}
 			
 		}

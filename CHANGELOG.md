@@ -1,5 +1,24 @@
 
 
+### 2.0.7 - 22/10/2015
+
+ Changes: 
+
+
+ * Merge pull request #295 from cristian-ungureanu/development
+
+!!!changes for plus plugin
+ * Merge pull request #297 from cristian-ungureanu/development
+
+!!!fixed special characters in boxes
+ * Merge pull request #302 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #303 from cristian-ungureanu/development
+
+!!! #293 - allow just few tags in text box
+
+
 ### 2.0.6 - 12/10/2015
 
  Changes: 

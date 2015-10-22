@@ -111,32 +111,22 @@ function parallax_one_refresh_general_control_values(){
 		th.find(".parallax_one_general_control_repeater_container").each(function(){
 			var icon_value = jQuery(this).find('.parallax_one_icon_control').val();
 			var text = jQuery(this).find(".parallax_one_text_control").val();
-			if(text){
-				text = escapeHtml(text);
-				//text = text.replace(/(['"])/g, "\\$1");
-			}
 			var link = jQuery(this).find(".parallax_one_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();
 			var choice = jQuery(this).find(".parallax_one_image_choice").val();
 			var title = jQuery(this).find(".parallax_one_title_control").val();
-			if(title){
-				title = title.replace(/(['"])/g, "\\$1");
-			}
 			var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
-			if(subtitle){
-				subtitle = subtitle.replace(/(['"])/g, "\\$1");
-			}
 			var id = jQuery(this).find(".parallax_one_box_id").val();
             var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
-                    "text" : text,
+                    "text" : escapeHtml(text),
                     "link" : link,
                     "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,
-                    "title" : title,
-                    "subtitle" : subtitle,
+                    "title" : escapeHtml(title),
+                    "subtitle" : escapeHtml(subtitle),
 					"id" : id,
                     "shortcode" : escapeHtml(shortcode)
                 });

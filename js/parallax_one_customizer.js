@@ -261,13 +261,14 @@ var entityMap = {
     ">": "&gt;",
     '"': '&quot;',
     "'": '&#39;',
-    "/": '&#x2F;'
+    "/": '&#x2F;',
   };
 
   function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
-    });
+	  string = String(string).replace(/\\/g,'&#92;');
+	  return String(string).replace(/[&<>"'\/]/g, function (s) {
+      	return entityMap[s];
+	  });
   }
 /********************************************
 *** Parallax effect

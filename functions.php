@@ -703,7 +703,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Team*/
-	$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
+	/*$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
 	if(!empty($parallax_one_team_pl)){
 		$parallax_one_team_pl_decoded = json_decode($parallax_one_team_pl);
 		foreach($parallax_one_team_pl_decoded as $parallax_one_team_box){
@@ -725,10 +725,10 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				}
 			}
 		}
-	}
+	}*/
 	
 	/*Testimonials*/
-	$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
+	/*$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
 	if(!empty($parallax_one_testimonials_pl)){
 		$parallax_one_testimonials_pl_decoded = json_decode($parallax_one_testimonials_pl);
 		foreach($parallax_one_testimonials_pl_decoded as $parallax_one_testimonials_box){
@@ -757,10 +757,10 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				}
 			}
 		}
-	}
+	}*/
 	
 	/*Contact*/
-	$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
+	/*$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
 	if(!empty($parallax_one_contact_pl)){
 		$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
 		foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
@@ -775,7 +775,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				}
 			}
 		}
-	}
+	}*/
 }
 
 /*Check if Repeater is empty*/

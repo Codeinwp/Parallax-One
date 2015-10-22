@@ -883,7 +883,6 @@ function parallax_one_customizer_script() {
 		
 		'documentation' => esc_html__( 'Documentation', 'parallax-one' ),
 		'support' => esc_html__('Support Forum','parallax-one'),
-		'github' => esc_html__('Github','parallax-one')
 		
 	) );
 }

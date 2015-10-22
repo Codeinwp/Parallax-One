@@ -808,6 +808,7 @@ function parallax_one_sanitize_text( $input ) {
 }
 
 function parallax_one_sanitize_repeater($input){
+	  
 	$input_decoded = json_decode($input,true);
 	$allowed_html = array(
 								'br' => array(),
@@ -824,19 +825,25 @@ function parallax_one_sanitize_repeater($input){
 									'id' => array()
 								)
 							);
-	foreach ($input_decoded as $boxk => $box ){
-		foreach ($box as $key => $value){
-			if ($key == 'text'){
-				$input_decoded[$boxk][$key] = wp_kses($value, $allowed_html);
-				
-			} else {
-				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+	
+	
+	if(!empty($input_decoded)) {
+		foreach ($input_decoded as $boxk => $box ){
+			foreach ($box as $key => $value){
+				if ($key == 'text'){
+					$value = html_entity_decode($value);
+					$input_decoded[$boxk][$key] = wp_kses( $value, $allowed_html);
+				} else {
+					$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
+				}
+
 			}
-			
 		}
+
+		return json_encode($input_decoded);
 	}
 	
-	return json_encode($input_decoded);
+	return $input;
 }
 
 
@@ -884,7 +891,6 @@ function parallax_one_customizer_script() {
 		
 		'documentation' => esc_html__( 'Documentation', 'parallax-one' ),
 		'support' => esc_html__('Support Forum','parallax-one'),
-		'github' => esc_html__('Github','parallax-one')
 		
 	) );
 }

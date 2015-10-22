@@ -97,7 +97,7 @@
 												if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
 													echo '<p>'.icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',$parallax_one_service_box->text).'</p>';
 												} else {
-													echo '<p>'.$parallax_one_service_box->text.'</p>';
+													echo '<p>'.html_entity_decode($parallax_one_service_box->text).'</p>';
 												}
 											}
 										echo '</div></div>';

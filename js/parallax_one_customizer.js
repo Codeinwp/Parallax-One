@@ -121,7 +121,7 @@ function parallax_one_refresh_general_control_values(){
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
-                    "text" : escapeHtml(text),
+                    "text" :  escapeHtml(text),
                     "link" : link,
                     "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,

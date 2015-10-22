@@ -110,7 +110,7 @@
 														if(function_exists('icl_translate')){
 															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',$parallax_one_testimonial->text);
 														} else {
-															echo $parallax_one_testimonial->text; 
+															echo html_entity_decode($parallax_one_testimonial->text); 
 														}
 													?>
 												</p>

@@ -1,5 +1,15 @@
 
 
+### 2.0.8 - 23/10/2015
+
+ Changes: 
+
+
+ * Merge pull request #305 from cristian-ungureanu/development
+
+!!! #290 - fixed translations
+
+
 ### 2.0.7 - 22/10/2015
 
  Changes: 

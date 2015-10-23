@@ -110,3 +110,12 @@ button.parallax_one_general_control_remove_field:hover{
 .parallax_one_general_control_repeater_container .parallax-box-content-hidden{
     padding-top: 5px;
 }
+
+#accordion-section-parallax_one_sections_order .accordion-section-title, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title, #accordion-section-parallax_one_portfolio_section .accordion-section-title, #accordion-section-parallax_one_shortcodes_section .accordion-section-title, #accordion-section-parallax_one_new_features .accordion-section-title {
+	background-image:url(../images/gray-lines.png);
+	background-repeat:repeat;
+}
+
+#accordion-section-parallax_one_sections_order .accordion-section-title:after, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title:after, #accordion-section-parallax_one_portfolio_section .accordion-section-title:after, #accordion-section-parallax_one_shortcodes_section .accordion-section-title:after, #accordion-section-parallax_one_new_features .accordion-section-title:after {
+	content: "\f160";	
+}

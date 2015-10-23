@@ -26,6 +26,7 @@ class Parallax_One_Welcome {
 		add_action( 'parallax_one_welcome', array($this, 'parallax_one_welcome_actions_required' ),         20 );
 		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ), 		            30 );
 		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ), 				40 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ), 				50 );
 		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_parallax_one_dismiss_required_action', array( $this, 'parallax_one_dismiss_required_action_callback') );
@@ -124,7 +125,7 @@ class Parallax_One_Welcome {
 		endif;
 		wp_localize_script( 'parallax-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ),
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome#actions_required' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
 			'themeinfo' => __('View Theme Info','parallax-one'),
 		) );
@@ -179,6 +180,7 @@ class Parallax_One_Welcome {
 			<li role="presentation" class="parallax-one-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','parallax-one'); ?></a></li>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','parallax-one'); ?></a></li>
+			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','parallax-one'); ?></a></li>
 		</ul>
 
 		<div class="parallax-one-tab-content">
@@ -187,10 +189,9 @@ class Parallax_One_Welcome {
 			/**
 			 * @hooked parallax_one_welcome_getting_started - 10
 			 * @hooked parallax_one_welcome_actions_required - 20
-			 * @hooked parallax_one_welcome_child_themes - 30
-			 * @hooked parallax_one_welcome_github - 40
-			 * @hooked parallax_one_welcome_changelog - 50
-			 * @hooked parallax_one_welcome_free_pro - 60
+			 * @hooked parallax_one_welcome_github - 30
+			 * @hooked parallax_one_welcome_changelog - 40
+			 * @hooked parallax_one_welcome_free_pro - 50
 			 */
 			do_action( 'parallax_one_welcome' ); ?>
 
@@ -227,6 +228,13 @@ class Parallax_One_Welcome {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php' );
 	}
 
+	/**
+	 * Free vs PRO
+	 * @since 1.8.2.4
+	 */
+	public function parallax_one_welcome_free_pro() {
+		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/free_pro.php' );
+	}	
 
 }
 

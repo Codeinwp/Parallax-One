@@ -79,8 +79,8 @@
 										?>
 												<h5 class="colored-text">
 													<?php
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_title',esc_attr($parallax_one_testimonial->title));
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_title',esc_attr($parallax_one_testimonial->title));
 														} else {
 															echo esc_attr($parallax_one_testimonial->title);
 														}
@@ -93,8 +93,8 @@
 										?>
 												<div class="small-text">
 													<?php 
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_subtitle',esc_attr($parallax_one_testimonial->subtitle));
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_subtitle',esc_attr($parallax_one_testimonial->subtitle));
 														} else {
 															echo esc_attr($parallax_one_testimonial->subtitle);
 														}
@@ -107,8 +107,8 @@
 										?>
 												<p>
 													<?php 
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',$parallax_one_testimonial->text);
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',html_entity_decode($parallax_one_testimonial->text));
 														} else {
 															echo html_entity_decode($parallax_one_testimonial->text); 
 														}

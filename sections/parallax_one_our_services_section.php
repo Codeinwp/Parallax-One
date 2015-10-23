@@ -78,15 +78,15 @@
 											}
 											if(!empty($parallax_one_service_box->title)){
 												if( !empty($parallax_one_service_box->link) ){
-													if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-														$parallax_one_title_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
+													if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+														$parallax_one_title_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
 														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_title_services).'</a></h3>';
 													} else {
 														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_service_box->title).'</a></h3>';
 													}
 												} else {
-													if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-														$parallax_one_title_services = icl_translate('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
+													if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+														$parallax_one_title_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
 														echo '<h3 class="colored-text">'.esc_attr($parallax_one_title_services).'</h3>';
 													} else {
 														echo '<h3 class="colored-text">'.esc_attr($parallax_one_service_box->title).'</h3>';
@@ -94,8 +94,8 @@
 												}
 											}
 											if(!empty($parallax_one_service_box->text)){
-												if (function_exists ( 'icl_translate' ) && !empty($parallax_one_service_box->id)){
-													echo '<p>'.icl_translate('Featured Area',$parallax_one_service_box->id.'_services_text',$parallax_one_service_box->text).'</p>';
+												if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+													echo '<p>'.icl_t('Featured Area',$parallax_one_service_box->id.'_services_text',html_entity_decode($parallax_one_service_box->text)).'</p>';
 												} else {
 													echo '<p>'.html_entity_decode($parallax_one_service_box->text).'</p>';
 												}

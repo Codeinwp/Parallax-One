@@ -73,8 +73,8 @@
 												<div class="member-details-inner">
 													<?php 
 													if( !empty($parallax_one_team_member->title) ){
-														if(function_exists('icl_translate')){
-															echo '<h5 class="colored-text">'.icl_translate('Team',$parallax_one_team_member->id.'_team_title',esc_attr($parallax_one_team_member->title)).'</h5>';
+														if(function_exists('icl_t')){
+															echo '<h5 class="colored-text">'.icl_t('Team',$parallax_one_team_member->id.'_team_title',esc_attr($parallax_one_team_member->title)).'</h5>';
 														} else {
 															echo '<h5 class="colored-text">'.esc_attr($parallax_one_team_member->title).'</h5>';
 														}
@@ -82,8 +82,8 @@
 													if( !empty($parallax_one_team_member->subtitle) ){ ?>
 														<div class="small-text">
 															<?php
-																if(function_exists('icl_translate')){
-																	echo icl_translate('Team',$parallax_one_team_member->id.'_team_subtitle',esc_attr($parallax_one_team_member->subtitle));
+																if(function_exists('icl_t')){
+																	echo icl_t('Team',$parallax_one_team_member->id.'_team_subtitle',esc_attr($parallax_one_team_member->subtitle));
 																} else {
 																	echo esc_attr($parallax_one_team_member->subtitle);
 																}

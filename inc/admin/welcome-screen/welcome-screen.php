@@ -125,7 +125,7 @@ class Parallax_One_Welcome {
 		endif;
 		wp_localize_script( 'parallax-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ),
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome#actions_required' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
 			'themeinfo' => __('View Theme Info','parallax-one'),
 		) );

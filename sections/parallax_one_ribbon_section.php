@@ -4,8 +4,8 @@
 <?php
 	global $wp_customize;
 	$ribbon_background = get_theme_mod('paralax_one_ribbon_background', parallax_get_file('/images/background-images/parallax-img/parallax-img1.jpg'));
-	$parallax_one_ribbon_title = get_theme_mod('parallax_one_ribbon_title','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-	$parallax_one_button_text = get_theme_mod('parallax_one_button_text','GET STARTED');
+	$parallax_one_ribbon_title = get_theme_mod('parallax_one_ribbon_title',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'));
+	$parallax_one_button_text = get_theme_mod('parallax_one_button_text',esc_html__('GET STARTED','parallax-one'));
 	$parallax_one_button_link = get_theme_mod('parallax_one_button_link','#');
 
 	if(!empty($parallax_one_ribbon_title) || !empty($parallax_one_button_text)){

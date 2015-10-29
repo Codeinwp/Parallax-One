@@ -94,7 +94,7 @@
 							
 								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
 									
-									echo '<li><a href="'.esc_url($parallax_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+									echo '<li><a target="_blank" href="'.esc_url($parallax_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
 
 								}
 						

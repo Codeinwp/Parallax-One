@@ -1,5 +1,22 @@
 
 
+### 2.0.9 - 29/10/2015
+
+ Changes: 
+
+
+ *  #308 added target="_blank" 
+
+added target="_blank" in all Social links
+ * Merge pull request #312 from Gouravwp/patch-1
+
+ #308 added target="_blank"
+ * Merge pull request #314 from cristian-ungureanu/development
+
+!!!fixed shop section
+ * Fixed #301 and #290 translations issues and added brazilian-portuguese translations
+
+
 ### 2.0.8 - 23/10/2015
 
  Changes: 

@@ -3,8 +3,8 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$parallax_one_our_team_title = get_theme_mod('parallax_one_our_team_title','Our Team');
-	$parallax_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	$parallax_one_our_team_title = get_theme_mod('parallax_one_our_team_title',esc_html__('Our Team','parallax-one'));
+	$parallax_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'));
 	$parallax_one_team_content = get_theme_mod('parallax_one_team_content',
 		json_encode(
 			array(

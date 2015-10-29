@@ -3,8 +3,8 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$parallax_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title','Happy Customers');
-	$parallax_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle','Cloud computing subscription model out of the box proactive solution.');
+	$parallax_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title',esc_html__('Happy Customers','parallax-one'));
+	$parallax_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle',esc_html__('Cloud computing subscription model out of the box proactive solution.','parallax-one'));
 	$parallax_one_testimonials_content = get_theme_mod('parallax_one_testimonials_content',
 		json_encode(
 			array(

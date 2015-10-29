@@ -839,6 +839,25 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	
 	
+	$wp_customize->add_section( 'parallax_one_shop_section' , array(
+			'title'       => esc_html__( 'Shop section', 'parallax-one' ),
+			'priority'    => 47,
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_shop_text', array(
+			'sanitize_callback' => 'parallax_one_sanitize_text',
+	) );
+	
+	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_shop_text',
+		array(
+			'label'    => __( 'Shop', 'parallax-one' ),
+			'section' => 'parallax_one_shop_section',
+			'priority' => 1,
+			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the NEW SHOP SECTION!', 'parallax-one' )
+	   )
+	));
+	
+	
 	
 	
 	$wp_customize->add_section( 'parallax_one_portfolio_section' , array(

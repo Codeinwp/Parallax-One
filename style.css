@@ -6324,6 +6324,10 @@ h2.screen-reader-text {
 		padding: 0;
 		margin: 15px 0 0;
 	}
+	.blog-post-wrap .list-post-entry-meta {
+		margin: 0;
+		padding: 14px;
+	}
 
 	.brief {
 		padding-top: 0;

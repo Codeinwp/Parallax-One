@@ -76,7 +76,7 @@
 															<div class="entry-meta">
 																<span class="entry-date">
 																	<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">
-																		<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo get_the_date('F j, Y'); ?></time>
+																		<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo the_time( get_option('date_format') ); ?></time>
 																	</a>
 																</span>
 																<span> <?php esc_html_e('by','parallax-one');?> </span>

@@ -17,6 +17,13 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
+
+<div id="mobilebgfix">
+  <div class="mobile-bg-fix-img-wrap">
+    <div class="mobile-bg-fix-img"></div>
+  </div>
+  <div class="mobile-bg-fix-whole-site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'parallax-one' ); ?></a>
 	<!-- =========================
      PRE LOADER       

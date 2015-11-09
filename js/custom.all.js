@@ -505,15 +505,13 @@ var isMobile = {
 } )( jQuery );
 
 
-jQuery(document).ready( function(){
-    if( isMobile ) {
-        fixed_responsive_bg_body();
-    }
-});
-function fixed_responsive_bg_body() {
-    if( jQuery('body').hasClass('custom-background') ) {
-        var thisItem = jQuery('body.custom-background');
-        thisItem.prepend( '<div class="mobile-bg-fixed" style="background-image:' + thisItem.css('background-image') + ';"></div>' );
+/* mobile background fix */
+jQuery( document ).ready( mobile_bg_fix );
+jQuery( window ).resize( mobile_bg_fix );
+
+function mobile_bg_fix() {
+    if( isMobile.any() && jQuery( 'body.custom-background' ) ){
+        jQuery( '#mobilebgfix' ).addClass( 'mobile-bg-fix-wrap' ).css( 'background', jQuery( 'body.custom-background' ).css( 'background' ) );
     }
 }
 

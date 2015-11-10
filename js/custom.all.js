@@ -527,7 +527,7 @@ function mobile_bg_fix() {
             initViewMode = viewMode;
             if ( onlyInit == true ) { 
                 onlyInit = false; 
-                bodyClass   = jQuery( 'body.custom-background' )
+                bodyClass   = jQuery( 'body.custom-background' );
                 imgURL      = bodyClass.css( 'background-image' );
                 imgSize     = bodyClass.css( 'background-size' );
                 imgPosition = bodyClass.css( 'background-position' );

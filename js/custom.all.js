@@ -507,11 +507,18 @@ var isMobile = {
 
 /* mobile background fix */
 jQuery( document ).ready( mobile_bg_fix );
-jQuery( window ).resize( mobile_bg_fix );
-
 function mobile_bg_fix() {
     if( isMobile.any() && jQuery( 'body.custom-background' ) ){
-        jQuery( '#mobilebgfix' ).addClass( 'mobile-bg-fix-wrap' ).css( 'background', jQuery( 'body.custom-background' ).css( 'background' ) );
+            bodyClass   = jQuery( 'body.custom-background' )
+            imgURL      = bodyClass.css( 'background-image' );
+            imgSize     = bodyClass.css( 'background-size' );
+            imgPosition = bodyClass.css( 'background-position' );
+            imgRepeat   = bodyClass.css( 'background-repeat' );
+            jQuery( '#mobilebgfix' ).addClass( 'mobile-bg-fix-wrap' ).find( '.mobile-bg-fix-img' ).css( {
+                'background-image'      : imgURL,
+                'background-size'       : imgSize,
+                'background-position'   : imgPosition,
+                'background-repeat'     : imgRepeat
+                } );
     }
 }
-

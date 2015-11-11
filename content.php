@@ -4,7 +4,7 @@
  */
 ?>
 
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover blog-post-wrap'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
@@ -32,9 +32,6 @@
 					<?php } ?>
 
 				</a>
-				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
-					<?php echo get_the_date('F j, Y');?>
-				</div>
 				<div class="post-date entry-published updated">
 					<span class="post-date-day"><?php the_time('d'); ?></span>
 					<span class="post-date-month"><?php the_time('M'); ?></span>

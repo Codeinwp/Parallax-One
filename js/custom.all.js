@@ -505,15 +505,51 @@ var isMobile = {
 } )( jQuery );
 
 
-jQuery(document).ready( function(){
-    if( isMobile ) {
-        fixed_responsive_bg_body();
-    }
-});
-function fixed_responsive_bg_body() {
-    if( jQuery('body').hasClass('custom-background') ) {
-        var thisItem = jQuery('body.custom-background');
-        thisItem.prepend( '<div class="mobile-bg-fixed" style="background-image:' + thisItem.css('background-image') + ';"></div>' );
+/* mobile background fix */
+var initHeight  = 0,
+    initWidth   = 0;
+var initViewMode,
+    onlyInit = true; 
+jQuery( document ).ready( function() { 
+    initViewMode = type_view();
+    mobile_bg_fix();
+} );
+jQuery( window ).resize( mobile_bg_fix );
+
+function mobile_bg_fix() {
+    if( isMobile.any() && jQuery( 'body.custom-background' ) ){
+        var viewMode = type_view();
+        if ( initViewMode != viewMode || onlyInit == true ) {
+            jQuery( '.mobile-bg-fix-img' ).css( {
+                'width' : window.innerWidth,
+                'height': window.innerHeight + 100
+            } );
+            initViewMode = viewMode;
+            if ( onlyInit == true ) { 
+                onlyInit = false; 
+                bodyClass   = jQuery( 'body.custom-background' );
+                imgURL      = bodyClass.css( 'background-image' );
+                imgSize     = bodyClass.css( 'background-size' );
+                imgPosition = bodyClass.css( 'background-position' );
+                imgRepeat   = bodyClass.css( 'background-repeat' );
+                jQuery( '#mobilebgfix' ).addClass( 'mobile-bg-fix-wrap' ).find( '.mobile-bg-fix-img' ).css( {
+                    'background-size':      imgSize,
+                    'background-position':  imgPosition,
+                    'background-repeat':    imgRepeat,
+                    'background-image':     imgURL
+                    } );
+            }
+        }
     }
 }
+
+function type_view() {
+    var initHeight  = window.innerHeight;
+    var initWidth   = window.innerWidth;
+    if ( initWidth <= initHeight ) {
+        return 'portrait';
+    }
+    return 'landscape';
+}
+
 

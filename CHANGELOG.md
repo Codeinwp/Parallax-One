@@ -1,5 +1,15 @@
 
 
+### 2.1.0.0 - 11/11/2015
+
+ Changes: 
+
+
+ * Fixed #291 Date appears twice on blog on moibile
+ * Fixed #320 Background image not working well
+ * Fixed Background image not working well on mobile
+
+
 ### 2.0.9 - 29/10/2015
 
  Changes: 

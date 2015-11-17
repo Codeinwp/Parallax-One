@@ -33,7 +33,7 @@
 
 				</a>
 				<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
-					<?php echo get_the_date('F j, Y');?>
+					<?php the_time( get_option('date_format') ); ?>
 				</div>
 				<div class="post-date entry-published updated">
 					<span class="post-date-day"><?php the_time('d'); ?></span>

@@ -5333,18 +5333,6 @@ h2.screen-reader-text {
 	max-width: 350px;
 }
 
-.mobile-bg-fixed {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: top center;
-    z-index: -1;
-}
-
-
 /* mobile background fix */
 .mobile-bg-fix-wrap {
 	width: 100%;

@@ -5341,6 +5341,7 @@ h2.screen-reader-text {
     left: 0;
     background-size: cover;
     background-position: top center;
+    z-index: -1;
 }
 
 

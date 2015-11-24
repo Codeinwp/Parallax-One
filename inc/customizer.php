@@ -48,7 +48,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'label'      => esc_html__( 'Text color', 'parallax-one' ),
 				'section'    => 'colors',
-				'priority'   => 5
+				'priority'   => 3
 			)
 		)
 	);
@@ -66,7 +66,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'label'      => esc_html__( 'Title color', 'parallax-one' ),
 				'section'    => 'colors',
-				'priority'   => 6
+				'priority'   => 4
 			)
 		)
 	);

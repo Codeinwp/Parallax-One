@@ -1,5 +1,29 @@
 
 
+### 2.1.0.1 - 24/11/2015
+
+ Changes: 
+
+
+ * #316 Change date format issue fixed
+ * Merge pull request #324 from Gouravwp/development
+
+#316 Change date format issue fixed
+ * date format issue fixed
+
+change date format .
+ * date format issue fixed
+
+Change date format
+ * Merge branch 'Gouravwp-development' into development
+ * #326 Wrong text domain issue
+
+text domain issue fixed !
+ * Merge pull request #327 from Gouravwp/development
+
+#326 Wrong text domain issue
+
+
 ### 2.1.0.0 - 11/11/2015
 
  Changes: 

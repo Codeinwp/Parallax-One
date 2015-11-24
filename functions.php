@@ -539,7 +539,7 @@ function parallax_one_php_style() {
 	}
 	$parallax_one_text_color = get_theme_mod('parallax_one_text_color');
 	if(!empty($parallax_one_text_color)){
-		echo 'body, .entry-content p { color: '.$parallax_one_text_color.'}';
+		echo 'body, .entry-content p, .pirate_forms_thankyou_wrap p { color: '.$parallax_one_text_color.'}';
 	}
 	
 	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');

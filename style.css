@@ -6614,7 +6614,13 @@ h2.screen-reader-text {
 /*---------------------------------------
    9.4 EASY DIGITAL DOWNLOADS
 -----------------------------------------*/
-
+.edd_download{
+	float:left;
+	width: 33%; 
+}
+.edd_download:nth-child(4n+1){
+	clear:both;
+}
 .edd-submit.button.red span,
 .edd-submit.button.blue span,
 .edd-submit.button.green span,

@@ -6739,14 +6739,61 @@ p.edd-alert-error,
 	width: 192px;
 }
 
-
-@media (max-width: 768px) {
-	.edd_download {
-		width: 50% !important;
-	}
+#edd_discounts_list {
+    border: 1px solid rgba(0,0,0,.1);
+    padding-left: 0;
 }
 
-@media (max-width: 600px) {
+#edd_discounts_list li,
+#edd_checkout_cart .edd_cart_header_row th {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 6px 12px;
+    list-style: none;
+}
+
+#edd_discounts_list li:nth-child(1) {
+	border-top: none;
+}
+
+#edd_user_history td,
+#edd_user_history th {
+	line-height: 25px;
+	vertical-align: middle;
+	border-top: 1px solid rgba(0,0,0,.1);
+	padding: 6px 12px;
+}
+
+#edd_user_history {
+	border-radius: 5px;
+}
+
+.edd_price_options.edd_multi_mode ul {
+    border: 1px solid rgba(0,0,0,.1);
+    padding-left: 0;
+}
+
+.edd_download_purchase_form .edd_price_options li:nth-child(1) {
+    border-top: none;
+}
+
+.edd_download_purchase_form .edd_price_options li {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 6px 12px;
+    list-style: none;
+}
+
+@media (max-width: 992px) {
+	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js {
+		color: #FFF;
+		padding: 10px;
+		font-size: 12px;
+  	}
+  	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js span {
+  		font-size: 12px;
+  	}
+}
+
+@media (max-width: 768px) {
 	.edd_download {
 		width: 100% !important;
 	}

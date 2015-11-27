@@ -16,7 +16,7 @@
 <div class="content-wrap">
 	<div class="container">
 
-		<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else {echo 'col-md-12';}  ?>">
+		<div id="primary" class="content-area col-md-12">
 			<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -27,8 +27,6 @@
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-
-		<?php get_sidebar(); ?>
 
 	</div>
 </div><!-- .content-wrap -->

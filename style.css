@@ -6788,6 +6788,13 @@ p.edd-alert-error,
     list-style: none;
 }
 
+.edd-image-wrap {
+	float: right;
+	width: 100%;
+	max-width: 50%;
+	padding: 0 0 15px 15px;
+}
+
 @media (max-width: 992px) {
 	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js {
 		color: #FFF;

@@ -106,9 +106,10 @@
 	            
 	        </div><!-- .footer-bottom-wrap -->
 
-	        <div class="powered-by">
-	            <a class="" href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Parallax One </a> <?php esc_html_e('powered by','parallax-one'); ?> <a class="" href="http://wordpress.org/" target="_blank" rel="nofollow"><?php esc_html_e('WordPress','parallax-one'); ?></a>
-	        </div>
+	        
+            <?php echo apply_filters("parallax_one_plus_footer_text_filter",'<div class="powered-by"><a href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Parallax One </a>'.esc_html__('powered by ','parallax-one').'<a class="" href="http://wordpress.org/" target="_blank" rel="nofollow">'.esc_html__('WordPress','parallax-one').'</a></div>');?>
+
+	        
 
 	    </div><!-- container -->
 

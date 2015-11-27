@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.1.0.1
+Version: 2.1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -4964,7 +4964,6 @@ h2.screen-reader-text {
 	text-shadow: none;
 	text-transform: uppercase;
 	padding: 7px 30px;
-	border: 1px solid #008ed6;
 	min-width: 10px;
 }
 
@@ -6615,7 +6614,13 @@ h2.screen-reader-text {
 /*---------------------------------------
    9.4 EASY DIGITAL DOWNLOADS
 -----------------------------------------*/
-
+.edd_download{
+	float:left;
+	width: 33%; 
+}
+.edd_download:nth-child(4n+1){
+	clear:both;
+}
 .edd-submit.button.red span,
 .edd-submit.button.blue span,
 .edd-submit.button.green span,
@@ -6630,3 +6635,179 @@ input[type=submit].edd-submit {
 	border: none;
 }
 
+#edd_checkout_cart td,
+#edd_checkout_cart thead,
+#edd_checkout_cart th.edd_cart_total, 
+#edd_checkout_cart th:last-child,
+#edd_checkout_cart .edd_checkout_cart_item_title {
+	font-weight: 400;
+	color: #666666;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+#edd_checkout_form_wrap select.edd-select {
+    display: block;
+    width: 70%;
+}
+
+.edd_errors.edd-alert.edd-alert-error,
+.edd-alert-error {
+	background-color: #E86A6A;
+    color: #FFF;
+    border: none;
+    border-bottom: 3px solid #C84E54;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+}
+
+.edd-alert-error,
+p.edd-alert-error,
+.edd-alert-error a {
+	color: #FFF;
+}
+
+.edd-alert-error a:hover {
+	text-decoration: underline;
+}
+
+#edd_checkout_form_wrap fieldset p:last-child {
+	color: rgba(255,255,255,0.8);
+}
+
+.edd_download_inner {
+    background: #ffffff;
+    border-top: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 4px solid #eaeaea;
+    margin: 0 15px;
+    padding: 15px;
+    transition: all ease 0.55s;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.edd_download_inner:hover {
+    border-bottom-color: #008ed6;
+}
+
+.edd_download_title a,
+.edd_download_title {
+    color: #000;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+}
+
+#edd_checkout_form_wrap legend,
+#edd_login_form legend,
+.edd_form legend { 
+	border-bottom: 0;
+}
+
+#edd_checkout_form_wrap legend:after,
+#edd_login_form legend:after,
+.edd_form legend:after {
+    content: "";
+    height: 2px;
+    width: 80px;
+    display: block;
+    background: #E0E0E0;
+    margin-top: 5px;
+}
+
+#edd_profile_billing_address_wrap input,
+#edd_profile_billing_address_wrap select {
+    margin-bottom: 10px;
+}
+
+#edd_new_user_pass1,
+#edd_first_name {
+	margin-bottom: 10px;
+}
+
+#edd_profile_billing_address_wrap legend {
+	margin-top: 50px;
+}
+
+#edd_checkout_form_wrap legend, 
+#edd_login_form legend, 
+.edd_form legend {
+	margin-top: 50px;
+}
+
+#edd_address_country,
+#edd_display_name {
+	width: 192px;
+}
+
+#edd_discounts_list {
+    border: 1px solid rgba(0,0,0,.1);
+    padding-left: 0;
+}
+
+#edd_discounts_list li,
+#edd_checkout_cart .edd_cart_header_row th {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 6px 12px;
+    list-style: none;
+}
+
+#edd_discounts_list li:nth-child(1) {
+	border-top: none;
+}
+
+#edd_user_history td,
+#edd_user_history th {
+	line-height: 25px;
+	vertical-align: middle;
+	border-top: 1px solid rgba(0,0,0,.1);
+	padding: 6px 12px;
+}
+
+#edd_user_history {
+	border-radius: 5px;
+}
+
+.edd_price_options.edd_multi_mode ul {
+    border: 1px solid rgba(0,0,0,.1);
+    padding-left: 0;
+}
+
+.edd_download_purchase_form .edd_price_options li:nth-child(1) {
+    border-top: none;
+}
+
+.edd_download_purchase_form .edd_price_options li {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 6px 12px;
+    list-style: none;
+}
+
+.edd-image-wrap {
+	float: right;
+	width: 100%;
+	max-width: 50%;
+	padding: 0 0 15px 15px;
+}
+
+@media (max-width: 992px) {
+	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js {
+		color: #FFF;
+		padding: 10px;
+		font-size: 12px;
+  	}
+  	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js span {
+  		font-size: 12px;
+  	}
+}
+
+@media (max-width: 768px) {
+	.edd_download {
+		width: 100% !important;
+	}
+}

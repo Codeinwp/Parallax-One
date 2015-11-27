@@ -1,5 +1,16 @@
 
 
+### 2.1.0.2 - 27/11/2015
+
+ Changes: 
+
+
+ * Merge pull request #330 from cristian-ungureanu/development
+
+Development
+ * EDD Compatibility issues
+
+
 ### 2.1.0.1 - 24/11/2015
 
  Changes: 

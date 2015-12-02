@@ -552,6 +552,11 @@ function parallax_one_php_style() {
 			echo '.header{ background-image: url('.$parallax_one_header_image.');}';
 		}
 	}
+	
+	$parallax_one_bigtitle_background = get_theme_mod('parallax_one_bigtitle_background','rgba(0, 0, 0, 0.7)');
+	if(!empty($parallax_one_bigtitle_background)){
+		echo '.overlay-layer-wrap{ background:'.$parallax_one_bigtitle_background.';}';
+	}
 
 	echo '</style>';
 }

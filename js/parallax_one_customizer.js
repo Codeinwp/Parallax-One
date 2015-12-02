@@ -219,7 +219,7 @@ jQuery(document).ready(function(){
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_title_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
-
+	
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_subtitle_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
@@ -237,6 +237,7 @@ jQuery(document).ready(function(){
 	});
 	
 	/*Drag and drop to change icons order*/
+	
 	jQuery(".parallax_one_general_control_droppable").sortable({
 		update: function( event, ui ) {
 			parallax_one_refresh_general_control_values();
@@ -255,10 +256,12 @@ var entityMap = {
   };
 
   function escapeHtml(string) {
+	  string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
 	  string = String(string).replace(/\\/g,'&#92;');
 	  return String(string).replace(/[&<>"'\/]/g, function (s) {
       	return entityMap[s];
 	  });
+	  
   }
 /********************************************
 *** Parallax effect

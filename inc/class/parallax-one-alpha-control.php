@@ -6,11 +6,9 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
     public $palette = true;
     public $default = '';
     
-    private $options = array();
     
     public function __construct( $manager, $id, $args = array() ) {
         parent::__construct( $manager, $id, $args );
-        $this->options = $args;
         $this->default = $this->setting->default;
     }
     

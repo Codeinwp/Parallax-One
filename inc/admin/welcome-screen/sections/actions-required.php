@@ -19,25 +19,30 @@
 		/* $parallax_one_required_actions is an array of true/false for each required action that was dismissed */
 		
 		$parallax_one_show_required_actions = get_option("parallax_one_show_required_actions");
-		
+		$index = 1;
 		foreach( $parallax_one_required_actions as $parallax_one_required_action_key => $parallax_one_required_action_value ):
-		
+			
 			if(@$parallax_one_show_required_actions[$parallax_one_required_action_value['id']] === false) continue;
 			if(@$parallax_one_required_action_value['check']) continue;
 			?>
 			<div class="parallax-one-action-required-box">
 				<span class="dashicons dashicons-no-alt parallax-one-dismiss-required-action" id="<?php echo $parallax_one_required_action_value['id']; ?>"></span>
-				<h4><?php echo $parallax_one_required_action_key + 1; ?>. <?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></h4>
+				<h4><?php echo $index; ?>. <?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></h4>
 				<p><?php if( !empty($parallax_one_required_action_value['description']) ): echo $parallax_one_required_action_value['description']; endif; ?></p>
 				<?php
 					if( !empty($parallax_one_required_action_value['plugin_slug']) ):
 						?><p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin='.$parallax_one_required_action_value['plugin_slug'] ), 'install-plugin_'.$parallax_one_required_action_value['plugin_slug'] ) ); ?>" class="button button-primary"><?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></a></p><?php
+					else:
+						if(!empty($parallax_one_required_action_value['customizer']) && $parallax_one_required_action_value['customizer']==true):
+						?><p><a href="<?php echo esc_url( self_admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php if( !empty($parallax_one_required_action_value['title']) ): echo $parallax_one_required_action_value['title']; endif; ?></a></p><?php
+						endif;
 					endif;
 				?>
 
 				<hr />
 			</div>
 			<?php
+			$index++;
 		endforeach;
 	endif;
 	$nr_actions_required = 0;

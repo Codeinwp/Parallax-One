@@ -147,6 +147,13 @@ function parallax_one_setup() {
                 "check" => defined('PIRATE_FORMS_VERSION'),
                 "plugin_slug" => 'pirate-forms'
             ),
+			array(
+				"id" => 'parallax-one-req-ac-check-latest-posts',
+                "title" => esc_html__( 'Switch "Front page displays" to "Your latest posts" ' ,'parallax-one' ),
+                "description"=> esc_html__( 'In order to have the one page look for your website, please go to Customize -> Advanced options and switch "Front page displays" to "Your latest posts"','parallax-one' ),
+                "check" => parallax_one_is_not_post(),
+				"customizer" => true
+			)
 		);
 		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -811,4 +818,8 @@ function parallax_one_get_template_part($template){
 			}
 		}
 	}
+}
+
+function parallax_one_is_not_post(){
+	return ('posts' == get_option( 'show_on_front' ) ? true : false);
 }

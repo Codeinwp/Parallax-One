@@ -2424,7 +2424,6 @@ button.control_next.fade-btn {
 .contact-info {
 	text-align: center;
 	background-color: #FFF;
-	border-bottom: 1px solid #eaebec;
 }
 
 .contact-info .section-overlay-layer {
@@ -2466,6 +2465,11 @@ button.control_next.fade-btn {
 	text-align: center;
 }
 
+.pirate-forms-section{
+	text-align: center;
+	background-color: #FFF;
+	padding-bottom: 70px;
+}
 /*---------------------------------------
    3.14 SECTION: GOOGLE MAP
 -----------------------------------------*/

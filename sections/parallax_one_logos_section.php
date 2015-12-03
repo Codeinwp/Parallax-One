@@ -23,10 +23,10 @@
 					echo '<li>';
 					if(!empty($parallax_one_logo->link)){
 						echo '<a href="'.$parallax_one_logo->link.'" title="">';
-							echo '<img src="'.$parallax_one_logo->image_url.'" alt="'. esc_html__('Logo','parallax-one') .'">';
+							echo '<img src="'.parallax_one_make_protocol_relative_url($parallax_one_logo->image_url).'" alt="'. esc_html__('Logo','parallax-one') .'">';
 						echo '</a>';
 					} else {
-						echo '<img src="'.esc_url($parallax_one_logo->image_url).'" alt="'.esc_html__('Logo','parallax-one').'">';
+						echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_logo->image_url)).'" alt="'.esc_html__('Logo','parallax-one').'">';
 					}
 					echo '</li>';
 

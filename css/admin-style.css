@@ -119,3 +119,64 @@ button.parallax_one_general_control_remove_field:hover{
 #accordion-section-parallax_one_shop_section .accordion-section-title:after, #accordion-section-parallax_one_sections_order .accordion-section-title:after, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title:after, #accordion-section-parallax_one_portfolio_section .accordion-section-title:after, #accordion-section-parallax_one_shortcodes_section .accordion-section-title:after, #accordion-section-parallax_one_new_features .accordion-section-title:after {
 	content: "\f160";	
 }
+
+
+
+
+
+
+
+.parallax-one-alpha-container .transparency {
+    height:24px;
+    width:100%;
+    background-color:#FFF;
+    background-image:url(../images/transparency-grid.png);
+    box-shadow:0 0 5px rgba(0,0,0,0.4) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding:0;
+}
+ 
+.parallax-one-alpha-container .ui-slider-handle {
+    color:#777;
+    background-color:#FFF;
+    text-shadow:0 1px 0 #FFF;
+    text-decoration:none;
+    position:absolute;
+    z-index:2;
+    box-shadow:0 1px 2px rgba(0,0,0,0.2);
+    border:1px solid #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    opacity:0.9;
+    margin-top:-2px;
+    height:20px;
+    cursor:ew-resize;
+    font-size:12px;
+    padding:3px;
+}
+ 
+.parallax-one-alpha-container .ui-slider {
+    position:relative;
+    text-align:center;
+    width:88%;
+}
+ 
+.wp-picker-container a.wp-picker-open ~ div.parallax-one-alpha-container {
+    display:block;
+}
+ 
+.parallax-one-alpha-container {
+    box-sizing:padding-box;
+    display:none;
+    border:1px solid #dfdfdf;
+    border-top:none;
+    background:#FFF;
+    padding:0 11px 6px;
+}
+ 
+.customize-control-alphacolor .wp-picker-container .iris-picker {
+    border-bottom:none;
+}

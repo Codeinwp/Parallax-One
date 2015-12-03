@@ -57,13 +57,13 @@
 												<?php
 													if( !empty($parallax_one_team_member->image_url)){
 														if( !empty($parallax_one_team_member->title) ){
-															echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="'.esc_attr($parallax_one_team_member->title).'">';
+															echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_team_member->image_url)).'" alt="'.esc_attr($parallax_one_team_member->title).'">';
 														} else {
-															echo '<img src="'.esc_url($parallax_one_team_member->image_url).'" alt="'.esc_html__('Avatar','parallax-one').'">';
+															echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_team_member->image_url)).'" alt="'.esc_html__('Avatar','parallax-one').'">';
 														}
 													} else {
 														$default_url = parallax_get_file('/images/team/default.png');
-														echo '<img src="'.$default_url.'" alt="'.esc_html__('Avatar','parallax-one').'">';
+														echo '<img src="'.parallax_one_make_protocol_relative_url($default_url).'" alt="'.esc_html__('Avatar','parallax-one').'">';
 													}
 												?>
 											</div><!-- .member-pic -->

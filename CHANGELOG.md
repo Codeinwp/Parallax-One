@@ -1,5 +1,16 @@
 
 
+### 2.1.0.3 - 03/12/2015
+
+ Changes: 
+
+
+ * #322 - added control for overlay opacity in first section
+ * #311 - line break in textbox is now interpreted as new line
+ * #307 - use relative url for images
+ * Merge branch 'cristian-ungureanu-development' into development
+
+
 ### 2.1.0.2 - 27/11/2015
 
  Changes: 

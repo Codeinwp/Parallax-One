@@ -59,13 +59,13 @@
 
 												if( !empty($parallax_one_testimonial->image_url) ){
 													if(!empty($parallax_one_testimonial->title)){
-														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.$parallax_one_testimonial->title.'">';
+														echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_testimonial->image_url)).'" alt="'.$parallax_one_testimonial->title.'">';
 													} else {
-														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.esc_html('Avatar','parallax-one').'">';
+														echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_testimonial->image_url)).'" alt="'.esc_html('Avatar','parallax-one').'">';
 													}
 												} else {
 													$default_image = parallax_get_file('/images/clients/client-no-image.jpg');
-													echo '<img src="'.esc_url($default_image).'" alt="'.esc_html('Avatar','parallax-one').'">';	
+													echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($default_image)).'" alt="'.esc_html('Avatar','parallax-one').'">';	
 												}	
 											?>
 										</div>

@@ -270,6 +270,26 @@ function parallax_one_customize_register( $wp_customize ) {
 	      	'section'  => 'header_image',
 			'priority'    => 5,
 	)));
+	
+	
+	require_once ( 'class/parallax-one-alpha-control.php');
+	/* zerif_bigtitle_background */
+	$wp_customize->add_setting( 'parallax_one_bigtitle_background', array( 
+		'default' => 'rgba(0, 0, 0, 0.7)' 
+	));
+
+	$wp_customize->add_control(
+		new Parallax_One_Customize_Alpha_Color_Control(
+			$wp_customize,
+			'parallax_one_bigtitle_background',
+			array(
+				'label'    => __( 'Overlay color and transparency', 'parallax-one' ),
+				'palette' => true,
+				'section'  => 'header_image',
+				'priority'   => 6
+			)
+		)
+	);
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/
@@ -943,8 +963,21 @@ function parallax_one_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Preloader', 'parallax-one' ),
 			'section' => 'parallax_one_new_features',
-			'priority' => 2,
+			'priority' => 3,
 			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the PRELOADER IMAGE!', 'parallax-one' )
+	   )
+	));
+	
+	$wp_customize->add_setting( 'parallax_one_new_opacity', array(
+			'sanitize_callback' => 'parallax_one_sanitize_text',
+	) );
+	
+	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_new_opacity',
+		array(
+			'label'    => __( 'Opacity', 'parallax-one' ),
+			'section' => 'parallax_one_new_features',
+			'priority' => 4,
+			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the background opacity and color of each section!', 'parallax-one' )
 	   )
 	));	
 	
@@ -1062,3 +1095,25 @@ function parallax_one_show_on_front(){
 	}
 	return false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

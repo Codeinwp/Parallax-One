@@ -51,7 +51,7 @@
 	} else {
 		if( isset( $wp_customize ) ) {
 			if(!empty($ribbon_background)){
-				echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" style="background-image:url('.$ribbon_background.');" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
+				echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" style="background-image:url('.parallax_one_make_protocol_relative_url($ribbon_background).');" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
 			} else {
 				echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
 			}

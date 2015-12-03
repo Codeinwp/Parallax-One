@@ -556,7 +556,7 @@ function parallax_one_php_style() {
 	if( ( empty($parallax_one_enable_move) || !$parallax_one_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 		$parallax_one_header_image = get_header_image();
 		if(!empty($parallax_one_header_image)){
-			echo '.header{ background-image: url('.make_protocol_relative_url($parallax_one_header_image).');}';
+			echo '.header{ background-image: url('.parallax_one_make_protocol_relative_url($parallax_one_header_image).');}';
 		}
 	}
 	
@@ -825,38 +825,38 @@ function parallax_one_is_not_post(){
 }
 
 
-function make_protocol_relative_url( $url ) {
+function parallax_one_make_protocol_relative_url( $url ) {
 	return preg_replace( '(https?://)', '//', $url );
 }
 
 /**
  * Transform Enqueued Stylesheet URLs
  */
-function style_loader_src( $src, $handle ) {
-	return make_protocol_relative_url( $src );
+function parallax_one_style_loader_src( $src, $handle ) {
+	return parallax_one_make_protocol_relative_url( $src );
 }
-add_filter( 'style_loader_src', 'style_loader_src', 10, 2 );
+add_filter( 'style_loader_src', 'parallax_one_style_loader_src', 10, 2 );
 
 /**
  * Transform Enqueued JavaScript URLs
  */
-function script_loader_src( $src, $handle ) {
-	return make_protocol_relative_url( $src );
+function parallax_one_script_loader_src( $src, $handle ) {
+	return parallax_one_make_protocol_relative_url( $src );
 }
-add_filter( 'script_loader_src', 'script_loader_src', 10, 2 );
+add_filter( 'script_loader_src', 'parallax_one_script_loader_src', 10, 2 );
 
 /**
  * Transform Enqueued Theme Files
  */
-function template_directory_uri( $template_dir_uri, $template, $theme_root_uri ) {
-	return make_protocol_relative_url( $template_dir_uri );
+function parallax_one_template_directory_uri( $template_dir_uri, $template, $theme_root_uri ) {
+	return parallax_one_make_protocol_relative_url( $template_dir_uri );
 }
-add_filter( 'template_directory_uri', 'template_directory_uri', 10, 3 );
+add_filter( 'template_directory_uri', 'parallax_one_template_directory_uri', 10, 3 );
 
 /**
  * Transform Enqueued Theme Files
  */
-function stylesheet_directory_uri( $stylesheet_dir_uri, $stylesheet, $theme_root_uri ) {
-	return make_protocol_relative_url( $stylesheet_dir_uri );
+function parallax_one_stylesheet_directory_uri( $stylesheet_dir_uri, $stylesheet, $theme_root_uri ) {
+	return parallax_one_make_protocol_relative_url( $stylesheet_dir_uri );
 }
-add_filter( 'stylesheet_directory_uri', 'stylesheet_directory_uri', 10, 3 );
+add_filter( 'stylesheet_directory_uri', 'parallax_one_stylesheet_directory_uri', 10, 3 );

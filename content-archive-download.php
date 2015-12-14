@@ -14,9 +14,10 @@
 					the_post_thumbnail('parallax-one-post-thumbnail-latest-news');
 					}
 				?>
+				<?php the_title( '<h3 itemprop="name" class="edd_download_title">', '</h3>' ); ?>
 			</a>
 		</div>
-		<?php the_title( '<h3 itemprop="name" class="edd_download_title">', '</h3>' ); ?>
+		
 
 		<div itemprop="description" class="edd_download_excerpt">
 			<?php the_excerpt(); ?>

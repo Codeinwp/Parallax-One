@@ -14,6 +14,7 @@
 			)
 		)
 	);
+	$parallax_one_services_pinterest = get_theme_mod('paralax_one_services_pinterest_style');
 
 	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_services)){
 ?>
@@ -44,7 +45,7 @@
 					<?php
 						if( !empty($parallax_one_services) ){
 							$parallax_one_services_decoded = json_decode($parallax_one_services);
-							echo '<div id="our_services_wrap" class="services-wrap">';
+							echo '<div id="our_services_wrap" class="services-wrap' . ( $parallax_one_services_pinterest ? ' our_services_wrap_piterest' : '' ) . '">';
 								foreach($parallax_one_services_decoded as $parallax_one_service_box){
 									if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_url)  && $parallax_one_service_box->choice == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
 										echo '<div class="service-box"><div class="single-service border-bottom-hover">';

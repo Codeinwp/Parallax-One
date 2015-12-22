@@ -14,6 +14,8 @@
 			)
 		)
 	);
+	$happy_customers_wrap_piterest = get_theme_mod('paralax_one_testimonials_pinterest_style');
+
 
 	if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_testimonials_content) ){
 ?>
@@ -45,7 +47,7 @@
 
 
 				if(!empty($parallax_one_testimonials_content)) {
-					echo '<div id="happy_customers_wrap" class="testimonials-wrap">';
+					echo '<div id="happy_customers_wrap" class="testimonials-wrap' . ( $happy_customers_wrap_piterest ? ' happy_customers_wrap_piterest' : '' ) . '">';
 					$parallax_one_testimonials_content_decoded = json_decode($parallax_one_testimonials_content);
 					foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
 						if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){

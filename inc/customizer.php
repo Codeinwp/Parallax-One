@@ -297,10 +297,25 @@ function parallax_one_customize_register( $wp_customize ) {
 	
 	/* SERVICES SECTION */
 	$wp_customize->add_section( 'parallax_one_services_section' , array(
-			'title'       => esc_html__( 'Services section', 'parallax-one' ),
-			'priority'    => 40,
+			'title'			=> esc_html__( 'Services section', 'parallax-one' ),
+			'priority'		=> 40,
 	));
 	
+	$wp_customize->add_setting( 'paralax_one_services_pinterest_style', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default'    		=> '5'
+	));
+	$wp_customize->add_control(
+		'paralax_one_services_pinterest_style',
+		array(
+			'type' 			=> 'checkbox',
+			'label' 		=> esc_html__('Use pinterest layout?','parallax-one'),
+			'description' 	=> esc_html__('If this box is checked, the Services section will use pinterest-style layout.','parallax-one'),
+			'section' 		=> 'parallax_one_services_section',
+			'priority'    	=> 1,
+		)
+	);
+
 	/* Services title */
 	$wp_customize->add_setting( 'parallax_one_our_services_title', array(
 		'default' => esc_html__('Our Services','parallax-one'),
@@ -474,7 +489,20 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 55,
 	));
 	
-	
+	$wp_customize->add_setting( 'paralax_one_testimonials_pinterest_style', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'default'    		=> '5'
+	));
+	$wp_customize->add_control(
+		'paralax_one_testimonials_pinterest_style',
+		array(
+			'type' 			=> 'checkbox',
+			'label' 		=> esc_html__('Use pinterest layout?','parallax-one'),
+			'description' 	=> esc_html__('If this box is checked, the Testimonials section will use pinterest-style layout.','parallax-one'),
+			'section' 		=> 'parallax_one_testimonials_section',
+			'priority'    	=> 1,
+	));
+
 	/* Testimonials title */
 	$wp_customize->add_setting( 'parallax_one_happy_customers_title', array(
 		'default' => esc_html__('Happy Customers','parallax-one'),

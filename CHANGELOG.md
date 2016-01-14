@@ -1,5 +1,15 @@
 
 
+### 2.1.0.4 - 14/01/2016
+
+ Changes: 
+
+
+ * Fixed #338 Added option to remove pinterest style for Testimonials section and Services section
+ * #334, Option to translate the link field from the Services section
+ * French translation for Parallax One
+
+
 ### 2.1.0.3 - 03/12/2015
 
  Changes: 

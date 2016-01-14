@@ -1,0 +1,1017 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Parallax One\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-08 07:13+0000\n"
+"PO-Revision-Date: 2016-01-10 15:39+0100\n"
+"Last-Translator: cyril castella+loco\n"
+"Language-Team: cyril castella+loco\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Loco-Source-Locale: fr-CH\n"
+"X-Loco-Target-Locale: fr-FR\n"
+"X-Loco-Project-Id: 12476\n"
+"X-Loco-Api-Version: 1.0.13\n"
+
+#: class-tgm-plugin-activation.php:334 functions.php:316 loco:#: 568f618a14d725c85d8b4567
+msgid "Install Plugins"
+msgstr "Installer des extensions"
+
+#: class-tgm-plugin-activation.php:335 functions.php:317 loco:#: 568f618a14d725c85d8b4568
+msgid "Installing Plugin: %s"
+msgstr "Installation de l'extension : %s"
+
+#: class-tgm-plugin-activation.php:336 functions.php:318 loco:#: 568f618a14d725c85d8b4569
+msgid "Something went wrong with the plugin API."
+msgstr "Un problème est survenu avec l'API de l'extension."
+
+#: class-tgm-plugin-activation.php:397 functions.php:329 loco:#: 568f618a14d725c85d8b456a
+msgid "Return to Required Plugins Installer"
+msgstr "Retour à l'installation des extensions requises."
+
+#: class-tgm-plugin-activation.php:398 loco:568f618a14d725c85d8b456b
+msgid "Return to the dashboard"
+msgstr "Retour au panneau de contrôle."
+
+#: class-tgm-plugin-activation.php:399 class-tgm-plugin-activation.php:3029 functions.php:330
+#: loco:568f618a14d725c85d8b456c
+msgid "Plugin activated successfully."
+msgstr "Extension activée avec succès."
+
+#: class-tgm-plugin-activation.php:400 loco:568f618a14d725c85d8b456d
+msgid "The following plugin was activated successfully:"
+msgstr "L'extension suivante a été activée avec succès :"
+
+#: class-tgm-plugin-activation.php:401 loco:568f618a14d725c85d8b456e
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Aucune action effectuée. L'extension %1$s était déjà active."
+
+#: class-tgm-plugin-activation.php:402 loco:568f618a14d725c85d8b456f
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+"Extension non activée. Une version plus récente de %s est nécessaire pour ce thème. Veuillez mettre à jour "
+"l'extension."
+
+#: class-tgm-plugin-activation.php:403 loco:568f618a14d725c85d8b4570
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Toutes les extensions ont été installées et activées avec succès. %1$s"
+
+#: class-tgm-plugin-activation.php:404 loco:568f618a14d725c85d8b4571
+msgid "Dismiss this notice"
+msgstr "Ignorer cette remarque"
+
+#: class-tgm-plugin-activation.php:405 loco:568f618a14d725c85d8b4572
+msgid "Please contact the administrator of this site for help."
+msgstr "Merci de contacter l'administrateur du site pour de l'aide."
+
+#: class-tgm-plugin-activation.php:521 loco:568f618a14d725c85d8b4573
+msgid "Update Required"
+msgstr "Mise à jour requise."
+
+#: class-tgm-plugin-activation.php:828 class-tgm-plugin-activation.php:3438 loco:#: 568f618a14d725c85d8b4574
+msgid "Return to the Dashboard"
+msgstr "Retour au panneau de contrôle"
+
+#: class-tgm-plugin-activation.php:935 loco:568f618a14d725c85d8b4575
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+msgstr ""
+"Le répertoire distant de l'extension ne contient pas de dossier avec le label (slug) désiré, et le "
+"renommage n'a pas fonctionné."
+
+#: class-tgm-plugin-activation.php:935 class-tgm-plugin-activation.php:938 loco:#: 568f618a14d725c85d8b4576
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin according to the WordPress "
+"guidelines."
+msgstr ""
+"S’il vous plaît, contactez le fournisseur de l’extension et demandez-leur de conditionner leur extension "
+"selon les lignes directrices de WordPress."
+
+#: class-tgm-plugin-activation.php:938 loco:568f618a14d725c85d8b4577
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+msgstr ""
+"Le pack d’extension à distance se compose de plus d’un fichier, mais les fichiers ne sont pas packagés "
+"dans un dossier."
+
+#: class-tgm-plugin-activation.php:2167 loco:568f618a14d725c85d8b4578
+msgid "Required"
+msgstr "Requis"
+
+#: class-tgm-plugin-activation.php:2170 loco:568f618a14d725c85d8b4579
+msgid "Recommended"
+msgstr "Recommandé"
+
+#: class-tgm-plugin-activation.php:2186 loco:568f618a14d725c85d8b457a
+msgid "WordPress Repository"
+msgstr "Catalogue Wordpress"
+
+#: class-tgm-plugin-activation.php:2189 loco:568f618a14d725c85d8b457b
+msgid "External Source"
+msgstr "Source externe"
+
+#: class-tgm-plugin-activation.php:2192 loco:568f618a14d725c85d8b457c
+msgid "Pre-Packaged"
+msgstr "Pre-Packaged"
+
+#: class-tgm-plugin-activation.php:2209 loco:568f618a14d725c85d8b457d
+msgid "Not Installed"
+msgstr "Non installé"
+
+#: class-tgm-plugin-activation.php:2213 loco:568f618a14d725c85d8b457e
+msgid "Installed But Not Activated"
+msgstr "Installé, mais non activé"
+
+#: class-tgm-plugin-activation.php:2215 loco:568f618a14d725c85d8b457f
+msgid "Active"
+msgstr "Activé"
+
+#: class-tgm-plugin-activation.php:2221 loco:568f618a14d725c85d8b4580
+msgid "Required Update not Available"
+msgstr "Mise à jour requise non disponible"
+
+#: class-tgm-plugin-activation.php:2224 loco:568f618a14d725c85d8b4581
+msgid "Requires Update"
+msgstr "Nécessite une mise à jour"
+
+#: class-tgm-plugin-activation.php:2227 loco:568f618a14d725c85d8b4582
+msgid "Update recommended"
+msgstr "Mise à jour recommandée"
+
+#: class-tgm-plugin-activation.php:2379 loco:568f618a14d725c85d8b4583
+msgid "Installed version:"
+msgstr "Version installée :"
+
+#: class-tgm-plugin-activation.php:2387 loco:568f618a14d725c85d8b4584
+msgid "Minimum required version:"
+msgstr "Version minimum requise :"
+
+#: class-tgm-plugin-activation.php:2399 loco:568f618a14d725c85d8b4585
+msgid "Available version:"
+msgstr "Version disponible :"
+
+#: class-tgm-plugin-activation.php:2422 loco:568f618a14d725c85d8b4586
+msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
+msgstr ""
+"Aucune extension à installer, mettre à jour ou activer. <a href=\"%1$s\">Retour au panneau de contrôle.</a>"
+
+#: class-tgm-plugin-activation.php:2436 loco:568f618a14d725c85d8b4587
+msgid "Plugin"
+msgstr "Extension"
+
+#: class-tgm-plugin-activation.php:2437 loco:568f618a14d725c85d8b4588
+msgid "Source"
+msgstr "Source"
+
+#: class-tgm-plugin-activation.php:2438 loco:568f618a14d725c85d8b4589
+msgid "Type"
+msgstr "Type"
+
+#: class-tgm-plugin-activation.php:2442 loco:568f618a14d725c85d8b458a
+msgid "Version"
+msgstr "Version"
+
+#: class-tgm-plugin-activation.php:2443 loco:568f618a14d725c85d8b458b
+msgid "Status"
+msgstr "État"
+
+#: class-tgm-plugin-activation.php:2570 loco:568f618a14d725c85d8b458c
+msgid "Upgrade message from the plugin author:"
+msgstr "Message de mise à jour de la part de l'auteur de l'extension :"
+
+#: class-tgm-plugin-activation.php:2603 loco:568f618a14d725c85d8b458d
+msgid "Install"
+msgstr "Installation"
+
+#: class-tgm-plugin-activation.php:2609 loco:568f618a14d725c85d8b458e
+msgid "Update"
+msgstr "Mise à jour"
+
+#: class-tgm-plugin-activation.php:2612 loco:568f618a14d725c85d8b458f
+msgid "Activate"
+msgstr "Activation"
+
+#: class-tgm-plugin-activation.php:2643 loco:568f618a14d725c85d8b4590
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Aucune extension n’a été sélectionnée pour être installée. Aucune action effectuée."
+
+#: class-tgm-plugin-activation.php:2645 loco:568f618a14d725c85d8b4591
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Aucune extension n’a été sélectionnée pour être mise à jour. Aucune action effectuée."
+
+#: class-tgm-plugin-activation.php:2681 loco:568f618a14d725c85d8b4592
+msgid "No plugins are available to be installed at this time."
+msgstr "Aucune extension n’est disponible pour être installée en ce moment."
+
+#: class-tgm-plugin-activation.php:2683 loco:568f618a14d725c85d8b4593
+msgid "No plugins are available to be updated at this time."
+msgstr "Aucune extension n’est disponible pour être mise à jour en ce moment."
+
+#: class-tgm-plugin-activation.php:2788 loco:568f618a14d725c85d8b4594
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Aucune extension n’a été sélectionnée pour être activée. Aucune action effectuée."
+
+#: class-tgm-plugin-activation.php:2814 loco:568f618a14d725c85d8b4595
+msgid "No plugins are available to be activated at this time."
+msgstr "Aucune extension n’est disponible pour être activée pour le moment."
+
+#: class-tgm-plugin-activation.php:3028 loco:568f618a14d725c85d8b4596
+msgid "Plugin activation failed."
+msgstr "L'activation de l'extension a échoué."
+
+#: class-tgm-plugin-activation.php:3362 loco:568f618a14d725c85d8b4597
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Mise à jour de l’extension %1$s (%2$d/%3$d)"
+
+#: class-tgm-plugin-activation.php:3365 loco:568f618a14d725c85d8b4598
+msgid "The installation of %1$s failed."
+msgstr "L'installation de %1$s a échoué."
+
+#: class-tgm-plugin-activation.php:3369 loco:568f618a14d725c85d8b4599
+msgid ""
+"The installation and activation process is starting. This process may take a while on some hosts, so "
+"please be patient."
+msgstr ""
+"Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre "
+"hébergement, soyez patient."
+
+#: class-tgm-plugin-activation.php:3370 loco:568f618a14d725c85d8b459a
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installé et activé avec succès."
+
+#: class-tgm-plugin-activation.php:3370 class-tgm-plugin-activation.php:3376 loco:#: 568f618a14d725c85d8b459b
+msgid "Show Details"
+msgstr "Montrer les détails"
+
+#: class-tgm-plugin-activation.php:3370 class-tgm-plugin-activation.php:3376 loco:#: 568f618a14d725c85d8b459c
+msgid "Hide Details"
+msgstr "Masquer les détails"
+
+#: class-tgm-plugin-activation.php:3371 loco:568f618a14d725c85d8b459d
+msgid "All installations and activations have been completed."
+msgstr "Toutes les installations et activations ont été réalisées."
+
+#: class-tgm-plugin-activation.php:3372 loco:568f618a14d725c85d8b459e
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installation et activation de l'extension %1$s (%2$d/%3$d)"
+
+#: class-tgm-plugin-activation.php:3375 loco:568f618a14d725c85d8b459f
+msgid ""
+"The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+"Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre "
+"hébergement, soyez patient."
+
+#: class-tgm-plugin-activation.php:3376 loco:568f618a14d725c85d8b45a0
+msgid "%1$s installed successfully."
+msgstr "%1$s installé avec succès."
+
+#: class-tgm-plugin-activation.php:3377 loco:568f618a14d725c85d8b45a1
+msgid "All installations have been completed."
+msgstr "Toutes les installations ont été réalisées."
+
+#: class-tgm-plugin-activation.php:3378 loco:568f618a14d725c85d8b45a2
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installation de l'extension %1$s (%2$d/%3$d)"
+
+#: comments.php:38 comments.php:61 loco:568f618a14d725c85d8b45a3
+msgid "Older Comments"
+msgstr "Commentaires plus anciens"
+
+#: comments.php:39 comments.php:62 loco:568f618a14d725c85d8b45a4
+msgid "Newer Comments"
+msgstr "Commentaires plus récents"
+
+#: content-contact.php:33 content-page.php:27 inc/template-tags.php:98 loco:#: 568f618a14d725c85d8b45a5
+msgid "Edit"
+msgstr "Éditer"
+
+#: content-none.php:19 loco:568f618a14d725c85d8b45a6
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Prêt à publier votre premier article? <a href=« %1$s »>Commencez ici</a>."
+
+#: content-none.php:23 loco:568f618a14d725c85d8b45a7
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+"Désolé, mais rien ne correspond à votre critère de recherche. Veuillez réessayer avec d&rsquo;autres mots-"
+"clés."
+
+#: content-none.php:28 loco:568f618a14d725c85d8b45a8
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Il semble que nous ne pouvons trouver ce que vous cherchez. Essayez plutôt le moteur de recherche"
+
+#: content-page.php:20 content-search.php:90 content-single.php:32 content.php:83
+#: loco:568f618a14d725c85d8b45a9
+msgid "Pages:"
+msgstr "Pages :"
+
+#: content-search.php:52 content.php:54 inc/template-tags.php:80 inc/template-tags.php:86
+#: loco:568f618a14d725c85d8b45aa
+msgid ", "
+msgstr ", "
+
+#: footer.php:19 loco:568f618a14d725c85d8b45ab
+msgid "Widgets Area 1"
+msgstr "Zone de widgets 1"
+
+#: footer.php:29 loco:568f618a14d725c85d8b45ac
+msgid "Widgets Area 2"
+msgstr "Zone de widgets 2"
+
+#: footer.php:38 loco:568f618a14d725c85d8b45ad
+msgid "Widgets Area 3"
+msgstr "Zone de widgets 3"
+
+#: footer.php:47 loco:568f618a14d725c85d8b45ae
+msgid "Widgets Area 4"
+msgstr "Zone de widgets 4"
+
+#: footer.php:73 footer.php:74 loco:568f618a14d725c85d8b45af
+msgid "Secondary Menu"
+msgstr "Menu secondaire"
+
+#: functions.php:47 header.php:136 loco:568f618a14d725c85d8b45b0
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: functions.php:48 loco:568f618a14d725c85d8b45b1
+msgid "Footer Menu"
+msgstr "Menu du pied de page"
+
+#: functions.php:124 loco:568f618a14d725c85d8b45b2
+msgid "Parallax One Team Member"
+msgstr "Parallax One - Membre de l'équipe"
+
+#: functions.php:125 loco:568f618a14d725c85d8b45b3
+msgid "Parallax One Services"
+msgstr "Parallax One - Services"
+
+#: functions.php:126 loco:568f618a14d725c85d8b45b4
+msgid "Parallax One Testimonials"
+msgstr "Parallax One - Témoignages"
+
+#: functions.php:140 loco:568f618a14d725c85d8b45b5
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: functions.php:152 loco:568f618a14d725c85d8b45b6
+msgid "Footer area %d"
+msgstr "Zone du pied de page %d"
+
+#: functions.php:194 loco:568f618a14d725c85d8b45b7
+msgid "expand child menu"
+msgstr "Développer le menu enfant"
+
+#: functions.php:195 loco:568f618a14d725c85d8b45b8
+msgid "collapse child menu"
+msgstr "Réduire le menu enfant"
+
+#: functions.php:331 loco:568f618a14d725c85d8b45b9
+msgid "All plugins installed and activated successfully. %s"
+msgstr "Toutes les extensions ont été installées et activées avec succès. %s"
+
+#: functions.php:444 loco:568f618a14d725c85d8b45ba
+msgid "Pingback:"
+msgstr "Pingback :"
+
+#: functions.php:444 functions.php:468 loco:568f618a14d725c85d8b45bb
+msgid "(Edit)"
+msgstr "(Editer)"
+
+#: functions.php:456 loco:568f618a14d725c85d8b45bc
+msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
+msgstr "<span itemprop=\"name\">%s </span><span class=\"says\">dit :</span>"
+
+#: functions.php:459 loco:568f618a14d725c85d8b45bd
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: functions.php:465 loco:568f618a14d725c85d8b45be
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
+
+#: header.php:21 loco:568f618a14d725c85d8b45bf
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: header.php:81 loco:568f618a14d725c85d8b45c0
+msgid "Toggle Menu"
+msgstr "Activer/Désactiver le Menu"
+
+#: header.php:82 loco:568f618a14d725c85d8b45c1
+msgid "Toggle navigation"
+msgstr "Activer/Désactiver la Navigation"
+
+#: search.php:25 loco:568f618a14d725c85d8b45c2
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: sidebar.php:13 loco:568f618a14d725c85d8b45c3
+msgid "Main sidebar"
+msgstr "La barre latérale principale"
+
+#: inc/customizer.php:36 loco:568f618a14d725c85d8b45c4
+msgid "Appearance"
+msgstr "Apparence"
+
+#: inc/customizer.php:49 loco:568f618a14d725c85d8b45c5
+msgid "Text color"
+msgstr "Couleur du texte"
+
+#: inc/customizer.php:67 loco:568f618a14d725c85d8b45c6
+msgid "Title color"
+msgstr "Couleur du titre"
+
+#: inc/customizer.php:75 loco:568f618a14d725c85d8b45c7
+msgid "General options"
+msgstr "Options générales"
+
+#: inc/customizer.php:77 loco:568f618a14d725c85d8b45c8
+msgid "Paralax One theme general appearance options"
+msgstr "Options d'affichage générales du thème Parallax One"
+
+#: inc/customizer.php:89 sections/parallax_one_logos_section.php:26
+#: sections/parallax_one_logos_section.php:29 loco:568f618a14d725c85d8b45c9
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/customizer.php:102 loco:568f618a14d725c85d8b45ca
+msgid "Header visibility"
+msgstr "Masquer l'en-tête"
+
+#: inc/customizer.php:103 loco:568f618a14d725c85d8b45cb
+msgid "If this box is checked, the header will toggle on frontpage."
+msgstr "Si cette case est cochée, l'en-tête sera masqué sur la page d'accueil"
+
+#: inc/customizer.php:117 loco:568f618a14d725c85d8b45cc
+msgid "Header section"
+msgstr "Section d'en-tête"
+
+#: inc/customizer.php:123 inc/customizer.php:361 loco:568f618a14d725c85d8b45cd
+msgid "Content"
+msgstr "Contenu"
+
+#: inc/customizer.php:135 loco:568f618a14d725c85d8b45ce
+msgid "Header Logo"
+msgstr "Logo d'entête"
+
+#: inc/customizer.php:143 sections/parallax_one_header_section.php:4 loco:#: 568f618a14d725c85d8b45cf
+msgid "Simple, Reliable and Awesome."
+msgstr "Simple, Fiable et Impressionnant"
+
+#: inc/customizer.php:148 inc/customizer.php:283 inc/customizer.php:342 inc/customizer.php:398
+#: inc/customizer.php:457 inc/customizer.php:531 inc/customizer.php:579 loco:568f618a14d725c85d8b45d0
+msgid "Main title"
+msgstr "Titre principal"
+
+#: inc/customizer.php:156 inc/customizer.php:291 inc/customizer.php:406 inc/customizer.php:526
+#: loco:568f618a14d725c85d8b45d1
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+#: inc/customizer.php:161 inc/customizer.php:296 inc/customizer.php:411 inc/customizer.php:470
+#: inc/class/parallax-one-general-control.php:127 inc/class/parallax-one-general-control.php:128
+#: inc/class/parallax-one-general-control.php:212 inc/class/parallax-one-general-control.php:213
+#: inc/class/parallax-one-general-control.php:299 inc/class/parallax-one-general-control.php:300
+#: loco:568f618a14d725c85d8b45d2
+msgid "Subtitle"
+msgstr "Sous-titre"
+
+#: inc/customizer.php:170 inc/customizer.php:539 loco:568f618a14d725c85d8b45d3
+msgid "GET STARTED"
+msgstr "COMMENCER"
+
+#: inc/customizer.php:175 inc/customizer.php:544 loco:568f618a14d725c85d8b45d4
+msgid "Button label"
+msgstr "Texte du bouton"
+
+#: inc/customizer.php:183 inc/customizer.php:552 loco:568f618a14d725c85d8b45d5
+msgid "#"
+msgstr "#"
+
+#: inc/customizer.php:188 inc/customizer.php:557 loco:568f618a14d725c85d8b45d6
+msgid "Button link"
+msgstr "Lien du bouton"
+
+#: inc/customizer.php:198 loco:568f618a14d725c85d8b45d7
+msgid "Logos Bar"
+msgstr "Barre des logos"
+
+#: inc/customizer.php:212 inc/customizer.php:707 loco:568f618a14d725c85d8b45d8
+msgid "Add new social icon"
+msgstr "Ajouter une nouvelle image"
+
+#: inc/customizer.php:223 loco:568f618a14d725c85d8b45d9
+msgid "Background"
+msgstr "Arrière-plan"
+
+#: inc/customizer.php:233 loco:568f618a14d725c85d8b45da
+msgid "Parallax effect"
+msgstr "Effet parallaxe"
+
+#: inc/customizer.php:234 loco:568f618a14d725c85d8b45db
+msgid "If this box is checked, the parallax effect is enabled."
+msgstr "Si cette case est cochée, l'effet de parallaxe est activé."
+
+#: inc/customizer.php:248 loco:568f618a14d725c85d8b45dc
+msgid "First layer"
+msgstr "Premier plan"
+
+#: inc/customizer.php:261 loco:568f618a14d725c85d8b45dd
+msgid "Second layer"
+msgstr "Second plan"
+
+#: inc/customizer.php:272 loco:568f618a14d725c85d8b45de
+msgid "Services section"
+msgstr "Section \"Services\""
+
+#: inc/customizer.php:278 loco:568f618a14d725c85d8b45df
+msgid "Our Services"
+msgstr "Nos services"
+
+#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310
+#: sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
+#: sections/parallax_one_our_services_section.php:12 loco:568f618a14d725c85d8b45e0
+msgid "Lorem Ipsum"
+msgstr "Lorem Ipsum"
+
+#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310
+#: sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
+#: sections/parallax_one_our_services_section.php:12 loco:568f618a14d725c85d8b45e1
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
+"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
+"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo."
+
+#: inc/customizer.php:315 loco:568f618a14d725c85d8b45e2
+msgid "Add new service box"
+msgstr "Ajouter une nouvelle boîte \"Services\""
+
+#: inc/customizer.php:331 loco:568f618a14d725c85d8b45e3
+msgid "About section"
+msgstr "Section \"À propos\""
+
+#: inc/customizer.php:337 loco:568f618a14d725c85d8b45e4
+msgid "Our Story"
+msgstr "Notre histoire"
+
+#: inc/customizer.php:351 sections/parallax_one_our_story_section.php:7 loco:#: 568f618a14d725c85d8b45e5
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et "
+"dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex "
+"ea commodo consequat."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et "
+"dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex "
+"ea commodo consequat."
+
+#: inc/customizer.php:375 inc/class/parallax-one-general-control.php:74
+#: inc/class/parallax-one-general-control.php:79 inc/class/parallax-one-general-control.php:97
+#: inc/class/parallax-one-general-control.php:159 inc/class/parallax-one-general-control.php:164
+#: inc/class/parallax-one-general-control.php:184 inc/class/parallax-one-general-control.php:244
+#: inc/class/parallax-one-general-control.php:250 inc/class/parallax-one-general-control.php:271
+#: loco:568f618a14d725c85d8b45e6
+msgid "Image"
+msgstr "Image"
+
+#: inc/customizer.php:387 loco:568f618a14d725c85d8b45e7
+msgid "Team section"
+msgstr "Section \"Équipe\""
+
+#: inc/customizer.php:393 loco:568f618a14d725c85d8b45e8
+msgid "Our Team"
+msgstr "Notre équipe"
+
+#: inc/customizer.php:423 sections/parallax_one_our_team_section.php:10 loco:#: 568f618a14d725c85d8b45e9
+msgid "Albert Jacobs"
+msgstr "Albert Jacobs"
+
+#: inc/customizer.php:423 sections/parallax_one_our_team_section.php:10 loco:#: 568f618a14d725c85d8b45ea
+msgid "Founder & CEO"
+msgstr "Founder & CEO"
+
+#: inc/customizer.php:424 sections/parallax_one_our_team_section.php:11 loco:#: 568f618a14d725c85d8b45eb
+msgid "Tonya Garcia"
+msgstr "Tonya Garcia"
+
+#: inc/customizer.php:424 sections/parallax_one_our_team_section.php:11 loco:#: 568f618a14d725c85d8b45ec
+msgid "Account Manager"
+msgstr "Account Manager"
+
+#: inc/customizer.php:425 sections/parallax_one_our_team_section.php:12 loco:#: 568f618a14d725c85d8b45ed
+msgid "Linda Guthrie"
+msgstr "Linda Guthrie"
+
+#: inc/customizer.php:425 sections/parallax_one_our_team_section.php:12 loco:#: 568f618a14d725c85d8b45ee
+msgid "Business Development"
+msgstr "Business Development"
+
+#: inc/customizer.php:430 loco:568f618a14d725c85d8b45ef
+msgid "Add new team member"
+msgstr "Ajouter un nouveau membre de l'équipe"
+
+#: inc/customizer.php:445 loco:568f618a14d725c85d8b45f0
+msgid "Testimonial section"
+msgstr "Section \"Témoignages\""
+
+#: inc/customizer.php:452 loco:568f618a14d725c85d8b45f1
+msgid "Happy Customers"
+msgstr "Des clients heureux"
+
+#: inc/customizer.php:465 loco:568f618a14d725c85d8b45f2
+msgid "Cloud computing subscription model out of the box proactive solution."
+msgstr "Témoignages de nos clients."
+
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
+#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f3
+msgid "Happy Customer"
+msgstr "Client heureux"
+
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
+#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f4
+msgid "Lorem ipsum"
+msgstr "Lorem ipsum"
+
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
+#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f5
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
+"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce "
+"malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, "
+"sed molestie odio. Fusce ac metus non purus sollicitudin laoreet."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
+"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce "
+"malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, "
+"sed molestie odio. Fusce ac metus non purus sollicitudin laoreet."
+
+#: inc/customizer.php:489 loco:568f618a14d725c85d8b45f6
+msgid "Add new testimonial"
+msgstr "Ajouter un nouveau témoignage"
+
+#: inc/customizer.php:507 loco:568f618a14d725c85d8b45f7
+msgid "Ribbon section"
+msgstr "Section \"Ruban\""
+
+#: inc/customizer.php:519 loco:568f618a14d725c85d8b45f8
+msgid "Ribbon Background"
+msgstr "Arrière-plan du ruban"
+
+#: inc/customizer.php:569 loco:568f618a14d725c85d8b45f9
+msgid "Latest news section"
+msgstr "Section \"Dernières nouvelles\""
+
+#: inc/customizer.php:574 sections/parallax_one_latest_news_section.php:10 loco:#: 568f618a14d725c85d8b45fa
+msgid "Latest news"
+msgstr "Dernières nouvelles"
+
+#: inc/customizer.php:592 loco:568f618a14d725c85d8b45fb
+msgid "Contact section"
+msgstr "Section \"Contact\""
+
+#: inc/customizer.php:608 loco:568f618a14d725c85d8b45fc
+msgid "Add new contact field"
+msgstr "Ajouter un nouveau champ de contact"
+
+#: inc/customizer.php:625 inc/customizer.php:662 loco:568f618a14d725c85d8b45fd
+msgid "Map shortcode"
+msgstr "Shortcode \"Carte\""
+
+#: inc/customizer.php:626 inc/customizer.php:663 loco:568f618a14d725c85d8b45fe
+msgid ""
+"To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</"
+"a> plugin then use it to create a map and paste here the shortcode generated"
+msgstr ""
+"Pour utiliser cette section, merci d'installer l'extension <a href=\"https://wordpress.org/plugins/"
+"intergeo-maps/\">Intergeo Maps</a>, puis utilisez-la pour créer une carte. Collez ici le shortcode généré."
+
+#: inc/customizer.php:639 loco:568f618a14d725c85d8b45ff
+msgid "Contact page"
+msgstr "Page de contact"
+
+#: inc/customizer.php:649 loco:568f618a14d725c85d8b4600
+msgid "Contact form shortcode"
+msgstr "Shortcode du formulaire de contact"
+
+#: inc/customizer.php:650 loco:568f618a14d725c85d8b4601
+msgid ""
+"Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress."
+"org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+msgstr ""
+"Créez un formulaire, copiez le shortcode généré et collez-le ici. Nous recommandons <a href=\"https://"
+"wordpress.org/plugins/contact-form-7/\">Contact Form 7</a>, mais vous pouvez utiliser l'extension de votre "
+"choix."
+
+#: inc/customizer.php:674 loco:568f618a14d725c85d8b4602
+msgid "Footer options"
+msgstr "Options du pied de page"
+
+#: inc/customizer.php:676 loco:568f618a14d725c85d8b4603
+msgid "The main content of this section is customizable in: Customize -> Widgets -> Footer area. "
+msgstr ""
+"Le contenu principal de cette section est personnalisable sous : Personnaliser -> Widgets -> Zone du pied "
+"de page"
+
+#: inc/customizer.php:692 loco:568f618a14d725c85d8b4604
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/customizer.php:721 loco:568f618a14d725c85d8b4605
+msgid "Advanced options"
+msgstr "Options avancées"
+
+#: inc/customizer.php:723 loco:568f618a14d725c85d8b4606
+msgid "Paralax One theme general options"
+msgstr "Options générales du thème Parallax One"
+
+#: inc/customizer.php:774 loco:568f618a14d725c85d8b4607
+msgid "Disable preloader?"
+msgstr "Désactiver le préchargement ?"
+
+#: inc/customizer.php:775 loco:568f618a14d725c85d8b4608
+msgid "If this box is checked, the preloader will be disabled from homepage."
+msgstr "Si cette case est cochée, le préchargement sera désactivé sur la page d'accueil."
+
+#: inc/customizer.php:817 loco:568f618a14d725c85d8b4609
+msgid "Documentation"
+msgstr "Documentation"
+
+#: inc/customizer.php:818 loco:568f618a14d725c85d8b460a
+msgid "Support Forum"
+msgstr "Forum de support"
+
+#: inc/customizer.php:819 loco:568f618a14d725c85d8b460b
+msgid "Github"
+msgstr "Github"
+
+#: inc/template-tags.php:147 loco:568f618a14d725c85d8b460c
+msgid "Archives: %s"
+msgstr "Archives: %s"
+
+#: inc/template-tags.php:151 loco:568f618a14d725c85d8b460d
+msgid "%1$s: %2$s"
+msgstr "%1$s : %2$s"
+
+#: inc/template-tags.php:153 loco:568f618a14d725c85d8b460e
+msgid "Archives"
+msgstr "Archives"
+
+#: inc/class/parallax-one-general-control.php:67 inc/class/parallax-one-general-control.php:152
+#: inc/class/parallax-one-general-control.php:237 loco:568f618a14d725c85d8b460f
+msgid "Parallax One"
+msgstr "Parallax One"
+
+#: inc/class/parallax-one-general-control.php:71 inc/class/parallax-one-general-control.php:156
+#: inc/class/parallax-one-general-control.php:241 loco:568f618a14d725c85d8b4610
+msgid "Image type"
+msgstr "Type d'image"
+
+#: inc/class/parallax-one-general-control.php:73 inc/class/parallax-one-general-control.php:85
+#: inc/class/parallax-one-general-control.php:107 inc/class/parallax-one-general-control.php:158
+#: inc/class/parallax-one-general-control.php:170 inc/class/parallax-one-general-control.php:192
+#: inc/class/parallax-one-general-control.php:243 inc/class/parallax-one-general-control.php:256
+#: inc/class/parallax-one-general-control.php:279 loco:568f618a14d725c85d8b4611
+msgid "Icon"
+msgstr "Icône"
+
+#: inc/class/parallax-one-general-control.php:75 inc/class/parallax-one-general-control.php:160
+#: inc/class/parallax-one-general-control.php:245 loco:568f618a14d725c85d8b4612
+msgid "None"
+msgstr "Aucun"
+
+#: inc/class/parallax-one-general-control.php:81 inc/class/parallax-one-general-control.php:100
+#: inc/class/parallax-one-general-control.php:166 inc/class/parallax-one-general-control.php:187
+#: inc/class/parallax-one-general-control.php:252 inc/class/parallax-one-general-control.php:274
+#: loco:568f618a14d725c85d8b4613
+msgid "Upload Image"
+msgstr "Envoyer une image"
+
+#: inc/class/parallax-one-general-control.php:120 inc/class/parallax-one-general-control.php:121
+#: inc/class/parallax-one-general-control.php:205 inc/class/parallax-one-general-control.php:206
+#: inc/class/parallax-one-general-control.php:292 inc/class/parallax-one-general-control.php:293
+#: loco:568f618a14d725c85d8b4614
+msgid "Title"
+msgstr "Titre"
+
+#: inc/class/parallax-one-general-control.php:134 inc/class/parallax-one-general-control.php:135
+#: inc/class/parallax-one-general-control.php:218 inc/class/parallax-one-general-control.php:219
+#: inc/class/parallax-one-general-control.php:304 inc/class/parallax-one-general-control.php:305
+#: loco:568f618a14d725c85d8b4615
+msgid "Text"
+msgstr "Texte"
+
+#: inc/class/parallax-one-general-control.php:139 inc/class/parallax-one-general-control.php:140
+#: inc/class/parallax-one-general-control.php:222 inc/class/parallax-one-general-control.php:223
+#: inc/class/parallax-one-general-control.php:309 inc/class/parallax-one-general-control.php:310
+#: loco:568f618a14d725c85d8b4616
+msgid "Link"
+msgstr "Lien"
+
+#: inc/class/parallax-one-general-control.php:142 inc/class/parallax-one-general-control.php:225
+#: inc/class/parallax-one-general-control.php:313 loco:568f618a14d725c85d8b4617
+msgid "Delete field"
+msgstr "Effacer le champ"
+
+#: inc/class/parallax-one-general-control.php:332 loco:568f618a14d725c85d8b4618
+msgid "Add new field"
+msgstr "Ajouter un nouveau champ"
+
+#: sections/parallax_one_contact_info_section.php:21 loco:568f618a14d725c85d8b4619
+msgid "Contact Info"
+msgstr "Information de contact"
+
+#: sections/parallax_one_happy_customers_section.php:19 loco:#: 568f618a14d725c85d8b461a
+msgid "Testimonials"
+msgstr "Témoignages"
+
+#: sections/parallax_one_header_section.php:84 sections/parallax_one_header_section.php:86
+#: loco:568f618a14d725c85d8b461b
+msgid "Header button label:"
+msgstr "Texte du bouton de l'en-tête :"
+
+#: sections/parallax_one_logos_section.php:18 loco:568f618a14d725c85d8b461c
+msgid "Affiliates Logos"
+msgstr "Logos"
+
+#: sections/parallax_one_our_services_section.php:19 loco:568f618a14d725c85d8b461d
+msgid "Services"
+msgstr "Services"
+
+#: sections/parallax_one_our_story_section.php:10 sections/parallax_one_our_story_section.php:20
+#: loco:568f618a14d725c85d8b461e
+msgid "About"
+msgstr "À propos"
+
+#: sections/parallax_one_our_team_section.php:19 loco:568f618a14d725c85d8b461f
+msgid "Team"
+msgstr "Équipe"
+
+#: sections/parallax_one_our_team_section.php:61 sections/parallax_one_our_team_section.php:65
+#: loco:568f618a14d725c85d8b4620
+msgid "Avatar"
+msgstr "Avatar"
+
+#: sections/parallax_one_ribbon_section.php:14 sections/parallax_one_ribbon_section.php:16
+#: loco:568f618a14d725c85d8b4621
+msgid "Ribbon"
+msgstr "Ruban"
+
+#: sections/parallax_one_ribbon_section.php:35 sections/parallax_one_ribbon_section.php:37
+#: loco:568f618a14d725c85d8b4622
+msgid "Ribbon button label:"
+msgstr "Texte du bouton du ruban :"
+
+#: 404.php:25 loco:568f618a14d725c85d8b4623
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Page introuvable."
+
+#: 404.php:29 loco:568f618a14d725c85d8b4624
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+"Contenu Introuvable. L’outil de Recherche ou les Liens ci-dessous vous remettront peut-être sur la "
+"voie&hellip;"
+
+#: class-tgm-plugin-activation.php:333 functions.php:315 loco:#: 568f618a14d725c85d8b4625
+msgid "Install Required Plugins"
+msgstr "Installation des extensions requises"
+
+#: class-tgm-plugin-activation.php:635 loco:568f618a14d725c85d8b4626
+msgid "Set the parent_slug config variable instead."
+msgstr "Définissez la variable de configuration « parent_slug »  à la place."
+
+#: class-tgm-plugin-activation.php:3364 loco:568f618a14d725c85d8b4627
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Une erreur est survenue pendant l'installation %1$s: <strong>%2$s</strong>."
+
+#: comments.php:35 comments.php:58 loco:568f618a14d725c85d8b4628
+msgid "Comment navigation"
+msgstr "Parcourir les commentaires"
+
+#: comments.php:74 loco:568f618a14d725c85d8b4629
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: content-none.php:13 loco:568f618a14d725c85d8b462a
+msgid "Nothing Found"
+msgstr "Rien de trouvé sur ce site"
+
+#: content-search.php:58 loco:568f618a14d725c85d8b462b
+msgid "Posted in "
+msgstr "Publié dans"
+
+#: content-search.php:71 content-single.php:23 content.php:64 loco:#: 568f618a14d725c85d8b462c
+msgid "No comments"
+msgstr "Pas de commentaire"
+
+#: content-search.php:71 content-single.php:23 content.php:64 loco:#: 568f618a14d725c85d8b462d
+msgid "One comment"
+msgstr "Un commentaire"
+
+#: content-search.php:71 content-single.php:23 content.php:64 loco:#: 568f618a14d725c85d8b462e
+msgid "% comments"
+msgstr "% commentaires"
+
+#: content.php:7 loco:568f618a14d725c85d8b462f
+msgid "Blog post: %s"
+msgstr "Dernières nouvelles : %s"
+
+#: content.php:76 loco:568f618a14d725c85d8b4630
+msgid "Read more %s ..."
+msgstr "Lire la suite %s"
+
+#: content.php:76 loco:568f618a14d725c85d8b4631
+msgid "about "
+msgstr "À propos"
+
+#: footer.php:110 loco:568f618a14d725c85d8b4632
+msgid "powered by"
+msgstr "propulsé par"
+
+#: footer.php:110 loco:568f618a14d725c85d8b4633
+msgid "WordPress"
+msgstr "Wordpress"
+
+#: inc/extras.php:52 loco:568f618a14d725c85d8b4634
+msgid "Page %s"
+msgstr "Page %s"
+
+#: inc/template-tags.php:26 loco:568f618a14d725c85d8b4635
+msgid "Older posts"
+msgstr "Pages plus anciennes"
+
+#: inc/template-tags.php:30 loco:568f618a14d725c85d8b4636
+msgid "Newer posts"
+msgstr "Pages plus récentes"
+
+#: inc/template-tags.php:82 loco:568f618a14d725c85d8b4637
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+#: inc/template-tags.php:88 loco:568f618a14d725c85d8b4638
+msgid "Tagged %1$s"
+msgstr "Tag : %1$s"
+
+#: inc/template-tags.php:94 loco:568f618a14d725c85d8b4639
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: inc/template-tags.php:94 loco:568f618a14d725c85d8b463a
+msgid "1 Comment"
+msgstr "1 commentaire"
+
+#: inc/template-tags.php:94 loco:568f618a14d725c85d8b463b
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: inc/template-tags.php:115 loco:568f618a14d725c85d8b463c
+msgid "Category: %s"
+msgstr "Catégorie : %s"
+
+#: inc/template-tags.php:117 loco:568f618a14d725c85d8b463d
+msgid "Tag: %s"
+msgstr "Tag : %s"
+
+#: inc/template-tags.php:119 loco:568f618a14d725c85d8b463e
+msgid "Author: %s"
+msgstr "Auteur : %s"
+
+#: inc/template-tags.php:121 loco:568f618a14d725c85d8b463f
+msgid "Year: %s"
+msgstr "Année : %s"
+
+#: inc/template-tags.php:123 loco:568f618a14d725c85d8b4640
+msgid "Month: %s"
+msgstr "Mois : %s"
+
+#: inc/template-tags.php:125 loco:568f618a14d725c85d8b4641
+msgid "Day: %s"
+msgstr "Jour : %s"
+
+#: sections/parallax_one_latest_news_section.php:13 loco:568f618a14d725c85d8b4642
+msgid "Latest blog posts"
+msgstr "Dernières nouvelles : %s"
+
+#: sections/parallax_one_latest_news_section.php:54 loco:568f618a14d725c85d8b4643
+msgid "Latest News: %s"
+msgstr "Dernières nouvelles : %s"
+
+#: sections/parallax_one_latest_news_section.php:82 loco:568f618a14d725c85d8b4644
+msgid "by"
+msgstr "par"
+
+#: sections/parallax_one_latest_news_section.php:92 loco:568f618a14d725c85d8b4645
+msgid "Read more %s"
+msgstr "Lire la suite %s"
+
+#: sections/parallax_one_our_services_section.php:72 sections/parallax_one_our_services_section.php:78
+#: loco:568f618a14d725c85d8b4646
+msgid "Featured Image"
+msgstr "Image mise en avant"

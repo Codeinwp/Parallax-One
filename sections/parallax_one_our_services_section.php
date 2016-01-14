@@ -14,6 +14,7 @@
 			)
 		)
 	);
+	$parallax_one_services_pinterest = get_theme_mod('paralax_one_services_pinterest_style','5');
 
 	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_services)){
 ?>
@@ -44,15 +45,25 @@
 					<?php
 						if( !empty($parallax_one_services) ){
 							$parallax_one_services_decoded = json_decode($parallax_one_services);
-							echo '<div id="our_services_wrap" class="services-wrap">';
+							echo '<div id="our_services_wrap" class="services-wrap' . ( $parallax_one_services_pinterest ? ' our_services_wrap_piterest' : '' ) . '">';
 								foreach($parallax_one_services_decoded as $parallax_one_service_box){
 									if( (!empty($parallax_one_service_box->icon_value) && $parallax_one_service_box->icon_value!='No Icon' && $parallax_one_service_box->choice == 'parallax_icon')  || (!empty($parallax_one_service_box->image_url)  && $parallax_one_service_box->choice == 'parallax_image') || !empty($parallax_one_service_box->title) || !empty($parallax_one_service_box->text) ){
 										echo '<div class="service-box"><div class="single-service border-bottom-hover">';
 											if( !empty($parallax_one_service_box->choice) && $parallax_one_service_box->choice !== 'parallax_none'  ){
+												
 												if ( $parallax_one_service_box->choice == 'parallax_icon' ){
 													if( !empty($parallax_one_service_box->icon_value) ) {
 														if( !empty($parallax_one_service_box->link) ){
-															echo '<div class="service-icon colored-text"><a href="'.esc_url($parallax_one_service_box->link).'"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></a></div>';
+															
+															if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+																
+																$parallax_one_link_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_link',$parallax_one_service_box->link);
+																
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($parallax_one_link_services).'"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></a></div>';
+															} else {
+															
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($parallax_one_service_box->link).'"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></a></div>';
+															}	
 														} else {
 															echo '<div class="service-icon colored-text"><span class="'.esc_attr($parallax_one_service_box->icon_value).'"></span></div>';
 														}
@@ -62,9 +73,31 @@
 													if( !empty($parallax_one_service_box->image_url)){
 														if( !empty($parallax_one_service_box->link) ){
 															if(!empty($parallax_one_service_box->title)){
-																echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.$parallax_one_service_box->title.'"/></a>';
+																
+																if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+																
+																	$parallax_one_title_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
+																	$parallax_one_link_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_link',$parallax_one_service_box->link);
+														
+																	echo '<a href="'.esc_url($parallax_one_link_services).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.$parallax_one_title_services.'"/></a>';
+																	
+																} else {
+																	
+																	echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.$parallax_one_service_box->title.'"/></a>';
+																}	
+			
 															} else {
-																echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.esc_html__('Featured Image','parallax-one').'"/></a>';
+																
+																if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+																	
+																	$parallax_one_link_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_link',$parallax_one_service_box->link);
+																	
+																	echo '<a href="'.esc_url($parallax_one_link_services).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.esc_html__('Featured Image','parallax-one').'"/></a>';
+																	
+																} else {
+																	
+																	echo '<a href="'.esc_url($parallax_one_service_box->link).'"><img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one_service_box->image_url)).'" alt="'.esc_html__('Featured Image','parallax-one').'"/></a>';
+																}	
 															}
 														} else {
 															if(!empty($parallax_one_service_box->title)){
@@ -79,8 +112,12 @@
 											if(!empty($parallax_one_service_box->title)){
 												if( !empty($parallax_one_service_box->link) ){
 													if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
+														
 														$parallax_one_title_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_title',$parallax_one_service_box->title);
-														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_title_services).'</a></h3>';
+														$parallax_one_link_services = icl_t('Featured Area',$parallax_one_service_box->id.'_services_link',$parallax_one_service_box->link);
+														
+														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_link_services).'">'.esc_attr($parallax_one_title_services).'</a></h3>';
+														
 													} else {
 														echo '<h3 class="colored-text"><a href="'.esc_url($parallax_one_service_box->link).'">'.esc_attr($parallax_one_service_box->title).'</a></h3>';
 													}

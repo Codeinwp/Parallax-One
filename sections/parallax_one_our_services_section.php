@@ -14,7 +14,7 @@
 			)
 		)
 	);
-	$parallax_one_services_pinterest = get_theme_mod('paralax_one_services_pinterest_style');
+	$parallax_one_services_pinterest = get_theme_mod('paralax_one_services_pinterest_style','5');
 
 	if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_services)){
 ?>

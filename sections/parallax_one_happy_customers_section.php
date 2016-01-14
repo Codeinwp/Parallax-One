@@ -14,7 +14,7 @@
 			)
 		)
 	);
-	$happy_customers_wrap_piterest = get_theme_mod('paralax_one_testimonials_pinterest_style');
+	$happy_customers_wrap_piterest = get_theme_mod('paralax_one_testimonials_pinterest_style','5');
 
 
 	if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_testimonials_content) ){

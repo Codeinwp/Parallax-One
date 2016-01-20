@@ -227,8 +227,16 @@ function parallax_one_wp_page_menu()
  * Enqueue scripts and styles.
  */
 function parallax_one_scripts() {
+
+	$parallax_one_character_cyrillic = get_theme_mod('parallax_one_character_cyrillic');
+	$parallax_one_character_vietnamese = get_theme_mod('parallax_one_character_vietnamese');
+	$parallax_one_character_greek = get_theme_mod('parallax_one_character_greek');
+
+	$parallax_one_character_cyrillic_text = ( isset($parallax_one_character_cyrillic) && ($parallax_one_character_cyrillic != 1) ?  '' : ',cyrillic' );
+	$parallax_one_character_greek_text = ( isset($parallax_one_character_greek) && ($parallax_one_character_greek != 1) ?  '' : ',greek' );
+	$parallax_one_character_vietnamese_text = ( isset($parallax_one_character_vietnamese) && ($parallax_one_character_vietnamese != 1) ?  '' : ',vietnamese' );
 	
-	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
+	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600&subset=latin'.$parallax_one_character_cyrillic_text . $parallax_one_character_greek_text . $parallax_one_character_vietnamese_text );
 
 	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 

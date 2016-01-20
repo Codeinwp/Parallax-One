@@ -11,7 +11,12 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function parallax_one_customize_register( $wp_customize ) {
-	
+
+	class Parallax_Theme_Font_Title extends WP_Customize_Control {
+		public function render_content() {
+			echo __('<span class="customize-control-title">Choose the character sets you want</span>','zerif-lite');
+		}
+	}
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -841,7 +846,45 @@ function parallax_one_customize_register( $wp_customize ) {
 	); 
 	
 	
-	
+
+	/* Character sets */
+	$wp_customize->add_setting( 'parallax_theme_font_title', array(
+		'sanitize_callback' => 'zerif_sanitize_pro_version'
+	));
+	$wp_customize->add_control( new Parallax_Theme_Font_Title( $wp_customize, 'parallax_theme_font_title', array(
+		'section' => 'parallax_one_general_section',
+	)));
+
+	$wp_customize->add_setting( 'parallax_one_character_cyrillic', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_character_cyrillic', array(
+		'type' => 'checkbox',
+		'label' => esc_html__('Cyrillic','parallax-one'),
+		'section' => 'parallax_one_general_section',
+		'priority' => 10,
+	));
+
+	$wp_customize->add_setting( 'parallax_one_character_vietnamese', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_character_vietnamese', array(
+		'type' 			=> 'checkbox',
+		'label' 		=> esc_html__('Vietnamese','parallax-one'),
+		'section' 		=> 'parallax_one_general_section',
+		'priority'    	=> 11,
+	));
+
+	$wp_customize->add_setting( 'parallax_one_character_greek', array(
+		'sanitize_callback' => 'parallax_one_sanitize_text'
+	));
+	$wp_customize->add_control( 'parallax_one_character_greek', array(
+		'type' 			=> 'checkbox',
+		'label' 		=> esc_html__('Greek','parallax-one'),
+		'section' 		=> 'parallax_one_general_section',
+		'priority'    	=> 12,
+	));
+
 	
 	/*********************************/
 	/******* PLUS SECTIONS ***********/
@@ -1123,12 +1166,6 @@ function parallax_one_show_on_front(){
 	}
 	return false;
 }
-
-
-
-
-
-
 
 
 

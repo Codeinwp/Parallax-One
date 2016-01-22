@@ -5488,12 +5488,6 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 
-	.timeline-box-wrap .info h1:after {
-		content: "";
-		margin-left: auto;
-		margin-right: auto;
-	}
-
 	#latestnews .timeline-text .text-left {
 		text-align: left;
 	}
@@ -6347,6 +6341,12 @@ h2.screen-reader-text {
 	.blog-post-wrap .list-post-entry-meta {
 		margin: 0;
 		padding: 14px;
+	}
+	
+	.timeline-box-wrap .info h1:after {
+		content: "";
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	.brief {

@@ -13,7 +13,7 @@
 
 <?php
 	if( !empty($parallax_one_enable_move) && $parallax_one_enable_move ) {
-		
+
 		echo '<ul id="parallax_move">';
 
 
@@ -37,8 +37,9 @@
 
 	}
 ?>
-
+	<?php parallax_hook_heading_before(); ?>
 		<div class="overlay-layer-wrap">
+			<?php parallax_hook_heading_top(); ?>
 			<div class="container overlay-layer" id="parallax_header">
 
 			<!-- ONLY LOGO ON HEADER -->
@@ -55,7 +56,7 @@
 				<div class="col-md-12 intro-section-text-wrap">
 
 					<!-- HEADING AND BUTTONS -->
-					<?php 
+					<?php
 					if(!empty($paralax_one_header_logo) || !empty($parallax_one_header_title) || !empty($parallax_one_header_subtitle) || !empty($parallax_one_header_button_text)){?>
 						<div id="intro-section" class="intro-section">
 
@@ -103,8 +104,9 @@
 				</div>
 			</div>
 			</div>
+			<?php parallax_hook_heading_bottom(); ?>
 		</div>
-
+		<?php parallax_hook_heading_after(); ?>
 <?php
 	}
 ?>

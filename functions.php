@@ -422,7 +422,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
+/**
+ * Enables user customization via WordPress plugin API
+ */
+require get_template_directory() . '/inc/hooks.php';
 
 /**
  * TAV_Remote_Notification_Client.
@@ -454,7 +457,10 @@ add_action('wp_head', 'parallax_one_ie');
 	add_action('woocommerce_before_main_content', 'parallax_one_wrapper_start', 10);
 	add_action('woocommerce_after_main_content', 'parallax_one_wrapper_end', 10);
 	function parallax_one_wrapper_start() {
-		echo '</div> </header>';
+		echo '</div>';
+		parallax_hook_header_bottom();
+		echo '</header>';
+		parallax_hook_header_after();
 		echo '<div class="content-wrap">
 				<div class="container">
 					<div id="primary" class="content-area col-md-12">';
@@ -863,3 +869,30 @@ function parallax_one_stylesheet_directory_uri( $stylesheet_dir_uri, $stylesheet
 	return parallax_one_make_protocol_relative_url( $stylesheet_dir_uri );
 }
 add_filter( 'stylesheet_directory_uri', 'parallax_one_stylesheet_directory_uri', 10, 3 );
+
+
+add_action( 'parallax_404_content', 'parallax_output_404_content' ); # Outputs a helpful message on 404 pages
+function parallax_output_404_content(){
+	?>
+	<div id="primary" class="content-area col-md-8">
+		<main id="main" class="site-main" role="main">
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'parallax-one' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'parallax-one' ); ?></p>
+
+					<?php get_search_form(); ?>
+
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php get_sidebar(); ?>
+	<?php
+}

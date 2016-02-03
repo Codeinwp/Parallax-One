@@ -7,6 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php parallax_hook_page_top(); ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title single-title" itemprop="headline">', '</h1>' ); ?>
 		<div class="colored-line-left"></div>
@@ -26,4 +27,5 @@
 	<footer class="entry-footer">
 		<?php edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .fentry-footer -->
+	<?php parallax_hook_page_bottom(); ?>
 </article><!-- #post-## -->

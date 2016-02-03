@@ -7,14 +7,15 @@
  * @package parallax-one
  */
 
-	get_header(); 
+	get_header();
 ?>
 
 	</div>
 	<!-- /END COLOR OVER IMAGE -->
+	<?php parallax_hook_header_bottom(); ?>
 </header>
 <!-- /END HOME / HEADER  -->
-
+<?php parallax_hook_header_after(); ?>
 <div class="content-wrap">
 	<div class="container">
 
@@ -29,7 +30,7 @@
 							the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
-					
+
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -42,7 +43,7 @@
 						?>
 
 					<?php endwhile; ?>
-					
+
 					<?php the_posts_navigation(); ?>
 
 				<?php else : ?>
@@ -58,4 +59,3 @@
 </div><!-- .content-wrap -->
 
 <?php get_footer(); ?>
-

@@ -44,7 +44,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<p><a href="http://docs.themeisle.com/article/14-how-to-create-a-child-theme/" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 		<hr />
-		
+
 		<h4><?php esc_html_e( 'How to Internationalize Your Website', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'Although English is the most used language on the internet, you should consider all your web users as well. Find out what it takes to make your website ready for foreign markets from this document.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/80-how-to-translate-zerif" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
@@ -54,7 +54,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h4><?php esc_html_e( 'Change dimensions for footer social icons', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'In the below documentation you will find an easy way to change the default dimensions for you social icons.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/71-parallax-one-change-dimensions-for-footer-icons" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
-		
+
 		<hr />
 
 		<h4><?php esc_html_e( 'Change customizer in a child theme', 'parallax-one' ); ?></h4>
@@ -80,9 +80,9 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h4><?php esc_html_e( 'Change anchors', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'To better suit your site\'s needs, you can change each section\'s anchor to what you want. The entire process is described below.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/72-parallax-one-how-to-change-section-anchor" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
-		
+
 		<hr />
-		
+
 		<h4><?php esc_html_e( 'Slider in big title section', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'If you are in the position where you want to change the default appearance of the big title section, you may want to replace it with a nice looking slider. This can be accomplished by following the documention below.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/70-parallax-one-replacing-big-title-section-with-an-image-slider" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
@@ -109,7 +109,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="prallax-one-tab-pane-half prallax-one-tab-pane-first-half">
 
-		<!-- WP Product Review -->
+		<!-- Intergeo Maps -->
 		<h4><?php esc_html_e( 'Intergeo Maps - Google Maps Plugin', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder.', 'parallax-one' ); ?></p>
 
@@ -127,9 +127,14 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 
 		?>
-		
-		<hr/>
-		<!-- WP Product Review -->
+
+	</div>
+
+
+
+	<div class="prallax-one-tab-pane-half">
+
+		<!--Pirate Forms -->
 		<h4><?php esc_html_e( 'Pirate Forms', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.', 'parallax-one' ); ?></p>
 
@@ -147,31 +152,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 
 		?>
-
-	</div>
-
-
-	
-	<div class="prallax-one-tab-pane-half">
-
-		<!-- ShortPixel Image Optimizer -->
-		<h4><?php esc_html_e( 'ShortPixel Image Optimizer', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Fast, easy-to-use and lightweight plugin that optimizes images & PDFs. Preserve a high visual quality of images and make your website load faster!', 'parallax-one' ); ?></p>
-
-		<?php if ( is_plugin_active( 'shortpixel-image-optimiser/wp-shortpixel.php' ) ) { ?>
-
-				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
-
-			<?php
-		}
-		else { ?>
-
-			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'themes.php?page=tgmpa-install-plugins&plugin=shortpixel-image-optimiser' ), 'install-plugin_shortpixel-image-optimiser' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install ShortPixel Image Optimizer', 'parallax-one' ); ?></a></p>
-
-			<?php
-		}
-		?>
-
 	</div>
 
 	<div class="parallax-one-clear"></div>

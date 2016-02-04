@@ -16,8 +16,9 @@
 <?php parallax_hook_header_after(); ?>
 <div class="content-wrap">
 	<div class="container">
-
-		<div id="primary" class="content-area col-md-12">
+		<?php
+			$page_title = get_the_title(); ?>
+		<div id="primary" class="content-area col-md-12 <?php if( empty( $page_title ) ){ echo 'no-top-margin'; } ?>">
 			<main id="main" class="site-main" role="main">
 				<?php parallax_hook_page_before();?>
 				<?php while ( have_posts() ) : the_post(); ?>

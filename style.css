@@ -2772,23 +2772,27 @@ div.wpcf7-mail-sent-ng {
 }
 
 .product .comment-form p.stars span a.star-2 {
-	width: 40px;
-	z-index: 9;
+	width: 20px;
+  z-index: 9;
+  margin-left: 20px;
 }
 
 .product .comment-form p.stars span a.star-3 {
-	width: 60px;
-	z-index: 8;
+	width: 20px;
+  z-index: 8;
+  margin-left: 40px;
 }
 
 .product .comment-form p.stars span a.star-4 {
-	width: 80px;
-	z-index: 7;
+	width: 20px;
+  z-index: 7;
+  margin-left: 60px;
 }
 
 .product .comment-form p.stars span a.star-5 {
-	width: 100px;
-	z-index: 6;
+	width: 20px;
+  z-index: 6;
+  margin-left: 80px;
 }
 
 .woocommerce ul.products li.product .star-rating,

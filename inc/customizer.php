@@ -475,13 +475,14 @@ function parallax_one_customize_register( $wp_customize ) {
 						)
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
-		'label'   => esc_html__('Add new team member','parallax-one'),
-		'section' => 'parallax_one_team_section',
-		'active_callback' => 'parallax_one_show_on_front',
-		'priority' => 3,
-        'parallax_image_control' => true,
-		'parallax_title_control' => true,
-		'parallax_subtitle_control' => true
+		'label'															=> esc_html__('Add new team member','parallax-one'),
+		'section'														=> 'parallax_one_team_section',
+		'active_callback' 									=> 'parallax_one_show_on_front',
+		'priority' 													=> 3,
+    'parallax_image_control' 						=> true,
+		'parallax_title_control' 						=> true,
+		'parallax_subtitle_control' 				=> true,
+		'parallax_socials_repeater_control' => true
 	) ) );
 
 	/********************************************************/

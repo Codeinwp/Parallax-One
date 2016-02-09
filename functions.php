@@ -227,7 +227,7 @@ function parallax_one_wp_page_menu()
 function parallax_one_customizer_scripts(){
 	wp_register_script( 'parallax_ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"), '1.0.0');
 
-	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable","parallax_ddslick"),'1.0.0', true  );
+	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable","parallax_ddslick"),'1.0.1', true  );
 
 	wp_localize_script( 'parallax_one_customizer_script', 'parallaxOneCustomizerObject', array(
 

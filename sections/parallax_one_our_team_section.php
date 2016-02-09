@@ -94,6 +94,17 @@
 
 													<?php
 													}
+													if( !empty( $parallax_one_team_member->social_repeater ) ){
+														$icons = html_entity_decode($parallax_one_team_member->social_repeater);
+														$icons_decoded = json_decode($icons);
+														if( !empty( $icons_decoded ) ){
+															echo '<ul class="social-icons">';
+															foreach ($icons_decoded as $value) {
+																echo '<li><a target="_blank" href="#"><span class="'.$value.'"></span></a></li>';
+															}
+															echo '</ul>';
+														}
+													}
 													?>
 												</div><!-- .member-details-inner -->
 											</div><!-- .member-details -->

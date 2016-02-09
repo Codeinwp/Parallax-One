@@ -96,14 +96,22 @@
 													}
 													if( !empty( $parallax_one_team_member->social_repeater ) ){
 														$icons = html_entity_decode($parallax_one_team_member->social_repeater);
-														$icons_decoded = json_decode($icons);
+														$icons_decoded = json_decode($icons, true);
 														if( !empty( $icons_decoded ) ){
-															echo '<ul class="social-icons">';
-															foreach ($icons_decoded as $value) {
-																echo '<li><a target="_blank" href="#"><span class="'.$value.'"></span></a></li>';
-															}
-															echo '</ul>';
-														}
+													 		echo '<ul class="social-icons">';
+													 		foreach ($icons_decoded as $value) {
+													 			if(!empty($value['icon'])){
+													 				echo '<li>';
+													 				if(!empty($value['link'])){
+													 					echo '<a target="_blank" href="'.esc_url($value['link']).'"><span class="'.esc_attr($value['icon']).'"></span></a>';
+													 				} else {
+													 					echo '<span class="'.esc_attr($value['icon']).'"></span>';
+													 				}
+													 				echo '</li>';
+													 			}
+													 		}
+													 		echo '</ul>';
+													 	}
 													}
 													?>
 												</div><!-- .member-details-inner -->

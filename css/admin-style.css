@@ -196,7 +196,6 @@ button.parallax_one_general_control_remove_field:hover{
 
 .parallax_one_remove_social_item{
 	display: inline-block;
-	height: 40px;
 	vertical-align: top;
 	font-weight: bold;
 	color: #ff0000;
@@ -206,6 +205,19 @@ button.parallax_one_general_control_remove_field:hover{
 }
 
 .parallax-one-social-repeater-container .dd-container{
-	display: inline-block;
-	width: 215px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.parallax-one-social-repeater-container .dd-container:first-child{
+	margin-top: 10px;
+}
+
+.parallax_one_social_repeater_link{
+	width:215px!important;
+}
+
+.parallax_one_add_social_item{
+	margin-top: 10px;
 }

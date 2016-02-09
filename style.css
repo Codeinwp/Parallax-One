@@ -2269,6 +2269,10 @@ button.control_next.fade-btn {
 	background: rgba(0,0,0,0.7);
 }
 
+.member-details .social-icons a{
+	color:#ffffff;
+}
+
 /*---------------------------------------
    3.11 SECTION: TESTIMONIALS
 -----------------------------------------*/

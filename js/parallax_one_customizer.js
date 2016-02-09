@@ -108,8 +108,12 @@ function parallax_one_refresh_social_icons(th){
 	var icons_repeater_values = [];
 	th.find(".parallax-one-social-repeater-container").each(function(){
 			var icon = jQuery(this).find(".dd-selected-text").text();
+			var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
 			if( icon != ''){
-				icons_repeater_values.push(icon);
+				icons_repeater_values.push({
+					"icon":icon,
+					"link":link
+				});
 			}
 
 		});
@@ -145,8 +149,8 @@ function parallax_one_refresh_general_control_values(){
                     "choice" : choice,
                     "title" : escapeHtml(title),
                     "subtitle" : escapeHtml(subtitle),
-										"social_repeater" : escapeHtml(social_repeater),
-										"id" : id,
+					"social_repeater" : escapeHtml(social_repeater),
+					"id" : id,
                     "shortcode" : escapeHtml(shortcode)
                 });
             }
@@ -233,6 +237,8 @@ jQuery(document).ready(function(){
 
 			/*Remove all repeater fields except first one*/
 			field.find(".parallax-one-social-repeater").find(".parallax-one-social-repeater-container").not(":first").remove();
+			field.find(".parallax_one_social_repeater_link").val('');
+			field.find(".parallax_one_socials_repeater_colector").val('');
 
 			/*Initialize ddslick for the new box*/
 			field.find('.parallax-dd').ddslick({
@@ -327,6 +333,7 @@ jQuery(document).ready(function(){
 					onSelected: function(selectedData){
 					}
 				});
+				field.find('.parallax_one_social_repeater_link').val('');
 				th.find(".parallax-one-social-repeater-container:first").parent().append(field);
 				parallax_one_refresh_social_icons(th);
 			}
@@ -339,6 +346,13 @@ jQuery(document).ready(function(){
 		var th = jQuery(this).parent();
 		var repeater = jQuery(this).parent().parent();
 		th.remove();
+		parallax_one_refresh_social_icons(repeater);
+		return false;
+	})
+
+	jQuery("#customize-theme-controls").on('keyup','.parallax_one_social_repeater_link', function( event ){
+		event.preventDefault();
+		var repeater = jQuery(this).parent().parent();
 		parallax_one_refresh_social_icons(repeater);
 		return false;
 	})

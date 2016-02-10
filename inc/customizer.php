@@ -410,6 +410,7 @@ function parallax_one_customize_register( $wp_customize ) {
 				'section' => 'parallax_one_about_section',
 				'active_callback' => 'parallax_one_show_on_front',
 				'priority'    => 20,
+				'description' => __( 'Allowed html: p,br,em,strong,a,button,ul,li', 'parallax-one' )
 			)
 	);
 
@@ -1018,7 +1019,17 @@ function parallax_one_sanitize_repeater($input){
 								'button' => array(
 									'class' => array(),
 									'id' => array()
-								)
+								),
+								'ul' => array(
+									'class' => array(),
+									'id' => array(),
+									'style' => array()
+								),
+								'li' => array(
+									'class' => array(),
+									'id' => array(),
+									'style' => array()
+								),
 							);
 
 

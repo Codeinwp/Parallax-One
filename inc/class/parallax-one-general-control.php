@@ -158,6 +158,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
                 if($parallax_text_control==true){?>
                     <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                    <span class="description customize-control-description"><?php esc_html_e('Allowed html: br, em, strong, a, button, ul, li','parallax-one');?></span>
                     <textarea class="parallax_one_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"></textarea>
                 <?php 
                 }
@@ -275,6 +276,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
                         if( $parallax_text_control == true ){ ?>
                             <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                            <span class="description customize-control-description"><?php esc_html_e('Allowed html: br, em, strong, a, button, ul, li','parallax-one');?></span>
                             <textarea placeholder="<?php esc_html_e('Text','parallax-one'); ?>" class="parallax_one_text_control"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                         <?php
                         }
@@ -416,6 +418,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         
                         if($parallax_text_control==true ){?>
                             <span class="customize-control-title"><?php esc_html_e('Text','parallax-one')?></span>
+                            <span class="description customize-control-description"><?php esc_html_e('Allowed html: br, em, strong, a, button, ul, li','parallax-one');?></span>
                             <textarea class="parallax_one_text_control" placeholder="<?php esc_html_e('Text','parallax-one'); ?>"><?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?></textarea>
                         <?php 
                         }

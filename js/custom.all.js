@@ -1,10 +1,11 @@
-jQuery(window).load(function(){ 
-    fixFooterBottom();
+jQuery(document).ready(function(){ 
     callback_menu_align();
+    fixFooterBottom();
 });
+
 jQuery(window).resize(function(){
-    fixFooterBottom();
     callback_menu_align();
+    fixFooterBottom();
 });
 
 
@@ -82,9 +83,9 @@ jQuery(document).ready(function($) {
 });
 
 
-/*=================================
-===  SMOOTH SCROLL NAVIGATION     ====
-=================================== */
+/*===================================
+  ===  SMOOTH SCROLL NAVIGATION   ===
+  =================================== */
 jQuery(document).ready(function(){
   jQuery('#menu-primary a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
     var headerHeight;
@@ -127,9 +128,9 @@ jQuery(document).ready(function(){
 
 
 
-/*---------------------------------------*/
-/*  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL
-/*---------------------------------------*/
+/*=====================================================
+  ===  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL  ===
+  =====================================================*/
 function mainNav() {
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
         return false;
@@ -522,6 +523,3 @@ function mobile_bg_fix() {
                 } );
     }
 }
-
-
-

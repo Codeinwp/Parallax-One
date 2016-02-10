@@ -914,3 +914,28 @@ function parallax_output_404_content(){
 	<?php get_sidebar(); ?>
 	<?php
 }
+
+
+function parallax_one_add_editor_styles() {
+	add_editor_style( 'css/custom-editor-style.css' );
+}
+add_action( 'admin_init', 'parallax_one_add_editor_styles' );
+
+function parallax_one_font_editor_styles() {
+    $parallax_one_character_cyrillic = get_theme_mod('parallax_one_character_cyrillic');
+	$parallax_one_character_vietnamese = get_theme_mod('parallax_one_character_vietnamese');
+	$parallax_one_character_greek = get_theme_mod('parallax_one_character_greek');
+	$font = '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600&subset=latin';
+	if( !empty( $parallax_one_character_cyrillic_text ) ){
+		$font .= $parallax_one_character_cyrillic_text;
+	}
+	if( !empty( $parallax_one_character_greek_text ) ){
+		$font .= $parallax_one_character_greek_text;
+	}
+	if( !empty( $parallax_one_character_vietnamese_text ) ){
+		$font .= $parallax_one_character_vietnamese_text;
+	}
+	$font_url = str_replace( ',', '%2C', $font );
+    add_editor_style( $font_url );
+}
+add_action( 'after_setup_theme', 'parallax_one_font_editor_styles' );

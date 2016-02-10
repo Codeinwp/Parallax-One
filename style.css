@@ -271,13 +271,13 @@ h5 {
 	word-wrap: break-word;
 }
 
-h1.intro {
+h2.intro {
 	font-size: 3.75rem;
 	line-height: 5rem;
 	text-align: center;
 }
 
-h1.single-title {
+h2.single-title {
 	font-size: 24px;
 	line-height: 28px;
 	text-transform: uppercase;
@@ -1996,7 +1996,7 @@ header .navbar-brand {
 	border-bottom-color: #008ed6;
 }
 
-.timeline-box-wrap .info h1 {
+.timeline-box-wrap .info h3 {
 	font-size: 20px;
 	line-height: 22px;
 	float: left;
@@ -2004,7 +2004,7 @@ header .navbar-brand {
 	margin: 0;
 }
 
-.timeline-box-wrap .info h1 a {
+.timeline-box-wrap .info h3 a {
 	font-size: 22px;
 	line-height: 26px;
     font-family: 'Cabin', Helvetica Neue, Sans-serif;
@@ -2012,12 +2012,12 @@ header .navbar-brand {
 	color: #454545;
 }
 
-.timeline-box-wrap .info h1 a:hover {
+.timeline-box-wrap .info h3 a:hover {
 	text-decoration: none;
 	color: #008ed6;
 }
 
-.timeline-box-wrap .info h1:after {
+.timeline-box-wrap .info h3:after {
 	content: "";
 	height: 2px;
 	width: 80px;
@@ -4582,19 +4582,19 @@ a:hover {
 	margin: 10px 0 5px;
 }
 
-.post-list h1.entry-title {
+.post-list h2.entry-title {
 	margin-top: 10px;
 	margin-bottom: 5px;
 }
 
-.post-list h1.entry-title a {
+.post-list h2.entry-title a {
 	font-size: 24px;
 	line-height: 28px;
 	text-transform: uppercase;
 	color: #000;
 }
 
-.post-list h1.entry-title a:hover {
+.post-list h2.entry-title a:hover {
 	color: #008ed6;
 	text-decoration: none;
 }

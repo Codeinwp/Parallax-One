@@ -45,9 +45,9 @@
 			<!-- ONLY LOGO ON HEADER -->
 			<?php
 				if( !empty($paralax_one_header_logo) ){
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'"   alt=""></div></div></div>';
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'" alt="'.get_bloginfo('title').'"></div></div></div>';
 				} elseif ( isset( $wp_customize )   ) {
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt=""></div></div></div>';
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt="'.get_bloginfo('title').'"></div></div></div>';
 				}
 			?>
 			<!-- /END ONLY LOGO ON HEADER -->
@@ -63,9 +63,9 @@
 							<!-- WELCOM MESSAGE -->
 							<?php
 								if( !empty($parallax_one_header_title) ){
-									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($parallax_one_header_title).'</h1>';
+									echo '<h2 id="intro_section_text_1" class="intro white-text">'.esc_attr($parallax_one_header_title).'</h2>';
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<h1 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h1>';
+									echo '<h2 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h2>';
 								}
 							?>
 

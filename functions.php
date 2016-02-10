@@ -897,7 +897,7 @@ function parallax_output_404_content(){
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'parallax-one' ); ?></h1>
+					<h2 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'parallax-one' ); ?></h2>
 				</header><!-- .page-header -->
 
 				<div class="page-content">

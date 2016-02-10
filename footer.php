@@ -71,7 +71,7 @@
 					/* OPTIONAL FOOTER LINKS */
 
 					echo '<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="'.esc_html__('Secondary Menu','parallax-one').'">';
-						echo '<h1 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'parallax-one' ).'</h1>';
+						echo '<h2 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'parallax-one' ).'</h2>';
 						wp_nav_menu(
 							array(
 								'theme_location'    => 'parallax_footer_menu',

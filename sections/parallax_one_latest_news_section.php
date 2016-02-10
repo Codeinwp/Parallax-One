@@ -78,9 +78,9 @@
 													</div>
 													<div class="info">
 														<header class="entry-header">
-															<h1 itemprop="headline" class="entry-title">
+															<h3 itemprop="headline" class="entry-title">
 																<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-															</h1>
+															</h3>
 															<div class="entry-meta">
 																<span class="entry-date">
 																	<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">

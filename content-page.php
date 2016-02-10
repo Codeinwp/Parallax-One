@@ -13,7 +13,7 @@
 		$page_title = get_the_title();
 	 if( !empty( $page_title ) ){ ?>
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title single-title" itemprop="headline">', '</h1>' ); ?>
+			<?php the_title( '<h2 class="entry-title single-title" itemprop="headline">', '</h2>' ); ?>
 			<div class="colored-line-left"></div>
 			<div class="clearfix"></div>
 		</header><!-- .entry-header -->

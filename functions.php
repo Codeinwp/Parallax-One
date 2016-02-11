@@ -239,22 +239,57 @@ function parallax_one_customizer_scripts(){
 }
 add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_scripts' );
 
+function parallax_one_fonts_url(){
+	$fonts_url = '';
+ 
+	/* Translators: If there are characters in your language that are not
+	* supported by Lora, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$cabin = _x( 'on', 'Cabin font: on or off', 'paralla-one' );
+	 
+	/* Translators: If there are characters in your language that are not
+	* supported by Open Sans, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'parallax-one' );
 
+	if ( 'off' !== $cabin || 'off' !== $open_sans ) {
+	$font_families = array();
+	 
+		if ( 'off' !== $cabin ) {
+		$font_families[] = 'Cabin:400,600';
+		}
+
+		if ( 'off' !== $open_sans ) {
+		$font_families[] = 'Open Sans:400,300,600';
+		}
+
+		$parallax_one_character_cyrillic = get_theme_mod('parallax_one_character_cyrillic');
+		$parallax_one_character_vietnamese = get_theme_mod('parallax_one_character_vietnamese');
+		$parallax_one_character_greek = get_theme_mod('parallax_one_character_greek');
+
+		$parallax_one_character_cyrillic_text = ( isset($parallax_one_character_cyrillic) && ($parallax_one_character_cyrillic != 1) ?  '' : ',cyrillic' );
+		$parallax_one_character_greek_text = ( isset($parallax_one_character_greek) && ($parallax_one_character_greek != 1) ?  '' : ',greek' );
+		$parallax_one_character_vietnamese_text = ( isset($parallax_one_character_vietnamese) && ($parallax_one_character_vietnamese != 1) ?  '' : ',vietnamese' );
+
+		$query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin,latin-ext'.$parallax_one_character_cyrillic_text.$parallax_one_character_greek_text.$parallax_one_character_vietnamese_text ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
 
 /**
  * Enqueue scripts and styles.
  */
 function parallax_one_scripts() {
 
-	$parallax_one_character_cyrillic = get_theme_mod('parallax_one_character_cyrillic');
-	$parallax_one_character_vietnamese = get_theme_mod('parallax_one_character_vietnamese');
-	$parallax_one_character_greek = get_theme_mod('parallax_one_character_greek');
-
-	$parallax_one_character_cyrillic_text = ( isset($parallax_one_character_cyrillic) && ($parallax_one_character_cyrillic != 1) ?  '' : ',cyrillic' );
-	$parallax_one_character_greek_text = ( isset($parallax_one_character_greek) && ($parallax_one_character_greek != 1) ?  '' : ',greek' );
-	$parallax_one_character_vietnamese_text = ( isset($parallax_one_character_vietnamese) && ($parallax_one_character_vietnamese != 1) ?  '' : ',vietnamese' );
-
-	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600&subset=latin'.$parallax_one_character_cyrillic_text . $parallax_one_character_greek_text . $parallax_one_character_vietnamese_text );
+	wp_enqueue_style( 'parallax-one-fonts', parallax_one_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
@@ -917,25 +952,6 @@ function parallax_output_404_content(){
 
 
 function parallax_one_add_editor_styles() {
-	add_editor_style( 'css/custom-editor-style.css' );
+	add_editor_style( array( 'css/custom-editor-style.css', parallax_one_fonts_url() ) );
 }
-add_action( 'admin_init', 'parallax_one_add_editor_styles' );
-
-function parallax_one_font_editor_styles() {
-    $parallax_one_character_cyrillic = get_theme_mod('parallax_one_character_cyrillic');
-	$parallax_one_character_vietnamese = get_theme_mod('parallax_one_character_vietnamese');
-	$parallax_one_character_greek = get_theme_mod('parallax_one_character_greek');
-	$font = '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600&subset=latin';
-	if( !empty( $parallax_one_character_cyrillic_text ) ){
-		$font .= $parallax_one_character_cyrillic_text;
-	}
-	if( !empty( $parallax_one_character_greek_text ) ){
-		$font .= $parallax_one_character_greek_text;
-	}
-	if( !empty( $parallax_one_character_vietnamese_text ) ){
-		$font .= $parallax_one_character_vietnamese_text;
-	}
-	$font_url = str_replace( ',', '%2C', $font );
-    add_editor_style( $font_url );
-}
-add_action( 'after_setup_theme', 'parallax_one_font_editor_styles' );
+add_action( 'after_setup_theme', 'parallax_one_add_editor_styles' );

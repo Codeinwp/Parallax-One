@@ -30,22 +30,22 @@
 
 										foreach($parallax_one_contact_info_item_decoded as $parallax_one_contact_item){
 											if(!empty($parallax_one_contact_item->link)){
-												parallax_hook_contact_entry_top();
-												echo '<div class="col-sm-4 contact-link-box col-xs-12">';
 												parallax_hook_contact_entry_before();
+												echo '<div class="col-sm-4 contact-link-box col-xs-12">';
+												parallax_hook_contact_entry_top();
 												if(!empty($parallax_one_contact_item->icon_value)){
 													echo '<div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div>';
 												}
 												if(!empty($parallax_one_contact_item->text)){
 													echo '<a href="'.$parallax_one_contact_item->link.'" class="strong">'.html_entity_decode($parallax_one_contact_item->text).'</a>';
 												}
-												parallax_hook_contact_entry_after();
-												echo '</div>';
 												parallax_hook_contact_entry_bottom();
+												echo '</div>';
+												parallax_hook_contact_entry_after();
 											} else {
-												parallax_hook_contact_entry_top();
-												echo '<div class="col-sm-4 contact-link-box  col-xs-12">';
 												parallax_hook_contact_entry_before();
+												echo '<div class="col-sm-4 contact-link-box  col-xs-12">';
+												parallax_hook_contact_entry_top();
 												if(!empty($parallax_one_contact_item->icon_value)){
 													echo '<div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div>';
 												}
@@ -56,9 +56,9 @@
 														echo '<a href="" class="strong">'.html_entity_decode($parallax_one_contact_item->text).'</a>';
 													}
 												}
-												parallax_hook_contact_entry_after();
-												echo '</div>';
 												parallax_hook_contact_entry_bottom();
+												echo '</div>';
+												parallax_hook_contact_entry_after();
 											}
 										}
 								}

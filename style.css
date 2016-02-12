@@ -4930,8 +4930,8 @@ h2.screen-reader-text {
 }
 
 .comment-form p {
-	position: relative;
-	padding-left: 100px;
+	display: table;
+	width: 100%;
 }
 
 .comment-form p.comment-notes,
@@ -4941,16 +4941,33 @@ h2.screen-reader-text {
 }
 
 .comment-form label {
-	position: absolute;
-	left: 0;
-	line-height: 38px;
 	font-weight: 400;
+	vertical-align: middle;
+	width: 100px;
+	line-height: 20px;
+    margin: 0;
+}
+
+#captcha_code_label:first-of-type + span{
+	float: left;
+	width: 22px;
+}
+
+#captcha_code_label{
+	width: 78px;
+	float: left;
+}
+
+.captchaSizeDivLarge{
+	width: inherit!important;
+	padding-left: 100px;
 }
 
 .comment-form input {
 	font-size: 14px;
 	font-weight: 500;
 	min-width: 50%;
+	vertical-align: middle;
 }
 
 .comment-form textarea {

@@ -53,7 +53,7 @@
 										echo '<div class="service-box">';
 										parallax_hook_services_entry_before();
 										echo '<div class="single-service border-bottom-hover">';
-											parallax_hook_services_entry_top()
+											parallax_hook_services_entry_top();
 											if( !empty($parallax_one_service_box->choice) && $parallax_one_service_box->choice !== 'parallax_none'  ){
 
 												if ( $parallax_one_service_box->choice == 'parallax_icon' ){
@@ -142,7 +142,7 @@
 													echo '<p>'.html_entity_decode($parallax_one_service_box->text).'</p>';
 												}
 											}
-											parallax_hook_services_entry_bottom()
+											parallax_hook_services_entry_bottom();
 										echo '</div>';
 										parallax_hook_services_entry_after();
 										echo '</div>';

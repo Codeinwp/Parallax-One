@@ -694,9 +694,8 @@ big {
 	margin: auto;
 }
 
-.home #primary.no-top-margin,
-.home .no-top-margin{
-	margin-top: 0;
+.parallax-one-top-margin-5px{
+	margin-top: 5px !important;
 }
 
 /*---------------------------------------

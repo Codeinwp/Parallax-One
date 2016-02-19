@@ -19,7 +19,7 @@
 		</header><!-- .entry-header -->
 	<?php } ?>
 
-	<div class="entry-content content-page <?php if( empty( $page_title ) ){ echo 'no-top-margin'; } ?>" itemprop="text">
+	<div class="entry-content content-page <?php if( empty( $page_title ) ){ echo 'parallax-one-top-margin-5px'; } ?>" itemprop="text">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

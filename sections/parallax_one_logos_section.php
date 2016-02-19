@@ -1,25 +1,28 @@
 <!-- =========================
  SECTION: CLIENTS LOGOs
 ============================== -->
-<?php 
+<?php
 	$parallax_one_logos = get_theme_mod('parallax_one_logos_content',
 		json_encode(
-			array( 
+			array(
 				array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),
 				array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),
 				array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),
 				array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),
-				array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) 
+				array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" )
 			)
 		)
 	);
 	if(!empty($parallax_one_logos)){
 		$parallax_one_logos_decoded = json_decode($parallax_one_logos);
-		echo '<div class="clients white-bg" id="clients" role="region" aria-label="'.__('Affiliates Logos','parallax-one').'"><div class="container">';
-			echo '<ul class="client-logos">';					
+		parallax_hook_logos_before();
+		echo '<div class="clients white-bg" id="clients" role="region" aria-label="'.__('Affiliates Logos','parallax-one').'">';
+		parallax_hook_logos_top();
+		echo '<div class="container">';
+			echo '<ul class="client-logos">';
 			foreach($parallax_one_logos_decoded as $parallax_one_logo){
 				if(!empty($parallax_one_logo->image_url)){
-			
+
 					echo '<li>';
 					if(!empty($parallax_one_logo->link)){
 						echo '<a href="'.$parallax_one_logo->link.'" title="">';
@@ -30,11 +33,13 @@
 					}
 					echo '</li>';
 
-	
+
 				}
 			}
 			echo '</ul>';
-		echo '</div></div>';
+		echo '</div>';
+		parallax_hook_logos_bottom();
+		echo '</div>';
+		parallax_hook_logos_after();
 	}
 ?>
-	

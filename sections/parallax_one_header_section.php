@@ -13,7 +13,7 @@
 
 <?php
 	if( !empty($parallax_one_enable_move) && $parallax_one_enable_move ) {
-		
+
 		echo '<ul id="parallax_move">';
 
 
@@ -37,16 +37,17 @@
 
 	}
 ?>
-
+	<?php parallax_hook_heading_before(); ?>
 		<div class="overlay-layer-wrap">
+			<?php parallax_hook_heading_top(); ?>
 			<div class="container overlay-layer" id="parallax_header">
 
 			<!-- ONLY LOGO ON HEADER -->
 			<?php
 				if( !empty($paralax_one_header_logo) ){
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'"   alt=""></div></div></div>';
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'" alt="'.get_bloginfo('title').'"></div></div></div>';
 				} elseif ( isset( $wp_customize )   ) {
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt=""></div></div></div>';
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt="'.get_bloginfo('title').'"></div></div></div>';
 				}
 			?>
 			<!-- /END ONLY LOGO ON HEADER -->
@@ -55,16 +56,16 @@
 				<div class="col-md-12 intro-section-text-wrap">
 
 					<!-- HEADING AND BUTTONS -->
-					<?php 
+					<?php
 					if(!empty($paralax_one_header_logo) || !empty($parallax_one_header_title) || !empty($parallax_one_header_subtitle) || !empty($parallax_one_header_button_text)){?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
 							<?php
 								if( !empty($parallax_one_header_title) ){
-									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($parallax_one_header_title).'</h1>';
+									echo '<h2 id="intro_section_text_1" class="intro white-text">'.esc_attr($parallax_one_header_title).'</h2>';
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<h1 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h1>';
+									echo '<h2 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h2>';
 								}
 							?>
 
@@ -103,8 +104,9 @@
 				</div>
 			</div>
 			</div>
+			<?php parallax_hook_heading_bottom(); ?>
 		</div>
-
+		<?php parallax_hook_heading_after(); ?>
 <?php
 	}
 ?>

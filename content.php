@@ -5,15 +5,16 @@
 ?>
 
 <article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover blog-post-wrap'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+	<?php parallax_hook_entry_top(); ?>
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
 			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
-					<?php 
+					<?php
 						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					?>
-						<?php 
+						<?php
 							$image_id = get_post_thumbnail_id();
 							$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
 							$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
@@ -37,7 +38,7 @@
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
 			</div>
-			
+
 			<div class="entry-meta list-post-entry-meta">
 				<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="entry-author post-author">
 					<span  itemprop="name" class="entry-author author vcard">
@@ -45,7 +46,7 @@
 					</span>
 				</span>
 				<span class="posted-in entry-terms-categories" itemprop="articleSection">
-					<i class="icon-basic-elaboration-folder-check"></i>Posted in 
+					<i class="icon-basic-elaboration-folder-check"></i>Posted in
 					<?php
 						/* translators: used between list items, there is a space after the comma */
 						$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
@@ -62,7 +63,7 @@
 				</a>
 			</div><!-- .entry-meta -->
 
-		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<div class="colored-line-left"></div>
 		<div class="clearfix"></div>
 
@@ -82,5 +83,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
+	<?php parallax_hook_entry_bottom(); ?>
 </article><!-- #post-## -->

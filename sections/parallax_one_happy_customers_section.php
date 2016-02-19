@@ -1,5 +1,5 @@
 <!-- =========================
- SECTION: CUSTOMERS   
+ SECTION: CUSTOMERS
 ============================== -->
 <?php
 	global $wp_customize;
@@ -19,7 +19,9 @@
 
 	if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_testimonials_content) ){
 ?>
+	<?php parallax_hook_tetimonials_before(); ?>
 	<section class="testimonials" id="customers" role="region" aria-label="<?php esc_html_e('Testimonials','parallax-one') ?>">
+		<?php parallax_hook_tetimonials_top(); ?>
 		<div class="section-overlay-layer">
 			<div class="container">
 
@@ -53,7 +55,9 @@
 						if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){
 			?>
 							<!-- SINGLE FEEDBACK -->
+							<?php parallax_hook_testimonials_entry_before(); ?>
 							<div class="testimonials-box">
+								<?php parallax_hook_testimonials_entry_top(); ?>
 								<div class="feedback border-bottom-hover">
 									<div class="pic-container">
 										<div class="pic-container-inner">
@@ -67,8 +71,8 @@
 													}
 												} else {
 													$default_image = parallax_get_file('/images/clients/client-no-image.jpg');
-													echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($default_image)).'" alt="'.esc_html('Avatar','parallax-one').'">';	
-												}	
+													echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($default_image)).'" alt="'.esc_html('Avatar','parallax-one').'">';
+												}
 											?>
 										</div>
 									</div>
@@ -94,13 +98,13 @@
 											if(!empty($parallax_one_testimonial->subtitle)){
 										?>
 												<div class="small-text">
-													<?php 
+													<?php
 														if(function_exists('icl_t')){
 															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_subtitle',esc_attr($parallax_one_testimonial->subtitle));
 														} else {
 															echo esc_attr($parallax_one_testimonial->subtitle);
 														}
-													?>	
+													?>
 												</div>
 										<?php
 											}
@@ -108,11 +112,11 @@
 											if(!empty($parallax_one_testimonial->text)){
 										?>
 												<p>
-													<?php 
+													<?php
 														if(function_exists('icl_t')){
 															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',html_entity_decode($parallax_one_testimonial->text));
 														} else {
-															echo html_entity_decode($parallax_one_testimonial->text); 
+															echo html_entity_decode($parallax_one_testimonial->text);
 														}
 													?>
 												</p>
@@ -124,7 +128,9 @@
 									}
 									?>
 								</div>
+								<?php parallax_hook_testimonials_entry_bottom(); ?>
 							</div><!-- .testimonials-box -->
+							<?php parallax_hook_testimonials_entry_after(); ?>
 				<?php
 					}
 				}
@@ -133,21 +139,27 @@
 				?>
 			</div>
 		</div>
+		<?php parallax_hook_tetimonials_bottom(); ?>
 	</section><!-- customers -->
+	<?php parallax_hook_tetimonials_after(); ?>
 <?php
 	} else {
 		if( isset( $wp_customize ) ) {
 ?>
+			<?php parallax_hook_tetimonials_before(); ?>
 			<section class="testimonials paralax_one_only_customizer" id="customers" role="region" aria-label="<?php esc_html_e('Testimonials','parallax-one') ?>">
+				<?php parallax_hook_tetimonials_top(); ?>
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="section-header">
 							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
 							<div class="sub-heading paralax_one_only_customizer"></div>
-						</div>				
+						</div>
 					</div>
 				</div>
+				<?php parallax_hook_tetimonials_bottom(); ?>
 			</section><!-- customers -->
+			<?php parallax_hook_tetimonials_after(); ?>
 <?php
 		}
 	}

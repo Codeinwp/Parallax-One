@@ -1,5 +1,5 @@
 <!-- =========================
- SECTION: TEAM   
+ SECTION: TEAM
 ============================== -->
 <?php
 	global $wp_customize;
@@ -17,12 +17,14 @@
 
 	if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_team_content) ){
 ?>
+		<?php parallax_hook_team_before(); ?>
 		<section class="team" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
+			<?php parallax_hook_team_top(); ?>
 			<div class="section-overlay-layer">
 				<div class="container">
 
 					<!-- SECTION HEADER -->
-					<?php 
+					<?php
 						if( !empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle)){ ?>
 							<div class="section-header">
 							<?php
@@ -42,9 +44,9 @@
 								}
 							?>
 							</div>
-					<?php 
+					<?php
 						}
-			
+
 
 						if(!empty($parallax_one_team_content)){
 							echo '<div class="row team-member-wrap">';
@@ -71,7 +73,7 @@
 											<?php if(!empty($parallax_one_team_member->title) || !empty($parallax_one_team_member->subtitle)){?>
 											<div class="member-details">
 												<div class="member-details-inner">
-													<?php 
+													<?php
 													if( !empty($parallax_one_team_member->title) ){
 														if(function_exists('icl_t')){
 															echo '<h5 class="colored-text">'.icl_t('Team',$parallax_one_team_member->id.'_team_title',esc_attr($parallax_one_team_member->title)).'</h5>';
@@ -87,17 +89,36 @@
 																} else {
 																	echo esc_attr($parallax_one_team_member->subtitle);
 																}
-															?>	
+															?>
 														</div>
 
 													<?php
+													}
+													if( !empty( $parallax_one_team_member->social_repeater ) ){
+														$icons = html_entity_decode($parallax_one_team_member->social_repeater);
+														$icons_decoded = json_decode($icons, true);
+														if( !empty( $icons_decoded ) ){
+													 		echo '<ul class="social-icons">';
+													 		foreach ($icons_decoded as $value) {
+													 			if(!empty($value['icon'])){
+													 				echo '<li>';
+													 				if(!empty($value['link'])){
+													 					echo '<a target="_blank" href="'.esc_url($value['link']).'"><span class="'.esc_attr($value['icon']).'"></span></a>';
+													 				} else {
+													 					echo '<span class="'.esc_attr($value['icon']).'"></span>';
+													 				}
+													 				echo '</li>';
+													 			}
+													 		}
+													 		echo '</ul>';
+													 	}
 													}
 													?>
 												</div><!-- .member-details-inner -->
 											</div><!-- .member-details -->
 											<?php } ?>
 										</div><!-- .team-member -->
-									</div><!-- .team-member -->         
+									</div><!-- .team-member -->
 									<!-- MEMBER -->
 						<?php
 								}
@@ -106,13 +127,17 @@
 						}?>
 				</div>
 			</div><!-- container  -->
+			<?php parallax_hook_team_bottom(); ?>
 		</section><!-- #section9 -->
-		
+		<?php parallax_hook_team_after(); ?>
 <?php
 	} else {
 		if( isset( $wp_customize ) ) {
 ?>
+
+			<?php parallax_hook_team_before(); ?>
 			<section class="team paralax_one_only_customizer" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
+				<?php parallax_hook_team_top(); ?>
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="section-header">
@@ -121,7 +146,9 @@
 						</div>
 					</div>
 				</div>
+				<?php parallax_hook_team_bottom(); ?>
 			</section>
+			<?php parallax_hook_team_after(); ?>
 <?php
 		}
 	}

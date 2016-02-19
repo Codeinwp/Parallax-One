@@ -17,9 +17,9 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
+<?php parallax_hook_comments_before(); ?>
 <div id="comments" class="comments-area">
-
+	<?php parallax_hook_comments_top(); ?>
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
@@ -75,5 +75,6 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
-
+	<?php parallax_hook_comments_bottom(); ?>
 </div><!-- #comments -->
+<?php parallax_hook_comments_after(); ?>

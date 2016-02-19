@@ -1,16 +1,24 @@
 <!-- =========================
- SECTION: LATEST NEWS   
+ SECTION: LATEST NEWS
 ============================== -->
 <?php
 
 	$parallax_number_of_posts = get_option('posts_per_page');
 	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+
+	$parallax_latestnews_cat = parallax_latest_news_cat();
+	if ( !empty($parallax_latestnews_cat) ):
+	$args['cat'] = $parallax_latestnews_cat;
+	endif;
+
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
 		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','parallax-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
+			<?php parallax_hook_news_before(); ?>
 			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e('Latest blog posts','parallax-one'); ?>">
+				<?php parallax_hook_news_top(); ?>
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="row">
@@ -57,22 +65,22 @@
 													</div>
 													<div itemscope itemprop="image" class="icon-container white-text">
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-															<?php 
+															<?php
 
 																if ( has_post_thumbnail() ) :
 																	the_post_thumbnail('parallax-one-post-thumbnail-latest-news');
 																else: ?>
 																	<img src="<?php echo parallax_one_make_protocol_relative_url(parallax_get_file('/images/no-thumbnail-latest-news.jpg')); ?>" width="150" height="150" alt="<?php the_title(); ?>">
-															<?php 
-																endif; 
+															<?php
+																endif;
 															?>
 														</a>
 													</div>
 													<div class="info">
 														<header class="entry-header">
-															<h1 itemprop="headline" class="entry-title">
+															<h3 itemprop="headline" class="entry-title">
 																<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-															</h1>
+															</h3>
 															<div class="entry-meta">
 																<span class="entry-date">
 																	<a href="<?php echo esc_url( get_day_link(get_the_date('Y'), get_the_date('m'), get_the_date('d')) ) ?>" rel="bookmark">
@@ -104,7 +112,7 @@
 											}
 
 										endwhile;
-										wp_reset_postdata(); 
+										wp_reset_postdata();
 										?>
 									</ul>
 								</div>
@@ -112,7 +120,9 @@
 						</div>
 					</div>
 				</div>
+				<?php parallax_hook_news_bottom(); ?>
 			</section>
+			<?php parallax_hook_news_after(); ?>
 	<?php
 		}
 	} ?>

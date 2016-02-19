@@ -1,5 +1,5 @@
 <!-- =========================
- SECTION: RIBBON   
+ SECTION: RIBBON
 ============================== -->
 <?php
 	global $wp_customize;
@@ -8,16 +8,20 @@
 	$parallax_one_button_text = get_theme_mod('parallax_one_button_text',esc_html__('GET STARTED','parallax-one'));
 	$parallax_one_button_link = get_theme_mod('parallax_one_button_link','#');
 
+	parallax_hook_ribbon_before();
 	if(!empty($parallax_one_ribbon_title) || !empty($parallax_one_button_text)){
-		
+
 		if(!empty($ribbon_background)){
 			echo '<section class="call-to-action ribbon-wrap" id="ribbon" style="background-image:url('.$ribbon_background.');" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
+			parallax_hook_ribbon_top();
 		} else {
 			echo '<section class="call-to-action ribbon-wrap" id="ribbon" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
+			parallax_hook_ribbon_top();
 		}
-	
-	
+
+
 ?>
+
 		<div class="section-overlay-layer">
 			<div class="container">
 				<div class="row">
@@ -45,15 +49,20 @@
 				</div>
 			</div>
 		</div>
+		<?php parallax_hook_ribbon_bottom(); ?>
 	</section>
-	
+	<?php parallax_hook_ribbon_after(); ?>
 <?php
 	} else {
 		if( isset( $wp_customize ) ) {
+			parallax_hook_ribbon_before();
+
 			if(!empty($ribbon_background)){
 				echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" style="background-image:url('.parallax_one_make_protocol_relative_url($ribbon_background).');" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
+				parallax_hook_ribbon_top();
 			} else {
 				echo '<section class="call-to-action ribbon-wrap paralax_one_only_customizer" id="ribbon" role="region" aria-label="'.esc_html__('Ribbon','parallax-one').'">';
+				parallax_hook_ribbon_top();
 			}
 ?>
 				<div class="section-overlay-layer">
@@ -66,7 +75,9 @@
 						</div>
 					</div>
 				</div>
+				<?php parallax_hook_ribbon_bottom(); ?>
 			</section>
+			<?php parallax_hook_ribbon_after(); ?>
 <?php
 		}
 	}

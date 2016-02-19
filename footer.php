@@ -12,7 +12,7 @@
 
         <div class="container">
             <div class="footer-widget-wrap">
-			
+
 				<?php
 					if( is_active_sidebar( 'footer-area' ) ){
 				?>
@@ -21,7 +21,7 @@
 								dynamic_sidebar( 'footer-area' );
 							?>
 						</div>
-				
+
 				<?php
 					}
 					if( is_active_sidebar( 'footer-area-2' ) ){
@@ -58,22 +58,22 @@
 	        <div class="footer-bottom-wrap">
 				<?php
 					global $wp_customize;
-				
+
 					/* COPYRIGHT */
 					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','Themeisle');
-					
+
 					if( !empty($paralax_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($paralax_one_copyright).'</span>';
 					} elseif ( isset( $wp_customize )   ) {
 						echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
 					}
-				
+
 					/* OPTIONAL FOOTER LINKS */
-					
+
 					echo '<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="'.esc_html__('Secondary Menu','parallax-one').'">';
-						echo '<h1 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'parallax-one' ).'</h1>';
-						wp_nav_menu( 
-							array( 
+						echo '<h2 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'parallax-one' ).'</h2>';
+						wp_nav_menu(
+							array(
 								'theme_location'    => 'parallax_footer_menu',
 								'container'         => false,
 								'menu_class'        => 'footer-links small-text',
@@ -81,35 +81,35 @@
 								'fallback_cb'       => false ) );
 					echo '</div>';
 					/* SOCIAL ICONS */
-				
+
 					$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons',json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))));
 
 					if( !empty( $parallax_one_social_icons ) ){
-						
+
 						$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
-						
+
 						if( !empty($parallax_one_social_icons_decoded) ){
-						
+
 							echo '<ul class="social-icons">';
-							
+
 								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
-									
+
 									echo '<li><a target="_blank" href="'.esc_url($parallax_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
 
 								}
-						
+
 							echo '</ul>';
-						
+
 						}
 					}
 				?>
-	            
+
 	        </div><!-- .footer-bottom-wrap -->
 
-	        
+
             <?php echo apply_filters("parallax_one_plus_footer_text_filter",'<div class="powered-by"><a href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Parallax One </a>'.esc_html__('powered by ','parallax-one').'<a class="" href="http://wordpress.org/" target="_blank" rel="nofollow">'.esc_html__('WordPress','parallax-one').'</a></div>');?>
 
-	        
+
 
 	    </div><!-- container -->
 
@@ -118,7 +118,7 @@
   </div>
 </div>
 
+  <?php parallax_hook_body_bottom(); ?>
 	<?php wp_footer(); ?>
-
 </body>
 </html>

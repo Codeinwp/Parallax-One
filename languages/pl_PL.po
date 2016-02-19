@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One\n"
 "POT-Creation-Date: 2015-09-10 16:23+0200\n"
-"PO-Revision-Date: 2015-12-14 11:05+0200\n"
+"PO-Revision-Date: 2016-02-19 16:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,21 +17,21 @@ msgstr ""
 
 #: 404.php:25
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups ! Że strona może & rsquo ; t znaleźć ."
+msgstr "Ups ! Nie można znaleźć strony."
 
 #: 404.php:29
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr "Wygląda na to, nic nie zostało znalezione w tym miejscu. Może spróbuj jednego z poniższych linków lub wyszukiwania ?"
+msgstr "Wygląda na to, nic nie zostało znalezione w tym miejscu. Może spróbuj jednego z poniższych linków lub wyszukiwania?"
 
 #: class-tgm-plugin-activation.php:333
 #: functions.php:315
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "Zainstaluj wymagane Pluginy"
 
 #: class-tgm-plugin-activation.php:334
 #: functions.php:316
 msgid "Install Plugins"
-msgstr ""
+msgstr "Zainstaluj Pluginy"
 
 #: class-tgm-plugin-activation.php:335
 #: functions.php:317
@@ -356,7 +356,7 @@ msgstr ""
 
 #: content-search.php:58
 msgid "Posted in "
-msgstr "Opublikowany w"
+msgstr "Opublikowany w "
 
 #: content-search.php:71
 #: content-single.php:23
@@ -385,7 +385,7 @@ msgstr ""
 #: content.php:76
 #, php-format
 msgid "Read more %s ..."
-msgstr ""
+msgstr "Czytaj więcej %s ..."
 
 #: content.php:76
 msgid "about "
@@ -882,7 +882,7 @@ msgstr ""
 #: inc/template-tags.php:82
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Kategoria: %1$s"
 
 #: inc/template-tags.php:88
 #, php-format
@@ -1050,7 +1050,7 @@ msgstr "przez"
 #: sections/parallax_one_latest_news_section.php:92
 #, php-format
 msgid "Read more %s"
-msgstr "Czytaj więcej % s"
+msgstr "Czytaj więcej %s"
 
 #: sections/parallax_one_logos_section.php:18
 msgid "Affiliates Logos"
@@ -1087,5 +1087,5 @@ msgstr "Faborek"
 #: sections/parallax_one_ribbon_section.php:35
 #: sections/parallax_one_ribbon_section.php:37
 msgid "Ribbon button label:"
-msgstr "Wstążka przycisk Etykieta :"
+msgstr "Wstążka przycisk Etykieta:"
 

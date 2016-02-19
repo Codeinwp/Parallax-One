@@ -1,5 +1,36 @@
 
 
+### 2.1.0.5 - 19/02/2016
+
+ Changes: 
+
+
+ * Fixed #292 Added character sets
+ * #344 latest news titles issue fixed
+
+issue fixed.
+ * Merge pull request #346 from Gouravwp/development
+
+#344 latest news titles issue fixed
+ * #233 - added custom hooks
+ * #345 - start page from top if no title and frontpage
+ * see the icon in dropdown in customizer
+ * fix #347 - woocommerce ratings not displaying properly
+ * fix #343 - fix latest news section when wr megamenu is installed
+ * #339 - added social icons in team section
+ * #329 - make parallax-one seo friendly, only one h1 on page, all images with alt
+ * #296 - js loading slow in menu
+ * #272 - allow ul and li inside box
+ * #218 - add editor style
+ * added google icons
+ * added new google icons
+ * added compatibility with SI CAPTCHA Anti-Spam and change form style
+ * Merge pull request #350 from cristian-ungureanu/development
+
+Development
+ * Update translations for polish
+
+
 ### 2.1.0.4 - 14/01/2016
 
  Changes: 

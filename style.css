@@ -1925,7 +1925,7 @@ header .navbar-brand {
 
 .timeline-section {
 	padding: 0;
-	padding-left: 180px!important;
+	padding-left: 180px;
 }
 
 .timeline h2 {

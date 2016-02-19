@@ -8,7 +8,7 @@
 	<div class="container">
 
 		<header class="entry-header">
-			<?php the_title( '<h2 class="entry-title single-title">', '</h2>' ); ?>
+			<?php the_title( '<h1 class="entry-title single-title">', '</h1>' ); ?>
 			<div class="colored-line-left"></div>
 			<div class="clearfix"></div>
 		</header><!-- .entry-header -->

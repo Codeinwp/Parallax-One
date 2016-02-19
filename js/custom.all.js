@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){ 
+jQuery(window).load(function(){ 
     callback_menu_align();
     fixFooterBottom();
 });

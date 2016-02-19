@@ -5513,7 +5513,7 @@ h2.screen-reader-text {
 		text-align: center;
 	}
 	
-	.timeline-box-wrap .info h1:after {
+	.timeline-box-wrap .info h3:after {
 		content: "";
 		margin-left: auto;
 		margin-right: auto;

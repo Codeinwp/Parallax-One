@@ -109,10 +109,12 @@ function parallax_one_refresh_social_icons(th){
 	th.find(".parallax-one-social-repeater-container").each(function(){
 			var icon = jQuery(this).find(".dd-selected-text").text();
 			var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
+			var id = jQuery(this).find(".parallax_one_social_repeater_id").val();
 			if( icon != ''){
 				icons_repeater_values.push({
 					"icon":icon,
-					"link":link
+					"link":link,
+					"id":id 
 				});
 			}
 
@@ -323,6 +325,7 @@ jQuery(document).ready(function(){
 	jQuery("#customize-theme-controls").on('click',".parallax_one_add_social_item", function( event ){
 		event.preventDefault();
 		var th = jQuery(this).parent();
+		var id = 'parallax_one_social_repeater_' + parallax_one_uniqid();
 		if(typeof th != 'undefined') {
 			var field = th.find(".parallax-one-social-repeater-container:first").clone();
 			if(typeof field != 'undefined'){
@@ -334,6 +337,7 @@ jQuery(document).ready(function(){
 					}
 				});
 				field.find('.parallax_one_social_repeater_link').val('');
+				field.find('.parallax_one_social_repeater_id').val(id);
 				th.find(".parallax-one-social-repeater-container:first").parent().append(field);
 				parallax_one_refresh_social_icons(th);
 			}

@@ -125,8 +125,8 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 														 					<?php
 														 					if( !empty( $value['link'] ) ){ 
 														 						if( function_exists( 'icl_t' ) ){ 
-														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon', $value['icon']); 
-														 							$parallax_one_team_link = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social link', $value['link']);  ?>
+														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon '.$value['id'], $value['icon']); 
+														 							$parallax_one_team_link = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social link '.$value['id'], $value['link']);  ?>
 														 							<a target="_blank" href="<?php echo esc_url( $parallax_one_team_link ); ?>">
 														 								<span class="<?php echo esc_attr( $parallax_one_team_social_icon ); ?>"></span>
 														 							</a>
@@ -139,7 +139,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 														 						}
 														 					} else {
 														 						if( function_exists( 'icl_t' ) ){ 
-														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon', $value['icon']); ?>
+														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon '.$value['id'], $value['icon']); ?>
 														 							<span class="<?php echo esc_attr($parallax_one_team_social_icon); ?>"></span>
 														 						<?php
 														 						} else { ?>

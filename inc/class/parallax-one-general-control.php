@@ -315,7 +315,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         </div>
                                         <input type="text" class="parallax_one_social_repeater_link" placeholder="<?php esc_html_e( 'Link', 'parallax-one' ); ?>" value="<?php if( !empty($social_icon['link']) ) echo esc_url($social_icon['link']); ?>" >
                                         
-                                        <input type="hidden" class="parallax_one_social_repeater_id" value="<?php if(!empty($social_repeater->id)) echo esc_attr($social_repeater->id); ?>">
+                                        <input type="hidden" class="parallax_one_social_repeater_id" value="<?php if(!empty($social_icon['id'])) echo esc_attr($social_icon['id']); ?>">
                                         <button type="button" class="button parallax_one_remove_social_item" style="display:none"><?php esc_html_e('X','parallax-one'); ?></button>
                                     </div>
                                 <?php
@@ -458,7 +458,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             </select>
                                         </div>
                                         <input type="text" class="parallax_one_social_repeater_link" placeholder="<?php esc_html_e( 'Link', 'parallax-one' ); ?>" value="<?php if( !empty($social_icon['link']) ) echo esc_url($social_icon['link']); ?>" >
-                                        <input type="hidden" class="parallax_one_social_repeater_id" value="<?php if(!empty($social_repeater->id)) echo esc_attr($social_repeater->id); ?>">
+                                        <input type="hidden" class="parallax_one_social_repeater_id" value="<?php if(!empty($social_icon['id'])) echo esc_attr($social_icon['id']); ?>">
                                         <button class="parallax_one_remove_social_item" style="<?php if($show_del == 1) echo "display:none"; ?>"><?php esc_html_e('X','parallax-one'); ?></button>
                                     </div>
                                 <?php

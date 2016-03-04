@@ -43,10 +43,10 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 				<?php
 				}
 
-				if(!empty($parallax_one_testimonials_content)) { ?>
+				if( !empty( $parallax_one_testimonials_content ) ) { ?>
 					<div id="happy_customers_wrap" class="testimonials-wrap <?php if( !empty($happy_customers_wrap_piterest) ) { echo 'happy_customers_wrap_piterest'; } else { echo ''; } ?>">
 						<?php
-						$parallax_one_testimonials_content_decoded = json_decode($parallax_one_testimonials_content);
+						$parallax_one_testimonials_content_decoded = json_decode( $parallax_one_testimonials_content );
 						foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
 							if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){
 								parallax_hook_testimonials_entry_before(); ?>
@@ -57,14 +57,14 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 											<div class="pic-container-inner">
 												<?php
 												if( !empty($parallax_one_testimonial->image_url) ){
-													if(!empty($parallax_one_testimonial->title)){ 
+													if( !empty( $parallax_one_testimonial->title ) ){ 
 														if( function_exists('icl_t') ){
 															$parallax_one_testimonial_image = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimonial image',$parallax_one_testimonial->image_url); 
 															$parallax_one_testimonial_title = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimomial title', $parallax_one_testimonial->title); ?>
 															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial_image ) ); ?>" alt="<?php echo esc_attr( $parallax_one_testimonial_title ); ?>">
 													<?php
 														} else { ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial->image_url ) ); ?>" alt="<?php echo esc_attr( $$parallax_one_testimonial->title ); ?>">
+															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial->image_url ) ); ?>" alt="<?php echo esc_attr( $parallax_one_testimonial->title ); ?>">
 														<?php
 														}
 													} else { 

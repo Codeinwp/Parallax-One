@@ -325,19 +325,43 @@ function parallax_one_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 
+function parallax_one_id_is_duplicate($id, $parallax_one_array_decoded){
+	$count = 0;
+	foreach ($parallax_one_array_decoded as $it) {
+		if($it->id == $id){
+			$count++;
+			if($count == 2){
+				return true;
+			}
+		}
+
+	}
+	return false;
+}
 
 function parallax_one_add_id(){
 
 	$migrate = get_option( 'parallax_one_migrate_translation2' );
 	if( isset($migrate) && $migrate == false ) {
+
 		/*Logo*/
-		$parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode(array( array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) )));
+		$parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode( array( 
+			array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),
+			array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),
+			array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),
+			array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),
+			array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) 
+		) ) );
+
 		if(!empty($parallax_one_logos)){
 
-			$parallax_one_logos_decoded = json_decode($parallax_one_logos);
-			foreach($parallax_one_logos_decoded as &$it){
-				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+			$parallax_one_logos_decoded = json_decode( $parallax_one_logos );
+			foreach( $parallax_one_logos_decoded as &$it ){
+				if( !array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
+				}
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_logos_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
 				}
 			}
 			$parallax_one_logos = json_encode($parallax_one_logos_decoded);
@@ -359,6 +383,9 @@ function parallax_one_add_id(){
 			foreach($parallax_one_services_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
+				}
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_services_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
 				}
 			}
 
@@ -389,12 +416,17 @@ function parallax_one_add_id(){
 						}
 					}
 					$icons = json_encode( $icons_decoded );
-					$it->social_repeater = esc_attr($icons);
+					$it->social_repeater = $icons;
 				}
 				
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
 				}
+
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_team_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
+				}
+
 			}
 
 			$parallax_one_team = json_encode($parallax_one_team_decoded);
@@ -415,6 +447,9 @@ function parallax_one_add_id(){
 			foreach($parallax_one_testimonials_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
+				}
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_testimonials_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
 				}
 			}
 
@@ -437,6 +472,9 @@ function parallax_one_add_id(){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
 				}
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_contact_info_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
+				}
 			}
 
 			$parallax_one_contact_info = json_encode($parallax_one_contact_info_decoded);
@@ -457,6 +495,9 @@ function parallax_one_add_id(){
 			foreach($parallax_one_social_icons_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => uniqid('parallax_one_', true) ) );
+				}
+				if ( array_key_exists ( "id", $it) && parallax_one_id_is_duplicate( $it->id, $parallax_one_social_icons_decoded ) ){
+					$it->id = uniqid('parallax_one_', true);
 				}
 			}
 
@@ -769,17 +810,19 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 
 	// 		if( !empty( $id ) ){
 	// 			if( !empty( $image ) ){
+	// 				icl_unregister_string( 'Logo box '.$id, 'Logo image', $image );
 	// 				icl_register_string( 'Logo box '.$id, 'Logo image', $image );
 	// 			} else {
 	// 				icl_unregister_string( 'Logo box '.$id, 'Logo image', $image );
 	// 			}
-	// 		}
 
-	// 		if( !empty( $link ) ){
 	// 			if( !empty( $link ) ){
-	// 				icl_register_string( 'Logo box '.$id, 'Logo link', $link );
-	// 			} else {
-	// 				icl_unregister_string( 'Logo box '.$id, 'Logo link', $link );
+	// 				if( !empty( $link ) ){
+	// 					icl_unregister_string( 'Logo box '.$id, 'Logo link', $link );
+	// 					icl_register_string( 'Logo box '.$id, 'Logo link', $link );
+	// 				} else {
+	// 					icl_unregister_string( 'Logo box '.$id, 'Logo link', $link );
+	// 				}
 	// 			}
 	// 		}
 	// 	}
@@ -816,16 +859,16 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	// 				}
 	// 			}
 
-	// 			if( !empty( $title ) ){
-	// 				icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
-	// 				icl_register_string('Featured Area '.$id, 'Featured area title', $title);
-	// 			} else {
-	// 				icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
-	// 			}
+	// 				if( !empty( $title ) ){
+	// 					icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
+	// 					icl_register_string('Featured Area '.$id, 'Featured area title', $title);
+	// 				} else {
+	// 					icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
+	// 				}
 
-	// 			if(!empty($text)){
-	// 				icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
-	// 				icl_register_string( 'Featured Area '.$id, 'Featured area text', $text );
+	// 				if(!empty($text)){
+	// 					icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
+	// 					icl_register_string( 'Featured Area '.$id, 'Featured area text', $text );
 	// 			} else {
 	// 				icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
 	// 			}
@@ -841,55 +884,62 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	// }
 
 	/*Team*/
-	// $parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
-	// if(!empty($parallax_one_team_pl)){
-	// 	$parallax_one_team_pl_decoded = json_decode( $parallax_one_team_pl );
-	// 	foreach( $parallax_one_team_pl_decoded as $parallax_one_team_box ){
-	// 		$id = esc_attr($parallax_one_team_box->id);
-	// 		$title = $parallax_one_team_box->title;
-	// 		$subtitle = $parallax_one_team_box->subtitle;
-	// 		$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
-	// 		$icons_decoded = json_decode( $socials, true );
-	// 		if(!empty( $id )) {
-	// 			if( !empty( $title ) ){
-	// 				icl_unregister_string('Team Section '.$id, 'Team member title');
-	// 				icl_register_string('Team Section '.$id, 'Team member title', $title);
-	// 			} else {
-	// 				icl_unregister_string('Team Section '.$id, 'Team member title');
-	// 			}
+	$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
+	if(!empty($parallax_one_team_pl)){
+		$parallax_one_team_pl_decoded = json_decode( $parallax_one_team_pl );
+		foreach( $parallax_one_team_pl_decoded as $parallax_one_team_box ){
+			$id = esc_attr($parallax_one_team_box->id);
+			$title = $parallax_one_team_box->title;
+			$subtitle = $parallax_one_team_box->subtitle;
+			$image = $parallax_one_team_box->image_url;
+			$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
+			$icons_decoded = json_decode( $socials, true );
+			if(!empty( $id )) {
+				if( !empty( $image) ){
+					icl_unregister_string('Team Section '.$id, 'Team member image');
+					icl_register_string('Team Section '.$id, 'Team member image', $image);
+				} else {
+					icl_unregister_string('Team Section '.$id, 'Team member image');
+				}
 
-	// 			if( !empty( $subtitle ) ){
-	// 				icl_unregister_string('Team Section '.$id, 'Team member subtitle');
-	// 				icl_register_string('Team Section '.$id, 'Team member subtitle', $subtitle);
-	// 			} else {
-	// 				icl_unregister_string('Team Section '.$id, 'Team member subtitle');
-	// 			}
+				if( !empty( $title ) ){
+					icl_unregister_string('Team Section '.$id, 'Team member title');
+					icl_register_string('Team Section '.$id, 'Team member title', $title);
+				} else {
+					icl_unregister_string('Team Section '.$id, 'Team member title');
+				}
 
-	// 			if( !empty( $icons_decoded ) ){
-	// 				//die(print_r($icons_decoded));
-	// 				foreach ($icons_decoded as $value) {
-	// 					$s_id = $value['id'];
-	// 					if(!empty($s_id)){
+				if( !empty( $subtitle ) ){
+					icl_unregister_string('Team Section '.$id, 'Team member subtitle');
+					icl_register_string('Team Section '.$id, 'Team member subtitle', $subtitle);
+				} else {
+					icl_unregister_string('Team Section '.$id, 'Team member subtitle');
+				}
 
-	// 						if( !empty( $value['icon'] ) ){
-	// 							if( !empty( $value['link'] ) ){
-	// 								icl_unregister_string('Team Section '.$id, 'Team member social icon '.$s_id);
-	// 								icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
-	// 								icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-	// 								icl_register_string('Team Section '.$id, 'Team member social link '.$s_id, $value['link']);
-	// 							} else {
-	// 								icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-	// 								icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
-	// 							}
-	// 						} else {
-	// 							icl_unregister_string('Team Section '.$s_id, 'Team member social icon');
-	// 						}
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
+				if( !empty( $icons_decoded ) ){
+					foreach ($icons_decoded as $value) {
+						$s_id = $value['id'];
+						if(!empty($s_id)){
+
+							if( !empty( $value['icon'] ) ){
+								if( !empty( $value['link'] ) ){
+									icl_unregister_string('Team Section '.$id, 'Team member social icon '.$s_id);
+									icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
+									icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
+									icl_register_string('Team Section '.$id, 'Team member social link '.$s_id, $value['link']);
+								} else {
+									icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
+									icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
+								}
+							} else {
+								icl_unregister_string('Team Section '.$s_id, 'Team member social icon');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
 	/*Testimonials*/
 	// $parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
@@ -934,22 +984,64 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	// }
 
 	/*Contact*/
-	/*$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
-	if(!empty($parallax_one_contact_pl)){
-		$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
-		foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
-			$text = $parallax_one_contact_box->text;
-			$id = esc_attr($parallax_one_contact_box->id);
-			if(!empty($id)) {
-				if(!empty($text)){
-					icl_unregister_string ('Contact' , $id.'_contact' );
-					icl_register_string( 'Contact' , $id.'_contact' , $title );
-				} else {
-					icl_unregister_string ('Contact' , $id.'_contact' );
-				}
-			}
-		}
-	}*/
+	// $parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
+	// if(!empty($parallax_one_contact_pl)){
+	// 	$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
+	// 	foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
+	// 		$id = esc_attr($parallax_one_contact_box->id);
+	// 		$icon = $parallax_one_contact_box->icon_value;
+	// 		$text = $parallax_one_contact_box->text;
+	// 		$link = $parallax_one_contact_box->link;
+	// 		if(!empty($id)) {
+	// 			if( !empty( $icon ) ){
+	// 				icl_unregister_string( 'Contact field '.$id, 'Contact icon' );
+	// 				icl_register_string( 'Contact field '.$id, 'Contact icon', $icon );
+	// 			} else {
+	// 				icl_unregister_string( 'Contact field '.$id, 'Contact icon' );
+	// 			}
+
+	// 			if( !empty( $link ) ){
+	// 				icl_unregister_string('Contact field '.$id,'Contact link');
+	// 				icl_register_string('Contact field '.$id,'Contact link',$link);
+	// 			} else {
+	// 				icl_unregister_string('Contact field '.$id,'Contact link');
+	// 			}
+
+	// 			if(!empty($text)){
+	// 				icl_unregister_string('Contact field '.$id,'Contact text');
+	// 				icl_register_string('Contact field '.$id,'Contact text',$text);
+	// 			} else {
+	// 				icl_unregister_string('Contact field '.$id,'Contact text');
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	/*Footer*/
+	// $parallax_one_social_icons_pl = get_theme_mod('parallax_one_social_icons');
+	// if( !empty( $parallax_one_social_icons_pl ) ){
+	// 	$parallax_one_social_icons_pl_decoded = json_decode($parallax_one_social_icons_pl);
+	// 	foreach($parallax_one_social_icons_pl_decoded as $parallax_one_footer_social){
+	// 		$id = esc_attr($parallax_one_footer_social->id);
+	// 		$link = $parallax_one_footer_social->link;
+	// 		$icon = $parallax_one_footer_social->icon_value;
+	// 		if(!empty($id)) {
+	// 			if( !empty( $icon ) ){
+	// 				icl_unregister_string( 'Footer Socials '.$id, 'Footer social icon' );
+	// 				icl_register_string( 'Footer Socials '.$id, 'Footer social icon', $icon );
+	// 			} else {
+	// 				icl_unregister_string( 'Footer Socials '.$id, 'Footer social icon' );
+	// 			}
+
+	// 			if( !empty( $link ) ){
+	// 				icl_unregister_string('Footer Socials '.$id,'Footer social link');
+	// 				icl_register_string('Footer Socials '.$id,'Footer social link',$link);
+	// 			} else {
+	// 				icl_unregister_string('Footer Socials '.$id,'Footer social link');
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 
 /*Check if Repeater is empty*/

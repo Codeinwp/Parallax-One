@@ -26,48 +26,47 @@ if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 									parallax_hook_contact_entry_top();
 									if(!empty($parallax_one_contact_item->icon_value)){ 
 										if(function_exists('icl_t')){
-											$parallax_one_contact_image = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact icon',$parallax_one_contact_item->icon_value);?>
-											<div class="icon-container"><span class="'.esc_attr(parallax_one_contact_image).' colored-text"></span></div>
+											$parallax_one_contact_icon = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact icon',$parallax_one_contact_item->icon_value);?>
+											<div class="icon-container"><span class="<?php echo esc_attr($parallax_one_contact_icon)?> colored-text"></span></div>
 										<?php
 										} else { ?>
-											<div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div>
+											<div class="icon-container"><span class="<?php echo esc_attr($parallax_one_contact_item->icon_value)?> colored-text"></span></div>
 										<?php	
 										}
 									}
-												if(!empty($parallax_one_contact_item->text)){
-													echo '<a href="'.$parallax_one_contact_item->link.'" class="strong">'.html_entity_decode($parallax_one_contact_item->text).'</a>';
-												}
-												parallax_hook_contact_entry_bottom();
-												echo '</div>';
-												parallax_hook_contact_entry_after();
+									
+									if( !empty( $parallax_one_contact_item->text ) ){
+										if( !empty( $parallax_one_contact_item->link ) ){
+											if( function_exists( 'icl_t') ){
+												$parallax_one_contact_text = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact text',$parallax_one_contact_item->text);
+												$parallax_one_contact_link = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact link',$parallax_one_contact_item->link); ?>
+												<a href="<?php echo esc_url( $parallax_one_contact_link ); ?>" class="strong"><?php echo html_entity_decode($parallax_one_contact_text); ?></a>
+											<?php	
+											} else { ?>
+												<a href="<?php echo esc_url( $parallax_one_contact_item->link ); ?>" class="strong"><?php echo html_entity_decode( $parallax_one_contact_item->text ); ?></a>
+											<?php
+											}
+										} else {
+											if( function_exists( 'icl_t') ){
+												$parallax_one_contact_text = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact text',$parallax_one_contact_item->text);
+												echo html_entity_decode($parallax_one_contact_text);
 											} else {
-												parallax_hook_contact_entry_before();
-												echo '<div class="col-sm-4 contact-link-box  col-xs-12">';
-												parallax_hook_contact_entry_top();
-												if(!empty($parallax_one_contact_item->icon_value)){
-													echo '<div class="icon-container"><span class="'.esc_attr($parallax_one_contact_item->icon_value).' colored-text"></span></div>';
-												}
-												if(!empty($parallax_one_contact_item->text)){
-													if(function_exists('icl_t')){
-														echo '<a href="" class="strong">'.icl_t('Contact',$parallax_one_contact_item->id.'_contact',html_entity_decode($parallax_one_contact_item->text)).'</a>';
-													} else {
-														echo '<a href="" class="strong">'.html_entity_decode($parallax_one_contact_item->text).'</a>';
-													}
-												}
-												parallax_hook_contact_entry_bottom();
-												echo '</div>';
-												parallax_hook_contact_entry_after();
+												echo html_entity_decode( $parallax_one_contact_item->text );
 											}
 										}
-								}
-
-							?>
-						</div><!-- .contact-links -->
-					</div><!-- .container -->
-				</div>
-				<?php parallax_hook_contact_bottom(); ?>
-			</div><!-- .contact-info -->
-			<?php parallax_hook_contact_after(); ?>
+									}
+									parallax_hook_contact_entry_bottom(); ?>
+								</div>
+								<?php
+								parallax_hook_contact_entry_after();
+							}
+						}
+					} ?>
+				</div><!-- .contact-links -->
+			</div><!-- .container -->
+		</div>
+		<?php parallax_hook_contact_bottom(); ?>
+	</div><!-- .contact-info -->
+	<?php parallax_hook_contact_after(); ?>
 <?php
-	}
-?>
+} ?>

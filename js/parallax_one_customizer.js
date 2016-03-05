@@ -107,20 +107,20 @@ function parallax_one_uniqid(prefix, more_entropy) {
 function parallax_one_refresh_social_icons(th){
 	var icons_repeater_values = [];
 	th.find(".parallax-one-social-repeater-container").each(function(){
-			var icon = jQuery(this).find(".dd-selected-text").text();
-			var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
-			var id = jQuery(this).find(".parallax_one_social_repeater_id").val();
-			if( icon != ''){
-				icons_repeater_values.push({
-					"icon":icon,
-					"link":link,
-					"id":id 
-				});
-			}
-
-		});
-		th.find('.parallax_one_socials_repeater_colector').val(JSON.stringify(icons_repeater_values));
-		parallax_one_refresh_general_control_values();
+		var icon = jQuery(this).find(".dd-selected-text").text();
+		var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
+		var id = jQuery(this).find(".parallax_one_social_repeater_id").val();
+		if( icon != ''){
+			icons_repeater_values.push({
+				"icon":icon,
+				"link":link,
+				"id":id 
+			});
+		}
+	});
+	
+	th.find('.parallax_one_socials_repeater_colector').val(JSON.stringify(icons_repeater_values));
+	parallax_one_refresh_general_control_values();
 }
 
 

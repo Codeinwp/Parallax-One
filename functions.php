@@ -797,7 +797,7 @@ function parallax_one_comment($comment, $args, $depth) {
 
 /*Polylang repeater translate*/
 
-if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
+if(function_exists('icl_unregister_string') && function_exists('icl_register_string') && is_admin() ){
 
 	/*Logos*/
 	$parallax_one_logos_pl = get_theme_mod('parallax_one_logos_content');
@@ -810,18 +810,18 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 
 			if( !empty( $id ) ){
 				if( !empty( $image ) ){
-					icl_unregister_string( 'Logo box '.$id, 'Logo image', $image );
+					icl_unregister_string( 'Logo box '.$id, 'Logo image' );
 					icl_register_string( 'Logo box '.$id, 'Logo image', $image );
 				} else {
-					icl_unregister_string( 'Logo box '.$id, 'Logo image', $image );
+					icl_unregister_string( 'Logo box '.$id, 'Logo image' );
 				}
 
 				if( !empty( $link ) ){
 					if( !empty( $link ) ){
-						icl_unregister_string( 'Logo box '.$id, 'Logo link', $link );
+						icl_unregister_string( 'Logo box '.$id, 'Logo link' );
 						icl_register_string( 'Logo box '.$id, 'Logo link', $link );
 					} else {
-						icl_unregister_string( 'Logo box '.$id, 'Logo link', $link );
+						icl_unregister_string( 'Logo box '.$id, 'Logo link' );
 					}
 				}
 			}

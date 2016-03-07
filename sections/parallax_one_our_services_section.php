@@ -10,6 +10,7 @@ $parallax_one_services = get_theme_mod('parallax_one_services_content', json_enc
 	array('choice'=>'parallax_icon','icon_value' => 'icon-ecommerce-graph3','title' => esc_html__('Lorem Ipsum','parallax-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one')),
 	array('choice'=>'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__('Lorem Ipsum','parallax-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one'))
 ) )	);
+$parallax_one_services_pinterest = get_theme_mod('paralax_one_services_pinterest_style','5');
 
 if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_services)){ 
 	parallax_hook_services_before(); ?>
@@ -42,7 +43,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 				<?php
 				if( !empty( $parallax_one_services ) ){
 					$parallax_one_services_decoded = json_decode( $parallax_one_services );?>
-					<div id="our_services_wrap" class="services-wrap">
+					<div id="our_services_wrap" class="services-wrap <?php if( !empty($parallax_one_services_pinterest) ) echo 'our_services_wrap_piterest'; ?>">
 						<?php
 						foreach( $parallax_one_services_decoded as $parallax_one_service_box ){
 							if( ( !empty( $parallax_one_service_box->icon_value ) && $parallax_one_service_box->icon_value != 'No Icon' && $parallax_one_service_box->choice == 'parallax_icon' )  || ( !empty( $parallax_one_service_box->image_url )  && $parallax_one_service_box->choice == 'parallax_image' ) || !empty( $parallax_one_service_box->title ) || !empty( $parallax_one_service_box->text ) ){ ?>

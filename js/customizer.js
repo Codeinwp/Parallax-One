@@ -75,12 +75,12 @@
 		
         value.bind(function( to ) {
 			if( to != '' ) {
-				$( '#parallax_header .intro-section h1' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#parallax_header .intro-section h2' ).removeClass( 'paralax_one_only_customizer' );
 			}
 			else {
-				$( '#parallax_header .intro-section h1' ).addClass( 'paralax_one_only_customizer' );
+				$( '#parallax_header .intro-section h2' ).addClass( 'paralax_one_only_customizer' );
 			}
-			$( '#parallax_header .intro-section h1' ).text( to );
+			$( '#parallax_header .intro-section h2' ).text( to );
 	    } );
 		
     });
@@ -105,11 +105,11 @@
         value.bind(function( to ) {
 
 			if( to != '' ) {
-				$( '#parallax_header .button a' ).removeClass( 'paralax_one_only_customizer' );
+				$( '#parallax_header #inpage_scroll_btn' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
-				$( '#parallax_header .button a' ).addClass( 'paralax_one_only_customizer' );
+				$( '#parallax_header #inpage_scroll_btn' ).addClass( 'paralax_one_only_customizer' );
 			}
-			$( '#parallax_header .button a' ).text( to );
+			$( '#parallax_header #inpage_scroll_btn' ).text( to );
 		} );
 		
     });
@@ -119,7 +119,13 @@
 	wp.customize("parallax_one_header_button_link", function(value) {
 		
         value.bind(function( to ) {
-			$( '#parallax_header .button a' ).attr( 'href', to );
+        	if( to.charAt(0) == '#' ){
+        		$( '#parallax_header #inpage_scroll_btn' ).removeAttr('onClick');
+				$( '#parallax_header #inpage_scroll_btn' ).attr( 'data-anchor', to );
+        	} else{
+        		$( '#parallax_header #inpage_scroll_btn' ).removeAttr('data-anchor');
+        		$( '#parallax_header #inpage_scroll_btn' ).attr( 'onClick', 'parent.location=\''+to+'\'' );
+        	}
 		} );
 		
     });	

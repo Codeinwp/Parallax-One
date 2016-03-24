@@ -479,7 +479,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'															=> esc_html__('Add new team member','parallax-one'),
 		'section'														=> 'parallax_one_team_section',
 		'active_callback' 									=> 'parallax_one_show_on_front',
-		'priority' 													=> 3,
+		'priority' 													=> 30,
     'parallax_image_control' 						=> true,
 		'parallax_title_control' 						=> true,
 		'parallax_subtitle_control' 				=> true,

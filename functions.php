@@ -328,13 +328,14 @@ add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
 function parallax_one_id_is_duplicate($id, $parallax_one_array_decoded){
 	$count = 0;
 	foreach ($parallax_one_array_decoded as $it) {
-		if($it->id == $id){
-			$count++;
-			if($count == 2){
-				return true;
+		if(!empty($it->id)){
+			if($it->id == $id){
+				$count++;
+				if($count == 2){
+					return true;
+				}
 			}
 		}
-
 	}
 	return false;
 }
@@ -833,51 +834,67 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	if( !empty( $parallax_one_services_pl ) ){
 		$parallax_one_services_pl_decoded = json_decode( $parallax_one_services_pl );
 		foreach( $parallax_one_services_pl_decoded as $parallax_one_service_box ){
-			$id = $parallax_one_service_box->id;
-			$icon = $parallax_one_service_box->icon_value;
-			$image = $parallax_one_service_box->image_url;
-			$choice =  $parallax_one_service_box->choice;
-			$title = $parallax_one_service_box->title;
-			$text = $parallax_one_service_box->text;
-			$link = $parallax_one_service_box->link;
-			if(!empty($id)) {
-				if( !empty( $choice ) ){
-					if( $choice == 'parallax_image' ){
-						if( !empty($image) ){
-							icl_unregister_string('Featured Area '.$id , 'Featured area image' );
-							icl_register_string( 'Featured Area '.$id, 'Featured area image', $image );
-						} else {
-							icl_unregister_string('Featured Area '.$id , 'Featured area image' );
-						}
-					} else {
-						if( !empty($icon) ){
-							icl_unregister_string( 'Featured Area '.$id, 'Featured area icon');
-							icl_register_string( 'Featured Area '.$id, 'Featured area icon', $icon );
-						} else {
-							icl_unregister_string( 'Featured Area '.$id, 'Featured area icon');
-						}
-					}
+			if(!empty ($parallax_one_service_box)){
+				if(!empty($parallax_one_service_box->id)){
+					$id = $parallax_one_service_box->id;
 				}
-
-					if( !empty( $title ) ){
-						icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
-						icl_register_string('Featured Area '.$id, 'Featured area title', $title);
-					} else {
-						icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
+				if(!empty($parallax_one_service_box->icon_value)){
+					$icon = $parallax_one_service_box->icon_value;
+				}
+				if(!empty($parallax_one_service_box->image_url)){
+					$image = $parallax_one_service_box->image_url;
+				}
+				if(!empty($parallax_one_service_box->choice)){
+					$choice =  $parallax_one_service_box->choice;
+				}
+				if(!empty($parallax_one_service_box->title)){
+					$title = $parallax_one_service_box->title;
+				}
+				if(!empty($parallax_one_service_box->text)){
+					$text = $parallax_one_service_box->text;
+				}
+				if(!empty($parallax_one_service_box->link)){
+					$link = $parallax_one_service_box->link;
+				}
+				if(!empty($id)) {
+					if( !empty( $choice ) ){
+						if( $choice == 'parallax_image' ){
+							if( !empty($image) ){
+								icl_unregister_string('Featured Area '.$id , 'Featured area image' );
+								icl_register_string( 'Featured Area '.$id, 'Featured area image', $image );
+							} else {
+								icl_unregister_string('Featured Area '.$id , 'Featured area image' );
+							}
+						} else {
+							if( !empty($icon) ){
+								icl_unregister_string( 'Featured Area '.$id, 'Featured area icon');
+								icl_register_string( 'Featured Area '.$id, 'Featured area icon', $icon );
+							} else {
+								icl_unregister_string( 'Featured Area '.$id, 'Featured area icon');
+							}
+						}
 					}
 
-					if(!empty($text)){
+						if( !empty( $title ) ){
+							icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
+							icl_register_string('Featured Area '.$id, 'Featured area title', $title);
+						} else {
+							icl_unregister_string ('Featured Area '.$id , 'Featured area title' );
+						}
+
+						if(!empty($text)){
+							icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
+							icl_register_string( 'Featured Area '.$id, 'Featured area text', $text );
+					} else {
 						icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
-						icl_register_string( 'Featured Area '.$id, 'Featured area text', $text );
-				} else {
-					icl_unregister_string( 'Featured Area '.$id, 'Featured area text');
-				}
+					}
 
-				if(!empty($link)){
-					icl_unregister_string('Featured Area '.$id, 'Featured area link');
-					icl_register_string('Featured Area '.$id, 'Featured area link', $link);
-				} else {
-					icl_unregister_string('Featured Area '.$id, 'Featured area link');
+					if(!empty($link)){
+						icl_unregister_string('Featured Area '.$id, 'Featured area link');
+						icl_register_string('Featured Area '.$id, 'Featured area link', $link);
+					} else {
+						icl_unregister_string('Featured Area '.$id, 'Featured area link');
+					}
 				}
 			}
 		}
@@ -888,51 +905,70 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	if(!empty($parallax_one_team_pl)){
 		$parallax_one_team_pl_decoded = json_decode( $parallax_one_team_pl );
 		foreach( $parallax_one_team_pl_decoded as $parallax_one_team_box ){
-			$id = esc_attr($parallax_one_team_box->id);
-			$title = $parallax_one_team_box->title;
-			$subtitle = $parallax_one_team_box->subtitle;
-			$image = $parallax_one_team_box->image_url;
-			$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
-			$icons_decoded = json_decode( $socials, true );
-			if(!empty( $id )) {
-				if( !empty( $image) ){
-					icl_unregister_string('Team Section '.$id, 'Team member image');
-					icl_register_string('Team Section '.$id, 'Team member image', $image);
-				} else {
-					icl_unregister_string('Team Section '.$id, 'Team member image');
+			if(!empty($parallax_one_team_box)){
+				
+				if(!empty($parallax_one_team_box->id)){
+					$id = esc_attr($parallax_one_team_box->id);
 				}
 
-				if( !empty( $title ) ){
-					icl_unregister_string('Team Section '.$id, 'Team member title');
-					icl_register_string('Team Section '.$id, 'Team member title', $title);
-				} else {
-					icl_unregister_string('Team Section '.$id, 'Team member title');
+				if(!empty($parallax_one_team_box->title)){
+					$title = $parallax_one_team_box->title;
 				}
 
-				if( !empty( $subtitle ) ){
-					icl_unregister_string('Team Section '.$id, 'Team member subtitle');
-					icl_register_string('Team Section '.$id, 'Team member subtitle', $subtitle);
-				} else {
-					icl_unregister_string('Team Section '.$id, 'Team member subtitle');
+				if(!empty($parallax_one_team_box->subtitle)){
+					$subtitle = $parallax_one_team_box->subtitle;
 				}
 
-				if( !empty( $icons_decoded ) ){
-					foreach ($icons_decoded as $value) {
-						$s_id = $value['id'];
-						if(!empty($s_id)){
+				if(!empty($parallax_one_team_box->image_url)){
+					$image = $parallax_one_team_box->image_url;
+				}
 
-							if( !empty( $value['icon'] ) ){
-								if( !empty( $value['link'] ) ){
-									icl_unregister_string('Team Section '.$id, 'Team member social icon '.$s_id);
-									icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
-									icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-									icl_register_string('Team Section '.$id, 'Team member social link '.$s_id, $value['link']);
+				if(!empty($parallax_one_team_box->social_repeater)){
+					$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
+					$icons_decoded = json_decode( $socials, true );
+				}
+
+
+				if(!empty( $id )) {
+					if( !empty( $image) ){
+						icl_unregister_string('Team Section '.$id, 'Team member image');
+						icl_register_string('Team Section '.$id, 'Team member image', $image);
+					} else {
+						icl_unregister_string('Team Section '.$id, 'Team member image');
+					}
+
+					if( !empty( $title ) ){
+						icl_unregister_string('Team Section '.$id, 'Team member title');
+						icl_register_string('Team Section '.$id, 'Team member title', $title);
+					} else {
+						icl_unregister_string('Team Section '.$id, 'Team member title');
+					}
+
+					if( !empty( $subtitle ) ){
+						icl_unregister_string('Team Section '.$id, 'Team member subtitle');
+						icl_register_string('Team Section '.$id, 'Team member subtitle', $subtitle);
+					} else {
+						icl_unregister_string('Team Section '.$id, 'Team member subtitle');
+					}
+
+					if( !empty( $icons_decoded ) ){
+						foreach ($icons_decoded as $value) {
+							$s_id = $value['id'];
+							if(!empty($s_id)){
+
+								if( !empty( $value['icon'] ) ){
+									if( !empty( $value['link'] ) ){
+										icl_unregister_string('Team Section '.$id, 'Team member social icon '.$s_id);
+										icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
+										icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
+										icl_register_string('Team Section '.$id, 'Team member social link '.$s_id, $value['link']);
+									} else {
+										icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
+										icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
+									}
 								} else {
-									icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-									icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
+									icl_unregister_string('Team Section '.$s_id, 'Team member social icon');
 								}
-							} else {
-								icl_unregister_string('Team Section '.$s_id, 'Team member social icon');
 							}
 						}
 					}

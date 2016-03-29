@@ -102,6 +102,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 													 			$s_id = $value['id'];
 													 			$s_icon = apply_filters( 'wpml_translate_single_string', $value['icon'], 'Parallax One -> Team section', 'Social icon '.$s_id);
 																$s_link = apply_filters( 'wpml_translate_single_string', $value['link'], 'Parallax One -> Team section', 'Social link '.$s_id);
+													 		
 													 			if( !empty( $s_icon ) ){ ?>
 													 				<li>
 													 					<?php

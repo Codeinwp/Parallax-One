@@ -904,11 +904,6 @@ if( has_action('wpml_register_single_string') ) {
 				$image = $parallax_one_team_box->image_url;
 			}
 
-			if( !empty( $parallax_one_team_box->social_repeater ) ){	
-				$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
-				$icons_decoded = json_decode( $socials, true );
-			}
-
 			if( !empty( $id ) ){
 				if( !empty( $title ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box title '.$id, $title );
@@ -922,14 +917,20 @@ if( has_action('wpml_register_single_string') ) {
 					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box image '.$id, $image );
 				}
 
-				if( !empty( $icons_decoded ) ){
-					foreach ($icons_decoded as $value) {
-						$s_id = $value['id'];
-						$s_icon = $value['icon'];
-						$s_link = $value['link'];
-						if( !empty( $s_icon ) ){
-							if( !empty( $s_link ) ){
+				if( !empty( $parallax_one_team_box->social_repeater  ) ){
+					$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
+					$icons_decoded = json_decode( $socials, true );
+
+					if( !empty( $icons_decoded ) ){
+						foreach ($icons_decoded as $value) {
+							$s_id = $value['id'];
+							$s_icon = $value['icon'];
+							$s_link = $value['link'];
+							if( !empty( $s_icon ) ){
 								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social icon '.$s_id, $s_icon );
+							}
+
+							if( !empty( $s_link ) ){
 								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social link '.$s_id, $s_link );
 							}
 						}
@@ -938,112 +939,121 @@ if( has_action('wpml_register_single_string') ) {
 			}
 		}
 	}
+
+	/*Testimonials*/
+	$parallax_one_testimonials = get_theme_mod('parallax_one_testimonials_content');
+	if( !empty( $parallax_one_testimonials ) ){
+		$parallax_one_testimonials_decoded = json_decode($parallax_one_testimonials);
+		foreach($parallax_one_testimonials_decoded as $parallax_one_testimonials_box){
+			
+			if( !empty( $parallax_one_testimonials_box->id ) ){
+				$id = esc_attr($parallax_one_testimonials_box->id);
+			}
+
+			if( !empty( $parallax_one_testimonials_box->image_url ) ){
+				$image = $parallax_one_testimonials_box->image_url;
+			}
+
+			if( !empty( $parallax_one_testimonials_box->title ) ){
+				$title = $parallax_one_testimonials_box->title;
+			}
+			
+			if( !empty( $parallax_one_testimonials_box->subtitle ) ){
+				$subtitle = $parallax_one_testimonials_box->subtitle;
+			}
+
+			if( !empty( $parallax_one_testimonials_box->text ) ){
+				$text = $parallax_one_testimonials_box->text;
+			}
+
+			if( !empty( $id ) ){
+				if( !empty( $image ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box image '.$id, $image );
+				}
+
+				if( !empty( $title ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box title '.$id, $title );
+				}
+
+				if( !empty( $subtitle ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box subtitle '.$id, $subtitle );
+				}
+
+				if( !empty( $text) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box text '.$id, $text );
+				}
+			}
+		}
+	}
+
+	/*Contact*/
+	$parallax_one_contact = get_theme_mod('parallax_one_contact_info_content');
+	if( !empty( $parallax_one_contact ) ){
+		$parallax_one_contact_decoded = json_decode($parallax_one_contact);
+		foreach($parallax_one_contact_decoded as $parallax_one_contact_box){
+			if( !empty( $parallax_one_contact_box->id ) ){
+				$id = esc_attr($parallax_one_contact_box->id);
+			}
+
+			if( !empty( $parallax_one_contact_box->icon_value ) ){
+				$icon = $parallax_one_contact_box->icon_value;
+			}
+			
+			if( !empty( $parallax_one_contact_box->text ) ){
+				$text = $parallax_one_contact_box->text;
+			}
+			
+			if( !empty( $parallax_one_contact_box->link ) ){
+				$link = $parallax_one_contact_box->link;
+			}
+
+			if( !empty( $id ) ) {
+				if( !empty( $icon ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box icon '.$id, $icon );
+				}
+
+				if( !empty( $link ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box link '.$id, $link );
+				}
+
+				if( !empty( $text ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box text '.$id, $text );
+				}
+			}
+		}
+	}
+
+	/*Footer*/
+	$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons');
+	if( !empty( $parallax_one_social_icons ) ){
+		$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
+		foreach($parallax_one_social_icons_decoded as $parallax_one_footer_social){
+			if( !empty( $parallax_one_footer_social->id ) ){
+				$id = esc_attr($parallax_one_footer_social->id);
+			}
+
+			if( !empty( $parallax_one_footer_social->link ) ){
+				$link = $parallax_one_footer_social->link;
+			}
+
+			if( !empty( $parallax_one_footer_social->icon_value ) ){
+				$icon = $parallax_one_footer_social->icon_value;
+			}
+
+			if( !empty( $id ) ) {
+				if( !empty( $icon ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Footer', 'Footer social icon '.$id, $icon );
+				}
+
+				if( !empty( $link ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Footer', 'Footer social link '.$id, $link );
+				}
+			}
+		}
+	}
 }
 
-// if(function_exists('icl_unregister_string') && function_exists('icl_register_string') && is_admin() ){
 
-// 	/*Testimonials*/
-// 	$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
-// 	if(!empty($parallax_one_testimonials_pl)){
-// 		$parallax_one_testimonials_pl_decoded = json_decode($parallax_one_testimonials_pl);
-// 		foreach($parallax_one_testimonials_pl_decoded as $parallax_one_testimonials_box){
-// 			$image = $parallax_one_testimonials_box->image_url;
-// 			$title = $parallax_one_testimonials_box->title;
-// 			$subtitle = $parallax_one_testimonials_box->subtitle;
-// 			$text = $parallax_one_testimonials_box->text;
-// 			$id = esc_attr($parallax_one_testimonials_box->id);
-// 			if(!empty($id)) {
-// 				if( !empty( $image ) ){
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimonial image'); 
-// 					icl_register_string( 'Testimonial '.$id, 'Testimonial image', $image); 
-// 				} else {
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimonial image');
-// 				}
-
-// 				if(!empty($title)){
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial title');
-// 					icl_register_string( 'Testimonial '.$id, 'Testimomial title', $title);
-// 				} else {
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial title');
-// 				}
-
-// 				if(!empty($subtitle)){
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial subtitle');
-// 					icl_register_string( 'Testimonial '.$id, 'Testimomial subtitle', $subtitle);
-// 				} else {
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial subtitle');
-// 				}
-
-// 				if(!empty($text)){
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial text');
-// 					icl_register_string( 'Testimonial '.$id, 'Testimomial text', $text);
-// 				} else {
-// 					icl_unregister_string( 'Testimonial '.$id, 'Testimomial text');
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	/*Contact*/
-// 	$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
-// 	if(!empty($parallax_one_contact_pl)){
-// 		$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
-// 		foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
-// 			$id = esc_attr($parallax_one_contact_box->id);
-// 			$icon = $parallax_one_contact_box->icon_value;
-// 			$text = $parallax_one_contact_box->text;
-// 			$link = $parallax_one_contact_box->link;
-// 			if(!empty($id)) {
-// 				if( !empty( $icon ) ){
-// 					icl_unregister_string( 'Contact field '.$id, 'Contact icon' );
-// 					icl_register_string( 'Contact field '.$id, 'Contact icon', $icon );
-// 				} else {
-// 					icl_unregister_string( 'Contact field '.$id, 'Contact icon' );
-// 				}
-
-// 				if( !empty( $link ) ){
-// 					icl_unregister_string('Contact field '.$id,'Contact link');
-// 					icl_register_string('Contact field '.$id,'Contact link',$link);
-// 				} else {
-// 					icl_unregister_string('Contact field '.$id,'Contact link');
-// 				}
-
-// 				if(!empty($text)){
-// 					icl_unregister_string('Contact field '.$id,'Contact text');
-// 					icl_register_string('Contact field '.$id,'Contact text',$text);
-// 				} else {
-// 					icl_unregister_string('Contact field '.$id,'Contact text');
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	/*Footer*/
-// 	$parallax_one_social_icons_pl = get_theme_mod('parallax_one_social_icons');
-// 	if( !empty( $parallax_one_social_icons_pl ) ){
-// 		$parallax_one_social_icons_pl_decoded = json_decode($parallax_one_social_icons_pl);
-// 		foreach($parallax_one_social_icons_pl_decoded as $parallax_one_footer_social){
-// 			$id = esc_attr($parallax_one_footer_social->id);
-// 			$link = $parallax_one_footer_social->link;
-// 			$icon = $parallax_one_footer_social->icon_value;
-// 			if(!empty($id)) {
-// 				if( !empty( $icon ) ){
-// 					icl_unregister_string( 'Footer Socials '.$id, 'Footer social icon' );
-// 					icl_register_string( 'Footer Socials '.$id, 'Footer social icon', $icon );
-// 				} else {
-// 					icl_unregister_string( 'Footer Socials '.$id, 'Footer social icon' );
-// 				}
-
-// 				if( !empty( $link ) ){
-// 					icl_unregister_string('Footer Socials '.$id,'Footer social link');
-// 					icl_register_string('Footer Socials '.$id,'Footer social link',$link);
-// 				} else {
-// 					icl_unregister_string('Footer Socials '.$id,'Footer social link');
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 
 /*Check if Repeater is empty*/
 function parallax_one_general_repeater_is_empty($parallax_one_arr){

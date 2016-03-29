@@ -19,40 +19,29 @@ if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 					<?php
 					if(!empty($parallax_one_contact_info_item_decoded)){
 						foreach($parallax_one_contact_info_item_decoded as $parallax_one_contact_item){
-							if( !empty($parallax_one_contact_item->icon_value) || !empty($parallax_one_contact_item->text) ){
+							$id = esc_attr($parallax_one_contact_item->id);
+							$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->icon_value, 'Parallax One -> Contact section', 'Contact box icon '.$id );
+							$text = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->text, 'Parallax One -> Contact section', 'Contact box text '.$id );
+							$link = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->link, 'Parallax One -> Contact section', 'Contact box link '.$id );
+
+
+							if( !empty( $icon ) || !empty( $text ) ){
 								parallax_hook_contact_entry_before(); ?>
 								<div class="col-sm-4 contact-link-box col-xs-12">
 									<?php
 									parallax_hook_contact_entry_top();
-									if(!empty($parallax_one_contact_item->icon_value)){ 
-										if(function_exists('icl_t')){
-											$parallax_one_contact_icon = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact icon',$parallax_one_contact_item->icon_value);?>
-											<div class="icon-container"><span class="<?php echo esc_attr($parallax_one_contact_icon)?> colored-text"></span></div>
-										<?php
-										} else { ?>
-											<div class="icon-container"><span class="<?php echo esc_attr($parallax_one_contact_item->icon_value)?> colored-text"></span></div>
-										<?php	
-										}
+
+									if( !empty( $icon ) ){ ?>
+											<div class="icon-container"><span class="<?php echo esc_attr($icon)?> colored-text"></span></div>
+									<?php
 									}
 									
-									if( !empty( $parallax_one_contact_item->text ) ){
-										if( !empty( $parallax_one_contact_item->link ) ){
-											if( function_exists( 'icl_t') ){
-												$parallax_one_contact_text = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact text',$parallax_one_contact_item->text);
-												$parallax_one_contact_link = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact link',$parallax_one_contact_item->link); ?>
-												<a href="<?php echo esc_url( $parallax_one_contact_link ); ?>" class="strong"><?php echo html_entity_decode($parallax_one_contact_text); ?></a>
-											<?php	
-											} else { ?>
-												<a href="<?php echo esc_url( $parallax_one_contact_item->link ); ?>" class="strong"><?php echo html_entity_decode( $parallax_one_contact_item->text ); ?></a>
-											<?php
-											}
+									if( !empty( $text ) ){
+										if( !empty( $link ) ){ ?>
+											<a href="<?php echo esc_url( $link ); ?>" class="strong"><?php echo html_entity_decode($text); ?></a>
+										<?php
 										} else {
-											if( function_exists( 'icl_t') ){
-												$parallax_one_contact_text = icl_t('Contact field '.$parallax_one_contact_item->id,'Contact text',$parallax_one_contact_item->text);
-												echo html_entity_decode($parallax_one_contact_text);
-											} else {
-												echo html_entity_decode( $parallax_one_contact_item->text );
-											}
+											echo html_entity_decode($text);
 										}
 									}
 									parallax_hook_contact_entry_bottom(); ?>

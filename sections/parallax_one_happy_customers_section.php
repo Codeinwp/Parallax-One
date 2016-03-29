@@ -48,7 +48,13 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 						<?php
 						$parallax_one_testimonials_content_decoded = json_decode( $parallax_one_testimonials_content );
 						foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
-							if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){
+							$id = esc_attr($parallax_one_testimonial->id);
+							$image = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->image_url, 'Parallax One -> Testimonials section', 'Testimonial box image '.$id );
+							$title = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->title, 'Parallax One -> Testimonials section', 'Testimonial box title '.$id );
+							$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->subtitle, 'Parallax One -> Testimonials section', 'Testimonial box subtitle '.$id );
+							$text = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->text, 'Parallax One -> Testimonials section', 'Testimonial box text '.$id );
+
+							if( !empty( $image ) || !empty( $title ) || !empty($subtitle) || !empty($text) ){
 								parallax_hook_testimonials_entry_before(); ?>
 								<div class="testimonials-box">
 									<?php parallax_hook_testimonials_entry_top(); ?>
@@ -56,27 +62,9 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 										<div class="pic-container">
 											<div class="pic-container-inner">
 												<?php
-												if( !empty($parallax_one_testimonial->image_url) ){
-													if( !empty( $parallax_one_testimonial->title ) ){ 
-														if( function_exists('icl_t') ){
-															$parallax_one_testimonial_image = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimonial image',$parallax_one_testimonial->image_url); 
-															$parallax_one_testimonial_title = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimomial title', $parallax_one_testimonial->title); ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial_image ) ); ?>" alt="<?php echo esc_attr( $parallax_one_testimonial_title ); ?>">
-													<?php
-														} else { ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial->image_url ) ); ?>" alt="<?php echo esc_attr( $parallax_one_testimonial->title ); ?>">
-														<?php
-														}
-													} else { 
-														if( function_exists('icl_t') ){
-															$parallax_one_testimonial_image = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimonial image',$parallax_one_testimonial->image_url);  ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial_image ) ); ?>" alt="<?php esc_html_e( 'Avatar','parallax-one' ); ?>">
-														<?php
-														} else { ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_testimonial->image_url ) ); ?>" alt="<?php esc_html_e( 'Avatar','parallax-one' ); ?>">
-														<?php
-														}
-													}
+												if( !empty( $image ) ){ ?>
+													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'.$title.'"' : esc_html('Avatar','parallax-one') ); ?>>
+												<?php
 												} else {
 													$default_image = parallax_get_file('/images/clients/client-no-image.jpg');
 													echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($default_image)).'" alt="'.esc_html('Avatar','parallax-one').'">';
@@ -85,45 +73,30 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 										</div>
 									
 										<?php
-										if(!empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text)) { ?>
+										if( !empty( $title ) || !empty( $subtitle ) || !empty( $text ) ) { ?>
 										
 											<div class="feedback-text-wrap">
 												<?php
-												if(!empty($parallax_one_testimonial->title)){ ?>
+												if( !empty( $title ) ){ ?>
 													<h5 class="colored-text">
 														<?php
-														if( function_exists( 'icl_t' ) ){
-																$parallax_one_testimonial_title = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimomial title', $parallax_one_testimonial->title);
-																echo $parallax_one_testimonial_title;
-															} else {
-																echo esc_attr($parallax_one_testimonial->title);
-															}?>
+														echo $title; ?>
 													</h5>
 												<?php
 												}
 
-												if(!empty($parallax_one_testimonial->subtitle)){ ?>
+												if(!empty($subtitle)){ ?>
 													<div class="small-text">
 														<?php
-														if(function_exists('icl_t')){
-															$parallax_one_testimonial_subtitle = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimomial subtitle', $parallax_one_testimonial->subtitle);
-															echo $parallax_one_testimonial_subtitle;
-														} else {
-															echo esc_attr($parallax_one_testimonial->subtitle);
-														} ?>
+														echo esc_attr($subtitle); ?>
 													</div>
 												<?php
 												}
 
-												if(!empty($parallax_one_testimonial->text)){ ?>
+												if(!empty($text)){ ?>
 													<p>
 														<?php
-														if(function_exists('icl_t')){
-															$parallax_one_testimonial_text = icl_t( 'Testimonial '.$parallax_one_testimonial->id, 'Testimomial text', $parallax_one_testimonial->text);
-															echo $parallax_one_testimonial_text;
-														} else {
-															echo html_entity_decode($parallax_one_testimonial->text);
-														} ?>
+														echo html_entity_decode($text); ?>
 													</p>
 												<?php
 												} ?>

@@ -79,33 +79,31 @@
 				if( !empty( $parallax_one_social_icons_decoded ) ){ ?>
 					<ul class="social-icons">
 						<?php
-						foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){ 
-							if( !empty( $parallax_one_social_icon->icon_value ) ){ ?>
+						foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
+
+							if( !empty( $parallax_one_social_icon->id ) ){
+								$id = esc_attr($parallax_one_social_icon->id);
+							}
+
+							if( !empty( $parallax_one_social_icon->link ) ){
+								$link = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->link, 'Parallax One -> Footer', 'Footer social link '.$id );
+							}
+
+							if( !empty( $parallax_one_social_icon->icon_value ) ){
+								$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->icon_value, 'Parallax One -> Footer', 'Footer social icon '.$id );
+							}
+
+							if( !empty( $icon ) ){ ?>
 								<li>
 									<?php
-									if( !empty( $parallax_one_social_icon->link ) ){
-										if( function_exists('icl_t') ){
-											$parallax_one_footer_social_icon = icl_t('Footer Socials '.$parallax_one_social_icon->id, 'Footer social icon', $parallax_one_social_icon->icon_value);
-											$parallax_one_footer_social_link = icl_t('Footer Socials '.$parallax_one_social_icon->id, 'Footer social link', $parallax_one_social_icon->link); ?>
-											<a target="_blank" href="<?php echo esc_url($parallax_one_footer_social_link); ?>">
-												<span class="parallax-one-footer-icons <?php echo esc_attr($parallax_one_footer_social_icon); ?> transparent-text-dark"></span>
+									if( !empty( $link ) ){ ?>
+											<a target="_blank" href="<?php echo esc_url($link); ?>">
+												<span class="parallax-one-footer-icons <?php echo esc_attr($icon); ?> transparent-text-dark"></span>
 											</a>
-										<?php
-										} else { ?>
-											<a target="_blank" href="<?php echo esc_url($parallax_one_social_icon->link); ?>">
-												<span class="parallax-one-footer-icons <?php echo esc_attr($parallax_one_social_icon->icon_value); ?> transparent-text-dark"></span>
-											</a>
-										<?php
-										}
-									} else {
-										if( function_exists('icl_t') ){
-											$parallax_one_footer_social_icon = icl_t('Footer Socials '.$parallax_one_social_icon->id, 'Footer social icon', $parallax_one_social_icon->icon_value); ?>
-											<span class="parallax-one-footer-icons <?php echo esc_attr($parallax_one_footer_social_icon); ?> transparent-text-dark"></span>
-										<?php
-										} else { ?>
-											<span class="parallax-one-footer-icons <?php echo esc_attr($parallax_one_social_icon->icon_value); ?> transparent-text-dark"></span>
-										<?php
-										}
+									<?php
+									} else { ?>
+											<span class="parallax-one-footer-icons <?php echo esc_attr($icon); ?> transparent-text-dark"></span>
+									<?php
 									} ?>
 								</li>
 							<?php				

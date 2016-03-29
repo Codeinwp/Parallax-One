@@ -335,6 +335,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         </select>
                                     </div>
                                     <input type="text" class="parallax_one_social_repeater_link" placeholder="<?php esc_html_e( 'Link', 'parallax-one' ); ?>" value="" >
+                                    <input type="hidden" class="parallax_one_social_repeater_id" value="">
                                     <button class="parallax_one_remove_social_item" style="display:none"><?php esc_html_e('X','parallax-one'); ?></button>
                                 </div>
                                 <input type="hidden" id="parallax_one_socials_repeater_colector" class="parallax_one_socials_repeater_colector" value="" />
@@ -478,6 +479,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                         </select>
                                     </div>
                                     <input type="text" class="parallax_one_social_repeater_link" placeholder="<?php esc_html_e( 'Link', 'parallax-one' ); ?>" value="" >
+                                    <input type="hidden" class="parallax_one_social_repeater_id" value="">
                                     <button class="parallax_one_remove_social_item" style="display:none"><?php esc_html_e('X','parallax-one'); ?></button>
                                 </div>
                                 <input type="hidden" id="parallax_one_socials_repeater_colector" class="parallax_one_socials_repeater_colector" value="" />

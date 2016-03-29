@@ -45,32 +45,32 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 						<?php
 						$parallax_one_team_decoded = json_decode($parallax_one_team_content);
 						foreach($parallax_one_team_decoded as $parallax_one_team_member){
-							if( !empty($parallax_one_team_member->image_url) ||  !empty($parallax_one_team_member->title) || !empty($parallax_one_team_member->subtitle)){?>
+							
+
+							if( !empty( $parallax_one_team_member->id ) ){
+								$id = $parallax_one_team_member->id;
+							}
+
+							if( !empty( $parallax_one_team_member->title ) ){
+								$title = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->title, 'Parallax One -> Team section', 'Team box title '.$id );
+							}
+
+							if( !empty( $parallax_one_team_member->subtitle ) ){
+								$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->subtitle, 'Parallax One -> Team section', 'Team box subtitle '.$id );
+							}
+
+							if( !empty( $parallax_one_team_member->image_url ) ){
+								$image = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->image_url, 'Parallax One -> Team section', 'Team box image '.$id );
+							}
+
+							if( !empty($image) ||  !empty($title) || !empty($subtitle) ){?>
 								<div class="col-md-3 team-member-box">
 									<div class="team-member border-bottom-hover">
 										<div class="member-pic">
 											<?php
-											if( !empty($parallax_one_team_member->image_url)){
-												if( !empty($parallax_one_team_member->title) ){
-													if( function_exists('icl_t') && !empty($parallax_one_team_member->id) ) {
-														$parallax_one_team_image = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member image', $parallax_one_team_member->image_url); 
-														$parallax_one_team_title = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member title', $parallax_one_team_member->title); ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_team_image ) ); ?>" alt="<?php echo esc_attr( $parallax_one_team_title ); ?>">
-													<?php
-													} else { ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url(esc_url($parallax_one_team_member->image_url)) ?>" alt="<?php echo esc_attr($parallax_one_team_member->title); ?>">
-													<?php
-													}
-												} else {
-													if( function_exists('icl_t') && !empty($parallax_one_team_member->id) ) {
-														$parallax_one_team_image = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member image', $parallax_one_team_member->image_url); ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_team_image ) ); ?>" alt="<?php esc_html_e('Avatar','parallax-one'); ?>">
-													<?php
-													} else { ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_team_member->image_url ) ); ?>" alt="<?php esc_html_e('Avatar','parallax-one'); ?>">
-													<?php
-													}
-												}
+											if( !empty( $image ) ){ ?>
+												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'.$title.'"' : esc_html_('Avatar','parallax-one') ); ?>>
+											<?php
 											} else {
 												$default_url = parallax_get_file('/images/team/default.png'); ?>
 												<img src="<?php echo parallax_one_make_protocol_relative_url($default_url); ?>" alt="<?php esc_html_e('Avatar','parallax-one'); ?>">
@@ -79,82 +79,48 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 										</div>
 										
 										<?php 
-										if( !empty( $parallax_one_team_member->title ) || !empty( $parallax_one_team_member->subtitle ) ){ ?>
+										if( !empty( $title ) || !empty( $subtitle ) ){ ?>
 											<div class="member-details">
 												<div class="member-details-inner">
 													<?php
-													if( !empty( $parallax_one_team_member->title ) ){
-														if( function_exists( 'icl_t' ) ){ 
-															$parallax_one_team_title = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member title', $parallax_one_team_member->title); ?>
-															<h5 class="colored-text">
-																<?php 
-																echo esc_attr( $parallax_one_team_title ); ?>
-															</h5>
-														<?php
-														} else { ?>
-															<h5 class="colored-text">
-																<?php 
-																echo esc_attr( $parallax_one_team_member->title ) ?>
-															</h5>
-														<?php
-														}
-													}
-
-													if( !empty($parallax_one_team_member->subtitle) ){ ?>
-														<div class="small-text">
-															<?php
-															if( function_exists( 'icl_t' ) ){
-																$parallax_one_team_subtitle = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member subtitle', $parallax_one_team_member->subtitle);
-																echo esc_attr( $parallax_one_team_subtitle );
-															} else {
-																echo esc_attr( $parallax_one_team_member->subtitle );
-															} ?>
-														</div>
+													if( !empty( $title ) ){ ?>
+														<h5 class="colored-text"> <?php echo esc_attr( $title ); ?></h5>
 													<?php
 													}
 
-													if( !empty( $parallax_one_team_member->social_repeater ) ){
-														$icons = html_entity_decode( $parallax_one_team_member->social_repeater );
-														$icons_decoded = json_decode( $icons, true );
-														if( !empty( $icons_decoded ) ){ ?>
-													 		<ul class="social-icons">
-													 			<?php
-														 		foreach ($icons_decoded as $value) {
-														 			if(!empty($value['icon'])){ ?>
-														 				<li>
-														 					<?php
-														 					if( !empty( $value['link'] ) ){ 
-														 						if( function_exists( 'icl_t' ) ){ 
-														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon '.$value['id'], $value['icon']); 
-														 							$parallax_one_team_link = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social link '.$value['id'], $value['link']);  ?>
-														 							<a target="_blank" href="<?php echo esc_url( $parallax_one_team_link ); ?>">
-														 								<span class="<?php echo esc_attr( $parallax_one_team_social_icon ); ?>"></span>
-														 							</a>
-														 						<?php
-														 						} else { ?>
-														 							<a target="_blank" href="<?php echo esc_url( $value['link'] ) ?>">
-														 								<span class="<?php echo esc_attr($value['icon']); ?>"></span>
-														 							</a>
-														 						<?php
-														 						}
-														 					} else {
-														 						if( function_exists( 'icl_t' ) ){ 
-														 							$parallax_one_team_social_icon = icl_t('Team Section '.$parallax_one_team_member->id, 'Team member social icon '.$value['id'], $value['icon']); ?>
-														 							<span class="<?php echo esc_attr($parallax_one_team_social_icon); ?>"></span>
-														 						<?php
-														 						} else { ?>
-														 							<span class="<?php echo esc_attr($value['icon']); ?>"></span>
-														 						<?php
-														 						}
-														 					} ?>
-														 				</li>
-														 			<?php	
-														 			}
-														 		} ?>
-													 		</ul>
-													 	<?php
-													 	}
-													} ?>
+													if( !empty($parallax_one_team_member->subtitle) ){ ?>
+														<div class="small-text"><?php echo esc_attr( $subtitle ); ?></div>
+													<?php
+													}
+
+													if( !empty( $parallax_one_team_member->social_repeater) ){ 
+														$socials = html_entity_decode( $parallax_one_team_member->social_repeater );
+														$icons_decoded = json_decode( $socials, true ); ?>
+												 		<ul class="social-icons">
+												 			<?php
+													 		foreach ($icons_decoded as $value) {
+													 			$s_id = $value['id'];
+													 			$s_icon = apply_filters( 'wpml_translate_single_string', $value['icon'], 'Parallax One -> Team section', 'Social icon '.$s_id);
+																$s_link = apply_filters( 'wpml_translate_single_string', $value['link'], 'Parallax One -> Team section', 'Social link '.$s_id);
+													 			if( !empty( $s_icon ) ){ ?>
+													 				<li>
+													 					<?php
+													 					if( !empty( $s_link ) ){ ?>
+												 							<a target="_blank" href="<?php echo esc_url( $s_link ); ?>">
+												 								<span class="<?php echo esc_attr( $s_icon ); ?>"></span>
+												 							</a>
+													 					<?php
+													 					} else { ?>
+													 						<span class="<?php echo esc_attr( $s_icon ); ?>"></span>
+													 					<?php
+													 					} ?>
+													 				</li>
+													 			<?php	
+													 			}
+													 		} ?>
+												 		</ul>
+												 	<?php
+												 	} ?>
 												</div><!-- .member-details-inner -->
 											</div><!-- .member-details -->
 										<?php 

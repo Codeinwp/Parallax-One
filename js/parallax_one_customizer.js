@@ -107,9 +107,15 @@ function parallax_one_uniqid(prefix, more_entropy) {
 function parallax_one_refresh_social_icons(th){
 	var icons_repeater_values = [];
 	th.find(".parallax-one-social-repeater-container").each(function(){
-		var icon = jQuery(this).find(".dd-selected-text").text();
+		var icon = jQuery(this).find(".dd-selected-value").val();
 		var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
 		var id = jQuery(this).find(".parallax_one_social_repeater_id").val();
+
+		if( !id ){
+			id = 'parallax_one_social_repeater_' + parallax_one_uniqid();
+			jQuery(this).find(".parallax_one_social_repeater_id").val(id);
+		}
+
 		if( icon != ''){
 			icons_repeater_values.push({
 				"icon":icon,
@@ -130,8 +136,9 @@ function parallax_one_refresh_general_control_values(){
 		var values = [];
 		var th = jQuery(this);
 		th.find(".parallax_one_general_control_repeater_container").each(function(){
-
-			var icon_value = jQuery(this).find('.dd-selected-value').val();
+			if(jQuery(this).find('.dd-selected-value').length == 1){
+				var icon_value = jQuery(this).find('.dd-selected-value').val();
+			}
 			var text = jQuery(this).find(".parallax_one_text_control").val();
 			var link = jQuery(this).find(".parallax_one_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();

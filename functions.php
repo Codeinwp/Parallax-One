@@ -825,13 +825,34 @@ if( has_action('wpml_register_single_string') ) {
 	if( !empty( $parallax_one_services ) ){
 		$parallax_one_services_decoded = json_decode( $parallax_one_services );
 		foreach( $parallax_one_services_decoded as $parallax_one_service_box ){
-			$id = $parallax_one_service_box->id;
-			$icon = $parallax_one_service_box->icon_value;
-			$image = $parallax_one_service_box->image_url;
-			$choice =  $parallax_one_service_box->choice;
-			$title = $parallax_one_service_box->title;
-			$text = $parallax_one_service_box->text;
-			$link = $parallax_one_service_box->link;
+			
+			if( !empty( $parallax_one_service_box->id ) ){
+				$id = $parallax_one_service_box->id;
+			}
+			
+			if( !empty( $parallax_one_service_box->icon_value ) ){
+				$icon = $parallax_one_service_box->icon_value;
+			}
+			
+			if( !empty( $parallax_one_service_box->image_url ) ){
+				$image = $parallax_one_service_box->image_url;
+			}
+			
+			if( !empty( $parallax_one_service_box->choice ) ){
+				$choice =  $parallax_one_service_box->choice;
+			}
+			
+			if( !empty( $parallax_one_service_box->title ) ){
+				$title = $parallax_one_service_box->title;
+			}
+			
+			if( !empty( $parallax_one_service_box->text ) ){
+				$text = $parallax_one_service_box->text;
+			}
+
+			if( !empty( $parallax_one_service_box->link ) ){
+				$link = $parallax_one_service_box->link;
+			}
 
 			if( !empty( $id ) ) {
 				if( !empty( $choice ) ){
@@ -860,88 +881,66 @@ if( has_action('wpml_register_single_string') ) {
 			}
 		}
 	}
+
+	/*Team*/
+	$parallax_one_team = get_theme_mod('parallax_one_team_content');
+	if( !empty( $parallax_one_team ) ){
+		$parallax_one_team_decoded = json_decode( $parallax_one_team );
+		foreach( $parallax_one_team_decoded as $parallax_one_team_box ){
+			
+			if( !empty( $parallax_one_team_box->id ) ){
+				$id = esc_attr($parallax_one_team_box->id);
+			}
+					
+			if( !empty( $parallax_one_team_box->title ) ){
+				$title = $parallax_one_team_box->title;
+			}
+				
+			if( !empty( $parallax_one_team_box->subtitle ) ){
+				$subtitle = $parallax_one_team_box->subtitle;
+			}
+
+			if( !empty( $parallax_one_team_box->image_url ) ){
+				$image = $parallax_one_team_box->image_url;
+			}
+
+			if( !empty( $parallax_one_team_box->social_repeater ) ){	
+				$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
+				$icons_decoded = json_decode( $socials, true );
+			}
+
+			if( !empty( $id ) ){
+				if( !empty( $title ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box title '.$id, $title );
+				}
+
+				if( !empty( $subtitle ) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box subtitle '.$id, $subtitle );
+				}
+
+				if( !empty( $image) ){
+					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box image '.$id, $image );
+				}
+
+				if( !empty( $icons_decoded ) ){
+					foreach ($icons_decoded as $value) {
+						$s_id = $value['id'];
+						$s_icon = $value['icon'];
+						$s_link = $value['link'];
+						if( !empty( $s_icon ) ){
+							if( !empty( $s_link ) ){
+								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social icon '.$s_id, $s_icon );
+								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social link '.$s_id, $s_link );
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 // if(function_exists('icl_unregister_string') && function_exists('icl_register_string') && is_admin() ){
-
-
-
-// 	/*Team*/
-// 	$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
-// 	if(!empty($parallax_one_team_pl)){
-// 		$parallax_one_team_pl_decoded = json_decode( $parallax_one_team_pl );
-// 		foreach( $parallax_one_team_pl_decoded as $parallax_one_team_box ){
-// 			if(!empty($parallax_one_team_box)){
-				
-// 				if(!empty($parallax_one_team_box->id)){
-// 					$id = esc_attr($parallax_one_team_box->id);
-// 				}
-
-// 				if(!empty($parallax_one_team_box->title)){
-// 					$title = $parallax_one_team_box->title;
-// 				}
-
-// 				if(!empty($parallax_one_team_box->subtitle)){
-// 					$subtitle = $parallax_one_team_box->subtitle;
-// 				}
-
-// 				if(!empty($parallax_one_team_box->image_url)){
-// 					$image = $parallax_one_team_box->image_url;
-// 				}
-
-// 				if(!empty($parallax_one_team_box->social_repeater)){
-// 					$socials = html_entity_decode( $parallax_one_team_box->social_repeater );
-// 					$icons_decoded = json_decode( $socials, true );
-// 				}
-
-
-// 				if(!empty( $id )) {
-// 					if( !empty( $image) ){
-// 						icl_unregister_string('Team Section '.$id, 'Team member image');
-// 						icl_register_string('Team Section '.$id, 'Team member image', $image);
-// 					} else {
-// 						icl_unregister_string('Team Section '.$id, 'Team member image');
-// 					}
-
-// 					if( !empty( $title ) ){
-// 						icl_unregister_string('Team Section '.$id, 'Team member title');
-// 						icl_register_string('Team Section '.$id, 'Team member title', $title);
-// 					} else {
-// 						icl_unregister_string('Team Section '.$id, 'Team member title');
-// 					}
-
-// 					if( !empty( $subtitle ) ){
-// 						icl_unregister_string('Team Section '.$id, 'Team member subtitle');
-// 						icl_register_string('Team Section '.$id, 'Team member subtitle', $subtitle);
-// 					} else {
-// 						icl_unregister_string('Team Section '.$id, 'Team member subtitle');
-// 					}
-
-// 					if( !empty( $icons_decoded ) ){
-// 						foreach ($icons_decoded as $value) {
-// 							$s_id = $value['id'];
-// 							if(!empty($s_id)){
-
-// 								if( !empty( $value['icon'] ) ){
-// 									if( !empty( $value['link'] ) ){
-// 										icl_unregister_string('Team Section '.$id, 'Team member social icon '.$s_id);
-// 										icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
-// 										icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-// 										icl_register_string('Team Section '.$id, 'Team member social link '.$s_id, $value['link']);
-// 									} else {
-// 										icl_register_string('Team Section '.$id, 'Team member social icon '.$s_id, $value['icon']);
-// 										icl_unregister_string('Team Section '.$id, 'Team member social link '.$s_id);
-// 									}
-// 								} else {
-// 									icl_unregister_string('Team Section '.$s_id, 'Team member social icon');
-// 								}
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
 
 // 	/*Testimonials*/
 // 	$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');

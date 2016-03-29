@@ -46,143 +46,77 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 					<div id="our_services_wrap" class="services-wrap <?php if( !empty($parallax_one_services_pinterest) ) echo 'our_services_wrap_piterest'; ?>">
 						<?php
 						foreach( $parallax_one_services_decoded as $parallax_one_service_box ){
-							if( ( !empty( $parallax_one_service_box->icon_value ) && $parallax_one_service_box->icon_value != 'No Icon' && $parallax_one_service_box->choice == 'parallax_icon' )  || ( !empty( $parallax_one_service_box->image_url )  && $parallax_one_service_box->choice == 'parallax_image' ) || !empty( $parallax_one_service_box->title ) || !empty( $parallax_one_service_box->text ) ){ ?>
+
+							$id = $parallax_one_service_box->id;
+							$choice = $parallax_one_service_box->choice;
+							if( $choice == 'parallax_icon' ){
+								$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->icon_value , 'Parallax One -> Services section', 'Service box icon '.$id );
+							}
+							if( $choice == 'parallax_image' ){
+								$image = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->image_url , 'Parallax One -> Services section', 'Service box image '.$id );
+							}
+							$title = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->title , 'Parallax One -> Services section', 'Service box title '.$parallax_one_service_box->id );
+							$text = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->text , 'Parallax One -> Services section', 'Service box text '.$parallax_one_service_box->id );
+							$link = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->link , 'Parallax One -> Services section', 'Service box link '.$parallax_one_service_box->id );
+
+							if( ( !empty( $icon  ) && $icon != 'No Icon' && $choice == 'parallax_icon' )  || ( !empty( $image )  && $choice == 'parallax_image' ) || !empty( $title ) || !empty( $text ) ){ ?>
 								<div class="service-box">
 									<?php
 									parallax_hook_services_entry_before(); ?>
 									<div class="single-service border-bottom-hover">
 										<?php
 										parallax_hook_services_entry_top();
-										if( !empty( $parallax_one_service_box->choice ) && $parallax_one_service_box->choice !== 'parallax_none' ){
+										if( !empty( $choice ) && $choice !== 'parallax_none' ){
 
-											if( $parallax_one_service_box->choice == 'parallax_icon' ){
-												if( !empty($parallax_one_service_box->icon_value) ) {
-													if( !empty($parallax_one_service_box->link) ){
-														if( function_exists ( 'icl_t' ) && !empty( $parallax_one_service_box->id ) ){
-															$parallax_one_link_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area link', $parallax_one_service_box->link );
-															$parallax_one_icon_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area icon', $parallax_one_service_box->icon_value ); ?>
-															<div class="service-icon colored-text">
-																<a href="<?php echo esc_url( $parallax_one_link_services ); ?>">
-																	<span class="<?php echo esc_attr( $parallax_one_icon_services ); ?>"></span>
-																</a>
-															</div>
-														<?php
-														} else { ?>
-															<div class="service-icon colored-text">
-																<a href="<?php echo esc_url( $parallax_one_service_box->link ); ?>">
-																	<span class="<?php echo esc_attr( $parallax_one_service_box->icon_value ); ?>"></span>
-																</a>
-															</div>
-														<?php
-														}
-													} else { 
-														if ( function_exists ( 'icl_t' ) && !empty( $parallax_one_service_box->id ) ){ 
-															$parallax_one_icon_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area icon', $parallax_one_service_box->icon_value ); ?>
-															<div class="service-icon colored-text">
-																<span class="<?php echo esc_attr( $parallax_one_icon_services ) ?>"></span>
-															</div>
-														<?php
-														} else { ?>
-															<div class="service-icon colored-text">
-																<span class="<?php echo esc_attr( $parallax_one_service_box->icon_value ) ?>"></span>
-															</div>
-														<?php
-														}
+											if( $choice == 'parallax_icon' ){
+												if( !empty( $icon ) ) {
+													if( !empty( $link ) ){ ?>
+														<div class="service-icon colored-text">
+															<a href="<?php echo esc_url( $link ); ?>">
+																<span class="<?php echo esc_attr( $icon ); ?>"></span>
+															</a>
+														</div>
+													<?php
+													} else {?>
+														<div class="service-icon colored-text">
+															<span class="<?php echo esc_attr( $icon ); ?>"></span>
+														</div>
+													<?php
 													}
 												}
 											}
 
-											if( $parallax_one_service_box->choice == 'parallax_image' ){
-												if( !empty($parallax_one_service_box->image_url)){
-													if( !empty($parallax_one_service_box->link) ){
-														if(!empty($parallax_one_service_box->title)){
-															if( function_exists ( 'icl_t' ) && !empty( $parallax_one_service_box->id ) ){
-																$parallax_one_title_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area title',$parallax_one_service_box->title);
-																$parallax_one_link_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area link', $parallax_one_service_box->link);
-																$parallax_one_image_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area image', $parallax_one_service_box->image_url ); ?>
-																<a href="<?php echo esc_url( $parallax_one_link_services ); ?>">
-																	<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_image_services ) ); ?>" alt="<?php echo esc_html( $parallax_one_title_services ); ?>"/>
-																</a>
-															<?php
-															} else {?>
-																<a href="<?php echo esc_url( $parallax_one_service_box->link ); ?>">
-																	<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_service_box->image_url ) ); ?>" alt="<?php echo esc_html( $parallax_one_service_box->title ); ?>"/>
-																</a>
-															<?php	
-															}
-														} else {
-															if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
-																$parallax_one_link_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area link', $parallax_one_service_box->link);
-																$parallax_one_image_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area image', $parallax_one_service_box->image_url ); ?>
-																<a href="<?php echo esc_url( $parallax_one_link_services ); ?>">
-																	<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_image_services ) ); ?>" alt="<?php esc_html_e('Featured Image','parallax-one'); ?>"/>
-																</a>
-															<?php
-															} else { ?>
-																<a href="<?php echo esc_url($parallax_one_service_box->link); ?>">
-																	<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_service_box->image_url ) ) ?>" alt="<?php esc_html_e('Featured Image','parallax-one'); ?>"/>
-																</a>
-															<?php
-															}
-														}
-													} else {
-														if(!empty($parallax_one_service_box->title)){
-															if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
-																$parallax_one_image_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area image', $parallax_one_service_box->image_url );
-																$parallax_one_title_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area title', $parallax_one_service_box->title); ?>
-																<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_image_services ) ); ?>" alt="<?php echo esc_html( $parallax_one_title_services ); ?>"/>
-															<?php
-															} else { ?>
-																<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_service_box->image_url ) ); ?>" alt="<?php echo esc_html( $parallax_one_service_box->title ); ?>"/>	
-															<?php
-															}
-														} else { ?>
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $parallax_one_service_box->image_url ) ); ?>" alt="<?php esc_html_e('Featured Image','parallax-one');?>"/>
-														<?php
-														}
-													}
+											if( $choice == 'parallax_image' ){
+												if( !empty( $image ) ){
+													if( !empty( $link ) ){ ?>
+														<a href="<?php echo esc_url( $image ); ?>">
+															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
+														</a>
+													<?php
+													} else { ?>
+														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
+													<?php
+													} 
 												}
 											}
 										}
 											
-										if( !empty( $parallax_one_service_box->title ) ){
-											if( !empty( $parallax_one_service_box->link ) ){
-												if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
-														$parallax_one_title_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area title',$parallax_one_service_box->title);
-														$parallax_one_link_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area link', $parallax_one_service_box->link); ?>
-														<h3 class="colored-text">
-															<a href="<?php echo esc_url($parallax_one_link_services); ?>"><?php echo esc_attr($parallax_one_title_services); ?></a>
-														</h3>
-												<?php
-												} else { ?>
-													<h3 class="colored-text">
-														<a href="<?php echo esc_url($parallax_one_service_box->link) ?>"><?php echo esc_attr( $parallax_one_service_box->title ); ?></a>
-													</h3>
-												<?php
-												}
-											} else {
-												if (function_exists ( 'icl_t' ) && !empty($parallax_one_service_box->id)){
-													$parallax_one_title_services = icl_t('Featured Area '.$parallax_one_service_box->id, 'Featured area title',$parallax_one_service_box->title ); ?>
-													<h3 class="colored-text"><?php echo esc_attr( $parallax_one_title_services ); ?></h3>
-												<?php
-												} else { ?>
-													<h3 class="colored-text"><?php echo esc_attr($parallax_one_service_box->title); ?></h3>
-												<?php
-												}
-											}
-										}
-											
-										if( !empty( $parallax_one_service_box->text ) ){
-											if( function_exists ( 'icl_t' ) && !empty( $parallax_one_service_box->id ) ){ 
-												$parallax_one_text_services = icl_t( 'Featured Area '.$parallax_one_service_box->id, 'Featured area text', html_entity_decode( $parallax_one_service_box->text ) ); ?>
-												<p><?php echo $parallax_one_text_services; ?></p>
+										if( !empty( $title ) ){
+											if( !empty( $link ) ){ ?>
+												<h3 class="colored-text">
+													<a href="<?php echo esc_url( $link ); ?>"><?php echo esc_attr( $title ); ?></a>
+												</h3>
 											<?php
 											} else { ?>
-												<p><?php echo html_entity_decode( $parallax_one_service_box->text ); ?></p>
+												<h3 class="colored-text"><?php echo esc_attr( $title ); ?></h3>
 											<?php
 											}
 										}
-										
+											
+										if( !empty( $text ) ){ ?>
+											<p><?php echo html_entity_decode( $text ); ?></p>
+										<?php
+										} 
 										parallax_hook_services_entry_bottom(); ?>
 									</div>
 									<?php

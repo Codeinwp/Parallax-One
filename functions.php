@@ -797,24 +797,36 @@ function parallax_one_comment($comment, $args, $depth) {
 }
 
 /*WPML Compatibility*/
-if( has_action('wpml_register_single_string') ) {
+
+if( has_action('wpml_register_single_string') || function_exists( 'pll_register_string' ) ) {
 	
 	/*Logos section*/
 	$parallax_one_logos = get_theme_mod('parallax_one_logos_content');
 	if( !empty( $parallax_one_logos ) ){
 		$parallax_one_logos_decoded = json_decode($parallax_one_logos);
 		foreach ($parallax_one_logos_decoded as $parallax_one_logo_box) {
-			$id = $parallax_one_logo_box->id;
-			$image = $parallax_one_logo_box->image_url;
-			$link = $parallax_one_logo_box->link;
+
+			if( !empty( $parallax_one_logo_box->id ) ){
+				$id = $parallax_one_logo_box->id;
+			}
+
+			if( !empty( $parallax_one_logo_box->image_url ) ){
+				$image = $parallax_one_logo_box->image_url;
+			}
+
+			if( !empty( $parallax_one_logo_box->link ) ){
+				$link = $parallax_one_logo_box->link;
+			}
 
 			if( !empty( $id ) ){
 				if( !empty( $image ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Logos section', 'Logo image '.$id, $image );
+					pll_register_string($id.'_logo_image', $image, 'Logos');
 				}
 
 				if( !empty( $link ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Logos section', 'Logo link '.$id, $link );
+					pll_register_string($id.'_logo_link', $link, 'Logos');
 				}
 			}
 		}
@@ -859,24 +871,29 @@ if( has_action('wpml_register_single_string') ) {
 					if( $choice == 'parallax_image' ){
 						if( !empty( $image ) ){
 							do_action( 'wpml_register_single_string', 'Parallax One -> Services section', 'Service box image '.$id, $image );
+							pll_register_string($id.'_services_image', $image, 'Featured Area');
 						}
 					} else {
 						if( !empty($icon) ){
 							do_action( 'wpml_register_single_string', 'Parallax One -> Services section', 'Service box icon '.$id, $icon );
+							pll_register_string($id.'_services_icon', $icon, 'Featured Area');
 						}
 					}
 				}
 
 				if( !empty( $title ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Services section', 'Service box title '.$id, $title );
+					pll_register_string($id.'_services_title', $title, 'Featured Area');
 				}
 
 				if( !empty( $text ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Services section', 'Service box text '.$id, $text );
+					pll_register_string($id.'_services_text', $text, 'Featured Area');
 				}
 
 				if( !empty( $link ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Services section', 'Service box link '.$id, $link );
+					pll_register_string($id.'_services_link', $link, 'Featured Area');
 				}
 			}
 		}
@@ -907,14 +924,17 @@ if( has_action('wpml_register_single_string') ) {
 			if( !empty( $id ) ){
 				if( !empty( $title ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box title '.$id, $title );
+					pll_register_string($id.'_team_title', $title, 'Team');
 				}
 
 				if( !empty( $subtitle ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box subtitle '.$id, $subtitle );
+					pll_register_string($id.'_team_subtitle', $subtitle, 'Team');
 				}
 
 				if( !empty( $image) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Team box image '.$id, $image );
+					pll_register_string($id.'_team_image', $image, 'Team');
 				}
 
 				if( !empty( $parallax_one_team_box->social_repeater  ) ){
@@ -928,10 +948,12 @@ if( has_action('wpml_register_single_string') ) {
 							$s_link = $value['link'];
 							if( !empty( $s_icon ) ){
 								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social icon '.$s_id, $s_icon );
+								pll_register_string($s_id.'_team_social_icon', $s_icon, 'Team');
 							}
 
 							if( !empty( $s_link ) ){
 								do_action( 'wpml_register_single_string', 'Parallax One -> Team section', 'Social link '.$s_id, $s_link );
+								pll_register_string($s_id.'_team_social_link', $s_link, 'Team');
 							}
 						}
 					}
@@ -969,18 +991,22 @@ if( has_action('wpml_register_single_string') ) {
 			if( !empty( $id ) ){
 				if( !empty( $image ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box image '.$id, $image );
+					pll_register_string($id.'_testimonials_image', $image, 'Testimonials');
 				}
 
 				if( !empty( $title ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box title '.$id, $title );
+					pll_register_string($id.'_testimonials_title', $title, 'Testimonials');
 				}
 
 				if( !empty( $subtitle ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box subtitle '.$id, $subtitle );
+					pll_register_string($id.'_testimonials_subtitle', $subtitle, 'Testimonials');
 				}
 
 				if( !empty( $text) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Testimonials section', 'Testimonial box text '.$id, $text );
+					pll_register_string($id.'_testimonials_text', $text, 'Testimonials');
 				}
 			}
 		}
@@ -1010,14 +1036,17 @@ if( has_action('wpml_register_single_string') ) {
 			if( !empty( $id ) ) {
 				if( !empty( $icon ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box icon '.$id, $icon );
+					pll_register_string( $id.'_contact_icon', $icon, 'Contact' );
 				}
 
 				if( !empty( $link ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box link '.$id, $link );
+					pll_register_string( $id.'_contact_link', $link, 'Contact' );
 				}
 
 				if( !empty( $text ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Contact section', 'Contact box text '.$id, $text );
+					pll_register_string( $id.'_contact_text', $text, 'Contact' );
 				}
 			}
 		}
@@ -1043,10 +1072,12 @@ if( has_action('wpml_register_single_string') ) {
 			if( !empty( $id ) ) {
 				if( !empty( $icon ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Footer', 'Footer social icon '.$id, $icon );
+					pll_register_string( $id.'_footer_icon', $icon, 'Footer' );
 				}
 
 				if( !empty( $link ) ){
 					do_action( 'wpml_register_single_string', 'Parallax One -> Footer', 'Footer social link '.$id, $link );
+					pll_register_string( $id.'_footer_link', $link, 'Footer' );
 				}
 			}
 		}

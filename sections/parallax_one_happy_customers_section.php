@@ -49,10 +49,38 @@ if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_cu
 						$parallax_one_testimonials_content_decoded = json_decode( $parallax_one_testimonials_content );
 						foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
 							$id = esc_attr($parallax_one_testimonial->id);
-							$image = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->image_url, 'Parallax One -> Testimonials section', 'Testimonial box image '.$id );
-							$title = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->title, 'Parallax One -> Testimonials section', 'Testimonial box title '.$id );
-							$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->subtitle, 'Parallax One -> Testimonials section', 'Testimonial box subtitle '.$id );
-							$text = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->text, 'Parallax One -> Testimonials section', 'Testimonial box text '.$id );
+
+							if( !empty( $parallax_one_testimonial->image_url ) ){
+								if( function_exists( 'pll__' ) ){
+									$image = pll__($parallax_one_testimonial->image_url);
+								} else {
+									$image = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->image_url, 'Parallax One -> Testimonials section', 'Testimonial box image '.$id );
+								}
+							}
+
+							if( !empty($parallax_one_testimonial->title) ){
+								if( function_exists( 'pll__' ) ){
+									$title = pll__( $parallax_one_testimonial->title );
+								} else {
+									$title = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->title, 'Parallax One -> Testimonials section', 'Testimonial box title '.$id );
+								}
+							}							
+
+							if( !empty($parallax_one_testimonial->subtitle) ){
+								if( function_exists( 'pll__' ) ){
+									$subtitle = pll__($parallax_one_testimonial->subtitle);
+								} else {
+									$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->subtitle, 'Parallax One -> Testimonials section', 'Testimonial box subtitle '.$id );
+								}
+							}						
+
+							if( !empty($parallax_one_testimonial->text) ){
+								if( function_exists( 'pll__' ) ){
+									$text = pll__($parallax_one_testimonial->text);
+								} else{
+									$text = apply_filters( 'wpml_translate_single_string', $parallax_one_testimonial->text, 'Parallax One -> Testimonials section', 'Testimonial box text '.$id );
+								}
+							}
 
 							if( !empty( $image ) || !empty( $title ) || !empty($subtitle) || !empty($text) ){
 								parallax_hook_testimonials_entry_before(); ?>

@@ -19,11 +19,34 @@ if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 					<?php
 					if(!empty($parallax_one_contact_info_item_decoded)){
 						foreach($parallax_one_contact_info_item_decoded as $parallax_one_contact_item){
-							$id = esc_attr($parallax_one_contact_item->id);
-							$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->icon_value, 'Parallax One -> Contact section', 'Contact box icon '.$id );
-							$text = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->text, 'Parallax One -> Contact section', 'Contact box text '.$id );
-							$link = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->link, 'Parallax One -> Contact section', 'Contact box link '.$id );
 
+							if( !empty( $parallax_one_contact_item->id ) ){
+								$id = esc_attr($parallax_one_contact_item->id);
+							}
+
+							if( !empty( $parallax_one_contact_item->icon_value ) ){
+								if( function_exists('pll__') ){
+									$icon = pll__( $parallax_one_contact_item->icon_value );
+								} else {
+									$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->icon_value, 'Parallax One -> Contact section', 'Contact box icon '.$id );
+								}
+							}
+							
+							if( !empty( $parallax_one_contact_item->text ) ){
+								if( function_exists('pll__') ){
+									$text = pll__( $parallax_one_contact_item->text );
+								} else {
+									$text = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->text, 'Parallax One -> Contact section', 'Contact box text '.$id );
+								}
+							}
+
+							if( !empty( $parallax_one_contact_item->link ) ){
+								if( function_exists('pll__') ){
+									$link = pll__( $parallax_one_contact_item->link );
+								} else {
+									$link = apply_filters( 'wpml_translate_single_string', $parallax_one_contact_item->link, 'Parallax One -> Contact section', 'Contact box link '.$id );
+								}
+							}
 
 							if( !empty( $icon ) || !empty( $text ) ){
 								parallax_hook_contact_entry_before(); ?>

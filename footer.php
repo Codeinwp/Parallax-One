@@ -86,11 +86,19 @@
 							}
 
 							if( !empty( $parallax_one_social_icon->link ) ){
-								$link = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->link, 'Parallax One -> Footer', 'Footer social link '.$id );
+								if( function_exists('pll__') ){
+									$link = pll__($parallax_one_social_icon->link);
+								} else {
+									$link = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->link, 'Parallax One -> Footer', 'Footer social link '.$id );
+								}
 							}
 
 							if( !empty( $parallax_one_social_icon->icon_value ) ){
-								$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->icon_value, 'Parallax One -> Footer', 'Footer social icon '.$id );
+								if( function_exists('pll__') ){
+									$icon = pll__($parallax_one_social_icon->icon_value);
+								} else {
+									$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->icon_value, 'Parallax One -> Footer', 'Footer social icon '.$id );
+								}
 							}
 
 							if( !empty( $icon ) ){ ?>

@@ -21,16 +21,36 @@ if( !empty( $parallax_one_logos ) ){
 			<ul class="client-logos">
 				<?php
 				foreach( $parallax_one_logos_decoded as $parallax_one_logo ){
-					if( !empty( $parallax_one_logo->image_url ) ){ ?>
+
+					$id = $parallax_one_logo->id;
+					if( function_exists( 'pll__' ) ){
+						if( !empty( $parallax_one_logo->link ) ){
+							$link = pll__( $parallax_one_logo->link );
+						}
+
+						if( !empty( $parallax_one_logo->image_url ) ){
+							$image = pll__( $parallax_one_logo->image_url ); 
+						}
+					} else {
+						if( !empty( $parallax_one_logo->link ) ){
+							$link = apply_filters( 'wpml_translate_single_string', $parallax_one_logo->link, 'Parallax One -> Logos section', 'Logo link '.$parallax_one_logo->id );
+						}
+
+						if( !empty( $parallax_one_logo->image_url ) ){
+							$image = apply_filters( 'wpml_translate_single_string', $parallax_one_logo->image_url, 'Parallax One -> Logos section', 'Logo image '.$parallax_one_logo->id );
+						}
+					}
+
+					if( !empty( $image ) ){ ?>
 						<li>
 							<?php
-							if( !empty( $parallax_one_logo->link ) ){ ?>
-								<a href="<?php echo esc_url( apply_filters( 'wpml_translate_single_string', $parallax_one_logo->link, 'Parallax One -> Logos section', 'Logo link '.$parallax_one_logo->id ) ); ?>" title="">
-									<img src="<?php echo parallax_one_make_protocol_relative_url( apply_filters( 'wpml_translate_single_string', $parallax_one_logo->image_url, 'Parallax One -> Logos section', 'Logo image '.$parallax_one_logo->id ) ); ?>" alt="<?php esc_html_e( 'Logo', 'parallax-one' ); ?>">
-								</a>
+							if( !empty( $link ) ){ ?>
+									<a href="<?php echo esc_url( $link ); ?>" title="">
+										<img src="<?php echo parallax_one_make_protocol_relative_url( $image ); ?>" alt="<?php esc_html_e( 'Logo', 'parallax-one' ); ?>">
+									</a>
 							<?php
 							} else { ?>
-								<img src="<?php echo parallax_one_make_protocol_relative_url( apply_filters( 'wpml_translate_single_string', $parallax_one_logo->image_url, 'Parallax One -> Logos section', 'Logo image '.$parallax_one_logo->id ) ); ?>" alt="<?php esc_html_e('Logo','parallax-one'); ?>">
+								<img src="<?php echo parallax_one_make_protocol_relative_url( $image ); ?>" alt="<?php esc_html_e('Logo','parallax-one'); ?>">
 							<?php
 							} ?>
 						</li>

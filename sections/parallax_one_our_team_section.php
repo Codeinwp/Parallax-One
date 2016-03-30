@@ -52,15 +52,27 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 							}
 
 							if( !empty( $parallax_one_team_member->title ) ){
-								$title = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->title, 'Parallax One -> Team section', 'Team box title '.$id );
+								if( function_exists('pll__') ){
+									$title = pll__( $parallax_one_team_member->title );
+								} else {
+									$title = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->title, 'Parallax One -> Team section', 'Team box title '.$id );
+								}
 							}
 
 							if( !empty( $parallax_one_team_member->subtitle ) ){
-								$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->subtitle, 'Parallax One -> Team section', 'Team box subtitle '.$id );
+								if( function_exists('pll__') ){
+									$subtitle = pll__($parallax_one_team_member->subtitle);
+								} else {
+									$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->subtitle, 'Parallax One -> Team section', 'Team box subtitle '.$id );
+								}
 							}
 
 							if( !empty( $parallax_one_team_member->image_url ) ){
-								$image = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->image_url, 'Parallax One -> Team section', 'Team box image '.$id );
+								if( function_exists('pll__') ){
+									$image = pll__( $parallax_one_team_member->image_url );
+								} else{
+									$image = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->image_url, 'Parallax One -> Team section', 'Team box image '.$id );
+								}
 							}
 
 							if( !empty($image) ||  !empty($title) || !empty($subtitle) ){?>
@@ -100,8 +112,14 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 												 			<?php
 													 		foreach ($icons_decoded as $value) {
 													 			$s_id = $value['id'];
-													 			$s_icon = apply_filters( 'wpml_translate_single_string', $value['icon'], 'Parallax One -> Team section', 'Social icon '.$s_id);
-																$s_link = apply_filters( 'wpml_translate_single_string', $value['link'], 'Parallax One -> Team section', 'Social link '.$s_id);
+
+													 			if( function_exists('pll__') ){
+													 				$s_icon = pll__( $value['icon'] );
+													 				$s_link = pll__( $value['link'] );
+													 			} else {
+														 			$s_icon = apply_filters( 'wpml_translate_single_string', $value['icon'], 'Parallax One -> Team section', 'Social icon '.$s_id);
+																	$s_link = apply_filters( 'wpml_translate_single_string', $value['link'], 'Parallax One -> Team section', 'Social link '.$s_id);
+													 			}
 													 		
 													 			if( !empty( $s_icon ) ){ ?>
 													 				<li>

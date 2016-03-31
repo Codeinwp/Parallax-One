@@ -79,7 +79,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_appearance_general' , array(
 		'title'       => esc_html__( 'General options', 'parallax-one' ),
       	'priority'    => 3,
-      	'description' => esc_html__('Paralax One theme general appearance options','parallax-one'),
+      	'description' => esc_html__('Parallax One theme general appearance options','parallax-one'),
 		'panel'		  => 'panel_2'
 	));
 
@@ -789,7 +789,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'parallax_one_general_section' , array(
 		'title'       => esc_html__( 'Advanced options', 'parallax-one' ),
       	'priority'    => 85,
-      	'description' => esc_html__('Paralax One theme general options','parallax-one'),
+      	'description' => esc_html__('Parallax One theme general options','parallax-one'),
 	));
 
 	$blogname = $wp_customize->get_control('blogname');

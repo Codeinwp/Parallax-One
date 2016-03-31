@@ -113,11 +113,6 @@ function parallax_one_setup() {
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
 
-
-	if( !get_option( 'parallax_one_migrate_translation' ) ) {
-		add_option( 'parallax_one_migrate_translation', false );
-	}
-
 	/**
 	* Welcome screen
 	*/

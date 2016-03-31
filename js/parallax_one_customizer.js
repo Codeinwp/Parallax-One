@@ -146,6 +146,10 @@ function parallax_one_refresh_general_control_values(){
 			var title = jQuery(this).find(".parallax_one_title_control").val();
 			var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
 			var id = jQuery(this).find(".parallax_one_box_id").val();
+			if( !id ){
+				id = 'parallax_one_' + parallax_one_uniqid();
+				jQuery(this).find(".parallax_one_box_id").val(id);
+			}
 			var social_repeater = jQuery(this).find(".parallax_one_socials_repeater_colector").val();
 			var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
 

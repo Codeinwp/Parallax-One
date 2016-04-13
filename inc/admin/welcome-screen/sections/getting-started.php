@@ -151,7 +151,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<!-- Adblock Notify -->
 		<h4><?php esc_html_e( 'Adblock Notify by b*web', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Detect Adblock and nofity users. Simple plugin with get around options and a lot of settings. Dashboard widget with counter & statistics included!', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'adblock-notify-by-bweb/adblock-notify.php' ) ) { ?>
 

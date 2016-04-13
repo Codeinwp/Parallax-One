@@ -87,7 +87,7 @@ jQuery(document).ready(function($) {
   ===  SMOOTH SCROLL NAVIGATION   ===
   =================================== */
 jQuery(document).ready(function(){
-  jQuery('#menu-primary a[href*=#]:not([href=#]), a.woocommerce-review-link[href*=#]:not([href=#]), a.post-comments[href*=#]:not([href=#])').bind('click',function () {
+  jQuery('#menu-primary a[href*="#"]:not([href="#"]), a.woocommerce-review-link[href*="#"]:not([href="#"]), a.post-comments[href*="#"]:not([href="#"])').bind('click',function () {
     var headerHeight;
     var hash    = this.hash;
     var idName  = hash.substring(1);    // get id name

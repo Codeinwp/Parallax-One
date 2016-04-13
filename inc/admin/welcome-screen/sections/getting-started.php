@@ -221,7 +221,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<!-- FEEDZY RSS Feeds -->
 		<h4><?php esc_html_e( 'FEEDZY RSS Feeds', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'FEEDZY RSS Feeds is a small & lightweight plugin. Fast and easy to use, it aggregates RSS feeds into your site with shortcodes & widgets.', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'feedzy-rss-feeds/feedzy-rss-feed.php' ) ) { ?>
 

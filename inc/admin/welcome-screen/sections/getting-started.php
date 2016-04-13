@@ -9,8 +9,19 @@ $customizer_url = admin_url() . 'customize.php' ;
 <div id="getting_started" class="parallax-one-tab-pane active">
 
 	<div class="prallax-one-tab-pane-center">
-
-		<h1 class="parallax-one-welcome-title">Welcome to Parallax One! <?php if( !empty($parallax_one['Version']) ): ?> <sup id="parallax-one-theme-version"><?php echo esc_attr( $parallax_one['Version'] ); ?> </sup><?php endif; ?></h1>
+		<?php 
+			$parallax_one = wp_get_theme();
+			$parallax_one_version = $parallax_one->get('Version');
+			$parallax_one_name = $parallax_one->get('Name');
+		?>
+		<h1 class="parallax-one-welcome-title">
+			<?php printf( __( 'Welcome to %1$s!', 'parallax-one' ), $parallax_one_name ); ?>
+			<?php if( !empty($parallax_one_version) ): ?> 
+				<sup id="parallax-one-theme-version">
+					<?php echo esc_attr( $parallax_one_version ); ?> 
+				</sup>
+			<?php endif; ?>
+		</h1>
 
 		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','parallax-one'); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Parallax One and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Parallax One, as much as we enjoy creating great products.', 'parallax-one' ); ?>
@@ -60,6 +71,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h4><?php esc_html_e( 'Change customizer in a child theme', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to add or remove customizer controls, check out our documentation to find out how.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/74-how-to-override-controls" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+
+		<hr />
+
+		<h4><?php esc_html_e( 'Build a landing page with a drag-and-drop content builder', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'The simplest way to create your own landing page.', 'parallax-one' ); ?></p>
+		<p><a href="http://docs.themeisle.com/article/219-how-to-build-a-landing-page-with-a-drag-and-drop-content-builder" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+
 
 	</div>
 
@@ -128,6 +146,51 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		?>
 
+		<hr />
+
+
+		<!-- Adblock Notify -->
+		<h4><?php esc_html_e( 'Adblock Notify by b*web', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'Detect Adblock and nofity users. Simple plugin with get around options and a lot of settings. Dashboard widget with counter & statistics included!', 'parallax-one' ); ?></p>
+
+		<?php if ( is_plugin_active( 'adblock-notify-by-bweb/adblock-notify.php' ) ) { ?>
+
+				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		}
+		else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Adblock Notify', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
+
+
+		<hr />
+
+
+		<!-- SiteOrigin -->
+		<h4><?php esc_html_e( 'SiteOrigin Page Builder', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'Build responsive page layouts using the widgets you know and love using this simple drag and drop page builder.', 'parallax-one' ); ?></p>	
+
+		<?php if ( is_plugin_active( 'siteorigin-panels/siteorigin-panels.php' ) ) { ?>
+
+				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		}
+		else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=siteorigin-panels' ), 'install-plugin_siteorigin-panels' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Page Builder by SiteOrigin', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
+
 	</div>
 
 
@@ -147,6 +210,52 @@ $customizer_url = admin_url() . 'customize.php' ;
 		else { ?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
+
+		<hr />
+
+
+		<!-- FEEDZY RSS Feeds -->
+		<h4><?php esc_html_e( 'FEEDZY RSS Feeds', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'FEEDZY RSS Feeds is a small & lightweight plugin. Fast and easy to use, it aggregates RSS feeds into your site with shortcodes & widgets.', 'parallax-one' ); ?></p>
+
+		<?php if ( is_plugin_active( 'feedzy-rss-feeds/feedzy-rss-feed.php' ) ) { ?>
+
+				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		}
+		else { ?>
+
+				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=feedzy-rss-feeds' ), 'install-plugin_feedzy-rss-feeds' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install FEEDZY RSS Feeds', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
+
+		<hr />
+
+
+		<!-- Easy Content Types
+
+ -->
+		<h4><?php esc_html_e( 'Easy Content Types', 'parallax-one' ); ?></h4>
+		<p><?php esc_html_e( 'Easy Content Types provides an extremely easy to use and intuitive interface for creating custom post types, taxonomies, and meta boxes.', 'parallax-one' ); ?></p>
+
+		<?php if ( is_plugin_active( 'easy-content-types/easy-content-types.php' ) ) { ?>
+
+				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		}
+		else { ?>
+
+				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Install Easy Content Types', 'parallax-one' ); ?></a></p>
 
 			<?php
 		}

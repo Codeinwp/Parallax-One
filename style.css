@@ -6578,10 +6578,14 @@ h2.screen-reader-text {
 -----------------------------------------*/
 .pirate-forms-submit-button{
     clear: both;
-    margin-left: 15px;
     float: left;
 }
 
+.pirate_forms_wrap .pirate_forms_three_inputs_wrap > *,
+.pirate_forms_wrap .contact_message_wrap,
+.pirate_forms_wrap .contact_submit_wrap {
+	padding-left: 0;
+}
 /*---------------------------------------
    9.3 JETPACK
 -----------------------------------------*/

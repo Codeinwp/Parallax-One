@@ -171,8 +171,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 
-		<!-- SiteOrigin -->
-		<h4><?php esc_html_e( 'SiteOrigin Page Builder', 'parallax-one' ); ?></h4>
+		<!-- Page Builder by SiteOrigin -->
+		<h4><?php esc_html_e( 'Page Builder by SiteOrigin', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'Build responsive page layouts using the widgets you know and love using this simple drag and drop page builder.', 'parallax-one' ); ?></p>	
 
 		<?php if ( is_plugin_active( 'siteorigin-panels/siteorigin-panels.php' ) ) { ?>
@@ -239,11 +239,9 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 
-		<!-- Easy Content Types
-
- -->
+		<!-- Easy Content Types -->
 		<h4><?php esc_html_e( 'Easy Content Types', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Easy Content Types provides an extremely easy to use and intuitive interface for creating custom post types, taxonomies, and meta boxes.', 'parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'Custom Post Types, Taxonomies and Metaboxes in Minutes', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'easy-content-types/easy-content-types.php' ) ) { ?>
 
@@ -253,7 +251,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 		else { ?>
 
-				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Install Easy Content Types', 'parallax-one' ); ?></a></p>
+				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Download Easy Content Types', 'parallax-one' ); ?></a></p>
 
 			<?php
 		}

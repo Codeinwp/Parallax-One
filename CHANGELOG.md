@@ -1,5 +1,25 @@
 
 
+### 2.1.0.6 - 13/04/2016
+
+ Changes: 
+
+
+ * Revert "!!!changes for general plugin"
+
+This reverts commit e008cfceb141af1a928416e93010cfa08921764c.
+ * Fixed WordPress 4.5 scrolling issue
+
+Fixed scrolling issue which was caused after upgrading to WordPress 4.5.
+ * Merge pull request #366 from HardeepAsrani/development
+
+Fixed WordPress 4.5 scrolling issue
+ * Merge pull request #353 from cristian-ungureanu/development
+
+Development
+ * Our services small css issue
+
+
 ### 2.1.0.5 - 19/02/2016
 
  Changes: 

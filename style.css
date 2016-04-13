@@ -1480,10 +1480,8 @@ header .navbar-brand {
 	text-decoration:none;
 }
 
-
-
 .services-wrap > .service-box {
-    width: 31.4%;
+    width: 31%;
     margin: 0 1.25% 0 1.25%;
     margin-bottom: 30px;
     vertical-align: top;

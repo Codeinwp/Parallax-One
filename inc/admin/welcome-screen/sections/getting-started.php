@@ -75,7 +75,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 		<h4><?php esc_html_e( 'Build a landing page with a drag-and-drop content builder', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'The simplest way to create your own landing page.', 'parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'In the below documentation you will find an easy way to build a great looking landing page using a drag-and-drop content builder plugin.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/219-how-to-build-a-landing-page-with-a-drag-and-drop-content-builder" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 

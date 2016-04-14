@@ -75,7 +75,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 		<h4><?php esc_html_e( 'Build a landing page with a drag-and-drop content builder', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'The simplest way to create your own landing page.', 'parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'In the below documentation you will find an easy way to build a great looking landing page using a drag-and-drop content builder plugin.', 'parallax-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/219-how-to-build-a-landing-page-with-a-drag-and-drop-content-builder" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 
@@ -151,7 +151,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<!-- Adblock Notify -->
 		<h4><?php esc_html_e( 'Adblock Notify by b*web', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Detect Adblock and nofity users. Simple plugin with get around options and a lot of settings. Dashboard widget with counter & statistics included!', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'adblock-notify-by-bweb/adblock-notify.php' ) ) { ?>
 
@@ -172,8 +171,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 
-		<!-- SiteOrigin -->
-		<h4><?php esc_html_e( 'SiteOrigin Page Builder', 'parallax-one' ); ?></h4>
+		<!-- Page Builder by SiteOrigin -->
+		<h4><?php esc_html_e( 'Page Builder by SiteOrigin', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'Build responsive page layouts using the widgets you know and love using this simple drag and drop page builder.', 'parallax-one' ); ?></p>	
 
 		<?php if ( is_plugin_active( 'siteorigin-panels/siteorigin-panels.php' ) ) { ?>
@@ -221,7 +220,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<!-- FEEDZY RSS Feeds -->
 		<h4><?php esc_html_e( 'FEEDZY RSS Feeds', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'FEEDZY RSS Feeds is a small & lightweight plugin. Fast and easy to use, it aggregates RSS feeds into your site with shortcodes & widgets.', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'feedzy-rss-feeds/feedzy-rss-feed.php' ) ) { ?>
 
@@ -241,11 +239,9 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<hr />
 
 
-		<!-- Easy Content Types
-
- -->
+		<!-- Easy Content Types -->
 		<h4><?php esc_html_e( 'Easy Content Types', 'parallax-one' ); ?></h4>
-		<p><?php esc_html_e( 'Easy Content Types provides an extremely easy to use and intuitive interface for creating custom post types, taxonomies, and meta boxes.', 'parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'Custom Post Types, Taxonomies and Metaboxes in Minutes', 'parallax-one' ); ?></p>
 
 		<?php if ( is_plugin_active( 'easy-content-types/easy-content-types.php' ) ) { ?>
 
@@ -255,7 +251,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		}
 		else { ?>
 
-				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Install Easy Content Types', 'parallax-one' ); ?></a></p>
+				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Download Easy Content Types', 'parallax-one' ); ?></a></p>
 
 			<?php
 		}

@@ -1,5 +1,16 @@
 
 
+### 2.1.0.7 - 14/04/2016
+
+ Changes: 
+
+
+ * Our services small css issue
+ * Merge pull request #368 from cristian-ungureanu/development
+
+Development
+
+
 ### 2.1.0.6 - 13/04/2016
 
  Changes: 

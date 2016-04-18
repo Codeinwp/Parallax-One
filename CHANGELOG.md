@@ -1,5 +1,18 @@
 
 
+### 2.1.0.8 - 18/04/2016
+
+ Changes: 
+
+
+ * Fixed image not showing in Services section
+
+For some reasons, in one of our previous commits we changed the link to image and image to link which was causing this issue.
+ * Merge pull request #370 from HardeepAsrani/development
+
+Fixed image not showing in Services section
+
+
 ### 2.1.0.7 - 14/04/2016
 
  Changes: 

@@ -109,7 +109,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 														</a>
 													<?php
 													} else { ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
+														<img src="<?php echo esc_url( $image ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
 													<?php
 													} 
 												}

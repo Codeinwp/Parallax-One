@@ -104,12 +104,12 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 											if( $choice == 'parallax_image' ){
 												if( !empty( $image ) ){
 													if( !empty( $link ) ){ ?>
-														<a href="<?php echo esc_url( $image ); ?>">
-															<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
+														<a href="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>">
+															<img src="<?php echo esc_url( $image ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
 														</a>
 													<?php
 													} else { ?>
-														<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
+														<img src="<?php echo esc_url( $image ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
 													<?php
 													} 
 												}

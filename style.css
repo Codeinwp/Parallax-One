@@ -2070,7 +2070,7 @@ header .navbar-brand {
 	border-radius: 4px;
 }
 
-#parallax_slider ul {
+#parallax_slider > ul {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -2078,7 +2078,7 @@ header .navbar-brand {
 	list-style: none;
 }
 
-#parallax_slider ul li {
+#parallax_slider > ul > li {
 	position: relative;
 	display: block;
 	float: left;

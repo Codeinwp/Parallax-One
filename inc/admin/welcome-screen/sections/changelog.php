@@ -23,7 +23,7 @@ $parallax_one = wp_get_theme( 'parallax-one' );
 		if(substr( $parallax_one_changelog_line, 0, 3 ) === "###"){
 			echo '<hr /><h1>'.substr($parallax_one_changelog_line,3).'</h1>';
 		} else {
-			echo $parallax_one_changelog_line,'<br/>';
+			echo $parallax_one_changelog_line.'<br/>';
 		}
 	}
 

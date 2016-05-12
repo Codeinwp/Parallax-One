@@ -796,7 +796,7 @@ msgstr ""
 #: inc/customizer.php:650
 msgid ""
 "Create a form, copy the shortcode generated and paste it here. We recommend "
-"<a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> "
+"<a href=\"http://themeisle.com/plugins/pirate-forms/\">Pirate Forms</a> "
 "but you can use any plugin you like."
 msgstr ""
 

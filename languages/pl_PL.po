@@ -823,7 +823,7 @@ msgid "Contact form shortcode"
 msgstr ""
 
 #: inc/customizer.php:650
-msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress.org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+msgid "Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"http://themeisle.com/plugins/pirate-forms\">Pirate Forms</a> but you can use any plugin you like."
 msgstr ""
 
 #: inc/customizer.php:674
@@ -1088,4 +1088,3 @@ msgstr "Faborek"
 #: sections/parallax_one_ribbon_section.php:37
 msgid "Ribbon button label:"
 msgstr "Wstążka przycisk Etykieta:"
-

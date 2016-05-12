@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Parallax One\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-08 07:13+0000\n"
-"PO-Revision-Date: 2016-01-10 15:39+0100\n"
+"PO-Revision-Date: 2016-05-11 20:43-0400\n"
 "Last-Translator: cyril castella+loco\n"
 "Language-Team: cyril castella+loco\n"
 "Language: fr_FR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Loco-Source-Locale: fr-CH\n"
 "X-Loco-Target-Locale: fr-FR\n"
 "X-Loco-Project-Id: 12476\n"
@@ -38,8 +38,7 @@ msgstr "Retour à l'installation des extensions requises."
 msgid "Return to the dashboard"
 msgstr "Retour au panneau de contrôle."
 
-#: class-tgm-plugin-activation.php:399 class-tgm-plugin-activation.php:3029 functions.php:330
-#: loco:568f618a14d725c85d8b456c
+#: class-tgm-plugin-activation.php:399 class-tgm-plugin-activation.php:3029 functions.php:330 loco:568f618a14d725c85d8b456c
 msgid "Plugin activated successfully."
 msgstr "Extension activée avec succès."
 
@@ -53,9 +52,7 @@ msgstr "Aucune action effectuée. L'extension %1$s était déjà active."
 
 #: class-tgm-plugin-activation.php:402 loco:568f618a14d725c85d8b456f
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
-msgstr ""
-"Extension non activée. Une version plus récente de %s est nécessaire pour ce thème. Veuillez mettre à jour "
-"l'extension."
+msgstr "Extension non activée. Une version plus récente de %s est nécessaire pour ce thème. Veuillez mettre à jour l'extension."
 
 #: class-tgm-plugin-activation.php:403 loco:568f618a14d725c85d8b4570
 msgid "All plugins installed and activated successfully. %1$s"
@@ -79,23 +76,15 @@ msgstr "Retour au panneau de contrôle"
 
 #: class-tgm-plugin-activation.php:935 loco:568f618a14d725c85d8b4575
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
-msgstr ""
-"Le répertoire distant de l'extension ne contient pas de dossier avec le label (slug) désiré, et le "
-"renommage n'a pas fonctionné."
+msgstr "Le répertoire distant de l'extension ne contient pas de dossier avec le label (slug) désiré, et le renommage n'a pas fonctionné."
 
 #: class-tgm-plugin-activation.php:935 class-tgm-plugin-activation.php:938 loco:#: 568f618a14d725c85d8b4576
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin according to the WordPress "
-"guidelines."
-msgstr ""
-"S’il vous plaît, contactez le fournisseur de l’extension et demandez-leur de conditionner leur extension "
-"selon les lignes directrices de WordPress."
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
+msgstr "S’il vous plaît, contactez le fournisseur de l’extension et demandez-leur de conditionner leur extension selon les lignes directrices de WordPress."
 
 #: class-tgm-plugin-activation.php:938 loco:568f618a14d725c85d8b4577
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
-msgstr ""
-"Le pack d’extension à distance se compose de plus d’un fichier, mais les fichiers ne sont pas packagés "
-"dans un dossier."
+msgstr "Le pack d’extension à distance se compose de plus d’un fichier, mais les fichiers ne sont pas packagés dans un dossier."
 
 #: class-tgm-plugin-activation.php:2167 loco:568f618a14d725c85d8b4578
 msgid "Required"
@@ -155,8 +144,7 @@ msgstr "Version disponible :"
 
 #: class-tgm-plugin-activation.php:2422 loco:568f618a14d725c85d8b4586
 msgid "No plugins to install, update or activate. <a href=\"%1$s\">Return to the Dashboard</a>"
-msgstr ""
-"Aucune extension à installer, mettre à jour ou activer. <a href=\"%1$s\">Retour au panneau de contrôle.</a>"
+msgstr "Aucune extension à installer, mettre à jour ou activer. <a href=\"%1$s\">Retour au panneau de contrôle.</a>"
 
 #: class-tgm-plugin-activation.php:2436 loco:568f618a14d725c85d8b4587
 msgid "Plugin"
@@ -231,12 +219,8 @@ msgid "The installation of %1$s failed."
 msgstr "L'installation de %1$s a échoué."
 
 #: class-tgm-plugin-activation.php:3369 loco:568f618a14d725c85d8b4599
-msgid ""
-"The installation and activation process is starting. This process may take a while on some hosts, so "
-"please be patient."
-msgstr ""
-"Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre "
-"hébergement, soyez patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre hébergement, soyez patient."
 
 #: class-tgm-plugin-activation.php:3370 loco:568f618a14d725c85d8b459a
 msgid "%1$s installed and activated successfully."
@@ -259,11 +243,8 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr "Installation et activation de l'extension %1$s (%2$d/%3$d)"
 
 #: class-tgm-plugin-activation.php:3375 loco:568f618a14d725c85d8b459f
-msgid ""
-"The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-"Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre "
-"hébergement, soyez patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Le processus d’installation démarre. Cette opération peut prendre quelques minutes selon votre hébergement, soyez patient."
 
 #: class-tgm-plugin-activation.php:3376 loco:568f618a14d725c85d8b45a0
 msgid "%1$s installed successfully."
@@ -295,21 +276,17 @@ msgstr "Prêt à publier votre premier article? <a href=« %1$s »>Commencez i
 
 #: content-none.php:23 loco:568f618a14d725c85d8b45a7
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-"Désolé, mais rien ne correspond à votre critère de recherche. Veuillez réessayer avec d&rsquo;autres mots-"
-"clés."
+msgstr "Désolé, mais rien ne correspond à votre critère de recherche. Veuillez réessayer avec d&rsquo;autres mots-clés."
 
 #: content-none.php:28 loco:568f618a14d725c85d8b45a8
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Il semble que nous ne pouvons trouver ce que vous cherchez. Essayez plutôt le moteur de recherche"
 
-#: content-page.php:20 content-search.php:90 content-single.php:32 content.php:83
-#: loco:568f618a14d725c85d8b45a9
+#: content-page.php:20 content-search.php:90 content-single.php:32 content.php:83 loco:568f618a14d725c85d8b45a9
 msgid "Pages:"
 msgstr "Pages :"
 
-#: content-search.php:52 content.php:54 inc/template-tags.php:80 inc/template-tags.php:86
-#: loco:568f618a14d725c85d8b45aa
+#: content-search.php:52 content.php:54 inc/template-tags.php:80 inc/template-tags.php:86 loco:568f618a14d725c85d8b45aa
 msgid ", "
 msgstr ", "
 
@@ -433,8 +410,7 @@ msgstr "Options générales"
 msgid "Paralax One theme general appearance options"
 msgstr "Options d'affichage générales du thème Parallax One"
 
-#: inc/customizer.php:89 sections/parallax_one_logos_section.php:26
-#: sections/parallax_one_logos_section.php:29 loco:568f618a14d725c85d8b45c9
+#: inc/customizer.php:89 sections/parallax_one_logos_section.php:26 sections/parallax_one_logos_section.php:29 loco:568f618a14d725c85d8b45c9
 msgid "Logo"
 msgstr "Logo"
 
@@ -462,21 +438,18 @@ msgstr "Logo d'entête"
 msgid "Simple, Reliable and Awesome."
 msgstr "Simple, Fiable et Impressionnant"
 
-#: inc/customizer.php:148 inc/customizer.php:283 inc/customizer.php:342 inc/customizer.php:398
-#: inc/customizer.php:457 inc/customizer.php:531 inc/customizer.php:579 loco:568f618a14d725c85d8b45d0
+#: inc/customizer.php:148 inc/customizer.php:283 inc/customizer.php:342 inc/customizer.php:398 inc/customizer.php:457 inc/customizer.php:531 inc/customizer.php:579
+#: loco:568f618a14d725c85d8b45d0
 msgid "Main title"
 msgstr "Titre principal"
 
-#: inc/customizer.php:156 inc/customizer.php:291 inc/customizer.php:406 inc/customizer.php:526
-#: loco:568f618a14d725c85d8b45d1
+#: inc/customizer.php:156 inc/customizer.php:291 inc/customizer.php:406 inc/customizer.php:526 loco:568f618a14d725c85d8b45d1
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
-#: inc/customizer.php:161 inc/customizer.php:296 inc/customizer.php:411 inc/customizer.php:470
-#: inc/class/parallax-one-general-control.php:127 inc/class/parallax-one-general-control.php:128
-#: inc/class/parallax-one-general-control.php:212 inc/class/parallax-one-general-control.php:213
-#: inc/class/parallax-one-general-control.php:299 inc/class/parallax-one-general-control.php:300
-#: loco:568f618a14d725c85d8b45d2
+#: inc/customizer.php:161 inc/customizer.php:296 inc/customizer.php:411 inc/customizer.php:470 inc/class/parallax-one-general-control.php:127
+#: inc/class/parallax-one-general-control.php:128 inc/class/parallax-one-general-control.php:212 inc/class/parallax-one-general-control.php:213
+#: inc/class/parallax-one-general-control.php:299 inc/class/parallax-one-general-control.php:300 loco:568f618a14d725c85d8b45d2
 msgid "Subtitle"
 msgstr "Sous-titre"
 
@@ -532,21 +505,19 @@ msgstr "Section \"Services\""
 msgid "Our Services"
 msgstr "Nos services"
 
-#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310
-#: sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
+#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310 sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
 #: sections/parallax_one_our_services_section.php:12 loco:568f618a14d725c85d8b45e0
 msgid "Lorem Ipsum"
 msgstr "Lorem Ipsum"
 
-#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310
-#: sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
+#: inc/customizer.php:308 inc/customizer.php:309 inc/customizer.php:310 sections/parallax_one_our_services_section.php:10 sections/parallax_one_our_services_section.php:11
 #: sections/parallax_one_our_services_section.php:12 loco:568f618a14d725c85d8b45e1
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
-"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum "
+"accumsan in in leo."
 msgstr ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
-"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum "
+"accumsan in in leo."
 
 #: inc/customizer.php:315 loco:568f618a14d725c85d8b45e2
 msgid "Add new service box"
@@ -562,20 +533,15 @@ msgstr "Notre histoire"
 
 #: inc/customizer.php:351 sections/parallax_one_our_story_section.php:7 loco:#: 568f618a14d725c85d8b45e5
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et "
-"dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex "
-"ea commodo consequat."
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "
+"ullamco laboris nisi ut aliquip ex ea commodo consequat."
 msgstr ""
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et "
-"dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex "
-"ea commodo consequat."
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation "
+"ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
-#: inc/customizer.php:375 inc/class/parallax-one-general-control.php:74
-#: inc/class/parallax-one-general-control.php:79 inc/class/parallax-one-general-control.php:97
-#: inc/class/parallax-one-general-control.php:159 inc/class/parallax-one-general-control.php:164
-#: inc/class/parallax-one-general-control.php:184 inc/class/parallax-one-general-control.php:244
-#: inc/class/parallax-one-general-control.php:250 inc/class/parallax-one-general-control.php:271
-#: loco:568f618a14d725c85d8b45e6
+#: inc/customizer.php:375 inc/class/parallax-one-general-control.php:74 inc/class/parallax-one-general-control.php:79 inc/class/parallax-one-general-control.php:97
+#: inc/class/parallax-one-general-control.php:159 inc/class/parallax-one-general-control.php:164 inc/class/parallax-one-general-control.php:184
+#: inc/class/parallax-one-general-control.php:244 inc/class/parallax-one-general-control.php:250 inc/class/parallax-one-general-control.php:271 loco:568f618a14d725c85d8b45e6
 msgid "Image"
 msgstr "Image"
 
@@ -627,31 +593,26 @@ msgstr "Des clients heureux"
 msgid "Cloud computing subscription model out of the box proactive solution."
 msgstr "Témoignages de nos clients."
 
-#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
-#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484 sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f3
 msgid "Happy Customer"
 msgstr "Client heureux"
 
-#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
-#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484 sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f4
 msgid "Lorem ipsum"
 msgstr "Lorem ipsum"
 
-#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484
-#: sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
+#: inc/customizer.php:482 inc/customizer.php:483 inc/customizer.php:484 sections/parallax_one_happy_customers_section.php:10 sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12 loco:#: 568f618a14d725c85d8b45f5
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
-"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce "
-"malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, "
-"sed molestie odio. Fusce ac metus non purus sollicitudin laoreet."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum "
+"accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus "
+"sollicitudin laoreet."
 msgstr ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, "
-"consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce "
-"malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, "
-"sed molestie odio. Fusce ac metus non purus sollicitudin laoreet."
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum "
+"accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus "
+"sollicitudin laoreet."
 
 #: inc/customizer.php:489 loco:568f618a14d725c85d8b45f6
 msgid "Add new testimonial"
@@ -687,11 +648,10 @@ msgstr "Shortcode \"Carte\""
 
 #: inc/customizer.php:626 inc/customizer.php:663 loco:568f618a14d725c85d8b45fe
 msgid ""
-"To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</"
-"a> plugin then use it to create a map and paste here the shortcode generated"
+"To use this section please install <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
-"Pour utiliser cette section, merci d'installer l'extension <a href=\"https://wordpress.org/plugins/"
-"intergeo-maps/\">Intergeo Maps</a>, puis utilisez-la pour créer une carte. Collez ici le shortcode généré."
+"Pour utiliser cette section, merci d'installer l'extension <a href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a>, puis utilisez-la pour créer une carte. Collez "
+"ici le shortcode généré."
 
 #: inc/customizer.php:639 loco:568f618a14d725c85d8b45ff
 msgid "Contact page"
@@ -703,12 +663,10 @@ msgstr "Shortcode du formulaire de contact"
 
 #: inc/customizer.php:650 loco:568f618a14d725c85d8b4601
 msgid ""
-"Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"https://wordpress."
-"org/plugins/contact-form-7/\">Contact Form 7</a> but you can use any plugin you like."
+"Create a form, copy the shortcode generated and paste it here. We recommend <a href=\"http://themeisle.com/plugins/pirate-forms\">Pirate Forms</a> but you can use any plugin you like."
 msgstr ""
-"Créez un formulaire, copiez le shortcode généré et collez-le ici. Nous recommandons <a href=\"https://"
-"wordpress.org/plugins/contact-form-7/\">Contact Form 7</a>, mais vous pouvez utiliser l'extension de votre "
-"choix."
+"Créez un formulaire, copiez le shortcode généré et collez-le ici. Nous recommandons <a href=\"http://themeisle.com/plugins/pirate-forms\">Pirate Forms</a>, mais vous pouvez utiliser "
+"l'extension de votre choix."
 
 #: inc/customizer.php:674 loco:568f618a14d725c85d8b4602
 msgid "Footer options"
@@ -716,9 +674,7 @@ msgstr "Options du pied de page"
 
 #: inc/customizer.php:676 loco:568f618a14d725c85d8b4603
 msgid "The main content of this section is customizable in: Customize -> Widgets -> Footer area. "
-msgstr ""
-"Le contenu principal de cette section est personnalisable sous : Personnaliser -> Widgets -> Zone du pied "
-"de page"
+msgstr "Le contenu principal de cette section est personnalisable sous : Personnaliser -> Widgets -> Zone du pied de page"
 
 #: inc/customizer.php:692 loco:568f618a14d725c85d8b4604
 msgid "Copyright"
@@ -764,59 +720,45 @@ msgstr "%1$s : %2$s"
 msgid "Archives"
 msgstr "Archives"
 
-#: inc/class/parallax-one-general-control.php:67 inc/class/parallax-one-general-control.php:152
-#: inc/class/parallax-one-general-control.php:237 loco:568f618a14d725c85d8b460f
+#: inc/class/parallax-one-general-control.php:67 inc/class/parallax-one-general-control.php:152 inc/class/parallax-one-general-control.php:237 loco:568f618a14d725c85d8b460f
 msgid "Parallax One"
 msgstr "Parallax One"
 
-#: inc/class/parallax-one-general-control.php:71 inc/class/parallax-one-general-control.php:156
-#: inc/class/parallax-one-general-control.php:241 loco:568f618a14d725c85d8b4610
+#: inc/class/parallax-one-general-control.php:71 inc/class/parallax-one-general-control.php:156 inc/class/parallax-one-general-control.php:241 loco:568f618a14d725c85d8b4610
 msgid "Image type"
 msgstr "Type d'image"
 
-#: inc/class/parallax-one-general-control.php:73 inc/class/parallax-one-general-control.php:85
-#: inc/class/parallax-one-general-control.php:107 inc/class/parallax-one-general-control.php:158
-#: inc/class/parallax-one-general-control.php:170 inc/class/parallax-one-general-control.php:192
-#: inc/class/parallax-one-general-control.php:243 inc/class/parallax-one-general-control.php:256
-#: inc/class/parallax-one-general-control.php:279 loco:568f618a14d725c85d8b4611
+#: inc/class/parallax-one-general-control.php:73 inc/class/parallax-one-general-control.php:85 inc/class/parallax-one-general-control.php:107
+#: inc/class/parallax-one-general-control.php:158 inc/class/parallax-one-general-control.php:170 inc/class/parallax-one-general-control.php:192
+#: inc/class/parallax-one-general-control.php:243 inc/class/parallax-one-general-control.php:256 inc/class/parallax-one-general-control.php:279 loco:568f618a14d725c85d8b4611
 msgid "Icon"
 msgstr "Icône"
 
-#: inc/class/parallax-one-general-control.php:75 inc/class/parallax-one-general-control.php:160
-#: inc/class/parallax-one-general-control.php:245 loco:568f618a14d725c85d8b4612
+#: inc/class/parallax-one-general-control.php:75 inc/class/parallax-one-general-control.php:160 inc/class/parallax-one-general-control.php:245 loco:568f618a14d725c85d8b4612
 msgid "None"
 msgstr "Aucun"
 
-#: inc/class/parallax-one-general-control.php:81 inc/class/parallax-one-general-control.php:100
-#: inc/class/parallax-one-general-control.php:166 inc/class/parallax-one-general-control.php:187
-#: inc/class/parallax-one-general-control.php:252 inc/class/parallax-one-general-control.php:274
-#: loco:568f618a14d725c85d8b4613
+#: inc/class/parallax-one-general-control.php:81 inc/class/parallax-one-general-control.php:100 inc/class/parallax-one-general-control.php:166
+#: inc/class/parallax-one-general-control.php:187 inc/class/parallax-one-general-control.php:252 inc/class/parallax-one-general-control.php:274 loco:568f618a14d725c85d8b4613
 msgid "Upload Image"
 msgstr "Envoyer une image"
 
-#: inc/class/parallax-one-general-control.php:120 inc/class/parallax-one-general-control.php:121
-#: inc/class/parallax-one-general-control.php:205 inc/class/parallax-one-general-control.php:206
-#: inc/class/parallax-one-general-control.php:292 inc/class/parallax-one-general-control.php:293
-#: loco:568f618a14d725c85d8b4614
+#: inc/class/parallax-one-general-control.php:120 inc/class/parallax-one-general-control.php:121 inc/class/parallax-one-general-control.php:205
+#: inc/class/parallax-one-general-control.php:206 inc/class/parallax-one-general-control.php:292 inc/class/parallax-one-general-control.php:293 loco:568f618a14d725c85d8b4614
 msgid "Title"
 msgstr "Titre"
 
-#: inc/class/parallax-one-general-control.php:134 inc/class/parallax-one-general-control.php:135
-#: inc/class/parallax-one-general-control.php:218 inc/class/parallax-one-general-control.php:219
-#: inc/class/parallax-one-general-control.php:304 inc/class/parallax-one-general-control.php:305
-#: loco:568f618a14d725c85d8b4615
+#: inc/class/parallax-one-general-control.php:134 inc/class/parallax-one-general-control.php:135 inc/class/parallax-one-general-control.php:218
+#: inc/class/parallax-one-general-control.php:219 inc/class/parallax-one-general-control.php:304 inc/class/parallax-one-general-control.php:305 loco:568f618a14d725c85d8b4615
 msgid "Text"
 msgstr "Texte"
 
-#: inc/class/parallax-one-general-control.php:139 inc/class/parallax-one-general-control.php:140
-#: inc/class/parallax-one-general-control.php:222 inc/class/parallax-one-general-control.php:223
-#: inc/class/parallax-one-general-control.php:309 inc/class/parallax-one-general-control.php:310
-#: loco:568f618a14d725c85d8b4616
+#: inc/class/parallax-one-general-control.php:139 inc/class/parallax-one-general-control.php:140 inc/class/parallax-one-general-control.php:222
+#: inc/class/parallax-one-general-control.php:223 inc/class/parallax-one-general-control.php:309 inc/class/parallax-one-general-control.php:310 loco:568f618a14d725c85d8b4616
 msgid "Link"
 msgstr "Lien"
 
-#: inc/class/parallax-one-general-control.php:142 inc/class/parallax-one-general-control.php:225
-#: inc/class/parallax-one-general-control.php:313 loco:568f618a14d725c85d8b4617
+#: inc/class/parallax-one-general-control.php:142 inc/class/parallax-one-general-control.php:225 inc/class/parallax-one-general-control.php:313 loco:568f618a14d725c85d8b4617
 msgid "Delete field"
 msgstr "Effacer le champ"
 
@@ -832,8 +774,7 @@ msgstr "Information de contact"
 msgid "Testimonials"
 msgstr "Témoignages"
 
-#: sections/parallax_one_header_section.php:84 sections/parallax_one_header_section.php:86
-#: loco:568f618a14d725c85d8b461b
+#: sections/parallax_one_header_section.php:84 sections/parallax_one_header_section.php:86 loco:568f618a14d725c85d8b461b
 msgid "Header button label:"
 msgstr "Texte du bouton de l'en-tête :"
 
@@ -845,8 +786,7 @@ msgstr "Logos"
 msgid "Services"
 msgstr "Services"
 
-#: sections/parallax_one_our_story_section.php:10 sections/parallax_one_our_story_section.php:20
-#: loco:568f618a14d725c85d8b461e
+#: sections/parallax_one_our_story_section.php:10 sections/parallax_one_our_story_section.php:20 loco:568f618a14d725c85d8b461e
 msgid "About"
 msgstr "À propos"
 
@@ -854,18 +794,15 @@ msgstr "À propos"
 msgid "Team"
 msgstr "Équipe"
 
-#: sections/parallax_one_our_team_section.php:61 sections/parallax_one_our_team_section.php:65
-#: loco:568f618a14d725c85d8b4620
+#: sections/parallax_one_our_team_section.php:61 sections/parallax_one_our_team_section.php:65 loco:568f618a14d725c85d8b4620
 msgid "Avatar"
 msgstr "Avatar"
 
-#: sections/parallax_one_ribbon_section.php:14 sections/parallax_one_ribbon_section.php:16
-#: loco:568f618a14d725c85d8b4621
+#: sections/parallax_one_ribbon_section.php:14 sections/parallax_one_ribbon_section.php:16 loco:568f618a14d725c85d8b4621
 msgid "Ribbon"
 msgstr "Ruban"
 
-#: sections/parallax_one_ribbon_section.php:35 sections/parallax_one_ribbon_section.php:37
-#: loco:568f618a14d725c85d8b4622
+#: sections/parallax_one_ribbon_section.php:35 sections/parallax_one_ribbon_section.php:37 loco:568f618a14d725c85d8b4622
 msgid "Ribbon button label:"
 msgstr "Texte du bouton du ruban :"
 
@@ -875,9 +812,7 @@ msgstr "Page introuvable."
 
 #: 404.php:29 loco:568f618a14d725c85d8b4624
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr ""
-"Contenu Introuvable. L’outil de Recherche ou les Liens ci-dessous vous remettront peut-être sur la "
-"voie&hellip;"
+msgstr "Contenu Introuvable. L’outil de Recherche ou les Liens ci-dessous vous remettront peut-être sur la voie&hellip;"
 
 #: class-tgm-plugin-activation.php:333 functions.php:315 loco:#: 568f618a14d725c85d8b4625
 msgid "Install Required Plugins"
@@ -1011,7 +946,6 @@ msgstr "par"
 msgid "Read more %s"
 msgstr "Lire la suite %s"
 
-#: sections/parallax_one_our_services_section.php:72 sections/parallax_one_our_services_section.php:78
-#: loco:568f618a14d725c85d8b4646
+#: sections/parallax_one_our_services_section.php:72 sections/parallax_one_our_services_section.php:78 loco:568f618a14d725c85d8b4646
 msgid "Featured Image"
 msgstr "Image mise en avant"

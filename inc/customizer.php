@@ -707,7 +707,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_contact_form_shortcode', array(
 		'label'    => esc_html__( 'Contact form shortcode', 'parallax-one' ),
-		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a> but you can use any plugin you like.','parallax-one'),
+		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="http://themeisle.com/plugins/pirate-forms" target="_blank">Pirate Forms</a> but you can use any plugin you like.','parallax-one'),
 		'section'  => 'parallax_one_contact_page',
 		'active_callback' => 'parallax_one_is_contact_page',
 		'priority'    => 1
@@ -720,7 +720,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'parallax_one_contact_map_shortcode', array(
 		'label'    => esc_html__( 'Map shortcode', 'parallax-one' ),
-		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
+		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/" target="_blank">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one'),
 		'section'  => 'parallax_one_contact_page',
 		'active_callback' => 'parallax_one_is_contact_page',
 		'priority'    => 2
@@ -1089,7 +1089,7 @@ function parallax_one_sanitize_html( $input){
 function parallax_one_is_contact_page() {
 		return is_page_template('template-contact.php');
 };
-if( !function_exists('parallax_one_show_on_front')){	
+if( !function_exists('parallax_one_show_on_front')){
 	function parallax_one_show_on_front(){
 		if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ){
 			return true;

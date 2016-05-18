@@ -25,19 +25,19 @@ jQuery(window).resize(function() {
     sliderUlHeight = 0;
     marginTop = 0;
 
-    jQuery('#parallax_slider li').css('height','auto').each(function(){
+    jQuery('#parallax_slider > ul > li').css('height','auto').each(function(){
         if ( slideHeight < jQuery(this).height() ){
             slideHeight = jQuery(this).height();
         }
     });
 
-    slideCount = jQuery('#parallax_slider ul li').length;
+    slideCount = jQuery('#parallax_slider > ul > li').length;
     sliderUlHeight = slideCount * slideHeight;
     
     /* set height */
     jQuery('#parallax_slider').css({ width: slideWidth, height: slideHeight });
-    jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
-    jQuery('#parallax_slider ul').css({ height: sliderUlHeight, top: marginTop });
+    jQuery('#parallax_slider > ul > li ').css({ height: slideHeight}); 
+    jQuery('#parallax_slider > ul').css({ height: sliderUlHeight, top: marginTop });
 
     if( jQuery('.control_next').hasClass('fade-btn') ){
         jQuery('.control_next').removeClass('fade-btn');
@@ -45,6 +45,7 @@ jQuery(window).resize(function() {
     if( !jQuery('.control_prev').hasClass('fade-btn') ){
         jQuery('.control_prev').addClass('fade-btn');
     }
+
 
 });
 
@@ -54,26 +55,26 @@ function parallax_one_latest_news() {
      /* maximum height for slides */
     slideHeight = 0;
 
-    jQuery('#parallax_slider li').css('height','auto').each(function(){
+    jQuery('#parallax_slider > ul > li').css('height','auto').each(function(){
         if ( slideHeight < jQuery(this).height() ){
             slideHeight = jQuery(this).height();
         }
     });
 
-    slideCount = jQuery('#parallax_slider ul li').length;
+    slideCount = jQuery('#parallax_slider > ul > li').length;
     sliderUlHeight = slideCount * slideHeight;
     
     /* set height */
     jQuery('#parallax_slider').css({ width: slideWidth, height: slideHeight });
-    jQuery('#parallax_slider ul li ').css({ height: slideHeight}); 
-    jQuery('#parallax_slider ul').css({ height: sliderUlHeight});
+    jQuery('#parallax_slider > ul > li').css({ height: slideHeight}); 
+    jQuery('#parallax_slider > ul').css({ height: sliderUlHeight});
 
 }
 
 function parallax_one_moveTop() {
     if ( marginTop - slideHeight >= - sliderUlHeight + slideHeight ){
         marginTop = marginTop - slideHeight;
-        jQuery('#parallax_slider ul').animate({
+        jQuery('#parallax_slider > ul').animate({
             top: marginTop
         }, 400 );
         if( marginTop == - slideHeight * (slideCount-1) ) {
@@ -88,7 +89,7 @@ function parallax_one_moveTop() {
 function parallax_one_moveBottom() {
     if ( marginTop + slideHeight <= 0 ){
         marginTop = marginTop + slideHeight;
-        jQuery('#parallax_slider ul').animate({
+        jQuery('#parallax_slider > ul').animate({
             top: marginTop
         }, 400 );
         if( marginTop == 0 ) {

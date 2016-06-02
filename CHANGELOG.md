@@ -1,4 +1,8 @@
 
+### 2.1.0.10 - 02/06/2016
+**Changes:** 
+- Development
+
 ### 2.1.0.9 - 18/05/2016
 **Changes:** 
 - Fixed #358 Issue with Jetpack sharing on latest news

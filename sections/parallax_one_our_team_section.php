@@ -81,7 +81,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 										<div class="member-pic">
 											<?php
 											if( !empty( $image ) ){ ?>
-												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'.$title.'"' : esc_html_('Avatar','parallax-one') ); ?>>
+												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( !empty( $title ) ? 'alt="'.$title.'"' : esc_html__('Avatar','parallax-one') ); ?>>
 											<?php
 											} else {
 												$default_url = parallax_get_file('/images/team/default.png'); ?>

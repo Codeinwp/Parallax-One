@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.1.0.9
+Version: 2.1.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -75,6 +75,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	9.2 PIRATE FORMS
 	9.3 JETPACK
 	9.4 EASY DIGITAL DOWNLOADS
+	9.5 WP Product Review
 
 -----------------------------------------*/
 
@@ -6848,4 +6849,38 @@ p.edd-alert-error,
 	.edd_download {
 		width: 100% !important;
 	}
+}
+
+
+/*---------------------------------------
+   9.5 WP Product Review
+-----------------------------------------*/
+
+#review-statistics .review-wrap-up .cwpr-review-top h2.cwp-item {
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: uppercase;
+	color: #000;
+}
+
+#review-statistics .review-wrap-up .review-wu-right ul li, 
+#review-statistics .review-wu-bars h3, 
+.review-wu-bars span, 
+#review-statistics .review-wrap-up .cwpr-review-top .cwp-item-category a {
+	font-weight: 400;
+	font-size: 16px;
+    font-family: 'Open Sans', Helvetica Neue, sans-serif !important;
+}
+
+#review-statistics .review-wrap-up .review-wu-right ul li {
+	line-height: 18px !important;
+}
+.cwppose_reviews_table .bar span {
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.widget-area .wppr-prodlist .wppr-prodrow .wppr-prodrowright {
+    float: right;
 }

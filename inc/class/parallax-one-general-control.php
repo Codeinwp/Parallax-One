@@ -34,6 +34,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
         /*This stores what kind of controls should the repeater have in it*/
         $options = $this->options;
 
+        $allowed_protocols = wp_allowed_protocols();
+        array_push($allowed_protocols,'callto');
+
         if( !empty( $options['parallax_image_control'] ) ){
             $parallax_image_control = $options['parallax_image_control'];
         } else {
@@ -284,8 +287,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                         
                         if($parallax_link_control){ ?>
                             <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
-                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
+                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link, $allowed_protocols); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
                         <?php
+
                         }
                         
                         if($parallax_shortcode_control==true){ ?>
@@ -429,8 +433,8 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
                         if($parallax_link_control){ ?>
                             <span class="customize-control-title"><?php esc_html_e('Link','parallax-one')?></span>
-                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
-                        <?php 
+                            <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link, $allowed_protocols); ?>" class="parallax_one_link_control" placeholder="<?php esc_html_e('Link','parallax-one'); ?>"/>
+                        <?php
                         }
 
                         if($parallax_shortcode_control==true){ ?>

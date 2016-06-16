@@ -111,6 +111,19 @@ function parallax_one_customize_register( $wp_customize ) {
 			)
 	);
 
+	/* Full width for all pages */
+	$wp_customize->add_setting( 'paralax_one_full_width_template', array(
+		'sanitize_callback' => 'parallax_one_sanitize_input',
+	));
+	$wp_customize->add_control( 'paralax_one_full_width_template',
+		array(
+			'type' => 'checkbox',
+			'label' => esc_html__('Change the template to Full width for all the pages?','parallax-one'),
+			'section' => 'parallax_one_appearance_general',
+			'priority'    => 3,
+		)
+	);
+
 
 	/********************************************************/
 	/************* HEADER OPTIONS  ********************/

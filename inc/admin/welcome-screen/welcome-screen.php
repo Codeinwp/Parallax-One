@@ -23,10 +23,9 @@ class Parallax_One_Welcome {
 
 		/* load welcome screen */
 		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ), 	    10 );
-		add_action( 'parallax_one_welcome', array($this, 'parallax_one_welcome_actions_required' ),         20 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ), 		            30 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ), 				40 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ), 				50 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ), 		            20 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ), 				30 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ), 				40 );
 		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_parallax_one_dismiss_required_action', array( $this, 'parallax_one_dismiss_required_action_callback') );
@@ -177,7 +176,6 @@ class Parallax_One_Welcome {
 
 		<ul class="parallax-one-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','parallax-one'); ?></a></li>
-			<li role="presentation" class="parallax-one-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','parallax-one'); ?></a></li>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','parallax-one'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','parallax-one'); ?></a></li>
@@ -188,7 +186,6 @@ class Parallax_One_Welcome {
 			<?php
 			/**
 			 * @hooked parallax_one_welcome_getting_started - 10
-			 * @hooked parallax_one_welcome_actions_required - 20
 			 * @hooked parallax_one_welcome_github - 30
 			 * @hooked parallax_one_welcome_changelog - 40
 			 * @hooked parallax_one_welcome_free_pro - 50
@@ -205,14 +202,7 @@ class Parallax_One_Welcome {
 	public function parallax_one_welcome_getting_started() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php' );
 	}
-
-	/**
-	 * Actions required
-	 */
-	public function parallax_one_welcome_actions_required() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php' );
-	}
-
+	
 
 	/**
 	 * Contribute

@@ -613,7 +613,7 @@ function parallax_one_register_required_plugins() {
         'is_automatic' => false,
         'message'      => '',
         'strings'      => array(
-            'page_title'                      => esc_html__( 'Install Required Plugins', 'parallax-one' ),
+            'page_title'                      => esc_html__( 'Install Recommended Plugins', 'parallax-one' ),
             'menu_title'                      => esc_html__( 'Install Plugins', 'parallax-one' ),
             'installing'                      => esc_html__( 'Installing Plugin: %s', 'parallax-one' ),
             'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'parallax-one' ),

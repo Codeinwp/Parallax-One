@@ -1072,9 +1072,6 @@ function parallax_one_is_contact_page() {
 };
 if( !function_exists('parallax_one_show_on_front')){
 	function parallax_one_show_on_front(){
-		if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ){
-			return true;
-		}
-		return false;
+		return ('posts' == get_option( 'show_on_front' ) && is_front_page())||( is_front_page() && !is_home() );
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-if ( 'posts' == get_option( 'show_on_front' ) ) {
+if ( parallax_one_show_on_front() ) {
 
 		get_header();
 

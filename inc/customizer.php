@@ -293,7 +293,8 @@ function parallax_one_customize_register( $wp_customize ) {
 	require_once ( 'class/parallax-one-alpha-control.php');
 	/* zerif_bigtitle_background */
 	$wp_customize->add_setting( 'parallax_one_bigtitle_background', array(
-		'default' => 'rgba(0, 0, 0, 0.7)'
+		'default' => 'rgba(0, 0, 0, 0.7)',
+		'sanitize_callback' => 'parallax_one_sanitize_input'
 	));
 
 	$wp_customize->add_control(

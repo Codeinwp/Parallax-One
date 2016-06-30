@@ -43,7 +43,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'parallax_one_text_color', array(
 		'default' => '#313131',
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'sanitize_hex_color'
 	));
 
 	$wp_customize->add_control(
@@ -61,7 +61,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'parallax_one_title_color', array(
 		'default' => '#454545',
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'sanitize_hex_color'
 	));
 
 	$wp_customize->add_control(
@@ -98,7 +98,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	/* Sticky header */
 	$wp_customize->add_setting( 'paralax_one_sticky_header', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input',
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
 	));
 	$wp_customize->add_control(
 			'paralax_one_sticky_header',
@@ -113,7 +113,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	/* Full width for all pages */
 	$wp_customize->add_setting( 'paralax_one_full_width_template', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input',
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
 	));
 	$wp_customize->add_control( 'paralax_one_full_width_template',
 		array(
@@ -250,7 +250,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	/* Enable parallax effect*/
 	$wp_customize->add_setting( 'paralax_one_enable_move', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input',
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
 	));
 	$wp_customize->add_control(
 			'paralax_one_enable_move',
@@ -320,7 +320,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'paralax_one_services_pinterest_style', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input',
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
 		'default'    		=> '5'
 	));
 	$wp_customize->add_control(
@@ -509,7 +509,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'paralax_one_testimonials_pinterest_style', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input',
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
 		'default'    		=> '5'
 	));
 	$wp_customize->add_control(
@@ -848,7 +848,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	/* Disable preloader */
 	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox'
 	));
 	$wp_customize->add_control(
 			'paralax_one_disable_preloader',
@@ -872,7 +872,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	)));
 
 	$wp_customize->add_setting( 'parallax_one_character_cyrillic', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox'
 	));
 	$wp_customize->add_control( 'parallax_one_character_cyrillic', array(
 		'type' => 'checkbox',
@@ -882,7 +882,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'parallax_one_character_vietnamese', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox'
 	));
 	$wp_customize->add_control( 'parallax_one_character_vietnamese', array(
 		'type' 			=> 'checkbox',
@@ -892,7 +892,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'parallax_one_character_greek', array(
-		'sanitize_callback' => 'parallax_one_sanitize_input'
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox'
 	));
 	$wp_customize->add_control( 'parallax_one_character_greek', array(
 		'type' 			=> 'checkbox',
@@ -1016,6 +1016,10 @@ if( !function_exists('parallax_one_sanitize_input')){
 	function parallax_one_sanitize_input( $input ) {
 	    return wp_kses_post( force_balance_tags( $input ) );
 	}
+}
+
+function parallax_one_sanitize_checkbox( $input ){
+	return ( isset( $input ) && true == $input ? true : false );
 }
 
 function parallax_one_sanitize_repeater($input){

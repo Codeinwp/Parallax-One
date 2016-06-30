@@ -341,7 +341,7 @@ msgstr ""
 #: content-search.php:53
 #: content.php:52
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: content-search.php:59
 msgid "Posted in "
@@ -357,14 +357,14 @@ msgstr "Bez komentarza"
 #: content-single.php:23
 #: content.php:62
 msgid "One comment"
-msgstr ""
+msgstr "Jeden komentarz"
 
 #: content-search.php:72
 #: content-single.php:23
 #: content.php:62
 #, php-format
 msgid "% comments"
-msgstr ""
+msgstr "% komentarzy"
 
 #: content.php:7
 #, php-format
@@ -428,7 +428,7 @@ msgstr ""
 #: functions.php:140
 #, fuzzy
 msgid "Install Pirate Forms"
-msgstr "Zainstaluj Pluginy"
+msgstr ""
 
 #: functions.php:141
 msgid "Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier."
@@ -549,16 +549,16 @@ msgstr ""
 #: functions.php:750
 #: functions.php:774
 msgid "(Edit)"
-msgstr ""
+msgstr "(Edytuj)"
 
 #: functions.php:762
 #, php-format
 msgid "<span itemprop=\"name\">%s </span><span class=\"says\">says:</span>"
-msgstr ""
+msgstr "<span itemprop=\"name\">%s </span><span class=\"says\">pisze:</span>"
 
 #: functions.php:765
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Twój komentarz czeka na akceptację."
 
 #: functions.php:771
 #, php-format
@@ -567,7 +567,7 @@ msgstr ""
 
 #: functions.php:1208
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Ups ! Nie można znaleźć strony."
+msgstr "Ups! Nie można znaleźć wskazanej strony."
 
 #: functions.php:1212
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
@@ -959,54 +959,54 @@ msgstr ""
 #: inc/template-tags.php:82
 #, php-format
 msgid "Posted in %1$s"
-msgstr "Kategoria: %1$s"
+msgstr "Kategoria %1$s"
 
 #: inc/template-tags.php:88
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Tagi %1$s"
 
 #: inc/template-tags.php:94
 msgid "Leave a comment"
-msgstr ""
+msgstr "Zostaw komentarz"
 
 #: inc/template-tags.php:94
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Komentarz"
 
 #: inc/template-tags.php:94
 msgid "% Comments"
-msgstr ""
+msgstr "% Komentarzy"
 
 #: inc/template-tags.php:115
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Kategoria: %s"
 
 #: inc/template-tags.php:117
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Tagi: %s"
 
 #: inc/template-tags.php:119
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: inc/template-tags.php:121
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Rok: %s"
 
 #: inc/template-tags.php:123
 #, php-format
 msgid "Month: %s"
-msgstr ""
+msgstr "Miesiąc %s"
 
 #: inc/template-tags.php:125
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "Dzień: %s"
 
 #: inc/template-tags.php:147
 #, php-format

@@ -8,7 +8,7 @@ Version: 2.1.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
-Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -553,9 +553,9 @@ big {
    2.4 BUTTONS
 -----------------------------------------*/
 .standard-button {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 16px;
@@ -568,9 +568,9 @@ big {
 }
 
 .secondary-button {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 14px;
@@ -591,9 +591,9 @@ big {
 }
 
 .secondary-button-dark {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 14px;
@@ -837,7 +837,7 @@ textarea {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	color: #999999;
-	line-height: auto;
+	/*line-height: auto;*/
 }
 
 .input-box {
@@ -1695,7 +1695,7 @@ header .navbar-brand {
 	display: inline-block;
 	margin-right: 10px;
 	vertical-align: middle;
-	text-align: !important;
+
 	font-size: 16px;
 	height: 40px;
 	line-height: 40px;
@@ -2444,7 +2444,7 @@ button.control_next.fade-btn {
 	-webkit-filter: grayscale(1);
 	-moz-filter: grayscale(1);
 	-o-filter: grayscale(1);
-	-ms-filter: grayscale(1);
+
 	opacity: 0.6;
 	max-width: 65px;
 }
@@ -4465,12 +4465,12 @@ a:hover {
 /* BUTTONS*/
 .standard-button,
 .navbar-register-button {
-	background-image: url(images/tr-btn.png);
-	background-repeat: repeat-x;
+	/*background-image: url(images/tr-btn.png);
+	background-repeat: repeat-x;*/
 	background-color: #00a5f9;
 	background-size: contain;
-	-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
-	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	/*-webkit-box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.3);*/
 }
 
 .standard-button:hover,
@@ -4684,7 +4684,7 @@ a:hover {
 }
 
 .parallax-one-post-meta{
-	visibility: none;
+
 	position: absolute;
 }
 /* --------------------------------------
@@ -5511,7 +5511,7 @@ h2.screen-reader-text {
     .text-right {
 		text-align: center;
 	}
-	
+
 	.timeline-box-wrap .info h3:after {
 		content: "";
 		margin-left: auto;
@@ -6089,7 +6089,7 @@ h2.screen-reader-text {
 	}
 
 	.dropdownmenu:before {
-		content "";
+		content: "";
 		text-align: center;
 		width: 25px;
 		height: 25px;
@@ -6863,9 +6863,9 @@ p.edd-alert-error,
 	color: #000;
 }
 
-#review-statistics .review-wrap-up .review-wu-right ul li, 
-#review-statistics .review-wu-bars h3, 
-.review-wu-bars span, 
+#review-statistics .review-wrap-up .review-wu-right ul li,
+#review-statistics .review-wu-bars h3,
+.review-wu-bars span,
 #review-statistics .review-wrap-up .cwpr-review-top .cwp-item-category a {
 	font-weight: 400;
 	font-size: 16px;

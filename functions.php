@@ -144,8 +144,8 @@ function parallax_one_setup() {
             ),
 			array(
 				"id" => 'parallax-one-req-ac-check-latest-posts',
-                "title" => esc_html__( 'Switch "Front page displays" to "Your latest posts" ' ,'parallax-one' ),
-                "description"=> esc_html__( 'In order to have the one page look for your website, please go to Customize -> Advanced options and switch "Front page displays" to "Your latest posts"','parallax-one' ),
+                "title" => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'parallax-one' ),
+                "description"=> esc_html__( 'In order to have the one page look for your website, Create a 2 pages one to home and other to blog then please go to Customize -> Advanced options and switch "Front page displays" to "Static page" and select the created pages.','parallax-one' ),
                 "check" => parallax_one_is_not_post(),
 				"customizer" => true
 			)
@@ -301,13 +301,13 @@ function parallax_one_scripts() {
 
 
 	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	if ( !empty($parallax_one_enable_move) && $parallax_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if ( !empty($parallax_one_enable_move) && $parallax_one_enable_move && parallax_one_show_on_front() ) {
 
 		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if ( parallax_one_show_on_front() ) {
 
 		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
@@ -656,7 +656,7 @@ function parallax_one_php_style() {
 	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
 	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
 
-	if( ( empty($parallax_one_enable_move) || !$parallax_one_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if( ( empty($parallax_one_enable_move) || !$parallax_one_enable_move) && parallax_one_show_on_front() ) {
 		$parallax_one_header_image = get_header_image();
 		if(!empty($parallax_one_header_image)){
 			echo '.header{ background-image: url('.parallax_one_make_protocol_relative_url($parallax_one_header_image).');}';
@@ -1157,6 +1157,9 @@ function parallax_one_is_not_post(){
 	return ('posts' == get_option( 'show_on_front' ) ? true : false);
 }
 
+function parallax_one_show_on_front(){
+	return ('posts' == get_option( 'show_on_front' ) && is_front_page())||( is_front_page() && !is_home() );
+}
 
 if(!function_exists('parallax_one_make_protocol_relative_url')){
 	function parallax_one_make_protocol_relative_url( $url ) {

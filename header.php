@@ -88,7 +88,7 @@
 
                         <!-- LOGO -->
 
-                        <button title='<?php _e( 'Toggle Menu', 'parallax-' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
+                        <button title='<?php _e( 'Toggle Menu', 'parallax-one' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
                             <span class="screen-reader-text"><?php esc_html_e('Toggle navigation','parallax-one'); ?></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

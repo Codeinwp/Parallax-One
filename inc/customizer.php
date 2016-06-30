@@ -14,7 +14,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	class Parallax_Theme_Font_Title extends WP_Customize_Control {
 		public function render_content() {
-			echo __('<span class="customize-control-title">Choose the character sets you want</span>','zerif-lite');
+			echo __('<span class="customize-control-title">Choose the character sets you want</span>','parallax-one');
 		}
 	}
 
@@ -43,7 +43,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'parallax_one_text_color', array(
 		'default' => '#313131',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'parallax_one_sanitize_rgba'
 	));
 
 	$wp_customize->add_control(
@@ -61,7 +61,7 @@ function parallax_one_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'parallax_one_title_color', array(
 		'default' => '#454545',
-		'sanitize_callback' => 'sanitize_hex_color'
+		'sanitize_callback' => 'parallax_one_sanitize_rgba'
 	));
 
 	$wp_customize->add_control(
@@ -291,9 +291,10 @@ function parallax_one_customize_register( $wp_customize ) {
 
 
 	require_once ( 'class/parallax-one-alpha-control.php');
-	/* zerif_bigtitle_background */
+	/* bigtitle_background */
 	$wp_customize->add_setting( 'parallax_one_bigtitle_background', array(
-		'default' => 'rgba(0, 0, 0, 0.7)'
+		'default' => 'rgba(0, 0, 0, 0.7)',
+		'sanitize_callback' => 'parallax_one_sanitize_rgba',
 	));
 
 	$wp_customize->add_control(
@@ -308,6 +309,8 @@ function parallax_one_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
+
 	/********************************************************/
 	/****************** SERVICES OPTIONS  *******************/
 	/********************************************************/
@@ -1020,6 +1023,20 @@ if( !function_exists('parallax_one_sanitize_input')){
 
 function parallax_one_sanitize_checkbox( $input ){
 	return ( isset( $input ) && true == $input ? true : false );
+}
+
+/* Sanitize RGBA colors */
+function  parallax_one_sanitize_rgba($value)  {
+	// If empty or an array return transparent
+	if ( empty( $value ) || is_array( $value ) ) {
+		return 'rgba(0,0,0,0)';
+	}
+	$value = str_replace( ' ', '', $value );
+	if(substr( $value, 0, 4 ) == "rgba"){
+		sscanf( $value, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+		return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
+	}
+	return sanitize_hex_color($value);
 }
 
 function parallax_one_sanitize_repeater($input){

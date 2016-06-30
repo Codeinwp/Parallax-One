@@ -207,7 +207,7 @@ function parallax_one_fonts_url(){
 	* supported by Lora, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$cabin = _x( 'on', 'Cabin font: on or off', 'paralla-one' );
+	$cabin = _x( 'on', 'Cabin font: on or off', 'parallax-one' );
 	 
 	/* Translators: If there are characters in your language that are not
 	* supported by Open Sans, translate this to 'off'. Do not translate

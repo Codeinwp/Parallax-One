@@ -1,4 +1,11 @@
 
+### 2.1.0.11 - 01/07/2016
+**Changes:** 
+- Update polish .mo and .po files
+- Allow callto protocol in the frontpage contact section
+- Allow html content in all the sections main areas
+- Remove required actions from Customize
+
 ### 2.1.0.10 - 02/06/2016
 **Changes:** 
 - Development

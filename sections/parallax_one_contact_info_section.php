@@ -8,6 +8,9 @@ $parallax_one_contact_info_item = get_theme_mod('parallax_one_contact_info_conte
 	array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#", "id" => "parallax_one_56d069b98cb70" )
 ) )	);
 
+$allowed_protocols = wp_allowed_protocols();
+array_push($allowed_protocols,'callto');
+
 if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 	$parallax_one_contact_info_item_decoded = json_decode($parallax_one_contact_info_item);
 	parallax_hook_contact_before(); ?>
@@ -61,7 +64,7 @@ if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 									
 									if( !empty( $text ) ){
 										if( !empty( $link ) ){ ?>
-											<a href="<?php echo esc_url( $link ); ?>" class="strong"><?php echo html_entity_decode($text); ?></a>
+											<a href="<?php echo esc_url( $link, $allowed_protocols ); ?>" class="strong"><?php echo html_entity_decode($text); ?></a>
 										<?php
 										} else {
 											echo html_entity_decode($text);

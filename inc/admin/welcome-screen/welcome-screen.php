@@ -77,6 +77,11 @@ class Parallax_One_Welcome {
 		
 		wp_enqueue_style( 'parallax-one-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
 		wp_enqueue_script( 'parallax-one-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
+		wp_localize_script( 'parallax-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome#getting_started' ) ),
+			'themeinfo' => __('View Theme Info','parallax-one'),
+		) );
+
 	}
 
 	/**

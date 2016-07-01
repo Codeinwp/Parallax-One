@@ -193,7 +193,7 @@ function parallax_one_customizer_scripts(){
 	wp_localize_script( 'parallax_one_customizer_script', 'parallaxOneCustomizerObject', array(
 
 		'documentation' => esc_html__( 'Documentation', 'parallax-one' ),
-		'support' => esc_html__('Support Forum','parallax-one'),
+		'support' => esc_html__('Support','parallax-one'),
 		'pro' => __('Upgrade to PRO','parallax-one'),
 
 	) );

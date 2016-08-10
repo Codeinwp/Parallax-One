@@ -6884,3 +6884,37 @@ p.edd-alert-error,
 .widget-area .wppr-prodlist .wppr-prodrow .wppr-prodrowright {
     float: right;
 }
+
+.wppr-rating-wrap {
+    position: absolute;
+    top: 97px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 90px;
+    min-height: 90px;
+}
+
+.wppr-rating-wrap-text {
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFF;
+    font-weight: 500;
+}
+
+.wppr-rating-wrap-score {
+    display: block;
+    font-size: 31px;
+    line-height: 34px;
+    color: #FFF;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .wppr-rating-wrap {
+        left: 97px;
+        top: 0;
+    }
+}

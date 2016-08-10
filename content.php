@@ -37,6 +37,20 @@
 					<span class="post-date-day"><?php the_time('d'); ?></span>
 					<span class="post-date-month"><?php the_time('M'); ?></span>
 				</div>
+
+				<?php
+				if( function_exists( cwppos_calc_overall_rating ) ) {
+					$review_score = cwppos_calc_overall_rating( get_the_ID() );
+					$review_score = $review_score['overall'];
+					if ( ! empty( $review_score ) ) {
+						echo '<div class="wppr-rating-wrap">';
+							echo '<div class="wppr-rating-wrap-text">' . esc_html__( 'Rating', 'parallax-one' ) . '</div>';
+							echo '<div class="wppr-rating-wrap-score">' . ( floor( $review_score ) / 10 ) . '</div>';
+						echo '</div>';
+					}
+				}
+			?>
+
 			</div>
 
 			<div class="entry-meta list-post-entry-meta">

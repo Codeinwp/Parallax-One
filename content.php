@@ -41,12 +41,14 @@
 				<?php
 				if( function_exists( 'cwppos_calc_overall_rating' ) ) {
 					$review_score = cwppos_calc_overall_rating( get_the_ID() );
-					$review_score = $review_score['overall'];
-					if ( ! empty( $review_score ) ) {
-						echo '<div class="wppr-rating-wrap">';
+					if( !empty( $review_score['overall'] ) ) {
+						$review_score = $review_score['overall'];
+						if ( !empty( $review_score ) ) {
+							echo '<div class="wppr-rating-wrap">';
 							echo '<div class="wppr-rating-wrap-text">' . esc_html__( 'Rating', 'parallax-one' ) . '</div>';
 							echo '<div class="wppr-rating-wrap-score">' . ( floor( $review_score ) / 10 ) . '</div>';
-						echo '</div>';
+							echo '</div>';
+						}
 					}
 				}
 			?>

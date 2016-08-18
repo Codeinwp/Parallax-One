@@ -67,11 +67,15 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 							if( function_exists( 'pll__' ) ){
 								$title = pll__( $parallax_one_service_box->title );
 								$text = pll__( $parallax_one_service_box->text );
-								$link = pll__( $parallax_one_service_box->link );
+								if(isset($parallax_one_service_box->link)){
+									$link = pll__( $parallax_one_service_box->link );
+								}
 							} else {
 								$title = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->title , 'Parallax One -> Services section', 'Service box title '.$parallax_one_service_box->id );
 								$text = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->text , 'Parallax One -> Services section', 'Service box text '.$parallax_one_service_box->id );
-								$link = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->link , 'Parallax One -> Services section', 'Service box link '.$parallax_one_service_box->id );
+								if(isset($parallax_one_service_box->link)){
+									$link = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->link , 'Parallax One -> Services section', 'Service box link '.$parallax_one_service_box->id );
+								}
 							}
 
 							if( ( !empty( $icon  ) && $icon != 'No Icon' && $choice == 'parallax_icon' )  || ( !empty( $image )  && $choice == 'parallax_image' ) || !empty( $title ) || !empty( $text ) ){ ?>

@@ -73,7 +73,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 							} else {
 								$title = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->title , 'Parallax One -> Services section', 'Service box title '.$parallax_one_service_box->id );
 								$text = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->text , 'Parallax One -> Services section', 'Service box text '.$parallax_one_service_box->id );
-								if(isser($parallax_one_service_box->link)){
+								if(isset($parallax_one_service_box->link)){
 									$link = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->link , 'Parallax One -> Services section', 'Service box link '.$parallax_one_service_box->id );
 								}
 							}
@@ -89,7 +89,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 
 											if( $choice == 'parallax_icon' ){
 												if( !empty( $icon ) ) {
-													if( isset($link) && !empty( $link ) ){ ?>
+													if( !empty( $link ) ){ ?>
 														<div class="service-icon colored-text">
 															<a href="<?php echo esc_url( $link ); ?>">
 																<span class="<?php echo esc_attr( $icon ); ?>"></span>
@@ -107,7 +107,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 
 											if( $choice == 'parallax_image' ){
 												if( !empty( $image ) ){
-													if( isset($link) && !empty( $link ) ){ ?>
+													if( !empty( $link ) ){ ?>
 														<a href="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>">
 															<img src="<?php echo esc_url( $image ); ?>" <?php echo ( !empty( $title ) ? 'alt="'. $title .'"' : ''); ?> />
 														</a>
@@ -121,7 +121,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 										}
 											
 										if( !empty( $title ) ){
-											if( isset($link) && !empty( $link ) ){ ?>
+											if( !empty( $link ) ){ ?>
 												<h3 class="colored-text">
 													<a href="<?php echo esc_url( $link ); ?>"><?php echo esc_attr( $title ); ?></a>
 												</h3>

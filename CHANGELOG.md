@@ -1,4 +1,10 @@
 
+### 2.1.0.12 - 18/08/2016
+**Changes:** 
+- Fixed issue with articles embedded in the post page
+- Added compatibility with WPPR plugin
+- Fixed small code issues
+
 ### 2.1.0.11 - 01/07/2016
 **Changes:** 
 - Update polish .mo and .po files

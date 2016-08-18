@@ -503,7 +503,11 @@ jQuery(document).ready(function($) {
 			 },
 			change: function(event, ui) {
 				// send ajax request to wp.customizer to enable Save & Publish button
-				var _new_value = $control.val();
+				if(typeof ui.color != 'undefined'){
+					var _new_value = ui.color.toString();
+				} else {
+					var _new_value = $control.val();
+				}
 				var key = $control.attr('data-customize-setting-link');
 				wp.customize(key, function(obj) {
 					obj.set(_new_value);

@@ -118,7 +118,7 @@ jQuery(document).ready(function(){
 
 
     jQuery(".inpage_scroll_btn").click(function(event) {
-        var anchor = jQuery('.inpage_scroll_btn').attr('data-anchor');
+        var anchor = jQuery(this).attr('data-anchor');
         var offset2 = -60;
         if ( jQuery(anchor).length){
             jQuery('html, body').animate({

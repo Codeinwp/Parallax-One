@@ -39,7 +39,7 @@
 				</div>
 
 				<?php
-				if( function_exists( cwppos_calc_overall_rating ) ) {
+				if( function_exists( 'cwppos_calc_overall_rating' ) ) {
 					$review_score = cwppos_calc_overall_rating( get_the_ID() );
 					$review_score = $review_score['overall'];
 					if ( ! empty( $review_score ) ) {

@@ -2593,6 +2593,11 @@ div.wpcf7-mail-sent-ng {
 	padding: 10px;
 }
 
+.parallax_one_contact_form > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /*---------------------------------------
    3.16 WOOCOMMERCE STYLE
 -----------------------------------------*/

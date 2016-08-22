@@ -17,17 +17,21 @@
 
 			<?php
 				$parallax_one_contact_form_shortcode = get_theme_mod('parallax_one_contact_form_shortcode');
+
+				$contact_column = empty($parallax_one_contact_form_shortcode) || $post->post_content === "" ? "col-md-12" : "col-md-6";
+
+				if( $post->post_content !== "" ):
+					echo '<div class="' . $contact_column . '">';
+						the_content();
+					echo '</div>';
+				endif;
+
+				if(!empty($parallax_one_contact_form_shortcode)) {
+					echo '<div class="' . $contact_column . '">';
+					echo do_shortcode( $parallax_one_contact_form_shortcode);
+					echo '</div>';
+				}
 			?>
-			<div class="col-md-6">
-				<?php the_content(); ?>
-			</div>
-				<?php 
-					if(!empty($parallax_one_contact_form_shortcode)) {
-						echo '<div class="col-md-6">';
-						echo do_shortcode( $parallax_one_contact_form_shortcode);
-						echo '</div>';
-					}
-				?>
 
 			<footer class="entry-footer">
 				<?php edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>

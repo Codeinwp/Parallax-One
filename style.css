@@ -2598,6 +2598,10 @@ div.wpcf7-mail-sent-ng {
     padding-right: 0;
 }
 
+.header#masthead {
+	opacity: 0;
+}
+
 /*---------------------------------------
    3.16 WOOCOMMERCE STYLE
 -----------------------------------------*/

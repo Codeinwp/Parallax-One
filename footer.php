@@ -45,13 +45,12 @@
 
 		<div class="footer-bottom-wrap">
 			<?php
-			global $wp_customize;
 			$paralax_one_copyright = get_theme_mod('parallax_one_copyright','Themeisle');
 
 			if( !empty($paralax_one_copyright) ){ ?>
 				<span class="parallax_one_copyright_content"><?php echo esc_attr($paralax_one_copyright); ?></span>
 			<?php	
-			} elseif ( isset( $wp_customize )   ) { ?>
+			} elseif ( is_customize_preview() ) { ?>
 				<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>
 			<?php
 			} ?>

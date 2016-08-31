@@ -2,7 +2,6 @@
  SECTION: TEAM
 ============================== -->
 <?php
-global $wp_customize;
 $parallax_one_our_team_title = get_theme_mod('parallax_one_our_team_title',esc_html__('Our Team','parallax-one'));
 $parallax_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one'));
 $parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_encode( array(
@@ -24,7 +23,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 						if( !empty($parallax_one_our_team_title) ){ ?>
 							<h2 class="dark-text"><?php echo esc_attr( $parallax_one_our_team_title ); ?></h2><div class="colored-line"></div>
 						<?php
-						} elseif ( isset( $wp_customize ) ) { ?>
+						} elseif ( is_customize_preview() ) { ?>
 							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
 						<?php
 						}
@@ -32,7 +31,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 						if( !empty($parallax_one_our_team_subtitle) ){ ?>
 							<div class="sub-heading"><?php echo esc_attr($parallax_one_our_team_subtitle); ?></div>
 						<?php		
-						} elseif ( isset( $wp_customize ) ) { ?>
+						} elseif ( is_customize_preview() ) { ?>
 							<div class="sub-heading paralax_one_only_customizer"></div>
 						<?php
 						} ?>
@@ -158,7 +157,7 @@ if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitl
 	</section><!-- #section9 -->
 	<?php parallax_hook_team_after();
 } else {
-	if( isset( $wp_customize ) ) {
+	if( is_customize_preview() ) {
 		parallax_hook_team_before(); ?>
 		<section class="team paralax_one_only_customizer" id="team" role="region" aria-label="<?php esc_html_e('Team','parallax-one') ?>">
 			<?php parallax_hook_team_top(); ?>

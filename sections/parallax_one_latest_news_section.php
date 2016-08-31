@@ -27,7 +27,7 @@
 							<?php
 								if(!empty($parallax_one_latest_news_title)){
 									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($parallax_one_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
-								} elseif ( isset( $wp_customize )   ) {
+								} elseif ( is_customize_preview() ) {
 									echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
 								}
 							?>

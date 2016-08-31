@@ -1,0 +1,26 @@
+#Check code of the theme
+check:
+  - 'mkdir:logs'
+  - 'imagemin'
+  - 'phpcbf'
+  - 'postcss:build'
+  - 'makepot'
+  - 'addtextdomain'
+  - 'check:css'
+  - 'check:i18n'
+  - 'check:php'
+  - 'check:js'
+'check:css':
+  - 'wpcss'
+'check:php':
+  - 'phplint'
+  - 'phpcs'
+'check:js':
+  - 'jshint'
+'check:i18n':
+  - 'checktextdomain'
+
+
+# Default task
+default:
+  - check

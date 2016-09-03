@@ -22,12 +22,16 @@
 									echo '<div class="col-md-6 brief-content-two"><div class="brief-image-right"><img src="'.parallax_one_make_protocol_relative_url(esc_url($paralax_one_our_story_image)).'" alt="'.esc_html__('About','parallax-one').'"></div></div>';
 								}
 							} elseif ( is_customize_preview() ) {
-								echo '<div class="col-md-6 brief-content-two paralax_one_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>';
+								echo '<div class="col-md-6 brief-content-two paralax_one_only_customizer"><div class="brief-image-right"><img src="" ></div></div>';
 							}
 						?>
 
 						<!-- BRIEF HEADING -->
-						<div class="col-md-6 content-section brief-content-one">
+							<?php if( !empty($paralax_one_our_story_image) ){
+								echo '<div class="col-md-6 content-section brief-content-one">';
+							} else {
+								echo '<div class="col-md-12 content-section brief-content-one">';
+							} ?>
 							<?php
 								if( !empty($parallax_one_our_story_title) ){
 									echo '<h2 class="text-left dark-text">'.esc_attr($parallax_one_our_story_title).'</h2><div class="colored-line-left"></div>';

@@ -181,8 +181,12 @@
 				$( '.brief' ).removeClass( 'paralax_one_only_customizer' );
 				$('.brief .brief-content-two').removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .brief-content-two .brief-image-right img' ).attr('src', to);
+				$( '.brief .brief-content-one').removeClass( 'col-md-12');
+				$( '.brief .brief-content-one').addClass( 'col-md-6 ');
 			} else {
 				$('.brief .brief-content-two').addClass( 'paralax_one_only_customizer' );
+				$( '.brief .brief-content-one').addClass( 'col-md-12');
+				$( '.brief .brief-content-one').removeClass( 'col-md-6 ');
 				if( $( '.brief .content-section h2' ).hasClass('paralax_one_only_customizer') && $('.brief .content-section .brief-content-text').hasClass('paralax_one_only_customizer') ){
 					$( '.brief' ).addClass( 'paralax_one_only_customizer' );
 				}

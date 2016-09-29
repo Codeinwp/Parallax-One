@@ -38,6 +38,10 @@ The exceptions to this license are as follows:
  	Copyright (C) 2014 Matthew Wagerfield - @wagerfield
     Licensed under the MIT license.
 	
+* Font Awesome Iconpocker from repeater
+    Copyright (c) 2014 Javier Aguilar @mjolnic
+    Licensed under the MIT license.
+    
 * Images	 
 	 
 	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	  

@@ -38,7 +38,7 @@ The exceptions to this license are as follows:
  	Copyright (C) 2014 Matthew Wagerfield - @wagerfield
     Licensed under the MIT license.
 	
-* Font Awesome Iconpocker from repeater
+* Font Awesome Iconpicker from repeater
     Copyright (c) 2014 Javier Aguilar @mjolnic
     Licensed under the MIT license.
     

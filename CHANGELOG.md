@@ -1,4 +1,12 @@
 
+### 2.1.0.13 - 06/10/2016
+**Changes:** 
+- Make contact form on contact page full width when the page content is empty
+- Fixed issue with large menus loading slowly in header
+- Improved code
+- Make About section full width when no image is selected
+- Add an improved icon picker in customizer
+
 ### 2.1.0.12 - 18/08/2016
 **Changes:** 
 - Fixed issue with articles embedded in the post page

@@ -1,4 +1,4 @@
-jQuery(window).load(function(){ 
+jQuery(window).load(function(){
     callback_menu_align();
     fixFooterBottom();
 });
@@ -36,6 +36,7 @@ var callback_menu_align = function () {
     } else {
         jQuery('.sticky-navigation-open').css('min-height', 70);
     }
+    jQuery( '.header#masthead' ).css( 'opacity', 1 );
 }
 
 /* STICKY FOOTER */

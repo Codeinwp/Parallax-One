@@ -2,7 +2,6 @@
  SECTION: SERVICES
 ============================== -->
 <?php
-global $wp_customize;
 $parallax_one_our_services_title = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
 $parallax_one_our_services_subtitle = get_theme_mod( 'parallax_one_our_services_subtitle', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'parallax-one' ) );
 $parallax_one_services = get_theme_mod('parallax_one_services_content', json_encode( array(
@@ -26,7 +25,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 					if( !empty( $parallax_one_our_services_title ) ){ ?>
 						<h2 class="dark-text"><?php echo esc_attr($parallax_one_our_services_title); ?></h2><div class="colored-line"></div>
 					<?php
-					} elseif ( isset( $wp_customize ) ) { ?>
+					} elseif ( is_customize_preview() ) { ?>
 						<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
 					<?php
 					} 
@@ -34,7 +33,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 					if( !empty( $parallax_one_our_services_subtitle ) ){ ?>
 						<div class="sub-heading"><?php echo esc_attr($parallax_one_our_services_subtitle); ?></div>
 					<?php
-					} elseif ( isset( $wp_customize ) ) { ?>
+					} elseif ( is_customize_preview() ) { ?>
 						<div class="sub-heading paralax_one_only_customizer"></div>
 					<?php
 					}?>
@@ -154,7 +153,7 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 	<?php parallax_hook_services_after(); ?>
 <?php
 } else {
-	if( isset( $wp_customize ) ) { 
+	if( is_customize_preview() ) {
 		parallax_hook_services_before(); ?>
 		<section class="services paralax_one_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','parallax-one') ?>">
 			<?php parallax_hook_services_top(); ?>

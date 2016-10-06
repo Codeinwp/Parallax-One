@@ -33,9 +33,7 @@
     ============================== -->
 	<?php
 
-	 global $wp_customize;
-
-	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ):
+	 if(is_front_page() && !is_customize_preview() && get_option( 'show_on_front' ) != 'page' ):
 
 		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
 
@@ -119,7 +117,7 @@
 
 							else:
 
-								if( isset( $wp_customize ) ):
+								if( is_customize_preview() ):
 
 									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand paralax_one_only_customizer" title="'.get_bloginfo('title').'">';
 

@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.1.0.12
+Version: 2.1.0.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -2591,6 +2591,15 @@ div.wpcf7-mail-sent-ng {
 .parallax_one_contact_form input[type="password"],
 .parallax_one_contact_form input[type="search"] {
 	padding: 10px;
+}
+
+.parallax_one_contact_form > .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header#masthead {
+	opacity: 0;
 }
 
 /*---------------------------------------

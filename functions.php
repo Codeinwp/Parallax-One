@@ -252,11 +252,11 @@ function parallax_one_scripts() {
 
 	wp_enqueue_style( 'parallax-one-fonts', parallax_one_fonts_url(), array(), null );
 
-	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/vendor/bootstrap.min.css'),array(), '3.3.1');
+	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 
-	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/vendor/bootstrap.min.js'), array(), '3.3.5', true );
+	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
 
@@ -278,7 +278,7 @@ function parallax_one_scripts() {
 		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file('/js/vendor/skip-link-focus-fix.js'), array(), '1.0.0', true );
+	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -511,7 +511,7 @@ add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
 // Adding IE-only scripts to header.
 function parallax_one_ie () {
     echo '<!--[if lt IE 9]>' . "\n";
-    echo '<script src="'. parallax_get_file('/js/vendor/html5shiv.min.js').'"></script>' . "\n";
+    echo '<script src="'. parallax_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
     echo '<![endif]-->' . "\n";
 }
 add_action('wp_head', 'parallax_one_ie');

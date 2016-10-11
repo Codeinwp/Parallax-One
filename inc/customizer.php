@@ -865,6 +865,22 @@ function parallax_one_customize_register( $wp_customize ) {
 	);
 
 
+	/* Enable animations */
+	$wp_customize->add_setting( 'paralax_one_enable_animations', array(
+		'sanitize_callback' => 'parallax_one_sanitize_checkbox'
+	));
+	$wp_customize->add_control(
+			'paralax_one_enable_animations',
+			array(
+				'type' => 'checkbox',
+				'label' => esc_html__('Enable animations on front page?','parallax-one'),
+				'description' => esc_html__('If this box is checked, scroll animations will be enabled on the homepage.','parallax-one'),
+				'section' => 'parallax_one_general_section',
+				'priority'    => 8,
+			)
+	);
+
+
 
 	/* Character sets */
 	$wp_customize->add_setting( 'parallax_theme_font_title', array(

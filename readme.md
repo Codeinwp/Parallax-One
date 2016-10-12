@@ -42,6 +42,10 @@ The exceptions to this license are as follows:
     Copyright (c) 2014 Javier Aguilar @mjolnic
     Licensed under the MIT license.
     
+* scrollReveal.js
+     Copyright (C) 2014  https://twitter.com/julianlloyd
+     Licensed under the MIT license.
+
 * Images	 
 	 
 	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	  

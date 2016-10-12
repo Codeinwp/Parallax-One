@@ -9,7 +9,7 @@ $parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode( a
 	array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#", "id" => "parallax_one_56d7f2ce8a15a" ),
 	array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#", "id" => "parallax_one_56d7f2cf8a15b" )
 ) ) );
-$parallax_one_frontpage_animations = get_theme_mod('paralax_one_enable_animations', '0');
+$parallax_one_frontpage_animations = get_theme_mod('parallax_one_enable_animations', '0');
 
 if( !empty( $parallax_one_logos ) ){
 	$parallax_one_logos_decoded = json_decode( $parallax_one_logos );

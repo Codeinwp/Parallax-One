@@ -11,7 +11,7 @@ if( !empty($parallax_one_button_link) && strpos($parallax_one_button_link, '#') 
 } else {
 	$parallax_one_go_to = 'onclick="parent.location=\''.esc_url($parallax_one_button_link).'\'" data-anchor=""';
 }
-$parallax_one_frontpage_animations = get_theme_mod('paralax_one_enable_animations', '0');
+$parallax_one_frontpage_animations = get_theme_mod('parallax_one_enable_animations', '0');
 
 
 parallax_hook_ribbon_before();

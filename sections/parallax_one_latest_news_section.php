@@ -2,7 +2,7 @@
  SECTION: LATEST NEWS
 ============================== -->
 <?php
-	$parallax_one_frontpage_animations = get_theme_mod('paralax_one_enable_animations', '0');
+	$parallax_one_frontpage_animations = get_theme_mod('parallax_one_enable_animations', '0');
 	$parallax_number_of_posts = get_option('posts_per_page');
 	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
 

@@ -9,7 +9,7 @@ $parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_enc
 	array('image_url' => parallax_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','parallax-one'),'subtitle' => esc_html__('Account Manager','parallax-one'), 'id' => 'parallax_one_56fe9798baca5'),
 	array('image_url' => parallax_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','parallax-one'),'subtitle' => esc_html__('Business Development','parallax-one'), 'id' => 'parallax_one_56fe9799baca6')
 ) ) );
-$parallax_one_frontpage_animations = get_theme_mod('paralax_one_enable_animations', '0');
+$parallax_one_frontpage_animations = get_theme_mod('parallax_one_enable_animations', '0');
 
 if(!empty($parallax_one_our_team_title) || !empty($parallax_one_our_team_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_team_content) ){
 	parallax_hook_team_before(); ?>

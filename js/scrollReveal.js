@@ -8,9 +8,9 @@
  _/ |
  |__/
 
- "Declarative on-scroll reveal animations."
 
- /*=============================================================================
+
+ "Declarative on-scroll reveal animations."
 
  scrollReveal.js is inspired by cbpScroller.js, © 2014, Codrops.
 
@@ -19,7 +19,7 @@
 
  scrollReveal.js, © 2014 https://twitter.com/julianlloyd
 
- =============================================================================*/
+ */
 
 ;(function (window) {
 

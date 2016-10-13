@@ -868,7 +868,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* Enable animations */
 	$wp_customize->add_setting( 'parallax_one_enable_animations', array(
 		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default' => 0
+		'default' => '0'
 
 	));
 	$wp_customize->add_control(
@@ -876,7 +876,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			array(
 				'type' => 'checkbox',
 				'label' => esc_html__('Enable animations on front page?','parallax-one'),
-				'description' => esc_html__('If this box is checked, scroll animations will be enabled on the homepage.','parallax-one'),
+				'description' => esc_html__('If this box is checked, scroll animations will be enabled on the front page.','parallax-one'),
 				'section' => 'parallax_one_general_section',
 				'priority'    => 8,
 			)

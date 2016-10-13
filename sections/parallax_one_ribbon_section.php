@@ -11,6 +11,8 @@ if( !empty($parallax_one_button_link) && strpos($parallax_one_button_link, '#') 
 } else {
 	$parallax_one_go_to = 'onclick="parent.location=\''.esc_url($parallax_one_button_link).'\'" data-anchor=""';
 }
+$parallax_one_frontpage_animations = get_theme_mod('parallax_one_enable_animations', '0');
+
 
 parallax_hook_ribbon_before();
 if(!empty($parallax_one_ribbon_title) || !empty($parallax_one_button_text)) {
@@ -32,21 +34,38 @@ if(!empty($parallax_one_ribbon_title) || !empty($parallax_one_button_text) || is
 				<div class="col-md-8 col-md-offset-2">
 
 					<?php
-					if( !empty($parallax_one_ribbon_title) ){
-						echo '<h2 class="white-text strong">'.wp_kses_post($parallax_one_ribbon_title).'</h2>';
-					} elseif ( is_customize_preview() ) {
-						echo '<h2 class="white-text strong paralax_one_only_customizer"></h2>';
-					}
+					if( !empty($parallax_one_ribbon_title) ){ ?>
+						<h2 class="white-text strong"
+							<?php if( !empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								echo 'data-scrollreveal="enter top after 0.15s over 1s"';
+							}?>>
+							<?php echo wp_kses_post($parallax_one_ribbon_title); ?>
+						</h2>
+					<?php } elseif ( is_customize_preview() ) { ?>
+						<h2 class="white-text strong paralax_one_only_customizer"
+							<?php if( !empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								echo 'data-scrollreveal="enter top after 0.15s over 1s"';
+							}?>>
 
+						</h2>
+					<?php }
 
 					if(!empty($parallax_one_button_text)){ ?>
-						<button <?php if(!empty($parallax_one_go_to)){ echo $parallax_one_go_to; } ?> class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+						<button <?php if(!empty($parallax_one_go_to)){ echo $parallax_one_go_to; } ?> class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn"
+							<?php if( !empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								echo 'data-scrollreveal="enter bottom after 0.15s over 1s"';
+							}?>>
 							<span class="screen-reader-text"><?php echo esc_html__('Header button label:','parallax-one').strip_tags(trim($parallax_one_button_text)); ?></span>
 							<?php echo wp_kses_post( $parallax_one_button_text ); ?>
 						</button>
 						<?php
 					} elseif( is_customize_preview() ){ ?>
-						<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  <?php if(!empty($parallax_one_go_to)){ echo $parallax_one_go_to; } ?>></button>
+						<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  <?php if(!empty($parallax_one_go_to)){ echo $parallax_one_go_to; }
+							if( !empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								echo 'data-scrollreveal="enter bottom after 0.15s over 1s"';
+							}?>>
+
+						</button>
 						<?php
 					} ?>
 

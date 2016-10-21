@@ -256,7 +256,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             foreach ( $array as $icon ) {  ?>
                 <div class="parallax_one_general_control_repeater_container parallax_one_draggable">
                     <div class="parallax-customize-control-title">
-                        <?php esc_html_e( 'Llorix One','parallax-one' )?>
+                        <?php esc_html_e( 'Parallax One','parallax-one' )?>
                     </div>
                     <div class="parallax-box-content-hidden">
                         <?php
@@ -354,7 +354,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
         } else { ?>
             <div class="parallax_one_general_control_repeater_container">
                 <div
-                    class="parallax-customize-control-title"><?php esc_html_e( 'Llorix One', 'parallax-one' ) ?></div>
+                    class="parallax-customize-control-title"><?php esc_html_e( 'Parallax One', 'parallax-one' ) ?></div>
                 <div class="parallax-box-content-hidden">
                     <?php
                     if ( $this->parallax_one_image_control == true && $this->parallax_one_icon_control == true ) {

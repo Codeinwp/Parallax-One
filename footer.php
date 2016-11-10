@@ -105,7 +105,7 @@
 									<?php
 									if( !empty( $link ) ){ ?>
 											<a target="_blank" href="<?php echo esc_url($link); ?>">
-												<span class="parallax-one-footer-icons <?php echo esc_attr($icon); ?> transparent-text-dark"></span>
+												<span class="fa parallax-one-footer-icons <?php echo esc_attr($icon); ?> transparent-text-dark"></span>
 											</a>
 									<?php
 									} else { ?>

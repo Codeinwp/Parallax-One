@@ -93,7 +93,8 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
      * Enqueue required scripts and styles.
      */
     public function enqueue() {
-        wp_enqueue_script( 'parallax-one-iconpicker', parallax_get_file( '/inc/icon-picker/js/iconpicker-engine.min.js' ), array( 'jquery' ), '1.0.0', true );
+        wp_enqueue_style( 'parallax-one-font-awesome', parallax_get_file('/css/font-awesome.min.css'),'4.7' );
+        wp_enqueue_script( 'parallax-one-iconpicker', parallax_get_file( '/inc/icon-picker/js/iconpicker-engine.min.js' ), array( 'jquery' ), '1.0.2', true );
         wp_enqueue_script( 'parallax-one-iconpicker-control', parallax_get_file( '/inc/icon-picker/js/iconpicker-control.js' ), array( 'jquery' ), '1.0.0', true );
         wp_enqueue_style( 'parallax-one-iconpicker', parallax_get_file( '/inc/icon-picker/css/iconpicker.min.css' ) );
         wp_enqueue_style( 'parallax-one-stamp-icons', parallax_get_file( '/inc/icon-picker/css/stamp-icons.min.css' ),array(), '4.5.0' );

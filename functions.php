@@ -1119,12 +1119,20 @@ function parallax_one_get_template_part($template){
     if(locate_template($template.'.php')) {
 		get_template_part($template);
     } else {
-		if(defined('PARALLAX_ONE_PLUS_PATH')){
-			$template = basename ($template);
-			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
-				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
-			}
-		}
+	    if(defined('PARALLAX_ONE_PLUS_PATH')){
+		    $template = basename ($template);
+
+		    if (get_template_directory() !== get_stylesheet_directory()) {
+			    if(file_exists( get_stylesheet_directory() . '/sections/' . $template . '.php' )){
+				    require_once ( get_stylesheet_directory() . '/sections/' . $template . '.php' );
+				    return;
+			    }
+		    }
+
+		    if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )) {
+			    require_once( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' );
+		    }
+	    }
 	}
 }
 

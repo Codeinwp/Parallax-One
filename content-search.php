@@ -80,7 +80,7 @@
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
-			$ismore = @strpos( $post->post_content, '<!--more-->' );
+			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) : the_content();
 			else : the_excerpt();
 			endif;

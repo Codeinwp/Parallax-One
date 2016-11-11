@@ -1,5 +1,7 @@
 <?php
 /**
+ * Contact template content.
+ *
  * @package parallax-one
  */
 ?>

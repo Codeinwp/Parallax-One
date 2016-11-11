@@ -1,4 +1,9 @@
 <?php
+/**
+ * Front Page Template
+ *
+ * @package parallax-one
+ */
 
 if ( 'posts' == get_option( 'show_on_front' ) ) {
 

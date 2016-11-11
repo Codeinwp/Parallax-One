@@ -58,7 +58,7 @@ if( !parallax_one_general_repeater_is_empty($parallax_one_contact_info_item) ){
 									parallax_hook_contact_entry_top();
 
 									if( !empty( $icon ) ){ ?>
-											<div class="icon-container"><span class="<?php echo esc_attr($icon)?> colored-text"></span></div>
+											<div class="icon-container"><span class="fa <?php echo esc_attr($icon)?> colored-text"></span></div>
 									<?php
 									}
 									

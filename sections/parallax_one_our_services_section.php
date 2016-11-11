@@ -95,13 +95,13 @@ if(!empty($parallax_one_our_services_title) || !empty($parallax_one_our_services
 													if( !empty( $link ) ){ ?>
 														<div class="service-icon colored-text">
 															<a href="<?php echo esc_url( $link ); ?>">
-																<span class="<?php echo esc_attr( $icon ); ?>"></span>
+																<span class="fa <?php echo esc_attr( $icon ); ?>"></span>
 															</a>
 														</div>
 													<?php
 													} else {?>
 														<div class="service-icon colored-text">
-															<span class="<?php echo esc_attr( $icon ); ?>"></span>
+															<span class="fa <?php echo esc_attr( $icon ); ?>"></span>
 														</div>
 													<?php
 													}

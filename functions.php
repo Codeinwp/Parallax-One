@@ -609,6 +609,7 @@ if ( ! function_exists( 'parallax_one_general_repeater_is_empty' ) ) {
 	}
 }
 
+<<<<<<< HEAD
 
 /**
  * Display sections from childtheme, theme or plus plugin.
@@ -633,6 +634,18 @@ function parallax_one_get_template_part( $template ) {
 			    require_once( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' );
 		    }
 	    }
+=======
+function parallax_one_get_template_part($template){
+    if(locate_template($template.'.php')) {
+		get_template_part($template);
+    } else {
+		if(defined('PARALLAX_ONE_PLUS_PATH')){
+			$template = basename ($template);
+			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
+				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
+			}
+		}
+>>>>>>> parent of 7307941... #315 - fix for child-themes when having parallax plus
 	}
 }
 

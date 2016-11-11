@@ -9,8 +9,8 @@
  *
  * @package parallax-one
  */
-$paralax_one_full_width_template = get_theme_mod('paralax_one_full_width_template');
-if(isset($paralax_one_full_width_template) && $paralax_one_full_width_template != 1) {
+$paralax_one_full_width_template = get_theme_mod( 'paralax_one_full_width_template' );
+if ( isset( $paralax_one_full_width_template ) && $paralax_one_full_width_template != 1 ) {
 	get_header(); ?>
 
 		</div>
@@ -24,7 +24,7 @@ if(isset($paralax_one_full_width_template) && $paralax_one_full_width_template !
 	<div id="content" class="content-warp">
 		<?php parallax_hook_content_top(); ?>
 		<div class="container">
-			<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else {echo 'col-md-12';}  ?>">
+			<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else { echo 'col-md-12';}  ?>">
 				<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
 				<?php parallax_hook_page_before();?>
@@ -34,8 +34,8 @@ if(isset($paralax_one_full_width_template) && $paralax_one_full_width_template !
 
 					<?php
 						// If comments are open or we have at least one comment, load up the comment template
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
 						endif;
 					?>
 
@@ -53,5 +53,5 @@ if(isset($paralax_one_full_width_template) && $paralax_one_full_width_template !
 	<?php get_footer(); ?>
 	<?php
 } else {
-	include ('template-fullwidth.php');
+	include( 'template-fullwidth.php' );
 }

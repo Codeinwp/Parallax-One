@@ -1,5 +1,7 @@
 <?php
 /**
+ * Include the Post-Format-specific template for the content.
+ *
  * @package parallax-one
  */
 ?>

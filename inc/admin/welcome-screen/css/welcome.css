@@ -1,206 +1,239 @@
 .parallax-one-nav-tabs {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
+
 .parallax-one-nav-tabs:after {
-    clear: both;
-    display: table;
-    content: " ";
+	display: table;
+	clear: both;
+	content: " ";
 }
+
 .parallax-one-nav-tabs > li {
-    float: left;
-    margin-bottom: -1px;
-    display: block;
+	display: block;
+	float: left;
+	margin-bottom: -1px;
 }
+
 .parallax-one-nav-tabs > li > a {
-    border: 1px solid transparent;
-    border-radius: 4px 4px 0 0;
-    display: block;
-    padding: 10px 15px;
+	display: block;
+	padding: 10px 15px;
+	border: 1px solid transparent;
+	border-radius: 4px 4px 0 0;
 	text-decoration: none;
 }
-.parallax-one-nav-tabs > li.active > a, .parallax-one-nav-tabs > li.active > a:focus, .parallax-one-nav-tabs > li.active > a:hover {
-    color: #555;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-color: transparent;
-}
-.parallax-one-nav-tabs > li.parallax-one-w-red-tab > a {
-    color: red;
-    font-weight: bold;
-}
-.parallax-one-tab-content {
+
+.parallax-one-nav-tabs > li.active > a,
+.parallax-one-nav-tabs > li.active > a:focus,
+.parallax-one-nav-tabs > li.active > a:hover {
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	color: #555;
 	background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    width: 960px;
-    float: left;
 }
+
+.parallax-one-nav-tabs > li.parallax-one-w-red-tab > a {
+	color: red;
+	font-weight: bold;
+}
+
+.parallax-one-tab-content {
+	float: left;
+	width: 960px;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	background-color: #fff;
+}
+
 .parallax-one-tab-content > .tab-pane {
-    display: none;
+	display: none;
 }
+
 .parallax-one-tab-content > .active {
-    display: block;
+	display: block;
 }
 
 .parallax-one-tab-pane {
 	padding: 30px;
 }
+
 .parallax-one-tab-pane {
-    display: none;
+	display: none;
 }
+
 .parallax-one-tab-pane.active {
-    display: block;
+	display: block;
 }
 
 #parallax-one-theme-version {
-    font-size: 50%;
-    padding: 10px;
-    background: #ccc;
+	padding: 10px;
+	background: #ccc;
+	font-size: 50%;
 }
+
 #parallax-one-w-screenshot {
-    border: 1px solid #ccc;
-    margin-top: 30px;
+	margin-top: 30px;
+	border: 1px solid #ccc;
 }
+
 .parallax-one-w-activated {
-    cursor:not-allowed !important;
+	cursor: not-allowed !important;
 }
+
 .prallax-one-tab-pane-half {
-    width: 45%;
-    float:left;
-    border-left: 1px solid #ccc;
-    padding-left: 20px;
-    margin-top: 15px;
-    padding-right: 20px;
-    margin-bottom: 15px;
+	float: left;
+	width: 45%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border-left: 1px solid #ccc;
 }
+
 .parallax-one-tab-content img {
-    max-width: 100%;
+	max-width: 100%;
 }
+
 .prallax-one-tab-pane-first-half {
-    border-left: none;
+	border-left: none;
 }
+
 .prallax-one-tab-pane-center {
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: center;
 }
+
 .parallax-one-welcome-title {
-    font-size: 32px;
+	font-size: 32px;
 }
+
 .parallax-one-clear {
-    clear: both;
+	clear: both;
 }
+
 .parallax-one-child-theme-container {
-    position: relative;
+	position: relative;
 }
+
 .parallax-one-child-theme-description {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    overflow: auto;
-    box-sizing: border-box;
-    padding: 0;
-    max-width: 100%;
-    height: 100%;
-    background-color: #000000;
-    color: #ffffff;
-    -webkit-transition: all 300ms ease-out;
-    -moz-transition: all 300ms ease-out;
-    -ms-transition: all 300ms ease-out;
-    -o-transition: all 300ms ease-out;
-    transition: all 300ms ease-out;
-    -webkit-transition-delay: 500ms;
-    -moz-transition-delay: 500ms;
-    -ms-transition-delay: 500ms;
-    -o-transition-delay: 500ms;
-    transition-delay: 500ms;
+	overflow: auto;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+	height: 100%;
+	padding: 0;
+	color: #fff;
+	background-color: #000;
+	-webkit-transition: all 300ms ease-out;
+	transition: all 300ms ease-out;
+	-webkit-transition-delay: 500ms;
+	transition-delay: 500ms;
 }
+
 .parallax-one-child-theme-image-container:hover .parallax-one-child-theme-description {
-    top: 0;
-    display: block;
-    padding: 0 15px;
-    opacity: 0.8;
+	display: block;
+	top: 0;
+	padding: 0 15px;
+	opacity: 0.8;
 }
+
 .parallax-one-child-theme-image-container {
-    position: relative;
-    overflow: hidden;
+	overflow: hidden;
+	position: relative;
 }
+
 .parallax-one-child-theme-image-container img {
-    max-width: 100%;
+	max-width: 100%;
 }
+
 .parallax-one-child-theme-details .theme-details {
-    padding: 10px;
-    background: none repeat scroll 0 0 #F1F1F1;
-    font-size: 18px;
+	padding: 10px;
+	background: none repeat scroll 0 0 #f1f1f1;
+	font-size: 18px;
 }
 
 .parallax-one-child-theme-details .theme-details.active {
-    background: none repeat scroll 0 0 #2B5F87;
-    color: #fff;
+	color: #fff;
+	background: none repeat scroll 0 0 #2b5f87;
 }
 
 .parallax-one-child-theme-details .theme-details .theme-name {
-    float:left;
+	float: left;
 }
+
 .parallax-one-child-theme-details .theme-details .preview {
-    margin-right: 2px;
+	margin-right: 2px;
 }
+
 .parallax-one-fre-pro table {
-    border-collapse: collapse;
-    width: 100%;
+	width: 100%;
+	border-collapse: collapse;
 }
+
 .parallax-one-fre-pro table tr {
-    border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
+
 .parallax-one-fre-pro table td {
-    padding: 30px;
+	padding: 30px;
 }
+
 .parallax-one-fre-pro table th {
-    padding-bottom: 30px;
+	padding-bottom: 30px;
 }
+
 .parallax-one-fre-pro table td span.dashicons-before:before {
-    font-size: 50px;
-    width: auto;
-    height: auto;
+	width: auto;
+	height: auto;
+	font-size: 50px;
 }
+
 .parallax-one-fre-pro table td span.dashicons-yes:before {
-    color:green;
+	color: green;
 }
+
 .parallax-one-fre-pro table td span.dashicons-no-alt:before {
-    color:red;
+	color: red;
 }
+
 .parallax-one-fre-pro table tr.parallax-one-text-center {
-    text-align: center;
+	text-align: center;
 }
+
 .parallax-one-actions-count {
-    padding: 0 6px;
-    display: inline-block;
-    background-color: #d54e21;
-    color: #fff;
-    font-size: 9px;
-    line-height: 17px;
-    font-weight: 600;
-    margin: 1px 0 0 2px;
-    vertical-align: top;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    z-index: 26;
+	display: inline-block;
+	z-index: 26;
+	margin: 1px 0 0 2px;
+	padding: 0 6px;
+	border-radius: 10px;
+	color: #fff;
+	background-color: #d54e21;
+	font-size: 9px;
+	font-weight: 600;
+	line-height: 17px;
+	vertical-align: top;
 }
+
 .parallax-one-action-required-box {
-    position: relative;
+	position: relative;
 }
+
 .parallax-one-dismiss-required-action {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    cursor: pointer;
-    background-color: #D24A4A;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 14px;
-    line-height: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #d24a4a;
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
 }
+
 .parallax-one-dismiss-required-action:hover {
-    background-color: #CC8C8C;
+	background-color: #cc8c8c;
 }

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Content Single Download
+ *
  * @package parallax-one
  */
 ?>

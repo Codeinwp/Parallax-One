@@ -1,5 +1,7 @@
 <?php
 /**
+ * The default template for displaying content.
+ *
  * @package parallax-one
  */
 ?>
@@ -86,7 +88,7 @@
 	</header><!-- .entry-header -->
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
-			$ismore = @strpos( $post->post_content, '<!--more-->' );
+			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s ...','parallax-one' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'parallax-one' ) . get_the_title() . '</span>' ) );
 			else : the_excerpt();
 			endif;

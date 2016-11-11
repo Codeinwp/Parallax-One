@@ -3,7 +3,7 @@
  * @package parallax-one
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('contact-page'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'contact-page' ); ?>>
 
 	<div class="container">
 
@@ -16,21 +16,21 @@
 		<div class="entry-content content-page parallax_one_contact_form">
 
 			<?php
-				$parallax_one_contact_form_shortcode = get_theme_mod('parallax_one_contact_form_shortcode');
+				$parallax_one_contact_form_shortcode = get_theme_mod( 'parallax_one_contact_form_shortcode' );
 
-				$contact_column = empty($parallax_one_contact_form_shortcode) || $post->post_content === "" ? "col-md-12" : "col-md-6";
+				$contact_column = empty( $parallax_one_contact_form_shortcode ) || $post->post_content === '' ? 'col-md-12' : 'col-md-6';
 
-				if( $post->post_content !== "" ):
-					echo '<div class="' . $contact_column . '">';
-						the_content();
-					echo '</div>';
+			if ( $post->post_content !== '' ) :
+				echo '<div class="' . $contact_column . '">';
+				the_content();
+				echo '</div>';
 				endif;
 
-				if(!empty($parallax_one_contact_form_shortcode)) {
-					echo '<div class="' . $contact_column . '">';
-					echo do_shortcode( $parallax_one_contact_form_shortcode);
-					echo '</div>';
-				}
+			if ( ! empty( $parallax_one_contact_form_shortcode ) ) {
+				echo '<div class="' . $contact_column . '">';
+				echo do_shortcode( $parallax_one_contact_form_shortcode );
+				echo '</div>';
+			}
 			?>
 
 			<footer class="entry-footer">
@@ -42,13 +42,13 @@
 	</div>
 
 	
-		<?php 
-			$parallax_one_contact_map_shortcode = get_theme_mod('parallax_one_contact_map_shortcode');
-			if(!empty($parallax_one_contact_map_shortcode)) {
-				echo '<div class="contact-page-map-wrap">';
-				echo do_shortcode( $parallax_one_contact_map_shortcode);
-				echo '</div>';
-			}
+		<?php
+			$parallax_one_contact_map_shortcode = get_theme_mod( 'parallax_one_contact_map_shortcode' );
+		if ( ! empty( $parallax_one_contact_map_shortcode ) ) {
+			echo '<div class="contact-page-map-wrap">';
+			echo do_shortcode( $parallax_one_contact_map_shortcode );
+			echo '</div>';
+		}
 		?>
 	
 

@@ -19,7 +19,7 @@
 	<?php parallax_hook_single_top(); ?>
 	<div class="container">
 
-		<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else {echo 'col-md-12';}  ?>">
+		<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';} else { echo 'col-md-12';}  ?>">
 			<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -30,8 +30,8 @@
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
 					endif;
 				?>
 

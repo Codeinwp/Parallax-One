@@ -1,4 +1,10 @@
 
+### 2.1.1 - 12/11/2016
+**Changes:** 
+- New option for animations on frontpage
+- Added grunt and fixed issues
+- Update icons to use Font Awesome
+
 ### 2.1.0.13 - 06/10/2016
 **Changes:** 
 - Make contact form on contact page full width when the page content is empty

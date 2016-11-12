@@ -2,215 +2,222 @@
 	margin-top: 15px;
 	color: rgb(0, 142, 214);
 }
-.parallax_one_repeater_container, .parallax_one_general_control_repeater_container {
-	width: 100%;
+
+.parallax_one_repeater_container,
+.parallax_one_general_control_repeater_container {
 	float: left;
+	width: 100%;
 	padding: 5px 0;
-	cursor:move;
+	cursor: move;
 }
-.parallax_one_repeater_container .parallax-box-content-hidden, .parallax_one_general_control_repeater_container .parallax-box-content-hidden {
+
+.parallax_one_repeater_container .parallax-box-content-hidden,
+.parallax_one_general_control_repeater_container .parallax-box-content-hidden {
 	padding: 5px;
+	padding-top: 0;
 	border: 1px solid #dfdfdf;
-	border-top:0px;
-	padding-top: 0px;
+	border-top: 0;
 }
+
 button.parallax_one_remove_field {
 	display: inline-block;
+	float: right;
 	width: 25% !important;
 	height: 57px !important;
-	white-space: initial !important;
 	line-height: 17px !important;
-	float: right;
+	white-space: initial !important;
 }
 
 button.parallax_one_general_control_remove_field {
 	width: 100%;
 	margin-top: 10px!important;
-
 }
 
-button.parallax_one_general_control_remove_field:hover{
-	background-color:#00a0d2!important;
-	color:#FFFFFF!important;
+button.parallax_one_general_control_remove_field:hover {
 	border: 0;
+	color: #fff!important;
+	background-color: #00a0d2!important;
 }
 
-
-.parallax_one_repeater_container .parallax_one_icon_link,  .parallax_one_general_control_repeater_container .parallax_one_text_control, .parallax_one_general_control_repeater_container .parallax_one_link_control{
+.parallax_one_repeater_container .parallax_one_icon_link,
+.parallax_one_general_control_repeater_container .parallax_one_text_control,
+.parallax_one_general_control_repeater_container .parallax_one_link_control {
 	width: 100% !important;
 	margin: 3px 0 0 !important;
 }
-.parallax_one_repeater_container .parallax_one_icons, .parallax_one_general_control_repeater_container .parallax_one_icon_control {
+
+.parallax_one_repeater_container .parallax_one_icons,
+.parallax_one_general_control_repeater_container .parallax_one_icon_control {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-#parallax_one_new_field, #parallax_one_general_control_new_field {
+
+#parallax_one_new_field,
+#parallax_one_general_control_new_field {
 	width: 100%;
 }
+
 .customize-control-widget_form .widget-control-save {
-	display:block !important;
+	display: block !important;
 }
 
-
-
-.parallax_one_our_services_image_control{
-	display:none;
-}
-
-.parallax_one_our_services_icon_control{
-	display:none;
-}
-
-.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
+.parallax_one_our_services_image_control {
 	display: none;
 }
 
-.parallax-box-content-hidden{
-	background-color: #FFFFFF;
+.parallax_one_our_services_icon_control {
+	display: none;
 }
 
-.parallax-customize-control-title{
-	border: 1px solid #dfdfdf;
-	cursor: move !important;
-	font-weight: bold;
-	padding: 0 10px !important;
+.parallax_one_general_control_repeater_container .parallax-box-content-hidden {
+	display: none;
+}
+
+.parallax-box-content-hidden {
+	background-color: #fff;
+}
+
+.parallax-customize-control-title {
+	overflow: hidden;
 	height: 40px;
-	line-height: 40px !important;
+	padding: 0 10px !important;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	color: #00a0d2;
 	background-color: #f1f1f1;
-	background-image: -ms-linear-gradient(top, #f9f9f9, #ececec);
-	background-image: -moz-linear-gradient(top, #f9f9f9, #ececec);
-	background-image: -o-linear-gradient(top, #f9f9f9, #ececec);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ececec));
 	background-image: -webkit-linear-gradient(top, #f9f9f9, #ececec);
-	background-image: linear-gradient(top, #f9f9f9, #ececec);
-	overflow: hidden;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	-moz-box-shadow: inset 0 1px 0 #fff;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(#f9f9f9), to(#ececec));
+	background-image: -webkit-linear-gradient(bottom, #f9f9f9, #ececec);
+	background-image: linear-gradient(to top, #f9f9f9, #ececec);
 	-webkit-box-shadow: inset 0 1px 0 #fff;
 	box-shadow: inset 0 1px 0 #fff;
+	font-weight: bold;
+	line-height: 40px !important;
 	text-align: center;
-	color:#00a0d2;
+	cursor: move !important;
 }
 
-.parallax_one_image_control .custom_media_button_parallax_one{
+.parallax_one_image_control .custom_media_button_parallax_one {
 	margin-top: 5px;
 }
 
-#customize-control-parallax_one_contact_form_shortcode{
-	display:none;
+#customize-control-parallax_one_contact_form_shortcode {
+	display: none;
 }
 
-.parallax_one_radio_control{
-    margin-top: 0;
+.parallax_one_radio_control {
+	margin-top: 0;
 }
 
-.parallax_one_general_control_repeater_container .parallax-box-content-hidden{
-    padding-top: 5px;
+.parallax_one_general_control_repeater_container .parallax-box-content-hidden {
+	padding-top: 5px;
 }
 
-#accordion-section-parallax_one_shop_section .accordion-section-title, #accordion-section-parallax_one_sections_order .accordion-section-title, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title, #accordion-section-parallax_one_portfolio_section .accordion-section-title, #accordion-section-parallax_one_shortcodes_section .accordion-section-title, #accordion-section-parallax_one_new_features .accordion-section-title {
-	background-image:url(../images/gray-lines.png);
-	background-repeat:repeat;
+#accordion-section-parallax_one_shop_section .accordion-section-title,
+#accordion-section-parallax_one_sections_order .accordion-section-title,
+#accordion-section-parallax_one_features_ribbon_section .accordion-section-title,
+#accordion-section-parallax_one_portfolio_section .accordion-section-title,
+#accordion-section-parallax_one_shortcodes_section .accordion-section-title,
+#accordion-section-parallax_one_new_features .accordion-section-title {
+	background-image: url(../images/gray-lines.png);
+	background-repeat: repeat;
 }
 
-#accordion-section-parallax_one_shop_section .accordion-section-title:after, #accordion-section-parallax_one_sections_order .accordion-section-title:after, #accordion-section-parallax_one_features_ribbon_section .accordion-section-title:after, #accordion-section-parallax_one_portfolio_section .accordion-section-title:after, #accordion-section-parallax_one_shortcodes_section .accordion-section-title:after, #accordion-section-parallax_one_new_features .accordion-section-title:after {
+#accordion-section-parallax_one_shop_section .accordion-section-title:after,
+#accordion-section-parallax_one_sections_order .accordion-section-title:after,
+#accordion-section-parallax_one_features_ribbon_section .accordion-section-title:after,
+#accordion-section-parallax_one_portfolio_section .accordion-section-title:after,
+#accordion-section-parallax_one_shortcodes_section .accordion-section-title:after,
+#accordion-section-parallax_one_new_features .accordion-section-title:after {
 	content: "\f160";
 }
 
-
-
-
-
-
-
 .parallax-one-alpha-container .transparency {
-    height:24px;
-    width:100%;
-    background-color:#FFF;
-    background-image:url(../images/transparency-grid.png);
-    box-shadow:0 0 5px rgba(0,0,0,0.4) inset;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    padding:0;
+	width: 100%;
+	height: 24px;
+	padding: 0;
+	border-radius: 3px;
+	background-color: #fff;
+	background-image: url(../images/transparency-grid.png);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.4) inset;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4) inset;
 }
 
 .parallax-one-alpha-container .ui-slider-handle {
-    color:#777;
-    background-color:#FFF;
-    text-shadow:0 1px 0 #FFF;
-    text-decoration:none;
-    position:absolute;
-    z-index:2;
-    box-shadow:0 1px 2px rgba(0,0,0,0.2);
-    border:1px solid #aaa;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    opacity:0.9;
-    margin-top:-2px;
-    height:20px;
-    cursor:ew-resize;
-    font-size:12px;
-    padding:3px;
+	position: absolute;
+	z-index: 2;
+	height: 20px;
+	margin-top: -2px;
+	padding: 3px;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	opacity: 0.9;
+	color: #777;
+	background-color: #fff;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	text-shadow: 0 1px 0 #fff;
+	font-size: 12px;
+	text-decoration: none;
+	cursor: ew-resize;
 }
 
 .parallax-one-alpha-container .ui-slider {
-    position:relative;
-    text-align:center;
-    width:88%;
+	position: relative;
+	width: 88%;
+	text-align: center;
 }
 
 .wp-picker-container a.wp-picker-open ~ div.parallax-one-alpha-container {
-    display:block;
+	display: block;
 }
 
 .parallax-one-alpha-container {
-    box-sizing:padding-box;
-    display:none;
-    border:1px solid #dfdfdf;
-    border-top:none;
-    background:#FFF;
-    padding:0 11px 6px;
+	display: none;
+	-webkit-box-sizing: padding-box;
+	box-sizing: padding-box;
+	padding: 0 11px 6px;
+	border: 1px solid #dfdfdf;
+	border-top: none;
+	background: #fff;
 }
 
 .customize-control-alphacolor .wp-picker-container .iris-picker {
-    border-bottom:none;
+	border-bottom: none;
 }
 
-.customizer-icons{
+.customizer-icons {
 	display: inline-block;
 	padding: 0 10px 0 0;
 	vertical-align: middle;
 }
 
-.parallax_one_remove_social_item{
+.parallax_one_remove_social_item {
 	display: inline-block;
-	vertical-align: top;
-	font-weight: bold;
-	color: #ff0000;
 	border: none;
+	color: #f00;
 	background: none;
+	font-weight: bold;
+	vertical-align: top;
 	cursor: pointer;
 }
 
-.parallax-one-social-repeater-container .dd-container{
-    display: inline-block;
-    width: 100%;
-    margin-top: 20px;
+.parallax-one-social-repeater-container .dd-container {
+	display: inline-block;
+	width: 100%;
+	margin-top: 20px;
 }
 
-.parallax-one-social-repeater-container .dd-container:first-child{
+.parallax-one-social-repeater-container .dd-container:first-child {
 	margin-top: 10px;
 }
 
-.parallax_one_social_repeater_link{
-	width:215px!important;
+.parallax_one_social_repeater_link {
+	width: 215px!important;
 }
 
-.parallax_one_add_social_item{
+.parallax_one_add_social_item {
 	margin-top: 10px;
 }

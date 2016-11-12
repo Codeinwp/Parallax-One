@@ -1,7 +1,9 @@
 <?php
-/*
-Template Name: Contact
-*/
+/**
+ * Template Name: Contact
+ *
+ * @package parallax-one
+ */
 
 	get_header();
 ?>

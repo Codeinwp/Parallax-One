@@ -1,10 +1,12 @@
 <?php
 /**
+ * Content Single Download
+ *
  * @package parallax-one
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-single-page'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-single-page' ); ?>>
 	<header class="entry-header single-header">
 		<?php the_title( '<h1 itemprop="headline" class="entry-title single-title">', '</h1>' ); ?>
 		<div class="colored-line-left"></div>
@@ -16,9 +18,9 @@
 		<div class="edd-image-wrap">
 			<?php
 				// check if the post has a Post Thumbnail assigned to it.
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail();
-				} 
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail();
+			}
 			?>
 		</div>
 

@@ -42,6 +42,20 @@ The exceptions to this license are as follows:
     Copyright (c) 2014 Javier Aguilar @mjolnic
     Licensed under the MIT license.
     
+* scrollReveal.js
+     Copyright (C) 2014  https://twitter.com/julianlloyd
+     Licensed under the MIT license.
+
+* FontAwesome, http://fontawesome.io/
+
+    Copyright 2015, Dave Gandy,
+    
+    Font Awesome licensed under SIL OFL 1.1, http://scripts.sil.org/OFL
+    
+    Code licensed under MIT License, http://www.opensource.org/licenses/MIT
+    
+    Documentation licensed under CC BY 3.0, http://creativecommons.org/licenses/by/3.0/
+
 * Images	 
 	 
 	License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	  

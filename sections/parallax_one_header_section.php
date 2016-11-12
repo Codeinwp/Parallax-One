@@ -1,5 +1,10 @@
-<!-- CONTAINER -->
 <?php
+/**
+ * Header section
+ *
+ * @package parallax-one
+ */
+
 $paralax_one_header_logo = get_theme_mod( 'paralax_one_header_logo', parallax_get_file( '/images/logo-2.png' ) );
 $parallax_one_header_title = get_theme_mod( 'parallax_one_header_title',esc_html__( 'Simple, Reliable and Awesome.','parallax-one' ) );
 $parallax_one_header_subtitle = get_theme_mod( 'parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.' );
@@ -98,7 +103,7 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 						</div>
 						<!-- /END HEADNING AND BUTTONS -->
 						<?php
-					}
+					} // End if().
 					?>
 				</div>
 			</div>
@@ -107,4 +112,4 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 	</div>
 	<?php parallax_hook_heading_after(); ?>
 	<?php
-} ?>
+} // End if(). ?>

@@ -1,7 +1,10 @@
-<!-- =========================
- SECTION: TEAM
-============================== -->
 <?php
+/**
+ * SECTION: TEAM
+ *
+ * @package parallax-one
+ */
+
 $parallax_one_our_team_title = get_theme_mod( 'parallax_one_our_team_title',esc_html__( 'Our Team','parallax-one' ) );
 $parallax_one_our_team_subtitle = get_theme_mod( 'parallax_one_our_team_subtitle',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ) );
 $parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_encode( array(
@@ -146,15 +149,15 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 												</div><!-- .member-details-inner -->
 											</div><!-- .member-details -->
 										<?php
-										} ?>
+										} // End if(). ?>
 									</div><!-- .team-member -->
 								</div><!-- .team-member -->
 							<?php
-							}
-						} ?>
+							} // End if().
+						} // End foreach(). ?>
 					</div>
 				<?php
-				}?>
+				} // End if(). ?>
 			</div>
 		</div><!-- container  -->
 		<?php parallax_hook_team_bottom(); ?>
@@ -178,4 +181,4 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 		<?php parallax_hook_team_after(); ?>
 	<?php
 	}
-} ?>
+} // End if(). ?>

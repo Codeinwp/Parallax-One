@@ -1,7 +1,10 @@
-<!-- =========================
- SECTION: RIBBON
-============================== -->
 <?php
+/**
+ * SECTION: RIBBON
+ *
+ * @package parallax-one
+ */
+
 $ribbon_background = get_theme_mod( 'paralax_one_ribbon_background', parallax_get_file( '/images/background-images/parallax-img/parallax-img1.jpg' ) );
 $parallax_one_ribbon_title = get_theme_mod( 'parallax_one_ribbon_title',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ) );
 $parallax_one_button_text = get_theme_mod( 'parallax_one_button_text',esc_html__( 'GET STARTED','parallax-one' ) );
@@ -77,4 +80,5 @@ if ( ! empty( $parallax_one_button_text ) ) {  ?>
 	</section>
 	<?php parallax_hook_ribbon_after(); ?>
 	<?php
-} ?>
+} // End if().
+?>

@@ -1,11 +1,14 @@
-<!-- =========================
- SECTION: BRIEF LEFT
-============================== -->
 <?php
-	$paralax_one_our_story_image = get_theme_mod( 'paralax_one_our_story_image', parallax_get_file( '/images/about-us.png' ) );
-	$parallax_one_our_story_title = get_theme_mod( 'parallax_one_our_story_title',esc_html__( 'Our Story','parallax-one' ) );
-	$parallax_one_our_story_text = get_theme_mod( 'parallax_one_our_story_text',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ) );
-	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+/**
+ * SECTION: BRIEF LEFT
+ *
+ * @package parallax-one
+ */
+
+$paralax_one_our_story_image = get_theme_mod( 'paralax_one_our_story_image', parallax_get_file( '/images/about-us.png' ) );
+$parallax_one_our_story_title = get_theme_mod( 'parallax_one_our_story_title',esc_html__( 'Our Story','parallax-one' ) );
+$parallax_one_our_story_text = get_theme_mod( 'parallax_one_our_story_text',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ) );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
 
 if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story_title ) || ! empty( $parallax_one_our_story_content ) ) {
 ?>
@@ -103,6 +106,6 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 		</section>
 		<?php parallax_hook_about_after(); ?>
 <?php
-	}
-}
+	} // End if().
+} // End if().
 ?>

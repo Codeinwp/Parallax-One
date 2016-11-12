@@ -615,14 +615,14 @@ if ( ! function_exists( 'parallax_one_general_repeater_is_empty' ) ) {
  * @param string $template Template file name.
  */
 
-function parallax_one_get_template_part($template){
-    if(locate_template($template.'.php')) {
-		get_template_part($template);
-    } else {
-		if(defined('PARALLAX_ONE_PLUS_PATH')){
-			$template = basename ($template);
-			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
-				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
+function parallax_one_get_template_part( $template ) {
+	if ( locate_template( $template . '.php' ) ) {
+		get_template_part( $template );
+	} else {
+		if ( defined( 'PARALLAX_ONE_PLUS_PATH' ) ) {
+			$template = basename( $template );
+			if ( file_exists( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' ) ) {
+				require_once( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' );
 			}
 		}
 	}

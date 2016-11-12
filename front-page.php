@@ -40,5 +40,5 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 } else {
 
 	include( get_page_template() );
-}
+}// End if().
 ?>

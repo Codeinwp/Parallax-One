@@ -54,4 +54,4 @@ if ( isset( $paralax_one_full_width_template ) && $paralax_one_full_width_templa
 	<?php
 } else {
 	include( 'template-fullwidth.php' );
-}
+}// End if().

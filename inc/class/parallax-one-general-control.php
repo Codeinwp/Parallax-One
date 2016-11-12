@@ -242,7 +242,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 			</div>
 			<button class="parallax_one_add_social_item"><?php esc_html_e( 'Add icon', 'parallax-one' ); ?></button>
 			<?php
-		}
+		}// End if().
 	}
 
 
@@ -352,7 +352,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
 				<?php
 				$it++;
-			}
+			}// End foreach().
 		} else { ?>
 			<div class="parallax_one_general_control_repeater_container">
 				<div
@@ -417,6 +417,6 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 				</div>
 			</div>
 			<?php
-		}
+		}// End if().
 	}
 }

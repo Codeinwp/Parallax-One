@@ -75,8 +75,9 @@ if ( ! parallax_one_general_repeater_is_empty( $parallax_one_contact_info_item )
 								<?php
 								parallax_hook_contact_entry_after();
 							}
-						}
-					} ?>
+						}// End foreach().
+					}// End if().
+	?>
 				</div><!-- .contact-links -->
 			</div><!-- .container -->
 		</div>
@@ -84,4 +85,5 @@ if ( ! parallax_one_general_repeater_is_empty( $parallax_one_contact_info_item )
 	</div><!-- .contact-info -->
 	<?php parallax_hook_contact_after(); ?>
 <?php
-} ?>
+}// End if().
+	?>

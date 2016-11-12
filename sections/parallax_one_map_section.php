@@ -1,7 +1,10 @@
-<!-- =========================
-INTERGEO MAPS
-============================== -->
 <?php
+/**
+ * INTERGEO MAPS
+ *
+ * @package parallax-one
+ */
+
 $parallax_one_frontpage_map_shortcode = get_theme_mod( 'parallax_one_frontpage_map_shortcode' );
 if ( ! empty( $parallax_one_frontpage_map_shortcode ) ) {
 	$pos = strlen( strstr( $parallax_one_frontpage_map_shortcode,'pirate_forms' ) );

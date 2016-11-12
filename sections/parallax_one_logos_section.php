@@ -1,7 +1,10 @@
-<!-- =========================
- SECTION: CLIENTS LOGOs
-============================== -->
 <?php
+/**
+ * SECTION: CLIENTS LOGOs
+ *
+ * @package parallax-one
+ */
+
 $parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode( array(
 	array( 'image_url' => parallax_get_file( '/images/companies/1.png' ) ,'link' => '#', 'id' => 'parallax_one_56d7ea7f40f56' ),
 	array( 'image_url' => parallax_get_file( '/images/companies/2.png' ) ,'link' => '#', 'id' => 'parallax_one_56d7f2cb8a158' ),
@@ -59,8 +62,8 @@ if ( ! empty( $parallax_one_logos ) ) {
 							} ?>
 						</li>
 					<?php
-					}
-				} ?>
+					} // End if().
+				} // End foreach(). ?>
 			</ul>
 		</div>
 		<?php
@@ -68,4 +71,4 @@ if ( ! empty( $parallax_one_logos ) ) {
 	</div>
 	<?php
 	parallax_hook_logos_after();
-} ?>
+} // End if(). ?>

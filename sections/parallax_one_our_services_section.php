@@ -1,7 +1,10 @@
-<!-- =========================
- SECTION: SERVICES
-============================== -->
 <?php
+/**
+ * SECTION: SERVICES
+ *
+ * @package parallax-one
+ */
+
 $parallax_one_our_services_title = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
 $parallax_one_our_services_subtitle = get_theme_mod( 'parallax_one_our_services_subtitle', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'parallax-one' ) );
 $parallax_one_services = get_theme_mod('parallax_one_services_content', json_encode( array(
@@ -145,11 +148,11 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 									parallax_hook_services_entry_after(); ?>
 								</div>
 							<?php
-							}
-						} ?>
+							} // End if().
+						} // End foreach(). ?>
 					</div>
 				<?php
-				} ?>
+				} // End if(). ?>
 			</div>
 		</div>
 		<?php parallax_hook_services_bottom(); ?>
@@ -172,5 +175,5 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 			<?php parallax_hook_services_bottom(); ?>
 		</section>
 		<?php parallax_hook_services_after();
-	}
-} ?>
+	} // End if().
+}  // End if(). ?>

@@ -151,7 +151,7 @@ if ( ! function_exists( 'the_archive_title' ) ) :
 			$title = sprintf( esc_html__( '%1$s: %2$s', 'parallax-one' ), $tax->labels->singular_name, single_term_title( '', false ) );
 		} else {
 			$title = esc_html__( 'Archives', 'parallax-one' );
-		}
+		}// End if().
 
 			/**
 	 * Filter the archive title.

@@ -1,17 +1,21 @@
-<!-- =========================
- SECTION: LATEST NEWS
-============================== -->
 <?php
-	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
-	$parallax_number_of_posts = get_option( 'posts_per_page' );
-	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+/**
+ * SECTION: LATEST NEWS
+ *
+ * @package parallax-one
+ */
 
-	$parallax_latestnews_cat = parallax_latest_news_cat();
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_number_of_posts = get_option( 'posts_per_page' );
+$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+
+$parallax_latestnews_cat = parallax_latest_news_cat();
+
 if ( ! empty( $parallax_latestnews_cat ) ) :
 	$args['cat'] = $parallax_latestnews_cat;
-	endif;
+endif;
 
-	$the_query = new WP_Query( $args );
+$the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	$parallax_one_latest_news_title = get_theme_mod( 'parallax_one_latest_news_title',esc_html__( 'Latest news','parallax-one' ) );
 	if ( $parallax_number_of_posts > 0 ) {
@@ -126,5 +130,5 @@ if ( $the_query->have_posts() ) {
 			</section>
 			<?php parallax_hook_news_after(); ?>
 	<?php
-	}
-} ?>
+	} // End if().
+} // End if(). ?>

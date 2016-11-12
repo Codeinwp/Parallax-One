@@ -3,6 +3,8 @@
  * Hook definitions
  *
  * Contains a list of all of Parallax One's hooks via which custom code can be inserted.
+ *
+ * @package parallax-one
  */
 
 
@@ -144,448 +146,577 @@ function parallax_hook_content_bottom() {
 }
 
 /**
- * Hooks for heading section
+ * Hook before the heading section
  */
-
 function parallax_hook_heading_before() {
 	do_action( 'parallax_heading_before' );
 }
 
+/**
+ * Hook after the heading section
+ */
 function parallax_hook_heading_after() {
 	do_action( 'parallax_heading_after' );
 }
 
+/**
+ * Hook top of the heading section
+ */
 function parallax_hook_heading_top() {
 	do_action( 'parallax_heading_top' );
 }
 
+/**
+ * Hook bottom of the heading section
+ */
 function parallax_hook_heading_bottom() {
 	do_action( 'parallax_heading_bottom' );
 }
 
 /**
- * Hooks for logos section
+ * Hook before logos section
  */
-
 function parallax_hook_logos_before() {
 	do_action( 'parallax_logos_before' );
 }
 
+/**
+ * Hook after logos section
+ */
 function parallax_hook_logos_after() {
 	do_action( 'parallax_logos_after' );
 }
 
+/**
+ * Hook top of logos section
+ */
 function parallax_hook_logos_top() {
 	do_action( 'parallax_logos_top' );
 }
 
+/**
+ * Hook bottom of logos section
+ */
 function parallax_hook_logos_bottom() {
 	do_action( 'parallax_logos_bottom' );
 }
 
 /**
- * Hooks for services section
+ * Hook before services section
  */
 function parallax_hook_services_before() {
 	do_action( 'parallax_services_before' );
 }
 
+/**
+ * Hook after services section
+ */
 function parallax_hook_services_after() {
 	do_action( 'parallax_services_after' );
 }
 
+/**
+ * Hook top of services section
+ */
 function parallax_hook_services_top() {
 	do_action( 'parallax_services_top' );
 }
 
+/**
+ * Hook bottom of services section
+ */
 function parallax_hook_services_bottom() {
 	do_action( 'parallax_services_bottom' );
 }
 
+/**
+ * Hook entry top of services section
+ */
 function parallax_hook_services_entry_top() {
 	do_action( 'parallax_services_entry_top' );
 }
 
+/**
+ * Hook entry bottom of services section
+ */
 function parallax_hook_services_entry_bottom() {
 	do_action( 'parallax_services_entry_bottom' );
 }
 
+/**
+ * Hook entry before services section
+ */
 function parallax_hook_services_entry_before() {
 	do_action( 'parallax_services_entry_before' );
 }
 
+/**
+ * Hook entry after services section
+ */
 function parallax_hook_services_entry_after() {
 	do_action( 'parallax_services_entry_after' );
 }
 
 /**
- * Hooks for about section
+ * Hook before about section
  */
 function parallax_hook_about_before() {
 	do_action( 'parallax_about_before' );
 }
 
+/**
+ * Hook after about section
+ */
 function parallax_hook_about_after() {
 	do_action( 'parallax_about_after' );
 }
 
+/**
+ * Hook top of about section
+ */
 function parallax_hook_about_top() {
 	do_action( 'parallax_about_top' );
 }
 
+/**
+ * Hook bottom of about section
+ */
 function parallax_hook_about_bottom() {
 	do_action( 'parallax_about_bottom' );
 }
 
 /**
- * Hooks for team section
+ * Hook before team section
  */
-
 function parallax_hook_team_before() {
 	do_action( 'parallax_team_before' );
 }
 
+/**
+ * Hook after team section
+ */
 function parallax_hook_team_after() {
 	do_action( 'parallax_team_after' );
 }
 
+/**
+ * Hook top of team section
+ */
 function parallax_hook_team_top() {
 	do_action( 'parallax_team_top' );
 }
 
+/**
+ * Hook bottom of team section
+ */
 function parallax_hook_team_bottom() {
 	do_action( 'parallax_team_bottom' );
 }
 
-	/**
-	 * Hooks for testimonials section
-	 */
-
+/**
+ * Hook before testimonials section
+ */
 function parallax_hook_tetimonials_before() {
 	do_action( 'parallax_tetimonials_before' );
 }
 
+/**
+ * Hook after testimonials section
+ */
 function parallax_hook_tetimonials_after() {
 	do_action( 'parallax_tetimonials_after' );
 }
 
+/**
+ * Hook top of testimonials section
+ */
 function parallax_hook_tetimonials_top() {
 	do_action( 'parallax_tetimonials_top' );
 }
 
+/**
+ * Hook bottom of testimonials section
+ */
 function parallax_hook_tetimonials_bottom() {
 	do_action( 'parallax_tetimonials_bottom' );
 }
 
+/**
+ * Hook entry top testimonials section
+ */
 function parallax_hook_testimonials_entry_top() {
 		do_action( 'parallax_testimonials_entry_top' );
 }
 
+/**
+ * Hook entry bottom testimonials section
+ */
 function parallax_hook_testimonials_entry_bottom() {
 		do_action( 'parallax_testimonials_entry_bottom' );
 }
 
+/**
+ * Hook entry before testimonials section
+ */
 function parallax_hook_testimonials_entry_before() {
 		do_action( 'parallax_testimonials_entry_before' );
 }
 
+/**
+ * Hook entry after testimonials section
+ */
 function parallax_hook_testimonials_entry_after() {
 		do_action( 'parallax_testimonials_entry_after' );
 }
 
-	/**
-	 * Hooks for ribbon section
-	 */
-
+/**
+ * Hook before ribbon section
+ */
 function parallax_hook_ribbon_before() {
 	do_action( 'parallax_ribbon_before' );
 }
 
+/**
+ * Hook after ribbon section
+ */
 function parallax_hook_ribbon_after() {
 	do_action( 'parallax_ribbon_after' );
 }
 
+/**
+ * Hook top of ribbon section
+ */
 function parallax_hook_ribbon_top() {
 	do_action( 'parallax_ribbon_top' );
 }
 
+/**
+ * Hook bottom of ribbon section
+ */
 function parallax_hook_ribbon_bottom() {
 	do_action( 'parallax_ribbon_bottom' );
 }
 
-	/**
-	 * Hooks for news section
-	 */
-
+/**
+ * Hook before news section
+ */
 function parallax_hook_news_before() {
 	do_action( 'parallax_news_before' );
 }
 
+/**
+ * Hook after news section
+ */
 function parallax_hook_news_after() {
 	do_action( 'parallax_news_after' );
 }
 
+/**
+ * Hook top of news section
+ */
 function parallax_hook_news_top() {
 	do_action( 'parallax_news_top' );
 }
 
+/**
+ * Hook bottom of news section
+ */
 function parallax_hook_news_bottom() {
 	do_action( 'parallax_news_bottom' );
 }
 
+/**
+ * Filter for latest news category
+ */
 function parallax_latest_news_cat() {
 	return apply_filters( 'parallax_latest_news_cat', '' );
 }
 
-	/**
-	 * Hooks for contact section
-	 */
-
+/**
+ * Hook before contact section
+ */
 function parallax_hook_contact_before() {
 	do_action( 'parallax_contact_before' );
 }
 
+/**
+ * Hook after contact section
+ */
 function parallax_hook_contact_after() {
 	do_action( 'parallax_contact_after' );
 }
 
+/**
+ * Hook top of contact section
+ */
 function parallax_hook_contact_top() {
 	do_action( 'parallax_contact_top' );
 }
 
+/**
+ * Hook bottom of contact section
+ */
 function parallax_hook_contact_bottom() {
 	do_action( 'parallax_contact_bottom' );
 }
 
+/**
+ * Hook entry top contact section
+ */
 function parallax_hook_contact_entry_top() {
 	do_action( 'parallax_contact_entry_top' );
 }
 
+/**
+ * Hook entry bottom contact section
+ */
 function parallax_hook_contact_entry_bottom() {
 	do_action( 'parallax_contact_entry_bottom' );
 }
 
+/**
+ * Hook entry before contact section
+ */
 function parallax_hook_contact_entry_before() {
 	do_action( 'parallax_contact_entry_before' );
 }
 
+/**
+ * Hook entry after contact section
+ */
 function parallax_hook_contact_entry_after() {
 	do_action( 'parallax_contact_entry_after' );
 }
 
-	 /**
-	  * Hooks for map section
-	  */
-
+/**
+ * Hook before map section
+ */
 function parallax_hook_map_before() {
 	do_action( 'parallax_map_before' );
 }
 
+/**
+ * Hook after map section
+ */
 function parallax_hook_map_after() {
 	do_action( 'parallax_map_after' );
 }
 
+/**
+ * Hook entry top map section
+ */
 function parallax_hook_map_entry_top() {
 	do_action( 'parallax_map_entry_top' );
 }
 
+/**
+ * Hook entry bottom map section
+ */
 function parallax_hook_map_entry_bottom() {
 	do_action( 'parallax_map_entry_bottom' );
 }
 
-	  /**
-	   * Before entry
-	   *
-	   * THA hook: tha_entry_before
-	   */
+/**
+ * Before entry
+ *
+ * THA hook: tha_entry_before
+ */
 function parallax_hook_entry_before() {
 	do_action( 'parallax_entry_before' );
 	do_action( 'tha_entry_before' );
 }
-	  /**
-	   * After entry
-	   *
-	   * THA hook: tha_entry_after
-	   */
+
+/**
+ * After entry
+ *
+ * THA hook: tha_entry_after
+ */
 function parallax_hook_entry_after() {
 	do_action( 'parallax_entry_after' );
 	do_action( 'tha_entry_after' );
 }
-	  /**
-	   * Top of entry
-	   *
-	   * THA hook: tha_entry_top
-	   */
+
+/**
+ * Top of entry
+ *
+ * THA hook: tha_entry_top
+ */
 function parallax_hook_entry_top() {
 	do_action( 'parallax_entry_top' );
 	do_action( 'tha_entry_top' );
 }
-	  /**
-	   * Bottom of entry
-	   *
-	   * THA hook: tha_entry_bottom
-	   */
+
+/**
+ * Bottom of entry
+ *
+ * THA hook: tha_entry_bottom
+ */
 function parallax_hook_entry_bottom() {
 	do_action( 'parallax_entry_bottom' );
 	do_action( 'tha_entry_bottom' );
 }
 
-	/**
-	 * Before page lists
-	 */
+/**
+ * Before page lists
+ */
 function parallax_hook_page_before() {
 	do_action( 'parallax_page_before' );
 }
-	/**
-	 * After page lists
-	 */
+
+/**
+ * After page lists
+ */
 function parallax_hook_page_after() {
 	do_action( 'parallax_page_after' );
 }
-	/**
-	 * Top of page lists
-	 */
+
+/**
+ * Top of page lists
+ */
 function parallax_hook_page_top() {
 	do_action( 'parallax_page_top' );
 }
-	/**
-	 * Bottom of page lists
-	 */
+
+/**
+ * Bottom of page lists
+ */
 function parallax_hook_page_bottom() {
 	do_action( 'parallax_page_bottom' );
 }
 
-	/**
-	 * Before search results
-	 */
+/**
+ * Before search results
+ */
 function parallax_hook_search_before() {
 	do_action( 'parallax_search_before' );
 }
-	/**
-	 * After search results
-	 */
+
+/**
+ * After search results
+ */
 function parallax_hook_search_after() {
 	do_action( 'parallax_search_after' );
 }
-	/**
-	 * Top of search results
-	 */
+
+/**
+ * Top of search results
+ */
 function parallax_hook_search_top() {
 	do_action( 'parallax_search_top' );
 }
-	/**
-	 * Bottom of search results
-	 */
+
+/**
+ * Bottom of search results
+ */
 function parallax_hook_search_bottom() {
 	do_action( 'parallax_search_bottom' );
 }
 
-	/**
-	 * Before comment section
-	 *
-	 * THA hook: `tha_comments_before`
-	 */
+/**
+ * Before comment section
+ *
+ * THA hook: `tha_comments_before`
+ */
 function parallax_hook_comments_before() {
 	do_action( 'parallax_comments_before' );
 	do_action( 'tha_comments_before' );
 }
 
-	/**
-	 * After comment section
-	 *
-	 * THA hook: `tha_comments_before`
-	 */
+/**
+ * After comment section
+ *
+ * THA hook: `tha_comments_before`
+ */
 function parallax_hook_comments_after() {
 	do_action( 'parallax_comments_after' );
 	do_action( 'tha_comments_after' );
 }
 
-	/**
-	 * Top of comment section
-	 */
+/**
+ * Top of comment section
+ */
 function parallax_hook_comments_top() {
 	do_action( 'parallax_comments_top' );
 }
 
-	/**
-	 * Bottom of comment section
-	 */
+/**
+ * Bottom of comment section
+ */
 function parallax_hook_comments_bottom() {
 	do_action( 'parallax_comments_bottom' );
 }
 
-	/**
-	 * Before sidebar
-	 *
-	 * THA hook: tha_sidebars_before
-	 */
+/**
+ * Before sidebar
+ *
+ * THA hook: tha_sidebars_before
+ */
 function parallax_hook_sidebar_before() {
 	do_action( 'parallax_sidebar_before' );
 	do_action( 'tha_sidebars_before' ); // Pluralization is intentional
 }
 
-	/**
-	 * After sidebar
-	 *
-	 * THA hook: tha_sidebars_after
-	 */
+/**
+ * After sidebar
+ *
+ * THA hook: tha_sidebars_after
+ */
 function parallax_hook_sidebar_after() {
 	do_action( 'parallax_sidebar_after' );
 	do_action( 'tha_sidebars_after' ); // Pluralization is intentional
 }
 
-	/**
-	 * Top of sidebar
-	 *
-	 * THA hook: tha_sidebar_top
-	 */
+/**
+ * Top of sidebar
+ *
+ * THA hook: tha_sidebar_top
+ */
 function parallax_hook_sidebar_top() {
 	do_action( 'parallax_sidebar_top' );
 	do_action( 'tha_sidebar_top' );
 }
 
-	/**
-	 * Bottom of sidebar
-	 *
-	 * THA hook: tha_sidebar_bottom
-	 */
+/**
+ * Bottom of sidebar
+ *
+ * THA hook: tha_sidebar_bottom
+ */
 function parallax_hook_sidebar_bottom() {
 	do_action( 'parallax_sidebar_bottom' );
 	do_action( 'tha_sidebar_bottom' );
 }
 
-		/**
-		 * Before single
-		 */
+/**
+ * Before single
+ */
 function parallax_hook_single_before() {
 	do_action( 'parallax_single_before' );
 }
 
-		/**
-		 * After single
-		 */
+/**
+ * After single
+ */
 function parallax_hook_single_after() {
 	do_action( 'parallax_single_after' );
 }
 
-		/**
-		 * Top of single
-		 */
+/**
+ * Top of single
+ */
 function parallax_hook_single_top() {
 	do_action( 'parallax_single_top' );
 }
 
-		/**
-		 * Bottom of single
-		 */
+/**
+ * Bottom of single
+ */
 function parallax_hook_single_bottom() {
 	do_action( 'parallax_single_bottom' );
 }
 
-		/**
-		 * Content of 404 pages
-		 */
+/**
+ * Content of 404 pages
+ */
 function parallax_hook_404_content() {
 	do_action( 'parallax_404_content' );
 }
-

@@ -1,22 +1,89 @@
 <?php
+/**
+ * General repeater class
+ *
+ * @package parallax-one
+ */
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
+/**
+ * Class Parallax_One_General_Repeater
+ */
 class Parallax_One_General_Repeater extends WP_Customize_Control {
 
+	/**
+	 * Id
+	 *
+	 * @var integer $id id
+	 */
 	public $id;
+
+	/**
+	 * Control for image
+	 *
+	 * @var bool $parallax_one_image_control Control for image
+	 */
 	public $parallax_one_image_control = false;
+
+	/**
+	 * Control for icon
+	 *
+	 * @var bool $parallax_one_icon_control Control for icon
+	 */
 	public $parallax_one_icon_control = false;
+
+	/**
+	 * Control for title
+	 *
+	 * @var bool $parallax_one_title_control Control for title
+	 */
 	public $parallax_one_title_control = false;
+
+	/**
+	 * Control for subtitle
+	 *
+	 * @var bool $parallax_one_subtitle_control Control for subtitle
+	 */
 	public $parallax_one_subtitle_control = false;
+
+	/**
+	 * Control for text
+	 *
+	 * @var bool $parallax_one_text_control Control for text
+	 */
 	public $parallax_one_text_control = false;
+
+	/**
+	 * Control for link
+	 *
+	 * @var bool $parallax_one_link_control Control for link
+	 */
 	public $parallax_one_link_control = false;
+
+	/**
+	 * Control for shortcode
+	 *
+	 * @var bool $parallax_one_shortcode_control Control for shortcode
+	 */
 	public $parallax_one_shortcode_control = false;
+
+	/**
+	 * Control for repeater
+	 *
+	 * @var bool $parallax_one_socials_repeater_control Control for repeater
+	 */
 	public $parallax_one_socials_repeater_control = false;
 
-
-	/*Class constructor*/
+	/**
+	 * Class constructor
+	 *
+	 * @param string  $manager Manager.
+	 * @param integer $id Id.
+	 * @param array   $args Array of parameters.
+	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 

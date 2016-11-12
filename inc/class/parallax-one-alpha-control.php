@@ -1,18 +1,51 @@
 <?php
+/**
+ * Alpha control class
+ *
+ * @package parallax-one
+ */
 
+/**
+ * Class Parallax_One_Customize_Alpha_Color_Control
+ *
+ * @param string $type type of color.
+ * @param string $palette palette.
+ * @param string $default default value.
+ */
 class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 
+	/**
+	 * Type
+	 *
+	 * @var string $type type
+	 */
 	public $type = 'alphacolor';
+	/**
+	 * Palette of colors
+	 *
+	 * @var string $palette palette
+	 */
 	public $palette = true;
+	/**
+	 * Default value
+	 *
+	 * @var string $default default value
+	 */
 	public $default = '';
 
-
+	/**
+	 * Parallax_One_Customize_Alpha_Color_Control constructor.
+	 *
+	 * @param string $manager manager.
+	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		$this->default = $this->setting->default;
 	}
 
-
+	/**
+	 * The function to render the controler
+	 */
 	protected function render() {
 		$id = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
 		$class = 'customize-control customize-control-' . $this->type; ?>
@@ -22,6 +55,9 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	<?php
 	}
 
+	/**
+	 * The function to render the controler content
+	 */
 	public function render_content() {
 	?>
 		<label>

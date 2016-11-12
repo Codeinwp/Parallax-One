@@ -614,7 +614,6 @@ if ( ! function_exists( 'parallax_one_general_repeater_is_empty' ) ) {
  *
  * @param string $template Template file name.
  */
-
 function parallax_one_get_template_part( $template ) {
 	if ( locate_template( $template . '.php' ) ) {
 		get_template_part( $template );

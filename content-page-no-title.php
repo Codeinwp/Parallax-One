@@ -11,13 +11,9 @@
 
 	<div class="entry-content content-page <?php if ( empty( $page_title ) ) {  echo 'parallax-one-top-margin-5px'; } ?>" itemprop="text">
 		<?php the_content(); ?>
-		<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
-			'after'  => '</div>',
-		) );
-		?>
 	</div><!-- .entry-content -->
+
+	<?php edit_post_link( esc_html__( 'Edit', 'parallax-one' ), '<span class="edit-link">', '</span>' ); ?>
 
 	<?php parallax_hook_page_bottom(); ?>
 </article><!-- #post-## -->

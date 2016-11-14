@@ -7407,7 +7407,7 @@ h2.screen-reader-text {
 	clip: rect(1px,1px,1px,1px);
 	position: absolute!important;
 	width: 1px;
-	height: 1px; 
+	height: 1px;
 	color: #000;
 	background: #fff;
 }
@@ -7418,7 +7418,7 @@ h2.screen-reader-text {
 	top: 1em;
 	left: 1em;
 	width: auto;
-	height: auto; 
+	height: auto;
 	padding: 1em;
 	outline: 1px solid;
 	background-color: #fff;

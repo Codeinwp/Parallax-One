@@ -5,7 +5,7 @@
  * @package parallax-one
  */
 
-$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 $parallax_number_of_posts = get_option( 'posts_per_page' );
 $args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
 
@@ -63,7 +63,7 @@ if ( $the_query->have_posts() ) {
 										?>
 
 										<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>"
-										<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) && ($i_latest_posts <= 2) ) {
+										<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ($i_latest_posts <= 2) ) {
 														echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 }?>>
 												<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-published date small-text strong">

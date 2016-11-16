@@ -13,7 +13,7 @@ $parallax_one_testimonials_content = get_theme_mod( 'parallax_one_testimonials_c
 	array( 'image_url' => parallax_get_file( '/images/clients/3.jpg' ),'title' => esc_html__( 'Happy Customer','parallax-one' ),'subtitle' => esc_html__( 'Lorem ipsum','parallax-one' ),'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ),'id' => 'parallax_one_56fd5259dcd4c' ),
 ) ) );
 $happy_customers_wrap_piterest = get_theme_mod( 'paralax_one_testimonials_pinterest_style','5' );
-$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 
 if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_happy_customers_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_testimonials_content ) ) { ?>
@@ -87,7 +87,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 							if ( ! empty( $image ) || ! empty( $title ) || ! empty( $subtitle ) || ! empty( $text ) ) {
 								parallax_hook_testimonials_entry_before(); ?>
 								<div class="testimonials-box"
-								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
 									echo 'data-scrollreveal="enter right after 0.15s over 1s"'; } ?>>
 									<?php parallax_hook_testimonials_entry_top(); ?>
 									<div class="feedback border-bottom-hover">

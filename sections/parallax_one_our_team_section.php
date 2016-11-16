@@ -12,7 +12,7 @@ $parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_enc
 	array( 'image_url' => parallax_get_file( '/images/team/2.jpg' ),'title' => esc_html__( 'Tonya Garcia','parallax-one' ),'subtitle' => esc_html__( 'Account Manager','parallax-one' ), 'id' => 'parallax_one_56fe9798baca5' ),
 	array( 'image_url' => parallax_get_file( '/images/team/3.jpg' ),'title' => esc_html__( 'Linda Guthrie','parallax-one' ),'subtitle' => esc_html__( 'Business Development','parallax-one' ), 'id' => 'parallax_one_56fe9799baca6' ),
 ) ) );
-$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_team_content ) ) {
 	parallax_hook_team_before(); ?>
@@ -81,7 +81,7 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 							if ( ! empty( $image ) || ! empty( $title ) || ! empty( $subtitle ) ) { ?>
 								<div class="col-md-3 team-member-box">
 									<div class="team-member border-bottom-hover"
-									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
 										echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 }?>>
 										<div class="member-pic">

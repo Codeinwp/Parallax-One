@@ -24,7 +24,7 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 					if ( ! empty( $parallax_one_our_story_title ) ) {  ?>
 									<div class="col-md-6 brief-content-two">
 										<div class="brief-image-right"
-											<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+											<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 												echo 'data-scrollreveal="enter right after 0.15s over 1s"';
 }?>>
 											<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $paralax_one_our_story_image ) ); ?> " alt=" <?php echo esc_attr( $parallax_one_our_story_title ); ?>">
@@ -33,7 +33,7 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 								<?php } else { ?>
 									<div class="col-md-6 brief-content-two">
 										<div class="brief-image-right"
-											<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+											<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 												echo 'data-scrollreveal="enter right after 0.15s over 1s"';
 }?>>
 											<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $paralax_one_our_story_image ) ); ?>" alt="<?php echo esc_html__( 'About','parallax-one' ); ?>">
@@ -43,7 +43,7 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 				} elseif ( is_customize_preview() ) { ?>
 								<div class="col-md-6 brief-content-two paralax_one_only_customizer">
 									<div class="brief-image-right"
-									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 										echo 'data-scrollreveal="enter right after 0.15s over 1s"';
 }?>>
 									<img src="" >
@@ -69,14 +69,14 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 							<?php
 
 							if ( ! empty( $parallax_one_our_story_text ) ) {  ?>
-									<div class="brief-content-text" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+									<div class="brief-content-text" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 										echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 } ?>>
 										<?php echo $parallax_one_our_story_text; ?>
 									</div>
 
 								<?php } elseif ( is_customize_preview() ) {?>
-									<div class="brief-content-text paralax_one_only_customizer" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+									<div class="brief-content-text paralax_one_only_customizer" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 										echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 } ?>>
 										<?php echo $parallax_one_our_story_text; ?>

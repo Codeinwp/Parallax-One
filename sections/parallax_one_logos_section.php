@@ -23,7 +23,7 @@ if ( ! empty( $parallax_one_logos ) ) {
 		parallax_hook_logos_top(); ?>
 		<div class="container">
 			<ul class="client-logos"
-			<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+			<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 				echo 'data-scrollreveal="enter top over 1.5s after 1s"';
 } ?>>
 				<?php

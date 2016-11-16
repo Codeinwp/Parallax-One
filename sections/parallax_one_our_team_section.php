@@ -81,7 +81,7 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 							if ( ! empty( $image ) || ! empty( $title ) || ! empty( $subtitle ) ) { ?>
 								<div class="col-md-3 team-member-box">
 									<div class="team-member border-bottom-hover"
-									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 										echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 }?>>
 										<div class="member-pic">

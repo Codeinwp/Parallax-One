@@ -87,7 +87,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 							if ( ! empty( $image ) || ! empty( $title ) || ! empty( $subtitle ) || ! empty( $text ) ) {
 								parallax_hook_testimonials_entry_before(); ?>
 								<div class="testimonials-box"
-								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 									echo 'data-scrollreveal="enter right after 0.15s over 1s"'; } ?>>
 									<?php parallax_hook_testimonials_entry_top(); ?>
 									<div class="feedback border-bottom-hover">

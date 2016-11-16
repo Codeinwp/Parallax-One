@@ -83,7 +83,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 
 							if ( ( ! empty( $icon ) && $icon != 'No Icon' && $choice == 'parallax_icon' )  || ( ! empty( $image )  && $choice == 'parallax_image' ) || ! empty( $title ) || ! empty( $text ) ) {  ?>
 								<div class="service-box"
-								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool)$parallax_one_frontpage_animations === true ) ) {
+								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 									echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 } ?>>
 									<?php

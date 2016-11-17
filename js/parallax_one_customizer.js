@@ -1,6 +1,9 @@
+/*global Color*/
+/*global wp*/
+/*global parallaxOneCustomizerObject*/
 function media_upload(button_class) {
-
-	jQuery('body').on('click', button_class, function(e) {
+	'use strict';
+	jQuery('body').on('click', button_class, function() {
 		var button_id ='#'+jQuery(this).attr('id');
 		var display_field = jQuery(this).parent().children('input:text');
 		var _custom_media = true;
@@ -8,7 +11,7 @@ function media_upload(button_class) {
 		wp.media.editor.send.attachment = function(props, attachment){
 
 			if ( _custom_media  ) {
-				if(typeof display_field != 'undefined'){
+				if(typeof display_field !== 'undefined'){
 					switch(props.size){
 						case 'full':
 							display_field.val(attachment.sizes.full.url);
@@ -23,14 +26,13 @@ function media_upload(button_class) {
                             display_field.trigger('change');
 							break;
 						case 'parallax_one_team':
-							console.log(attachment.sizes);
 							display_field.val(attachment.sizes.parallax_one_team.url);
                             display_field.trigger('change');
-							break
+							break;
 						case 'parallax_one_services':
 							display_field.val(attachment.sizes.parallax_one_services.url);
                             display_field.trigger('change');
-							break
+							break;
 						case 'parallax_one_customers':
 							display_field.val(attachment.sizes.parallax_one_customers.url);
                             display_field.trigger('change');
@@ -44,11 +46,11 @@ function media_upload(button_class) {
 			} else {
 				return wp.media.editor.send.attachment( button_id, [props, attachment] );
 			}
-		}
+		};
 		wp.media.editor.open(button_class);
-		window.send_to_editor = function(html) {
+		window.send_to_editor = function() {
 
-		}
+		};
 		return false;
 	});
 }
@@ -58,46 +60,46 @@ function media_upload(button_class) {
 *********************************************/
 function parallax_one_uniqid(prefix, more_entropy) {
 
-  if (typeof prefix === 'undefined') {
-    prefix = '';
-  }
+	if (typeof prefix === 'undefined') {
+		prefix = '';
+	}
 
-  var retId;
-  var formatSeed = function(seed, reqWidth) {
-    seed = parseInt(seed, 10)
-      .toString(16); // to hex str
-    if (reqWidth < seed.length) { // so long we split
-      return seed.slice(seed.length - reqWidth);
-    }
-    if (reqWidth > seed.length) { // so short we pad
-      return Array(1 + (reqWidth - seed.length))
-        .join('0') + seed;
-    }
-    return seed;
-  };
+	var retId;
+	var formatSeed = function(seed, reqWidth) {
+		seed = parseInt(seed, 10)
+			.toString(16); // to hex str
+		if (reqWidth < seed.length) { // so long we split
+			return seed.slice(seed.length - reqWidth);
+		}
+		if (reqWidth > seed.length) { // so short we pad
+			return Array(1 + (reqWidth - seed.length))
+					.join('0') + seed;
+		}
+		return seed;
+	};
 
-  // BEGIN REDUNDANT
-  if (!this.php_js) {
-    this.php_js = {};
-  }
-  // END REDUNDANT
-  if (!this.php_js.uniqidSeed) { // init seed with big random int
-    this.php_js.uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
-  }
-  this.php_js.uniqidSeed++;
+	// BEGIN REDUNDANT
+	if (!this.php_js) {
+		this.php_js = {};
+	}
+	// END REDUNDANT
+	if (!this.php_js.uniqidSeed) { // init seed with big random int
+		this.php_js.uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
+	}
+	this.php_js.uniqidSeed++;
 
-  retId = prefix; // start with prefix, add current milliseconds hex string
-  retId += formatSeed(parseInt(new Date()
-    .getTime() / 1000, 10), 8);
-  retId += formatSeed(this.php_js.uniqidSeed, 5); // add seed hex string
-  if (more_entropy) {
-    // for more entropy we add a float lower to 10
-    retId += (Math.random() * 10)
-      .toFixed(8)
-      .toString();
-  }
+	retId = prefix; // start with prefix, add current milliseconds hex string
+	retId += formatSeed(parseInt(new Date()
+			.getTime() / 1000, 10), 8);
+	retId += formatSeed(this.php_js.uniqidSeed, 5); // add seed hex string
+	if (more_entropy) {
+		// for more entropy we add a float lower to 10
+		retId += (Math.random() * 10)
+			.toFixed(8)
+			.toString();
+	}
 
-  return retId;
+	return retId;
 }
 
 
@@ -105,22 +107,23 @@ function parallax_one_uniqid(prefix, more_entropy) {
 *** General Repeater ***
 *********************************************/
 function parallax_one_refresh_social_icons(th){
+	'use strict';
 	var icons_repeater_values = [];
-	th.find(".parallax-one-social-repeater-container").each(function(){
+	th.find('.parallax-one-social-repeater-container').each(function(){
         var icon = jQuery(this).find('.icp').val();
-		var link = jQuery(this).find(".parallax_one_social_repeater_link").val();
-		var id = jQuery(this).find(".parallax_one_social_repeater_id").val();
+		var link = jQuery(this).find('.parallax_one_social_repeater_link').val();
+		var id = jQuery(this).find('.parallax_one_social_repeater_id').val();
 
 		if( !id ){
 			id = 'parallax_one_social_repeater_' + parallax_one_uniqid();
-			jQuery(this).find(".parallax_one_social_repeater_id").val(id);
+			jQuery(this).find('.parallax_one_social_repeater_id').val(id);
 		}
 
-		if( icon != ''){
+		if( icon !== ''){
 			icons_repeater_values.push({
-				"icon":icon,
-				"link":link,
-				"id":id 
+				'icon':icon,
+				'link':link,
+				'id':id
 			});
 		}
 	});
@@ -132,37 +135,38 @@ function parallax_one_refresh_social_icons(th){
 
 
 function parallax_one_refresh_general_control_values(){
-	jQuery(".parallax_one_general_control_repeater").each(function(){
+	'use strict';
+	jQuery('.parallax_one_general_control_repeater').each(function(){
 		var values = [];
 		var th = jQuery(this);
-		th.find(".parallax_one_general_control_repeater_container").each(function(){
+		th.find('.parallax_one_general_control_repeater_container').each(function(){
             var icon_value = jQuery(this).find('.icp').val();
-			var text = jQuery(this).find(".parallax_one_text_control").val();
-			var link = jQuery(this).find(".parallax_one_link_control").val();
-			var image_url = jQuery(this).find(".custom_media_url").val();
-			var choice = jQuery(this).find(".parallax_one_image_choice").val();
-			var title = jQuery(this).find(".parallax_one_title_control").val();
-			var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
-			var id = jQuery(this).find(".parallax_one_box_id").val();
+			var text = jQuery(this).find('.parallax_one_text_control').val();
+			var link = jQuery(this).find('.parallax_one_link_control').val();
+			var image_url = jQuery(this).find('.custom_media_url').val();
+			var choice = jQuery(this).find('.parallax_one_image_choice').val();
+			var title = jQuery(this).find('.parallax_one_title_control').val();
+			var subtitle = jQuery(this).find('.parallax_one_subtitle_control').val();
+			var id = jQuery(this).find('.parallax_one_box_id').val();
 			if( !id ){
 				id = 'parallax_one_' + parallax_one_uniqid();
-				jQuery(this).find(".parallax_one_box_id").val(id);
+				jQuery(this).find('.parallax_one_box_id').val(id);
 			}
-			var social_repeater = jQuery(this).find(".parallax_one_socials_repeater_colector").val();
-			var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
+			var social_repeater = jQuery(this).find('.parallax_one_socials_repeater_colector').val();
+			var shortcode = jQuery(this).find('.parallax_one_shortcode_control').val();
 
-            if( text !='' || image_url!='' || title!='' || subtitle!='' ){
+            if( text !== '' || image_url!== '' || title!=='' || subtitle!=='' ){
                 values.push({
-                    "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
-                    "text" :  escapeHtml(text),
-                    "link" : link,
-                    "image_url" : (choice === 'parallax_none' ? "" : image_url),
-                    "choice" : choice,
-                    "title" : escapeHtml(title),
-                    "subtitle" : escapeHtml(subtitle),
-					"social_repeater" : escapeHtml(social_repeater),
-					"id" : id,
-                    "shortcode" : escapeHtml(shortcode)
+                    'icon_value' : (choice === 'parallax_none' ? '' : icon_value) ,
+                    'text' :  escapeHtml(text),
+                    'link' : link,
+                    'image_url' : (choice === 'parallax_none' ? '' : image_url),
+                    'choice' : choice,
+                    'title' : escapeHtml(title),
+                    'subtitle' : escapeHtml(subtitle),
+					'social_repeater' : escapeHtml(social_repeater),
+					'id' : id,
+                    'shortcode' : escapeHtml(shortcode)
                 });
             }
 
@@ -175,28 +179,30 @@ function parallax_one_refresh_general_control_values(){
 
 
 jQuery(document).ready(function(){
-    jQuery('#customize-theme-controls').on('click','.parallax-customize-control-title',function(){
+    'use strict';
+	jQuery('#customize-theme-controls').on('click','.parallax-customize-control-title',function(){
         jQuery(this).next().slideToggle('medium', function() {
-            if (jQuery(this).is(':visible'))
-                jQuery(this).css('display','block');
+            if (jQuery(this).is(':visible')){
+				jQuery(this).css('display','block');
+			}
         });
     });
 
     jQuery('#customize-theme-controls').on('change', '.icp',function(){
-        parallax_one_refresh_general_control_values;
+        parallax_one_refresh_general_control_values();
         return false;
     });
 
     jQuery('#customize-theme-controls').on('change','.parallax_one_image_choice',function() {
-        if(jQuery(this).val() == 'parallax_image'){
+        if(jQuery(this).val() === 'parallax_image'){
             jQuery(this).parent().parent().find('.parallax_one_general_control_icon').hide();
             jQuery(this).parent().parent().find('.parallax_one_image_control').show();
         }
-        if(jQuery(this).val() == 'parallax_icon'){
+        if(jQuery(this).val() === 'parallax_icon'){
             jQuery(this).parent().parent().find('.parallax_one_general_control_icon').show();
             jQuery(this).parent().parent().find('.parallax_one_image_control').hide();
         }
-        if(jQuery(this).val() == 'parallax_none'){
+        if(jQuery(this).val() === 'parallax_none'){
             jQuery(this).parent().parent().find('.parallax_one_general_control_icon').hide();
             jQuery(this).parent().parent().find('.parallax_one_image_control').hide();
         }
@@ -205,7 +211,7 @@ jQuery(document).ready(function(){
         return false;
     });
     media_upload('.custom_media_button_parallax_one');
-    jQuery(".custom_media_url").live('change',function(){
+    jQuery('.custom_media_url').live('change',function(){
         parallax_one_refresh_general_control_values();
         return false;
     });
@@ -214,16 +220,16 @@ jQuery(document).ready(function(){
  * This adds a new box to repeater
  *
  */
- jQuery("#customize-theme-controls").on("click", ".parallax_one_general_control_new_field",function(){
+ jQuery('#customize-theme-controls').on('click', '.parallax_one_general_control_new_field',function(){
 	var th = jQuery(this).parent();
 	var id = 'parallax_one_' + parallax_one_uniqid();
-	if( typeof th != 'undefined' ) {
+	if( typeof th !== 'undefined' ) {
 		/* Clone the first box*/
-		var field = th.find(".parallax_one_general_control_repeater_container:first").clone();
+		var field = th.find('.parallax_one_general_control_repeater_container:first').clone();
 		
-		if( typeof field != 'undefined' ){
+		if( typeof field !== 'undefined' ){
 			/*Set the default value for choice between image and icon to icon*/
-        	field.find(".parallax_one_image_choice").val('parallax_icon');
+        	field.find('.parallax_one_image_choice').val('parallax_icon');
 
 			/*Show icon selector*/
 			field.find('.parallax_one_general_control_icon').show();
@@ -234,7 +240,7 @@ jQuery(document).ready(function(){
 			}
 
 			/*Show delete box button because it's not the first box*/
-            field.find(".parallax_one_general_control_remove_field").show();
+            field.find('.parallax_one_general_control_remove_field').show();
 
             field.find('.icp').iconpicker().on('iconpickerUpdated', function () {
                 jQuery(this).trigger('change');
@@ -243,36 +249,36 @@ jQuery(document).ready(function(){
             field.find('.input-group-addon span').attr('class','');
 
 			/*Remove all repeater fields except first one*/
-			field.find(".parallax-one-social-repeater").find(".parallax-one-social-repeater-container").not(":first").remove();
-			field.find(".parallax_one_social_repeater_link").val('');
-			field.find(".parallax_one_socials_repeater_colector").val('');
+			field.find('.parallax-one-social-repeater').find('.parallax-one-social-repeater-container').not(':first').remove();
+			field.find('.parallax_one_social_repeater_link').val('');
+			field.find('.parallax_one_socials_repeater_colector').val('');
 
 
             field.find('.iconpicker-component').html('');
             field.find('.icp').val('');
 			/*Remove value from text field*/
-			field.find(".parallax_one_text_control").val('');
+			field.find('.parallax_one_text_control').val('');
 
 			/*Remove value from link field*/
-			field.find(".parallax_one_link_control").val('');
+			field.find('.parallax_one_link_control').val('');
 
 			/*Set box id*/
-			field.find(".parallax_one_box_id").val(id);
+			field.find('.parallax_one_box_id').val(id);
 			
 			/*Remove value from media field*/
-			field.find(".custom_media_url").val('');
+			field.find('.custom_media_url').val('');
 
 			/*Remove value from title field*/
-			field.find(".parallax_one_title_control").val('');
+			field.find('.parallax_one_title_control').val('');
 
 			/*Remove value from subtitle field*/
-			field.find(".parallax_one_subtitle_control").val('');
+			field.find('.parallax_one_subtitle_control').val('');
 
 			/*Remove value from shortcode field*/
-			field.find(".parallax_one_shortcode_control").val('');
+			field.find('.parallax_one_shortcode_control').val('');
 
 			/*Append new box*/
-			th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
+			th.find('.parallax_one_general_control_repeater_container:first').parent().append(field);
 
 			/*Refresh values*/
 			parallax_one_refresh_general_control_values();
@@ -284,8 +290,8 @@ jQuery(document).ready(function(){
 
 
 
-	jQuery("#customize-theme-controls").on("click", ".parallax_one_general_control_remove_field",function(){
-		if( typeof	jQuery(this).parent() != 'undefined'){
+	jQuery('#customize-theme-controls').on('click', '.parallax_one_general_control_remove_field',function(){
+		if( typeof	jQuery(this).parent() !== 'undefined'){
 			jQuery(this).parent().parent().remove();
 			parallax_one_refresh_general_control_values();
 		}
@@ -293,30 +299,30 @@ jQuery(document).ready(function(){
 	});
 
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_title_control',function(){
+	jQuery('#customize-theme-controls').on('keyup', '.parallax_one_title_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_subtitle_control',function(){
+	jQuery('#customize-theme-controls').on('keyup', '.parallax_one_subtitle_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
 
-    jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
+    jQuery('#customize-theme-controls').on('keyup', '.parallax_one_shortcode_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
+	jQuery('#customize-theme-controls').on('keyup', '.parallax_one_text_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
 
-	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_link_control',function(){
+	jQuery('#customize-theme-controls').on('keyup', '.parallax_one_link_control',function(){
 		parallax_one_refresh_general_control_values();
 	});
 
 	/*Drag and drop to change icons order*/
 
-	jQuery(".parallax_one_general_control_droppable").sortable({
-		update: function( event, ui ) {
+	jQuery('.parallax_one_general_control_droppable').sortable({
+		update: function() {
 			parallax_one_refresh_general_control_values();
 		}
 	});
@@ -324,27 +330,27 @@ jQuery(document).ready(function(){
 
 
 	/*----------------- Socials Repeater ---------------------*/
-	jQuery("#customize-theme-controls").on('click',".parallax_one_add_social_item", function( event ){
+	jQuery('#customize-theme-controls').on('click','.parallax_one_add_social_item', function( event ){
 		event.preventDefault();
 		var th = jQuery(this).parent();
 		var id = 'parallax_one_social_repeater_' + parallax_one_uniqid();
-		if(typeof th != 'undefined') {
-			var field = th.find(".parallax-one-social-repeater-container:first").clone();
-			if(typeof field != 'undefined'){
+		if(typeof th !== 'undefined') {
+			var field = th.find('.parallax-one-social-repeater-container:first').clone();
+			if(typeof field !== 'undefined'){
                 field.find( '.icp' ).iconpicker();
                 field.find( '.icp' ).val('');
                 field.find( '.input-group-addon' ).find('span').attr('class','');
-                field.find(".parallax_one_remove_social_item").show();
+                field.find('.parallax_one_remove_social_item').show();
 				field.find('.parallax_one_social_repeater_link').val('');
 				field.find('.parallax_one_social_repeater_id').val(id);
-				th.find(".parallax-one-social-repeater-container:first").parent().append(field);
+				th.find('.parallax-one-social-repeater-container:first').parent().append(field);
 				parallax_one_refresh_social_icons(th);
 			}
 		}
 		return false;
 	});
 
-	jQuery("#customize-theme-controls").on('click','.parallax_one_remove_social_item', function( event ){
+	jQuery('#customize-theme-controls').on('click','.parallax_one_remove_social_item', function( event ){
 		event.preventDefault();
 		var th = jQuery(this).parent();
 		var repeater = jQuery(this).parent().parent();
@@ -353,14 +359,14 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
-	jQuery("#customize-theme-controls").on('keyup','.parallax_one_social_repeater_link', function( event ){
+	jQuery('#customize-theme-controls').on('keyup','.parallax_one_social_repeater_link', function( event ){
 		event.preventDefault();
 		var repeater = jQuery(this).parent().parent();
 		parallax_one_refresh_social_icons(repeater);
 		return false;
 	});
 
-    jQuery("#customize-theme-controls").on( 'iconpickerUpdated','.icp', function(event) {
+    jQuery('#customize-theme-controls').on( 'iconpickerUpdated','.icp', function(event) {
         event.preventDefault();
         var repeater = jQuery(this).parent().parent().parent();
         parallax_one_refresh_social_icons(repeater);
@@ -370,15 +376,16 @@ jQuery(document).ready(function(){
 });
 
 var entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
     '"': '&quot;',
-    "'": '&#39;',
-    "/": '&#x2F;',
+    '\'': '&#39;',
+    '/': '&#x2F;',
   };
 
   function escapeHtml(string) {
+	  'use strict';
 	  string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
 	  string = String(string).replace(/\\/g,'&#92;');
 	  return String(string).replace(/[&<>"'\/]/g, function (s) {
@@ -392,7 +399,7 @@ var entityMap = {
 
 jQuery(document).ready(function(){
 
-
+	'use strict';
 	var sh = jQuery('#customize-control-paralax_one_enable_move').find('input:checkbox');
 	if(!sh.is(':checked')){
 		jQuery('#customize-control-paralax_one_first_layer').hide();
@@ -418,21 +425,21 @@ jQuery(document).ready(function(){
 });
 
 jQuery(document).ready(function() {
-
+	'use strict';
 	var parallax_one_aboutpage = parallaxOneCustomizerObject.aboutpage;
     var parallax_one_nr_actions_required = parallaxOneCustomizerObject.nr_actions_required;
 
     /* Number of required actions */
-    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
+    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required !== '0')) {
         jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
     }
 
     /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( ".parallax-upsells" ).length ) {
+	if( !jQuery( '.parallax-upsells' ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
 	}
 
-	if( jQuery( ".parallax-upsells" ).length ) {
+	if( jQuery( '.parallax-upsells' ).length ) {
 
 		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-parallax-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', parallaxOneCustomizerObject.documentation));
 		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/contact/" class="button" target="_blank">{github}</a>'.replace('{github}', parallaxOneCustomizerObject.support));
@@ -440,7 +447,7 @@ jQuery(document).ready(function() {
 	}
 	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',parallaxOneCustomizerObject.pro));
 
-	if ( !jQuery( ".parallax-upsells" ).length ) {
+	if ( !jQuery( '.parallax-upsells' ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
 });
@@ -451,16 +458,18 @@ jQuery(document).ready(function() {
 *********************************************/
 
 jQuery(document).ready(function($) {
-
+	'use strict';
 	Color.prototype.toString = function(remove_alpha) {
-		if (remove_alpha == 'no-alpha') {
+		if (remove_alpha === 'no-alpha') {
 			return this.toCSS('rgba', '1').replace(/\s+/g, '');
 		}
 		if (this._alpha < 1) {
 			return this.toCSS('rgba', this._alpha).replace(/\s+/g, '');
 		}
 		var hex = parseInt(this._color, 10).toString(16);
-		if (this.error) return '';
+		if (this.error) {
+			return '';
+		}
 		if (hex.length < 6) {
 			for (var i = 6 - hex.length - 1; i >= 0; i--) {
 				hex = '0' + hex;
@@ -471,26 +480,28 @@ jQuery(document).ready(function($) {
 
 	  $('.pluto-color-control').each(function() {
 		var $control = $(this),
-			value = $control.val().replace(/\s+/g, '');
+			value = $control.val().replace(/\s+/g, ''),
+			palette;
 		// Manage Palettes
 		var palette_input = $control.attr('data-palette');
-		if (palette_input == 'false' || palette_input == false) {
-			var palette = false;
-		} else if (palette_input == 'true' || palette_input == true) {
-			var palette = true;
+		if (palette_input === 'false' || palette_input === false) {
+			palette = false;
+		} else if (palette_input === 'true' || palette_input === true) {
+			palette = true;
 		} else {
-			var palette = $control.attr('data-palette').split(",");
+			palette = $control.attr('data-palette').split(',');
 		}
 		$control.wpColorPicker({ // change some things with the color picker
-			 clear: function(event, ui) {
+			 clear: function() {
 			// TODO reset Alpha Slider to 100
 			 },
 			change: function(event, ui) {
 				// send ajax request to wp.customizer to enable Save & Publish button
-				if(typeof ui.color != 'undefined'){
-					var _new_value = ui.color.toString();
+				var _new_value;
+				if(typeof ui.color !== 'undefined'){
+					_new_value = ui.color.toString();
 				} else {
-					var _new_value = $control.val();
+					_new_value = $control.val();
 				}
 				var key = $control.attr('data-customize-setting-link');
 				wp.customize(key, function(obj) {
@@ -504,13 +515,14 @@ jQuery(document).ready(function($) {
 			palettes: palette // remove the color palettes
 		});
 		$('<div class="parallax-one-alpha-container"><div class="slider-alpha"></div><div class="transparency"></div></div>').appendTo($control.parents('.wp-picker-container'));
-		var $alpha_slider = $control.parents('.wp-picker-container:first').find('.slider-alpha');
+		var $alpha_slider = $control.parents('.wp-picker-container:first').find('.slider-alpha'),
+			alpha_val;
 		// if in format RGBA - grab A channel value
 		if (value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)) {
-			var alpha_val = parseFloat(value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)[1]) * 100;
-			var alpha_val = parseInt(alpha_val);
+			alpha_val = parseFloat(value.match(/rgba\(\d+\,\d+\,\d+\,([^\)]+)\)/)[1]) * 100;
+			alpha_val = parseInt(alpha_val);
 		} else {
-			var alpha_val = 100;
+			alpha_val = 100;
 		}
 		$alpha_slider.slider({
 			slide: function(event, ui) {
@@ -522,12 +534,12 @@ jQuery(document).ready(function($) {
 					obj.set(_new_value);
 				});
 			},
-			create: function(event, ui) {
+			create: function() {
 				var v = $(this).slider('value');
 				$(this).find('.ui-slider-handle').text(v);
 			},
 			value: alpha_val,
-			range: "max",
+			range: 'max',
 			step: 1,
 			min: 1,
 			max: 100

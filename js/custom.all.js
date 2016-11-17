@@ -1,9 +1,13 @@
+/* global screenReaderText */
+/* global jQuery */
 jQuery(window).load(function(){
+    'use strict';
     callback_menu_align();
     fixFooterBottom();
 });
 
 jQuery(window).resize(function(){
+    'use strict';
     callback_menu_align();
     fixFooterBottom();
 });
@@ -11,6 +15,7 @@ jQuery(window).resize(function(){
 
 /* CENTERED MENU */
 var callback_menu_align = function () {
+    'use strict';
     var headerWrap      = jQuery('header.header');
     var navWrap         = jQuery('.main-navigation');
     var logoWrap        = jQuery('.navbar-header');
@@ -37,10 +42,11 @@ var callback_menu_align = function () {
         jQuery('.sticky-navigation-open').css('min-height', 70);
     }
     jQuery( '.header#masthead' ).css( 'opacity', 1 );
-}
+};
 
 /* STICKY FOOTER */
 function fixFooterBottom(){
+    'use strict';
     var header      = jQuery('header.header');
     var footer      = jQuery('footer.footer');
     var content     = jQuery('.content-wrap');
@@ -58,28 +64,30 @@ function fixFooterBottom(){
 }
 
 jQuery(document).ready(function($) {
-    "use strict";
+    'use strict';
     /*---------------------------------------*/
     /*	BOOTSTRAP FIXES
 	/*---------------------------------------*/
     var oldSSB = jQuery.fn.modal.Constructor.prototype.setScrollbar;
     $.fn.modal.Constructor.prototype.setScrollbar = function() {
         oldSSB.apply(this);
-        if (this.scrollbarWidth) jQuery('.navbar-fixed-top').css('padding-right', this.scrollbarWidth);
-    }
+        if (this.scrollbarWidth) {
+            jQuery('.navbar-fixed-top').css('padding-right', this.scrollbarWidth);
+        }
+    };
     var oldRSB = $.fn.modal.Constructor.prototype.resetScrollbar;
     $.fn.modal.Constructor.prototype.resetScrollbar = function() {
         oldRSB.apply(this);
         jQuery('.navbar-fixed-top').css('padding-right', '');
-    }
+    };
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement('style')
+        var msViewportStyle = document.createElement('style');
         msViewportStyle.appendChild(
             document.createTextNode(
                 '@-ms-viewport{width:auto!important}'
             )
-        )
-        document.querySelector('head').appendChild(msViewportStyle)
+        );
+        document.querySelector('head').appendChild(msViewportStyle);
     }
 });
 
@@ -88,6 +96,7 @@ jQuery(document).ready(function($) {
   ===  SMOOTH SCROLL NAVIGATION   ===
   =================================== */
 jQuery(document).ready(function(){
+    'use strict';
   jQuery('#menu-primary a[href*="#"]:not([href="#"]), a.woocommerce-review-link[href*="#"]:not([href="#"]), a.post-comments[href*="#"]:not([href="#"])').bind('click',function () {
     var headerHeight;
     var hash    = this.hash;
@@ -105,7 +114,7 @@ jQuery(document).ready(function(){
     } else {
       headerHeight = 0;
     }
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = jQuery(this.hash);
       target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
       if (target.length) {
@@ -118,7 +127,7 @@ jQuery(document).ready(function(){
   });
 
 
-    jQuery(".inpage_scroll_btn").click(function(event) {
+    jQuery('.inpage_scroll_btn').click(function() {
         var anchor = jQuery(this).attr('data-anchor');
         var offset2 = -60;
         if ( jQuery(anchor).length){
@@ -135,6 +144,7 @@ jQuery(document).ready(function(){
   ===  NAVIGATION AND NAVIGATION VISIBLE ON SCROLL  ===
   =====================================================*/
 function mainNav() {
+    'use strict';
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
         return false;
     }
@@ -142,30 +152,32 @@ function mainNav() {
     var topMenuClose    = -70;
     var topMenuOpen     = 0;
     if ( jQuery('.admin-bar').length>0 ) {
-        $parallax_one_header_height = jQuery('.navbar').height();
+        var $parallax_one_header_height = jQuery('.navbar').height();
         topMenuClose    = $parallax_one_header_height * -1;
         topMenuOpen     = 32;
     }
-    if ( top > 40 )
+    if ( top > 40 ){
         jQuery('.appear-on-scroll').stop().animate({
-            "opacity": '1',
-            "top": topMenuOpen
+            'opacity': '1',
+            'top': topMenuOpen
         });
-    else jQuery('.appear-on-scroll').stop().animate({
-        "top": topMenuClose,
-        "opacity": '0'
-    });
+    } else {
+        jQuery('.appear-on-scroll').stop().animate({
+            'top': topMenuClose,
+            'opacity': '0'
+        });
+    }
 }
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
 function scrolled() {
-
+    'use strict';
     if ( jQuery(window).width() >= 751 ) {
         var prallax_one_scrollTop = jQuery(window).scrollTop();       // cursor position
         var headerHeight = jQuery('.sticky-navigation').outerHeight();   // header height
         var isInOneSection = 'no';                              // used for checking if the cursor is in one section or not
         // for all sections check if the cursor is inside a section
-        jQuery("section").each( function() {
+        jQuery('section').each( function() {
             var thisID = '#' + jQuery(this).attr('id');           // section id
             var parallax_one_offset = jQuery(this).offset().top;         // distance between top and our section
             var thisHeight  = jQuery(this).outerHeight();         // section height
@@ -178,7 +190,7 @@ function scrolled() {
                 jQuery('#menu-primary a[href$="' + thisID + '"]').parent('li').addClass('current');    // find the menu button with the same ID section
                 return false;
             }
-            if (isInOneSection == 'no') {
+            if (isInOneSection === 'no') {
                 jQuery('.current').removeClass('current');
             }
         });
@@ -188,18 +200,26 @@ function scrolled() {
 
 var timer;
 jQuery(window).scroll(function(){
-
+    'use strict';
     mainNav();
 
-    if ( timer ) clearTimeout(timer);
+    if ( timer ) {
+        clearTimeout(timer);
+    }
     timer = setTimeout(function(){
         scrolled();
     }, 500);
 
 });
 
+jQuery(document).ready(function() {
+    'use strict';
+    mainNav();
+});
+
 var window_width_old;
 jQuery(document).ready(function(){
+    'use strict';
     window_width_old = jQuery('.container').width();
     if( window_width_old <= 462 ) {
         jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
@@ -214,7 +234,8 @@ jQuery(document).ready(function(){
 });
 
 jQuery(window).resize(function() {
-    if( window_width_old != jQuery('.container').outerWidth() ){
+    'use strict';
+    if( window_width_old !== jQuery('.container').outerWidth() ){
         window_width_old = jQuery('.container').outerWidth();
         if( window_width_old <= 462 ) {
             jQuery('.post-type-archive-product .products').parallaxonegridpinterest({columns: 1,selector: '.product', calcMin: false});
@@ -230,6 +251,7 @@ jQuery(window).resize(function() {
 });
 
 (function ($, window, document, undefined) {
+    'use strict';
     var defaults = {
             columns:                3,
             selector:               'div',
@@ -244,16 +266,16 @@ jQuery(window).resize(function() {
     }
     ParallaxOneGridPinterest.prototype.init = function () {
         var self            = this,
-            $container      = $(this.element);
+            $container      = $(this.element),
             $select_options = $(this.element).children();
         self.make_magic( $container, $select_options );
     };
     ParallaxOneGridPinterest.prototype.make_magic = function (container) {
-        var self            = this;
+        var self            = this,
             $container      = $(container),
             columns_height  = [],
             prefix          = 'parallax_one',
-            unique_class    = prefix + '_grid_' + self.make_unique();
+            unique_class    = prefix + '_grid_' + self.make_unique(),
             local_class     = prefix + '_grid';
         var classname;
         var substr_index    = this.element.className.indexOf(prefix+'_grid_');
@@ -263,7 +285,7 @@ jQuery(window).resize(function() {
             classname = this.element.className;
         }
         var my_id;
-        if( this.element.id == '' ) {
+        if( this.element.id === '' ) {
             my_id = prefix+'_id_' + self.make_unique();
         } else {
             my_id = this.element.id;
@@ -274,8 +296,8 @@ jQuery(window).resize(function() {
             columns_height.push(0);
             var first_cols = '';
             var last_cols = '';
-            if( i%self.options.columns == 1 ) { first_cols = prefix + '_grid_first'; }
-            if( i%self.options.columns == 0 ) { first_cols = prefix + '_grid_last'; }
+            if( i%self.options.columns === 1 ) { first_cols = prefix + '_grid_first'; }
+            if( i%self.options.columns === 0 ) { first_cols = prefix + '_grid_last'; }
             $('.'+unique_class).append('<div class="' + prefix + '_grid_col_' + this.options.columns +' ' + prefix + '_grid_column_' + i +' ' + first_cols + ' ' + last_cols + '"></div>');
         }
         var calcMin = this.options.calcMin;
@@ -283,15 +305,16 @@ jQuery(window).resize(function() {
         if( this.element.className.indexOf(local_class)<0 ){
             
             $container.children(this.options.selector).each(function(index){
-                if(calcMin == true){
+                var this_index;
+                if(calcMin === true){
                     var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1;
+                    this_index = columns_height.indexOf(min)+1;
                 }
                 else {
                     this_index = index % cols + 1;
                 }
                 $(this).attr(prefix+'grid-attr','this-'+index).appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                if(calcMin == true){
+                if(calcMin === true){
                     columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
                 }
                     
@@ -299,39 +322,41 @@ jQuery(window).resize(function() {
             
         } else {
             var no_boxes = $container.find(this.options.selector).length;
-            var i;
             for( i=0; i<no_boxes; i++ ){
-                if(calcMin == true){
+                var this_index;
+                if(calcMin === true){
                     var min = Math.min.apply(null,columns_height);
-                    var this_index = columns_height.indexOf(min)+1;
+                    this_index = columns_height.indexOf(min)+1;
                 }
                 else {
                     this_index = i % cols + 1;
                 }
                 $('#'+this.element.id).find('['+prefix+'grid-attr="this-'+i+'"]').appendTo('.'+unique_class +' .' + prefix + '_grid_column_'+this_index);
-                if(calcMin == true){
+                if(calcMin === true){
                     columns_height[this_index-1] = $('.'+unique_class +' .' + prefix + '_grid_column_'+this_index).height();
                 }
             }
         }
         $container.remove();
-    }
+    };
     
     ParallaxOneGridPinterest.prototype.make_unique = function () {
-        var text = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for( var i=0; i<10; i++ )
+        var text = '';
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for( var i=0; i<10; i++ ){
             text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
         return text;
-    }
+    };
     
     ParallaxOneGridPinterest.prototype.allValuesSame = function(arr) {
         for(var i = 1; i < arr.length; i++){
-            if(arr[i] !== arr[0])
+            if(arr[i] !== arr[0]){
                 return false;
+            }
         }
         return true;
-    }
+    };
     
     $.fn.parallaxonegridpinterest = function (options) {
         return this.each(function () {
@@ -340,26 +365,32 @@ jQuery(window).resize(function() {
                 $.data(this, value, new ParallaxOneGridPinterest(this, options) );
             }
         });
-    }
+    };
 })(jQuery);
 
 var isMobile = {
     Android: function() {
+        'use strict';
         return navigator.userAgent.match(/Android/i);
     },
     BlackBerry: function() {
+        'use strict';
         return navigator.userAgent.match(/BlackBerry/i);
     },
     iOS: function() {
+        'use strict';
         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
     Opera: function() {
+        'use strict';
         return navigator.userAgent.match(/Opera Mini/i);
     },
     Windows: function() {
+        'use strict';
         return navigator.userAgent.match(/IEMobile/i);
     },
     any: function() {
+        'use strict';
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
@@ -372,7 +403,7 @@ var isMobile = {
 
 // MENU NAVIGATION WITH ARROW KEYS 
 ( function( $ ) {
-
+    'use strict';
     
   $('.menu-item a').on('keydown', function(e) {
 		// left key
@@ -402,7 +433,6 @@ var isMobile = {
 				$(this).parent().prev().children('a').focus();
 			}
 			else {
-                console.log($(this).parents('ul'));
 				$(this).parents('ul').first().prev().prev().focus();
 			}
 		}
@@ -412,7 +442,7 @@ var isMobile = {
 
 //ACCESSIBILITY MENU
 ( function( $ ) {
-
+    'use strict';
     function initMainNavigation( container ) {
         // Add dropdown toggle that display child menu items.
         container.find( '.menu-item-has-children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
@@ -436,10 +466,10 @@ var isMobile = {
     
     initMainNavigation( $( '.main-navigation' ) );
     
-    masthead = $( '#masthead' );
-	menuToggle       = masthead.find( '#menu-toggle' );
-	siteHeaderMenu   = masthead.find( '#site-header-menu' );
-	siteNavigation   = masthead.find( '#site-navigation' ); 
+    var masthead = $( '#masthead' );
+	var menuToggle       = masthead.find( '#menu-toggle' );
+	var siteHeaderMenu   = masthead.find( '#site-header-menu' );
+	var siteNavigation   = masthead.find( '#site-navigation' );
     
     // Enable menuToggle.
 	( function() {
@@ -502,7 +532,7 @@ var isMobile = {
 	}
     
     $( document ).ready( function() {
-		$( window ).on( 'load.parallax-one', onResizeARIA )
+		$( window ).on( 'load.parallax-one', onResizeARIA );
 	} );
     
     
@@ -512,12 +542,13 @@ var isMobile = {
 /* mobile background fix */
 jQuery( document ).ready( mobile_bg_fix );
 function mobile_bg_fix() {
+    'use strict';
     if( isMobile.any() && jQuery( 'body.custom-background' ) ){
-            bodyClass   = jQuery( 'body.custom-background' )
-            imgURL      = bodyClass.css( 'background-image' );
-            imgSize     = bodyClass.css( 'background-size' );
-            imgPosition = bodyClass.css( 'background-position' );
-            imgRepeat   = bodyClass.css( 'background-repeat' );
+            var bodyClass   = jQuery( 'body.custom-background' );
+            var imgURL      = bodyClass.css( 'background-image' );
+            var imgSize     = bodyClass.css( 'background-size' );
+            var imgPosition = bodyClass.css( 'background-position' );
+            var imgRepeat   = bodyClass.css( 'background-repeat' );
             jQuery( '#mobilebgfix' ).addClass( 'mobile-bg-fix-wrap' ).find( '.mobile-bg-fix-img' ).css( {
                 'background-image'      : imgURL,
                 'background-size'       : imgSize,

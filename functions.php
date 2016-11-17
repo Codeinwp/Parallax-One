@@ -294,8 +294,8 @@ function parallax_one_scripts() {
 
 	}
 
-	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
-	if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
+	if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
 		wp_enqueue_script( 'parallax-one-home-animations', parallax_get_file( '/js/scrollReveal.js' ), array( 'jquery' ), '1.0.0', true );
 
@@ -620,6 +620,12 @@ function parallax_one_get_template_part( $template ) {
 	} else {
 		if ( defined( 'PARALLAX_ONE_PLUS_PATH' ) ) {
 			$template = basename( $template );
+			if ( get_template_directory() !== get_stylesheet_directory() ) {
+				if ( file_exists( get_stylesheet_directory() . '/sections/' . $template . '.php' ) ) {
+					require_once( get_stylesheet_directory() . '/sections/' . $template . '.php' );
+					return;
+				}
+			}
 			if ( file_exists( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' ) ) {
 				require_once( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' );
 			}

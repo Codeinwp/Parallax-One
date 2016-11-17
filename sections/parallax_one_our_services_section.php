@@ -13,7 +13,7 @@ $parallax_one_services = get_theme_mod('parallax_one_services_content', json_enc
 	array( 'choice' => 'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__( 'Lorem Ipsum','parallax-one' ),'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ), 'id' => 'parallax_one_56fd4d95f3015' ),
 ) )	);
 $parallax_one_services_pinterest = get_theme_mod( 'paralax_one_services_pinterest_style','5' );
-$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_services_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_services ) ) {
 	parallax_hook_services_before(); ?>
@@ -83,7 +83,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 
 							if ( ( ! empty( $icon ) && $icon != 'No Icon' && $choice == 'parallax_icon' )  || ( ! empty( $image )  && $choice == 'parallax_image' ) || ! empty( $title ) || ! empty( $text ) ) {  ?>
 								<div class="service-box"
-								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+								<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 									echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 } ?>>
 									<?php

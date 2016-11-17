@@ -875,7 +875,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* Enable animations */
 	$wp_customize->add_setting( 'parallax_one_enable_animations', array(
 		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default' => '0',
+		'default' => false,
 
 	));
 	$wp_customize->add_control(

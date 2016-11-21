@@ -3,9 +3,9 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
-
+/* global wp*/
 ( function( $ ) {
-	
+	'use strict';
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -40,9 +40,9 @@
 	******** HEADER SECTION *********
 	****************************************/
 	//Logo
-	wp.customize("paralax_one_logo", function(value) {
+	wp.customize('paralax_one_logo', function(value) {
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.navbar-brand' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.header-logo-wrap' ).addClass( 'paralax_one_only_customizer' );
 			}
@@ -51,7 +51,7 @@
 				$( '.header-logo-wrap' ).removeClass( 'paralax_one_only_customizer' );
 			}
 				
-            $(".navbar-brand img").attr( "src", to );
+            $('.navbar-brand img').attr( 'src', to );
 			
         } );
     });
@@ -60,7 +60,7 @@
 	//Show Header Logo
 	wp.customize('paralax_one_header_logo', function( value ){
 		value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$('#parallax_header .only-logo').removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$('#parallax_header .only-logo').addClass( 'paralax_one_only_customizer' );
@@ -71,10 +71,10 @@
 	});
 	
 	//Title
-	wp.customize("parallax_one_header_title", function(value) {
+	wp.customize('parallax_one_header_title', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '#parallax_header .intro-section h2' ).removeClass( 'paralax_one_only_customizer' );
 			}
 			else {
@@ -86,10 +86,10 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_header_subtitle", function(value) {
+	wp.customize('parallax_one_header_subtitle', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '#parallax_header .intro-section h5' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$( '#parallax_header .intro-section h5' ).addClass( 'paralax_one_only_customizer' );
@@ -100,11 +100,11 @@
     });
 	
 	//Button text
-	wp.customize("parallax_one_header_button_text", function(value) {
+	wp.customize('parallax_one_header_button_text', function(value) {
 		
         value.bind(function( to ) {
 
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '#parallax_header .inpage_scroll_btn' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$( '#parallax_header .inpage_scroll_btn' ).addClass( 'paralax_one_only_customizer' );
@@ -116,10 +116,10 @@
 
 
 	//Button link
-	wp.customize("parallax_one_header_button_link", function(value) {
+	wp.customize('parallax_one_header_button_link', function(value) {
 		
         value.bind(function( to ) {
-        	if( to.charAt(0) == '#' ){
+        	if( to.charAt(0) === '#' ){
         		$( '#parallax_header .inpage_scroll_btn' ).removeAttr('onClick');
 				$( '#parallax_header .inpage_scroll_btn' ).attr( 'data-anchor', to );
         	} else{
@@ -135,11 +135,11 @@
 	************* OUR STORY SECTION ****************
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_our_story_title", function(value) {
+	wp.customize('parallax_one_our_story_title', function(value) {
 		
         value.bind(function( to ) {
 			
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.brief' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .content-section h2' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .content-section .colored-line-left').removeClass(  'paralax_one_only_customizer' );
@@ -156,10 +156,10 @@
 		
     });
 	
-	wp.customize("parallax_one_our_story_text",function(value) {
+	wp.customize('parallax_one_our_story_text',function(value) {
 		
 		value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.brief' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .content-section .brief-content-text' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .content-section .brief-content-text' ).html( to );
@@ -174,10 +174,10 @@
 		
 	});
 	
-	wp.customize("paralax_one_our_story_image",function(value) {
+	wp.customize('paralax_one_our_story_image',function(value) {
 		
 		value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.brief' ).removeClass( 'paralax_one_only_customizer' );
 				$('.brief .brief-content-two').removeClass( 'paralax_one_only_customizer' );
 				$( '.brief .brief-content-two .brief-image-right img' ).attr('src', to);
@@ -201,10 +201,10 @@
 	
 	
 	//Title
-	wp.customize("parallax_one_our_services_title", function(value) {
+	wp.customize('parallax_one_our_services_title', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.services' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.services .section-header h2' ).removeClass( 'paralax_one_only_customizer' );
 				$('.services .section-header .colored-line' ).removeClass( 'paralax_one_only_customizer' );
@@ -222,10 +222,10 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_our_services_subtitle", function(value) {
+	wp.customize('parallax_one_our_services_subtitle', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.services' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.services .section-header .sub-heading' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.services .section-header .sub-heading' ).text( to );
@@ -244,11 +244,11 @@
 	*********** OUR TEAM SECTION **************
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_our_team_title", function(value) {
+	wp.customize('parallax_one_our_team_title', function(value) {
 		
         value.bind(function( to ) {
 			
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.team' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.team .section-header h2' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.team .section-header .colored-line' ).removeClass( 'paralax_one_only_customizer' );
@@ -265,10 +265,10 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_our_team_subtitle", function(value) {
+	wp.customize('parallax_one_our_team_subtitle', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.team' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.team .section-header .sub-heading' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.team .section-header .sub-heading' ).text( to );
@@ -287,11 +287,11 @@
 	******** HAPPY CUSTOMERS SECTION ***********
 	*******************************************************/
 	//Title
-	wp.customize("parallax_one_happy_customers_title", function(value) {
+	wp.customize('parallax_one_happy_customers_title', function(value) {
 		
         value.bind(function( to ) {
 			
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.testimonials' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.testimonials .section-header h2' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.testimonials .section-header .colored-line' ).removeClass( 'paralax_one_only_customizer' );
@@ -308,10 +308,10 @@
     });
 	
 	//Subtitle
-	wp.customize("parallax_one_happy_customers_subtitle", function(value) {
+	wp.customize('parallax_one_happy_customers_subtitle', function(value) {
 		
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.testimonials' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.testimonials .section-header .sub-heading' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.testimonials .section-header .sub-heading' ).text( to );
@@ -332,7 +332,7 @@
 	wp.customize( 'paralax_one_ribbon_background', function( value ) {
 		value.bind( function( to ) {
 			
-			if ( '' != to ) {
+			if ( '' !== to ) {
 				$( '.ribbon-wrap' ).attr( 'style','background-image:url('+to+')' );
 			} else {
 				$( '.ribbon-wrap' ).removeAttr('style');
@@ -344,18 +344,18 @@
 	
 	
 	//Title
-	wp.customize("parallax_one_ribbon_title", function(value) {
+	wp.customize('parallax_one_ribbon_title', function(value) {
 		
         value.bind(function( to ) {
 
 			var button = wp.customize._value.parallax_one_button_text();
 
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.ribbon-wrap h2' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.ribbon-wrap' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$( '.ribbon-wrap h2' ).addClass( 'paralax_one_only_customizer' );
-				if(button==''){
+				if(button === ''){
 					$( '.ribbon-wrap' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -366,17 +366,17 @@
 	
 	
 	//Button text
-	wp.customize("parallax_one_button_text", function(value) {
+	wp.customize('parallax_one_button_text', function(value) {
 		
         value.bind(function( to ) {
 			var title = wp.customize._value.parallax_one_ribbon_title();
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.ribbon-wrap' ).removeClass( 'paralax_one_only_customizer' );
 				$( '.ribbon-wrap button' ).removeClass( 'paralax_one_only_customizer' );
 
 			} else {
 				$( '.ribbon-wrap button' ).addClass( 'paralax_one_only_customizer' );
-				if(title==''){
+				if(title===''){
 					$( '.ribbon-wrap' ).addClass( 'paralax_one_only_customizer' );
 				}
 			}
@@ -387,10 +387,10 @@
 
 
 	//Button link
-	wp.customize("parallax_one_button_link", function(value) {
+	wp.customize('parallax_one_button_link', function(value) {
 		
         value.bind(function( to ) {
-			if( to.charAt(0) == '#' ){
+			if( to.charAt(0) === '#' ){
 				$( '#ribbon .inpage_scroll_btn' ).removeAttr('onClick');
 				$( '#ribbon .inpage_scroll_btn' ).attr( 'data-anchor', to );
 			} else {
@@ -407,11 +407,11 @@
 	*******************************************************/
 	
 	//Title
-	wp.customize("parallax_one_latest_news_title", function(value) {
+	wp.customize('parallax_one_latest_news_title', function(value) {
 		
         value.bind(function( to ) {
 
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.timeline .timeline-text' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$( '.timeline .timeline-text' ).addClass( 'paralax_one_only_customizer' );
@@ -426,9 +426,9 @@
 	******** FOOTER SECTION *********
 	****************************************/
 	//Copyright
-	wp.customize("parallax_one_copyright", function(value) {
+	wp.customize('parallax_one_copyright', function(value) {
         value.bind(function( to ) {
-			if( to != '' ) {
+			if( to !== '' ) {
 				$( '.parallax_one_copyright_content' ).removeClass( 'paralax_one_only_customizer' );
 			} else {
 				$( '.parallax_one_copyright_content' ).addClass( 'paralax_one_only_customizer' );

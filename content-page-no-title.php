@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content in template-fullwidth-no-title.php
  *
  * @package parallax-one
  */

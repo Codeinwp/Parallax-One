@@ -4,6 +4,7 @@
  *
  * Template Name: Full width, no title (SiteOrigin Page builder Template)
  *
+ * @package parallax-one
  */
 
 

@@ -10,7 +10,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 }
 
 /**
- * Class parallax-one_Info
+ * Class Parallax_One_Info
  */
 class Parallax_One_Info extends WP_Customize_Control {
 

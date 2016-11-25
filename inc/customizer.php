@@ -37,7 +37,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->panel = 'panel_2';
 	$wp_customize->get_section( 'colors' )->panel = 'panel_2';
 
-
 	require_once( 'class/parallax-one-info.php' );
 	$wp_customize->add_section('parallax_one_theme_info', array(
 		'title' => __( 'Theme info', 'parallax-one' ),

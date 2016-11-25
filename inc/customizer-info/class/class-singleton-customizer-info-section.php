@@ -75,7 +75,7 @@ final class Customizer_Info_Singleton {
 		// Register custom section types.
 		$manager->register_section_type( 'Customizer_Info' );
 
-		if(!class_exists('Parallax_One_Plus')){
+		if ( ! class_exists( 'Parallax_One_Plus' ) ) {
 			$manager->add_section( new Customizer_Info( $manager, 'parallax_one_view_pro', array(
 				'section_title' => __( 'View PRO version', 'parallax-one' ),
 				'section_url' => 'https://themeisle.com/plugins/parallax-one-plus/',

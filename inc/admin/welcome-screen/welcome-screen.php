@@ -17,9 +17,6 @@ class Parallax_One_Welcome {
 
 		/* enqueue script and style for welcome screen */
 		add_action( 'admin_enqueue_scripts', array( $this, 'parallax_one_welcome_style_and_scripts' ) );
-		
-		/* enqueue script for customizer */
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'parallax_one_welcome_scripts_for_customizer' ) );
 
 		/* load welcome screen */
 		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ), 	    10 );
@@ -68,20 +65,6 @@ class Parallax_One_Welcome {
 			wp_enqueue_style( 'parallax-one-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
 			wp_enqueue_script( 'parallax-one-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
 		}
-	}
-	
-	/**
-	 * Load scripts for customizer page
-	 */
-	public function parallax_one_welcome_scripts_for_customizer() {
-		
-		wp_enqueue_style( 'parallax-one-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
-		wp_enqueue_script( 'parallax-one-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
-		wp_localize_script( 'parallax-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome#getting_started' ) ),
-			'themeinfo' => __('View Theme Info','parallax-one'),
-		) );
-
 	}
 
 	/**

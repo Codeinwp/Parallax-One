@@ -202,13 +202,6 @@ function parallax_one_customizer_scripts() {
 
 	wp_enqueue_script( 'parallax_one_customizer_script', parallax_get_file( '/js/parallax_one_customizer.js' ), array( 'jquery', 'jquery-ui-draggable' ),'1.0.2', true );
 
-	wp_localize_script( 'parallax_one_customizer_script', 'parallaxOneCustomizerObject', array(
-
-		'documentation' => esc_html__( 'Documentation', 'parallax-one' ),
-		'support' => esc_html__( 'Support','parallax-one' ),
-		'pro' => __( 'Upgrade to PRO','parallax-one' ),
-
-	) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_scripts' );
 
@@ -294,8 +287,8 @@ function parallax_one_scripts() {
 
 	}
 
-	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
-	if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
+	if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
 		wp_enqueue_script( 'parallax-one-home-animations', parallax_get_file( '/js/scrollReveal.js' ), array( 'jquery' ), '1.0.0', true );
 
@@ -340,6 +333,11 @@ require get_template_directory() . '/inc/jetpack.php';
  * Enables user customization via WordPress plugin API
  */
 require get_template_directory() . '/inc/hooks.php';
+
+/**
+ *  Customizer info
+ */
+require_once get_template_directory() . '/inc/customizer-info/class/class-singleton-customizer-info-section.php';
 
 /**
  * TAV_Remote_Notification_Client.
@@ -620,6 +618,12 @@ function parallax_one_get_template_part( $template ) {
 	} else {
 		if ( defined( 'PARALLAX_ONE_PLUS_PATH' ) ) {
 			$template = basename( $template );
+			if ( get_template_directory() !== get_stylesheet_directory() ) {
+				if ( file_exists( get_stylesheet_directory() . '/sections/' . $template . '.php' ) ) {
+					require_once( get_stylesheet_directory() . '/sections/' . $template . '.php' );
+					return;
+				}
+			}
 			if ( file_exists( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' ) ) {
 				require_once( PARALLAX_ONE_PLUS_PATH . 'public/templates/' . $template . '.php' );
 			}

@@ -12,7 +12,7 @@ $parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode( a
 	array( 'image_url' => parallax_get_file( '/images/companies/4.png' ) ,'link' => '#', 'id' => 'parallax_one_56d7f2ce8a15a' ),
 	array( 'image_url' => parallax_get_file( '/images/companies/5.png' ) ,'link' => '#', 'id' => 'parallax_one_56d7f2cf8a15b' ),
 ) ) );
-$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', '0' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_logos ) ) {
 	$parallax_one_logos_decoded = json_decode( $parallax_one_logos );
@@ -23,7 +23,7 @@ if ( ! empty( $parallax_one_logos ) ) {
 		parallax_hook_logos_top(); ?>
 		<div class="container">
 			<ul class="client-logos"
-			<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations == 1 ) ) {
+			<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 				echo 'data-scrollreveal="enter top over 1.5s after 1s"';
 } ?>>
 				<?php

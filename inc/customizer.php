@@ -37,6 +37,20 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->panel = 'panel_2';
 	$wp_customize->get_section( 'colors' )->panel = 'panel_2';
 
+	require_once( 'class/parallax-one-info.php' );
+	$wp_customize->add_section('parallax_one_theme_info', array(
+		'title' => __( 'Theme info', 'parallax-one' ),
+		'priority' => 0,
+	) );
+	$wp_customize->add_setting('parallax_one_theme_info', array(
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'parallax_one_sanitize_input',
+	) );
+	$wp_customize->add_control( new Parallax_One_Info( $wp_customize, 'parallax_one_theme_info', array(
+		'section' => 'parallax_one_theme_info',
+		'priority' => 10,
+	) ) );
+
 	/**
 	 * APPEARANCE
 	 */
@@ -875,7 +889,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	/* Enable animations */
 	$wp_customize->add_setting( 'parallax_one_enable_animations', array(
 		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default' => '0',
+		'default' => false,
 
 	));
 	$wp_customize->add_control(

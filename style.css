@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/parallax-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Parallax One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Parallax One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.1.1
+Version: 2.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: parallax-one
@@ -5379,6 +5379,24 @@ h2.screen-reader-text {
 }
 
 
+/*----------------------------------------
+ **   SiteOrigin Page Builder styles -----
+-----------------------------------------*/
+
+.siteorigin-panels.page-template-template-fullwidth-no-title #primary {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.siteorigin-panels.page-template-template-fullwidth-no-title .parallax-one-top-margin-5px {
+	margin-top: 0 !important;
+}
+
+.siteorigin-panels.page-template-template-fullwidth-no-title .widget li {
+	list-style: none;
+}
+
+
 /* --------------------------------------
 =========================================
    6. RESPONSIVE CSS FIXES
@@ -7407,7 +7425,7 @@ h2.screen-reader-text {
 	clip: rect(1px,1px,1px,1px);
 	position: absolute!important;
 	width: 1px;
-	height: 1px; 
+	height: 1px;
 	color: #000;
 	background: #fff;
 }
@@ -7418,7 +7436,7 @@ h2.screen-reader-text {
 	top: 1em;
 	left: 1em;
 	width: auto;
-	height: auto; 
+	height: auto;
 	padding: 1em;
 	outline: 1px solid;
 	background-color: #fff;

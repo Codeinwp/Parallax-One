@@ -52,8 +52,8 @@ The exceptions to this license are as follows:
     Code licensed under MIT License, http://www.opensource.org/licenses/MIT
     Documentation licensed under CC BY 3.0, http://creativecommons.org/licenses/by/3.0/
 
-* Images	 
-	 
+* Images
+
 	License:
 	    All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
 	    All pexels.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/

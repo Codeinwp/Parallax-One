@@ -221,3 +221,11 @@ button.parallax_one_general_control_remove_field:hover {
 .parallax_one_add_social_item {
 	margin-top: 10px;
 }
+
+.parallax-one-theme-info {
+	text-align: center;
+}
+
+.parallax-one-theme-info hr {
+	margin: 10px auto;
+}

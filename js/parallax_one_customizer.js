@@ -1,6 +1,6 @@
 /*global Color*/
 /*global wp*/
-/*global parallaxOneCustomizerObject*/
+
 function media_upload(button_class) {
 	'use strict';
 	jQuery('body').on('click', button_class, function() {
@@ -422,34 +422,6 @@ jQuery(document).ready(function(){
 			jQuery('#customize-control-header_image').fadeIn();
 		}
 	});
-});
-
-jQuery(document).ready(function() {
-	'use strict';
-	var parallax_one_aboutpage = parallaxOneCustomizerObject.aboutpage;
-    var parallax_one_nr_actions_required = parallaxOneCustomizerObject.nr_actions_required;
-
-    /* Number of required actions */
-    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required !== '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
-    }
-
-    /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( '.parallax-upsells' ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
-	}
-
-	if( jQuery( '.parallax-upsells' ).length ) {
-
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-parallax-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', parallaxOneCustomizerObject.documentation));
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/contact/" class="button" target="_blank">{github}</a>'.replace('{github}', parallaxOneCustomizerObject.support));
-
-	}
-	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',parallaxOneCustomizerObject.pro));
-
-	if ( !jQuery( '.parallax-upsells' ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('</li>');
-	}
 });
 
 

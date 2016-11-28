@@ -5378,22 +5378,24 @@ h2.screen-reader-text {
 	z-index: 1;
 }
 
+
 /*----------------------------------------
  **   SiteOrigin Page Builder styles -----
 -----------------------------------------*/
 
 .siteorigin-panels.page-template-template-fullwidth-no-title #primary {
-    margin-top: 0;
-    margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .siteorigin-panels.page-template-template-fullwidth-no-title .parallax-one-top-margin-5px {
-    margin-top: 0px !important;
+	margin-top: 0 !important;
 }
 
 .siteorigin-panels.page-template-template-fullwidth-no-title .widget li {
-    list-style: none;
+	list-style: none;
 }
+
 
 /* --------------------------------------
 =========================================
@@ -7759,6 +7761,7 @@ p.edd-alert-error,
 		width: 100% !important;
 	}
 }
+
 
 /*---------------------------------------
    9.5 WP Product Review

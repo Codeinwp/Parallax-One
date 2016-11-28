@@ -49,10 +49,14 @@ $customizer_url = admin_url() . 'customize.php' ;
 	</div>
 
 	<div class="prallax-one-tab-pane-half prallax-one-tab-pane-first-half">
-
+		<?php
+		$link = 'http://docs.themeisle.com/article/14-how-to-create-a-child-theme/';
+		if( class_exists('Parallax_One_Plus') ){
+			$link = 'http://docs.themeisle.com/article/264-how-to-create-a-child-theme-if-you-use-parallax-one-plus';
+		} ?>
 		<h4><?php esc_html_e( 'Create a child theme', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to make changes to the theme\'s files, those changes are likely to be overwritten when you next update the theme. In order to prevent that from happening, you need to create a child theme. For this, please follow the documentation below.', 'parallax-one' ); ?></p>
-		<p><a href="http://docs.themeisle.com/article/14-how-to-create-a-child-theme/" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+		<p><a href="<?php echo esc_url($link); ?>" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 		<hr />
 

@@ -1,4 +1,11 @@
 
+### 2.1.2 - 28/11/2016
+**Changes:** 
+- NEW template for SiteOrigin compatibility
+- Updated grunt and fixed issues
+- Reorganize customize upsells
+- Update images license
+
 ### 2.1.1 - 12/11/2016
 **Changes:** 
 - New option for animations on frontpage

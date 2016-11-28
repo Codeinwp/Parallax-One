@@ -2,9 +2,7 @@
 /**
  * Customizer info main class.
  *
- * @package WordPress
- * @subpackage Hestia
- * @since Hestia 1.0
+ * @package parallax-one
  */
 
 /**

@@ -1,4 +1,8 @@
 
+### 2.1.3 - 11/12/2016
+**Changes:** 
+- Fixed function parallax_one_comment not found error
+
 ### 2.1.2 - 28/11/2016
 **Changes:** 
 - NEW template for SiteOrigin compatibility

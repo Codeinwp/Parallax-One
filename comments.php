@@ -63,7 +63,6 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'callback'    => 'parallax_one_comment',
 					'avatar_size' => 60,
 				) );
 			?>

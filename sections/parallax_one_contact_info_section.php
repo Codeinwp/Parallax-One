@@ -59,7 +59,7 @@ if ( ! parallax_one_general_repeater_is_empty( $parallax_one_contact_info_item )
 								parallax_hook_contact_entry_before(); ?>
 								<div class="col-sm-4 contact-link-box col-xs-12" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 									echo 'data-scrollreveal="enter top after 0.15s over 1s"';
-								}?>>
+}?>>
 									<?php
 									parallax_hook_contact_entry_top();
 

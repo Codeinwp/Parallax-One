@@ -10,6 +10,7 @@ $parallax_one_contact_info_item = get_theme_mod( 'parallax_one_contact_info_cont
 	array( 'icon_value' => 'icon-basic-geolocalize-01' ,'text' => 'Company address', 'link' => '#', 'id' => 'parallax_one_56d069b88cb6f' ),
 	array( 'icon_value' => 'icon-basic-tablet' ,'text' => '0 332 548 954', 'link' => '#', 'id' => 'parallax_one_56d069b98cb70' ),
 ) )	);
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 $allowed_protocols = wp_allowed_protocols();
 array_push( $allowed_protocols,'callto' );
@@ -56,7 +57,9 @@ if ( ! parallax_one_general_repeater_is_empty( $parallax_one_contact_info_item )
 
 							if ( ! empty( $icon ) || ! empty( $text ) ) {
 								parallax_hook_contact_entry_before(); ?>
-								<div class="col-sm-4 contact-link-box col-xs-12">
+								<div class="col-sm-4 contact-link-box col-xs-12" <?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
+									echo 'data-scrollreveal="enter top after 0.15s over 1s"';
+								}?>>
 									<?php
 									parallax_hook_contact_entry_top();
 

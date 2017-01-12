@@ -180,8 +180,8 @@ function parallax_one_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_header_logo', array(
-        'label'    => esc_html__( 'Header Logo', 'parallax-one' ),
-        'section'  => 'parallax_one_header_content',
+		'label'    => esc_html__( 'Header Logo', 'parallax-one' ),
+		'section'  => 'parallax_one_header_content',
 		'priority'    => 10,
 	) ) );
 
@@ -462,8 +462,8 @@ function parallax_one_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
-        'label'    => esc_html__( 'Image', 'parallax-one' ),
-        'section'  => 'parallax_one_about_section',
+		'label'    => esc_html__( 'Image', 'parallax-one' ),
+		'section'  => 'parallax_one_about_section',
 		'priority'    => 30,
 	) ) );
 
@@ -607,8 +607,8 @@ function parallax_one_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
-        'label'    => esc_html__( 'Ribbon Background', 'parallax-one' ),
-        'section'  => 'parallax_one_ribbon_section',
+		'label'    => esc_html__( 'Ribbon Background', 'parallax-one' ),
+		'section'  => 'parallax_one_ribbon_section',
 		'priority'    => 10,
 	) ) );
 

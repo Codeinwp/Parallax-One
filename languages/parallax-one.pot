@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One 2.1.3\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/Parallax-One/issues\n"
-"POT-Creation-Date: 2017-01-03 13:01:12+00:00\n"
+"POT-Creation-Date: 2017-01-12 15:31:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -640,7 +640,7 @@ msgstr ""
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/free_pro.php:21 inc/customizer.php:293
+#: inc/admin/welcome-screen/sections/free_pro.php:21 inc/customizer.php:287
 msgid "Parallax effect"
 msgstr ""
 
@@ -682,7 +682,7 @@ msgstr ""
 msgid "Ready for e-commerce. You can build an online store here."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/free_pro.php:61 inc/customizer.php:968
+#: inc/admin/welcome-screen/sections/free_pro.php:61 inc/customizer.php:940
 msgid "Portfolio section"
 msgstr ""
 
@@ -1048,7 +1048,7 @@ msgid "Icon"
 msgstr ""
 
 #: inc/class/parallax-one-general-control.php:202
-#: inc/class/parallax-one-general-control.php:222 inc/customizer.php:479
+#: inc/class/parallax-one-general-control.php:222 inc/customizer.php:465
 msgid "Image"
 msgstr ""
 
@@ -1095,8 +1095,8 @@ msgid "Title"
 msgstr ""
 
 #: inc/class/parallax-one-general-control.php:384
-#: inc/class/parallax-one-general-control.php:450 inc/customizer.php:213
-#: inc/customizer.php:399 inc/customizer.php:515 inc/customizer.php:585
+#: inc/class/parallax-one-general-control.php:450 inc/customizer.php:211
+#: inc/customizer.php:394 inc/customizer.php:499 inc/customizer.php:567
 msgid "Subtitle"
 msgstr ""
 
@@ -1182,7 +1182,7 @@ msgstr ""
 msgid "Header section"
 msgstr ""
 
-#: inc/customizer.php:169 inc/customizer.php:464
+#: inc/customizer.php:168 inc/customizer.php:452
 msgid "Content"
 msgstr ""
 
@@ -1190,95 +1190,95 @@ msgstr ""
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:193 sections/parallax_one_header_section.php:9
+#: inc/customizer.php:192 sections/parallax_one_header_section.php:9
 msgid "Simple, Reliable and Awesome."
 msgstr ""
 
-#: inc/customizer.php:198 inc/customizer.php:383 inc/customizer.php:445
-#: inc/customizer.php:501 inc/customizer.php:571 inc/customizer.php:643
-#: inc/customizer.php:688
+#: inc/customizer.php:197 inc/customizer.php:379 inc/customizer.php:438
+#: inc/customizer.php:486 inc/customizer.php:554 inc/customizer.php:622
+#: inc/customizer.php:665
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:208 inc/customizer.php:393 inc/customizer.php:509
-#: inc/customizer.php:637 sections/parallax_one_our_services_section.php:9
+#: inc/customizer.php:206 inc/customizer.php:388 inc/customizer.php:493
+#: inc/customizer.php:616 sections/parallax_one_our_services_section.php:9
 #: sections/parallax_one_our_team_section.php:9
 #: sections/parallax_one_ribbon_section.php:9
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 msgstr ""
 
-#: inc/customizer.php:223 inc/customizer.php:650
+#: inc/customizer.php:220 inc/customizer.php:628
 #: sections/parallax_one_header_section.php:11
 #: sections/parallax_one_ribbon_section.php:10
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:228 inc/customizer.php:655
+#: inc/customizer.php:225 inc/customizer.php:633
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:235 inc/customizer.php:662
+#: inc/customizer.php:231 inc/customizer.php:639
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:240 inc/customizer.php:667
+#: inc/customizer.php:236 inc/customizer.php:644
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:245
 msgid "Logos Bar"
 msgstr ""
 
-#: inc/customizer.php:272 inc/customizer.php:815
+#: inc/customizer.php:267 inc/customizer.php:787
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:277
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:294
+#: inc/customizer.php:288
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:303
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:323
+#: inc/customizer.php:317
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:337
 msgid "Overlay color and transparency"
 msgstr ""
 
-#: inc/customizer.php:355
+#: inc/customizer.php:349
 msgid "Services section"
 msgstr ""
 
-#: inc/customizer.php:367 inc/customizer.php:558
+#: inc/customizer.php:362 inc/customizer.php:540
 msgid "Use pinterest layout?"
 msgstr ""
 
-#: inc/customizer.php:368
+#: inc/customizer.php:363
 msgid ""
 "If this box is checked, the Services section will use pinterest-style "
 "layout."
 msgstr ""
 
-#: inc/customizer.php:378 sections/parallax_one_our_services_section.php:8
+#: inc/customizer.php:374 sections/parallax_one_our_services_section.php:8
 msgid "Our Services"
 msgstr ""
 
-#: inc/customizer.php:411 inc/customizer.php:412 inc/customizer.php:413
+#: inc/customizer.php:405 inc/customizer.php:406 inc/customizer.php:407
 #: sections/parallax_one_our_services_section.php:11
 #: sections/parallax_one_our_services_section.php:12
 #: sections/parallax_one_our_services_section.php:13
 msgid "Lorem Ipsum"
 msgstr ""
 
-#: inc/customizer.php:411 inc/customizer.php:412 inc/customizer.php:413
+#: inc/customizer.php:405 inc/customizer.php:406 inc/customizer.php:407
 #: sections/parallax_one_our_services_section.php:11
 #: sections/parallax_one_our_services_section.php:12
 #: sections/parallax_one_our_services_section.php:13
@@ -1288,19 +1288,19 @@ msgid ""
 "eros sit amet arcu vestibulum accumsan in in leo."
 msgstr ""
 
-#: inc/customizer.php:418
+#: inc/customizer.php:412
 msgid "Add new service box"
 msgstr ""
 
-#: inc/customizer.php:434
+#: inc/customizer.php:426
 msgid "About section"
 msgstr ""
 
-#: inc/customizer.php:440 sections/parallax_one_our_story_section.php:9
+#: inc/customizer.php:433 sections/parallax_one_our_story_section.php:9
 msgid "Our Story"
 msgstr ""
 
-#: inc/customizer.php:454 sections/parallax_one_our_story_section.php:10
+#: inc/customizer.php:445 sections/parallax_one_our_story_section.php:10
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
@@ -1308,79 +1308,79 @@ msgid ""
 "commodo consequat."
 msgstr ""
 
-#: inc/customizer.php:468
+#: inc/customizer.php:455
 msgid "Allowed html: p,br,em,strong,a,button,ul,li"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:474
 msgid "Team section"
 msgstr ""
 
-#: inc/customizer.php:496 sections/parallax_one_our_team_section.php:8
+#: inc/customizer.php:481 sections/parallax_one_our_team_section.php:8
 msgid "Our Team"
 msgstr ""
 
-#: inc/customizer.php:525 sections/parallax_one_our_team_section.php:11
+#: inc/customizer.php:508 sections/parallax_one_our_team_section.php:11
 msgid "Albert Jacobs"
 msgstr ""
 
-#: inc/customizer.php:525 sections/parallax_one_our_team_section.php:11
+#: inc/customizer.php:508 sections/parallax_one_our_team_section.php:11
 msgid "Founder & CEO"
 msgstr ""
 
-#: inc/customizer.php:526 sections/parallax_one_our_team_section.php:12
+#: inc/customizer.php:509 sections/parallax_one_our_team_section.php:12
 msgid "Tonya Garcia"
 msgstr ""
 
-#: inc/customizer.php:526 sections/parallax_one_our_team_section.php:12
+#: inc/customizer.php:509 sections/parallax_one_our_team_section.php:12
 msgid "Account Manager"
 msgstr ""
 
-#: inc/customizer.php:527 sections/parallax_one_our_team_section.php:13
+#: inc/customizer.php:510 sections/parallax_one_our_team_section.php:13
 msgid "Linda Guthrie"
 msgstr ""
 
-#: inc/customizer.php:527 sections/parallax_one_our_team_section.php:13
+#: inc/customizer.php:510 sections/parallax_one_our_team_section.php:13
 msgid "Business Development"
 msgstr ""
 
-#: inc/customizer.php:531
+#: inc/customizer.php:514
 msgid "Add new team member"
 msgstr ""
 
-#: inc/customizer.php:546
+#: inc/customizer.php:527
 msgid "Testimonial section"
 msgstr ""
 
-#: inc/customizer.php:559
+#: inc/customizer.php:541
 msgid ""
 "If this box is checked, the Testimonials section will use pinterest-style "
 "layout."
 msgstr ""
 
-#: inc/customizer.php:566 sections/parallax_one_happy_customers_section.php:8
+#: inc/customizer.php:549 sections/parallax_one_happy_customers_section.php:8
 msgid "Happy Customers"
 msgstr ""
 
-#: inc/customizer.php:579 sections/parallax_one_happy_customers_section.php:9
+#: inc/customizer.php:561 sections/parallax_one_happy_customers_section.php:9
 msgid "Cloud computing subscription model out of the box proactive solution."
 msgstr ""
 
-#: inc/customizer.php:596 inc/customizer.php:597 inc/customizer.php:598
+#: inc/customizer.php:577 inc/customizer.php:578 inc/customizer.php:579
 #: sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12
 #: sections/parallax_one_happy_customers_section.php:13
 msgid "Happy Customer"
 msgstr ""
 
-#: inc/customizer.php:596 inc/customizer.php:597 inc/customizer.php:598
+#: inc/customizer.php:577 inc/customizer.php:578 inc/customizer.php:579
 #: sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12
 #: sections/parallax_one_happy_customers_section.php:13
 msgid "Lorem ipsum"
 msgstr ""
 
-#: inc/customizer.php:596 inc/customizer.php:597 inc/customizer.php:598
+#: inc/customizer.php:577 inc/customizer.php:578 inc/customizer.php:579
 #: sections/parallax_one_happy_customers_section.php:11
 #: sections/parallax_one_happy_customers_section.php:12
 #: sections/parallax_one_happy_customers_section.php:13
@@ -1393,61 +1393,61 @@ msgid ""
 "laoreet."
 msgstr ""
 
-#: inc/customizer.php:603
+#: inc/customizer.php:584
 msgid "Add new testimonial"
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:598
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:630
+#: inc/customizer.php:610
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:678
+#: inc/customizer.php:654
 msgid "Latest news section"
 msgstr ""
 
-#: inc/customizer.php:683 sections/parallax_one_latest_news_section.php:20
+#: inc/customizer.php:660 sections/parallax_one_latest_news_section.php:20
 msgid "Latest news"
 msgstr ""
 
-#: inc/customizer.php:700
+#: inc/customizer.php:675
 msgid "Contact section"
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:691
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:731 inc/customizer.php:766
+#: inc/customizer.php:706 inc/customizer.php:739
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:732
+#: inc/customizer.php:707
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> "
 "plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:743
+#: inc/customizer.php:716
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:727
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:754
+#: inc/customizer.php:728
 msgid ""
 "Create a form, copy the shortcode generated and paste it here. We recommend "
 "<a href=\"http://themeisle.com/plugins/pirate-forms\" "
 "target=\"_blank\">Pirate Forms</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:767
+#: inc/customizer.php:740
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\" "
@@ -1455,120 +1455,120 @@ msgid ""
 "paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:778
+#: inc/customizer.php:750
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:780
+#: inc/customizer.php:752
 msgid ""
 "The main content of this section is customizable in: Customize -> Widgets "
 "-> Footer area. "
 msgstr ""
 
-#: inc/customizer.php:796
+#: inc/customizer.php:768
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:829
+#: inc/customizer.php:801
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:831
+#: inc/customizer.php:803
 msgid "Parallax One theme general options"
 msgstr ""
 
-#: inc/customizer.php:882
+#: inc/customizer.php:854
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:883
+#: inc/customizer.php:855
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:899
+#: inc/customizer.php:871
 msgid "Enable animations on front page?"
 msgstr ""
 
-#: inc/customizer.php:900
+#: inc/customizer.php:872
 msgid "If this box is checked, scroll animations will be enabled on the front page."
 msgstr ""
 
-#: inc/customizer.php:919
+#: inc/customizer.php:891
 msgid "Cyrillic"
 msgstr ""
 
-#: inc/customizer.php:929
+#: inc/customizer.php:901
 msgid "Vietnamese"
 msgstr ""
 
-#: inc/customizer.php:939
+#: inc/customizer.php:911
 msgid "Greek"
 msgstr ""
 
-#: inc/customizer.php:950 inc/customizer.php:960
+#: inc/customizer.php:922 inc/customizer.php:932
 msgid "Sections management"
 msgstr ""
 
-#: inc/customizer.php:963
+#: inc/customizer.php:935
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the frontpage SECTIONS ORDER!"
 msgstr ""
 
-#: inc/customizer.php:978
+#: inc/customizer.php:950
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:981
+#: inc/customizer.php:953
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the NEW PORTFOLIO SECTION!"
 msgstr ""
 
-#: inc/customizer.php:986
+#: inc/customizer.php:958
 msgid "New Features"
 msgstr ""
 
-#: inc/customizer.php:996
+#: inc/customizer.php:968
 msgid "Header Layout"
 msgstr ""
 
-#: inc/customizer.php:999
+#: inc/customizer.php:971
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the HEADER'S LAYOUT SECTION!"
 msgstr ""
 
-#: inc/customizer.php:1009
+#: inc/customizer.php:981
 msgid "Color scheme"
 msgstr ""
 
-#: inc/customizer.php:1012
+#: inc/customizer.php:984
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the COLOR SCHEME!"
 msgstr ""
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:994
 msgid "Preloader"
 msgstr ""
 
-#: inc/customizer.php:1025
+#: inc/customizer.php:997
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the PRELOADER IMAGE!"
 msgstr ""
 
-#: inc/customizer.php:1035
+#: inc/customizer.php:1007
 msgid "Opacity"
 msgstr ""
 
-#: inc/customizer.php:1038
+#: inc/customizer.php:1010
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "

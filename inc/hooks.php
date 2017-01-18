@@ -286,6 +286,14 @@ function parallax_hook_about_bottom() {
 }
 
 /**
+ * About us after content
+ * HTML context: within `.brief-content-one`
+ */
+function parallax_one_home_about_section_content_one_after_trigger() {
+	do_action( 'parallax_one_home_about_section_content_one_after' );
+}
+
+/**
  * Hook before team section
  */
 function parallax_hook_team_before() {

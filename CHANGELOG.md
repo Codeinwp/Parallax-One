@@ -1,4 +1,9 @@
 
+### 2.1.4 - 18/01/2017
+**Changes:** 
+- Added animations for the Contact section
+- Fixed incompatibility issues with Parallax One Plus plugin
+
 ### 2.1.3 - 11/12/2016
 **Changes:** 
 - Fixed function parallax_one_comment not found error

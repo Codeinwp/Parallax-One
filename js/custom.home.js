@@ -190,3 +190,14 @@ jQuery(document).ready(function(){
         jQuery('.header .overlay-layer').css('padding-top',$parallax_one_header_height);
     }
 });
+
+/*
+ * Remove background-attachment: fixed if mobile for ribbon.
+ */
+jQuery(document).ready(function(){
+    'use strict';
+    if(navigator.userAgent.match(/Tablet|iPad|Mobile|Windows Phone|Lumia|Android|webOS|iPhone|iPod|Blackberry|PlayBook|BB10|Opera Mini|\bCrMo\/|Opera Mobi/i) )
+    {
+        jQuery('section.call-to-action.ribbon-wrap').css('background-attachment', 'initial');
+    }
+});

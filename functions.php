@@ -348,14 +348,6 @@ if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {
 $parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
 
 /**
- * Enqueue style for admin part ( customizer ).
- */
-function parallax_one_admin_styles() {
-	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file( '/css/admin-style.css' ),'1.0.0' );
-}
-add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
-
-/**
  * Adding IE-only scripts to header.
  */
 function parallax_one_ie() {

@@ -5,6 +5,9 @@
  * @package parallax-one
  */
 
+/* Include customizer repeater */
+require_once get_template_directory() . '/inc/customizer-repeater/functions.php';
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -247,8 +250,6 @@ function parallax_one_customize_register( $wp_customize ) {
 		'panel' => 'panel_1',
 		'active_callback' => 'parallax_one_show_on_front',
 	));
-
-	require_once( 'class/parallax-one-general-control.php' );
 
 	$wp_customize->add_setting( 'parallax_one_logos_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',

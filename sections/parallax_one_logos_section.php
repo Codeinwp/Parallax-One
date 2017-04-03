@@ -5,33 +5,14 @@
  * @package parallax-one
  */
 
-$parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode( array(
-	array(
-		'image_url' => parallax_get_file( '/images/companies/1.png' ),
-		'link' => '#',
-		'id' => 'parallax_one_56d7ea7f40f56',
-	),
-	array(
-		'image_url' => parallax_get_file( '/images/companies/2.png' ),
-		'link' => '#',
-		'id' => 'parallax_one_56d7f2cb8a158',
-	),
-	array(
-		'image_url' => parallax_get_file( '/images/companies/3.png' ),
-		'link' => '#',
-		'id' => 'parallax_one_56d7f2cc8a159',
-	),
-	array(
-		'image_url' => parallax_get_file( '/images/companies/4.png' ),
-		'link' => '#',
-		'id' => 'parallax_one_56d7f2ce8a15a',
-	),
-	array(
-		'image_url' => parallax_get_file( '/images/companies/5.png' ),
-		'link' => '#',
-		'id' => 'parallax_one_56d7f2cf8a15b',
-	),
-) ) );
+
+
+
+/**
+ * Display Logos section
+ */
+$parallax_one_default_content = parallax_one_logos_get_default_content();
+$parallax_one_logos = get_theme_mod('parallax_one_logos_content', $parallax_one_default_content );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_logos ) ) {
@@ -49,24 +30,9 @@ if ( ! empty( $parallax_one_logos ) ) {
 				<?php
 				foreach ( $parallax_one_logos_decoded as $parallax_one_logo ) {
 
-					$id = $parallax_one_logo->id;
-					if ( function_exists( 'pll__' ) ) {
-						if ( ! empty( $parallax_one_logo->link ) ) {
-							$link = pll__( $parallax_one_logo->link );
-						}
-
-						if ( ! empty( $parallax_one_logo->image_url ) ) {
-							$image = pll__( $parallax_one_logo->image_url );
-						}
-					} else {
-						if ( ! empty( $parallax_one_logo->link ) ) {
-							$link = apply_filters( 'wpml_translate_single_string', $parallax_one_logo->link, 'Parallax One -> Logos section', 'Logo link ' . $parallax_one_logo->id );
-						}
-
-						if ( ! empty( $parallax_one_logo->image_url ) ) {
-							$image = apply_filters( 'wpml_translate_single_string', $parallax_one_logo->image_url, 'Parallax One -> Logos section', 'Logo image ' . $parallax_one_logo->id );
-						}
-					}
+					$id = ! empty( $parallax_one_logo->id ) ? $parallax_one_logo->id : '';
+					$link = ! empty( $parallax_one_logo->link ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->link, 'Logos section') : '';
+					$image = ! empty( $parallax_one_logo->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->image_url, 'Logos section') : '';
 
 					if ( ! empty( $image ) ) {  ?>
 						<li>

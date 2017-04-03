@@ -7,29 +7,8 @@
 
 $parallax_one_our_services_title = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
 $parallax_one_our_services_subtitle = get_theme_mod( 'parallax_one_our_services_subtitle', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'parallax-one' ) );
-$parallax_one_services = get_theme_mod('parallax_one_services_content', json_encode( array(
-	array(
-		'choice' => 'parallax_icon',
-		'icon_value' => 'icon-basic-webpage-multiple',
-		'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-		'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-		'id' => 'parallax_one_56fd4d93f3013',
-	),
-	array(
-		'choice' => 'parallax_icon',
-		'icon_value' => 'icon-ecommerce-graph3',
-		'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-		'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-		'id' => 'parallax_one_56fd4d94f3014',
-	),
-	array(
-		'choice' => 'parallax_icon',
-		'icon_value' => 'icon-basic-geolocalize-05',
-		'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-		'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-		'id' => 'parallax_one_56fd4d95f3015',
-	),
-) )	);
+$default = parallax_one_services_get_default_content();
+$parallax_one_services = get_theme_mod('parallax_one_services_content', $default );
 $parallax_one_services_pinterest = get_theme_mod( 'paralax_one_services_pinterest_style','5' );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
@@ -70,6 +49,14 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 
 							$id = $parallax_one_service_box->id;
 							$choice = $parallax_one_service_box->choice;
+							$icon = $parallax_one_service_box->icon_value;
+							$image = $parallax_one_service_box->image_url;
+                            $title = $parallax_one_service_box->title;
+                            $text = $parallax_one_service_box->text;
+
+								if ( isset( $parallax_one_service_box->link ) ) {
+									$link = pll__( $parallax_one_service_box->link );
+								};
 							if ( $choice == 'parallax_icon' ) {
 								if ( function_exists( 'pll__' ) ) {
 									$icon = pll__( $parallax_one_service_box->icon_value );
@@ -86,11 +73,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 							}
 
 							if ( function_exists( 'pll__' ) ) {
-								$title = pll__( $parallax_one_service_box->title );
-								$text = pll__( $parallax_one_service_box->text );
-								if ( isset( $parallax_one_service_box->link ) ) {
-									$link = pll__( $parallax_one_service_box->link );
-								}
+
 							} else {
 								$title = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->title , 'Parallax One -> Services section', 'Service box title ' . $parallax_one_service_box->id );
 								$text = apply_filters( 'wpml_translate_single_string', $parallax_one_service_box->text , 'Parallax One -> Services section', 'Service box text ' . $parallax_one_service_box->id );

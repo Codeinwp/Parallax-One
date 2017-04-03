@@ -16,7 +16,17 @@
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'parallax-one' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<p>
+				<?php
+				/* translators: %s is link to new post */
+				printf( esc_html__( 'Ready to publish your first post? %s', 'parallax-one' ),
+					/* translators: %1$s is url to new post, %2$s is link text */
+					printf( '<a href="%1$s">%2$s</a>',
+						esc_url( admin_url( 'post-new.php' ) ),
+						esc_html__( 'Get started here', 'parallax-one' )
+					)
+				); ?>
+			</p>
 
 		<?php elseif ( is_search() ) : ?>
 

@@ -26,7 +26,11 @@
 				<?php if ( have_posts() ) : ?>
 
 					<header class="page-header">
-						<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+						<h2 class="page-title">
+							<?php
+							/* translators: %s is search query */
+							printf( esc_html__( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?>
+						</h2>
 					</header><!-- .page-header -->
 
 

@@ -35,7 +35,7 @@ function media_upload(button_class) {
             }
         };
         wp.media.editor.open(button_class);
-        window.send_to_editor = function (html) {
+        window.send_to_editor = function () {
 
         };
         return false;

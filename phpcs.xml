@@ -12,7 +12,7 @@
         <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
 
         <exclude name="WordPress.PHP.YodaConditions.NotYoda" />
-        <exclude name="WordPress.Files.FileName.UnderscoresNotAllowed" />
+        <exclude name="WordPress.Files.FileName" />
     </rule>
     <rule ref="WordPress-Docs">
 

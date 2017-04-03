@@ -8,9 +8,24 @@
 $parallax_one_our_team_title = get_theme_mod( 'parallax_one_our_team_title',esc_html__( 'Our Team','parallax-one' ) );
 $parallax_one_our_team_subtitle = get_theme_mod( 'parallax_one_our_team_subtitle',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ) );
 $parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_encode( array(
-	array( 'image_url' => parallax_get_file( '/images/team/1.jpg' ),'title' => esc_html__( 'Albert Jacobs','parallax-one' ),'subtitle' => esc_html__( 'Founder & CEO','parallax-one' ), 'id' => 'parallax_one_56fe9796baca4' ),
-	array( 'image_url' => parallax_get_file( '/images/team/2.jpg' ),'title' => esc_html__( 'Tonya Garcia','parallax-one' ),'subtitle' => esc_html__( 'Account Manager','parallax-one' ), 'id' => 'parallax_one_56fe9798baca5' ),
-	array( 'image_url' => parallax_get_file( '/images/team/3.jpg' ),'title' => esc_html__( 'Linda Guthrie','parallax-one' ),'subtitle' => esc_html__( 'Business Development','parallax-one' ), 'id' => 'parallax_one_56fe9799baca6' ),
+	array(
+		'image_url' => parallax_get_file( '/images/team/1.jpg' ),
+		'title' => esc_html__( 'Albert Jacobs','parallax-one' ),
+		'subtitle' => esc_html__( 'Founder & CEO','parallax-one' ),
+		'id' => 'parallax_one_56fe9796baca4',
+	),
+	array(
+		'image_url' => parallax_get_file( '/images/team/2.jpg' ),
+		'title' => esc_html__( 'Tonya Garcia','parallax-one' ),
+		'subtitle' => esc_html__( 'Account Manager','parallax-one' ),
+		'id' => 'parallax_one_56fe9798baca5',
+	),
+	array(
+		'image_url' => parallax_get_file( '/images/team/3.jpg' ),
+		'title' => esc_html__( 'Linda Guthrie','parallax-one' ),
+		'subtitle' => esc_html__( 'Business Development','parallax-one' ),
+		'id' => 'parallax_one_56fe9799baca6',
+	),
 ) ) );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 

@@ -70,9 +70,18 @@
 
 			<?php
 			$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons', json_encode( array(
-				array( 'icon_value' => 'icon-social-facebook' , 'link' => '#' ),
-				array( 'icon_value' => 'icon-social-twitter' , 'link' => '#' ),
-				array( 'icon_value' => 'icon-social-googleplus' , 'link' => '#' ),
+				array(
+					'icon_value' => 'icon-social-facebook',
+					'link' => '#',
+				),
+				array(
+					'icon_value' => 'icon-social-twitter',
+					'link' => '#',
+				),
+				array(
+					'icon_value' => 'icon-social-googleplus',
+					'link' => '#',
+				),
 			) ) );
 
 			if ( ! empty( $parallax_one_social_icons ) ) {

@@ -14,9 +14,7 @@
                 iconPreview.empty();
                 iconPreview.append(iconElement);
 
-                var th = $(this).parent().parent().parent();
                 classInput.trigger('change');
-                customizer_repeater_refresh_social_icons(th);
                 return false;
             });
         },
@@ -55,8 +53,7 @@
         $(document).mouseup( function (e) {
             var container = $('.iconpicker-popover');
 
-            if (!container.is(e.target)
-                && container.has(e.target).length === 0)
+            if (!container.is(e.target) && container.has(e.target).length === 0)
             {
                 container.removeClass('iconpicker-visible');
             }

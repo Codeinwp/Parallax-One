@@ -7,7 +7,12 @@
 
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 $parallax_number_of_posts = get_option( 'posts_per_page' );
-$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
+$args = array(
+	'post_type' => 'post',
+	'posts_per_page' => $parallax_number_of_posts,
+	'order' => 'DESC',
+	'ignore_sticky_posts' => true,
+);
 
 $parallax_latestnews_cat = parallax_latest_news_cat();
 
@@ -49,7 +54,7 @@ if ( $the_query->have_posts() ) {
 
 										$i_latest_posts = 0;
 
-									while (  $the_query->have_posts() ) :  $the_query->the_post();
+									while ( $the_query->have_posts() ) :  $the_query->the_post();
 
 										$i_latest_posts++;
 
@@ -61,7 +66,7 @@ if ( $the_query->have_posts() ) {
 											echo '<li>';
 										}
 										?>
-
+										<?php /* translators: %s is post name */ ?>
 										<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>"
 										<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ($i_latest_posts <= 2) ) {
 														echo 'data-scrollreveal="enter left after 0.15s over 1s"';
@@ -103,6 +108,7 @@ if ( $the_query->have_posts() ) {
 													</header>
 													<div itemprop="description" class="entry-content entry-summary">
 														<?php the_excerpt(); ?>
+														<?php /* translators: %s is screen reader post name */ ?>
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php printf( esc_html__( 'Read more %s', 'parallax-one' ), '<span class="screen-reader-text">  ' . get_the_title() . '</span>' ); ?></a>
 													</div>
 													</div>

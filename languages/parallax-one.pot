@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One 2.1.4\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/Parallax-One/issues\n"
-"POT-Creation-Date: 2017-04-03 13:26:26+00:00\n"
+"POT-Creation-Date: 2017-04-04 09:50:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -484,11 +484,11 @@ msgstr ""
 msgid "Secondary Menu"
 msgstr ""
 
-#: footer.php:137
+#: footer.php:108
 msgid "powered by "
 msgstr ""
 
-#: footer.php:137
+#: footer.php:108
 msgid "WordPress"
 msgstr ""
 
@@ -529,11 +529,11 @@ msgstr ""
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:668
+#: functions.php:673
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: functions.php:672
+#: functions.php:677
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
@@ -1106,8 +1106,8 @@ msgstr ""
 msgid "Parallax One theme general appearance options"
 msgstr ""
 
-#: inc/customizer.php:119 sections/parallax_one_logos_section.php:76
-#: sections/parallax_one_logos_section.php:80
+#: inc/customizer.php:119 sections/parallax_one_logos_section.php:42
+#: sections/parallax_one_logos_section.php:46
 msgid "Logo"
 msgstr ""
 
@@ -1217,16 +1217,16 @@ msgid "Our Services"
 msgstr ""
 
 #: inc/customizer.php:429 inc/customizer.php:436 inc/customizer.php:443
-#: sections/parallax_one_our_services_section.php:14
-#: sections/parallax_one_our_services_section.php:21
-#: sections/parallax_one_our_services_section.php:28
+#: inc/translations/translations-services-section.php:17
+#: inc/translations/translations-services-section.php:24
+#: inc/translations/translations-services-section.php:31
 msgid "Lorem Ipsum"
 msgstr ""
 
 #: inc/customizer.php:430 inc/customizer.php:437 inc/customizer.php:444
-#: sections/parallax_one_our_services_section.php:15
-#: sections/parallax_one_our_services_section.php:22
-#: sections/parallax_one_our_services_section.php:29
+#: inc/translations/translations-services-section.php:18
+#: inc/translations/translations-services-section.php:25
+#: inc/translations/translations-services-section.php:32
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
@@ -1265,27 +1265,27 @@ msgstr ""
 msgid "Our Team"
 msgstr ""
 
-#: inc/customizer.php:549 sections/parallax_one_our_team_section.php:13
+#: inc/customizer.php:549 inc/translations/translations-team-section.php:16
 msgid "Albert Jacobs"
 msgstr ""
 
-#: inc/customizer.php:550 sections/parallax_one_our_team_section.php:14
+#: inc/customizer.php:550 inc/translations/translations-team-section.php:17
 msgid "Founder & CEO"
 msgstr ""
 
-#: inc/customizer.php:555 sections/parallax_one_our_team_section.php:19
+#: inc/customizer.php:555 inc/translations/translations-team-section.php:22
 msgid "Tonya Garcia"
 msgstr ""
 
-#: inc/customizer.php:556 sections/parallax_one_our_team_section.php:20
+#: inc/customizer.php:556 inc/translations/translations-team-section.php:23
 msgid "Account Manager"
 msgstr ""
 
-#: inc/customizer.php:561 sections/parallax_one_our_team_section.php:25
+#: inc/customizer.php:561 inc/translations/translations-team-section.php:28
 msgid "Linda Guthrie"
 msgstr ""
 
-#: inc/customizer.php:562 sections/parallax_one_our_team_section.php:26
+#: inc/customizer.php:562 inc/translations/translations-team-section.php:29
 msgid "Business Development"
 msgstr ""
 
@@ -1312,23 +1312,23 @@ msgid "Cloud computing subscription model out of the box proactive solution."
 msgstr ""
 
 #: inc/customizer.php:633 inc/customizer.php:640 inc/customizer.php:647
-#: sections/parallax_one_happy_customers_section.php:13
-#: sections/parallax_one_happy_customers_section.php:20
-#: sections/parallax_one_happy_customers_section.php:27
+#: inc/translations/translations-testimonials-section.php:16
+#: inc/translations/translations-testimonials-section.php:23
+#: inc/translations/translations-testimonials-section.php:30
 msgid "Happy Customer"
 msgstr ""
 
 #: inc/customizer.php:634 inc/customizer.php:641 inc/customizer.php:648
-#: sections/parallax_one_happy_customers_section.php:14
-#: sections/parallax_one_happy_customers_section.php:21
-#: sections/parallax_one_happy_customers_section.php:28
+#: inc/translations/translations-testimonials-section.php:17
+#: inc/translations/translations-testimonials-section.php:24
+#: inc/translations/translations-testimonials-section.php:31
 msgid "Lorem ipsum"
 msgstr ""
 
 #: inc/customizer.php:635 inc/customizer.php:642 inc/customizer.php:649
-#: sections/parallax_one_happy_customers_section.php:15
-#: sections/parallax_one_happy_customers_section.php:22
-#: sections/parallax_one_happy_customers_section.php:29
+#: inc/translations/translations-testimonials-section.php:18
+#: inc/translations/translations-testimonials-section.php:25
+#: inc/translations/translations-testimonials-section.php:32
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
@@ -1604,12 +1604,12 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: sections/parallax_one_contact_info_section.php:36
+#: sections/parallax_one_contact_info_section.php:17
 msgid "Contact Info"
 msgstr ""
 
-#: sections/parallax_one_happy_customers_section.php:39
-#: sections/parallax_one_happy_customers_section.php:176
+#: sections/parallax_one_happy_customers_section.php:18
+#: sections/parallax_one_happy_customers_section.php:127
 msgid "Testimonials"
 msgstr ""
 
@@ -1644,12 +1644,12 @@ msgstr ""
 msgid "Read more %s"
 msgstr ""
 
-#: sections/parallax_one_logos_section.php:41
+#: sections/parallax_one_logos_section.php:22
 msgid " Affiliates Logos"
 msgstr ""
 
-#: sections/parallax_one_our_services_section.php:39
-#: sections/parallax_one_our_services_section.php:183
+#: sections/parallax_one_our_services_section.php:18
+#: sections/parallax_one_our_services_section.php:143
 msgid "Services"
 msgstr ""
 
@@ -1659,13 +1659,13 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: sections/parallax_one_our_team_section.php:34
-#: sections/parallax_one_our_team_section.php:184
+#: sections/parallax_one_our_team_section.php:16
+#: sections/parallax_one_our_team_section.php:133
 msgid "Team"
 msgstr ""
 
-#: sections/parallax_one_our_team_section.php:105
-#: sections/parallax_one_our_team_section.php:109
+#: sections/parallax_one_our_team_section.php:61
+#: sections/parallax_one_our_team_section.php:65
 msgid "Avatar"
 msgstr ""
 

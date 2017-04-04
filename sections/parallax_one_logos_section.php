@@ -12,7 +12,7 @@
  * Display Logos section
  */
 $parallax_one_default_content = parallax_one_logos_get_default_content();
-$parallax_one_logos = get_theme_mod('parallax_one_logos_content', $parallax_one_default_content );
+$parallax_one_logos = get_theme_mod( 'parallax_one_logos_content', $parallax_one_default_content );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_logos ) ) {
@@ -31,8 +31,8 @@ if ( ! empty( $parallax_one_logos ) ) {
 				foreach ( $parallax_one_logos_decoded as $parallax_one_logo ) {
 
 					$id = ! empty( $parallax_one_logo->id ) ? $parallax_one_logo->id : '';
-					$link = ! empty( $parallax_one_logo->link ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->link, 'Logos section') : '';
-					$image = ! empty( $parallax_one_logo->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->image_url, 'Logos section') : '';
+					$link = ! empty( $parallax_one_logo->link ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->link, 'Logos section' ) : '';
+					$image = ! empty( $parallax_one_logo->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->image_url, 'Logos section' ) : '';
 
 					if ( ! empty( $image ) ) {  ?>
 						<li>

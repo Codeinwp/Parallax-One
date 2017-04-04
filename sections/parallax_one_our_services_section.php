@@ -49,8 +49,6 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 } ?>">
 						<?php
 						foreach ( $parallax_one_services_decoded as $parallax_one_service_box ) {
-
-							$id               = ! empty( $parallax_one_service_box->id ) ? $parallax_one_service_box->id : '';
 							$choice           = ! empty( $parallax_one_service_box->choice ) ? $parallax_one_service_box->choice : '';
 							$icon             = ! empty( $parallax_one_service_box->icon_value ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_service_box->icon_value, 'Services section' ) : '';
 							$image            = ! empty( $parallax_one_service_box->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_service_box->image_url, 'Services section' ) : '';

@@ -251,37 +251,10 @@ function parallax_one_customize_register( $wp_customize ) {
 		'active_callback' => 'parallax_one_show_on_front',
 	));
 
+	$default = parallax_one_logos_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_logos_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode(
-			array(
-					array(
-						'image_url' => parallax_get_file( '/images/companies/1.png' ),
-						'link' => '#',
-						'id' => 'parallax_one_56d7ea7f40f56',
-					),
-					array(
-						'image_url' => parallax_get_file( '/images/companies/2.png' ),
-						'link' => '#',
-						'id' => 'parallax_one_56d7f2cb8a158',
-					),
-					array(
-						'image_url' => parallax_get_file( '/images/companies/3.png' ),
-						'link' => '#',
-						'id' => 'parallax_one_56d7f2cc8a159',
-					),
-					array(
-						'image_url' => parallax_get_file( '/images/companies/4.png' ),
-						'link' => '#',
-						'id' => 'parallax_one_56d7f2ce8a15a',
-					),
-					array(
-						'image_url' => parallax_get_file( '/images/companies/5.png' ),
-						'link' => '#',
-						'id' => 'parallax_one_56d7f2cf8a15b',
-					),
-				)
-		),
+		'default' => $default,
 
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
@@ -420,31 +393,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	/**
 	 * Services content
 	 */
+	$default = parallax_one_services_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_services_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode( array(
-			array(
-				'choice' => 'parallax_icon',
-				'icon_value' => 'icon-basic-webpage-multiple',
-				'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-				'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-				'id' => 'parallax_one_56fd4d93f3013',
-			),
-			array(
-				'choice' => 'parallax_icon',
-				'icon_value' => 'icon-ecommerce-graph3',
-				'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-				'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-				'id' => 'parallax_one_56fd4d94f3014',
-			),
-			array(
-				'choice' => 'parallax_icon',
-				'icon_value' => 'icon-basic-geolocalize-05',
-				'title' => esc_html__( 'Lorem Ipsum','parallax-one' ),
-				'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','parallax-one' ),
-				'id' => 'parallax_one_56fd4d95f3015',
-			),
-		) ),
+		'default' => $default,
 	) );
 
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_services_content', array(
@@ -541,28 +493,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	/* Team content */
+	$default = parallax_one_team_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_team_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode( array(
-			array(
-				'image_url' => parallax_get_file( '/images/team/1.jpg' ),
-				'title' => esc_html__( 'Albert Jacobs','parallax-one' ),
-				'subtitle' => esc_html__( 'Founder & CEO','parallax-one' ),
-				'id' => 'parallax_one_56fe9796baca4',
-			),
-			array(
-				'image_url' => parallax_get_file( '/images/team/2.jpg' ),
-				'title' => esc_html__( 'Tonya Garcia','parallax-one' ),
-				'subtitle' => esc_html__( 'Account Manager','parallax-one' ),
-				'id' => 'parallax_one_56fe9798baca5',
-			),
-			array(
-				'image_url' => parallax_get_file( '/images/team/3.jpg' ),
-				'title' => esc_html__( 'Linda Guthrie','parallax-one' ),
-				'subtitle' => esc_html__( 'Business Development','parallax-one' ),
-				'id' => 'parallax_one_56fe9799baca6',
-			),
-		) ),
+		'default' => $default,
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
 		'label'															=> esc_html__( 'Add new team member','parallax-one' ),
@@ -624,33 +558,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	/* Testimonials content */
+	$default = parallax_one_testimonials_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_testimonials_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode(
-			array(
-									array(
-										'image_url' => parallax_get_file( '/images/clients/1.jpg' ),
-										'title' => esc_html__( 'Happy Customer','parallax-one' ),
-										'subtitle' => esc_html__( 'Lorem ipsum','parallax-one' ),
-										'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ),
-										'id' => 'parallax_one_56fd526edcd4e',
-									),
-									array(
-										'image_url' => parallax_get_file( '/images/clients/2.jpg' ),
-										'title' => esc_html__( 'Happy Customer','parallax-one' ),
-										'subtitle' => esc_html__( 'Lorem ipsum','parallax-one' ),
-										'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ),
-										'id' => 'parallax_one_56fd526ddcd4d',
-									),
-									array(
-										'image_url' => parallax_get_file( '/images/clients/3.jpg' ),
-										'title' => esc_html__( 'Happy Customer','parallax-one' ),
-										'subtitle' => esc_html__( 'Lorem ipsum','parallax-one' ),
-										'text' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','parallax-one' ),
-										'id' => 'parallax_one_56fd5259dcd4c',
-									),
-							)
-		),
+		'default' => $default,
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_testimonials_content', array(
 		'label'   => esc_html__( 'Add new testimonial','parallax-one' ),
@@ -749,30 +660,10 @@ function parallax_one_customize_register( $wp_customize ) {
 		'active_callback' => 'parallax_one_show_on_front',
 	));
 
+	$default = parallax_one_contact_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode(
-			array(
-					array(
-						'icon_value' => 'icon-basic-mail',
-						'text' => 'contact@site.com',
-						'link' => '#',
-						'id' => 'parallax_one_56d450a72cb3a',
-					),
-					array(
-						'icon_value' => 'icon-basic-geolocalize-01',
-						'text' => 'Company address',
-						'link' => '#',
-						'id' => 'parallax_one_56d069b88cb6f',
-					),
-					array(
-						'icon_value' => 'icon-basic-tablet',
-						'text' => '0 332 548 954',
-						'link' => '#',
-						'id' => 'parallax_one_56d069b98cb70',
-					),
-			)
-		),
+		'default' => $default,
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
 		'label'   => esc_html__( 'Add new contact field','parallax-one' ),
@@ -858,25 +749,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	));
 
 	/* Socials icons */
-
+	$default = parallax_one_footer_socials_get_default_content();
 	$wp_customize->add_setting( 'parallax_one_social_icons', array(
 		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => json_encode(
-			array(
-				array(
-					'icon_value' => 'icon-social-facebook',
-					'link' => '#',
-				),
-				array(
-					'icon_value' => 'icon-social-twitter',
-					'link' => '#',
-				),
-				array(
-					'icon_value' => 'icon-social-googleplus',
-					'link' => '#',
-				),
-			)
-		),
+		'default' => $default,
 
 	));
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_social_icons', array(

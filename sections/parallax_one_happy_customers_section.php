@@ -65,11 +65,12 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 											<div class="pic-container-inner">
 												<?php
 												if ( ! empty( $image ) ) { ?>
-													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( ! empty( $title ) ? 'alt="' . $title . '"' : esc_html( 'Avatar','parallax-one' ) ); ?>>
+                                                    <img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php echo ( ! empty( $title ) ? esc_attr( $title ) : esc_attr( 'Avatar','parallax-one' ) ); ?>">
 												<?php
 												} else {
-													$default_image = parallax_get_file( '/images/clients/client-no-image.jpg' );
-													echo '<img src="' . parallax_one_make_protocol_relative_url( esc_url( $default_image ) ) . '" alt="' . esc_html( 'Avatar','parallax-one' ) . '">';
+													$default_image = parallax_get_file( '/images/clients/client-no-image.jpg' ); ?>
+                                                    <img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $default_image ) ); ?>" alt="<?php esc_attr_e( 'Avatar','parallax-one' ); ?>">
+                                                    <?php
 												} ?>
 											</div>
 										</div>

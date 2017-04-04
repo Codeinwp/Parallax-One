@@ -43,7 +43,7 @@ if ( ! function_exists( 'parallax_one_contact_register_strings' ) ) {
 		}
 
 		$default = parallax_one_contact_get_default_content();
-		parallax_one_pll_string_register_helper( 'parallax_one_testimonials_content', $default, 'Contact section' );
+		parallax_one_pll_string_register_helper( 'parallax_one_contact_info_content', $default, 'Contact section' );
 	}
 }
 add_action( 'after_setup_theme', 'parallax_one_contact_register_strings', 11 );

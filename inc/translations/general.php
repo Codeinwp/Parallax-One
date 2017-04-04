@@ -94,9 +94,16 @@ if ( ! function_exists( 'parallax_include_translations' ) ) {
 		$parallax_one_allowed_phps = array();
 		$parallax_one_allowed_phps = apply_filters( 'parallax_one_filter_translations', $parallax_one_allowed_phps );
 		foreach ( $parallax_one_allowed_phps as $file ) {
-			$hestia_file_to_include = get_template_directory() . '/inc/' . $file . '.php';
-			if ( file_exists( $hestia_file_to_include ) ) {
-				include_once( $hestia_file_to_include );
+			$parallax_one_file_to_include = get_template_directory() . '/inc/' . $file . '.php';
+			if ( file_exists( $parallax_one_file_to_include ) ) {
+				include_once( $parallax_one_file_to_include );
+			} else {
+				if ( defined( 'PARALLAX_ONE_PLUS_PATH' ) ) {
+					$parallax_one_file_to_include_from_pro = PARALLAX_ONE_PLUS_PATH . 'public/inc/' . $file . '.php';
+					if ( file_exists( $parallax_one_file_to_include_from_pro ) ) {
+						include_once( $parallax_one_file_to_include_from_pro );
+					}
+				}
 			}
 		}
 	}

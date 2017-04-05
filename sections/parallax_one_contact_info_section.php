@@ -6,9 +6,24 @@
  */
 
 $parallax_one_contact_info_item = get_theme_mod( 'parallax_one_contact_info_content', json_encode( array(
-	array( 'icon_value' => 'icon-basic-mail' ,'text' => 'contact@site.com', 'link' => '#', 'id' => 'parallax_one_56d450a72cb3a' ),
-	array( 'icon_value' => 'icon-basic-geolocalize-01' ,'text' => 'Company address', 'link' => '#', 'id' => 'parallax_one_56d069b88cb6f' ),
-	array( 'icon_value' => 'icon-basic-tablet' ,'text' => '0 332 548 954', 'link' => '#', 'id' => 'parallax_one_56d069b98cb70' ),
+	array(
+		'icon_value' => 'icon-basic-mail',
+		'text' => 'contact@site.com',
+		'link' => '#',
+		'id' => 'parallax_one_56d450a72cb3a',
+	),
+	array(
+		'icon_value' => 'icon-basic-geolocalize-01',
+		'text' => 'Company address',
+		'link' => '#',
+		'id' => 'parallax_one_56d069b88cb6f',
+	),
+	array(
+		'icon_value' => 'icon-basic-tablet',
+		'text' => '0 332 548 954',
+		'link' => '#',
+		'id' => 'parallax_one_56d069b98cb70',
+	),
 ) )	);
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 

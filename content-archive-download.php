@@ -24,6 +24,8 @@
 		<div itemprop="description" class="edd_download_excerpt">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-content -->
-		<?php echo edd_get_purchase_link( array( 'download_id' => get_the_ID() ) ); ?>
+		<?php echo edd_get_purchase_link( array(
+			'download_id' => get_the_ID(),
+		) ); ?>
 	</div>	
 </div><!-- #post-## -->

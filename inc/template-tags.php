@@ -55,11 +55,13 @@ if ( ! function_exists( 'parallax_one_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
+				/* translators: %s is post date */
 				_x( 'Posted on %s', 'post date', 'parallax-one' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
+				/* translators: %s is post author */
 				_x( 'by %s', 'post author', 'parallax-one' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
@@ -79,13 +81,25 @@ if ( ! function_exists( 'parallax_one_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
 			if ( $categories_list && parallax_one_categorized_blog() ) {
-				printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Posted in %1$s', 'parallax-one' ) . '</span>', $categories_list );
+			    /* translators: %s is post categories */
+				printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
+					/* translators: %1$s is categories list */
+					sprintf(esc_html__( 'Posted in %1$s', 'parallax-one' ),
+						$categories_list
+					)
+				);
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'parallax-one' ) );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Tagged %1$s', 'parallax-one' ) . '</span>', $tags_list );
+			    /* translators: %s is post tags */
+				printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
+					/* translators: %1$s is tag list */
+					sprintf( esc_html__( 'Tagged %1$s', 'parallax-one' ),
+						$tags_list
+					)
+				);
 			}
 		}
 
@@ -112,16 +126,22 @@ if ( ! function_exists( 'the_archive_title' ) ) :
 	 */
 	function the_archive_title( $before = '', $after = '' ) {
 		if ( is_category() ) {
+		    /* translators: %s is category name */
 			$title = sprintf( esc_html__( 'Category: %s', 'parallax-one' ), single_cat_title( '', false ) );
 		} elseif ( is_tag() ) {
-			$title = sprintf( esc_html__( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
+			/* translators: %s is tag name */
+		    $title = sprintf( esc_html__( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
 		} elseif ( is_author() ) {
+			/* translators: %s is author name */
 			$title = sprintf( esc_html__( 'Author: %s', 'parallax-one' ), '<span class="vcard">' . get_the_author() . '</span>' );
 		} elseif ( is_year() ) {
+			/* translators: %s is year */
 			$title = sprintf( esc_html__( 'Year: %s', 'parallax-one' ), get_the_date( _x( 'Y', 'yearly archives date format', 'parallax-one' ) ) );
 		} elseif ( is_month() ) {
+			/* translators: %s is month */
 			$title = sprintf( esc_html__( 'Month: %s', 'parallax-one' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'parallax-one' ) ) );
 		} elseif ( is_day() ) {
+			/* translators: %s is day */
 			$title = sprintf( esc_html__( 'Day: %s', 'parallax-one' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'parallax-one' ) ) );
 		} elseif ( is_tax( 'post_format' ) ) {
 			if ( is_tax( 'post_format', 'post-format-aside' ) ) {
@@ -144,6 +164,7 @@ if ( ! function_exists( 'the_archive_title' ) ) :
 				$title = _x( 'Chats', 'post format archive title', 'parallax-one' );
 			}
 		} elseif ( is_post_type_archive() ) {
+			/* translators: %s is archive title */
 			$title = sprintf( esc_html__( 'Archives: %s', 'parallax-one' ), post_type_archive_title( '', false ) );
 		} elseif ( is_tax() ) {
 			$tax = get_taxonomy( get_queried_object()->taxonomy );
@@ -199,7 +220,8 @@ endif;
  * @return bool
  */
 function parallax_one_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'parallax_one_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'parallax_one_categories' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',

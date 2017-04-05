@@ -169,6 +169,7 @@ function parallax_one_widgets_init() {
 
 	register_sidebars( 4,
 		array(
+			/* translators: %d is widget area id */
 			'name' => esc_html__( 'Footer area %d','parallax-one' ),
 			'id' => 'footer-area',
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
@@ -191,7 +192,10 @@ add_action( 'widgets_init', 'parallax_one_widgets_init' );
  */
 function parallax_one_wp_page_menu() {
 	echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-	wp_list_pages( array( 'title_li' => '', 'depth' => 1 ) );
+	wp_list_pages( array(
+		'title_li' => '',
+		'depth' => 1,
+	) );
 	echo '</ul>';
 }
 
@@ -348,14 +352,6 @@ if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {
 $parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
 
 /**
- * Enqueue style for admin part ( customizer ).
- */
-function parallax_one_admin_styles() {
-	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file( '/css/admin-style.css' ),'1.0.0' );
-}
-add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
-
-/**
  * Adding IE-only scripts to header.
  */
 function parallax_one_ie() {
@@ -427,6 +423,7 @@ function parallax_one_register_required_plugins() {
 		);
 
 	$config = array(
+		'id'           => 'parallax-one',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,
@@ -434,26 +431,6 @@ function parallax_one_register_required_plugins() {
 		'dismiss_msg'  => '',
 		'is_automatic' => false,
 		'message'      => '',
-		'strings'      => array(
-			'page_title'                      => esc_html__( 'Install Recommended Plugins', 'parallax-one' ),
-			'menu_title'                      => esc_html__( 'Install Plugins', 'parallax-one' ),
-			'installing'                      => esc_html__( 'Installing Plugin: %s', 'parallax-one' ),
-			'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'parallax-one' ),
-			'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'parallax-one' ),
-			'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'parallax-one' ),
-			'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'parallax-one' ),
-			'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'parallax-one' ),
-			'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'parallax-one' ),
-			'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'parallax-one' ),
-			'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'parallax-one' ),
-			'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'parallax-one' ),
-			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'parallax-one' ),
-			'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'parallax-one' ),
-			'return'                          => esc_html__( 'Return to Required Plugins Installer', 'parallax-one' ),
-			'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'parallax-one' ),
-			'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'parallax-one' ),
-			'nag_type'                        => 'updated',
-		),
 	);
 
 	tgmpa( $plugins, $config );

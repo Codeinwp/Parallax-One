@@ -22,6 +22,8 @@
 			<key name="parallax_one_contact_form_shortcode" />
 			<key name="parallax_one_contact_map_shortcode" />
 			<key name="parallax_one_copyright" />
+			<key name="paralax_one_first_layer" />
+			<key name="paralax_one_second_layer" />
 		</key>
 	</admin-texts>
 </wpml-config>

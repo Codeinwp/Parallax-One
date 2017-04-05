@@ -69,20 +69,8 @@
 			</div>
 
 			<?php
-			$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons', json_encode( array(
-				array(
-					'icon_value' => 'icon-social-facebook',
-					'link' => '#',
-				),
-				array(
-					'icon_value' => 'icon-social-twitter',
-					'link' => '#',
-				),
-				array(
-					'icon_value' => 'icon-social-googleplus',
-					'link' => '#',
-				),
-			) ) );
+			$default = parallax_one_footer_socials_get_default_content();
+			$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', $default );
 
 			if ( ! empty( $parallax_one_social_icons ) ) {
 				$parallax_one_social_icons_decoded = json_decode( $parallax_one_social_icons );
@@ -91,25 +79,8 @@
 						<?php
 						foreach ( $parallax_one_social_icons_decoded as $parallax_one_social_icon ) {
 
-							if ( ! empty( $parallax_one_social_icon->id ) ) {
-								$id = esc_attr( $parallax_one_social_icon->id );
-							}
-
-							if ( ! empty( $parallax_one_social_icon->link ) ) {
-								if ( function_exists( 'pll__' ) ) {
-									$link = pll__( $parallax_one_social_icon->link );
-								} else {
-									$link = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->link, 'Parallax One -> Footer', 'Footer social link ' . $id );
-								}
-							}
-
-							if ( ! empty( $parallax_one_social_icon->icon_value ) ) {
-								if ( function_exists( 'pll__' ) ) {
-									$icon = pll__( $parallax_one_social_icon->icon_value );
-								} else {
-									$icon = apply_filters( 'wpml_translate_single_string', $parallax_one_social_icon->icon_value, 'Parallax One -> Footer', 'Footer social icon ' . $id );
-								}
-							}
+							$link = ! empty( $parallax_one_social_icon->link ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_social_icon->link, 'Footer socials' ) : '';
+							$icon = ! empty( $parallax_one_social_icon->icon_value ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_social_icon->icon_value, 'Footer socials' ) : '';
 
 							if ( ! empty( $icon ) ) {  ?>
 								<li>

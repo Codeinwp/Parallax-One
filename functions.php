@@ -344,6 +344,11 @@ require get_template_directory() . '/inc/hooks.php';
 require_once get_template_directory() . '/inc/customizer-info/class/class-singleton-customizer-info-section.php';
 
 /**
+ * Translations
+ */
+require get_template_directory() . '/inc/translations/general.php';
+
+/**
  * TAV_Remote_Notification_Client.
  */
 if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {

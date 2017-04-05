@@ -77,7 +77,7 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 													<?php
 													}
 
-													if ( ! empty( $parallax_one_team_member->subtitle ) ) {  ?>
+													if ( ! empty( $subtitle ) ) {  ?>
 														<div class="small-text"><?php echo esc_attr( $subtitle ); ?></div>
 													<?php
 													}

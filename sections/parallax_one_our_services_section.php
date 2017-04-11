@@ -15,7 +15,7 @@ $parallax_one_frontpage_animations  = get_theme_mod( 'parallax_one_enable_animat
 if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_services_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_services ) ) {
 	parallax_hook_services_before(); ?>
 
-	<section class="services" id="services" role="region" aria-label="<?php esc_html_e( 'Services', 'parallax-one' ) ?>">
+	<section class="services" id="services" role="region" aria-label="<?php esc_attr_e( 'Services', 'parallax-one' ) ?>">
 		<?php
 		parallax_hook_services_top(); ?>
 		<div class="section-overlay-layer">
@@ -23,7 +23,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 				<div class="section-header">
 					<?php
 					if ( ! empty( $parallax_one_our_services_title ) ) { ?>
-						<h2 class="dark-text"><?php echo esc_attr( $parallax_one_our_services_title ); ?></h2>
+						<h2 class="dark-text"><?php echo wp_kses_post( $parallax_one_our_services_title ); ?></h2>
 						<div class="colored-line"></div>
 						<?php
 					} elseif ( is_customize_preview() ) { ?>
@@ -33,7 +33,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 					}
 
 					if ( ! empty( $parallax_one_our_services_subtitle ) ) { ?>
-						<div class="sub-heading"><?php echo esc_attr( $parallax_one_our_services_subtitle ); ?></div>
+						<div class="sub-heading"><?php echo wp_kses_post( $parallax_one_our_services_subtitle ); ?></div>
 						<?php
 					} elseif ( is_customize_preview() ) { ?>
 						<div class="sub-heading paralax_one_only_customizer"></div>
@@ -91,11 +91,11 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 												if ( ! empty( $image ) ) {
 													if ( ! empty( $link ) ) { ?>
 														<a href="<?php echo parallax_one_make_protocol_relative_url( esc_url( $link ) ); ?>">
-															<img src="<?php echo esc_url( $image ); ?>" <?php echo( ! empty( $title ) ? 'alt="' . $title . '"' : '' ); ?> />
+															<img src="<?php echo esc_url( $image ); ?>" <?php echo( ! empty( $title ) ? 'alt="' . esc_attr( $title ) . '"' : '' ); ?> />
 														</a>
 														<?php
 													} else { ?>
-														<img src="<?php echo esc_url( $image ); ?>" <?php echo( ! empty( $title ) ? 'alt="' . $title . '"' : '' ); ?> />
+														<img src="<?php echo esc_url( $image ); ?>" <?php echo( ! empty( $title ) ? 'alt="' . esc_attr( $title ) . '"' : '' ); ?> />
 														<?php
 													}
 												}
@@ -105,17 +105,17 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 										if ( ! empty( $title ) ) {
 											if ( ! empty( $link ) ) { ?>
 												<h3 class="colored-text">
-													<a href="<?php echo esc_url( $link ); ?>"><?php echo esc_attr( $title ); ?></a>
+													<a href="<?php echo esc_url( $link ); ?>"><?php echo wp_kses_post( $title ); ?></a>
 												</h3>
 												<?php
 											} else { ?>
-												<h3 class="colored-text"><?php echo esc_attr( $title ); ?></h3>
+												<h3 class="colored-text"><?php echo wp_kses_post( $title ); ?></h3>
 												<?php
 											}
 										}
 
 										if ( ! empty( $text ) ) { ?>
-											<p><?php echo html_entity_decode( $text ); ?></p>
+											<p><?php echo wp_kses_post( $text ); ?></p>
 											<?php
 										}
 										parallax_hook_services_entry_bottom(); ?>

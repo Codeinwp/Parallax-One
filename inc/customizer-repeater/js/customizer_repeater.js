@@ -120,6 +120,17 @@ function customizer_repeater_refresh_social_icons(th) {
     customizer_repeater_refresh_general_control_values();
 }
 
+function customizer_repeater_item_is_empty( $value ){
+    return typeof $value === 'undefined' || $value === '';
+}
+
+function customizer_repeater_get_html_val( $input ){
+    if ($input.length !== 0) {
+        return $input.val();
+    }
+    return '';
+}
+
 
 function customizer_repeater_refresh_general_control_values() {
     'use strict';
@@ -128,36 +139,58 @@ function customizer_repeater_refresh_general_control_values() {
         var th = jQuery(this);
         th.find('.customizer-repeater-general-control-repeater-container').each(function () {
 
-            var icon_value = jQuery(this).find('.icp').val();
-            var text = jQuery(this).find('.customizer-repeater-text-control').val();
-            var link = jQuery(this).find('.customizer-repeater-link-control').val();
-            var image_url = jQuery(this).find('.custom-media-url').val();
-            var choice = jQuery(this).find('.customizer-repeater-image-choice').val();
-            var title = jQuery(this).find('.customizer-repeater-title-control').val();
-            var subtitle = jQuery(this).find('.customizer-repeater-subtitle-control').val();
-            var id = jQuery(this).find('.social-repeater-box-id').val();
+
+            var icon_value = customizer_repeater_get_html_val(jQuery(this).find('.icp'));
+            var text = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-text-control'));
+            var link = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-link-control'));
+            var image_url = customizer_repeater_get_html_val(jQuery(this).find('.custom-media-url'));
+            var choice = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-image-choice'));
+            var title = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-title-control'));
+            var subtitle = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-subtitle-control'));
+            var id = customizer_repeater_get_html_val(jQuery(this).find('.social-repeater-box-id'));
             if (!id) {
                 id = 'social-repeater-' + customizer_repeater_uniqid();
                 jQuery(this).find('.social-repeater-box-id').val(id);
             }
-            var social_repeater = jQuery(this).find('.social-repeater-socials-repeater-colector').val();
-            var shortcode = jQuery(this).find('.customizer-repeater-shortcode-control').val();
+            var social_repeater = customizer_repeater_get_html_val(jQuery(this).find('.social-repeater-socials-repeater-colector'));
+            var shortcode = customizer_repeater_get_html_val(jQuery(this).find('.customizer-repeater-shortcode-control'));
 
-            if (text !== '' || image_url !== '' || title !== '' || subtitle !== '' || icon_value !== '' || link !== '' || choice !== '' || social_repeater !== '' || shortcode !== '' ) {
-                values.push({
-                    'icon_value': (choice === 'parallax_none' ? '' : icon_value),
-                    'text': escapeHtml(text),
-                    'link': link,
-                    'image_url': (choice === 'parallax_none' ? '' : image_url),
-                    'choice': choice,
-                    'title': escapeHtml(title),
-                    'subtitle': escapeHtml(subtitle),
-                    'social_repeater': escapeHtml(social_repeater),
-                    'id': id,
-                    'shortcode': escapeHtml(shortcode)
-                });
+            var response = {};
+            if( !customizer_repeater_item_is_empty( text ) ){
+                response.text = escapeHtml(text);
+            }
+            if( !customizer_repeater_item_is_empty( image_url ) ){
+                if(choice !== 'azera_shop_none'){
+                    response.image_url = image_url;
+                }
+            }
+            if( !customizer_repeater_item_is_empty( title ) ){
+                response.title = escapeHtml(title);
+            }
+            if( !customizer_repeater_item_is_empty( subtitle ) ){
+                response.subtitle = escapeHtml(subtitle);
+            }
+            if( !customizer_repeater_item_is_empty( icon_value ) ){
+                if(choice !== 'azera_shop_none'){
+                    response.icon_value = icon_value;
+                }
+            }
+            if( !customizer_repeater_item_is_empty( link ) ){
+                response.link = link;
+            }
+            if( !customizer_repeater_item_is_empty( choice ) ){
+                response.choice = choice;
+            }
+            if( !customizer_repeater_item_is_empty( social_repeater ) ){
+                response.social_repeater = escapeHtml(social_repeater);
+            }
+            if( !customizer_repeater_item_is_empty( shortcode ) ){
+                response.shortcode = escapeHtml(shortcode);
             }
 
+            if(!jQuery.isEmptyObject(response)){
+                values.push(response);
+            }
         });
         th.find('.customizer-repeater-colector').val(JSON.stringify(values));
         th.find('.customizer-repeater-colector').trigger('change');

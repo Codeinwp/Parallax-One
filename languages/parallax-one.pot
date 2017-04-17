@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One 2.1.4\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/Parallax-One/issues\n"
-"POT-Creation-Date: 2017-04-04 14:37:24+00:00\n"
+"POT-Creation-Date: 2017-04-17 17:52:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -529,11 +529,11 @@ msgstr ""
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:673
+#: functions.php:647
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: functions.php:677
+#: functions.php:651
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
@@ -993,86 +993,86 @@ msgstr ""
 msgid "Cusomizer Repeater"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:299
-#: inc/customizer-repeater/class/customizer-repeater-control.php:370
+#: inc/customizer-repeater/class/customizer-repeater-control.php:290
+#: inc/customizer-repeater/class/customizer-repeater-control.php:361
 msgid "Title"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:306
-#: inc/customizer-repeater/class/customizer-repeater-control.php:377
+#: inc/customizer-repeater/class/customizer-repeater-control.php:297
+#: inc/customizer-repeater/class/customizer-repeater-control.php:368
 #: inc/customizer.php:214 inc/customizer.php:388 inc/customizer.php:490
 #: inc/customizer.php:555
 msgid "Subtitle"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:313
-#: inc/customizer-repeater/class/customizer-repeater-control.php:384
+#: inc/customizer-repeater/class/customizer-repeater-control.php:304
+#: inc/customizer-repeater/class/customizer-repeater-control.php:375
 msgid "Text"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:320
-#: inc/customizer-repeater/class/customizer-repeater-control.php:391
-#: inc/customizer-repeater/class/customizer-repeater-control.php:533
-#: inc/customizer-repeater/class/customizer-repeater-control.php:555
+#: inc/customizer-repeater/class/customizer-repeater-control.php:311
+#: inc/customizer-repeater/class/customizer-repeater-control.php:382
+#: inc/customizer-repeater/class/customizer-repeater-control.php:524
+#: inc/customizer-repeater/class/customizer-repeater-control.php:546
 msgid "Link"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:328
-#: inc/customizer-repeater/class/customizer-repeater-control.php:398
+#: inc/customizer-repeater/class/customizer-repeater-control.php:319
+#: inc/customizer-repeater/class/customizer-repeater-control.php:389
 msgid "Shortcode"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:343
-#: inc/customizer-repeater/class/customizer-repeater-control.php:408
+#: inc/customizer-repeater/class/customizer-repeater-control.php:334
+#: inc/customizer-repeater/class/customizer-repeater-control.php:399
 msgid "Delete field"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:451
-#: inc/customizer-repeater/class/customizer-repeater-control.php:504
+#: inc/customizer-repeater/class/customizer-repeater-control.php:442
+#: inc/customizer-repeater/class/customizer-repeater-control.php:495
 msgid "Icon"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:456
+#: inc/customizer-repeater/class/customizer-repeater-control.php:447
 #. translators: %s is link to FontAwesome
 msgid ""
 "Note: Some icons may not be displayed here. You can see the full list of "
 "icons at %s"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:459
+#: inc/customizer-repeater/class/customizer-repeater-control.php:450
 #. translators: %s is link label
 msgid "FontAwesome"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:484
-#: inc/customizer-repeater/class/customizer-repeater-control.php:505
+#: inc/customizer-repeater/class/customizer-repeater-control.php:475
+#: inc/customizer-repeater/class/customizer-repeater-control.php:496
 #: inc/customizer.php:456
 msgid "Image"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:487
+#: inc/customizer-repeater/class/customizer-repeater-control.php:478
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:501
+#: inc/customizer-repeater/class/customizer-repeater-control.php:492
 msgid "Image type"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:506
+#: inc/customizer-repeater/class/customizer-repeater-control.php:497
 msgid "None"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:519
+#: inc/customizer-repeater/class/customizer-repeater-control.php:510
 msgid "Social icons"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:536
-#: inc/customizer-repeater/class/customizer-repeater-control.php:566
+#: inc/customizer-repeater/class/customizer-repeater-control.php:527
+#: inc/customizer-repeater/class/customizer-repeater-control.php:557
 msgid "Remove Icon"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:541
-#: inc/customizer-repeater/class/customizer-repeater-control.php:574
+#: inc/customizer-repeater/class/customizer-repeater-control.php:532
+#: inc/customizer-repeater/class/customizer-repeater-control.php:565
 msgid "Add icon"
 msgstr ""
 

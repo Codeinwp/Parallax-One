@@ -182,35 +182,35 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 * Render function
 	 */
 	public function render_content() {
-        $repeater_content = $this->value();
-        $values = array();
-        if ( ! empty( $repeater_content ) ) {
-            $values = $repeater_content;
-        } else {
-            if ( ! empty( $this->setting->default ) ) {
-                $values = $this->setting->default;
-            }
-        }?>
+		$repeater_content = $this->value();
+		$values = array();
+		if ( ! empty( $repeater_content ) ) {
+			$values = $repeater_content;
+		} else {
+			if ( ! empty( $this->setting->default ) ) {
+				$values = $this->setting->default;
+			}
+		}?>
 
 		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<div class="customizer-repeater-general-control-repeater customizer-repeater-general-control-droppable">
-            <?php
-            if ( ! parallax_one_general_repeater_is_empty( $values ) ) {
-                $valuse_decoded = json_decode( $values );
+			<?php
+			if ( ! parallax_one_general_repeater_is_empty( $values ) ) {
+				$valuse_decoded = json_decode( $values );
 
-                $this->iterate_array( $valuse_decoded ); ?>
-                <input type="hidden"
-                       id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-                       class="customizer-repeater-colector"
-                       value="<?php echo esc_textarea( json_encode( $valuse_decoded ) ); ?>"/>
-                <?php
-            } else {
-                $this->iterate_array(); ?>
-                <input type="hidden"
-                       id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-                       class="customizer-repeater-colector"/>
-                <?php
-            } ?>
+				$this->iterate_array( $valuse_decoded ); ?>
+				<input type="hidden"
+					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
+					   class="customizer-repeater-colector"
+					   value="<?php echo esc_textarea( json_encode( $valuse_decoded ) ); ?>"/>
+				<?php
+			} else {
+				$this->iterate_array(); ?>
+				<input type="hidden"
+					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
+					   class="customizer-repeater-colector"/>
+				<?php
+			} ?>
 			</div>
 		<button type="button" class="button add_field customizer-repeater-new-field">
 			<?php echo esc_html( $this->add_field_label ); ?>

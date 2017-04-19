@@ -39,11 +39,11 @@ if ( ! empty( $parallax_one_logos ) ) {
 							<?php
 							if ( ! empty( $link ) ) {  ?>
 									<a href="<?php echo esc_url( $link ); ?>" title="">
-										<img src="<?php echo parallax_one_make_protocol_relative_url( $image ); ?>" alt="<?php esc_html_e( 'Logo', 'parallax-one' ); ?>">
+										<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php esc_attr_e( 'Logo', 'parallax-one' ); ?>">
 									</a>
 							<?php
 							} else { ?>
-								<img src="<?php echo parallax_one_make_protocol_relative_url( $image ); ?>" alt="<?php esc_html_e( 'Logo','parallax-one' ); ?>">
+								<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php esc_attr_e( 'Logo','parallax-one' ); ?>">
 							<?php
 							} ?>
 						</li>

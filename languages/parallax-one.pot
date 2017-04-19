@@ -1531,60 +1531,60 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/translations/translations-services-section.php:17
-#: inc/translations/translations-services-section.php:24
-#: inc/translations/translations-services-section.php:31
+#: inc/translations/translations-services-section.php:16
+#: inc/translations/translations-services-section.php:23
+#: inc/translations/translations-services-section.php:30
 msgid "Lorem Ipsum"
 msgstr ""
 
-#: inc/translations/translations-services-section.php:18
-#: inc/translations/translations-services-section.php:25
-#: inc/translations/translations-services-section.php:32
+#: inc/translations/translations-services-section.php:17
+#: inc/translations/translations-services-section.php:24
+#: inc/translations/translations-services-section.php:31
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
 "eros sit amet arcu vestibulum accumsan in in leo."
 msgstr ""
 
-#: inc/translations/translations-team-section.php:16
+#: inc/translations/translations-team-section.php:15
 msgid "Albert Jacobs"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:17
+#: inc/translations/translations-team-section.php:16
 msgid "Founder & CEO"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:22
+#: inc/translations/translations-team-section.php:21
 msgid "Tonya Garcia"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:23
+#: inc/translations/translations-team-section.php:22
 msgid "Account Manager"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:28
+#: inc/translations/translations-team-section.php:27
 msgid "Linda Guthrie"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:29
+#: inc/translations/translations-team-section.php:28
 msgid "Business Development"
+msgstr ""
+
+#: inc/translations/translations-testimonials-section.php:15
+#: inc/translations/translations-testimonials-section.php:22
+#: inc/translations/translations-testimonials-section.php:29
+msgid "Happy Customer"
 msgstr ""
 
 #: inc/translations/translations-testimonials-section.php:16
 #: inc/translations/translations-testimonials-section.php:23
 #: inc/translations/translations-testimonials-section.php:30
-msgid "Happy Customer"
+msgid "Lorem ipsum"
 msgstr ""
 
 #: inc/translations/translations-testimonials-section.php:17
 #: inc/translations/translations-testimonials-section.php:24
 #: inc/translations/translations-testimonials-section.php:31
-msgid "Lorem ipsum"
-msgstr ""
-
-#: inc/translations/translations-testimonials-section.php:18
-#: inc/translations/translations-testimonials-section.php:25
-#: inc/translations/translations-testimonials-section.php:32
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "

@@ -58,7 +58,7 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 										<div class="member-pic">
 											<?php
 											if ( ! empty( $image ) ) {  ?>
-												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( ! empty( $title ) ? 'alt="' . $title . '"' : esc_html__( 'Avatar','parallax-one' ) ); ?>>
+												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( ! empty( $title ) ? 'alt="' . esc_attr( $title ) . '"' : esc_html__( 'Avatar','parallax-one' ) ); ?>>
 											<?php
 											} else {
 												$default_url = parallax_get_file( '/images/team/default.png' ); ?>
@@ -73,12 +73,12 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 												<div class="member-details-inner">
 													<?php
 													if ( ! empty( $title ) ) {  ?>
-														<h5 class="colored-text"> <?php echo esc_attr( $title ); ?></h5>
+														<h5 class="colored-text"> <?php echo wp_kses_post( $title ); ?></h5>
 													<?php
 													}
 
-													if ( ! empty( $parallax_one_team_member->subtitle ) ) {  ?>
-														<div class="small-text"><?php echo esc_attr( $subtitle ); ?></div>
+													if ( ! empty( $subtitle ) ) {  ?>
+														<div class="small-text"><?php echo wp_kses_post( $subtitle ); ?></div>
 													<?php
 													}
 

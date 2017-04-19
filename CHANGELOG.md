@@ -1,4 +1,9 @@
 
+### 2.1.5 - 19/04/2017
+**Changes:** 
+- Improved compatibility with WPML and Polylang
+- Fixed function checking for repeater content values
+
 ### 2.1.4 - 18/01/2017
 **Changes:** 
 - Added animations for the Contact section

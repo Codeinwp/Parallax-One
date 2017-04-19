@@ -5,7 +5,7 @@
  * @package parallax-one
  */
 ?>
-
+<?php /* translators: %s is post name */ ?>
 <article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class( 'border-bottom-hover blog-post-wrap' ); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 	<?php parallax_hook_entry_top(); ?>
 	<header class="entry-header">
@@ -89,7 +89,16 @@
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = strpos( $post->post_content, '<!--more-->' );
-		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s ...','parallax-one' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'parallax-one' ) . get_the_title() . '</span>' ) );
+		if ( $ismore ) :
+			the_content(
+				/* translators: %s is post name in text reader */
+				sprintf( esc_html__( 'Read more %s ...','parallax-one' ),
+					/* translators: %s is post title */
+					sprintf( '<span class="screen-reader-text"> %s </span>',
+						esc_html__( 'about ', 'parallax-one' ) . get_the_title()
+					)
+				)
+			);
 			else : the_excerpt();
 			endif;
 		?>

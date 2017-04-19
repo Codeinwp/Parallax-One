@@ -7,11 +7,8 @@
 
 $parallax_one_our_team_title = get_theme_mod( 'parallax_one_our_team_title',esc_html__( 'Our Team','parallax-one' ) );
 $parallax_one_our_team_subtitle = get_theme_mod( 'parallax_one_our_team_subtitle',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ) );
-$parallax_one_team_content = get_theme_mod('parallax_one_team_content', json_encode( array(
-	array( 'image_url' => parallax_get_file( '/images/team/1.jpg' ),'title' => esc_html__( 'Albert Jacobs','parallax-one' ),'subtitle' => esc_html__( 'Founder & CEO','parallax-one' ), 'id' => 'parallax_one_56fe9796baca4' ),
-	array( 'image_url' => parallax_get_file( '/images/team/2.jpg' ),'title' => esc_html__( 'Tonya Garcia','parallax-one' ),'subtitle' => esc_html__( 'Account Manager','parallax-one' ), 'id' => 'parallax_one_56fe9798baca5' ),
-	array( 'image_url' => parallax_get_file( '/images/team/3.jpg' ),'title' => esc_html__( 'Linda Guthrie','parallax-one' ),'subtitle' => esc_html__( 'Business Development','parallax-one' ), 'id' => 'parallax_one_56fe9799baca6' ),
-) ) );
+$default = parallax_one_team_get_default_content();
+$parallax_one_team_content = get_theme_mod( 'parallax_one_team_content', $default );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_team_content ) ) {
@@ -48,37 +45,11 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 						<?php
 						$parallax_one_team_decoded = json_decode( $parallax_one_team_content );
 						foreach ( $parallax_one_team_decoded as $parallax_one_team_member ) {
-
-
-							if ( ! empty( $parallax_one_team_member->id ) ) {
-								$id = $parallax_one_team_member->id;
-							}
-
-							if ( ! empty( $parallax_one_team_member->title ) ) {
-								if ( function_exists( 'pll__' ) ) {
-									$title = pll__( $parallax_one_team_member->title );
-								} else {
-									$title = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->title, 'Parallax One -> Team section', 'Team box title ' . $id );
-								}
-							}
-
-							if ( ! empty( $parallax_one_team_member->subtitle ) ) {
-								if ( function_exists( 'pll__' ) ) {
-									$subtitle = pll__( $parallax_one_team_member->subtitle );
-								} else {
-									$subtitle = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->subtitle, 'Parallax One -> Team section', 'Team box subtitle ' . $id );
-								}
-							}
-
-							if ( ! empty( $parallax_one_team_member->image_url ) ) {
-								if ( function_exists( 'pll__' ) ) {
-									$image = pll__( $parallax_one_team_member->image_url );
-								} else {
-									$image = apply_filters( 'wpml_translate_single_string', $parallax_one_team_member->image_url, 'Parallax One -> Team section', 'Team box image ' . $id );
-								}
-							}
-
-							if ( ! empty( $image ) || ! empty( $title ) || ! empty( $subtitle ) ) { ?>
+							$title = ! empty( $parallax_one_team_member->title ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_team_member->title, 'Team section' ) : '';
+							$subtitle = ! empty( $parallax_one_team_member->subtitle ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_team_member->subtitle, 'Team section' ) : '';
+							$image = ! empty( $parallax_one_team_member->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_team_member->image_url, 'Team section' ) : '';
+							$section_is_empty = empty( $image ) && empty( $title ) && empty( $subtitle );
+							if ( ! $section_is_empty ) { ?>
 								<div class="col-md-3 team-member-box">
 									<div class="team-member border-bottom-hover"
 									<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
@@ -87,7 +58,7 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 										<div class="member-pic">
 											<?php
 											if ( ! empty( $image ) ) {  ?>
-												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( ! empty( $title ) ? 'alt="' . $title . '"' : esc_html__( 'Avatar','parallax-one' ) ); ?>>
+												<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" <?php echo ( ! empty( $title ) ? 'alt="' . esc_attr( $title ) . '"' : esc_html__( 'Avatar','parallax-one' ) ); ?>>
 											<?php
 											} else {
 												$default_url = parallax_get_file( '/images/team/default.png' ); ?>
@@ -102,12 +73,12 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 												<div class="member-details-inner">
 													<?php
 													if ( ! empty( $title ) ) {  ?>
-														<h5 class="colored-text"> <?php echo esc_attr( $title ); ?></h5>
+														<h5 class="colored-text"> <?php echo wp_kses_post( $title ); ?></h5>
 													<?php
 													}
 
-													if ( ! empty( $parallax_one_team_member->subtitle ) ) {  ?>
-														<div class="small-text"><?php echo esc_attr( $subtitle ); ?></div>
+													if ( ! empty( $subtitle ) ) {  ?>
+														<div class="small-text"><?php echo wp_kses_post( $subtitle ); ?></div>
 													<?php
 													}
 
@@ -117,26 +88,19 @@ if ( ! empty( $parallax_one_our_team_title ) || ! empty( $parallax_one_our_team_
 												 		<ul class="social-icons">
 												 			<?php
 													 		foreach ( $icons_decoded as $value ) {
-													 			$s_id = $value['id'];
-
-													 			if ( function_exists( 'pll__' ) ) {
-													 				$s_icon = pll__( $value['icon'] );
-													 				$s_link = pll__( $value['link'] );
-													 			} else {
-														 			$s_icon = apply_filters( 'wpml_translate_single_string', $value['icon'], 'Parallax One -> Team section', 'Social icon ' . $s_id );
-																	$s_link = apply_filters( 'wpml_translate_single_string', $value['link'], 'Parallax One -> Team section', 'Social link ' . $s_id );
-													 			}
+															    $s_icon = ! empty( $value['icon'] ) ? apply_filters( 'parallax_one_translate_single_string', $value['icon'], 'Team section' ) : '';
+															    $s_link = ! empty( $value['link'] ) ? apply_filters( 'parallax_one_translate_single_string', $value['link'], 'Team section' ) : '';
 
 													 			if ( ! empty( $s_icon ) ) {  ?>
 													 				<li>
 													 					<?php
 													 					if ( ! empty( $s_link ) ) {  ?>
 												 							<a target="_blank" href="<?php echo esc_url( $s_link ); ?>">
-												 								<span class="<?php echo esc_attr( $s_icon ); ?>"></span>
+												 								<span class="fa <?php echo esc_attr( $s_icon ); ?>"></span>
 												 							</a>
 													 					<?php
 													 					} else { ?>
-													 						<span class="<?php echo esc_attr( $s_icon ); ?>"></span>
+													 						<span class="fa <?php echo esc_attr( $s_icon ); ?>"></span>
 													 					<?php
 													 					} ?>
 													 				</li>

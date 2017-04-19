@@ -563,32 +563,6 @@ function parallax_one_responsive_embed( $html, $url, $attr, $post_id ) {
 add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );
 
 
-if ( ! function_exists( 'parallax_one_general_repeater_is_empty' ) ) {
-
-	/**
-	 * Check if Repeater is empty
-	 *
-	 * @param array $parallax_one_arr Repeater content.
-	 *
-	 * @return bool
-	 */
-	function parallax_one_general_repeater_is_empty( $parallax_one_arr ) {
-		$parallax_one_services_decoded = json_decode( $parallax_one_arr );
-		foreach ( $parallax_one_services_decoded as $parallax_box ) {
-			if ( ! empty( $parallax_box->choice ) && $parallax_box->choice == 'parallax_none' ) {
-				$parallax_box->icon_value = '';
-				$parallax_box->image_url = '';
-			}
-			foreach ( $parallax_box as $key => $value ) {
-				if ( ! empty( $value ) && $key != 'choice' && $key != 'id' && ($value != 'No Icon' && $key == 'icon_value') ) {
-					return false;
-				}
-			}
-		}
-		return true;
-	}
-}
-
 /**
  * Display sections from childtheme, theme or plus plugin.
  *

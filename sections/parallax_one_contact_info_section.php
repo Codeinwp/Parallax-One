@@ -14,7 +14,7 @@ array_push( $allowed_protocols,'callto' );
 if ( ! parallax_one_general_repeater_is_empty( $parallax_one_contact_info_item ) ) {
 	$parallax_one_contact_info_item_decoded = json_decode( $parallax_one_contact_info_item );
 	parallax_hook_contact_before(); ?>
-	<div class="contact-info" id="contactinfo" role="region" aria-label="<?php esc_html_e( 'Contact Info','parallax-one' ); ?>">
+	<div class="contact-info" id="contactinfo" role="region" aria-label="<?php esc_attr_e( 'Contact Info','parallax-one' ); ?>">
 		<?php parallax_hook_contact_top(); ?>
 		<div class="section-overlay-layer">
 			<div class="container">

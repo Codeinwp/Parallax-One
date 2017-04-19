@@ -25,18 +25,18 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 						<?php
 						if ( ! empty( $parallax_one_happy_customers_title ) ) { ?>
 							<h2 class="dark-text"><?php echo esc_attr( $parallax_one_happy_customers_title ); ?></h2><div class="colored-line"></div>
-						<?php
+						    <?php
 						} elseif ( is_customize_preview() ) { ?>
 							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
-						<?php
+						    <?php
 						}
 
 						if ( ! empty( $parallax_one_happy_customers_subtitle ) ) { ?>
 							<div class="sub-heading"><?php echo esc_attr( $parallax_one_happy_customers_subtitle ); ?></div>
-						<?php
+						    <?php
 						} elseif ( is_customize_preview() ) { ?>
 							<div class="sub-heading paralax_one_only_customizer"></div>
-						<?php
+						    <?php
 						} ?>
 					</div>
 				<?php
@@ -83,7 +83,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 												if ( ! empty( $title ) ) { ?>
 													<h5 class="colored-text">
 														<?php
-														echo $title; ?>
+														echo wp_kses_post( $title ); ?>
 													</h5>
 												<?php
 												}
@@ -91,7 +91,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 												if ( ! empty( $subtitle ) ) { ?>
 													<div class="small-text">
 														<?php
-														echo esc_attr( $subtitle ); ?>
+														echo wp_kses_post( $subtitle ); ?>
 													</div>
 												<?php
 												}
@@ -99,7 +99,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 												if ( ! empty( $text ) ) { ?>
 													<p>
 														<?php
-														echo html_entity_decode( $text ); ?>
+														echo wp_kses_post( $text ); ?>
 													</p>
 												<?php
 												} ?>

@@ -1,3 +1,5 @@
+/* global Color */
+/* global wp */
 jQuery(document).ready(function($) {
     'use strict';
     Color.prototype.toString = function(remove_alpha) {
@@ -30,10 +32,10 @@ jQuery(document).ready(function($) {
         } else if ( palette_input === true) {
             palette = true;
         } else {
-            palette = $control.attr('data-palette').split(",");
+            palette = $control.attr('data-palette').split(',');
         }
         $control.wpColorPicker({ // change some things with the color picker
-            clear: function(event, ui) {
+            clear: function() {
             },
             change: function(event, ui) {
                 // send ajax request to wp.customizer to enable Save & Publish button
@@ -68,7 +70,7 @@ jQuery(document).ready(function($) {
                     obj.set(_new_value);
                 });
             },
-            create: function(event, ui) {
+            create: function() {
                 var v = $(this).slider('value');
                 $(this).find('.ui-slider-handle').text(v);
             },

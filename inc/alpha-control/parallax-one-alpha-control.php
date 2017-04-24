@@ -43,10 +43,13 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 		$this->default = $this->setting->default;
 	}
 
-	public function enqueue(){
-        wp_enqueue_script( 'parallax-one-alpha-control', parallax_get_file( '/inc/alpha-control/js/script.js' ),array('jquery'), '1.0', true );
-        wp_enqueue_style( 'parallax-one-alpha-style', parallax_get_file( '/inc/alpha-control/css/style.css' ), '1.0' );
-    }
+    /**
+     * Enqueue scripts and style.
+     */
+	public function enqueue() {
+		wp_enqueue_script( 'parallax-one-alpha-control', parallax_get_file( '/inc/alpha-control/js/script.js' ),array( 'jquery' ), '1.0', true );
+		wp_enqueue_style( 'parallax-one-alpha-style', parallax_get_file( '/inc/alpha-control/css/style.css' ), '1.0' );
+	}
 
 	/**
 	 * The function to render the controler

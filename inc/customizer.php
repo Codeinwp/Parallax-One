@@ -313,7 +313,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'priority'    => 5,
 	)));
 
-	require_once( 'class/parallax-one-alpha-control.php' );
+	require_once('alpha-control/parallax-one-alpha-control.php');
 
 	/**
 	 * Bigtitle background

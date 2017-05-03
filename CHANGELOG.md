@@ -1,4 +1,9 @@
 
+### 2.1.6 - 03/05/2017
+**Changes:** 
+- Fixed escaping issues in the Services and Testimonials sections
+- Added support for WooCommerce 3.0.0 gallery
+
 ### 2.1.5 - 19/04/2017
 **Changes:** 
 - Improved compatibility with WPML and Polylang

@@ -303,7 +303,7 @@ function parallax_one_scripts() {
 
 	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file( '/js/custom.home.js' ), array( 'jquery' ), '1.0.0', true );
+		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file( '/js/custom.home.js' ), array( 'jquery' ), '1.0.1', true );
 	}
 
 	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file( '/js/skip-link-focus-fix.js' ), array(), '1.0.0', true );

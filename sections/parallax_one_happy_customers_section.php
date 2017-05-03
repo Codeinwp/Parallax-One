@@ -99,7 +99,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 												if ( ! empty( $text ) ) { ?>
 													<p>
 														<?php
-														echo wp_kses_post( $text ); ?>
+														echo html_entity_decode( $text ); ?>
 													</p>
 												<?php
 												} ?>

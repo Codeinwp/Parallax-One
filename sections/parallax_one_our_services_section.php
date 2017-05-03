@@ -115,7 +115,7 @@ if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_s
 										}
 
 										if ( ! empty( $text ) ) { ?>
-											<p><?php echo wp_kses_post( $text ); ?></p>
+											<p><?php echo html_entity_decode( $text ); ?></p>
 											<?php
 										}
 										parallax_hook_services_entry_bottom(); ?>

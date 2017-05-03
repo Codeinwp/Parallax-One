@@ -44,6 +44,14 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	}
 
 	/**
+	 * Enqueue scripts and style.
+	 */
+	public function enqueue() {
+		wp_enqueue_script( 'parallax-one-alpha-control', parallax_get_file( '/inc/alpha-control/js/script.js' ),array( 'jquery', 'jquery-ui-draggable' ), '1.0', true );
+		wp_enqueue_style( 'parallax-one-alpha-style', parallax_get_file( '/inc/alpha-control/css/style.css' ), '1.0' );
+	}
+
+	/**
 	 * The function to render the controler
 	 */
 	protected function render() {
@@ -62,7 +70,7 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	?>
 		<label>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="pluto-color-control" <?php $this->link(); ?>  />
+			<input type="text" data-palette="<?php echo $this->palette; ?>" data-default-color="<?php echo $this->default; ?>" value="<?php echo intval( $this->value() ); ?>" class="parallax-one-color-control" <?php $this->link(); ?>  />
 		</label>
 	<?php
 	}

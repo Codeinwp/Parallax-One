@@ -6,8 +6,14 @@
  */
 
 $paralax_one_our_story_image = get_theme_mod( 'paralax_one_our_story_image', parallax_get_file( '/images/about-us.png' ) );
+$paralax_one_our_story_image = apply_filters( 'parallax_one_translate_single_string', $paralax_one_our_story_image, 'Our Story section - Image' );
+
 $parallax_one_our_story_title = get_theme_mod( 'parallax_one_our_story_title',esc_html__( 'Our Story','parallax-one' ) );
+$parallax_one_our_story_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_story_title, 'Our Story section - Title' );
+
 $parallax_one_our_story_text = get_theme_mod( 'parallax_one_our_story_text',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ) );
+$parallax_one_our_story_text = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_story_text, 'Our Story section - Text' );
+
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story_title ) || ! empty( $parallax_one_our_story_content ) ) {

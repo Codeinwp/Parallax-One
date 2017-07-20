@@ -6,7 +6,11 @@
  */
 
 $parallax_one_happy_customers_title = get_theme_mod( 'parallax_one_happy_customers_title',esc_html__( 'Happy Customers','parallax-one' ) );
+$parallax_one_happy_customers_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_happy_customers_title, 'Testimonials Section - Title' );
+
 $parallax_one_happy_customers_subtitle = get_theme_mod( 'parallax_one_happy_customers_subtitle',esc_html__( 'Cloud computing subscription model out of the box proactive solution.','parallax-one' ) );
+$parallax_one_happy_customers_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_happy_customers_subtitle, 'Testimonials Section - Subtitle' );
+
 $default = parallax_one_testimonials_get_default_content();
 $parallax_one_testimonials_content = get_theme_mod( 'parallax_one_testimonials_content', $default );
 $happy_customers_wrap_piterest = get_theme_mod( 'paralax_one_testimonials_pinterest_style','5' );

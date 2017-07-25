@@ -23,6 +23,23 @@ function parallax_one_translate_single_string( $original_value, $domain ) {
 }
 add_filter( 'parallax_one_translate_single_string', 'parallax_one_translate_single_string', 10, 2 );
 
+/**
+ * Filter to translate header image
+ */
+function parallax_one_translate_header_image( $original_value ) {
+	if ( is_customize_preview() ) {
+		$wpml_translation = $original_value;
+	} else {
+		$wpml_translation = apply_filters( 'wpml_translate_single_string', $original_value, 'Header image', $original_value );
+		if ( $wpml_translation === $original_value && function_exists( 'pll__' ) ) {
+			return pll__( $original_value );
+		}
+	}
+
+	return $wpml_translation;
+}
+
+add_filter( 'theme_mod_header_image', 'parallax_one_translate_header_image', 10 );
 
 /**
  * Helper to register pll string.

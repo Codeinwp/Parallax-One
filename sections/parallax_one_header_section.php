@@ -26,7 +26,11 @@ if ( ! empty( $parallax_one_header_button_link ) && strpos( $parallax_one_header
 
 $parallax_one_enable_move = get_theme_mod( 'paralax_one_enable_move' );
 $parallax_one_first_layer = get_theme_mod( 'paralax_one_first_layer', parallax_get_file( '/images/background1.png' ) );
+$parallax_one_first_layer = apply_filters( 'parallax_one_translate_single_string', $parallax_one_first_layer, 'Big Title Section - First Layer Image' );
+
 $parallax_one_second_layer = get_theme_mod( 'paralax_one_second_layer',parallax_get_file( '/images/background2.png' ) );
+$parallax_one_second_layer = apply_filters( 'parallax_one_translate_single_string', $parallax_one_second_layer, 'Big Title Section - Second Layer Image' );
+
 
 if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) {
 

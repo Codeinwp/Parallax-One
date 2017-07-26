@@ -46,6 +46,7 @@
 		<div class="footer-bottom-wrap">
 			<?php
 			$paralax_one_copyright = get_theme_mod( 'parallax_one_copyright','Themeisle' );
+			$paralax_one_copyright = apply_filters( 'parallax_one_translate_single_string', $paralax_one_copyright, 'Footer - Credits' );
 
 			if ( ! empty( $paralax_one_copyright ) ) {  ?>
 				<span class="parallax_one_copyright_content"><?php echo esc_attr( $paralax_one_copyright ); ?></span>

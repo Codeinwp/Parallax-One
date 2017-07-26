@@ -97,7 +97,7 @@
 						<?php
 
 							$parallax_one = get_theme_mod( 'paralax_one_logo', parallax_get_file( '/images/logo-nav.png' ) );
-
+						    $parallax_one = apply_filters( 'parallax_one_translate_single_string', $parallax_one, 'Header - Logo' );
 
 
 						if ( ! empty( $parallax_one ) ) :

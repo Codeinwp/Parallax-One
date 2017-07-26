@@ -12,9 +12,10 @@ $parallax_one_ribbon_title = get_theme_mod( 'parallax_one_ribbon_title',esc_html
 $parallax_one_ribbon_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_ribbon_title, 'Ribbon Section - Title' );
 
 $parallax_one_button_text = get_theme_mod( 'parallax_one_button_text',esc_html__( 'GET STARTED','parallax-one' ) );
-$parallax_one_button_text = apply_filters( 'parallax_one_translate_single_string', $parallax_one_button_text, 'Ribbon Section - Text' );
+$parallax_one_button_text = apply_filters( 'parallax_one_translate_single_string', $parallax_one_button_text, 'Ribbon Section - Button Text' );
 
 $parallax_one_button_link = get_theme_mod( 'parallax_one_button_link','#' );
+$parallax_one_button_link = apply_filters( 'parallax_one_translate_single_string', $parallax_one_button_link, 'Ribbon Section - Button Link' );
 if ( ! empty( $parallax_one_button_link ) && strpos( $parallax_one_button_link, '#' ) === 0 ) {
 	$parallax_one_go_to = 'onclick="return false;" data-anchor="' . esc_attr( $parallax_one_button_link ) . '"';
 } else {

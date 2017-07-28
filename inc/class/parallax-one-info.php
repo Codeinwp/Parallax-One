@@ -54,11 +54,13 @@ class Parallax_One_Info extends WP_Customize_Control {
 
 		<div class="parallax-one-theme-info">
 			<?php
-			foreach ( $links as $item ) {  ?>
+			foreach ( $links as $item ) {
+			?>
 				<a href="<?php echo esc_url( $item['link'] ); ?>" target="_blank"><?php echo esc_html( $item['name'] ); ?></a>
 				<hr/>
 				<?php
-			} ?>
+			}
+			?>
 		</div>
 		<?php
 	}

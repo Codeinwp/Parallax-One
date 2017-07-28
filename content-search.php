@@ -13,7 +13,7 @@
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
-			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 					<?php
 					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -81,16 +81,20 @@
 	<div class="entry-content">
 		<?php
 			$ismore = strpos( $post->post_content, '<!--more-->' );
-		if ( $ismore ) : the_content();
-			else : the_excerpt();
+		if ( $ismore ) :
+			the_content();
+			else :
+				the_excerpt();
 			endif;
 		?>
 
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 	<?php parallax_hook_search_bottom(); ?>

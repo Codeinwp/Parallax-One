@@ -81,7 +81,8 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 
 					<!-- HEADING AND BUTTONS -->
 					<?php
-					if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) { ?>
+					if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) {
+					?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
@@ -102,14 +103,26 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 							<!-- BUTTON -->
 							<?php
 
-							if ( ! empty( $parallax_one_header_button_text ) ) {  ?>
-								<button <?php if ( ! empty( $parallax_one_go_to ) ) {  echo $parallax_one_go_to; } ?> class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+							if ( ! empty( $parallax_one_header_button_text ) ) {
+							?>
+								<button 
+								<?php
+								if ( ! empty( $parallax_one_go_to ) ) {
+									echo $parallax_one_go_to; }
+?>
+ class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
 									<span class="screen-reader-text"><?php echo esc_html__( 'Header button label:','parallax-one' ) . strip_tags( trim( $parallax_one_header_button_text ) ); ?></span>
 									<?php echo wp_kses_post( $parallax_one_header_button_text ); ?>
 								</button>
 								<?php
-							} elseif ( is_customize_preview() ) {  ?>
-								<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  <?php if ( ! empty( $parallax_one_go_to ) ) {  echo $parallax_one_go_to; } ?>></button>
+							} elseif ( is_customize_preview() ) {
+							?>
+								<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  
+								<?php
+								if ( ! empty( $parallax_one_go_to ) ) {
+									echo $parallax_one_go_to; }
+?>
+></button>
 								<?php
 							}
 							?>

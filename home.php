@@ -26,12 +26,20 @@
 	<?php parallax_hook_content_top(); ?>
 	<div class="container">
 		<div id="primary" class="content-area col-md-8 post-list">
-			<main <?php if ( have_posts() ) { echo 'itemscope itemtype="http://schema.org/Blog"';} ?> id="main" class="site-main" role="main">
+			<main 
+			<?php
+			if ( have_posts() ) {
+				echo 'itemscope itemtype="http://schema.org/Blog"';}
+?>
+ id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php ;/* Start the Loop */ ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
+?>
 						<?php parallax_hook_entry_before(); ?>
 						<?php
 

@@ -17,11 +17,20 @@
 <div class="content-wrap">
 	<div class="container">
 		<?php
-			$page_title = get_the_title(); ?>
-		<div id="primary" class="content-area col-md-12 <?php if ( empty( $page_title ) ) {  echo 'parallax-one-top-margin-5px'; } ?>">
+			$page_title = get_the_title();
+			?>
+		<div id="primary" class="content-area col-md-12 
+		<?php
+		if ( empty( $page_title ) ) {
+			echo 'parallax-one-top-margin-5px'; }
+?>
+">
 			<main id="main" class="site-main" role="main">
-				<?php parallax_hook_page_before();?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php parallax_hook_page_before(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+?>
 
 				<?php get_template_part( 'content', 'page' ); ?>
 
@@ -32,8 +41,8 @@
 					endif;
 				?>
 
-			<?php endwhile; // end of the loop. ?>
-			<?php parallax_hook_page_after();?>
+			<?php endwhile; ?>
+			<?php parallax_hook_page_after(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 

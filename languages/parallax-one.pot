@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Parallax One 2.1.5\n"
+"Project-Id-Version: Parallax One 2.1.6\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/Parallax-One/issues\n"
-"POT-Creation-Date: 2017-04-24 10:39:36+00:00\n"
+"POT-Creation-Date: 2017-07-28 10:39:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,16 +69,16 @@ msgstr[1] ""
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:393 class-tgm-plugin-activation.php:920
-#: class-tgm-plugin-activation.php:2626 class-tgm-plugin-activation.php:3673
+#: class-tgm-plugin-activation.php:393 class-tgm-plugin-activation.php:922
+#: class-tgm-plugin-activation.php:2645 class-tgm-plugin-activation.php:3694
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:394 class-tgm-plugin-activation.php:3252
+#: class-tgm-plugin-activation.php:394 class-tgm-plugin-activation.php:3271
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:395 class-tgm-plugin-activation.php:3045
+#: class-tgm-plugin-activation.php:395 class-tgm-plugin-activation.php:3064
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
@@ -125,269 +125,269 @@ msgstr ""
 msgid "Set the parent_slug config variable instead."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:1027
+#: class-tgm-plugin-activation.php:1030
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:1027 class-tgm-plugin-activation.php:1030
+#: class-tgm-plugin-activation.php:1030 class-tgm-plugin-activation.php:1038
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:1030
+#: class-tgm-plugin-activation.php:1038
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2075
+#: class-tgm-plugin-activation.php:2094
 #. translators: %s: version number
 msgid "TGMPA v%s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2366
+#: class-tgm-plugin-activation.php:2385
 msgid "Required"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2369
+#: class-tgm-plugin-activation.php:2388
 msgid "Recommended"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2385
+#: class-tgm-plugin-activation.php:2404
 msgid "WordPress Repository"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2388
+#: class-tgm-plugin-activation.php:2407
 msgid "External Source"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2391
+#: class-tgm-plugin-activation.php:2410
 msgid "Pre-Packaged"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2408
+#: class-tgm-plugin-activation.php:2427
 msgid "Not Installed"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2412
+#: class-tgm-plugin-activation.php:2431
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2414
+#: class-tgm-plugin-activation.php:2433
 msgid "Active"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2420
+#: class-tgm-plugin-activation.php:2439
 msgid "Required Update not Available"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2423
+#: class-tgm-plugin-activation.php:2442
 msgid "Requires Update"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2426
+#: class-tgm-plugin-activation.php:2445
 msgid "Update recommended"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2485
+#: class-tgm-plugin-activation.php:2504
 #. translators: 1: number of plugins.
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:2489
+#: class-tgm-plugin-activation.php:2508
 #. translators: 1: number of plugins.
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:2493
+#: class-tgm-plugin-activation.php:2512
 #. translators: 1: number of plugins.
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:2583
+#: class-tgm-plugin-activation.php:2602
 msgid "Installed version:"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2591
+#: class-tgm-plugin-activation.php:2610
 msgid "Minimum required version:"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2603
+#: class-tgm-plugin-activation.php:2622
 msgid "Available version:"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2626
+#: class-tgm-plugin-activation.php:2645
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2640
+#: class-tgm-plugin-activation.php:2659
 msgid "Plugin"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2641
+#: class-tgm-plugin-activation.php:2660
 msgid "Source"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2642
+#: class-tgm-plugin-activation.php:2661
 msgid "Type"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2646
+#: class-tgm-plugin-activation.php:2665
 msgid "Version"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2647
+#: class-tgm-plugin-activation.php:2666
 msgid "Status"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2696
+#: class-tgm-plugin-activation.php:2715
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Install %2$s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2701
+#: class-tgm-plugin-activation.php:2720
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Update %2$s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2707
+#: class-tgm-plugin-activation.php:2726
 #. translators: %2$s: plugin name in screen reader markup
 msgid "Activate %2$s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2777
+#: class-tgm-plugin-activation.php:2796
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2810
+#: class-tgm-plugin-activation.php:2829
 msgid "Install"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2816
+#: class-tgm-plugin-activation.php:2835
 msgid "Update"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2819
+#: class-tgm-plugin-activation.php:2838
 msgid "Activate"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2850
+#: class-tgm-plugin-activation.php:2869
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2852
+#: class-tgm-plugin-activation.php:2871
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2893
+#: class-tgm-plugin-activation.php:2912
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2895
+#: class-tgm-plugin-activation.php:2914
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3001
+#: class-tgm-plugin-activation.php:3020
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3027
+#: class-tgm-plugin-activation.php:3046
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3251
+#: class-tgm-plugin-activation.php:3270
 msgid "Plugin activation failed."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3591
+#: class-tgm-plugin-activation.php:3612
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3594
+#: class-tgm-plugin-activation.php:3615
 #. translators: 1: plugin name, 2: error message.
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3596
+#: class-tgm-plugin-activation.php:3617
 #. translators: 1: plugin name.
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3600
+#: class-tgm-plugin-activation.php:3621
 msgid ""
 "The installation and activation process is starting. This process may take "
 "a while on some hosts, so please be patient."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3602
+#: class-tgm-plugin-activation.php:3623
 #. translators: 1: plugin name.
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3602 class-tgm-plugin-activation.php:3610
+#: class-tgm-plugin-activation.php:3623 class-tgm-plugin-activation.php:3631
 msgid "Show Details"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3602 class-tgm-plugin-activation.php:3610
+#: class-tgm-plugin-activation.php:3623 class-tgm-plugin-activation.php:3631
 msgid "Hide Details"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3603
+#: class-tgm-plugin-activation.php:3624
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3605
+#: class-tgm-plugin-activation.php:3626
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3608
+#: class-tgm-plugin-activation.php:3629
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3610
+#: class-tgm-plugin-activation.php:3631
 #. translators: 1: plugin name.
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3611
+#: class-tgm-plugin-activation.php:3632
 msgid "All installations have been completed."
 msgstr ""
 
-#: class-tgm-plugin-activation.php:3613
+#: class-tgm-plugin-activation.php:3634
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: comments.php:51 comments.php:73
+#: comments.php:52 comments.php:80
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:54 comments.php:76
+#: comments.php:55 comments.php:83
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:55 comments.php:77
+#: comments.php:56 comments.php:84
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:89
+#: comments.php:98
 msgid "Comments are closed."
 msgstr ""
 
-#: content-contact.php:39 content-page-no-title.php:16 content-page.php:33
+#: content-contact.php:39 content-page-no-title.php:21 content-page.php:41
 #: inc/template-tags.php:112
 msgid "Edit"
 msgstr ""
@@ -401,30 +401,30 @@ msgstr ""
 msgid "Ready to publish your first post? %s"
 msgstr ""
 
-#: content-none.php:26
+#: content-none.php:27
 #. translators: %1$s is url to new post, %2$s is link text
 msgid "Get started here"
 msgstr ""
 
-#: content-none.php:33
+#: content-none.php:35
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:38
+#: content-none.php:40
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: content-page.php:26 content-search.php:91 content-single-download.php:30
-#: content-single.php:34 content.php:108
+#: content-page.php:33 content-search.php:94 content-single-download.php:31
+#: content-single.php:35 content.php:111
 msgid "Pages:"
 msgstr ""
 
-#: content-search.php:53 content.php:70 inc/template-tags.php:82
-#: inc/template-tags.php:94
+#: content-search.php:53 content.php:70 inc/template-tags.php:83
+#: inc/template-tags.php:95
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
@@ -459,119 +459,119 @@ msgstr ""
 msgid "Read more %s ..."
 msgstr ""
 
-#: content.php:98
+#: content.php:99
 #. translators: %s is post title
 msgid "about "
 msgstr ""
 
-#: footer.php:14
+#: footer.php:15
 msgid "Widgets Area 1"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:25
 msgid "Widgets Area 2"
 msgstr ""
 
-#: footer.php:30
+#: footer.php:35
 msgid "Widgets Area 3"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:45
 msgid "Widgets Area 4"
 msgstr ""
 
-#: footer.php:58 footer.php:59
+#: footer.php:71 footer.php:72
 msgid "Secondary Menu"
 msgstr ""
 
-#: footer.php:108
+#: footer.php:128
 msgid "powered by "
 msgstr ""
 
-#: footer.php:108
+#: footer.php:128
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:45 header.php:145
+#: functions.php:46 header.php:157
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:46
+#: functions.php:47
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:164
 msgid "Parallax One Team Member"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:165
 msgid "Parallax One Services"
 msgstr ""
 
-#: functions.php:146
+#: functions.php:166
 msgid "Parallax One Testimonials"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:181
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:195
 #. translators: %d is widget area id
 msgid "Footer area %d"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:308
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:284
+#: functions.php:309
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:647
+#: functions.php:673
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: functions.php:651
+#: functions.php:677
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
 msgstr ""
 
-#: header.php:31
+#: header.php:37
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:90
+#: header.php:102
 msgid "Toggle Menu"
 msgstr ""
 
-#: header.php:91
+#: header.php:103
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/admin/class-remote-notification-client.php:193
+#: inc/admin/class-remote-notification-client.php:197
 msgid "The server response was invalid (code %s)"
 msgstr ""
 
-#: inc/admin/class-remote-notification-client.php:199
+#: inc/admin/class-remote-notification-client.php:203
 msgid "The server response is empty"
 msgstr ""
 
-#: inc/admin/class-remote-notification-client.php:205
+#: inc/admin/class-remote-notification-client.php:209
 msgid "Cannot decode the response content"
 msgstr ""
 
-#: inc/admin/class-remote-notification-client.php:441
+#: inc/admin/class-remote-notification-client.php:455
 msgid "Dismiss notification"
 msgstr ""
 
-#: inc/admin/class-remote-notification-client.php:443
+#: inc/admin/class-remote-notification-client.php:460
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/free_pro.php:21 inc/customizer.php:281
+#: inc/admin/welcome-screen/sections/free_pro.php:21 inc/customizer.php:344
 msgid "Parallax effect"
 msgstr ""
 
@@ -613,7 +613,7 @@ msgstr ""
 msgid "Ready for e-commerce. You can build an online store here."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/free_pro.php:61 inc/customizer.php:912
+#: inc/admin/welcome-screen/sections/free_pro.php:61 inc/customizer.php:1150
 msgid "Portfolio section"
 msgstr ""
 
@@ -685,7 +685,7 @@ msgid ""
 msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:35
-#: inc/admin/welcome-screen/welcome-screen.php:81
+#: inc/admin/welcome-screen/welcome-screen.php:82
 msgid "Getting started"
 msgstr ""
 
@@ -707,11 +707,11 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:57
+#: inc/admin/welcome-screen/sections/getting-started.php:58
 msgid "Create a child theme"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:58
+#: inc/admin/welcome-screen/sections/getting-started.php:59
 msgid ""
 "If you want to make changes to the theme's files, those changes are likely "
 "to be overwritten when you next update the theme. In order to prevent that "
@@ -719,64 +719,64 @@ msgid ""
 "the documentation below."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:59
-#: inc/admin/welcome-screen/sections/getting-started.php:65
-#: inc/admin/welcome-screen/sections/getting-started.php:71
-#: inc/admin/welcome-screen/sections/getting-started.php:77
-#: inc/admin/welcome-screen/sections/getting-started.php:83
-#: inc/admin/welcome-screen/sections/getting-started.php:92
-#: inc/admin/welcome-screen/sections/getting-started.php:98
-#: inc/admin/welcome-screen/sections/getting-started.php:104
-#: inc/admin/welcome-screen/sections/getting-started.php:110
+#: inc/admin/welcome-screen/sections/getting-started.php:60
+#: inc/admin/welcome-screen/sections/getting-started.php:66
+#: inc/admin/welcome-screen/sections/getting-started.php:72
+#: inc/admin/welcome-screen/sections/getting-started.php:78
+#: inc/admin/welcome-screen/sections/getting-started.php:84
+#: inc/admin/welcome-screen/sections/getting-started.php:93
+#: inc/admin/welcome-screen/sections/getting-started.php:99
+#: inc/admin/welcome-screen/sections/getting-started.php:105
+#: inc/admin/welcome-screen/sections/getting-started.php:111
 msgid "View how to do this"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:63
+#: inc/admin/welcome-screen/sections/getting-started.php:64
 msgid "How to Internationalize Your Website"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:64
+#: inc/admin/welcome-screen/sections/getting-started.php:65
 msgid ""
 "Although English is the most used language on the internet, you should "
 "consider all your web users as well. Find out what it takes to make your "
 "website ready for foreign markets from this document."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:69
+#: inc/admin/welcome-screen/sections/getting-started.php:70
 msgid "Change dimensions for footer social icons"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:70
+#: inc/admin/welcome-screen/sections/getting-started.php:71
 msgid ""
 "In the below documentation you will find an easy way to change the default "
 "dimensions for you social icons."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:75
+#: inc/admin/welcome-screen/sections/getting-started.php:76
 msgid "Change customizer in a child theme"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:76
+#: inc/admin/welcome-screen/sections/getting-started.php:77
 msgid ""
 "If you want to add or remove customizer controls, check out our "
 "documentation to find out how."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:81
+#: inc/admin/welcome-screen/sections/getting-started.php:82
 msgid "Build a landing page with a drag-and-drop content builder"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:82
+#: inc/admin/welcome-screen/sections/getting-started.php:83
 msgid ""
 "In the below documentation you will find an easy way to build a great "
 "looking landing page using a drag-and-drop content builder plugin."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:90
+#: inc/admin/welcome-screen/sections/getting-started.php:91
 msgid "Speed up your site"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:91
+#: inc/admin/welcome-screen/sections/getting-started.php:92
 msgid ""
 "If you find yourself in the situation where everything on your site is "
 "running very slow, you might consider having a look at the below "
@@ -784,133 +784,133 @@ msgid ""
 "possible solutions for each of the issues."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:96
+#: inc/admin/welcome-screen/sections/getting-started.php:97
 msgid "Link Menu to sections"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:97
+#: inc/admin/welcome-screen/sections/getting-started.php:98
 msgid ""
 "Linking the frontpage sections with the top menu is very simple, all you "
 "need to do is assign section anchors to the menu. In the below "
 "documentation you will find a nice tutorial about this."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:102
+#: inc/admin/welcome-screen/sections/getting-started.php:103
 msgid "Change anchors"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:103
+#: inc/admin/welcome-screen/sections/getting-started.php:104
 msgid ""
 "To better suit your site's needs, you can change each section's anchor to "
 "what you want. The entire process is described below."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:108
+#: inc/admin/welcome-screen/sections/getting-started.php:109
 msgid "Slider in big title section"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:109
+#: inc/admin/welcome-screen/sections/getting-started.php:110
 msgid ""
 "If you are in the position where you want to change the default appearance "
 "of the big title section, you may want to replace it with a nice looking "
 "slider. This can be accomplished by following the documention below."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:120
+#: inc/admin/welcome-screen/sections/getting-started.php:121
 msgid "View full documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:121
+#: inc/admin/welcome-screen/sections/getting-started.php:122
 msgid ""
 "Need more details? Please check our full documentation for detailed "
 "information on how to use Parallax One."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:122
+#: inc/admin/welcome-screen/sections/getting-started.php:123
 msgid "Read full documentation"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:129
+#: inc/admin/welcome-screen/sections/getting-started.php:130
 msgid "Recommended plugins"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:135
+#: inc/admin/welcome-screen/sections/getting-started.php:136
 msgid "Intergeo Maps - Google Maps Plugin"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:136
+#: inc/admin/welcome-screen/sections/getting-started.php:137
 msgid ""
 "The Intergeo Google Maps plugin is a simple, easy and in the same time "
 "quite powerful tool for handling Google Maps in your website. The plugin "
 "allows users to create new maps by using powerful UI builder."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:140
-#: inc/admin/welcome-screen/sections/getting-started.php:161
-#: inc/admin/welcome-screen/sections/getting-started.php:184
-#: inc/admin/welcome-screen/sections/getting-started.php:209
-#: inc/admin/welcome-screen/sections/getting-started.php:230
-#: inc/admin/welcome-screen/sections/getting-started.php:252
+#: inc/admin/welcome-screen/sections/getting-started.php:141
+#: inc/admin/welcome-screen/sections/getting-started.php:162
+#: inc/admin/welcome-screen/sections/getting-started.php:185
+#: inc/admin/welcome-screen/sections/getting-started.php:210
+#: inc/admin/welcome-screen/sections/getting-started.php:231
+#: inc/admin/welcome-screen/sections/getting-started.php:253
 msgid "Already activated"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:146
+#: inc/admin/welcome-screen/sections/getting-started.php:147
 msgid "Install Intergeo Maps"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:157
+#: inc/admin/welcome-screen/sections/getting-started.php:158
 msgid "Adblock Notify by b*web"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:167
+#: inc/admin/welcome-screen/sections/getting-started.php:168
 msgid "Install Adblock Notify"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:179
+#: inc/admin/welcome-screen/sections/getting-started.php:180
 msgid "Page Builder by SiteOrigin"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:180
+#: inc/admin/welcome-screen/sections/getting-started.php:181
 msgid ""
 "Build responsive page layouts using the widgets you know and love using "
 "this simple drag and drop page builder."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:190
+#: inc/admin/welcome-screen/sections/getting-started.php:191
 msgid "Install Page Builder by SiteOrigin"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:204
+#: inc/admin/welcome-screen/sections/getting-started.php:205
 msgid "Pirate Forms"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:205
+#: inc/admin/welcome-screen/sections/getting-started.php:206
 msgid ""
 "Makes your contact page more engaging by creating a good-looking contact "
 "form on your website. The interaction with your visitors was never easier."
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:215
+#: inc/admin/welcome-screen/sections/getting-started.php:216
 msgid "Install Pirate Forms"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:226
+#: inc/admin/welcome-screen/sections/getting-started.php:227
 msgid "FEEDZY RSS Feeds"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:236
+#: inc/admin/welcome-screen/sections/getting-started.php:237
 msgid "Install FEEDZY RSS Feeds"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:247
+#: inc/admin/welcome-screen/sections/getting-started.php:248
 msgid "Easy Content Types"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:248
+#: inc/admin/welcome-screen/sections/getting-started.php:249
 msgid "Custom Post Types, Taxonomies and Metaboxes in Minutes"
 msgstr ""
 
-#: inc/admin/welcome-screen/sections/getting-started.php:258
+#: inc/admin/welcome-screen/sections/getting-started.php:259
 msgid "Download Easy Content Types"
 msgstr ""
 
@@ -946,26 +946,26 @@ msgstr ""
 msgid "Tell us your thoughts"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:53
+#: inc/admin/welcome-screen/welcome-screen.php:54
 msgid ""
 "Welcome! Thank you for choosing Parallax One! To fully take advantage of "
-"the best our theme can offer please make sure you visit our %swelcome "
-"page%s."
+"the best our theme can offer please make sure you visit our %1$swelcome "
+"page%2$s."
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:54
+#: inc/admin/welcome-screen/welcome-screen.php:55
 msgid "Get started with Parallax One"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:82
+#: inc/admin/welcome-screen/welcome-screen.php:83
 msgid "Contribute"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:83
+#: inc/admin/welcome-screen/welcome-screen.php:84
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/welcome-screen/welcome-screen.php:84
+#: inc/admin/welcome-screen/welcome-screen.php:85
 msgid "Free VS PRO"
 msgstr ""
 
@@ -977,11 +977,11 @@ msgstr ""
 msgid "View Theme Info"
 msgstr ""
 
-#: inc/customizer-info/class/class-singleton-customizer-info-section.php:78
+#: inc/customizer-info/class/class-singleton-customizer-info-section.php:80
 msgid "View PRO version"
 msgstr ""
 
-#: inc/customizer-info/class/class-singleton-customizer-info-section.php:80
+#: inc/customizer-info/class/class-singleton-customizer-info-section.php:82
 msgid "Get it"
 msgstr ""
 
@@ -993,86 +993,86 @@ msgstr ""
 msgid "Cusomizer Repeater"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:290
-#: inc/customizer-repeater/class/customizer-repeater-control.php:361
+#: inc/customizer-repeater/class/customizer-repeater-control.php:295
+#: inc/customizer-repeater/class/customizer-repeater-control.php:386
 msgid "Title"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:297
-#: inc/customizer-repeater/class/customizer-repeater-control.php:368
-#: inc/customizer.php:214 inc/customizer.php:388 inc/customizer.php:490
-#: inc/customizer.php:555
+#: inc/customizer-repeater/class/customizer-repeater-control.php:304
+#: inc/customizer-repeater/class/customizer-repeater-control.php:395
+#: inc/customizer.php:258 inc/customizer.php:476 inc/customizer.php:610
+#: inc/customizer.php:694
 msgid "Subtitle"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:304
-#: inc/customizer-repeater/class/customizer-repeater-control.php:375
+#: inc/customizer-repeater/class/customizer-repeater-control.php:313
+#: inc/customizer-repeater/class/customizer-repeater-control.php:404
 msgid "Text"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:311
-#: inc/customizer-repeater/class/customizer-repeater-control.php:382
-#: inc/customizer-repeater/class/customizer-repeater-control.php:524
-#: inc/customizer-repeater/class/customizer-repeater-control.php:546
+#: inc/customizer-repeater/class/customizer-repeater-control.php:322
+#: inc/customizer-repeater/class/customizer-repeater-control.php:413
+#: inc/customizer-repeater/class/customizer-repeater-control.php:585
+#: inc/customizer-repeater/class/customizer-repeater-control.php:614
 msgid "Link"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:319
-#: inc/customizer-repeater/class/customizer-repeater-control.php:389
+#: inc/customizer-repeater/class/customizer-repeater-control.php:332
+#: inc/customizer-repeater/class/customizer-repeater-control.php:422
 msgid "Shortcode"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:334
-#: inc/customizer-repeater/class/customizer-repeater-control.php:399
+#: inc/customizer-repeater/class/customizer-repeater-control.php:357
+#: inc/customizer-repeater/class/customizer-repeater-control.php:434
 msgid "Delete field"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:442
-#: inc/customizer-repeater/class/customizer-repeater-control.php:495
+#: inc/customizer-repeater/class/customizer-repeater-control.php:484
+#: inc/customizer-repeater/class/customizer-repeater-control.php:549
 msgid "Icon"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:447
+#: inc/customizer-repeater/class/customizer-repeater-control.php:489
 #. translators: %s is link to FontAwesome
 msgid ""
 "Note: Some icons may not be displayed here. You can see the full list of "
 "icons at %s"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:450
+#: inc/customizer-repeater/class/customizer-repeater-control.php:493
 #. translators: %s is link label
 msgid "FontAwesome"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:475
-#: inc/customizer-repeater/class/customizer-repeater-control.php:496
-#: inc/customizer.php:456
+#: inc/customizer-repeater/class/customizer-repeater-control.php:529
+#: inc/customizer-repeater/class/customizer-repeater-control.php:550
+#: inc/customizer.php:565
 msgid "Image"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:478
+#: inc/customizer-repeater/class/customizer-repeater-control.php:532
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:492
+#: inc/customizer-repeater/class/customizer-repeater-control.php:546
 msgid "Image type"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:497
+#: inc/customizer-repeater/class/customizer-repeater-control.php:551
 msgid "None"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:510
+#: inc/customizer-repeater/class/customizer-repeater-control.php:565
 msgid "Social icons"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:527
-#: inc/customizer-repeater/class/customizer-repeater-control.php:557
+#: inc/customizer-repeater/class/customizer-repeater-control.php:588
+#: inc/customizer-repeater/class/customizer-repeater-control.php:637
 msgid "Remove Icon"
 msgstr ""
 
-#: inc/customizer-repeater/class/customizer-repeater-control.php:532
-#: inc/customizer-repeater/class/customizer-repeater-control.php:565
+#: inc/customizer-repeater/class/customizer-repeater-control.php:593
+#: inc/customizer-repeater/class/customizer-repeater-control.php:646
 msgid "Add icon"
 msgstr ""
 
@@ -1082,153 +1082,153 @@ msgid ""
 "want</span>"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:46
 msgid "Theme info"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:74
 msgid "Appearance"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:90
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:109
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:118
 msgid "General options"
 msgstr ""
 
-#: inc/customizer.php:105
+#: inc/customizer.php:120
 msgid "Parallax One theme general appearance options"
 msgstr ""
 
-#: inc/customizer.php:119 sections/parallax_one_logos_section.php:42
-#: sections/parallax_one_logos_section.php:46
+#: inc/customizer.php:139 sections/parallax_one_logos_section.php:48
+#: sections/parallax_one_logos_section.php:53
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:158
 msgid "Header visibility"
 msgstr ""
 
-#: inc/customizer.php:135
+#: inc/customizer.php:159
 msgid "If this box is checked, the header will toggle on frontpage."
 msgstr ""
 
-#: inc/customizer.php:150
+#: inc/customizer.php:177
 msgid "Change the template to Full width for all the pages?"
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:192
 msgid "Header section"
 msgstr ""
 
-#: inc/customizer.php:171 inc/customizer.php:443
+#: inc/customizer.php:201 inc/customizer.php:547
 msgid "Content"
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:221
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:195 sections/parallax_one_header_section.php:9
+#: inc/customizer.php:233 sections/parallax_one_header_section.php:11
 msgid "Simple, Reliable and Awesome."
 msgstr ""
 
-#: inc/customizer.php:200 inc/customizer.php:373 inc/customizer.php:429
-#: inc/customizer.php:477 inc/customizer.php:542 inc/customizer.php:605
-#: inc/customizer.php:648
+#: inc/customizer.php:240 inc/customizer.php:457 inc/customizer.php:529
+#: inc/customizer.php:593 inc/customizer.php:677 inc/customizer.php:762
+#: inc/customizer.php:819
 msgid "Main title"
 msgstr ""
 
-#: inc/customizer.php:209 inc/customizer.php:382 inc/customizer.php:484
-#: inc/customizer.php:599 sections/parallax_one_our_services_section.php:9
-#: sections/parallax_one_our_team_section.php:9
-#: sections/parallax_one_ribbon_section.php:9
+#: inc/customizer.php:251 inc/customizer.php:468 inc/customizer.php:602
+#: inc/customizer.php:754 sections/parallax_one_our_services_section.php:11
+#: sections/parallax_one_our_team_section.php:11
+#: sections/parallax_one_ribbon_section.php:11
 msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 msgstr ""
 
-#: inc/customizer.php:223 inc/customizer.php:611
-#: sections/parallax_one_header_section.php:11
-#: sections/parallax_one_ribbon_section.php:10
+#: inc/customizer.php:269 inc/customizer.php:770
+#: sections/parallax_one_header_section.php:17
+#: sections/parallax_one_ribbon_section.php:14
 msgid "GET STARTED"
 msgstr ""
 
-#: inc/customizer.php:228 inc/customizer.php:616
+#: inc/customizer.php:276 inc/customizer.php:777
 msgid "Button label"
 msgstr ""
 
-#: inc/customizer.php:234 inc/customizer.php:622
+#: inc/customizer.php:284 inc/customizer.php:785
 msgid "#"
 msgstr ""
 
-#: inc/customizer.php:239 inc/customizer.php:627
+#: inc/customizer.php:291 inc/customizer.php:792
 msgid "Button link"
 msgstr ""
 
-#: inc/customizer.php:248
+#: inc/customizer.php:302
 msgid "Logos Bar"
 msgstr ""
 
-#: inc/customizer.php:261 inc/customizer.php:759
+#: inc/customizer.php:320 inc/customizer.php:963
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:332
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:345
 msgid "If this box is checked, the parallax effect is enabled."
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:364
 msgid "First layer"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:384
 msgid "Second layer"
 msgstr ""
 
-#: inc/customizer.php:331
+#: inc/customizer.php:408
 msgid "Overlay color and transparency"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:421
 msgid "Services section"
 msgstr ""
 
-#: inc/customizer.php:356 inc/customizer.php:528
+#: inc/customizer.php:437 inc/customizer.php:659
 msgid "Use pinterest layout?"
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:438
 msgid ""
 "If this box is checked, the Services section will use pinterest-style "
 "layout."
 msgstr ""
 
-#: inc/customizer.php:368 sections/parallax_one_our_services_section.php:8
+#: inc/customizer.php:450 sections/parallax_one_our_services_section.php:8
 msgid "Our Services"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:496
 msgid "Add new service box"
 msgstr ""
 
-#: inc/customizer.php:417
+#: inc/customizer.php:513
 msgid "About section"
 msgstr ""
 
-#: inc/customizer.php:424 sections/parallax_one_our_story_section.php:9
+#: inc/customizer.php:522 sections/parallax_one_our_story_section.php:11
 msgid "Our Story"
 msgstr ""
 
-#: inc/customizer.php:436 sections/parallax_one_our_story_section.php:10
+#: inc/customizer.php:538 sections/parallax_one_our_story_section.php:14
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim "
@@ -1236,95 +1236,95 @@ msgid ""
 "commodo consequat."
 msgstr ""
 
-#: inc/customizer.php:446
+#: inc/customizer.php:550
 msgid "Allowed html: p,br,em,strong,a,button,ul,li"
 msgstr ""
 
-#: inc/customizer.php:465
+#: inc/customizer.php:577
 msgid "Team section"
 msgstr ""
 
-#: inc/customizer.php:472 sections/parallax_one_our_team_section.php:8
+#: inc/customizer.php:586 sections/parallax_one_our_team_section.php:8
 msgid "Our Team"
 msgstr ""
 
-#: inc/customizer.php:502
+#: inc/customizer.php:627
 msgid "Add new team member"
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:643
 msgid "Testimonial section"
 msgstr ""
 
-#: inc/customizer.php:529
+#: inc/customizer.php:660
 msgid ""
 "If this box is checked, the Testimonials section will use pinterest-style "
 "layout."
 msgstr ""
 
-#: inc/customizer.php:537 sections/parallax_one_happy_customers_section.php:8
+#: inc/customizer.php:670 sections/parallax_one_happy_customers_section.php:8
 msgid "Happy Customers"
 msgstr ""
 
-#: inc/customizer.php:549 sections/parallax_one_happy_customers_section.php:9
+#: inc/customizer.php:686 sections/parallax_one_happy_customers_section.php:11
 msgid "Cloud computing subscription model out of the box proactive solution."
 msgstr ""
 
-#: inc/customizer.php:567
+#: inc/customizer.php:711
 msgid "Add new testimonial"
 msgstr ""
 
-#: inc/customizer.php:581
+#: inc/customizer.php:728
 msgid "Ribbon section"
 msgstr ""
 
-#: inc/customizer.php:593
+#: inc/customizer.php:745
 msgid "Ribbon Background"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:804
 msgid "Latest news section"
 msgstr ""
 
-#: inc/customizer.php:643 sections/parallax_one_latest_news_section.php:25
+#: inc/customizer.php:812 sections/parallax_one_latest_news_section.php:25
 msgid "Latest news"
 msgstr ""
 
-#: inc/customizer.php:658
+#: inc/customizer.php:831
 msgid "Contact section"
 msgstr ""
 
-#: inc/customizer.php:669
+#: inc/customizer.php:847
 msgid "Add new contact field"
 msgstr ""
 
-#: inc/customizer.php:684 inc/customizer.php:717
+#: inc/customizer.php:867 inc/customizer.php:910
 msgid "Map shortcode"
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:868
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\">Intergeo Maps</a> "
 "plugin then use it to create a map and paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:879
 msgid "Contact page"
 msgstr ""
 
-#: inc/customizer.php:705
+#: inc/customizer.php:894
 msgid "Contact form shortcode"
 msgstr ""
 
-#: inc/customizer.php:706
+#: inc/customizer.php:895
 msgid ""
 "Create a form, copy the shortcode generated and paste it here. We recommend "
 "<a href=\"http://themeisle.com/plugins/pirate-forms\" "
 "target=\"_blank\">Pirate Forms</a> but you can use any plugin you like."
 msgstr ""
 
-#: inc/customizer.php:718
+#: inc/customizer.php:911
 msgid ""
 "To use this section please install <a "
 "href=\"https://wordpress.org/plugins/intergeo-maps/\" "
@@ -1332,120 +1332,120 @@ msgid ""
 "paste here the shortcode generated"
 msgstr ""
 
-#: inc/customizer.php:728
+#: inc/customizer.php:923
 msgid "Footer options"
 msgstr ""
 
-#: inc/customizer.php:730
+#: inc/customizer.php:925
 msgid ""
 "The main content of this section is customizable in: Customize -> Widgets "
 "-> Footer area. "
 msgstr ""
 
-#: inc/customizer.php:746
+#: inc/customizer.php:945
 msgid "Copyright"
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:980
 msgid "Advanced options"
 msgstr ""
 
-#: inc/customizer.php:775
+#: inc/customizer.php:982
 msgid "Parallax One theme general options"
 msgstr ""
 
-#: inc/customizer.php:826
+#: inc/customizer.php:1036
 msgid "Disable preloader?"
 msgstr ""
 
-#: inc/customizer.php:827
+#: inc/customizer.php:1037
 msgid "If this box is checked, the preloader will be disabled from homepage."
 msgstr ""
 
-#: inc/customizer.php:843
+#: inc/customizer.php:1055
 msgid "Enable animations on front page?"
 msgstr ""
 
-#: inc/customizer.php:844
+#: inc/customizer.php:1056
 msgid "If this box is checked, scroll animations will be enabled on the front page."
 msgstr ""
 
-#: inc/customizer.php:863
+#: inc/customizer.php:1084
 msgid "Cyrillic"
 msgstr ""
 
-#: inc/customizer.php:873
+#: inc/customizer.php:1098
 msgid "Vietnamese"
 msgstr ""
 
-#: inc/customizer.php:883
+#: inc/customizer.php:1112
 msgid "Greek"
 msgstr ""
 
-#: inc/customizer.php:894 inc/customizer.php:904
+#: inc/customizer.php:1125 inc/customizer.php:1140
 msgid "Sections management"
 msgstr ""
 
-#: inc/customizer.php:907
+#: inc/customizer.php:1143
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the frontpage SECTIONS ORDER!"
 msgstr ""
 
-#: inc/customizer.php:922
+#: inc/customizer.php:1165
 msgid "Portfolio"
 msgstr ""
 
-#: inc/customizer.php:925
+#: inc/customizer.php:1168
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the NEW PORTFOLIO SECTION!"
 msgstr ""
 
-#: inc/customizer.php:930
+#: inc/customizer.php:1175
 msgid "New Features"
 msgstr ""
 
-#: inc/customizer.php:940
+#: inc/customizer.php:1190
 msgid "Header Layout"
 msgstr ""
 
-#: inc/customizer.php:943
+#: inc/customizer.php:1193
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the HEADER'S LAYOUT SECTION!"
 msgstr ""
 
-#: inc/customizer.php:953
+#: inc/customizer.php:1208
 msgid "Color scheme"
 msgstr ""
 
-#: inc/customizer.php:956
+#: inc/customizer.php:1211
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the COLOR SCHEME!"
 msgstr ""
 
-#: inc/customizer.php:966
+#: inc/customizer.php:1226
 msgid "Preloader"
 msgstr ""
 
-#: inc/customizer.php:969
+#: inc/customizer.php:1229
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
 "for full control over the PRELOADER IMAGE!"
 msgstr ""
 
-#: inc/customizer.php:979
+#: inc/customizer.php:1244
 msgid "Opacity"
 msgstr ""
 
-#: inc/customizer.php:982
+#: inc/customizer.php:1247
 msgid ""
 "Check out the <a "
 "href=\"http://themeisle.com/plugins/parallax-one-plus/\">PRO version</a> "
@@ -1465,12 +1465,12 @@ msgstr ""
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:88
 #. translators: %1$s is categories list
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:99
+#: inc/template-tags.php:101
 #. translators: %1$s is tag list
 msgid "Tagged %1$s"
 msgstr ""
@@ -1531,60 +1531,60 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/translations/translations-services-section.php:16
-#: inc/translations/translations-services-section.php:23
-#: inc/translations/translations-services-section.php:30
-msgid "Lorem Ipsum"
-msgstr ""
-
 #: inc/translations/translations-services-section.php:17
 #: inc/translations/translations-services-section.php:24
 #: inc/translations/translations-services-section.php:31
+msgid "Lorem Ipsum"
+msgstr ""
+
+#: inc/translations/translations-services-section.php:18
+#: inc/translations/translations-services-section.php:25
+#: inc/translations/translations-services-section.php:32
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
 "eros sit amet arcu vestibulum accumsan in in leo."
 msgstr ""
 
-#: inc/translations/translations-team-section.php:15
+#: inc/translations/translations-team-section.php:16
 msgid "Albert Jacobs"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:16
+#: inc/translations/translations-team-section.php:17
 msgid "Founder & CEO"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:21
+#: inc/translations/translations-team-section.php:22
 msgid "Tonya Garcia"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:22
+#: inc/translations/translations-team-section.php:23
 msgid "Account Manager"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:27
+#: inc/translations/translations-team-section.php:28
 msgid "Linda Guthrie"
 msgstr ""
 
-#: inc/translations/translations-team-section.php:28
+#: inc/translations/translations-team-section.php:29
 msgid "Business Development"
-msgstr ""
-
-#: inc/translations/translations-testimonials-section.php:15
-#: inc/translations/translations-testimonials-section.php:22
-#: inc/translations/translations-testimonials-section.php:29
-msgid "Happy Customer"
 msgstr ""
 
 #: inc/translations/translations-testimonials-section.php:16
 #: inc/translations/translations-testimonials-section.php:23
 #: inc/translations/translations-testimonials-section.php:30
-msgid "Lorem ipsum"
+msgid "Happy Customer"
 msgstr ""
 
 #: inc/translations/translations-testimonials-section.php:17
 #: inc/translations/translations-testimonials-section.php:24
 #: inc/translations/translations-testimonials-section.php:31
+msgid "Lorem ipsum"
+msgstr ""
+
+#: inc/translations/translations-testimonials-section.php:18
+#: inc/translations/translations-testimonials-section.php:25
+#: inc/translations/translations-testimonials-section.php:32
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus "
 "feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel "
@@ -1603,44 +1603,44 @@ msgstr ""
 msgid "Contact Info"
 msgstr ""
 
-#: sections/parallax_one_happy_customers_section.php:18
-#: sections/parallax_one_happy_customers_section.php:128
+#: sections/parallax_one_happy_customers_section.php:22
+#: sections/parallax_one_happy_customers_section.php:164
 msgid "Testimonials"
 msgstr ""
 
-#: sections/parallax_one_happy_customers_section.php:72
-#: sections/parallax_one_our_team_section.php:61
-#: sections/parallax_one_our_team_section.php:65
+#: sections/parallax_one_happy_customers_section.php:95
+#: sections/parallax_one_our_team_section.php:77
+#: sections/parallax_one_our_team_section.php:82
 msgid "Avatar"
 msgstr ""
 
-#: sections/parallax_one_header_section.php:92
-#: sections/parallax_one_ribbon_section.php:61
+#: sections/parallax_one_header_section.php:114
+#: sections/parallax_one_ribbon_section.php:85
 msgid "Header button label:"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:29
+#: sections/parallax_one_latest_news_section.php:31
 msgid "Latest blog posts"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:46
+#: sections/parallax_one_latest_news_section.php:48
 msgid "Post slider navigation: Down"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:47
+#: sections/parallax_one_latest_news_section.php:49
 msgid "Post slider navigation: Up"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:70
+#: sections/parallax_one_latest_news_section.php:73
 #. translators: %s is post name
 msgid "Latest News: %s"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:101
+#: sections/parallax_one_latest_news_section.php:108
 msgid "by"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:112
+#: sections/parallax_one_latest_news_section.php:119
 #. translators: %s is screen reader post name
 msgid "Read more %s"
 msgstr ""
@@ -1649,24 +1649,24 @@ msgstr ""
 msgid " Affiliates Logos"
 msgstr ""
 
-#: sections/parallax_one_our_services_section.php:18
-#: sections/parallax_one_our_services_section.php:141
+#: sections/parallax_one_our_services_section.php:22
+#: sections/parallax_one_our_services_section.php:173
 msgid "Services"
 msgstr ""
 
-#: sections/parallax_one_our_story_section.php:16
-#: sections/parallax_one_our_story_section.php:39
-#: sections/parallax_one_our_story_section.php:98
+#: sections/parallax_one_our_story_section.php:22
+#: sections/parallax_one_our_story_section.php:52
+#: sections/parallax_one_our_story_section.php:129
 msgid "About"
 msgstr ""
 
-#: sections/parallax_one_our_team_section.php:16
-#: sections/parallax_one_our_team_section.php:133
+#: sections/parallax_one_our_team_section.php:20
+#: sections/parallax_one_our_team_section.php:166
 msgid "Team"
 msgstr ""
 
-#: sections/parallax_one_ribbon_section.php:23
-#: sections/parallax_one_ribbon_section.php:28
+#: sections/parallax_one_ribbon_section.php:30
+#: sections/parallax_one_ribbon_section.php:35
 msgid "Ribbon"
 msgstr ""
 
@@ -1718,18 +1718,18 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:1214 class-tgm-plugin-activation.php:3041
+#: class-tgm-plugin-activation.php:1226 class-tgm-plugin-activation.php:3060
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2435
+#: class-tgm-plugin-activation.php:2454
 #. translators: 1: install status, 2: update status
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:2481
+#: class-tgm-plugin-activation.php:2500
 #. translators: 1: number of plugins.
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -1737,18 +1737,18 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:2575
+#: class-tgm-plugin-activation.php:2594
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: comments.php:31
+#: comments.php:30
 #. translators: %s: post title
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: comments.php:35
+#: comments.php:34
 #. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -1756,14 +1756,14 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:226
+#: functions.php:250
 #. Translators: If there are characters in your language that are not supported
 #. by Lora, translate this to 'off'. Do not translate into your own language.
 msgctxt "Cabin font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:233
+#: functions.php:257
 #. Translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
@@ -1771,13 +1771,13 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:60
 #. translators: %s is post date
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:66
 #. translators: %s is post author
 msgctxt "post author"
 msgid "by %s"
@@ -1843,8 +1843,8 @@ msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: sections/parallax_one_latest_news_section.php:74
-#: sections/parallax_one_latest_news_section.php:98
+#: sections/parallax_one_latest_news_section.php:80
+#: sections/parallax_one_latest_news_section.php:105
 msgctxt "post time format"
 msgid "l, F j, Y, g:i a"
 msgstr ""

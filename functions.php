@@ -41,41 +41,51 @@ if ( ! function_exists( 'parallax_one_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'parallax-one' ),
-			'parallax_footer_menu' => esc_html__( 'Footer Menu', 'parallax-one' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary Menu', 'parallax-one' ),
+				'parallax_footer_menu' => esc_html__( 'Footer Menu', 'parallax-one' ),
+			)
+		);
 
 		 /*
 		  Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/*
 		 * Enable support for Post Formats.
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
+		add_theme_support(
+			'post-formats', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background',apply_filters( 'parallax_one_custom_background_args', array(
-			'default-repeat'         => 'no-repeat',
-			'default-position-x'     => 'center',
-			'default-attachment'     => 'fixed',
-		)));
+		add_theme_support(
+			'custom-background',apply_filters(
+				'parallax_one_custom_background_args', array(
+					'default-repeat'         => 'no-repeat',
+					'default-position-x'     => 'center',
+					'default-attachment'     => 'fixed',
+				)
+			)
+		);
 
 		 /*
 		 * This feature enables Custom_Headers support for a theme as of Version 3.4.
@@ -83,21 +93,27 @@ if ( ! function_exists( 'parallax_one_setup' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 		 */
 
-		add_theme_support( 'custom-header',apply_filters( 'parallax_one_custom_header_args', array(
-			'default-image' => parallax_get_file( '/images/background-images/background.jpg' ),
-			'width'         => 1000,
-			'height'        => 680,
-			'flex-height'   => true,
-			'flex-width'    => true,
-			'header-text' 	=> false,
-		)));
+		add_theme_support(
+			'custom-header',apply_filters(
+				'parallax_one_custom_header_args', array(
+					'default-image' => parallax_get_file( '/images/background-images/background.jpg' ),
+					'width'         => 1000,
+					'height'        => 680,
+					'flex-height'   => true,
+					'flex-width'    => true,
+					'header-text'   => false,
+				)
+			)
+		);
 
-		register_default_headers( array(
-			'parallax_one_default_header_image' => array(
-			'url'   => parallax_get_file( '/images/background-images/background.jpg' ),
-			'thumbnail_url' => parallax_get_file( '/images/background-images/background_thumbnail.jpg' ),
-			),
-		));
+		register_default_headers(
+			array(
+				'parallax_one_default_header_image' => array(
+					'url'   => parallax_get_file( '/images/background-images/background.jpg' ),
+					'thumbnail_url' => parallax_get_file( '/images/background-images/background_thumbnail.jpg' ),
+				),
+			)
+		);
 
 		// Theme Support for WooCommerce 3.0+
 		add_theme_support( 'woocommerce' );
@@ -143,11 +159,13 @@ add_action( 'after_setup_theme', 'parallax_one_setup' );
  * @return array
  */
 function parallax_one_media_uploader_custom_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'parallax_one_team' => esc_html__( 'Parallax One Team Member','parallax-one' ),
-		'parallax_one_services' => esc_html__( 'Parallax One Services','parallax-one' ),
-		'parallax_one_customers' => esc_html__( 'Parallax One Testimonials','parallax-one' ),
-	) );
+	return array_merge(
+		$sizes, array(
+			'parallax_one_team' => esc_html__( 'Parallax One Team Member','parallax-one' ),
+			'parallax_one_services' => esc_html__( 'Parallax One Services','parallax-one' ),
+			'parallax_one_customers' => esc_html__( 'Parallax One Testimonials','parallax-one' ),
+		)
+	);
 }
 add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes' );
 
@@ -170,15 +188,16 @@ function parallax_one_widgets_init() {
 		)
 	);
 
-	register_sidebars( 4,
+	register_sidebars(
+		4,
 		array(
 			/* translators: %d is widget area id */
 			'name' => esc_html__( 'Footer area %d','parallax-one' ),
 			'id' => 'footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 
@@ -195,10 +214,12 @@ add_action( 'widgets_init', 'parallax_one_widgets_init' );
  */
 function parallax_one_wp_page_menu() {
 	echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
-	wp_list_pages( array(
-		'title_li' => '',
-		'depth' => 1,
-	) );
+	wp_list_pages(
+		array(
+			'title_li' => '',
+			'depth' => 1,
+		)
+	);
 	echo '</ul>';
 }
 
@@ -250,13 +271,13 @@ function parallax_one_fonts_url() {
 		$parallax_one_character_vietnamese = get_theme_mod( 'parallax_one_character_vietnamese' );
 		$parallax_one_character_greek = get_theme_mod( 'parallax_one_character_greek' );
 
-		$parallax_one_character_cyrillic_text = ( isset( $parallax_one_character_cyrillic ) && ($parallax_one_character_cyrillic != 1) ?  '' : ',cyrillic' );
-		$parallax_one_character_greek_text = ( isset( $parallax_one_character_greek ) && ($parallax_one_character_greek != 1) ?  '' : ',greek' );
-		$parallax_one_character_vietnamese_text = ( isset( $parallax_one_character_vietnamese ) && ($parallax_one_character_vietnamese != 1) ?  '' : ',vietnamese' );
+		$parallax_one_character_cyrillic_text = ( isset( $parallax_one_character_cyrillic ) && ($parallax_one_character_cyrillic != 1) ? '' : ',cyrillic' );
+		$parallax_one_character_greek_text = ( isset( $parallax_one_character_greek ) && ($parallax_one_character_greek != 1) ? '' : ',greek' );
+		$parallax_one_character_vietnamese_text = ( isset( $parallax_one_character_vietnamese ) && ($parallax_one_character_vietnamese != 1) ? '' : ',vietnamese' );
 
 		$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin,latin-ext' . $parallax_one_character_cyrillic_text . $parallax_one_character_greek_text . $parallax_one_character_vietnamese_text ),
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' . $parallax_one_character_cyrillic_text . $parallax_one_character_greek_text . $parallax_one_character_vietnamese_text ),
 		);
 
 		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -282,10 +303,12 @@ function parallax_one_scripts() {
 
 	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file( '/js/custom.all.js' ), array( 'jquery' ), '2.0.2', true );
 
-	wp_localize_script( 'parallax-one-custom-all', 'screenReaderText', array(
-		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'parallax-one' ) . '</span>',
-		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'parallax-one' ) . '</span>',
-	) );
+	wp_localize_script(
+		'parallax-one-custom-all', 'screenReaderText', array(
+			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'parallax-one' ) . '</span>',
+			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'parallax-one' ) . '</span>',
+		)
+	);
 
 	$parallax_one_enable_move = get_theme_mod( 'paralax_one_enable_move' );
 	if ( ! empty( $parallax_one_enable_move ) && $parallax_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
@@ -423,7 +446,7 @@ function parallax_one_register_required_plugins() {
 
 				'name'     => 'Pirate Forms',
 
-				'slug' 	   => 'pirate-forms',
+				'slug'     => 'pirate-forms',
 
 				'required' => false,
 
@@ -491,7 +514,7 @@ add_action( 'wp_footer','parallax_one_php_style', 100 );
  */
 function parallax_get_file( $file ) {
 	$file_parts = pathinfo( $file );
-	$accepted_ext = array( 'jpg','img','png','css','js' );
+	$accepted_ext = array( 'jpg', 'img', 'png', 'css', 'js' );
 	if ( in_array( $file_parts['extension'], $accepted_ext ) ) {
 		$file_path = get_stylesheet_directory() . $file;
 		if ( file_exists( $file_path ) ) {

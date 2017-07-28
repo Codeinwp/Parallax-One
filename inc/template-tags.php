@@ -47,7 +47,8 @@ if ( ! function_exists( 'parallax_one_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -81,10 +82,10 @@ if ( ! function_exists( 'parallax_one_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
 			if ( $categories_list && parallax_one_categorized_blog() ) {
-			    /* translators: %s is post categories */
-				printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
-					/* translators: %1$s is categories list */
-					sprintf(esc_html__( 'Posted in %1$s', 'parallax-one' ),
+				printf( /* translators: %s is post categories */
+					'<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
+					sprintf( /* translators: %1$s is categories list */
+						esc_html__( 'Posted in %1$s', 'parallax-one' ),
 						$categories_list
 					)
 				);
@@ -93,12 +94,11 @@ if ( ! function_exists( 'parallax_one_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'parallax-one' ) );
 			if ( $tags_list ) {
-			    /* translators: %s is post tags */
-				printf( '<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
+				/* translators: %s is post tags */
+				printf(
+					'<span class="tags-links"><i class="icon-basic-elaboration-folder-check"></i> %s </span>',
 					/* translators: %1$s is tag list */
-					sprintf( esc_html__( 'Tagged %1$s', 'parallax-one' ),
-						$tags_list
-					)
+					sprintf( esc_html__( 'Tagged %1$s', 'parallax-one' ), $tags_list )
 				);
 			}
 		}
@@ -126,11 +126,11 @@ if ( ! function_exists( 'the_archive_title' ) ) :
 	 */
 	function the_archive_title( $before = '', $after = '' ) {
 		if ( is_category() ) {
-		    /* translators: %s is category name */
+			/* translators: %s is category name */
 			$title = sprintf( esc_html__( 'Category: %s', 'parallax-one' ), single_cat_title( '', false ) );
 		} elseif ( is_tag() ) {
 			/* translators: %s is tag name */
-		    $title = sprintf( esc_html__( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
+			$title = sprintf( esc_html__( 'Tag: %s', 'parallax-one' ), single_tag_title( '', false ) );
 		} elseif ( is_author() ) {
 			/* translators: %s is author name */
 			$title = sprintf( esc_html__( 'Author: %s', 'parallax-one' ), '<span class="vcard">' . get_the_author() . '</span>' );
@@ -223,13 +223,15 @@ function parallax_one_categorized_blog() {
 	$all_the_cool_cats = get_transient( 'parallax_one_categories' );
 	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
+		$all_the_cool_cats = get_categories(
+			array(
+				'fields'     => 'ids',
+				'hide_empty' => 1,
 
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+				// We only need to know if there is more than one category.
+				'number'     => 2,
+			)
+		);
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );

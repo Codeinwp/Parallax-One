@@ -15,7 +15,7 @@
  * @license   GPL-2.0+
  * @link      http://themeavenue.net
  * @link      http://wordpress.org/plugins/remote-dashboard-notifications/
- * @link 	  https://github.com/ThemeAvenue/Remote-Dashboard-Notifications
+ * @link      https://github.com/ThemeAvenue/Remote-Dashboard-Notifications
  * @copyright 2014 ThemeAvenue
  */
 
@@ -182,7 +182,11 @@ class TAV_Remote_Notification_Client {
 	protected function remote_get_notice() {
 
 		/* Query the server */
-		$response = wp_remote_get( $this->build_query_url(), array( 'timeout' => apply_filters( 'rn_http_request_timeout', 5 ) ) );
+		$response = wp_remote_get(
+			$this->build_query_url(), array(
+				'timeout' => apply_filters( 'rn_http_request_timeout', 5 ),
+			)
+		);
 
 		/* If we have a WP_Error object we abort */
 		if ( is_wp_error( $response ) ) {
@@ -205,7 +209,7 @@ class TAV_Remote_Notification_Client {
 			return new WP_Error( 'json_decode_error', __( 'Cannot decode the response content', 'remote-notifications' ) );
 		}
 
-		set_transient( "rn_last_notification_$this->notice_id", $body, $this->cache*60*60 );
+		set_transient( "rn_last_notification_$this->notice_id", $body, $this->cache * 60 * 60 );
 
 		if ( $this->is_notification_error( $body ) ) {
 			return new WP_Error( 'notification_error', $this->get_notification_error_message( $body ) );
@@ -264,7 +268,14 @@ class TAV_Remote_Notification_Client {
 	 * @return string
 	 */
 	protected function get_payload() {
-		return base64_encode( json_encode( array( 'channel' => $this->id, 'key' => $this->key ) ) );
+		return base64_encode(
+			json_encode(
+				array(
+					'channel' => $this->id,
+					'key' => $this->key,
+				)
+			)
+		);
 	}
 
 	/**
@@ -274,7 +285,12 @@ class TAV_Remote_Notification_Client {
 	 * @return string
 	 */
 	protected function build_query_url() {
-		return add_query_arg( array( 'post_type' => 'notification', 'payload' => $this->get_payload() ), $this->get_remote_url() );
+		return add_query_arg(
+			array(
+				'post_type' => 'notification',
+				'payload' => $this->get_payload(),
+			), $this->get_remote_url()
+		);
 	}
 
 	/**
@@ -290,7 +306,7 @@ class TAV_Remote_Notification_Client {
 		}
 
 		global $current_user;
-		
+
 		$dismissed = array_filter( (array) get_user_meta( $current_user->ID, '_rn_dismissed', true ) );
 
 		if ( is_array( $dismissed ) && in_array( $this->get_notice()->slug, $dismissed ) ) {
@@ -323,7 +339,6 @@ class TAV_Remote_Notification_Client {
 			if ( false === $pt || ! in_array( $pt, $this->get_notice()->type ) ) {
 				return true;
 			}
-
 		}
 
 		return false;
@@ -369,7 +384,7 @@ class TAV_Remote_Notification_Client {
 	 * the notice can be displayed on the current page.
 	 * If all the checks are passed, the notice
 	 * is added to the page.
-	 * 
+	 *
 	 * @since 0.1.0
 	 */
 	public function show_notice() {
@@ -404,19 +419,15 @@ class TAV_Remote_Notification_Client {
 
 		if ( 'updated' == $style ) {
 			$class = $style;
-		}
-
-		elseif ( 'error' == $style ) {
+		} elseif ( 'error' == $style ) {
 			$class = 'updated error';
-		}
-
-		else {
+		} else {
 			$class = "updated rn-alert rn-alert-$style";
 		}
 
 		/**
 		 * Prepare the dismiss URL
-		 * 
+		 *
 		 * @var (string) URL
 		 * @todo get a more accurate URL of the current page
 		 */
@@ -427,7 +438,7 @@ class TAV_Remote_Notification_Client {
 		array_push( $args, "rn=$nonce" );
 		array_push( $args, "notification=$slug" );
 
-		foreach( $_GET as $key => $value ) {
+		foreach ( $_GET as $key => $value ) {
 
 			array_push( $args, "$key=$value" );
 
@@ -438,9 +449,15 @@ class TAV_Remote_Notification_Client {
 		?>
 
 		<div class="<?php echo $class; ?>">
-			<?php if ( !in_array( $style, array( 'updated', 'error' ) ) ): ?><a href="<?php echo $url; ?>" id="rn-dismiss" class="rn-dismiss-btn" title="<?php _e( 'Dismiss notification', 'remote-notifications' ); ?>">&times;</a><?php endif; ?>
+			<?php
+			if ( ! in_array( $style, array( 'updated', 'error' ) ) ) :
+?>
+<a href="<?php echo $url; ?>" id="rn-dismiss" class="rn-dismiss-btn" title="<?php _e( 'Dismiss notification', 'remote-notifications' ); ?>">&times;</a><?php endif; ?>
 			<p><?php echo html_entity_decode( $content->message ); ?></p>
-			<?php if ( in_array( $style, array( 'updated', 'error' ) ) ): ?><p><a href="<?php echo $url; ?>" id="rn-dismiss" class="rn-dismiss-button button-secondary"><?php _e( 'Dismiss', 'remote-notifications' ); ?></a></p><?php endif; ?>
+			<?php
+			if ( in_array( $style, array( 'updated', 'error' ) ) ) :
+?>
+<p><a href="<?php echo $url; ?>" id="rn-dismiss" class="rn-dismiss-button button-secondary"><?php _e( 'Dismiss', 'remote-notifications' ); ?></a></p><?php endif; ?>
 		</div>
 		<?php
 
@@ -461,12 +478,12 @@ class TAV_Remote_Notification_Client {
 		global $current_user;
 
 		/* Check if we have all the vars */
-		if ( !isset( $_GET['rn'] ) || !isset( $_GET['notification'] ) ) {
+		if ( ! isset( $_GET['rn'] ) || ! isset( $_GET['notification'] ) ) {
 			return;
 		}
 
 		/* Validate nonce */
-		if ( !wp_verify_nonce( sanitize_key( $_GET['rn'] ), 'rn-dismiss' ) ) {
+		if ( ! wp_verify_nonce( sanitize_key( $_GET['rn'] ), 'rn-dismiss' ) ) {
 			return;
 		}
 
@@ -474,7 +491,7 @@ class TAV_Remote_Notification_Client {
 		$dismissed = array_filter( (array) get_user_meta( $current_user->ID, '_rn_dismissed', true ) );
 
 		/* Add the current notice to the list if needed */
-		if ( is_array( $dismissed ) && !in_array( $_GET['notification'], $dismissed ) ) {
+		if ( is_array( $dismissed ) && ! in_array( $_GET['notification'], $dismissed ) ) {
 			array_push( $dismissed, $_GET['notification'] );
 		}
 
@@ -485,10 +502,11 @@ class TAV_Remote_Notification_Client {
 		$args = array();
 
 		/* Get URL args */
-		foreach( $_GET as $key => $value ) {
+		foreach ( $_GET as $key => $value ) {
 
-			if ( in_array( $key, array( 'rn', 'notification' ) ) )
+			if ( in_array( $key, array( 'rn', 'notification' ) ) ) {
 				continue;
+			}
 
 			array_push( $args, "$key=$value" );
 
@@ -509,11 +527,13 @@ class TAV_Remote_Notification_Client {
 	 *
 	 * @since 0.1.0
 	 */
-	public function style() { ?>
+	public function style() {
+	?>
 
 		<style type="text/css">div.rn-alert{padding:15px;padding-right:35px;margin-bottom:20px;border:1px solid transparent;-webkit-box-shadow:none;box-shadow:none}div.rn-alert p:empty{display:none}div.rn-alert ul,div.rn-alert ul li,div.rn-alert ol,div.rn-alert ol li{list-style:inherit !important}div.rn-alert ul,div.rn-alert ol{padding-left:30px}div.rn-alert hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}div.rn-alert h1,h2,h3,h4,h5,h6{margin-top:0;color:inherit}div.rn-alert a{font-weight:700}div.rn-alert a:hover{text-decoration:underline}div.rn-alert>p{margin:0;padding:0;line-height:1}div.rn-alert>p,div.rn-alert>ul{margin-bottom:0}div.rn-alert>p+p{margin-top:5px}div.rn-alert .rn-dismiss-btn{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;position:relative;top:-2px;right:-21px;padding:0;cursor:pointer;background:0;border:0;-webkit-appearance:none;float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20);text-decoration:none}div.rn-alert-success{background-color:#dff0d8;border-color:#d6e9c6;color:#3c763d}div.rn-alert-success hr{border-top-color:#c9e2b3}div.rn-alert-success a{color:#2b542c}div.rn-alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#31708f}div.rn-alert-info hr{border-top-color:#a6e1ec}div.rn-alert-info a{color:#245269}div.rn-alert-warning{background-color:#fcf8e3;border-color:#faebcc;color:#8a6d3b}div.rn-alert-warning hr{border-top-color:#f7e1b5}div.rn-alert-warning a{color:#66512c}div.rn-alert-danger{background-color:#f2dede;border-color:#ebccd1;color:#a94442}div.rn-alert-danger hr{border-top-color:#e4b9c0}div.rn-alert-danger a{color:#843534}</style>
 
-	<?php }
+	<?php
+	}
 
 	/**
 	 * Dismiss notice using Ajax

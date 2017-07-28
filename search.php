@@ -29,13 +29,17 @@
 						<h2 class="page-title">
 							<?php
 							/* translators: %s is search query */
-							printf( esc_html__( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?>
+							printf( esc_html__( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' );
+							?>
 						</h2>
 					</header><!-- .page-header -->
 
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php ;/* Start the Loop */ ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
+?>
 						<?php
 						/**
 						 * Run the loop for the search to output the results.

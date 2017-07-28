@@ -87,14 +87,16 @@ function parallax_one_pll_string_register_helper( $theme_mod, $default = false, 
  * Define Allowed Files to be included.
  */
 function parallax_one_filter_translations( $array ) {
-	return array_merge( $array, array(
-		'translations/translations-logos-section',
-		'translations/translations-services-section',
-		'translations/translations-team-section',
-		'translations/translations-testimonials-section',
-		'translations/translations-contact-section',
-		'translations/translations-footer-socials',
-	) );
+	return array_merge(
+		$array, array(
+			'translations/translations-logos-section',
+			'translations/translations-services-section',
+			'translations/translations-team-section',
+			'translations/translations-testimonials-section',
+			'translations/translations-contact-section',
+			'translations/translations-footer-socials',
+		)
+	);
 }
 add_filter( 'parallax_one_filter_translations', 'parallax_one_filter_translations' );
 

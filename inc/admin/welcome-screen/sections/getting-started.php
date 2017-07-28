@@ -9,21 +9,21 @@ $customizer_url = admin_url() . 'customize.php' ;
 <div id="getting_started" class="parallax-one-tab-pane active">
 
 	<div class="prallax-one-tab-pane-center">
-		<?php 
+		<?php
 			$parallax_one = wp_get_theme();
-			$parallax_one_version = $parallax_one->get('Version');
-			$parallax_one_name = $parallax_one->get('Name');
+			$parallax_one_version = $parallax_one->get( 'Version' );
+			$parallax_one_name = $parallax_one->get( 'Name' );
 		?>
 		<h1 class="parallax-one-welcome-title">
 			<?php printf( __( 'Welcome to %1$s!', 'parallax-one' ), $parallax_one_name ); ?>
-			<?php if( !empty($parallax_one_version) ): ?> 
+			<?php if ( ! empty( $parallax_one_version ) ) : ?> 
 				<sup id="parallax-one-theme-version">
 					<?php echo esc_attr( $parallax_one_version ); ?> 
 				</sup>
 			<?php endif; ?>
 		</h1>
 
-		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','parallax-one'); ?></p>
+		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','parallax-one' ); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Parallax One and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Parallax One, as much as we enjoy creating great products.', 'parallax-one' ); ?>
 
 	</div>
@@ -51,12 +51,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="prallax-one-tab-pane-half prallax-one-tab-pane-first-half">
 		<?php
 		$link = 'http://docs.themeisle.com/article/14-how-to-create-a-child-theme/';
-		if( class_exists('Parallax_One_Plus') ){
+		if ( class_exists( 'Parallax_One_Plus' ) ) {
 			$link = 'http://docs.themeisle.com/article/264-how-to-create-a-child-theme-if-you-use-parallax-one-plus';
-		} ?>
+		}
+		?>
 		<h4><?php esc_html_e( 'Create a child theme', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to make changes to the theme\'s files, those changes are likely to be overwritten when you next update the theme. In order to prevent that from happening, you need to create a child theme. For this, please follow the documentation below.', 'parallax-one' ); ?></p>
-		<p><a href="<?php echo esc_url($link); ?>" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
+		<p><a href="<?php echo esc_url( $link ); ?>" class="button"><?php esc_html_e( 'View how to do this', 'parallax-one' ); ?></a></p>
 
 		<hr />
 
@@ -140,13 +141,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=intergeo-maps' ), 'install-plugin_intergeo-maps' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Intergeo Maps', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -161,13 +162,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Adblock Notify', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -184,13 +185,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=siteorigin-panels' ), 'install-plugin_siteorigin-panels' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Page Builder by SiteOrigin', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -209,13 +210,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=pirate-forms' ), 'install-plugin_pirate-forms' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Pirate Forms', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -230,13 +231,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=feedzy-rss-feeds' ), 'install-plugin_feedzy-rss-feeds' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install FEEDZY RSS Feeds', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -252,13 +253,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+?>
 
 				<p><a href="http://themeisle.com/plugins/easy-content-types/" class="button button-primary" target="_blank"><?php esc_html_e( 'Download Easy Content Types', 'parallax-one' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 	</div>

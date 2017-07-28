@@ -19,8 +19,14 @@
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if ( is_rtl() ) { echo 'rtl';
-} else { echo 'ltr';} ?>">
+<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="
+																			<?php
+																			if ( is_rtl() ) {
+																				echo 'rtl';
+																			} else {
+																				echo 'ltr';}
+?>
+">
 <?php parallax_hook_body_top(); ?>
 <div id="mobilebgfix">
 	<div class="mobile-bg-fix-img-wrap">
@@ -46,7 +52,8 @@
 
 		endif;
 
-	endif; ?>
+	endif;
+	?>
 
 
 	<!-- =========================
@@ -76,7 +83,12 @@
 			}
 		}
 		?>
-		<div class="overlay-layer-nav <?php if ( ! empty( $fixedheader ) ) {echo esc_attr( $fixedheader );} ?>">
+		<div class="overlay-layer-nav 
+		<?php
+		if ( ! empty( $fixedheader ) ) {
+			echo esc_attr( $fixedheader );}
+?>
+">
 
 			<!-- STICKY NAVIGATION -->
 			<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
@@ -97,7 +109,7 @@
 						<?php
 
 							$parallax_one = get_theme_mod( 'paralax_one_logo', parallax_get_file( '/images/logo-nav.png' ) );
-						    $parallax_one = apply_filters( 'parallax_one_translate_single_string', $parallax_one, 'Header - Logo' );
+							$parallax_one = apply_filters( 'parallax_one_translate_single_string', $parallax_one, 'Header - Logo' );
 
 
 						if ( ! empty( $parallax_one ) ) :
@@ -142,7 +154,7 @@
 					</div>
 
 					<!-- MENU -->
-					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','parallax-one' ) ?>" id="menu-primary" class="navbar-collapse collapse">
+					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','parallax-one' ); ?>" id="menu-primary" class="navbar-collapse collapse">
 						<!-- LOGO ON STICKY NAV BAR -->
 						<div id="site-header-menu" class="site-header-menu">
 							<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -151,9 +163,9 @@
 									array(
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
-										'depth'           	=> 4,
+										'depth'             => 4,
 										'fallback_cb'       => 'parallax_one_wp_page_menu',
-										 )
+									)
 								);
 							?>
 							</nav>

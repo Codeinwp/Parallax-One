@@ -18,14 +18,16 @@
 
 			<p>
 				<?php
-				/* translators: %s is link to new post */
-				printf( esc_html__( 'Ready to publish your first post? %s', 'parallax-one' ),
+				printf( /* translators: %s is link to new post */
+					esc_html__( 'Ready to publish your first post? %s', 'parallax-one' ),
 					/* translators: %1$s is url to new post, %2$s is link text */
-					printf( '<a href="%1$s">%2$s</a>',
+					printf(
+						'<a href="%1$s">%2$s</a>',
 						esc_url( admin_url( 'post-new.php' ) ),
 						esc_html__( 'Get started here', 'parallax-one' )
 					)
-				); ?>
+				);
+				?>
 			</p>
 
 		<?php elseif ( is_search() ) : ?>

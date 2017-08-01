@@ -20,11 +20,14 @@
 		<div id="primary" class="content-area col-md-12">
 			<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+?>
 
 				<?php get_template_part( 'content', 'contact' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->

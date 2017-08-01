@@ -19,14 +19,15 @@ class Parallax_One_Welcome {
 		add_action( 'admin_enqueue_scripts', array( $this, 'parallax_one_welcome_style_and_scripts' ) );
 
 		/* load welcome screen */
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ), 	    10 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ), 		            20 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ), 				30 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ), 				40 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ),         10 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ),                  20 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ),               30 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ),                40 );
 	}
 
 	/**
 	 * Creates the dashboard page
+	 *
 	 * @see  add_theme_page()
 	 */
 	public function parallax_one_welcome_register_menu() {
@@ -50,7 +51,7 @@ class Parallax_One_Welcome {
 	public function parallax_one_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Parallax One! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'parallax-one' ), '<a href="' . esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Parallax One! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'parallax-one' ), '<a href="' . esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Parallax One', 'parallax-one' ); ?></a></p>
 			</div>
 		<?php
@@ -63,7 +64,7 @@ class Parallax_One_Welcome {
 
 		if ( 'appearance_page_parallax-one-welcome' == $hook_suffix ) {
 			wp_enqueue_style( 'parallax-one-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
-			wp_enqueue_script( 'parallax-one-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
+			wp_enqueue_script( 'parallax-one-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array( 'jquery' ) );
 		}
 	}
 
@@ -78,10 +79,10 @@ class Parallax_One_Welcome {
 		?>
 
 		<ul class="parallax-one-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','parallax-one'); ?></a></li>
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one'); ?></a></li>
-			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','parallax-one'); ?></a></li>
-			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','parallax-one'); ?></a></li>
+			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','parallax-one' ); ?></a></li>
 		</ul>
 
 		<div class="parallax-one-tab-content">
@@ -93,7 +94,8 @@ class Parallax_One_Welcome {
 			 * @hooked parallax_one_welcome_changelog - 40
 			 * @hooked parallax_one_welcome_free_pro - 50
 			 */
-			do_action( 'parallax_one_welcome' ); ?>
+			do_action( 'parallax_one_welcome' );
+			?>
 
 		</div>
 		<?php
@@ -105,7 +107,7 @@ class Parallax_One_Welcome {
 	public function parallax_one_welcome_getting_started() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php' );
 	}
-	
+
 
 	/**
 	 * Contribute
@@ -123,11 +125,12 @@ class Parallax_One_Welcome {
 
 	/**
 	 * Free vs PRO
+	 *
 	 * @since 1.8.2.4
 	 */
 	public function parallax_one_welcome_free_pro() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/free_pro.php' );
-	}	
+	}
 
 }
 

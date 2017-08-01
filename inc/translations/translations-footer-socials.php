@@ -9,20 +9,22 @@
  * Get logos section default content.
  */
 function parallax_one_footer_socials_get_default_content() {
-	return json_encode( array(
+	return json_encode(
 		array(
-			'icon_value' => 'icon-social-facebook',
-			'link'       => '#',
-		),
-		array(
-			'icon_value' => 'icon-social-twitter',
-			'link'       => '#',
-		),
-		array(
-			'icon_value' => 'icon-social-googleplus',
-			'link'       => '#',
-		),
-	) );
+			array(
+				'icon_value' => 'icon-social-facebook',
+				'link'       => '#',
+			),
+			array(
+				'icon_value' => 'icon-social-twitter',
+				'link'       => '#',
+			),
+			array(
+				'icon_value' => 'icon-social-googleplus',
+				'link'       => '#',
+			),
+		)
+	);
 }
 
 /**

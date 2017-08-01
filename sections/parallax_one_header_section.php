@@ -6,10 +6,19 @@
  */
 
 $paralax_one_header_logo = get_theme_mod( 'paralax_one_header_logo', parallax_get_file( '/images/logo-2.png' ) );
+$paralax_one_header_logo = apply_filters( 'parallax_one_translate_single_string', $paralax_one_header_logo, 'Big Title Section' );
+
 $parallax_one_header_title = get_theme_mod( 'parallax_one_header_title',esc_html__( 'Simple, Reliable and Awesome.','parallax-one' ) );
+$parallax_one_header_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_header_title, 'Big Title Section' );
+
 $parallax_one_header_subtitle = get_theme_mod( 'parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.' );
+$parallax_one_header_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_header_subtitle, 'Big Title Section' );
+
 $parallax_one_header_button_text = get_theme_mod( 'parallax_one_header_button_text',esc_html__( 'GET STARTED','parallax-one' ) );
+$parallax_one_header_button_text = apply_filters( 'parallax_one_translate_single_string', $parallax_one_header_button_text, 'Big Title Section' );
+
 $parallax_one_header_button_link = get_theme_mod( 'parallax_one_header_button_link','#' );
+$parallax_one_header_button_link = apply_filters( 'parallax_one_translate_single_string', $parallax_one_header_button_link, 'Big Title Section' );
 if ( ! empty( $parallax_one_header_button_link ) && strpos( $parallax_one_header_button_link, '#' ) === 0 ) {
 	$parallax_one_go_to = 'onclick="return false;" data-anchor="' . esc_attr( $parallax_one_header_button_link ) . '"';
 } else {
@@ -18,7 +27,11 @@ if ( ! empty( $parallax_one_header_button_link ) && strpos( $parallax_one_header
 
 $parallax_one_enable_move = get_theme_mod( 'paralax_one_enable_move' );
 $parallax_one_first_layer = get_theme_mod( 'paralax_one_first_layer', parallax_get_file( '/images/background1.png' ) );
+$parallax_one_first_layer = apply_filters( 'parallax_one_translate_single_string', $parallax_one_first_layer, 'Big Title Section' );
+
 $parallax_one_second_layer = get_theme_mod( 'paralax_one_second_layer',parallax_get_file( '/images/background2.png' ) );
+$parallax_one_second_layer = apply_filters( 'parallax_one_translate_single_string', $parallax_one_second_layer, 'Big Title Section' );
+
 
 if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) {
 
@@ -30,6 +43,8 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 		if ( empty( $parallax_one_first_layer ) && empty( $parallax_one_second_layer ) ) {
 
 			$parallax_one_header_image2 = get_header_image();
+			$parallax_one_header_image2 = apply_filters( 'parallax_one_translate_single_string', $parallax_one_header_image2, 'Big Title Section' );
+
 			echo '<li class="layer layer1" data-depth="0.10" style="background-image: url(' . $parallax_one_header_image2 . ');"></li>';
 
 		} else {
@@ -66,7 +81,8 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 
 					<!-- HEADING AND BUTTONS -->
 					<?php
-					if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) { ?>
+					if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title ) || ! empty( $parallax_one_header_subtitle ) || ! empty( $parallax_one_header_button_text ) ) {
+					?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
@@ -87,14 +103,26 @@ if ( ! empty( $paralax_one_header_logo ) || ! empty( $parallax_one_header_title 
 							<!-- BUTTON -->
 							<?php
 
-							if ( ! empty( $parallax_one_header_button_text ) ) {  ?>
-								<button <?php if ( ! empty( $parallax_one_go_to ) ) {  echo $parallax_one_go_to; } ?> class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
+							if ( ! empty( $parallax_one_header_button_text ) ) {
+							?>
+								<button 
+								<?php
+								if ( ! empty( $parallax_one_go_to ) ) {
+									echo $parallax_one_go_to; }
+?>
+ class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn">
 									<span class="screen-reader-text"><?php echo esc_html__( 'Header button label:','parallax-one' ) . strip_tags( trim( $parallax_one_header_button_text ) ); ?></span>
 									<?php echo wp_kses_post( $parallax_one_header_button_text ); ?>
 								</button>
 								<?php
-							} elseif ( is_customize_preview() ) {  ?>
-								<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  <?php if ( ! empty( $parallax_one_go_to ) ) {  echo $parallax_one_go_to; } ?>></button>
+							} elseif ( is_customize_preview() ) {
+							?>
+								<button class="btn btn-primary standard-button inpage-scroll inpage_scroll_btn paralax_one_only_customizer"  
+								<?php
+								if ( ! empty( $parallax_one_go_to ) ) {
+									echo $parallax_one_go_to; }
+?>
+></button>
 								<?php
 							}
 							?>

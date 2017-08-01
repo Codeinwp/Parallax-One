@@ -23,6 +23,8 @@ endif;
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	$parallax_one_latest_news_title = get_theme_mod( 'parallax_one_latest_news_title',esc_html__( 'Latest news','parallax-one' ) );
+	$parallax_one_latest_news_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_latest_news_title, 'Latest News Section' );
+
 	if ( $parallax_number_of_posts > 0 ) {
 		?>
 		<?php parallax_hook_news_before(); ?>
@@ -43,8 +45,8 @@ if ( $the_query->have_posts() ) {
 
 						<div class="parallax-slider-whole-wrap">
 							<div class="controls-wrap">
-								<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Down','parallax-one' )?></span></button>
-								<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Up','parallax-one' )?></span></button>
+								<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Down','parallax-one' ); ?></span></button>
+								<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Up','parallax-one' ); ?></span></button>
 							</div>
 							<!-- TIMLEINE SCROLLER -->
 							<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
@@ -54,7 +56,8 @@ if ( $the_query->have_posts() ) {
 
 										$i_latest_posts = 0;
 
-									while ( $the_query->have_posts() ) :  $the_query->the_post();
+									while ( $the_query->have_posts() ) :
+										$the_query->the_post();
 
 										$i_latest_posts++;
 
@@ -66,11 +69,14 @@ if ( $the_query->have_posts() ) {
 											echo '<li>';
 										}
 										?>
-										<?php /* translators: %s is post name */ ?>
-										<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ) ?>"
-										<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ($i_latest_posts <= 2) ) {
+										<?php ;/* translators: %s is post name */ ?>
+										<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ); ?>"
+										<?php
+										if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ($i_latest_posts <= 2) ) {
 														echo 'data-scrollreveal="enter left after 0.15s over 1s"';
-}?>>
+										}
+?>
+>
 												<div datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-published date small-text strong">
 												<?php echo get_the_date( 'M, j' ); ?>
 												</div>
@@ -80,7 +86,8 @@ if ( $the_query->have_posts() ) {
 
 												if ( has_post_thumbnail() ) :
 													the_post_thumbnail( 'parallax-one-post-thumbnail-latest-news' );
-													else : ?>
+													else :
+													?>
 																<img src="<?php echo parallax_one_make_protocol_relative_url( parallax_get_file( '/images/no-thumbnail-latest-news.jpg' ) ); ?>" width="150" height="150" alt="<?php the_title(); ?>">
 															<?php
 														endif;
@@ -94,11 +101,11 @@ if ( $the_query->have_posts() ) {
 														</h3>
 														<div class="entry-meta">
 													<span class="entry-date">
-														<a href="<?php echo esc_url( get_day_link( get_the_date( 'Y' ), get_the_date( 'm' ), get_the_date( 'd' ) ) ) ?>" rel="bookmark">
+														<a href="<?php echo esc_url( get_day_link( get_the_date( 'Y' ), get_the_date( 'm' ), get_the_date( 'd' ) ) ); ?>" rel="bookmark">
 															<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo the_time( get_option( 'date_format' ) ); ?></time>
 														</a>
 													</span>
-													<span> <?php esc_html_e( 'by','parallax-one' );?> </span>
+													<span> <?php esc_html_e( 'by','parallax-one' ); ?> </span>
 													<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="author-link">
 														<span  itemprop="name" class="entry-author author vcard">
 															<a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author"><?php the_author(); ?> </a>
@@ -108,7 +115,7 @@ if ( $the_query->have_posts() ) {
 													</header>
 													<div itemprop="description" class="entry-content entry-summary">
 														<?php the_excerpt(); ?>
-														<?php /* translators: %s is screen reader post name */ ?>
+														<?php ;/* translators: %s is screen reader post name */ ?>
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="read-more"><?php printf( esc_html__( 'Read more %s', 'parallax-one' ), '<span class="screen-reader-text">  ' . get_the_title() . '</span>' ); ?></a>
 													</div>
 													</div>

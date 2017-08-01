@@ -5,13 +5,13 @@
  * @package parallax-one
  */
 ?>
-<?php /* translators: %s is post name */ ?>
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class( 'border-bottom-hover blog-post-wrap' ); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+<?php ;/* translators: %s is post name */ ?>
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class( 'border-bottom-hover blog-post-wrap' ); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() ); ?>">
 	<?php parallax_hook_entry_top(); ?>
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
-			 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 					<?php
 					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -29,7 +29,7 @@
 					} else {
 					?>
 					<picture itemscope itemprop="image">
-					<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file( '/images/no-thumbnail-mobile.jpg' );?> ">
+					<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file( '/images/no-thumbnail-mobile.jpg' ); ?> ">
 					<img src="<?php echo parallax_get_file( '/images/no-thumbnail.jpg' ); ?>" alt="<?php the_title_attribute(); ?>">
 					</picture>
 					<?php } ?>
@@ -91,23 +91,27 @@
 			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) :
 			the_content(
-				/* translators: %s is post name in text reader */
-				sprintf( esc_html__( 'Read more %s ...','parallax-one' ),
+				sprintf( /* translators: %s is post name in text reader */
+					esc_html__( 'Read more %s ...','parallax-one' ),
 					/* translators: %s is post title */
-					sprintf( '<span class="screen-reader-text"> %s </span>',
+					sprintf(
+						'<span class="screen-reader-text"> %s </span>',
 						esc_html__( 'about ', 'parallax-one' ) . get_the_title()
 					)
 				)
 			);
-			else : the_excerpt();
+			else :
+				the_excerpt();
 			endif;
 		?>
 
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 	<?php parallax_hook_entry_bottom(); ?>

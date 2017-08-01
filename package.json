@@ -3,6 +3,7 @@
   "nicename": "Parallax One",
   "version": "2.1.7",
   "description": "Parallax One theme",
+  "category": "themes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/Parallax-One.git"

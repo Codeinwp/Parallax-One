@@ -6,7 +6,7 @@
  */
 
 $parallax_one_frontpage_map_shortcode = get_theme_mod( 'parallax_one_frontpage_map_shortcode' );
-$parallax_one_frontpage_map_shortcode = apply_filters( 'parallax_one_translate_single_string', $parallax_one_frontpage_map_shortcode, 'Map Section - shortcode' );
+$parallax_one_frontpage_map_shortcode = apply_filters( 'parallax_one_translate_single_string', $parallax_one_frontpage_map_shortcode, 'Map Shortcode' );
 if ( ! empty( $parallax_one_frontpage_map_shortcode ) ) {
 	$pos = strlen( strstr( $parallax_one_frontpage_map_shortcode,'pirate_forms' ) );
 }

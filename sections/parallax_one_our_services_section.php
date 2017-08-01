@@ -6,10 +6,10 @@
  */
 
 $parallax_one_our_services_title    = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
-$parallax_one_our_services_title    = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_title, 'Our Services Section - Title' );
+$parallax_one_our_services_title    = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_title, 'Our Services Section' );
 
 $parallax_one_our_services_subtitle = get_theme_mod( 'parallax_one_our_services_subtitle', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'parallax-one' ) );
-$parallax_one_our_services_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_subtitle, 'Our Services Section - Subtitle' );
+$parallax_one_our_services_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_subtitle, 'Our Services Section' );
 
 $default                            = parallax_one_services_get_default_content();
 $parallax_one_services              = get_theme_mod( 'parallax_one_services_content', $default );

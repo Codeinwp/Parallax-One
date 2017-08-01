@@ -23,7 +23,7 @@ endif;
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	$parallax_one_latest_news_title = get_theme_mod( 'parallax_one_latest_news_title',esc_html__( 'Latest news','parallax-one' ) );
-	$parallax_one_latest_news_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_latest_news_title, 'Latest News Section - Title' );
+	$parallax_one_latest_news_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_latest_news_title, 'Latest News Section' );
 
 	if ( $parallax_number_of_posts > 0 ) {
 		?>

@@ -6,10 +6,10 @@
  */
 
 $parallax_one_our_team_title = get_theme_mod( 'parallax_one_our_team_title',esc_html__( 'Our Team','parallax-one' ) );
-$parallax_one_our_team_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_team_title, 'Team Section - Title' );
+$parallax_one_our_team_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_team_title, 'Team Section' );
 
 $parallax_one_our_team_subtitle = get_theme_mod( 'parallax_one_our_team_subtitle',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ) );
-$parallax_one_our_team_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_team_subtitle, 'Team Section - Subtitle' );
+$parallax_one_our_team_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_team_subtitle, 'Team Section' );
 
 $default = parallax_one_team_get_default_content();
 $parallax_one_team_content = get_theme_mod( 'parallax_one_team_content', $default );

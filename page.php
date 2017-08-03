@@ -24,12 +24,21 @@ if ( isset( $paralax_one_full_width_template ) && $paralax_one_full_width_templa
 	<div id="content" class="content-warp">
 		<?php parallax_hook_content_top(); ?>
 		<div class="container">
-			<div id="primary" class="content-area <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'col-md-8';
-} else { echo 'col-md-12';}  ?>">
+			<div id="primary" class="content-area 
+			<?php
+			if ( is_active_sidebar( 'sidebar-1' ) ) {
+				echo 'col-md-8';
+			} else {
+				echo 'col-md-12';}
+?>
+">
 				<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
-				<?php parallax_hook_page_before();?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php parallax_hook_page_before(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+?>
 
 					<?php get_template_part( 'content', 'page' ); ?>
 
@@ -40,8 +49,8 @@ if ( isset( $paralax_one_full_width_template ) && $paralax_one_full_width_templa
 						endif;
 					?>
 
-				<?php endwhile; // end of the loop. ?>
-				<?php parallax_hook_page_after();?>
+				<?php endwhile; ?>
+				<?php parallax_hook_page_after(); ?>
 
 				</main><!-- #main -->
 			</div><!-- #primary -->

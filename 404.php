@@ -17,7 +17,7 @@
 <?php parallax_hook_header_after(); ?>
 <div class="content-wrap">
 	<div class="container">
-		<?php parallax_hook_404_content() ?>
+		<?php parallax_hook_404_content(); ?>
 	</div>
 </div><!-- .content-wrap -->
 

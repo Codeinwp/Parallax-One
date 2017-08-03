@@ -41,34 +41,46 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'colors' )->panel = 'panel_2';
 
 	require_once( 'class/parallax-one-info.php' );
-	$wp_customize->add_section('parallax_one_theme_info', array(
-		'title' => __( 'Theme info', 'parallax-one' ),
-		'priority' => 0,
-	) );
-	$wp_customize->add_setting('parallax_one_theme_info', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-	$wp_customize->add_control( new Parallax_One_Info( $wp_customize, 'parallax_one_theme_info', array(
-		'section' => 'parallax_one_theme_info',
-		'priority' => 10,
-	) ) );
+	$wp_customize->add_section(
+		'parallax_one_theme_info', array(
+			'title' => __( 'Theme info', 'parallax-one' ),
+			'priority' => 0,
+		)
+	);
+	$wp_customize->add_setting(
+		'parallax_one_theme_info', array(
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_Info(
+			$wp_customize, 'parallax_one_theme_info', array(
+				'section' => 'parallax_one_theme_info',
+				'priority' => 10,
+			)
+		)
+	);
 
 	/**
 	 * APPEARANCE
 	 */
 
-	$wp_customize->add_panel( 'panel_2', array(
-		'priority' => 30,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => esc_html__( 'Appearance', 'parallax-one' ),
-	) );
+	$wp_customize->add_panel(
+		'panel_2', array(
+			'priority' => 30,
+			'capability' => 'edit_theme_options',
+			'theme_supports' => '',
+			'title' => esc_html__( 'Appearance', 'parallax-one' ),
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_text_color', array(
-		'default' => '#313131',
-		'sanitize_callback' => 'parallax_one_sanitize_rgba',
-	));
+	$wp_customize->add_setting(
+		'parallax_one_text_color', array(
+			'default' => '#313131',
+			'sanitize_callback' => 'parallax_one_sanitize_rgba',
+		)
+	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -82,10 +94,12 @@ function parallax_one_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'parallax_one_title_color', array(
-		'default' => '#454545',
-		'sanitize_callback' => 'parallax_one_sanitize_rgba',
-	));
+	$wp_customize->add_setting(
+		'parallax_one_title_color', array(
+			'default' => '#454545',
+			'sanitize_callback' => 'parallax_one_sanitize_rgba',
+		)
+	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
@@ -99,52 +113,65 @@ function parallax_one_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section( 'parallax_one_appearance_general' , array(
-		'title'       => esc_html__( 'General options', 'parallax-one' ),
-	  	'priority'    => 3,
-	  	'description' => esc_html__( 'Parallax One theme general appearance options','parallax-one' ),
-		'panel'		  => 'panel_2',
-	));
+	$wp_customize->add_section(
+		'parallax_one_appearance_general' , array(
+			'title'       => esc_html__( 'General options', 'parallax-one' ),
+			'priority'    => 3,
+			'description' => esc_html__( 'Parallax One theme general appearance options','parallax-one' ),
+			'panel'       => 'panel_2',
+		)
+	);
 
 	/**
 	 * Logo
 	 */
-	$wp_customize->add_setting( 'paralax_one_logo', array(
-		'default' => parallax_get_file( '/images/logo-nav.png' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_logo', array(
+			'default' => parallax_get_file( '/images/logo-nav.png' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_logo', array(
-	      	'label'    => esc_html__( 'Logo', 'parallax-one' ),
-	      	'section'  => 'parallax_one_appearance_general',
-			'priority'    => 1,
-	)));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_logo', array(
+				'label'    => esc_html__( 'Logo', 'parallax-one' ),
+				'section'  => 'parallax_one_appearance_general',
+				'priority'    => 1,
+			)
+		)
+	);
 
 	/**
 	 * Sticky header
 	 */
-	$wp_customize->add_setting( 'paralax_one_sticky_header', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_sticky_header', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
 	$wp_customize->add_control(
 		'paralax_one_sticky_header',
 		array(
-				'type' => 'checkbox',
-				'label' => esc_html__( 'Header visibility','parallax-one' ),
-				'description' => esc_html__( 'If this box is checked, the header will toggle on frontpage.','parallax-one' ),
-				'section' => 'parallax_one_appearance_general',
-				'priority'    => 2,
-			)
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Header visibility','parallax-one' ),
+			'description' => esc_html__( 'If this box is checked, the header will toggle on frontpage.','parallax-one' ),
+			'section' => 'parallax_one_appearance_general',
+			'priority'    => 2,
+		)
 	);
 
 	/**
 	 * Full width for all pages
 	 */
-	$wp_customize->add_setting( 'paralax_one_full_width_template', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
-	$wp_customize->add_control( 'paralax_one_full_width_template',
+	$wp_customize->add_setting(
+		'paralax_one_full_width_template', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'paralax_one_full_width_template',
 		array(
 			'type' => 'checkbox',
 			'label' => esc_html__( 'Change the template to Full width for all the pages?','parallax-one' ),
@@ -157,171 +184,221 @@ function parallax_one_customize_register( $wp_customize ) {
 	 * HEADER OPTIONS
 	 */
 
-	$wp_customize->add_panel( 'panel_1', array(
-		'priority' => 35,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => esc_html__( 'Header section', 'parallax-one' ),
-	) );
+	$wp_customize->add_panel(
+		'panel_1', array(
+			'priority' => 35,
+			'capability' => 'edit_theme_options',
+			'theme_supports' => '',
+			'title' => esc_html__( 'Header section', 'parallax-one' ),
+		)
+	);
 
 	/**
 	 * HEADER CONTENT
 	 */
-	$wp_customize->add_section( 'parallax_one_header_content' , array(
-		'title'       => esc_html__( 'Content', 'parallax-one' ),
-		'priority'    => 1,
-		'panel' => 'panel_1',
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_header_content' , array(
+			'title'       => esc_html__( 'Content', 'parallax-one' ),
+			'priority'    => 1,
+			'panel' => 'panel_1',
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	/**
 	 * Header Logo
 	 */
-	$wp_customize->add_setting( 'paralax_one_header_logo', array(
-		'default' => parallax_get_file( '/images/logo-2.png' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_header_logo', array(
-		'label'    => esc_html__( 'Header Logo', 'parallax-one' ),
-		'section'  => 'parallax_one_header_content',
-		'priority'    => 10,
-	) ) );
+	$wp_customize->add_setting(
+		'paralax_one_header_logo', array(
+			'default' => parallax_get_file( '/images/logo-2.png' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_header_logo', array(
+				'label'    => esc_html__( 'Header Logo', 'parallax-one' ),
+				'section'  => 'parallax_one_header_content',
+				'priority'    => 10,
+			)
+		)
+	);
 
 	/**
 	 * Header title
 	 */
-	$wp_customize->add_setting( 'parallax_one_header_title', array(
-		'default' => esc_html__( 'Simple, Reliable and Awesome.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_header_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_header_content',
-		'priority'    => 20,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_header_title', array(
+			'default' => esc_html__( 'Simple, Reliable and Awesome.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_header_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_header_content',
+			'priority'    => 20,
+		)
+	);
 
 	/**
 	 * Header subtitle
 	 */
-	$wp_customize->add_setting( 'parallax_one_header_subtitle', array(
-		'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_header_subtitle', array(
-		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_header_content',
-		'priority'    => 30,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_header_subtitle', array(
+			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_header_subtitle', array(
+			'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
+			'section'  => 'parallax_one_header_content',
+			'priority'    => 30,
+		)
+	);
 
 	/**
 	 * Header Button text
 	 */
-	$wp_customize->add_setting( 'parallax_one_header_button_text', array(
-		'default' => esc_html__( 'GET STARTED','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_header_button_text', array(
-		'label'    => esc_html__( 'Button label', 'parallax-one' ),
-		'section'  => 'parallax_one_header_content',
-		'priority'    => 40,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_header_button_text', array(
+			'default' => esc_html__( 'GET STARTED','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_header_button_text', array(
+			'label'    => esc_html__( 'Button label', 'parallax-one' ),
+			'section'  => 'parallax_one_header_content',
+			'priority'    => 40,
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_header_button_link', array(
-		'default' => esc_html__( '#','parallax-one' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_header_button_link', array(
-		'label'    => esc_html__( 'Button link', 'parallax-one' ),
-		'section'  => 'parallax_one_header_content',
-		'priority'    => 50,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_header_button_link', array(
+			'default' => esc_html__( '#','parallax-one' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_header_button_link', array(
+			'label'    => esc_html__( 'Button link', 'parallax-one' ),
+			'section'  => 'parallax_one_header_content',
+			'priority'    => 50,
+		)
+	);
 
 	/**
 	 * LOGOS SETTINGS
 	 */
-	$wp_customize->add_section( 'parallax_one_logos_settings_section' , array(
-		'title'       => esc_html__( 'Logos Bar', 'parallax-one' ),
-		'priority'    => 2,
-		'panel' => 'panel_1',
-		'active_callback' => 'parallax_one_show_on_front',
-	));
+	$wp_customize->add_section(
+		'parallax_one_logos_settings_section' , array(
+			'title'       => esc_html__( 'Logos Bar', 'parallax-one' ),
+			'priority'    => 2,
+			'panel' => 'panel_1',
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	$default = parallax_one_logos_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_logos_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
+	$wp_customize->add_setting(
+		'parallax_one_logos_content', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
 
-	));
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
-		'label'   => esc_html__( 'Add new social icon','parallax-one' ),
-		'section' => 'parallax_one_logos_settings_section',
-		'priority' => 10,
-		'parallax_image_control' => true,
-		'parallax_icon_control' => false,
-		'parallax_text_control' => false,
-		'parallax_link_control' => true,
-	) ) );
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_logos_content', array(
+				'label'   => esc_html__( 'Add new social icon','parallax-one' ),
+				'section' => 'parallax_one_logos_settings_section',
+				'priority' => 10,
+				'parallax_image_control' => true,
+				'parallax_icon_control' => false,
+				'parallax_text_control' => false,
+				'parallax_link_control' => true,
+			)
+		)
+	);
 
 	$wp_customize->get_section( 'header_image' )->panel = 'panel_1';
 	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Background', 'parallax-one' );
 
 	/* Enable parallax effect*/
-	$wp_customize->add_setting( 'paralax_one_enable_move', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_enable_move', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
 	$wp_customize->add_control(
 		'paralax_one_enable_move',
 		array(
-				'type' => 'checkbox',
-				'label' => esc_html__( 'Parallax effect','parallax-one' ),
-				'description' => esc_html__( 'If this box is checked, the parallax effect is enabled.','parallax-one' ),
-				'section' => 'header_image',
-				'priority'    => 3,
-			)
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Parallax effect','parallax-one' ),
+			'description' => esc_html__( 'If this box is checked, the parallax effect is enabled.','parallax-one' ),
+			'section' => 'header_image',
+			'priority'    => 3,
+		)
 	);
 
 	/**
 	 * Layer one
 	 */
-	$wp_customize->add_setting( 'paralax_one_first_layer', array(
-		'default' => parallax_get_file( '/images/background1.png' ),
-		'sanitize_callback' => 'esc_url',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_first_layer', array(
+			'default' => parallax_get_file( '/images/background1.png' ),
+			'sanitize_callback' => 'esc_url',
+		)
+	);
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_first_layer', array(
-	      	'label'    => esc_html__( 'First layer', 'parallax-one' ),
-	      	'section'  => 'header_image',
-			'priority'    => 4,
-	)));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_first_layer', array(
+				'label'    => esc_html__( 'First layer', 'parallax-one' ),
+				'section'  => 'header_image',
+				'priority'    => 4,
+			)
+		)
+	);
 
 	/**
 	 * Layer two
 	 */
-	$wp_customize->add_setting( 'paralax_one_second_layer', array(
-		'default' => parallax_get_file( '/images/background2.png' ),
-		'sanitize_callback' => 'esc_url',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_second_layer', array(
+			'default' => parallax_get_file( '/images/background2.png' ),
+			'sanitize_callback' => 'esc_url',
+		)
+	);
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_second_layer', array(
-	      	'label'    => esc_html__( 'Second layer', 'parallax-one' ),
-	      	'section'  => 'header_image',
-			'priority'    => 5,
-	)));
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_second_layer', array(
+				'label'    => esc_html__( 'Second layer', 'parallax-one' ),
+				'section'  => 'header_image',
+				'priority'    => 5,
+			)
+		)
+	);
 
 	require_once( 'alpha-control/parallax-one-alpha-control.php' );
 
 	/**
 	 * Bigtitle background
 	 */
-	$wp_customize->add_setting( 'parallax_one_bigtitle_background', array(
-		'default' => 'rgba(0, 0, 0, 0.7)',
-		'sanitize_callback' => 'parallax_one_sanitize_rgba',
-	));
+	$wp_customize->add_setting(
+		'parallax_one_bigtitle_background', array(
+			'default' => 'rgba(0, 0, 0, 0.7)',
+			'sanitize_callback' => 'parallax_one_sanitize_rgba',
+		)
+	);
 
 	$wp_customize->add_control(
 		new Parallax_One_Customize_Alpha_Color_Control(
@@ -339,24 +416,28 @@ function parallax_one_customize_register( $wp_customize ) {
 	/**
 	 * SERVICES OPTIONS
 	 */
-	$wp_customize->add_section( 'parallax_one_services_section' , array(
-		'title'			=> esc_html__( 'Services section', 'parallax-one' ),
-		'priority'		=> 40,
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_services_section' , array(
+			'title'         => esc_html__( 'Services section', 'parallax-one' ),
+			'priority'      => 40,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
-	$wp_customize->add_setting( 'paralax_one_services_pinterest_style', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default'    		=> '5',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_services_pinterest_style', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+			'default'           => '5',
+		)
+	);
 	$wp_customize->add_control(
 		'paralax_one_services_pinterest_style',
 		array(
-			'type' 			=> 'checkbox',
-			'label' 		=> esc_html__( 'Use pinterest layout?','parallax-one' ),
-			'description' 	=> esc_html__( 'If this box is checked, the Services section will use pinterest-style layout.','parallax-one' ),
-			'section' 		=> 'parallax_one_services_section',
-			'priority'    	=> 1,
+			'type'          => 'checkbox',
+			'label'         => esc_html__( 'Use pinterest layout?','parallax-one' ),
+			'description'   => esc_html__( 'If this box is checked, the Services section will use pinterest-style layout.','parallax-one' ),
+			'section'       => 'parallax_one_services_section',
+			'priority'      => 1,
 
 		)
 	);
@@ -364,371 +445,486 @@ function parallax_one_customize_register( $wp_customize ) {
 	/**
 	 * Services title
 	 */
-	$wp_customize->add_setting( 'parallax_one_our_services_title', array(
-		'default' => esc_html__( 'Our Services','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_our_services_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_services_section',
-		'priority'    => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_our_services_title', array(
+			'default' => esc_html__( 'Our Services','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_services_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_services_section',
+			'priority'    => 10,
+		)
+	);
 
 	/**
 	 * Services subtitle
 	 */
-	$wp_customize->add_setting( 'parallax_one_our_services_subtitle', array(
-		'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_our_services_subtitle', array(
-		'type'     => 'textarea',
-		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_services_section',
-		'priority'    => 20,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_our_services_subtitle', array(
+			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_services_subtitle', array(
+			'type'     => 'textarea',
+			'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
+			'section'  => 'parallax_one_services_section',
+			'priority'    => 20,
+		)
+	);
 
 	/**
 	 * Services content
 	 */
 	$default = parallax_one_services_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_services_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
-	) );
+	$wp_customize->add_setting(
+		'parallax_one_services_content', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
+		)
+	);
 
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_services_content', array(
-		'label'   => esc_html__( 'Add new service box','parallax-one' ),
-		'section' => 'parallax_one_services_section',
-		'priority' => 30,
-		'parallax_image_control' => true,
-		'parallax_icon_control' => true,
-		'parallax_title_control' => true,
-		'parallax_text_control' => true,
-		'parallax_link_control' => true,
-	) ) );
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_services_content', array(
+				'label'   => esc_html__( 'Add new service box','parallax-one' ),
+				'section' => 'parallax_one_services_section',
+				'priority' => 30,
+				'parallax_image_control' => true,
+				'parallax_icon_control' => true,
+				'parallax_title_control' => true,
+				'parallax_text_control' => true,
+				'parallax_link_control' => true,
+			)
+		)
+	);
 
 	/**
 	 * ABOUT OPTIONS
 	 */
-	$wp_customize->add_section( 'parallax_one_about_section' , array(
-		'title'       => esc_html__( 'About section', 'parallax-one' ),
-		'priority'    => 45,
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_about_section' , array(
+			'title'       => esc_html__( 'About section', 'parallax-one' ),
+			'priority'    => 45,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	/* About title */
-	$wp_customize->add_setting( 'parallax_one_our_story_title', array(
-		'default' => esc_html__( 'Our Story','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_our_story_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_about_section',
-		'priority'    => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_our_story_title', array(
+			'default' => esc_html__( 'Our Story','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_story_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_about_section',
+			'priority'    => 10,
+		)
+	);
 
 	/* About Content */
-	$wp_customize->add_setting( 'parallax_one_our_story_text', array(
-		'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
+	$wp_customize->add_setting(
+		'parallax_one_our_story_text', array(
+			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
 
-	) );
-	$wp_customize->add_control( 'parallax_one_our_story_text', array(
-		'type' => 'textarea',
-		'label'   => esc_html__( 'Content', 'parallax-one' ),
-		'section' => 'parallax_one_about_section',
-		'priority'    => 20,
-		'description' => __( 'Allowed html: p,br,em,strong,a,button,ul,li', 'parallax-one' ),
-	) );
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_story_text', array(
+			'type' => 'textarea',
+			'label'   => esc_html__( 'Content', 'parallax-one' ),
+			'section' => 'parallax_one_about_section',
+			'priority'    => 20,
+			'description' => __( 'Allowed html: p,br,em,strong,a,button,ul,li', 'parallax-one' ),
+		)
+	);
 
 	/* About Image	*/
-	$wp_customize->add_setting( 'paralax_one_our_story_image', array(
-		'default' => parallax_get_file( '/images/about-us.png' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
-		'label'    => esc_html__( 'Image', 'parallax-one' ),
-		'section'  => 'parallax_one_about_section',
-		'priority'    => 30,
-	) ) );
+	$wp_customize->add_setting(
+		'paralax_one_our_story_image', array(
+			'default' => parallax_get_file( '/images/about-us.png' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_our_story_image', array(
+				'label'    => esc_html__( 'Image', 'parallax-one' ),
+				'section'  => 'parallax_one_about_section',
+				'priority'    => 30,
+			)
+		)
+	);
 
 	/**
 	 *  TEAM OPTIONS
 	 */
-	$wp_customize->add_section( 'parallax_one_team_section' , array(
-		'title'       => esc_html__( 'Team section', 'parallax-one' ),
-		'priority'    => 50,
-		'active_callback' => 'parallax_one_show_on_front',
-	));
+	$wp_customize->add_section(
+		'parallax_one_team_section' , array(
+			'title'       => esc_html__( 'Team section', 'parallax-one' ),
+			'priority'    => 50,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	/* Team title */
-	$wp_customize->add_setting( 'parallax_one_our_team_title', array(
-		'default' => esc_html__( 'Our Team','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_our_team_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_team_section',
-		'priority'    => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_our_team_title', array(
+			'default' => esc_html__( 'Our Team','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_team_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_team_section',
+			'priority'    => 10,
+		)
+	);
 
 	/* Team subtitle */
-	$wp_customize->add_setting( 'parallax_one_our_team_subtitle', array(
-		'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
-		'type'     => 'textarea',
-		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_team_section',
-		'priority'    => 20,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_our_team_subtitle', array(
+			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_our_team_subtitle', array(
+			'type'     => 'textarea',
+			'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
+			'section'  => 'parallax_one_team_section',
+			'priority'    => 20,
+		)
+	);
 
 	/* Team content */
 	$default = parallax_one_team_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_team_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
-	));
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
-		'label'															=> esc_html__( 'Add new team member','parallax-one' ),
-		'section'														=> 'parallax_one_team_section',
-		'priority' 													=> 30,
-		'parallax_image_control' 						=> true,
-		'parallax_title_control' 						=> true,
-		'parallax_subtitle_control' 				=> true,
-		'parallax_socials_repeater_control' => true,
-	) ) );
+	$wp_customize->add_setting(
+		'parallax_one_team_content', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_team_content', array(
+				'label'                                                         => esc_html__( 'Add new team member','parallax-one' ),
+				'section'                                                       => 'parallax_one_team_section',
+				'priority'                                                  => 30,
+				'parallax_image_control'                        => true,
+				'parallax_title_control'                        => true,
+				'parallax_subtitle_control'                 => true,
+				'parallax_socials_repeater_control' => true,
+			)
+		)
+	);
 
 	/**
 	 * TESTIMONIALS OPTIONS
 	 */
-	$wp_customize->add_section( 'parallax_one_testimonials_section' , array(
-		'title'       => esc_html__( 'Testimonial section', 'parallax-one' ),
-		'priority'    => 55,
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_testimonials_section' , array(
+			'title'       => esc_html__( 'Testimonial section', 'parallax-one' ),
+			'priority'    => 55,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
-	$wp_customize->add_setting( 'paralax_one_testimonials_pinterest_style', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default'    		=> '5',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_testimonials_pinterest_style', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+			'default'           => '5',
+		)
+	);
 	$wp_customize->add_control(
 		'paralax_one_testimonials_pinterest_style',
 		array(
-			'type' 			=> 'checkbox',
-			'label' 		=> esc_html__( 'Use pinterest layout?','parallax-one' ),
-			'description' 	=> esc_html__( 'If this box is checked, the Testimonials section will use pinterest-style layout.','parallax-one' ),
-			'section' 		=> 'parallax_one_testimonials_section',
-			'priority'    	=> 1,
+			'type'          => 'checkbox',
+			'label'         => esc_html__( 'Use pinterest layout?','parallax-one' ),
+			'description'   => esc_html__( 'If this box is checked, the Testimonials section will use pinterest-style layout.','parallax-one' ),
+			'section'       => 'parallax_one_testimonials_section',
+			'priority'      => 1,
 
-	));
+		)
+	);
 
 	/* Testimonials title */
-	$wp_customize->add_setting( 'parallax_one_happy_customers_title', array(
-		'default' => esc_html__( 'Happy Customers','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_happy_customers_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_testimonials_section',
-		'priority'    => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_happy_customers_title', array(
+			'default' => esc_html__( 'Happy Customers','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_happy_customers_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_testimonials_section',
+			'priority'    => 10,
+		)
+	);
 
 	/* Testimonials subtitle */
-	$wp_customize->add_setting( 'parallax_one_happy_customers_subtitle', array(
-		'default' => esc_html__( 'Cloud computing subscription model out of the box proactive solution.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_happy_customers_subtitle', array(
-		'type'     => 'textarea',
-		'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
-		'section'  => 'parallax_one_testimonials_section',
-		'priority'    => 20,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_happy_customers_subtitle', array(
+			'default' => esc_html__( 'Cloud computing subscription model out of the box proactive solution.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_happy_customers_subtitle', array(
+			'type'     => 'textarea',
+			'label'    => esc_html__( 'Subtitle', 'parallax-one' ),
+			'section'  => 'parallax_one_testimonials_section',
+			'priority'    => 20,
+		)
+	);
 
 	/* Testimonials content */
 	$default = parallax_one_testimonials_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_testimonials_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
-	));
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_testimonials_content', array(
-		'label'   => esc_html__( 'Add new testimonial','parallax-one' ),
-		'section' => 'parallax_one_testimonials_section',
-		'priority' => 30,
-		'parallax_image_control' => true,
-		'parallax_title_control' => true,
-		'parallax_subtitle_control' => true,
-		'parallax_text_control' => true,
-	) ) );
+	$wp_customize->add_setting(
+		'parallax_one_testimonials_content', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_testimonials_content', array(
+				'label'   => esc_html__( 'Add new testimonial','parallax-one' ),
+				'section' => 'parallax_one_testimonials_section',
+				'priority' => 30,
+				'parallax_image_control' => true,
+				'parallax_title_control' => true,
+				'parallax_subtitle_control' => true,
+				'parallax_text_control' => true,
+			)
+		)
+	);
 
 	/**
 	 * RIBBON OPTIONS
 	 */
 	/* RIBBON SETTINGS */
-	$wp_customize->add_section( 'parallax_one_ribbon_section' , array(
-		'title'       => esc_html__( 'Ribbon section', 'parallax-one' ),
-		'priority'    => 60,
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_ribbon_section' , array(
+			'title'       => esc_html__( 'Ribbon section', 'parallax-one' ),
+			'priority'    => 60,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	/* Ribbon Background	*/
-	$wp_customize->add_setting( 'paralax_one_ribbon_background', array(
-		'default' => parallax_get_file( '/images/background-images/parallax-img/parallax-img1.jpg' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
-		'label'    => esc_html__( 'Ribbon Background', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
-		'priority'    => 10,
-	) ) );
+	$wp_customize->add_setting(
+		'paralax_one_ribbon_background', array(
+			'default' => parallax_get_file( '/images/background-images/parallax-img/parallax-img1.jpg' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize, 'paralax_one_ribbon_background', array(
+				'label'    => esc_html__( 'Ribbon Background', 'parallax-one' ),
+				'section'  => 'parallax_one_ribbon_section',
+				'priority'    => 10,
+			)
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_ribbon_title', array(
-		'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	) );
-	$wp_customize->add_control( 'parallax_one_ribbon_title', array(
-		'type'     => 'textarea',
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
-		'priority'    => 20,
-	) );
+	$wp_customize->add_setting(
+		'parallax_one_ribbon_title', array(
+			'default' => esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_ribbon_title', array(
+			'type'     => 'textarea',
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_ribbon_section',
+			'priority'    => 20,
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_button_text', array(
-		'default' => esc_html__( 'GET STARTED','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_button_text', array(
-		'label'    => esc_html__( 'Button label', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
-		'priority'    => 30,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_button_text', array(
+			'default' => esc_html__( 'GET STARTED','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_button_text', array(
+			'label'    => esc_html__( 'Button label', 'parallax-one' ),
+			'section'  => 'parallax_one_ribbon_section',
+			'priority'    => 30,
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_button_link', array(
-		'default' => esc_html__( '#','parallax-one' ),
-		'sanitize_callback' => 'esc_url',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_button_link', array(
-		'label'    => esc_html__( 'Button link', 'parallax-one' ),
-		'section'  => 'parallax_one_ribbon_section',
-		'priority'    => 40,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_button_link', array(
+			'default' => esc_html__( '#','parallax-one' ),
+			'sanitize_callback' => 'esc_url',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_button_link', array(
+			'label'    => esc_html__( 'Button link', 'parallax-one' ),
+			'section'  => 'parallax_one_ribbon_section',
+			'priority'    => 40,
+		)
+	);
 
 	/**
 	 * LATEST NEWS OPTIONS
 	 */
 
-	$wp_customize->add_section( 'parallax_one_latest_news_section' , array(
-		'title'       => esc_html__( 'Latest news section', 'parallax-one' ),
-		'priority'    => 65,
-		'active_callback' => 'parallax_one_show_on_front',
-	) );
+	$wp_customize->add_section(
+		'parallax_one_latest_news_section' , array(
+			'title'       => esc_html__( 'Latest news section', 'parallax-one' ),
+			'priority'    => 65,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_latest_news_title', array(
-		'default' => esc_html__( 'Latest news','parallax-one' ),
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_latest_news_title', array(
-		'label'    => esc_html__( 'Main title', 'parallax-one' ),
-		'section'  => 'parallax_one_latest_news_section',
-		'priority'    => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_latest_news_title', array(
+			'default' => esc_html__( 'Latest news','parallax-one' ),
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_latest_news_title', array(
+			'label'    => esc_html__( 'Main title', 'parallax-one' ),
+			'section'  => 'parallax_one_latest_news_section',
+			'priority'    => 10,
+		)
+	);
 
 	/**
 	 * CONTACT OPTIONS
 	 */
 	/* CONTACT SETTINGS */
-	$wp_customize->add_section( 'parallax_one_contact_section' , array(
-		'title'       => esc_html__( 'Contact section', 'parallax-one' ),
-		'priority'    => 70,
-		'active_callback' => 'parallax_one_show_on_front',
-	));
+	$wp_customize->add_section(
+		'parallax_one_contact_section' , array(
+			'title'       => esc_html__( 'Contact section', 'parallax-one' ),
+			'priority'    => 70,
+			'active_callback' => 'parallax_one_show_on_front',
+		)
+	);
 
 	$default = parallax_one_contact_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_contact_info_content', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
-	));
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
-		'label'   => esc_html__( 'Add new contact field','parallax-one' ),
-		'section' => 'parallax_one_contact_section',
-		'priority' => 10,
-		'parallax_image_control' => false,
-		'parallax_icon_control' => true,
-		'parallax_text_control' => true,
-		'parallax_link_control' => true,
-	) ) );
+	$wp_customize->add_setting(
+		'parallax_one_contact_info_content', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_contact_info_content', array(
+				'label'   => esc_html__( 'Add new contact field','parallax-one' ),
+				'section' => 'parallax_one_contact_section',
+				'priority' => 10,
+				'parallax_image_control' => false,
+				'parallax_icon_control' => true,
+				'parallax_text_control' => true,
+				'parallax_link_control' => true,
+			)
+		)
+	);
 
 	/* Map ShortCode  */
-	$wp_customize->add_setting( 'parallax_one_frontpage_map_shortcode', array(
-		'default' => '',
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-	));
-	$wp_customize->add_control( 'parallax_one_frontpage_map_shortcode', array(
-		'label'    => esc_html__( 'Map shortcode', 'parallax-one' ),
-		'description' => __( 'To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one' ),
-		'section'  => 'parallax_one_contact_section',
-		'priority'    => 20,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_frontpage_map_shortcode', array(
+			'default' => '',
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_frontpage_map_shortcode', array(
+			'label'    => esc_html__( 'Map shortcode', 'parallax-one' ),
+			'description' => __( 'To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one' ),
+			'section'  => 'parallax_one_contact_section',
+			'priority'    => 20,
+		)
+	);
 
 	/**
 	 * CONTACT PAGE OPTIONS
 	 */
-	$wp_customize->add_section( 'parallax_one_contact_page' , array(
-		'title'       => esc_html__( 'Contact page', 'parallax-one' ),
-	  	'priority'    => 75,
-		'active_callback' => 'parallax_one_is_contact_page',
-	));
+	$wp_customize->add_section(
+		'parallax_one_contact_page' , array(
+			'title'       => esc_html__( 'Contact page', 'parallax-one' ),
+			'priority'    => 75,
+			'active_callback' => 'parallax_one_is_contact_page',
+		)
+	);
 
 	/* Contact Form  */
-	$wp_customize->add_setting( 'parallax_one_contact_form_shortcode', array(
-		'default' => '',
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-	));
-	$wp_customize->add_control( 'parallax_one_contact_form_shortcode', array(
-		'label'    => esc_html__( 'Contact form shortcode', 'parallax-one' ),
-		'description' => __( 'Create a form, copy the shortcode generated and paste it here. We recommend <a href="http://themeisle.com/plugins/pirate-forms" target="_blank">Pirate Forms</a> but you can use any plugin you like.','parallax-one' ),
-		'section'  => 'parallax_one_contact_page',
-		'priority'    => 1,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_contact_form_shortcode', array(
+			'default' => '',
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_contact_form_shortcode', array(
+			'label'    => esc_html__( 'Contact form shortcode', 'parallax-one' ),
+			'description' => __( 'Create a form, copy the shortcode generated and paste it here. We recommend <a href="http://themeisle.com/plugins/pirate-forms" target="_blank">Pirate Forms</a> but you can use any plugin you like.','parallax-one' ),
+			'section'  => 'parallax_one_contact_page',
+			'priority'    => 1,
+		)
+	);
 
 	/* Map ShortCode  */
-	$wp_customize->add_setting( 'parallax_one_contact_map_shortcode', array(
-		'default' => '',
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-	));
-	$wp_customize->add_control( 'parallax_one_contact_map_shortcode', array(
-		'label'    => esc_html__( 'Map shortcode', 'parallax-one' ),
-		'description' => __( 'To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/" target="_blank">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one' ),
-		'section'  => 'parallax_one_contact_page',
-		'priority'    => 2,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_contact_map_shortcode', array(
+			'default' => '',
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_contact_map_shortcode', array(
+			'label'    => esc_html__( 'Map shortcode', 'parallax-one' ),
+			'description' => __( 'To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/" target="_blank">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','parallax-one' ),
+			'section'  => 'parallax_one_contact_page',
+			'priority'    => 2,
+		)
+	);
 
 	/**
 	 * FOOTER OPTIONS
 	 */
 
-	$wp_customize->add_section( 'parallax_one_footer_section' , array(
-		'title'       => esc_html__( 'Footer options', 'parallax-one' ),
-	  	'priority'    => 80,
-	  	'description' => esc_html__( 'The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','parallax-one' ),
-	));
+	$wp_customize->add_section(
+		'parallax_one_footer_section' , array(
+			'title'       => esc_html__( 'Footer options', 'parallax-one' ),
+			'priority'    => 80,
+			'description' => esc_html__( 'The main content of this section is customizable in: Customize -> Widgets -> Footer area. ','parallax-one' ),
+		)
+	);
 
 	/* Footer Menu */
 	$nav_menu_locations_footer = $wp_customize->get_control( 'nav_menu_locations[parallax_footer_menu]' );
@@ -737,43 +933,55 @@ function parallax_one_customize_register( $wp_customize ) {
 		$nav_menu_locations_footer->priority = 1;
 	}
 	/* Copyright */
-	$wp_customize->add_setting( 'parallax_one_copyright', array(
-		'default' => 'Themeisle',
-		'sanitize_callback' => 'parallax_one_sanitize_input',
-		'transport' => 'postMessage',
-	));
-	$wp_customize->add_control( 'parallax_one_copyright', array(
-		'label'    => esc_html__( 'Copyright', 'parallax-one' ),
-		'section'  => 'parallax_one_footer_section',
-		'priority'    => 2,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_copyright', array(
+			'default' => 'Themeisle',
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+			'transport' => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_copyright', array(
+			'label'    => esc_html__( 'Copyright', 'parallax-one' ),
+			'section'  => 'parallax_one_footer_section',
+			'priority'    => 2,
+		)
+	);
 
 	/* Socials icons */
 	$default = parallax_one_footer_socials_get_default_content();
-	$wp_customize->add_setting( 'parallax_one_social_icons', array(
-		'sanitize_callback' => 'parallax_one_sanitize_repeater',
-		'default' => $default,
+	$wp_customize->add_setting(
+		'parallax_one_social_icons', array(
+			'sanitize_callback' => 'parallax_one_sanitize_repeater',
+			'default' => $default,
 
-	));
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_social_icons', array(
-		'label'   => esc_html__( 'Add new social icon','parallax-one' ),
-		'section' => 'parallax_one_footer_section',
-		'priority' => 3,
-		'parallax_image_control' => false,
-		'parallax_icon_control' => true,
-		'parallax_text_control' => false,
-		'parallax_link_control' => true,
-	) ) );
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_One_General_Repeater(
+			$wp_customize, 'parallax_one_social_icons', array(
+				'label'   => esc_html__( 'Add new social icon','parallax-one' ),
+				'section' => 'parallax_one_footer_section',
+				'priority' => 3,
+				'parallax_image_control' => false,
+				'parallax_icon_control' => true,
+				'parallax_text_control' => false,
+				'parallax_link_control' => true,
+			)
+		)
+	);
 
 	/**
 	 * ADVANCED OPTIONS
 	 */
 
-	$wp_customize->add_section( 'parallax_one_general_section' , array(
-		'title'       => esc_html__( 'Advanced options', 'parallax-one' ),
-	  	'priority'    => 85,
-	  	'description' => esc_html__( 'Parallax One theme general options','parallax-one' ),
-	));
+	$wp_customize->add_section(
+		'parallax_one_general_section' , array(
+			'title'       => esc_html__( 'Advanced options', 'parallax-one' ),
+			'priority'    => 85,
+			'description' => esc_html__( 'Parallax One theme general options','parallax-one' ),
+		)
+	);
 
 	$blogname = $wp_customize->get_control( 'blogname' );
 	$blogdescription = $wp_customize->get_control( 'blogdescription' );
@@ -816,172 +1024,230 @@ function parallax_one_customize_register( $wp_customize ) {
 	}
 
 	/* Disable preloader */
-	$wp_customize->add_setting( 'paralax_one_disable_preloader', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
+	$wp_customize->add_setting(
+		'paralax_one_disable_preloader', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
 	$wp_customize->add_control(
 		'paralax_one_disable_preloader',
 		array(
-				'type' => 'checkbox',
-				'label' => esc_html__( 'Disable preloader?','parallax-one' ),
-				'description' => esc_html__( 'If this box is checked, the preloader will be disabled from homepage.','parallax-one' ),
-				'section' => 'parallax_one_general_section',
-				'priority'    => 7,
-			)
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Disable preloader?','parallax-one' ),
+			'description' => esc_html__( 'If this box is checked, the preloader will be disabled from homepage.','parallax-one' ),
+			'section' => 'parallax_one_general_section',
+			'priority'    => 7,
+		)
 	);
 
 	/* Enable animations */
-	$wp_customize->add_setting( 'parallax_one_enable_animations', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-		'default' => false,
+	$wp_customize->add_setting(
+		'parallax_one_enable_animations', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+			'default' => false,
 
-	));
+		)
+	);
 	$wp_customize->add_control(
 		'parallax_one_enable_animations',
 		array(
-				'type' => 'checkbox',
-				'label' => esc_html__( 'Enable animations on front page?','parallax-one' ),
-				'description' => esc_html__( 'If this box is checked, scroll animations will be enabled on the front page.','parallax-one' ),
-				'section' => 'parallax_one_general_section',
-				'priority'    => 8,
-			)
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Enable animations on front page?','parallax-one' ),
+			'description' => esc_html__( 'If this box is checked, scroll animations will be enabled on the front page.','parallax-one' ),
+			'section' => 'parallax_one_general_section',
+			'priority'    => 8,
+		)
 	);
 
 	/* Character sets */
-	$wp_customize->add_setting( 'parallax_theme_font_title', array(
-		'sanitize_callback' => 'zerif_sanitize_pro_version',
-	));
-	$wp_customize->add_control( new Parallax_Theme_Font_Title( $wp_customize, 'parallax_theme_font_title', array(
-		'section' => 'parallax_one_general_section',
-	)));
+	$wp_customize->add_setting(
+		'parallax_theme_font_title', array(
+			'sanitize_callback' => 'zerif_sanitize_pro_version',
+		)
+	);
+	$wp_customize->add_control(
+		new Parallax_Theme_Font_Title(
+			$wp_customize, 'parallax_theme_font_title', array(
+				'section' => 'parallax_one_general_section',
+			)
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_character_cyrillic', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
-	$wp_customize->add_control( 'parallax_one_character_cyrillic', array(
-		'type' => 'checkbox',
-		'label' => esc_html__( 'Cyrillic','parallax-one' ),
-		'section' => 'parallax_one_general_section',
-		'priority' => 10,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_character_cyrillic', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_character_cyrillic', array(
+			'type' => 'checkbox',
+			'label' => esc_html__( 'Cyrillic','parallax-one' ),
+			'section' => 'parallax_one_general_section',
+			'priority' => 10,
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_character_vietnamese', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
-	$wp_customize->add_control( 'parallax_one_character_vietnamese', array(
-		'type' 			=> 'checkbox',
-		'label' 		=> esc_html__( 'Vietnamese','parallax-one' ),
-		'section' 		=> 'parallax_one_general_section',
-		'priority'    	=> 11,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_character_vietnamese', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_character_vietnamese', array(
+			'type'          => 'checkbox',
+			'label'         => esc_html__( 'Vietnamese','parallax-one' ),
+			'section'       => 'parallax_one_general_section',
+			'priority'      => 11,
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_character_greek', array(
-		'sanitize_callback' => 'parallax_one_sanitize_checkbox',
-	));
-	$wp_customize->add_control( 'parallax_one_character_greek', array(
-		'type' 			=> 'checkbox',
-		'label' 		=> esc_html__( 'Greek','parallax-one' ),
-		'section' 		=> 'parallax_one_general_section',
-		'priority'    	=> 12,
-	));
+	$wp_customize->add_setting(
+		'parallax_one_character_greek', array(
+			'sanitize_callback' => 'parallax_one_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax_one_character_greek', array(
+			'type'          => 'checkbox',
+			'label'         => esc_html__( 'Greek','parallax-one' ),
+			'section'       => 'parallax_one_general_section',
+			'priority'      => 12,
+		)
+	);
 
 	/**
 	 * PLUS SECTIONS
 	 */
 
 	require_once( 'class/parallax-one-text-control.php' );
-	$wp_customize->add_section( 'parallax_one_sections_order' , array(
-		'title'       => __( 'Sections management', 'parallax-one' ),
-		'priority' => 20,
-	));
-
-	$wp_customize->add_setting( 'parallax_one_sections_management', array(
-			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_sections_management',
-		array(
-			'label'    => __( 'Sections management', 'parallax-one' ),
-			'section' => 'parallax_one_sections_order',
-			'priority' => 1,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the frontpage SECTIONS ORDER!', 'parallax-one' ),
+	$wp_customize->add_section(
+		'parallax_one_sections_order' , array(
+			'title'       => __( 'Sections management', 'parallax-one' ),
+			'priority' => 20,
 		)
-	));
+	);
 
-	$wp_customize->add_section( 'parallax_one_portfolio_section' , array(
-		'title'       => esc_html__( 'Portfolio section', 'parallax-one' ),
-		'priority'    => 48,
-	));
-
-	$wp_customize->add_setting( 'parallax_one_portfolio_text', array(
+	$wp_customize->add_setting(
+		'parallax_one_sections_management', array(
 			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_portfolio_text',
-		array(
-			'label'    => __( 'Portfolio', 'parallax-one' ),
-			'section' => 'parallax_one_portfolio_section',
-			'priority' => 1,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the NEW PORTFOLIO SECTION!', 'parallax-one' ),
 		)
-	));
+	);
 
-	$wp_customize->add_section( 'parallax_one_new_features' , array(
-		'title'       => esc_html__( 'New Features', 'parallax-one' ),
-		'priority'    => 76,
-	));
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_sections_management',
+			array(
+				'label'    => __( 'Sections management', 'parallax-one' ),
+				'section' => 'parallax_one_sections_order',
+				'priority' => 1,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the frontpage SECTIONS ORDER!', 'parallax-one' ),
+			)
+		)
+	);
 
-	$wp_customize->add_setting( 'parallax_one_new_layout', array(
+	$wp_customize->add_section(
+		'parallax_one_portfolio_section' , array(
+			'title'       => esc_html__( 'Portfolio section', 'parallax-one' ),
+			'priority'    => 48,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'parallax_one_portfolio_text', array(
 			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_new_layout',
-		array(
-			'label'    => __( 'Header Layout', 'parallax-one' ),
-			'section' => 'parallax_one_new_features',
-			'priority' => 1,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the HEADER\'S LAYOUT SECTION!', 'parallax-one' ),
 		)
-	));
+	);
 
-	$wp_customize->add_setting( 'parallax_one_new_color', array(
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_portfolio_text',
+			array(
+				'label'    => __( 'Portfolio', 'parallax-one' ),
+				'section' => 'parallax_one_portfolio_section',
+				'priority' => 1,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the NEW PORTFOLIO SECTION!', 'parallax-one' ),
+			)
+		)
+	);
+
+	$wp_customize->add_section(
+		'parallax_one_new_features' , array(
+			'title'       => esc_html__( 'New Features', 'parallax-one' ),
+			'priority'    => 76,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'parallax_one_new_layout', array(
 			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_new_color',
-		array(
-			'label'    => __( 'Color scheme', 'parallax-one' ),
-			'section' => 'parallax_one_new_features',
-			'priority' => 2,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the COLOR SCHEME!', 'parallax-one' ),
 		)
-	));
+	);
 
-	$wp_customize->add_setting( 'parallax_one_new_preloader', array(
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_new_layout',
+			array(
+				'label'    => __( 'Header Layout', 'parallax-one' ),
+				'section' => 'parallax_one_new_features',
+				'priority' => 1,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the HEADER\'S LAYOUT SECTION!', 'parallax-one' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'parallax_one_new_color', array(
 			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_new_preloader',
-		array(
-			'label'    => __( 'Preloader', 'parallax-one' ),
-			'section' => 'parallax_one_new_features',
-			'priority' => 3,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the PRELOADER IMAGE!', 'parallax-one' ),
 		)
-	));
+	);
 
-	$wp_customize->add_setting( 'parallax_one_new_opacity', array(
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_new_color',
+			array(
+				'label'    => __( 'Color scheme', 'parallax-one' ),
+				'section' => 'parallax_one_new_features',
+				'priority' => 2,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the COLOR SCHEME!', 'parallax-one' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'parallax_one_new_preloader', array(
 			'sanitize_callback' => 'parallax_one_sanitize_input',
-	) );
-
-	$wp_customize->add_control( new Parallax_One_Message( $wp_customize, 'parallax_one_new_opacity',
-		array(
-			'label'    => __( 'Opacity', 'parallax-one' ),
-			'section' => 'parallax_one_new_features',
-			'priority' => 4,
-			'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the background opacity and color of each section!', 'parallax-one' ),
 		)
-	));
+	);
+
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_new_preloader',
+			array(
+				'label'    => __( 'Preloader', 'parallax-one' ),
+				'section' => 'parallax_one_new_features',
+				'priority' => 3,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the PRELOADER IMAGE!', 'parallax-one' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'parallax_one_new_opacity', array(
+			'sanitize_callback' => 'parallax_one_sanitize_input',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Parallax_One_Message(
+			$wp_customize, 'parallax_one_new_opacity',
+			array(
+				'label'    => __( 'Opacity', 'parallax-one' ),
+				'section' => 'parallax_one_new_features',
+				'priority' => 4,
+				'parallax_message' => __( 'Check out the <a href="http://themeisle.com/plugins/parallax-one-plus/">PRO version</a> for full control over the background opacity and color of each section!', 'parallax-one' ),
+			)
+		)
+	);
 
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );
@@ -1002,7 +1268,7 @@ if ( ! function_exists( 'parallax_one_sanitize_input' ) ) {
 	 * @param string $input Text to sanitize.
 	 */
 	function parallax_one_sanitize_input( $input ) {
-	    return wp_kses_post( force_balance_tags( $input ) );
+		return wp_kses_post( force_balance_tags( $input ) );
 	}
 }
 

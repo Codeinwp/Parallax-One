@@ -21,12 +21,16 @@ if ( ! empty( $parallax_one_logos ) ) {
 
 	<div class="clients white-bg" id="clients" role="region" aria-label="<?php esc_html_e( ' Affiliates Logos', 'parallax-one' ); ?>">
 		<?php
-		parallax_hook_logos_top(); ?>
+		parallax_hook_logos_top();
+		?>
 		<div class="container">
 			<ul class="client-logos"
-			<?php if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
+			<?php
+			if ( ! empty( $parallax_one_frontpage_animations ) && ( (bool) $parallax_one_frontpage_animations === true ) ) {
 				echo 'data-scrollreveal="enter top over 1.5s after 1s"';
-} ?>>
+			}
+?>
+>
 				<?php
 				foreach ( $parallax_one_logos_decoded as $parallax_one_logo ) {
 
@@ -34,26 +38,32 @@ if ( ! empty( $parallax_one_logos ) ) {
 					$link = ! empty( $parallax_one_logo->link ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->link, 'Logos section' ) : '';
 					$image = ! empty( $parallax_one_logo->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_logo->image_url, 'Logos section' ) : '';
 
-					if ( ! empty( $image ) ) {  ?>
+					if ( ! empty( $image ) ) {
+					?>
 						<li>
 							<?php
-							if ( ! empty( $link ) ) {  ?>
+							if ( ! empty( $link ) ) {
+							?>
 									<a href="<?php echo esc_url( $link ); ?>" title="">
 										<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php esc_attr_e( 'Logo', 'parallax-one' ); ?>">
 									</a>
 							<?php
-							} else { ?>
+							} else {
+							?>
 								<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php esc_attr_e( 'Logo','parallax-one' ); ?>">
 							<?php
-							} ?>
+							}
+							?>
 						</li>
 					<?php
 					} // End if().
-				} // End foreach(). ?>
+				} // End foreach().
+				?>
 			</ul>
 		</div>
 		<?php
-		parallax_hook_logos_bottom();?>
+		parallax_hook_logos_bottom();
+		?>
 	</div>
 	<?php
 	parallax_hook_logos_after();

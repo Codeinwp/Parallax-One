@@ -23,6 +23,23 @@ function parallax_one_translate_single_string( $original_value, $domain ) {
 }
 add_filter( 'parallax_one_translate_single_string', 'parallax_one_translate_single_string', 10, 2 );
 
+/**
+ * Filter to translate header image
+ */
+function parallax_one_translate_header_image( $original_value ) {
+	if ( is_customize_preview() ) {
+		$wpml_translation = $original_value;
+	} else {
+		$wpml_translation = apply_filters( 'wpml_translate_single_string', $original_value, 'Header image', $original_value );
+		if ( $wpml_translation === $original_value && function_exists( 'pll__' ) ) {
+			return pll__( $original_value );
+		}
+	}
+
+	return $wpml_translation;
+}
+
+add_filter( 'theme_mod_header_image', 'parallax_one_translate_header_image', 10 );
 
 /**
  * Helper to register pll string.
@@ -70,14 +87,16 @@ function parallax_one_pll_string_register_helper( $theme_mod, $default = false, 
  * Define Allowed Files to be included.
  */
 function parallax_one_filter_translations( $array ) {
-	return array_merge( $array, array(
-		'translations/translations-logos-section',
-		'translations/translations-services-section',
-		'translations/translations-team-section',
-		'translations/translations-testimonials-section',
-		'translations/translations-contact-section',
-		'translations/translations-footer-socials',
-	) );
+	return array_merge(
+		$array, array(
+			'translations/translations-logos-section',
+			'translations/translations-services-section',
+			'translations/translations-team-section',
+			'translations/translations-testimonials-section',
+			'translations/translations-contact-section',
+			'translations/translations-footer-socials',
+		)
+	);
 }
 add_filter( 'parallax_one_filter_translations', 'parallax_one_filter_translations' );
 

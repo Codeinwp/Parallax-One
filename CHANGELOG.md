@@ -1,4 +1,8 @@
 
+### 2.1.7 - 03/08/2017
+**Changes:** 
+- Fixed translation issues
+
 ### 2.1.6 - 03/05/2017
 **Changes:** 
 - Fixed escaping issues in the Services and Testimonials sections

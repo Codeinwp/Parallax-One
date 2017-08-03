@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Parallax One 2.1.7\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/Parallax-One/issues\n"
-"POT-Creation-Date: 2017-08-01 10:13:50+00:00\n"
+"POT-Creation-Date: 2017-08-03 12:07:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -500,40 +500,40 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:166
 msgid "Parallax One Team Member"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:167
 msgid "Parallax One Services"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:168
 msgid "Parallax One Testimonials"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:184
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:198
 #. translators: %d is widget area id
 msgid "Footer area %d"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:311
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:312
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:673
+#: functions.php:696
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: functions.php:677
+#: functions.php:700
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the "
 "links below or a search?"
@@ -1756,14 +1756,14 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:250
+#: functions.php:253
 #. Translators: If there are characters in your language that are not supported
 #. by Lora, translate this to 'off'. Do not translate into your own language.
 msgctxt "Cabin font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:260
 #. Translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.

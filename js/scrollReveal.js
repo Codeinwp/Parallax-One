@@ -47,8 +47,10 @@
 			}
 		} while (el = el.offsetParent) {
 
-			return top: offsetTop,
-			left: offsetLeft
+			return {
+				top: offsetTop,
+				left: offsetLeft
+			}
 		}
 	}
 

@@ -1,4 +1,9 @@
 
+### 2.1.9 - 07/09/2017
+**Changes:** 
+- Removed whitespaces in repeater controls options
+- Fix the console error Uncaught TypeError: jQuery(...).parallaxonegridpinterest is not a function which appeared with W3TC with js minify auto activated
+
 ### 2.1.8 - 07/09/2017
 **Changes:** 
 - Fixed error causing animations to not work properly on the frontpage

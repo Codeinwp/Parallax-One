@@ -1,4 +1,8 @@
 
+### 2.1.8 - 07/09/2017
+**Changes:** 
+- Fixed error causing animations to not work properly on the frontpage
+
 ### 2.1.7 - 03/08/2017
 **Changes:** 
 - Fixed translation issues

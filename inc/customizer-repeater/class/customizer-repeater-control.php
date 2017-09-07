@@ -214,7 +214,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 				<?php
 			}
 			?>
-			</div>
+		</div>
 		<button type="button" class="button add_field customizer-repeater-new-field">
 			<?php echo esc_html( $this->add_field_label ); ?>
 		</button>
@@ -231,7 +231,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 		$it = 0;
 		if ( ! empty( $array ) ) {
 			foreach ( $array as $icon ) {
-			?>
+				?>
 				<div class="customizer-repeater-general-control-repeater-container customizer-repeater-draggable">
 					<div class="customizer-repeater-customize-control-title">
 						<?php echo esc_html( $this->boxtitle ); ?>
@@ -345,15 +345,15 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 						if ( ! empty( $id ) ) {
 							echo esc_attr( $id );
 						}
-?>
+						?>
 ">
-						<button type="button" class="social-repeater-general-control-remove-field" 
-						<?php
-						if ( $it == 0 ) {
-							echo 'style="display:none;"';
-						}
-?>
->
+						<button type="button" class="social-repeater-general-control-remove-field"
+							<?php
+							if ( $it == 0 ) {
+								echo 'style="display:none;"';
+							}
+							?>
+						>
 							<?php esc_html_e( 'Delete field', 'parallax-one' ); ?>
 						</button>
 
@@ -364,7 +364,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 				$it++;
 			}// End foreach().
 		} else {
-		?>
+			?>
 			<div class="customizer-repeater-general-control-repeater-container">
 				<div class="customizer-repeater-customize-control-title">
 					<?php echo esc_html( $this->boxtitle ); ?>
@@ -446,21 +446,17 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 * @param string $value Input value.
 	 */
 	private function input_control( $options, $value = '' ) {
-	?>
+		?>
 		<span class="customize-control-title"><?php echo esc_html( $options['label'] ); ?></span>
 		<?php
 		if ( ! empty( $options['type'] ) ) {
 			switch ( $options['type'] ) {
 				case 'textarea':
-				?>
-					<textarea class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>">
-						<?php echo ( ! empty( $options['sanitize_callback'] ) ? call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ); ?>
-					</textarea>
-					<?php
+					echo '<textarea class="' . esc_attr( $options['class'] ) . '" placeholder="' . esc_attr( $options['label'] ) . '">' . ( ! empty( $options['sanitize_callback'] ) ? call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ) . '</textarea>';
 					break;
 			}
 		} else {
-		?>
+			?>
 			<input type="text" value="<?php echo ( ! empty( $options['sanitize_callback'] ) ? call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ); ?>" class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo esc_attr( $options['label'] ); ?>"/>
 			<?php
 		}
@@ -473,13 +469,13 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 * @param string $show Show or hide this input.
 	 */
 	private function icon_picker_control( $value = '', $show = '' ) {
-	?>
-		<div class="social-repeater-general-control-icon" 
-		<?php
-		if ( $show === 'parallax_image' || $show === 'parallax_none' ) {
-			echo 'style="display:none;"'; }
-?>
->
+		?>
+		<div class="social-repeater-general-control-icon"
+			<?php
+			if ( $show === 'parallax_image' || $show === 'parallax_none' ) {
+				echo 'style="display:none;"'; }
+			?>
+		>
 			<span class="customize-control-title">
 				<?php esc_html_e( 'Icon','parallax-one' ); ?>
 			</span>
@@ -495,20 +491,16 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 				);
 				?>
 			</span>
-			<div class="input-group icp-container">
-				<input data-placement="bottomRight" class="icp icp-auto" value="
-				<?php
-				if ( ! empty( $value ) ) {
-					echo esc_attr( $value );}
-?>
-" type="text">
-				<span class="input-group-addon">
-					<i class="fa <?php echo esc_attr( $value ); ?>"></i>
-				</span>
-			</div>
-			<?php get_template_part( $this->parallax_one_icon_container ); ?>
-		</div>
-		<?php
+			<?php
+			echo '<div class="input-group icp-container">';
+				echo '<input data-placement="bottomRight" class="icp icp-auto" value="' . ( ( ! empty( $value ) ) ? esc_attr( $value ) : '' ) . '" type="text">';
+				echo '<span class="input-group-addon">';
+					echo '<i class="fa ' . esc_attr( $value ) . '"></i>';
+				echo '</span>';
+			echo '</div>';
+			get_template_part( $this->parallax_one_icon_container );
+			echo '</div>';
+
 	}
 
 	/**
@@ -518,20 +510,20 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 * @param string $show Display image control.
 	 */
 	private function image_control( $value = '', $show = '' ) {
-	?>
-		<div class="customizer-repeater-image-control" 
-		<?php
+		echo '<div class="customizer-repeater-image-control"';
+
 		if ( $show === 'parallax_icon' || $show === 'parallax_none' ) {
-			echo 'style="display:none;"'; }
-?>
->
-			<span class="customize-control-title">
-				<?php esc_html_e( 'Image','parallax-one' ); ?>
-			</span>
-			<input type="text" class="widefat custom-media-url" value="<?php echo esc_attr( $value ); ?>">
-			<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="<?php esc_attr_e( 'Upload Image','parallax-one' ); ?>" />
-		</div>
-		<?php
+			echo 'style="display:none;"';
+		}
+
+		echo '>';
+
+		echo '<span class="customize-control-title">';
+			esc_html_e( 'Image','parallax-one' );
+		echo '</span>';
+		echo '<input type="text" class="widefat custom-media-url" value="' . esc_attr( $value ) . '">';
+		echo '<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="' . esc_attr__( 'Upload Image','parallax-one' ) . '" />';
+		echo '</div>';
 	}
 
 	/**
@@ -541,10 +533,11 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 * @param string $value Dropdown value.
 	 */
 	private function icon_type_choice( $value = 'parallax_icon' ) {
-	?>
-		<span class="customize-control-title">
-			<?php esc_html_e( 'Image type','parallax-one' ); ?>
-		</span>
+
+		echo '<span class="customize-control-title">';
+			esc_html_e( 'Image type','parallax-one' );
+		echo '</span>';
+		?>
 		<select class="customizer-repeater-image-choice">
 			<option value="parallax_icon" <?php selected( $value,'parallax_icon' ); ?>><?php esc_html_e( 'Icon','parallax-one' ); ?></option>
 			<option value="parallax_image" <?php selected( $value,'parallax_image' ); ?>><?php esc_html_e( 'Image','parallax-one' ); ?></option>
@@ -561,90 +554,54 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	private function repeater_control( $value = '' ) {
 		$social_repeater = array();
 		$show_del        = 0;
-		?>
-		<span class="customize-control-title"><?php esc_html_e( 'Social icons', 'parallax-one' ); ?></span>
-		<?php
+
+		echo '<span class="customize-control-title">' . esc_html__( 'Social icons', 'parallax-one' ) . '</span>';
 		if ( ! empty( $value ) ) {
 			$social_repeater = json_decode( html_entity_decode( $value ), true );
 		}
 		if ( ( count( $social_repeater ) == 1 && '' === $social_repeater[0] ) || empty( $social_repeater ) ) {
-		?>
-			<div class="customizer-repeater-social-repeater">
-				<div class="customizer-repeater-social-repeater-container">
-					<div class="customizer-repeater-rc input-group icp-container">
-						<input data-placement="bottomRight" class="icp icp-auto" value="
-						<?php
-						if ( ! empty( $value ) ) {
-							echo esc_attr( $value ); }
-?>
-" type="text">
-						<span class="input-group-addon"></span>
-					</div>
-					<?php get_template_part( $this->parallax_one_icon_container ); ?>
-					<input type="text" class="customizer-repeater-social-repeater-link"
-						   placeholder="<?php esc_attr_e( 'Link', 'parallax-one' ); ?>">
-					<input type="hidden" class="customizer-repeater-social-repeater-id" value="">
-					<button class="social-repeater-remove-social-item" style="display:none">
-						<?php esc_html_e( 'Remove Icon', 'parallax-one' ); ?>
-					</button>
-				</div>
-				<input type="hidden" id="social-repeater-socials-repeater-colector" class="social-repeater-socials-repeater-colector" value=""/>
-			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add icon', 'parallax-one' ); ?></button>
-			<?php
+
+			echo '<div class="customizer-repeater-social-repeater">';
+				echo '<div class="customizer-repeater-social-repeater-container">';
+					echo '<div class="customizer-repeater-rc input-group icp-container">';
+						echo '<input data-placement="bottomRight" class="icp icp-auto" value="' . ( ( ! empty( $value ) ) ? esc_attr( $value ) : '' ) . '" type="text">';
+						echo '<span class="input-group-addon"></span>';
+					echo '</div>';
+					get_template_part( $this->parallax_one_icon_container );
+					echo '<input type="text" class="customizer-repeater-social-repeater-link" placeholder="' . esc_attr__( 'Link', 'parallax-one' ) . '">';
+					echo '<input type="hidden" class="customizer-repeater-social-repeater-id" value="">';
+					echo '<button class="social-repeater-remove-social-item" style="display:none">';
+						esc_html_e( 'Remove Icon', 'parallax-one' );
+					echo '</button>';
+				echo '</div>';
+				echo '<input type="hidden" id="social-repeater-socials-repeater-colector" class="social-repeater-socials-repeater-colector" value="" />';
+			echo '</div>';
+			echo '<button class="social-repeater-add-social-item button-secondary">' . esc_html__( 'Add icon', 'parallax-one' ) . '</button>';
 		} else {
-		?>
-			<div class="customizer-repeater-social-repeater">
-				<?php
-				foreach ( $social_repeater as $social_icon ) {
-					$show_del ++;
-					?>
-					<div class="customizer-repeater-social-repeater-container">
-						<div class="customizer-repeater-rc input-group icp-container">
-							<input data-placement="bottomRight" class="icp icp-auto" value="
-							<?php
-							if ( ! empty( $social_icon['icon'] ) ) {
-								echo esc_attr( $social_icon['icon'] ); }
-?>
-" type="text">
-							<span class="input-group-addon"><i class="fa <?php echo esc_attr( $social_icon['icon'] ); ?>"></i></span>
-						</div>
-						<?php get_template_part( $this->parallax_one_icon_container ); ?>
-						<input type="text" class="customizer-repeater-social-repeater-link"
-							   placeholder="<?php esc_html_e( 'Link', 'parallax-one' ); ?>"
-							   value="
-								<?php
-								if ( ! empty( $social_icon['link'] ) ) {
-									echo esc_url( $social_icon['link'] );
-								}
-?>
-">
-						<input type="hidden" class="customizer-repeater-social-repeater-id"
-							   value="
-								<?php
-								if ( ! empty( $social_icon['id'] ) ) {
-									echo esc_attr( $social_icon['id'] );
-								}
-?>
-">
-						<button class="social-repeater-remove-social-item"
-								style="
-								<?php
-								if ( $show_del == 1 ) {
-									echo 'display:none';
-								}
-?>
-"><?php esc_html_e( 'Remove Icon', 'parallax-one' ); ?></button>
-					</div>
-					<?php
+
+			echo '<div class="customizer-repeater-social-repeater">';
+			foreach ( $social_repeater as $social_icon ) {
+				$show_del ++;
+
+				echo '<div class="customizer-repeater-social-repeater-container">';
+				echo '<div class="customizer-repeater-rc input-group icp-container">';
+					echo '<input data-placement="bottomRight" class="icp icp-auto" value="' . ( ! empty( $social_icon['icon'] ) ? esc_attr( $social_icon['icon'] ) : '' ) . '" type="text">';
+					echo '<span class="input-group-addon"><i class="fa ' . esc_attr( $social_icon['icon'] ) . '"></i></span>';
+				echo '</div>';
+				get_template_part( $this->parallax_one_icon_container );
+				echo '<input type="text" class="customizer-repeater-social-repeater-link" placeholder="' . esc_html__( 'Link', 'parallax-one' ) . '" value="' . ( ! empty( $social_icon['link'] ) ? esc_url( $social_icon['link'] ) : '' ) . '">';
+				echo '<input type="hidden" class="customizer-repeater-social-repeater-id" value="' . ( ! empty( $social_icon['id'] ) ? esc_attr( $social_icon['id'] ) : '' ) . '">';
+				echo '<button class="social-repeater-remove-social-item" style="';
+
+				if ( $show_del == 1 ) {
+					echo 'display:none';
 				}
-				?>
-				<input type="hidden" id="social-repeater-socials-repeater-colector"
-					   class="social-repeater-socials-repeater-colector"
-					   value="<?php echo esc_textarea( html_entity_decode( $value ) ); ?>" />
-			</div>
-			<button class="social-repeater-add-social-item button-secondary"><?php esc_html_e( 'Add icon', 'parallax-one' ); ?></button>
-			<?php
+				echo '">' . esc_html__( 'Remove Icon', 'parallax-one' ) . '</button>';
+				echo '</div>';
+			}
+				echo '<input type="hidden" id="social-repeater-socials-repeater-colector" class="social-repeater-socials-repeater-colector" value="' . esc_textarea( html_entity_decode( $value ) ) . '" />';
+			echo '</div>';
+			echo '<button class="social-repeater-add-social-item button-secondary">' . esc_html__( 'Add icon', 'parallax-one' ) . '</button>';
 		}// End if().
 	}
 }

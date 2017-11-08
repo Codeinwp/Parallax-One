@@ -20,7 +20,7 @@
 </head>
 
 <?php
-echo '<body itemscope itemtype="http://schema.org/WebPage" ' . get_body_class() . ' dir="';
+echo '<body itemscope itemtype="http://schema.org/WebPage" ' . 'class="' . join( ' ', get_body_class() ) . '"' . ' dir="';
 if ( is_rtl() ) {
 	echo 'rtl';
 } else {

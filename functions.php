@@ -719,3 +719,43 @@ function parallax_one_add_editor_styles() {
 }
 
 add_action( 'after_setup_theme', 'parallax_one_add_editor_styles' );
+
+/**
+ * Notice in Customize to announce the theme is not maintained anymore
+ */
+function parallax_one_customize_register_notification( $wp_customize ) {
+	require_once( 'inc/class/class-ti-notify.php' );
+	$wp_customize->register_section_type( 'Ti_Notify' );
+	$wp_customize->add_section(
+		new Ti_Notify(
+			$wp_customize,
+			'ti-notify',
+			array(
+				/* translators: Link to the recommended theme */
+				'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'parallax-one' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) ),
+				'priority' => 0,
+			)
+		)
+	);
+	$wp_customize->add_setting( 'parallax-one-notify' );
+	$wp_customize->add_control(
+		'parallax-one-notify', array(
+			'label'    => __( 'Notification', 'parallax-one' ),
+			'section'  => 'ti-notify',
+			'priority' => 1,
+		)
+	);
+}
+add_action( 'customize_register', 'parallax_one_customize_register_notification' );
+/**
+ * Notice in admin dashboard to announce the theme is not maintained anymore
+ */
+function parallax_one_admin_notice() {
+	global $pagenow;
+	if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
+		echo '<div class="updated notice is-dismissible"><p>';
+		printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'parallax-one' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) );
+		echo '</p></div>';
+	}
+}
+add_action( 'admin_notices', 'parallax_one_admin_notice', 99 );

@@ -25,7 +25,7 @@ jQuery( document ).ready(
 		$( '.parallax-one-color-control' ).each(
 			function() {
 				var $control = $( this ),
-				value = $control.val().replace( /\s+/g, '' ),
+				value        = $control.val().replace( /\s+/g, '' ),
 				palette;
 				// Manage Palettes
 				var palette_input = Boolean( $control.attr( 'data-palette' ) );
@@ -43,7 +43,7 @@ jQuery( document ).ready(
 						change: function(event, ui) {
 							// send ajax request to wp.customizer to enable Save & Publish button
 							var _new_value = $control.val();
-							var key = $control.attr( 'data-customize-setting-link' );
+							var key        = $control.attr( 'data-customize-setting-link' );
 							wp.customize(
 								key, function(obj) {
 									obj.set( _new_value );
@@ -72,7 +72,7 @@ jQuery( document ).ready(
 							$( this ).find( '.ui-slider-handle' ).text( ui.value ); // show value on slider handle
 							// send ajax request to wp.customizer to enable Save & Publish button
 							var _new_value = $control.val();
-							var key = $control.attr( 'data-customize-setting-link' );
+							var key        = $control.attr( 'data-customize-setting-link' );
 							wp.customize(
 								key, function(obj) {
 									obj.set( _new_value );
@@ -92,9 +92,9 @@ jQuery( document ).ready(
 				); // slider
 				$alpha_slider.slider().on(
 					'slidechange', function(event, ui) {
-						var new_alpha_val = parseFloat( ui.value ),
-						iris = $control.data( 'a8cIris' ),
-						color_picker = $control.data( 'wpWpColorPicker' );
+						var new_alpha_val  = parseFloat( ui.value ),
+						iris               = $control.data( 'a8cIris' ),
+						color_picker       = $control.data( 'wpWpColorPicker' );
 						iris._color._alpha = new_alpha_val / 100.0;
 						$control.val( iris._color.toString() );
 						color_picker.toggler.css(

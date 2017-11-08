@@ -78,8 +78,8 @@ final class Customizer_Info_Singleton {
 				new Customizer_Info(
 					$manager, 'parallax_one_view_pro', array(
 						'section_title' => __( 'View PRO version', 'parallax-one' ),
-						'section_url' => 'https://themeisle.com/plugins/parallax-one-plus/',
-						'section_text' => __( 'Get it', 'parallax-one' ),
+						'section_url'   => 'https://themeisle.com/plugins/parallax-one-plus/',
+						'section_text'  => __( 'Get it', 'parallax-one' ),
 					)
 				)
 			);

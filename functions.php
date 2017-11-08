@@ -48,10 +48,10 @@ if ( ! function_exists( 'parallax_one_setup' ) ) :
 			)
 		);
 
-		/*
-		 Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+		/**
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
 		add_theme_support(
 			'html5', array(
 				'search-form',
@@ -245,18 +245,18 @@ add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_scrip
 function parallax_one_fonts_url() {
 	$fonts_url = '';
 
-	/*
-	 Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Lora, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$cabin = _x( 'on', 'Cabin font: on or off', 'parallax-one' );
 
-	/*
-	 Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Open Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'parallax-one' );
 
 	if ( 'off' !== $cabin || 'off' !== $open_sans ) {
@@ -445,9 +445,9 @@ function parallax_one_register_required_plugins() {
 	$plugins = array(
 		array(
 
-			'name' => 'Intergeo Maps - Google Maps Plugin',
+			'name'     => 'Intergeo Maps - Google Maps Plugin',
 
-			'slug' => 'intergeo-maps',
+			'slug'     => 'intergeo-maps',
 
 			'required' => false,
 
@@ -455,9 +455,9 @@ function parallax_one_register_required_plugins() {
 
 		array(
 
-			'name' => 'Pirate Forms',
+			'name'     => 'Pirate Forms',
 
-			'slug' => 'pirate-forms',
+			'slug'     => 'pirate-forms',
 
 			'required' => false,
 
@@ -698,15 +698,12 @@ function parallax_output_404_content() {
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'parallax-one' ); ?></p>
-					
 					<?php get_search_form(); ?>
-
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	
 	<?php get_sidebar(); ?>
 	<?php
 }

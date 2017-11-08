@@ -23,7 +23,7 @@ if ( ! function_exists( 'parallax_one_sanitize_repeater' ) ) {
 	 * @param string $input Control input in json format.
 	 */
 	function parallax_one_sanitize_repeater( $input ) {
-		$input_decoded = json_decode( $input,true );
+		$input_decoded = json_decode( $input, true );
 
 		if ( ! empty( $input_decoded ) ) {
 			foreach ( $input_decoded as $boxk => $box ) {

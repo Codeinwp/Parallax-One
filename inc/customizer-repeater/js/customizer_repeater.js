@@ -4,7 +4,7 @@ function media_upload(button_class) {
 	'use strict';
 	jQuery( 'body' ).on(
 		'click', button_class, function () {
-			var button_id = '#' + jQuery( this ).attr( 'id' );
+			var button_id     = '#' + jQuery( this ).attr( 'id' );
 			var display_field = jQuery( this ).parent().children( 'input:text' );
 			var _custom_media = true;
 
@@ -78,7 +78,7 @@ function customizer_repeater_uniqid(prefix, more_entropy) {
 	}
 	php_js.uniqidSeed++;
 
-	retId = prefix; // start with prefix, add current milliseconds hex string
+	retId  = prefix; // start with prefix, add current milliseconds hex string
 	retId += formatSeed(
 		parseInt(
 			new Date()
@@ -107,7 +107,7 @@ function customizer_repeater_refresh_social_icons(th) {
 		function () {
 			var icon = jQuery( this ).find( '.icp' ).val();
 			var link = jQuery( this ).find( '.customizer-repeater-social-repeater-link' ).val();
-			var id = jQuery( this ).find( '.customizer-repeater-social-repeater-id' ).val();
+			var id   = jQuery( this ).find( '.customizer-repeater-social-repeater-id' ).val();
 
 			if ( ! id) {
 				id = 'customizer-repeater-social-repeater-' + customizer_repeater_uniqid();
@@ -147,24 +147,24 @@ function customizer_repeater_refresh_general_control_values() {
 	jQuery( '.customizer-repeater-general-control-repeater' ).each(
 		function () {
 			var values = [];
-			var th = jQuery( this );
+			var th     = jQuery( this );
 			th.find( '.customizer-repeater-general-control-repeater-container' ).each(
 				function () {
 
 					var icon_value = customizer_repeater_get_html_val( jQuery( this ).find( '.icp' ) );
-					var text = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-text-control' ) );
-					var link = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-link-control' ) );
-					var image_url = customizer_repeater_get_html_val( jQuery( this ).find( '.custom-media-url' ) );
-					var choice = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-image-choice' ) );
-					var title = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-title-control' ) );
-					var subtitle = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-subtitle-control' ) );
-					var id = customizer_repeater_get_html_val( jQuery( this ).find( '.social-repeater-box-id' ) );
+					var text       = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-text-control' ) );
+					var link       = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-link-control' ) );
+					var image_url  = customizer_repeater_get_html_val( jQuery( this ).find( '.custom-media-url' ) );
+					var choice     = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-image-choice' ) );
+					var title      = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-title-control' ) );
+					var subtitle   = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-subtitle-control' ) );
+					var id         = customizer_repeater_get_html_val( jQuery( this ).find( '.social-repeater-box-id' ) );
 					if ( ! id) {
 						id = 'social-repeater-' + customizer_repeater_uniqid();
 						jQuery( this ).find( '.social-repeater-box-id' ).val( id );
 					}
 					var social_repeater = customizer_repeater_get_html_val( jQuery( this ).find( '.social-repeater-socials-repeater-colector' ) );
-					var shortcode = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-shortcode-control' ) );
+					var shortcode       = customizer_repeater_get_html_val( jQuery( this ).find( '.customizer-repeater-shortcode-control' ) );
 
 					var response = {};
 					if ( ! customizer_repeater_item_is_empty( text ) ) {
@@ -415,7 +415,7 @@ jQuery( document ).ready(
 		theme_conrols.on(
 			'click', '.social-repeater-remove-social-item', function (event) {
 				event.preventDefault();
-				var th = jQuery( this ).parent();
+				var th       = jQuery( this ).parent();
 				var repeater = jQuery( this ).parent().parent();
 				th.remove();
 				customizer_repeater_refresh_social_icons( repeater );

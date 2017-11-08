@@ -19,10 +19,10 @@ class Parallax_One_Welcome {
 		add_action( 'admin_enqueue_scripts', array( $this, 'parallax_one_welcome_style_and_scripts' ) );
 
 		/* load welcome screen */
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ),         10 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ),                  20 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ),               30 );
-		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ),                40 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_getting_started' ), 10 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_github' ), 20 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_changelog' ), 30 );
+		add_action( 'parallax_one_welcome', array( $this, 'parallax_one_welcome_free_pro' ), 40 );
 	}
 
 	/**
@@ -40,7 +40,7 @@ class Parallax_One_Welcome {
 	public function parallax_one_activation_admin_notice() {
 		global $pagenow;
 
-		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'parallax_one_welcome_admin_notice' ), 99 );
 		}
 	}
@@ -79,10 +79,10 @@ class Parallax_One_Welcome {
 		?>
 
 		<ul class="parallax-one-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','parallax-one' ); ?></a></li>
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','parallax-one' ); ?></a></li>
-			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','parallax-one' ); ?></a></li>
-			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','parallax-one' ); ?></a></li>
+			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started', 'parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute', 'parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog', 'parallax-one' ); ?></a></li>
+			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO', 'parallax-one' ); ?></a></li>
 		</ul>
 
 		<div class="parallax-one-tab-content">

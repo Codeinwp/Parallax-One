@@ -59,10 +59,10 @@ class Customizer_Info extends WP_Customize_Section {
 	 * @return array
 	 */
 	public function json() {
-		$json = parent::json();
-		$json['section_text'] = $this->section_text;
+		$json                  = parent::json();
+		$json['section_text']  = $this->section_text;
 		$json['section_title'] = $this->section_title;
-		$json['section_url'] = $this->section_url;
+		$json['section_url']   = $this->section_url;
 		return $json;
 	}
 

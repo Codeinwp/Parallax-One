@@ -3,16 +3,16 @@
  * Getting started template
  */
 
-$customizer_url = admin_url() . 'customize.php' ;
+$customizer_url                   = admin_url() . 'customize.php';
 ?>
 
 <div id="getting_started" class="parallax-one-tab-pane active">
 
 	<div class="prallax-one-tab-pane-center">
 		<?php
-			$parallax_one = wp_get_theme();
+			$parallax_one         = wp_get_theme();
 			$parallax_one_version = $parallax_one->get( 'Version' );
-			$parallax_one_name = $parallax_one->get( 'Name' );
+			$parallax_one_name    = $parallax_one->get( 'Name' );
 		?>
 		<h1 class="parallax-one-welcome-title">
 			<?php printf( __( 'Welcome to %1$s!', 'parallax-one' ), $parallax_one_name ); ?>
@@ -23,7 +23,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<?php endif; ?>
 		</h1>
 
-		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','parallax-one' ); ?></p>
+		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.', 'parallax-one' ); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Parallax One and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Parallax One, as much as we enjoy creating great products.', 'parallax-one' ); ?>
 
 	</div>
@@ -34,7 +34,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1><?php esc_html_e( 'Getting started', 'parallax-one' ); ?></h1>
 
-		<h4><?php esc_html_e( 'Customize everything in a single place.' ,'parallax-one' ); ?></h4>
+		<h4><?php esc_html_e( 'Customize everything in a single place.', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'parallax-one' ); ?></p>
 		<p><a href="<?php echo esc_url( $customizer_url ); ?>" class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'parallax-one' ); ?></a></p>
 

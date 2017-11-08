@@ -42,16 +42,13 @@
 		</div><!-- .entry-content -->
 
 	</div>
-
-	
 		<?php
-			$parallax_one_contact_map_shortcode = get_theme_mod( 'parallax_one_contact_map_shortcode' );
+		$parallax_one_contact_map_shortcode = get_theme_mod( 'parallax_one_contact_map_shortcode' );
 		if ( ! empty( $parallax_one_contact_map_shortcode ) ) {
 			echo '<div class="contact-page-map-wrap">';
 			echo do_shortcode( $parallax_one_contact_map_shortcode );
 			echo '</div>';
 		}
 		?>
-	
 
 </article><!-- #post-## -->

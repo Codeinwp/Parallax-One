@@ -47,7 +47,7 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	 * Enqueue scripts and style.
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'parallax-one-alpha-control', parallax_get_file( '/inc/alpha-control/js/script.js' ),array( 'jquery', 'jquery-ui-draggable' ), '1.0', true );
+		wp_enqueue_script( 'parallax-one-alpha-control', parallax_get_file( '/inc/alpha-control/js/script.js' ), array( 'jquery', 'jquery-ui-draggable' ), '1.0', true );
 		wp_enqueue_style( 'parallax-one-alpha-style', parallax_get_file( '/inc/alpha-control/css/style.css' ), '1.0' );
 	}
 
@@ -55,7 +55,7 @@ class Parallax_One_Customize_Alpha_Color_Control extends WP_Customize_Control {
 	 * The function to render the controler
 	 */
 	protected function render() {
-		$id = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
+		$id    = 'customize-control-' . str_replace( '[', '-', str_replace( ']', '', $this->id ) );
 		$class = 'customize-control customize-control-' . $this->type; ?>
 		<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
 			<?php $this->render_content(); ?>

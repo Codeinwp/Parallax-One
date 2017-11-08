@@ -38,15 +38,15 @@ class Parallax_One_Info extends WP_Customize_Control {
 	public function render_content() {
 		$links = array(
 			array(
-				'name' => __( 'Documentation','parallax-one' ),
+				'name' => __( 'Documentation', 'parallax-one' ),
 				'link' => esc_url( 'http://themeisle.com/documentation-parallax-one/' ),
 			),
 			array(
-				'name' => __( 'Support','parallax-one' ),
+				'name' => __( 'Support', 'parallax-one' ),
 				'link' => esc_url( 'http://themeisle.com/contact/' ),
 			),
 			array(
-				'name' => __( 'View Theme Info','parallax-one' ),
+				'name' => __( 'View Theme Info', 'parallax-one' ),
 				'link' => admin_url( 'themes.php?page=parallax-one-welcome#getting_started' ),
 			),
 		); ?>

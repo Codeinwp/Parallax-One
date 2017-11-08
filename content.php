@@ -11,15 +11,15 @@
 	<header class="entry-header">
 
 			<div class="post-img-wrap">
-				 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 
 					<?php
 					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 					?>
 					<?php
-					$image_id = get_post_thumbnail_id();
-					$image_url_big = wp_get_attachment_image_src( $image_id,'parallax-one-post-thumbnail-big', true );
-					$image_url_mobile = wp_get_attachment_image_src( $image_id,'parallax-one-post-thumbnail-mobile', true );
+					$image_id         = get_post_thumbnail_id();
+					$image_url_big    = wp_get_attachment_image_src( $image_id, 'parallax-one-post-thumbnail-big', true );
+					$image_url_mobile = wp_get_attachment_image_src( $image_id, 'parallax-one-post-thumbnail-mobile', true );
 					?>
 					<picture itemscope itemprop="image">
 					<source media="(max-width: 600px)" srcset="<?php echo esc_url( $image_url_mobile[0] ); ?>">
@@ -68,7 +68,7 @@
 					<?php
 						/* translators: used between list items, there is a space after the comma */
 						$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
-						$pos = strpos( $categories_list, ',' );
+						$pos             = strpos( $categories_list, ',' );
 					if ( $pos ) {
 						echo substr( $categories_list, 0, $pos );
 					} else {
@@ -77,7 +77,7 @@
 					?>
 				</span>
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt"></i><?php comments_number( esc_html__( 'No comments','parallax-one' ), esc_html__( 'One comment','parallax-one' ), esc_html__( '% comments','parallax-one' ) ); ?>
+					<i class="icon-comment-alt"></i><?php comments_number( esc_html__( 'No comments', 'parallax-one' ), esc_html__( 'One comment', 'parallax-one' ), esc_html__( '% comments', 'parallax-one' ) ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 
@@ -92,7 +92,7 @@
 		if ( $ismore ) :
 			the_content(
 				sprintf( /* translators: %s is post name in text reader */
-					esc_html__( 'Read more %s ...','parallax-one' ),
+					esc_html__( 'Read more %s ...', 'parallax-one' ),
 					/* translators: %s is post title */
 					sprintf(
 						'<span class="screen-reader-text"> %s </span>',

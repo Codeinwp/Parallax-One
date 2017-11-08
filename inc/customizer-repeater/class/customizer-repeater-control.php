@@ -114,7 +114,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 			$this->add_field_label = $args['add_field_label'];
 		}
 
-		$this->boxtitle   = esc_html__( 'Cusomizer Repeater','parallax-one' );
+		$this->boxtitle = esc_html__( 'Cusomizer Repeater', 'parallax-one' );
 		if ( ! empty( $args['item_name'] ) ) {
 			$this->boxtitle = $args['item_name'];
 		} elseif ( ! empty( $this->label ) ) {
@@ -167,9 +167,9 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		wp_enqueue_style( 'parallax-one-font-awesome', parallax_get_file( '/css/font-awesome.min.css' ),'4.7' );
+		wp_enqueue_style( 'parallax-one-font-awesome', parallax_get_file( '/css/font-awesome.min.css' ), '4.7' );
 
-		wp_enqueue_style( 'parallax-one-admin-stylesheet', parallax_get_file( '/inc/customizer-repeater/css/admin-style.css' ),'1.0.0' );
+		wp_enqueue_style( 'parallax-one-admin-stylesheet', parallax_get_file( '/inc/customizer-repeater/css/admin-style.css' ), '1.0.0' );
 
 		wp_enqueue_script( 'parallax-one-script', parallax_get_file( '/inc/customizer-repeater/js/customizer_repeater.js' ), array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
 
@@ -183,7 +183,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		$repeater_content = $this->value();
-		$values = array();
+		$values           = array();
 		if ( ! empty( $repeater_content ) ) {
 			$values = $repeater_content;
 		} else {
@@ -200,17 +200,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 
 				$this->iterate_array( $valuse_decoded );
 				?>
-				<input type="hidden"
-					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-					   class="customizer-repeater-colector"
-					   value="<?php echo esc_textarea( json_encode( $valuse_decoded ) ); ?>"/>
+				<input type="hidden" id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?> class="customizer-repeater-colector" value="<?php echo esc_textarea( json_encode( $valuse_decoded ) ); ?>"/>
 				<?php
 			} else {
 				$this->iterate_array();
 				?>
-				<input type="hidden"
-					   id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?>
-					   class="customizer-repeater-colector"/>
+				<input type="hidden" id="customizer-repeater-<?php echo esc_attr( $this->id ); ?>-colector" <?php $this->link(); ?> class="customizer-repeater-colector"/>
 				<?php
 			}
 			?>
@@ -238,15 +233,15 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					</div>
 					<div class="customizer-repeater-box-content-hidden">
 						<?php
-						$choice = '';
-						$image_url = '';
+						$choice     = '';
+						$image_url  = '';
 						$icon_value = '';
-						$title = '';
-						$subtitle = '';
-						$text = '';
-						$link = '';
-						$shortcode = '';
-						$repeater = '';
+						$title      = '';
+						$subtitle   = '';
+						$text       = '';
+						$link       = '';
+						$shortcode  = '';
+						$repeater   = '';
 
 						if ( ! empty( $icon->id ) ) {
 							$id = $icon->id;
@@ -292,7 +287,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 						if ( $this->parallax_one_title_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title','parallax-one' ), $this->id, 'parallax_one_title_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'parallax-one' ), $this->id, 'parallax_one_title_control' ),
 									'class' => 'customizer-repeater-title-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_title_control' ),
 								), $title
@@ -301,7 +296,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 						if ( $this->parallax_one_subtitle_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle','parallax-one' ), $this->id, 'parallax_one_subtitle_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'parallax-one' ), $this->id, 'parallax_one_subtitle_control' ),
 									'class' => 'customizer-repeater-subtitle-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_subtitle_control' ),
 								), $subtitle
@@ -310,7 +305,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 						if ( $this->parallax_one_text_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text','parallax-one' ), $this->id, 'parallax_one_text_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'parallax-one' ), $this->id, 'parallax_one_text_control' ),
 									'class' => 'customizer-repeater-text-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', 'textarea', $this->id, 'parallax_one_text_control' ),
 								), $text
@@ -319,17 +314,17 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 						if ( $this->parallax_one_link_control ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link','parallax-one' ), $this->id, 'parallax_one_link_control' ),
-									'class' => 'customizer-repeater-link-control',
+									'label'             => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'parallax-one' ), $this->id, 'parallax_one_link_control' ),
+									'class'             => 'customizer-repeater-link-control',
 									'sanitize_callback' => 'esc_url_raw',
-									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_link_control' ),
+									'type'              => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_link_control' ),
 								), $link
 							);
 						}
 						if ( $this->parallax_one_shortcode_control == true ) {
 							$this->input_control(
 								array(
-									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode','parallax-one' ), $this->id, 'parallax_one_shortcode_control' ),
+									'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'parallax-one' ), $this->id, 'parallax_one_shortcode_control' ),
 									'class' => 'customizer-repeater-shortcode-control',
 									'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_shortcode_control' ),
 								), $shortcode
@@ -383,7 +378,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					if ( $this->parallax_one_title_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title','parallax-one' ), $this->id, 'parallax_one_title_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Title', 'parallax-one' ), $this->id, 'parallax_one_title_control' ),
 								'class' => 'customizer-repeater-title-control',
 								'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_title_control' ),
 							)
@@ -392,7 +387,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					if ( $this->parallax_one_subtitle_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle','parallax-one' ), $this->id, 'parallax_one_subtitle_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Subtitle', 'parallax-one' ), $this->id, 'parallax_one_subtitle_control' ),
 								'class' => 'customizer-repeater-subtitle-control',
 								'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_subtitle_control' ),
 							)
@@ -401,7 +396,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					if ( $this->parallax_one_text_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text','parallax-one' ), $this->id, 'parallax_one_text_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Text', 'parallax-one' ), $this->id, 'parallax_one_text_control' ),
 								'class' => 'customizer-repeater-text-control',
 								'type'  => apply_filters( 'repeater_input_types_filter', 'textarea', $this->id, 'parallax_one_text_control' ),
 							)
@@ -410,7 +405,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					if ( $this->parallax_one_link_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link','parallax-one' ), $this->id, 'parallax_one_link_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Link', 'parallax-one' ), $this->id, 'parallax_one_link_control' ),
 								'class' => 'customizer-repeater-link-control',
 								'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_link_control' ),
 							)
@@ -419,7 +414,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 					if ( $this->parallax_one_shortcode_control == true ) {
 						$this->input_control(
 							array(
-								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode','parallax-one' ), $this->id, 'parallax_one_shortcode_control' ),
+								'label' => apply_filters( 'repeater_input_labels_filter', esc_html__( 'Shortcode', 'parallax-one' ), $this->id, 'parallax_one_shortcode_control' ),
 								'class' => 'customizer-repeater-shortcode-control',
 								'type'  => apply_filters( 'repeater_input_types_filter', '', $this->id, 'parallax_one_shortcode_control' ),
 							)
@@ -477,7 +472,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 			?>
 		>
 			<span class="customize-control-title">
-				<?php esc_html_e( 'Icon','parallax-one' ); ?>
+				<?php esc_html_e( 'Icon', 'parallax-one' ); ?>
 			</span>
 			<span class="description customize-control-description">
 				<?php
@@ -519,10 +514,10 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 		echo '>';
 
 		echo '<span class="customize-control-title">';
-			esc_html_e( 'Image','parallax-one' );
+			esc_html_e( 'Image', 'parallax-one' );
 		echo '</span>';
 		echo '<input type="text" class="widefat custom-media-url" value="' . esc_attr( $value ) . '">';
-		echo '<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="' . esc_attr__( 'Upload Image','parallax-one' ) . '" />';
+		echo '<input type="button" class="button button-secondary customizer-repeater-custom-media-button" value="' . esc_attr__( 'Upload Image', 'parallax-one' ) . '" />';
 		echo '</div>';
 	}
 
@@ -535,13 +530,13 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
 	private function icon_type_choice( $value = 'parallax_icon' ) {
 
 		echo '<span class="customize-control-title">';
-			esc_html_e( 'Image type','parallax-one' );
+			esc_html_e( 'Image type', 'parallax-one' );
 		echo '</span>';
 		?>
 		<select class="customizer-repeater-image-choice">
-			<option value="parallax_icon" <?php selected( $value,'parallax_icon' ); ?>><?php esc_html_e( 'Icon','parallax-one' ); ?></option>
-			<option value="parallax_image" <?php selected( $value,'parallax_image' ); ?>><?php esc_html_e( 'Image','parallax-one' ); ?></option>
-			<option value="parallax_none" <?php selected( $value,'parallax_none' ); ?>><?php esc_html_e( 'None','parallax-one' ); ?></option>
+			<option value="parallax_icon" <?php selected( $value, 'parallax_icon' ); ?>><?php esc_html_e( 'Icon', 'parallax-one' ); ?></option>
+			<option value="parallax_image" <?php selected( $value, 'parallax_image' ); ?>><?php esc_html_e( 'Image', 'parallax-one' ); ?></option>
+			<option value="parallax_none" <?php selected( $value, 'parallax_none' ); ?>><?php esc_html_e( 'None', 'parallax-one' ); ?></option>
 		</select>
 		<?php
 	}

@@ -19,15 +19,16 @@
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="
-																			<?php
-																			if ( is_rtl() ) {
-																				echo 'rtl';
-																			} else {
-																				echo 'ltr';}
+<?php
+echo '<body itemscope itemtype="http://schema.org/WebPage" ' . get_body_class() . ' dir="';
+if ( is_rtl() ) {
+	echo 'rtl';
+} else {
+	echo 'ltr';
+}
+echo '">';
+parallax_hook_body_top();
 ?>
-">
-<?php parallax_hook_body_top(); ?>
 <div id="mobilebgfix">
 	<div class="mobile-bg-fix-img-wrap">
 	<div class="mobile-bg-fix-img"></div>
@@ -35,16 +36,15 @@
 	<div class="mobile-bg-fix-whole-site">
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'parallax-one' ); ?></a>
-	<!-- =========================
-	 PRE LOADER
-	============================== -->
 	<?php
-
+	/**
+	 * Preloader
+	 */
 	if ( is_front_page() && ! is_customize_preview() && get_option( 'show_on_front' ) != 'page' ) :
 
 		$parallax_one_disable_preloader = get_theme_mod( 'paralax_one_disable_preloader' );
 
-		if ( isset( $parallax_one_disable_preloader ) && ($parallax_one_disable_preloader != 1) ) :
+		if ( isset( $parallax_one_disable_preloader ) && ( $parallax_one_disable_preloader != 1 ) ) :
 
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
@@ -53,20 +53,15 @@
 		endif;
 
 	endif;
+
+	parallax_hook_header_before();
 	?>
-
-
-	<!-- =========================
-	 SECTION: HOME / HEADER
-	============================== -->
-	<!--header-->
-	<?php parallax_hook_header_before(); ?>
 	<header itemscope itemtype="http://schema.org/WPHeader" id="masthead" role="banner" data-stellar-background-ratio="0.5" class="header header-style-one site-header">
 	<?php parallax_hook_header_top(); ?>
 		<!-- COLOR OVER IMAGE -->
 		<?php
-			$paralax_one_sticky_header = get_theme_mod( 'paralax_one_sticky_header','parallax-one' );
-		if ( isset( $paralax_one_sticky_header ) && ($paralax_one_sticky_header != 1) ) {
+			$paralax_one_sticky_header = get_theme_mod( 'paralax_one_sticky_header', 'parallax-one' );
+		if ( isset( $paralax_one_sticky_header ) && ( $paralax_one_sticky_header != 1 ) ) {
 			$fixedheader = 'sticky-navigation-open';
 		} else {
 			if ( ! is_front_page() ) {
@@ -74,7 +69,7 @@
 			} else {
 				$fixedheader = '';
 				if ( 'posts' != get_option( 'show_on_front' ) ) {
-					if ( isset( $paralax_one_sticky_header ) && ($paralax_one_sticky_header != 1) ) {
+					if ( isset( $paralax_one_sticky_header ) && ( $paralax_one_sticky_header != 1 ) ) {
 						$fixedheader = 'sticky-navigation-open';
 					} else {
 						$fixedheader = '';
@@ -82,13 +77,12 @@
 				}
 			}
 		}
-		?>
-		<div class="overlay-layer-nav 
-		<?php
+		echo '<div class="overlay-layer-nav ';
 		if ( ! empty( $fixedheader ) ) {
-			echo esc_attr( $fixedheader );}
-?>
-">
+			echo esc_attr( $fixedheader );
+		}
+		echo '">';
+		?>
 
 			<!-- STICKY NAVIGATION -->
 			<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
@@ -100,7 +94,7 @@
 						<!-- LOGO -->
 
 						<button title='<?php _e( 'Toggle Menu', 'parallax-one' ); ?>' aria-controls='menu-main-menu' aria-expanded='false' type="button" class="navbar-toggle menu-toggle" id="menu-toggle" data-toggle="collapse" data-target="#menu-primary">
-							<span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation','parallax-one' ); ?></span>
+							<span class="screen-reader-text"><?php esc_html_e( 'Toggle navigation', 'parallax-one' ); ?></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -154,17 +148,17 @@
 					</div>
 
 					<!-- MENU -->
-					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu','parallax-one' ); ?>" id="menu-primary" class="navbar-collapse collapse">
+					<div itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_html_e( 'Primary Menu', 'parallax-one' ); ?>" id="menu-primary" class="navbar-collapse collapse">
 						<!-- LOGO ON STICKY NAV BAR -->
 						<div id="site-header-menu" class="site-header-menu">
 							<nav id="site-navigation" class="main-navigation" role="navigation">
 							<?php
 								wp_nav_menu(
 									array(
-										'theme_location'    => 'primary',
-										'menu_class'        => 'primary-menu small-text',
-										'depth'             => 4,
-										'fallback_cb'       => 'parallax_one_wp_page_menu',
+										'theme_location' => 'primary',
+										'menu_class'     => 'primary-menu small-text',
+										'depth'          => 4,
+										'fallback_cb'    => 'parallax_one_wp_page_menu',
 									)
 								);
 							?>

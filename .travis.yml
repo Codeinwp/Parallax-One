@@ -7,7 +7,6 @@ php:
     - "5.6"
     - "5.5"
     - "5.4"
-    - "5.3"
 matrix:
   include:
   - php: "7.0"
@@ -16,6 +15,8 @@ matrix:
     before_script:
     env: TEST_SUITE=Wraith_Visual_Regression_Testing WRAITH_FAIL=5
     script: ./bin/wraith.sh
+  - php: '5.3'
+    dist: precise
 sudo: false
 dist: precise
 env:

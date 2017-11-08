@@ -27,40 +27,37 @@
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8">
-			<main 
 			<?php
+			echo '<main ';
 			if ( have_posts() ) {
-				echo 'itemscope itemtype="http://schema.org/Blog"';}
-?>
- id="main" class="site-main" role="main">
+				echo ' itemscope itemtype="http://schema.org/Blog" ';
+			}
+			echo ' id="main" class="site-main" role="main">';
 
-				<?php if ( have_posts() ) : ?>
+			if ( have_posts() ) {
 
-					<?php ;/* Start the Loop */ ?>
-					<?php
-					while ( have_posts() ) :
-						the_post();
-?>
-						<?php parallax_hook_entry_before(); ?>
-						<?php
+				while ( have_posts() ) {
+					the_post();
 
-							/*
-							 Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'content', get_post_format() );
-						?>
-						<?php parallax_hook_entry_after(); ?>
-					<?php endwhile; ?>
+					parallax_hook_entry_before();
+					/**
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
 
-					<?php the_posts_navigation(); ?>
+					parallax_hook_entry_after();
+				}
 
-				<?php else : ?>
+				the_posts_navigation();
 
-					<?php get_template_part( 'content', 'none' ); ?>
+			} else {
 
-				<?php endif; ?>
+				get_template_part( 'content', 'none' );
+
+			}
+			?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->

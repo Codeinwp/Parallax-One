@@ -21,11 +21,11 @@ $parallax_one = wp_get_theme( 'parallax-one' );
 	<?php
 	WP_Filesystem();
 	global $wp_filesystem;
-	$parallax_one_changelog = $wp_filesystem->get_contents( get_template_directory() . '/CHANGELOG.md' );
+	$parallax_one_changelog       = $wp_filesystem->get_contents( get_template_directory() . '/CHANGELOG.md' );
 	$parallax_one_changelog_lines = explode( PHP_EOL, $parallax_one_changelog );
 	foreach ( $parallax_one_changelog_lines as $parallax_one_changelog_line ) {
 		if ( substr( $parallax_one_changelog_line, 0, 3 ) === '###' ) {
-			echo '<hr /><h1>' . substr( $parallax_one_changelog_line,3 ) . '</h1>';
+			echo '<hr /><h1>' . substr( $parallax_one_changelog_line, 3 ) . '</h1>';
 		} else {
 			echo $parallax_one_changelog_line . '<br/>';
 		}

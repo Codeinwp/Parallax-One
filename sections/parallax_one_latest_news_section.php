@@ -6,11 +6,11 @@
  */
 
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
-$parallax_number_of_posts = get_option( 'posts_per_page' );
-$args = array(
-	'post_type' => 'post',
-	'posts_per_page' => $parallax_number_of_posts,
-	'order' => 'DESC',
+$parallax_number_of_posts          = get_option( 'posts_per_page' );
+$args                              = array(
+	'post_type'           => 'post',
+	'posts_per_page'      => $parallax_number_of_posts,
+	'order'               => 'DESC',
 	'ignore_sticky_posts' => true,
 );
 
@@ -22,13 +22,13 @@ endif;
 
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
-	$parallax_one_latest_news_title = get_theme_mod( 'parallax_one_latest_news_title',esc_html__( 'Latest news','parallax-one' ) );
+	$parallax_one_latest_news_title = get_theme_mod( 'parallax_one_latest_news_title', esc_html__( 'Latest news', 'parallax-one' ) );
 	$parallax_one_latest_news_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_latest_news_title, 'Latest News Section' );
 
 	if ( $parallax_number_of_posts > 0 ) {
 		?>
 		<?php parallax_hook_news_before(); ?>
-		<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e( 'Latest blog posts','parallax-one' ); ?>">
+		<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e( 'Latest blog posts', 'parallax-one' ); ?>">
 			<?php parallax_hook_news_top(); ?>
 			<div class="section-overlay-layer">
 				<div class="container">
@@ -45,8 +45,8 @@ if ( $the_query->have_posts() ) {
 
 						<div class="parallax-slider-whole-wrap">
 							<div class="controls-wrap">
-								<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Down','parallax-one' ); ?></span></button>
-								<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Up','parallax-one' ); ?></span></button>
+								<button class="control_next icon icon-arrow-carrot-down"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Down', 'parallax-one' ); ?></span></button>
+								<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e( 'Post slider navigation: Up', 'parallax-one' ); ?></span></button>
 							</div>
 							<!-- TIMLEINE SCROLLER -->
 							<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
@@ -72,7 +72,7 @@ if ( $the_query->have_posts() ) {
 										<?php ;/* translators: %s is post name */ ?>
 										<div itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" id="post-<?php the_ID(); ?>" class="timeline-box-wrap" title="<?php printf( esc_html__( 'Latest News: %s', 'parallax-one' ), get_the_title() ); ?>"
 										<?php
-										if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ($i_latest_posts <= 2) ) {
+										if ( ! empty( $parallax_one_frontpage_animations ) && ( $parallax_one_frontpage_animations === true ) && ( $i_latest_posts <= 2 ) ) {
 														echo 'data-scrollreveal="enter left after 0.15s over 1s"';
 										}
 ?>
@@ -105,7 +105,7 @@ if ( $the_query->have_posts() ) {
 															<time itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>" class="entry-date entry-published updated"><?php echo the_time( get_option( 'date_format' ) ); ?></time>
 														</a>
 													</span>
-													<span> <?php esc_html_e( 'by','parallax-one' ); ?> </span>
+													<span> <?php esc_html_e( 'by', 'parallax-one' ); ?> </span>
 													<span itemscope itemprop="author" itemtype="http://schema.org/Person" class="author-link">
 														<span  itemprop="name" class="entry-author author vcard">
 															<a itemprop="url" class="url fn n" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" rel="author"><?php the_author(); ?> </a>

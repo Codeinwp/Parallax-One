@@ -1,4 +1,10 @@
 
+### 2.1.10 - 09/11/2017
+**Changes:** 
+- Updated PHPCS and fixed all the errors
+- Fixed background issue on iOS in Ribbon section
+- Added retirement notice
+
 ### 2.1.9 - 07/09/2017
 **Changes:** 
 - Removed whitespaces in repeater controls options

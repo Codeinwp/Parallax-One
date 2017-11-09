@@ -22,7 +22,7 @@
 				<i class="icon-clock-alt"></i><?php the_time( get_option( 'date_format' ) ); ?>
 			</time>
 			<a href="<?php comments_link(); ?>" class="post-comments">
-				<i class="icon-comment-alt"></i><?php comments_number( esc_html__( 'No comments','parallax-one' ), esc_html__( 'One comment','parallax-one' ), esc_html__( '% comments','parallax-one' ) ); ?>
+				<i class="icon-comment-alt"></i><?php comments_number( esc_html__( 'No comments', 'parallax-one' ), esc_html__( 'One comment', 'parallax-one' ), esc_html__( '% comments', 'parallax-one' ) ); ?>
 			</a>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

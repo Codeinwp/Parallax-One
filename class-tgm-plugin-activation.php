@@ -1028,7 +1028,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					} else {
 						return new WP_Error(
 							'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'tgmpa' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'tgmpa' ), array(
-								'found' => $subdir_name,
+								'found'    => $subdir_name,
 								'expected' => $desired_slug,
 							)
 						);
@@ -1036,7 +1036,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				} elseif ( empty( $subdir_name ) ) {
 					return new WP_Error(
 						'packaged_wrong', esc_html__( 'The remote plugin package consists of more than one file, but the files are not packaged in a folder.', 'tgmpa' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'tgmpa' ), array(
-							'found' => $subdir_name,
+							'found'    => $subdir_name,
 							'expected' => $desired_slug,
 						)
 					);
@@ -1662,7 +1662,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				$response = plugins_api(
 					'plugin_information', array(
-						'slug' => $slug,
+						'slug'   => $slug,
 						'fields' => array(
 							'sections' => false,
 						),
@@ -3429,9 +3429,9 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						do_action(
 							'upgrader_process_complete', $this, array(
 								'action'  => 'install', // [TGMPA + ] adjusted.
-							'type'    => 'plugin',
-							'bulk'    => true,
-							'plugins' => $plugins,
+								'type'    => 'plugin',
+								'bulk'    => true,
+								'plugins' => $plugins,
 							)
 						);
 

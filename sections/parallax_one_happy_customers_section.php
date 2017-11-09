@@ -5,21 +5,21 @@
  * @package parallax-one
  */
 
-$parallax_one_happy_customers_title = get_theme_mod( 'parallax_one_happy_customers_title',esc_html__( 'Happy Customers','parallax-one' ) );
+$parallax_one_happy_customers_title = get_theme_mod( 'parallax_one_happy_customers_title', esc_html__( 'Happy Customers', 'parallax-one' ) );
 $parallax_one_happy_customers_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_happy_customers_title, 'Testimonials Section' );
 
-$parallax_one_happy_customers_subtitle = get_theme_mod( 'parallax_one_happy_customers_subtitle',esc_html__( 'Cloud computing subscription model out of the box proactive solution.','parallax-one' ) );
+$parallax_one_happy_customers_subtitle = get_theme_mod( 'parallax_one_happy_customers_subtitle', esc_html__( 'Cloud computing subscription model out of the box proactive solution.', 'parallax-one' ) );
 $parallax_one_happy_customers_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_happy_customers_subtitle, 'Testimonials Section' );
 
-$default = parallax_one_testimonials_get_default_content();
+$default                           = parallax_one_testimonials_get_default_content();
 $parallax_one_testimonials_content = get_theme_mod( 'parallax_one_testimonials_content', $default );
-$happy_customers_wrap_piterest = get_theme_mod( 'paralax_one_testimonials_pinterest_style','5' );
+$happy_customers_wrap_piterest     = get_theme_mod( 'paralax_one_testimonials_pinterest_style', '5' );
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 
 if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_happy_customers_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_testimonials_content ) ) { ?>
 	<?php parallax_hook_tetimonials_before(); ?>
-	<section class="testimonials" id="customers" role="region" aria-label="<?php esc_html_e( 'Testimonials','parallax-one' ); ?>">
+	<section class="testimonials" id="customers" role="region" aria-label="<?php esc_html_e( 'Testimonials', 'parallax-one' ); ?>">
 		<?php parallax_hook_tetimonials_top(); ?>
 		<div class="section-overlay-layer">
 			<div class="container">
@@ -65,10 +65,10 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 						<?php
 						$parallax_one_testimonials_content_decoded = json_decode( $parallax_one_testimonials_content );
 						foreach ( $parallax_one_testimonials_content_decoded as $parallax_one_testimonial ) {
-							$image = ! empty( $parallax_one_testimonial->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->image_url, 'Testimonials section' ) : '';
-							$title = ! empty( $parallax_one_testimonial->title ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->title, 'Testimonials section' ) : '';
-							$subtitle = ! empty( $parallax_one_testimonial->subtitle ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->subtitle, 'Testimonials section' ) : '';
-							$text = ! empty( $parallax_one_testimonial->text ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->text, 'Testimonials section' ) : '';
+							$image            = ! empty( $parallax_one_testimonial->image_url ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->image_url, 'Testimonials section' ) : '';
+							$title            = ! empty( $parallax_one_testimonial->title ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->title, 'Testimonials section' ) : '';
+							$subtitle         = ! empty( $parallax_one_testimonial->subtitle ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->subtitle, 'Testimonials section' ) : '';
+							$text             = ! empty( $parallax_one_testimonial->text ) ? apply_filters( 'parallax_one_translate_single_string', $parallax_one_testimonial->text, 'Testimonials section' ) : '';
 							$section_is_empty = empty( $image ) && empty( $title ) && empty( $subtitle ) && empty( $text );
 
 							if ( ! $section_is_empty ) {
@@ -87,22 +87,20 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 												<?php
 												if ( ! empty( $image ) ) {
 												?>
-													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php echo ( ! empty( $title ) ? esc_attr( $title ) : esc_attr( 'Avatar','parallax-one' ) ); ?>">
+													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $image ) ); ?>" alt="<?php echo ( ! empty( $title ) ? esc_attr( $title ) : esc_attr( 'Avatar', 'parallax-one' ) ); ?>">
 												<?php
 												} else {
 													$default_image = parallax_get_file( '/images/clients/client-no-image.jpg' );
 													?>
-													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $default_image ) ); ?>" alt="<?php esc_attr_e( 'Avatar','parallax-one' ); ?>">
+													<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $default_image ) ); ?>" alt="<?php esc_attr_e( 'Avatar', 'parallax-one' ); ?>">
 													<?php
 												}
 												?>
 											</div>
 										</div>
-									
 										<?php
 										if ( ! empty( $title ) || ! empty( $subtitle ) || ! empty( $text ) ) {
 										?>
-										
 											<div class="feedback-text-wrap">
 												<?php
 												if ( ! empty( $title ) ) {
@@ -161,7 +159,7 @@ if ( ! empty( $parallax_one_happy_customers_title ) || ! empty( $parallax_one_ha
 	if ( is_customize_preview() ) {
 	?>
 		<?php parallax_hook_tetimonials_before(); ?>
-		<section class="testimonials paralax_one_only_customizer" id="customers" role="region" aria-label="<?php esc_html_e( 'Testimonials','parallax-one' ); ?>">
+		<section class="testimonials paralax_one_only_customizer" id="customers" role="region" aria-label="<?php esc_html_e( 'Testimonials', 'parallax-one' ); ?>">
 			<?php parallax_hook_tetimonials_top(); ?>
 			<div class="section-overlay-layer">
 				<div class="container">

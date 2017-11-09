@@ -5,16 +5,16 @@
  * @package parallax-one
  */
 
-$parallax_one_our_services_title    = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
-$parallax_one_our_services_title    = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_title, 'Our Services Section' );
+$parallax_one_our_services_title = get_theme_mod( 'parallax_one_our_services_title', esc_html__( 'Our Services', 'parallax-one' ) );
+$parallax_one_our_services_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_title, 'Our Services Section' );
 
 $parallax_one_our_services_subtitle = get_theme_mod( 'parallax_one_our_services_subtitle', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'parallax-one' ) );
 $parallax_one_our_services_subtitle = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_services_subtitle, 'Our Services Section' );
 
-$default                            = parallax_one_services_get_default_content();
-$parallax_one_services              = get_theme_mod( 'parallax_one_services_content', $default );
-$parallax_one_services_pinterest    = get_theme_mod( 'paralax_one_services_pinterest_style', '5' );
-$parallax_one_frontpage_animations  = get_theme_mod( 'parallax_one_enable_animations', false );
+$default                           = parallax_one_services_get_default_content();
+$parallax_one_services             = get_theme_mod( 'parallax_one_services_content', $default );
+$parallax_one_services_pinterest   = get_theme_mod( 'paralax_one_services_pinterest_style', '5' );
+$parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
 
 if ( ! empty( $parallax_one_our_services_title ) || ! empty( $parallax_one_our_services_subtitle ) || ! parallax_one_general_repeater_is_empty( $parallax_one_services ) ) {
 	parallax_hook_services_before(); ?>

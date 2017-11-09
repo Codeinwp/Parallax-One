@@ -12,7 +12,7 @@
 			<?php
 			if ( is_active_sidebar( 'footer-area' ) ) {
 			?>
-				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-1" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 1','parallax-one' ); ?>">
+				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-1" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 1', 'parallax-one' ); ?>">
 					<?php
 					dynamic_sidebar( 'footer-area' );
 					?>
@@ -22,7 +22,7 @@
 
 			if ( is_active_sidebar( 'footer-area-2' ) ) {
 			?>
-				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 2','parallax-one' ); ?>">
+				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 2', 'parallax-one' ); ?>">
 					<?php
 					dynamic_sidebar( 'footer-area-2' );
 					?>
@@ -32,7 +32,7 @@
 
 			if ( is_active_sidebar( 'footer-area-3' ) ) {
 			?>
-				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 3','parallax-one' ); ?>">
+				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 3', 'parallax-one' ); ?>">
 					<?php
 					dynamic_sidebar( 'footer-area-3' );
 					?>
@@ -42,7 +42,7 @@
 
 			if ( is_active_sidebar( 'footer-area-4' ) ) {
 			?>
-				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-4" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 4','parallax-one' ); ?>">
+				<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-4" class="col-md-3 col-sm-6 col-xs-12 widget-box" aria-label="<?php esc_html_e( 'Widgets Area 4', 'parallax-one' ); ?>">
 					<?php
 					dynamic_sidebar( 'footer-area-4' );
 					?>
@@ -54,7 +54,7 @@
 
 		<div class="footer-bottom-wrap">
 			<?php
-			$paralax_one_copyright = get_theme_mod( 'parallax_one_copyright','Themeisle' );
+			$paralax_one_copyright = get_theme_mod( 'parallax_one_copyright', 'Themeisle' );
 			$paralax_one_copyright = apply_filters( 'parallax_one_translate_single_string', $paralax_one_copyright, 'Footer - Credits' );
 
 			if ( ! empty( $paralax_one_copyright ) ) {
@@ -68,23 +68,23 @@
 			}
 			?>
 
-			<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="<?php esc_html_e( 'Secondary Menu','parallax-one' ); ?>">
+			<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="<?php esc_html_e( 'Secondary Menu', 'parallax-one' ); ?>">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Secondary Menu', 'parallax-one' ); ?></h2>
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location'    => 'parallax_footer_menu',
-						'container'         => false,
-						'menu_class'        => 'footer-links small-text',
-						'depth'             => 1,
-						'fallback_cb'       => false,
+						'theme_location' => 'parallax_footer_menu',
+						'container'      => false,
+						'menu_class'     => 'footer-links small-text',
+						'depth'          => 1,
+						'fallback_cb'    => false,
 					)
 				);
 				?>
 			</div>
 
 			<?php
-			$default = parallax_one_footer_socials_get_default_content();
+			$default                   = parallax_one_footer_socials_get_default_content();
 			$parallax_one_social_icons = get_theme_mod( 'parallax_one_social_icons', $default );
 
 			if ( ! empty( $parallax_one_social_icons ) ) {
@@ -125,7 +125,7 @@
 			}// End if().
 	?>
 		</div><!-- .footer-bottom-wrap -->
-		<?php echo apply_filters( 'parallax_one_plus_footer_text_filter','<div class="powered-by"><a href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Parallax One </a>' . esc_html__( 'powered by ','parallax-one' ) . '<a class="" href="http://wordpress.org/" target="_blank" rel="nofollow">' . esc_html__( 'WordPress','parallax-one' ) . '</a></div>' ); ?>
+		<?php echo apply_filters( 'parallax_one_plus_footer_text_filter', '<div class="powered-by"><a href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Parallax One </a>' . esc_html__( 'powered by ', 'parallax-one' ) . '<a class="" href="http://wordpress.org/" target="_blank" rel="nofollow">' . esc_html__( 'WordPress', 'parallax-one' ) . '</a></div>' ); ?>
 	</div><!-- container -->
 </footer>
 

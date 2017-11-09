@@ -48,10 +48,10 @@ if ( ! function_exists( 'parallax_one_setup' ) ) :
 			)
 		);
 
-		/*
-		 Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+		/**
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
 		add_theme_support(
 			'html5', array(
 				'search-form',
@@ -245,18 +245,18 @@ add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_scrip
 function parallax_one_fonts_url() {
 	$fonts_url = '';
 
-	/*
-	 Translators: If there are characters in your language that are not
-	* supported by Lora, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Lora, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$cabin = _x( 'on', 'Cabin font: on or off', 'parallax-one' );
 
-	/*
-	 Translators: If there are characters in your language that are not
-	* supported by Open Sans, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Open Sans, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'parallax-one' );
 
 	if ( 'off' !== $cabin || 'off' !== $open_sans ) {
@@ -445,9 +445,9 @@ function parallax_one_register_required_plugins() {
 	$plugins = array(
 		array(
 
-			'name' => 'Intergeo Maps - Google Maps Plugin',
+			'name'     => 'Intergeo Maps - Google Maps Plugin',
 
-			'slug' => 'intergeo-maps',
+			'slug'     => 'intergeo-maps',
 
 			'required' => false,
 
@@ -455,9 +455,9 @@ function parallax_one_register_required_plugins() {
 
 		array(
 
-			'name' => 'Pirate Forms',
+			'name'     => 'Pirate Forms',
 
-			'slug' => 'pirate-forms',
+			'slug'     => 'pirate-forms',
 
 			'required' => false,
 
@@ -698,15 +698,12 @@ function parallax_output_404_content() {
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'parallax-one' ); ?></p>
-					
 					<?php get_search_form(); ?>
-
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	
 	<?php get_sidebar(); ?>
 	<?php
 }
@@ -722,3 +719,47 @@ function parallax_one_add_editor_styles() {
 }
 
 add_action( 'after_setup_theme', 'parallax_one_add_editor_styles' );
+
+/**
+ * Notice in Customize to announce the theme is not maintained anymore
+ */
+function parallax_one_customize_register_notification( $wp_customize ) {
+	require_once( 'inc/class/class-ti-notify.php' );
+	$wp_customize->register_section_type( 'Ti_Notify' );
+	$wp_customize->add_section(
+		new Ti_Notify(
+			$wp_customize,
+			'ti-notify',
+			array(
+				/* translators: Link to the recommended theme */
+				'text'     => sprintf( __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'parallax-one' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) ),
+				'priority' => 0,
+			)
+		)
+	);
+	$wp_customize->add_setting(
+		'parallax-one-notify', array(
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'parallax-one-notify', array(
+			'label'    => __( 'Notification', 'parallax-one' ),
+			'section'  => 'ti-notify',
+			'priority' => 1,
+		)
+	);
+}
+add_action( 'customize_register', 'parallax_one_customize_register_notification' );
+/**
+ * Notice in admin dashboard to announce the theme is not maintained anymore
+ */
+function parallax_one_admin_notice() {
+	global $pagenow;
+	if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
+		echo '<div class="updated notice is-dismissible"><p>';
+		printf( /* translators: link to the recommended theme */ __( 'This theme is not maintained anymore, check-out our latest free one-page theme: %1$s.', 'parallax-one' ), sprintf( '<a href="' . admin_url( 'theme-install.php?theme=hestia' ) . '">%s</a>', 'Hestia' ) );
+		echo '</p></div>';
+	}
+}
+add_action( 'admin_notices', 'parallax_one_admin_notice', 99 );

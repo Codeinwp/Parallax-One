@@ -259,4 +259,4 @@ function parallax_one_category_transient_flusher() {
 	delete_transient( 'parallax_one_categories' );
 }
 add_action( 'edit_category', 'parallax_one_category_transient_flusher' );
-add_action( 'save_post',     'parallax_one_category_transient_flusher' );
+add_action( 'save_post', 'parallax_one_category_transient_flusher' );

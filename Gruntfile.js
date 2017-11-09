@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 
 	var loader = require( 'load-project-config' ),
 		config = require( 'grunt-theme-fleet' );
-	config = config();
+	config     = config();
 	config.files.php.push( '!inc/admin/**/*.php' );
 	config.files.php.push( '!class-tgm-plugin-activation.php' );
 	config.files.js.push( '!inc/admin/**/*.js' );

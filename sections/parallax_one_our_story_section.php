@@ -8,10 +8,10 @@
 $paralax_one_our_story_image = get_theme_mod( 'paralax_one_our_story_image', parallax_get_file( '/images/about-us.png' ) );
 $paralax_one_our_story_image = apply_filters( 'parallax_one_translate_single_string', $paralax_one_our_story_image, 'Our Story section' );
 
-$parallax_one_our_story_title = get_theme_mod( 'parallax_one_our_story_title',esc_html__( 'Our Story','parallax-one' ) );
+$parallax_one_our_story_title = get_theme_mod( 'parallax_one_our_story_title', esc_html__( 'Our Story', 'parallax-one' ) );
 $parallax_one_our_story_title = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_story_title, 'Our Story section' );
 
-$parallax_one_our_story_text = get_theme_mod( 'parallax_one_our_story_text',esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','parallax-one' ) );
+$parallax_one_our_story_text = get_theme_mod( 'parallax_one_our_story_text', esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'parallax-one' ) );
 $parallax_one_our_story_text = apply_filters( 'parallax_one_translate_single_string', $parallax_one_our_story_text, 'Our Story section' );
 
 $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animations', false );
@@ -19,7 +19,7 @@ $parallax_one_frontpage_animations = get_theme_mod( 'parallax_one_enable_animati
 if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story_title ) || ! empty( $parallax_one_our_story_content ) ) {
 ?>
 <?php parallax_hook_about_before(); ?>
-<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e( 'About','parallax-one' ); ?>">
+<section class="brief text-left brief-design-one brief-left" id="story" role="region" aria-label="<?php esc_html_e( 'About', 'parallax-one' ); ?>">
 	<?php parallax_hook_about_top(); ?>
 	<div class="section-overlay-layer">
 		<div class="container">
@@ -49,7 +49,7 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 											}
 ?>
 >
-											<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $paralax_one_our_story_image ) ); ?>" alt="<?php echo esc_html__( 'About','parallax-one' ); ?>">
+											<img src="<?php echo parallax_one_make_protocol_relative_url( esc_url( $paralax_one_our_story_image ) ); ?>" alt="<?php echo esc_html__( 'About', 'parallax-one' ); ?>">
 										</div>
 									</div>
 								<?php
@@ -126,7 +126,7 @@ if ( ! empty( $paralax_one_our_story_image ) || ! empty( $parallax_one_our_story
 	if ( is_customize_preview() ) {
 ?>
 		<?php parallax_hook_about_before(); ?>
-		<section class="brief text-left brief-design-one brief-left paralax_one_only_customizer" id="story" role="region" aria-label="<?php esc_html_e( 'About','parallax-one' ); ?>">
+		<section class="brief text-left brief-design-one brief-left paralax_one_only_customizer" id="story" role="region" aria-label="<?php esc_html_e( 'About', 'parallax-one' ); ?>">
 			<?php parallax_hook_about_top(); ?>
 			<div class="col-md-6 brief-content-two paralax_one_only_customizer"><img src="" alt=""><div class="brief-image-right"></div></div>
 			<div class="col-md-6 content-section brief-content-one">

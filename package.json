@@ -28,5 +28,7 @@
     "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
     "load-project-config": "~0.2.0"
   },
-  "wraithSlug":["parallax-one"]
+  "wraithSlug": [
+    "parallax-one"
+  ]
 }

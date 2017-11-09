@@ -272,7 +272,7 @@ class TAV_Remote_Notification_Client {
 			json_encode(
 				array(
 					'channel' => $this->id,
-					'key' => $this->key,
+					'key'     => $this->key,
 				)
 			)
 		);
@@ -288,7 +288,7 @@ class TAV_Remote_Notification_Client {
 		return add_query_arg(
 			array(
 				'post_type' => 'notification',
-				'payload' => $this->get_payload(),
+				'payload'   => $this->get_payload(),
 			), $this->get_remote_url()
 		);
 	}

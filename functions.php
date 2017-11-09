@@ -737,7 +737,11 @@ function parallax_one_customize_register_notification( $wp_customize ) {
 			)
 		)
 	);
-	$wp_customize->add_setting( 'parallax-one-notify' );
+	$wp_customize->add_setting(
+		'parallax-one-notify', array(
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
 	$wp_customize->add_control(
 		'parallax-one-notify', array(
 			'label'    => __( 'Notification', 'parallax-one' ),

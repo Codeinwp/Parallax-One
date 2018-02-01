@@ -391,6 +391,18 @@ if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {
 $parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
 
 /**
+ * Allow only 3 products per line if there is a sidebar.
+ *
+ * @since   1.0.0
+ * @access  public
+ * @return mixed
+ */
+function parallax_one_loop_shop_columns() {
+	return apply_filters( 'parallax_loop_columns', 4 ); // 4 products per row
+}
+add_filter( 'loop_shop_columns', 'parallax_loop_shop_columns' );
+
+/**
  * Adding IE-only scripts to header.
  */
 function parallax_one_ie() {

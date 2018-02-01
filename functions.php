@@ -391,7 +391,7 @@ if ( ! class_exists( 'TAV_Remote_Notification_Client' ) ) {
 $parallax_one_notification = new TAV_Remote_Notification_Client( 49, 'a0973bf1bd1fe265', 'https://themeisle.com?post_type=notification' );
 
 /**
- * Allow only 3 products per line if there is a sidebar.
+ * Allow only 4 products per line.
  *
  * @since   1.0.0
  * @access  public

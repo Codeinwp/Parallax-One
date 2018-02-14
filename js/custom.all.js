@@ -373,15 +373,12 @@ jQuery( document ).ready(
 		window_width_old = jQuery( '.container' ).width();
 		if ( window_width_old <= 462 ) {
 			jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
-			jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 			jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 		} else if ( window_width_old <= 750  ) {
 			jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
-			jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
 			jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 		} else {
 			jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 4,selector: '.product', calcMin: false} );
-			jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 4,selector: '.product', calcMin: false} );
             jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
 			/* WooCommerce 3.3.1 */
 			jQuery( '.post-type-archive-product .products.columns-1' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
@@ -402,15 +399,12 @@ jQuery( window ).resize(
 			window_width_old = jQuery( '.container' ).outerWidth();
 			if ( window_width_old <= 462 ) {
 				jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
-				jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 				jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 			} else if ( window_width_old <= 750  ) {
 				jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
-				jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
 				jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );
 			} else {
 				jQuery( '.post-type-archive-product .products' ).parallaxonegridpinterest( {columns: 4,selector: '.product', calcMin: false} );
-				jQuery( '.post-type-archive-product .products:not([class*="columns-"])' ).parallaxonegridpinterest( {columns: 4,selector: '.product', calcMin: false} );
 				jQuery( '.cart-collaterals .products' ).parallaxonegridpinterest( {columns: 2,selector: '.product', calcMin: false} );
                 /* WooCommerce 3.3.1 */
                 jQuery( '.post-type-archive-product .products.columns-1' ).parallaxonegridpinterest( {columns: 1,selector: '.product', calcMin: false} );

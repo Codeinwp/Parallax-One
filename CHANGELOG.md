@@ -1,4 +1,8 @@
 
+### 2.1.11 - 22/02/2018
+**Changes:** 
+- Fixed compatibility issues with WooCommerce 3.3
+
 ### 2.1.10 - 09/11/2017
 **Changes:** 
 - Updated PHPCS and fixed all the errors

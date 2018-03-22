@@ -132,6 +132,27 @@ $customizer_url                   = admin_url() . 'customize.php';
 
 	<div class="prallax-one-tab-pane-half prallax-one-tab-pane-first-half">
 
+        <!-- Orbit Fox -->
+        <h4><?php esc_html_e( 'Orbit Fox', 'parallax-one' ); ?></h4>
+        <p><?php esc_html_e( 'Want extra features for your site? Get built-in analytics, place sharing icons, get notified when your site is down, re-design pages with modern templates, add new Elementor and Beaver Builder widgets... All for free with our OrbitFox plugin!', 'parallax-one' ); ?></p>
+
+		<?php if ( is_plugin_active( 'themeisle-companion/themeisle-companion.php' ) ) { ?>
+
+            <p><span class="parallax-one-w-activated button"><?php esc_html_e( 'Already activated', 'parallax-one' ); ?></span></p>
+
+			<?php
+		} else {
+			?>
+
+            <p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=themeisle-companion' ), 'install-plugin_themeisle-companion' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Orbit Fox', 'parallax-one' ); ?></a></p>
+
+			<?php
+		}
+
+		?>
+
+        <hr />
+
 		<!-- Intergeo Maps -->
 		<h4><?php esc_html_e( 'Intergeo Maps - Google Maps Plugin', 'parallax-one' ); ?></h4>
 		<p><?php esc_html_e( 'The Intergeo Google Maps plugin is a simple, easy and in the same time quite powerful tool for handling Google Maps in your website. The plugin allows users to create new maps by using powerful UI builder.', 'parallax-one' ); ?></p>

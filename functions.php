@@ -445,6 +445,16 @@ function parallax_one_register_required_plugins() {
 	$plugins = array(
 		array(
 
+			'name'     => 'Orbit Fox',
+
+			'slug'     => 'themeisle-companion',
+
+			'required' => false,
+
+		),
+
+		array(
+
 			'name'     => 'Intergeo Maps - Google Maps Plugin',
 
 			'slug'     => 'intergeo-maps',
